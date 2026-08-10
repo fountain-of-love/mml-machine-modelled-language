@@ -8,6 +8,16 @@ The larger proposition is:
 
 > **We don't necessarily need increasingly complicated computation. We may need a representation of meaning rich enough that powerful mathematical structures already available to us start doing useful work.**
 
+MML develops that proposition through a canonical triad:
+
+> **Represent meaning. Compile knowledge. Compose concepts.**
+
+- **Representation:** make important semantic identities, roles, and relations explicit.
+- **Knowledge State Execution:** compile established structure once as governed state so declared consequences can be executed repeatedly.
+- **Combinatorial Uniqueness:** compose reusable, sufficiently independent semantic coordinates into a more distinctive query-specific field.
+
+The minimal flow touches all three at different levels of maturity. `ground -> compile` makes a semantic distinction addressable and builds a reusable transition model. `focus -> activate` executes from the selected identity. The elaborated engine can independently propagate several fields and combine them as a soft intersection. Only the first hypothesis currently has a purpose-built controlled benchmark; compilation reuse and combinatorial scaling remain hypotheses to test systematically.
+
 It does not train a language model, reproduce transformer attention, or infer meaning autonomously. It executes the relationships present in a small authored corpus.
 
 The vocabulary boundary is foundational:
@@ -51,7 +61,13 @@ The matrix is then normalized so that every non-empty row describes a distributi
 
 Semantic focus first narrows an ambiguous expression onto a more specific identity: `bank -> bank_river`, for example. At query time, the current strategy uses Personalized PageRank with its restart distribution anchored on that selected semantic identity. Activation repeatedly moves through the transition matrix while retaining a fixed pull toward the query. The result is a query-relative **activation** distribution over the addressable identities. Personalized PageRank is the first strategy implementation, not part of the `TransitionModel` contract.
 
-This is the first literal meaning of the repository's phrase **words carry weight**. A word does not possess one universal importance value. Stored weight belongs to transitions; semantic focus selects a more precise starting identity; contextual activation emerges from the model, the query, and the selected strategy.
+The phrase **words carry weight** therefore has three literal consequences:
+
+1. **Semantic coordinates are represented.** Governed identities make distinctions such as `bank_river` and `bank_financial` addressable.
+2. **Established relationships are compiled into reusable capacity.** Stored weight belongs to a named transition operator rather than being reconstructed for each query.
+3. **Coordinates are composed into query-specific fields.** Focus selects the starting identities; activation and soft intersection determine the contextual field for a particular use.
+
+A word does not possess one universal importance value. Its executable weight depends on represented identity, compiled relationships, task policy, query intent, and the selected execution strategy.
 
 | Phrase | Technical expression |
 | --- | --- |
@@ -60,6 +76,8 @@ This is the first literal meaning of the repository's phrase **words carry weigh
 | **Weight** | The compiled operator stores explicit transition capacity between identities. |
 | **Focus** | Semantic enrichment or query interpretation narrows an ambiguous expression to a more precise identity. |
 | **Activation** | Query execution produces the contextual numeric distribution for this particular use. |
+
+This table describes the minimal operational vocabulary. The canonical research triad sits above it: grounding and focus contribute to representation, compilation creates reusable execution state, and combined activation fields seed conceptual composition.
 
 The phrase also reaches beyond numerical edge weight. What a word or concept can carry depends on how the model perceives and governs it:
 
@@ -86,7 +104,7 @@ The same principle applies to relation type. Synonymy, hierarchy, opposition, pa
 M = alpha*A + beta*S + gamma*H + delta*P + epsilon*C + zeta*R - eta*O
 ```
 
-After suitable normalization, `M` becomes the task-specific propagation operator. A query then activates not just a node but a semantic field shaped by identity, role, relation type, and declared policy. This is the stronger MML meaning of **words carry weight**.
+After suitable normalization, `M` becomes the task-specific propagation operator. A query then composes and activates not just a node but a semantic field shaped by identity, role, relation type, and declared policy. This is the stronger MML meaning of **words carry weight** and the bridge from the Compilation hypothesis to Combinatorial Uniqueness.
 
 The current prototype has not implemented this family. It uses one positive transition matrix containing co-occurrence and three typed positive relations, with contradiction handled separately. The prototype demonstrates the seed from which the richer representation can be tested.
 
@@ -211,3 +229,11 @@ Each experiment should change one governed dimension while holding the other inp
 The demonstration shows transition-model construction, semantic focus through identity enrichment, and query-relative activation over a tiny authored corpus. It does not demonstrate general semantic understanding, automatic word-sense discovery, transformer attention, complete relation composition, symbolic validation, validated reasoning, or superiority over established retrieval systems.
 
 Its value is more foundational: it makes the relationship between representation and execution visible. If two meanings share one node, their weights mix. If governance gives those meanings separate identities, the executable topology—and therefore the resulting activation—can change.
+
+| Hypothesis | Evidence boundary |
+| --- | --- |
+| **Representation** | The bounded `bank`, `bass`, and `crane` A/B fixtures provide development evidence under fixed compilation and activation mathematics. They do not establish the claim across arbitrary semantic dimensions or domains. |
+| **Knowledge State Execution** | The separate Knowledge Is State spine demonstrates exact typed-chain compilation, repeated execution, inspectable consequences, governed correction, and preserved state in one bounded case. |
+| **Combinatorial Uniqueness** | The elaborated engine independently propagates fields and combines them through a normalized geometric mean. It has not yet established held-out specificity, useful combinatorial coverage, or a scaling advantage. |
+
+The current research progression is therefore precise: Representation has been tackled in bounded experiments; Compilation and Combinatorial Uniqueness have executable mechanism seeds and are the next hypotheses to test directly.

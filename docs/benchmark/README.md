@@ -1,16 +1,26 @@
 # Benchmarks
 
-The primary benchmark evaluates MML's central research intention: **richer meaning representation can make established mathematics produce more useful results**. Its design is documented in the [Semantic Representation Benchmark Proposal](semantic-operator-benchmark-proposal.md), and its first executable report is [Semantic Representation Benchmark v1](results/semantic-representation-v1.md).
+The benchmark programme follows MML's three hypotheses and reports a separate evidence boundary for each:
 
-Run it with `make benchmark-check`, or regenerate its JSON and Markdown evidence with `make benchmark`.
+| Hypothesis | Benchmark | Current status |
+| --- | --- | --- |
+| **1. Representation** | [Semantic Representation Benchmark v1](results/semantic-representation-v1.md) | Six authored identity probes under fixed mathematics; low-strength development evidence. |
+| **2. Knowledge State Execution** | [Knowledge State Execution Experiment v1](results/knowledge-state-v1.md) | One authored typed-chain comparison of per-query reconstruction and compiled reuse. |
+| **3. Combinatorial Uniqueness** | Defined in the [MML Hypothesis Benchmark Programme](semantic-operator-benchmark-proposal.md) | Soft-intersection mechanism exists; systematic benchmark pending. |
+
+In compact form: **Represent meaning. Compile knowledge. Compose concepts.** A result for one row is not evidence for the other two.
+
+Run the Representation benchmark with `make benchmark-check`, or regenerate its JSON and Markdown evidence with `make benchmark`.
+
+The orthogonal [Knowledge State Execution Experiment](results/knowledge-state-v1.md) asks whether one exact semantic consequence can be compiled into governed state and reused without rereading the source knowledge for each query. Run it with `make knowledge-state-benchmark-check`, or regenerate its JSON and Markdown evidence with `make knowledge-state-benchmark`. Its local source-reconstruction treatment is not an LLM measurement.
 
 Benchmark and scientific results are reported using the [OSCARC methodology](oscarc-methodology.md), separating observation, standard, chronology/context, actions, measured result, conformity judgment, and recommendation.
 
 ## Legacy retrieval diagnostic
 
-The retrieval diagnostic remains an application-level regression and can be run with `make retrieval-benchmark-check`.
+The retrieval diagnostic remains an **application-level regression**, not a hypothesis benchmark, and can be run with `make retrieval-benchmark-check`.
 
-The active benchmark is intentionally small. It checks that MML remains deterministic and useful on two authored development fixtures; it does not decide whether MML succeeds as executable semantic infrastructure.
+The diagnostic is intentionally small. It checks that the current retrieval application remains deterministic and clears low development floors on two authored fixtures. Because it combines representation, governed query inputs, compilation, scoring, and retrieval judgments, it cannot isolate or validate any one hypothesis and does not decide whether MML succeeds as executable semantic infrastructure.
 
 It compares five independently named treatments:
 

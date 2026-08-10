@@ -1,10 +1,14 @@
 # The SOS Architecture Opened By MML
 
-This document describes a proposed **Semantic Operating System (SOS)** made plausible by the problems that **Machine Modelled Language (MML)** begins to solve. MML is the executable innovation in this repository; SOS is the downstream architecture it could enable. A structured knowledge base, grounded in a **Common Language Model (CML)**, would be queried by MML for governed patterns and supported by **Large Language Models (LLMs)** for discovery, generation, and under-modelled situations.
+This document describes a proposed **Semantic Operating System (SOS)** made plausible by the problems that **Machine Modelled Language (MML)** begins to address. MML's proposed innovation is the combination of explicit semantic representation, compiled reusable knowledge, and runtime conceptual composition:
 
-The current Python prototype does not implement SOS. It demonstrates representation, execution, provenance, snapshots, and update mechanics that open the architectural door.
+> **Represent meaning. Compile knowledge. Compose concepts.**
 
-The name is intentional. SOS is an operating model for meaning, but it is also a small distress signal for the current LLM situation: too much compute, too much opacity, and too much rediscovery of patterns that could be stored as explicit structure.
+An execution engine makes those propositions operational; it is one component of MML, not its complete definition. SOS is the downstream architecture they could enable. A structured knowledge base, grounded in a **Common Language Model (CML)**, would supply governed semantic coordinates and knowledge to MML, while **Large Language Models (LLMs)** could support discovery, generation, and under-modelled situations.
+
+The current Python prototype does not implement SOS. It provides bounded Representation evidence plus mechanism seeds for compilation, reuse, soft intersection, provenance, snapshots, and updates. Those mechanisms open the architectural door without validating the complete SOS or all three MML hypotheses.
+
+The name is intentional. SOS is an operating model for meaning, but it is also a small distress signal for the current LLM situation: too much compute, too much opacity, and too much semantic and knowledge work assigned only to latent reconstruction when some of it may be representable, compilable, and reusable.
 
 ## Proposed Solution Architecture
 
@@ -14,21 +18,23 @@ In summary, the architecture has four dual ideas:
 
 - **SOS:** the broader Semantic Operating System that coordinates meaning, discovery, retrieval, and use cases.
 - **Dual flows:** runtime flows from prompt to answer; discovery flows from raw material to validated structure.
-- **Dual engine:** Machine Modelled Language handles known-pattern query and deterministic propagation; Large Language Models handle discovery, generation, and under-modelled situations. See [Dual-Engine.md](Dual-Engine.md).
+- **Dual engine:** Machine Modelled Language externalizes semantic specificity, compiles governed knowledge, and composes known coordinates; Large Language Models handle discovery, generation, and under-modelled situations. See [Dual-Engine.md](Dual-Engine.md).
 - **Dual persistence:** a human-readable Common Language Model knowledge base stores durable notes/nodes, while the MML matrix/index provides fast weighted navigation over that knowledge. See [Dual-Persistence.md](Dual-Persistence.md).
 
-MML itself separates four responsibilities:
+MML's research architecture and operational components can be summarized as:
 
 ```text
 documents and public knowledge
+  -> explicit semantic identities, roles, and relations
   -> compiler / statistical updater
-  -> versioned weighted representation
-  -> query execution engine
+  -> versioned reusable operators
+  -> query focus and conceptual composition
+  -> selected execution strategy
   -> inspectable activation and provenance
   -> optional LLM or deterministic application
 ```
 
-The compiler maps governed knowledge and observations into explicit structure. The artifact stores that structure. The engine executes it. An LLM may help discover or express knowledge, but it is not the MML.
+Governed sources represent meaning. The compiler transforms established structure into reusable artifacts. Runtime mapping and composition construct a task-specific field, and an execution strategy activates it. An LLM may help discover, map, validate, or express knowledge, but it is not the MML.
 
 At a high level, the architecture behaves like a portal:
 
@@ -62,7 +68,7 @@ The layers are:
 - **SOS:** the broader Semantic Operating System.
 - **CML:** the Common Language Model, the shared semantic schema or world-view data model.
 - **Knowledge Base:** the stored facts, relations, documents, evidence, and abstractions shaped by the CML.
-- **MML:** the deterministic query/diffusion engine over the CML-shaped knowledge base and matrix index.
+- **MML:** the explicit representation, compilation, composition, and deterministic execution layer over CML-shaped knowledge and its compiled indexes.
 - **LLM:** the stochastic discovery and generation engine used when known structure is insufficient.
 - **UI/UX:** the use case layer where people interact with the system.
 
@@ -86,13 +92,13 @@ In the **discovery stream**, the order is inverted:
 - **LLM first:** read raw material, identify candidate entities, extract relationships, propose abstractions, summarise documents, and surface possible patterns.
 - **MML second:** organise those discoveries against the CML, test them against the matrix/index, expose clusters, detect contradictions, and make the resulting structure inspectable.
 
-This distinction matters. SOS does not throw away LLMs. It gives them a clearer role and a bounded responsibility. LLMs are excellent for discovery, language work, ambiguity exploration, and first-pass interpretation. MML is excellent for preserving, querying, validating, and reusing what has already been discovered.
+This distinction matters. SOS does not throw away LLMs. It gives them a clearer role and a bounded responsibility. LLMs are useful for discovery, language work, ambiguity exploration, and first-pass interpretation. MML proposes explicit semantic coordinates, compiled reuse, and governed composition for sufficiently established knowledge.
 
 ### Dual Engine
 
-The engine is dual because known and unknown patterns deserve different treatment. MML is used first in runtime because it can query known structure quickly. LLMs are used first in discovery because they are excellent at reading raw material, proposing candidate abstractions, and handling ambiguity.
+The engine is dual because established structure and under-modelled language work deserve different treatment. At runtime, MML can represent the intended coordinates, execute compiled knowledge, and compose governed fields before an LLM is asked to fill gaps or render language. In discovery, an LLM can read raw material and propose candidate abstractions, while MML-oriented governance decides what becomes explicit, compilable, and reusable.
 
-The knowledge base can be fed by LLM discovery. LLMs are still extremely useful for reading large volumes of raw material, spotting candidate patterns, proposing relationships, extracting entities, summarising documents, and suggesting abstractions. But once those patterns are discovered and validated, they should not need to be rediscovered through dense stochastic inference every time. They can be stored as explicit structure and reused by MML.
+The knowledge base can be fed by LLM-assisted discovery. LLMs are useful for reading large volumes of raw material, spotting candidate structures, proposing relationships, extracting entities, summarising documents, and suggesting abstractions. Once candidates are validated and governed, they can become explicit semantic sources and compiled reusable MML views rather than remaining available only through prose or latent parameters.
 
 ### Dual Persistence
 
@@ -105,13 +111,13 @@ The detailed persistence design lives in [Dual-Persistence.md](Dual-Persistence.
 
 The analogy is the [Svalbard Global Seed Vault](https://www.seedvault.no/): SOS treats knowledge as something worth preserving in readable, inspectable form. The knowledge base should behave like an improved Wikipedia shaped by knowledge engineering: notes as nodes, links as typed relationships, and schemas compatible with traditions such as Schema.org, Linked Open Data, RDF, OWL, and RDF/Turtle.
 
-The MML matrix/index does not replace that knowledge base. It points into it. Like PageRank over the web, it lets the system propagate weight through known structure instead of rediscovering the same patterns through dense stochastic inference every time.
+The MML matrix/index does not replace that knowledge base. It is a compiled reusable view over it and points back into its governed records. Personalized PageRank may propagate weight through one such view, but other execution strategies and composed semantic operators can use the same architectural separation.
 
 ### CML As A Query Language
 
 CML should be thought of as the query language of the system. SQL maps human intent onto relational tables. CML maps human intent onto a shared semantic topology: concepts, relations, evidence types, abstractions, and domain-specific meanings.
 
-MML is then the execution engine over that CML-shaped structure. CML expresses what the prompt means inside the common language of the knowledge base. MML uses the matrix/index layer to retrieve and propagate through the known structure.
+MML then represents the selected intent in CML-shaped coordinates, composes the relevant semantic dimensions, and executes compiled views over that structure. CML supplies the common semantic contracts; MML makes their governed knowledge reusable and task-specific.
 
 Incoming prompts should be mapped onto the CML first:
 
@@ -136,7 +142,7 @@ Prompt
   -> optional validation back into the knowledge base
 ```
 
-That feedback loop matters. The LLM can discover new candidate patterns, but MML should decide what becomes durable structure.
+That feedback loop matters. An LLM can discover candidate structure, while accountable governance decides what becomes durable semantic representation and which compiled MML artifacts may execute it.
 
 ## How The Scripts Reflect The Architecture
 
@@ -154,14 +160,14 @@ The detailed persistence design lives in [Dual-Persistence.md](Dual-Persistence.
 
 - **Knowledge base:** durable notes/nodes, typed links, provenance, contradictions, evidence, schemas, and explanations.
 - **MML matrix/index:** weighted transitions, contextual paths, clusters, and pointers into the knowledge base.
-- **Seed vault principle:** known patterns should be preserved in readable form instead of rediscovered from scratch every time.
-- **PageRank analogy:** once the graph exists, MML can propagate weight through known structure quickly and deterministically.
+- **Seed vault principle:** established semantic identities, knowledge, evidence, constraints, and reusable structures should remain preserved in readable form.
+- **Compiled-view principle:** named matrices and indexes can be rebuilt from those sources and executed repeatedly through PageRank or another declared strategy.
 
 ## Dual Engine In Depth
 
-The detailed engine design lives in [Dual-Engine.md](Dual-Engine.md). In short, the SOS engine is dual because known and unknown patterns deserve different treatment.
+The detailed engine design lives in [Dual-Engine.md](Dual-Engine.md). In short, the SOS engine is dual because governed semantic capability and under-modelled language work deserve different treatment.
 
-- **MML** handles deterministic propagation over known, validated, CML-shaped structure.
+- **MML** represents governed semantic coordinates, compiles reusable knowledge views, composes task-specific fields, and executes them through declared strategies.
 - **LLM** handles discovery, generation, ambiguity, and under-modelled situations.
 - **Federation** allows many specialised MMLs and LLMs to cooperate through shared CML contracts instead of forcing one central model to own all meaning.
 - **LLM detail** is grounded by [karpathy/minGPT](https://github.com/karpathy/minGPT) as a small, inspectable GPT workbench.

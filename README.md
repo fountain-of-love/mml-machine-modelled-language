@@ -6,13 +6,71 @@ Machine Modelled Language (MML) explores a simple proposition:
 
 > **We don't necessarily need increasingly complicated computation. We may need a representation of meaning rich enough that powerful mathematical structures already available to us start doing useful work.**
 
+**MML isn't merely proposing a cheaper execution engine over a knowledge graph. It's proposing an alternative way for machines to obtain semantic specificity in the first place—explicit representation, compiled reuse, and combinatorial construction.**
+
 MML compiles governed concepts, senses, semantic roles, aliases, and typed relations into deterministic weighting operators. The current Python experiment uses matrices and PageRank-style propagation; it does not generate language or reproduce an LLM's internal mechanism. It gives explicit semantic structure a reusable, inspectable form whose weights can be rebuilt from the same governed inputs.
 
-This is the literal seed of the idea **words carry weight**: concepts become addressable coordinates, different kinds of relationship contribute different transition capacity, and a query activates a semantic field shaped by the conceptual model.
+This is the literal seed of the idea **words carry weight**: concepts become addressable semantic coordinates, established relationships are compiled into reusable transition capacity, and queries compose those coordinates into task-specific semantic fields.
 
 The current code compiles co-occurrence and three positive governed relation types into one normalized matrix, while treating contradiction separately. The fuller direction is a family of relation-specific matrices—synonymy, hierarchy, opposition, part/whole, causality, role correspondence, association, temporal relation, and others—from which an application constructs a task-specific semantic operator using explicit policy coefficients. Those coefficients are inspectable semantic-policy decisions, not learned black-box parameters.
 
 The CML work makes the representation richer still. Concepts such as `capacity`, `activation`, `boundary`, `substrate`, `gain`, and `storage` can occupy comparable semantic roles across domains rather than merely being connected by an undifferentiated “related to” edge. MML is the proposed numerical execution layer over that governed structure.
+
+## The Three MML Hypotheses
+
+MML develops through a coherent triad:
+
+1. **Representation hypothesis — addressed by the current experiment:** If meaning is represented explicitly and richly enough, simple mathematics becomes semantically useful.
+2. **Knowledge State Execution hypothesis:** Once established knowledge is compiled into governed state, its declared consequences can be executed repeatedly without reconstructing equivalent task state at every use.
+3. **Combinatorial uniqueness hypothesis — mechanism present, systematic test next:** Several individually broad but sufficiently independent semantic constraints can combine into a narrow, distinctive conceptual coordinate or retrieval target.
+
+Each hypothesis concerns a different architectural operation:
+
+```text
+Encoding
+meaning
+  -> explicit identities, roles, and relations
+  -> executable structure
+
+Reuse
+established knowledge
+  -> compile once
+  -> execute many times
+
+Resolution and discovery
+broad concept A + broad concept B + broad concept C
+  -> distinctive intersection
+```
+
+In compact form: **Represent meaning. Compile knowledge. Compose concepts.**
+
+As computational claims:
+
+- representation makes computation possible;
+- compilation removes repeated reconstruction;
+- combination creates specificity without requiring bespoke primitives.
+
+The repository has tackled the Representation hypothesis through its Words Carry Weight experiment. It applies fixed activation mathematics to ambiguous and explicitly grounded representations so that the effect of semantic representation can be observed directly. This is bounded experimental evidence, not a claim that the hypothesis has been established universally.
+
+The current elaborated engine also contains the operational seed of Combinatorial Uniqueness: independently propagated activation fields are combined as a soft intersection rather than a simple additive average. The repository describes the underlying proposition as: “Several individually broad, sufficiently independent conceptual constraints can form a narrow and highly distinctive intersection.” What remains is to test that mechanism systematically as a scaling proposition.
+
+The Knowledge Is State experiment now makes the second hypothesis executable in one bounded typed-chain task. Research still needs broader, independently authored cases and a measured language-model baseline. The third hypothesis remains to be tested systematically.
+
+### The Combinatorial Scaling Proposition
+
+The intended shift in the scaling argument is from:
+
+> “We need to learn an enormous number of concepts and combinations.”
+
+to:
+
+> “We need a useful basis of semantic dimensions whose combinations cover a much larger conceptual space.”
+
+If a system has `n` useful semantic dimensions, the number of possible combinations can grow vastly faster than `n`. MML therefore asks whether rich conceptual coordinates can be constructed when needed rather than each requiring a separately learned primitive.
+
+Most possible combinations will be meaningless, contradictory, or invalid. Combinatorial growth is useful only when governed by stable identity, typed and directed relations, permitted composition, constraints, exclusions, provenance, query intent, and validation. These are not secondary metadata around numerical edge strength; together they determine what semantic weight an execution is allowed to carry.
+
+This is a research proposition, not a demonstrated scaling law. The next experiments must measure whether compiled semantic dimensions can be reused, whether their combinations add specificity, and whether governance can reject invalid combinations without erasing the proposed efficiency advantage.
 
 Architectural misuse of LLMs contributes to:
 
@@ -35,6 +93,10 @@ Start with the functional spine in [`activate_grounded_focus.py`](activate_groun
 
 > **Ground the known. Focus the intended. Activate the related.**
 
+The orthogonal Knowledge Is State spine follows the same separation. [`execute_knowledge_state.py`](execute_knowledge_state.py) compiles governed typed facts and executes their declared consequence; [`knowledge_is_state.py`](knowledge_is_state.py) coordinates compilation, execution, and immutable correction. Run it through [`run_knowledge_is_state.py`](run_knowledge_is_state.py).
+
+> **State the known. Execute the consequence.**
+
 In short: **focus is representational narrowing** (`bank -> bank_river`); **activation is the numerical distribution produced by querying that focused identity**. Attention is an inspiration-level analogy only and is not the name of an MML mechanism.
 
 Everything else in the repository builds outward from that seed:
@@ -53,10 +115,12 @@ Begin with [Words Carry Weight: The Essence](docs/words-carry-weight-essence.md)
 | Stage | Command | Demonstrates |
 | --- | --- | --- |
 | Essential seed | `make run` | Transition-model construction, semantic focus, and query-relative activation |
+| Knowledge Is State | `make run-knowledge-state` | Exact typed-chain execution, inspectable paths, governed correction, and preserved state |
 | Mechanism elaboration | `make run-elaborate` | Polysemy, field combination, paths, and higher-order activation |
 | Authored application | `make run-legal` | GDPR evidence ranking as a mechanism demonstration |
 | Governed change | `make update-demo` | Local relation updates, consequences, and rollback |
 | Semantic representation benchmark | `make benchmark-check` | Whether governed identity enrichment improves semantic focus under fixed mathematics |
+| Knowledge-state execution benchmark | `make knowledge-state-benchmark-check` | Compiled semantic-state reuse beside lexical and per-query source treatments |
 | Retrieval application diagnostic | `make retrieval-benchmark-check` | Legacy deterministic regression checks beside lexical baselines |
 
 The corpus and probes were authored together. They demonstrate mechanics and protect regressions; they are not independent evidence of generalisation, legal validity, production readiness, or superiority over TF-IDF, BM25, RAG, or LLMs. The exact evidence boundary is defined in the [research contract](docs/Research-Contract.md).

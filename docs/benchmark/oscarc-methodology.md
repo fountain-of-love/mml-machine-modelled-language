@@ -1,5 +1,7 @@
 # OSCARC Methodology for Benchmarking and Scientific Research
 
+Methodology version: `OSCARC-v1`
+
 ## Purpose
 
 OSCARC turns measurements into an evidence-led research report. It guides the reader from neutral observation to a bounded interpretation without hiding the standard, chronology, intervention, uncertainty, or next step.

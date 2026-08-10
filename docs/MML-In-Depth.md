@@ -1,16 +1,28 @@
 # MML In Depth
 
-This document focuses on **Machine Modelled Language (MML)** itself: how its explicit representation is constructed and statistically updated, how it executes, why embeddings still matter, and how it can evolve into a multi-dimensional field.
+This document focuses on **Machine Modelled Language (MML)** itself through its canonical research architecture:
+
+> **Represent meaning. Compile knowledge. Compose concepts.**
+
+| Part | Architectural operation | Current implementation |
+| --- | --- | --- |
+| **I. Represent Meaning** | Give semantic identities, roles, relations, and constraints explicit form. | Governed grounding, focus, aliases, senses, and typed relation records. |
+| **II. Compile Knowledge** | Transform established structure into reusable executable operators. | Co-occurrence compilation, governed relation weights, transition matrices, snapshots, and replay. |
+| **III. Compose Concepts** | Combine reusable semantic coordinates into query-specific fields. | Independent activation fields and normalized geometric-mean soft intersection. |
 
 This document describes the executable innovation independently. If that mechanism proves useful, it opens the door to the proposed [dual engine](sos/Dual-Engine.md), [Semantic Operating System](sos/Architecture.md), and [dual persistence](sos/Dual-Persistence.md) architecture.
 
+The kernel has a separate operational flow:
+
 > **Ground the known. Focus the intended. Activate the related.**
 
-This triad separates corpus grounding, query focus, and relational activation. Compilation prepares their executable transition model; Personalized PageRank is one activation strategy.
+Ground–Focus–Activate describes how the current code runs beneath the research architecture. It does not replace the three MML hypotheses. Compilation prepares the reusable transition model; Personalized PageRank is one interchangeable activation strategy.
 
 The central design claim is that MML does not begin by inventing a more complicated computation. It begins by making meaning more explicit so that matrices, weighted operators, normalization, and propagation can do useful semantic work.
 
-## MML Initialization: Construction Phase
+## Part I: Represent Meaning
+
+### Semantic Initialization
 
 MML begins with an explicit semantic construction: concepts, aliases, relation types, evidence, and sense distinctions that the machine can execute. The current prototype uses a small local vocabulary and governed records; it does not require the wider SOS architecture to operate.
 
@@ -23,15 +35,11 @@ The current benchmark already uses separate construction nodes for the two teste
 
 Surface `bank` is resolved from accompanying signals to one or both sense nodes. A production model would extend that small authored mapping through public lexical identifiers rather than force every meaning to emerge from raw statistics.
 
-## Existing Initiative Alignment
+## Part II: Compile Knowledge
 
-MML is not proposed in isolation. Several existing initiatives already point toward parts of the system: small inspectable neural workbenches, sovereign AI pipelines, and long-term preservation models for shared knowledge.
+### Transition Compilation And Statistical Update
 
-Those initiative alignments are described separately in [Initiative-Alignment.md](sos/Initiative-Alignment.md), including [minGPT](sos/Initiative-Alignment.md#mingpt-small-neural-workbench-for-discovery), [Apertus](sos/Initiative-Alignment.md#apertus-sovereign-ai-pipeline), and the [Svalbard Global Seed Vault](sos/Initiative-Alignment.md#svalbard-global-seed-vault-preservation-analogy) analogy.
-
-## MML Transition Probabilities: Statistical Update Phase
-
-Raw text can be passed through the graph to measure how often one node appears near another in natural context. Those observations update explicit weights; they do not constitute neural training.
+Raw text can be passed through the governed identity space to measure how often one identity appears near another in natural context. Those observations update explicit weights; they do not constitute neural training.
 
 If concept `A` repeatedly appears near concept `B`, the edge from `A` to `B` becomes stronger. After normalization, those counts populate a sparse transition matrix `P`.
 
@@ -44,9 +52,11 @@ co_occurrence[target_idx, neighbor_idx] += 1.0
 P = co_occurrence / row_sums
 ```
 
-The difference is that a production architecture would update transitions between dictionary-grounded sense nodes rather than plain surface words.
+The difference is that a production architecture would update transitions between dictionary-grounded sense nodes rather than plain surface words. Once compiled, the same named operator can serve repeated queries until its governed sources or execution policy change. That is the mechanism behind the Knowledge State Execution hypothesis. The bounded Knowledge Is State experiment now compares per-query source reconstruction with compiled reuse for one authored typed-chain task; broader independent and language-model comparisons remain outstanding.
 
-## MML Execution: Runtime Phase
+## Part III: Compose Concepts
+
+### Query Execution And Soft Intersection
 
 The representation/query boundary precedes runtime: focus narrows an ambiguous expression to a selected semantic identity; activation is the numeric distribution produced by executing from that identity. Attention remains an analogy to orientation, not an implemented mechanism or a synonym for either stage.
 
@@ -66,11 +76,13 @@ pi_next = d * (pi @ P) + (1 - d) * v
 
 The benchmark's resulting activation distribution assigns weight to nodes reachable within the declared execution horizon. It deliberately stops after a bounded number of steps rather than converging to a stationary distribution, which helps preserve local query structure. Multiple query fields are propagated independently and combined through a normalized geometric mean. This is graph-interpretable matrix activation, not transformer attention and not proof that the representation understands the query.
 
-The combination implements **[combinatorial uniqueness](Combinatorial-Uniqueness.md)**: individually broad conceptual fields can form a narrow intersection when they impose distinct constraints. A combination can therefore carry greater discriminative weight than any participating term alone, because a candidate must retain support across the independently propagated fields. This is related to established conjunction, faceted search, and product-of-experts ideas. MML's specific contribution is to execute that intersection over governed, addressable semantic identities and relations.
+The combination implements the mechanism seed of the third MML hypothesis, **[Combinatorial Uniqueness](Combinatorial-Uniqueness.md)**: individually broad conceptual fields can form a narrow intersection when they impose distinct constraints. A combination can therefore carry greater discriminative weight than any participating term alone, because a candidate must retain support across the independently propagated fields. This is related to established conjunction, faceted search, and product-of-experts ideas. MML's specific proposition is to execute that intersection over governed, addressable semantic identities and relations. Systematic scaling evidence remains outstanding.
 
 The minimal demonstration uses semantic focus to select identities such as `bank_river`; the kernel calls its query-relative numeric result `Activation`. It provides conventional Personalized PageRank as its first interchangeable query strategy. Its converged behavior should not be confused with the bounded `GraphModel` activation used by the development benchmark.
 
-## Governed Typed Relations
+## Cross-Cutting Semantic Integrity
+
+### Governed Typed Relations
 
 Co-occurrence means only that terms appeared nearby. It cannot by itself express whether evidence supports, contradicts, requires, or qualifies a concept. The next representation layer therefore uses a deliberately small governed vocabulary:
 
@@ -83,7 +95,7 @@ Governed aliases resolve longest-match first, consuming a mapped phrase once. Po
 
 This layer is not a declaration of legal truth. It executes provisional authored assertions whose source and governance state must remain visible.
 
-## Explanations And Identity
+### Explanations And Identity
 
 An execution can report resolved concepts, positive and negative score components, strongest paths, typed relation identifiers, evidence references, and a deterministic graph snapshot. These are related but distinct guarantees:
 
@@ -95,7 +107,7 @@ The current mechanism must label unavailable guarantees instead of treating a st
 
 The snapshot identity is derived from construction sources, relation artifacts, graph configuration, vocabulary version, and algorithm version. This provides deterministic replay before publication. Once public Git history exists, the governing commit or tag additionally identifies the human review state.
 
-## Implementation Boundaries: Matrices, Paths, and Events
+### Implementation Boundaries: Matrices, Paths, and Events
 
 The current `GraphModel` is a convenient prototype facade, but it combines three concerns that should become explicit as MML evolves:
 
@@ -117,23 +129,29 @@ The event schema, delivery guarantees, persistence, and replay policy remain to 
 
 ## Why We Still Need Embeddings: A Pragmatic Trade-Off
 
-Pure graph diffusion over a dictionary has strong advantages: efficiency, factual stability, inspectability, and resistance to noisy training data. But classical graph methods have historically struggled with compositional fluid syntax.
+Explicit semantic operators can offer inspectability, stable identity, and controlled updates. Sparse implementations may also offer efficiency for suitable tasks. But classical symbolic and graph-oriented methods have historically struggled with compositional fluid syntax.
 
 Human language is not only meaning lookup. It also involves grammar, style, metaphor, idioms, tone, and multi-word constructions. Deep neural networks are good at these soft, fluid patterns because embeddings and attention can represent graded similarity and composition in ways that fixed symbolic graphs often cannot.
 
-That suggests the most promising immediate architecture is not pure graph reasoning and not pure dense neural generation. It is a Hybrid Graph-Transformer.
+That suggests one promising architecture is neither pure symbolic propagation nor pure dense neural generation, but a hybrid of compiled semantic operators and a language model. Its value and cost remain empirical questions.
 
-## Hybrid Graph-Transformer
+## Hybrid Semantic-Operator And Transformer Architecture
 
-**The Graph Engine: MML Diffusion And Dictionary**
+**Compiled Semantic Operators**
 
-The graph engine handles semantic routing, context retrieval, factual grounding, and candidate token or concept weighting. It is cheap, sparse, inspectable, and resistant to drift because knowledge lives in nodes and edges rather than only in neural weights.
+The MML side handles semantic routing, context retrieval, factual grounding, and candidate token or concept weighting through compiled operators over governed structure. These operators may be sparse and inspectable; efficiency and drift advantages remain properties to measure rather than guarantees of graph-shaped data.
 
 **A Mini-Transformer Head**
 
-A smaller Transformer can take the top candidate nodes from the graph engine and perform lightweight local generation for grammar, syntax, and natural phrasing.
+A smaller Transformer can take the top candidate identities or records from the compiled semantic field and perform lightweight local generation for grammar, syntax, and natural phrasing.
 
-In this design, the Transformer does not carry the full burden of memorizing and retrieving semantic knowledge. The graph engine narrows the semantic field first, then a smaller neural model composes the final language.
+In this design, the Transformer does not carry the full burden of memorizing and retrieving semantic knowledge. MML represents, compiles, and composes the governed semantic field first; a smaller neural model can then render the resulting evidence or candidates into language.
+
+## Existing Initiative Alignment
+
+MML is not proposed in isolation. Several existing initiatives already point toward parts of the wider system: small inspectable neural workbenches, sovereign AI pipelines, and long-term preservation models for shared knowledge.
+
+Those initiative alignments are described separately in [Initiative-Alignment.md](sos/Initiative-Alignment.md), including [minGPT](sos/Initiative-Alignment.md#mingpt-small-neural-workbench-for-discovery), [Apertus](sos/Initiative-Alignment.md#apertus-sovereign-ai-pipeline), and the [Svalbard Global Seed Vault](sos/Initiative-Alignment.md#svalbard-global-seed-vault-preservation-analogy) analogy.
 
 ## Next Evolutionary Step: Relation-Specific Semantic Operators
 
@@ -260,12 +278,12 @@ pi_steps
 
 In the current benchmark, `pi` assigns contextual weight to words and concepts. In the multi-dimensional model, `pi_steps` would assign contextual weight to word senses, ontology classes, factual triples, and generation candidates.
 
-## How This Solves AI's Core Bottlenecks
+## How This Could Address Selected AI Bottlenecks
 
-| Current LLM Challenge | Multi-Dimensional MML Field Solution |
+| Current LLM challenge | Proposed MML contribution |
 | --- | --- |
 | Model Drift And Knowledge Decay | Layer isolation: if facts change, update Layer 3, the epistemic layer, by adding or deleting specific edges. Layer 1, synonyms, and Layer 2, ontology, remain undisturbed, reducing the risk of catastrophic forgetting. |
-| Energy And Compute Expense | Sparse tensor multiplication: the engine executes Sparse Matrix-Vector Multiplications across multiple sparse matrices instead of relying only on dense float32 matrix operations. This can run efficiently on CPUs or hardware optimized for graph traversal. |
+| Energy And Compute Expense | A sparse implementation could execute matrix-vector operations across compiled relation layers. End-to-end savings must include compilation, governance, storage, updates, and query workload. |
 | Hallucination And AI Slop | Dynamic damping control: for legal, medical, or safety-sensitive queries, the engine can increase the weight of verified ontology and fact layers while reducing reliance on raw co-occurrence. This biases the model toward structured knowledge. |
 | Black Box Behavior And Unexplainability | Inspectable execution can expose activated layers, graph paths, and their source records. Complete causal attribution remains a separate requirement rather than an automatic property of a non-zero value. |
 

@@ -4,9 +4,16 @@ LLMs reason with concepts expressed through language. They use names, descriptio
 
 This document governs the vocabulary surrounding [`activate_grounded_focus.py`](../activate_grounded_focus.py), the operational [`words_carry_weight.py`](../words_carry_weight.py) application flow, and their experiment and presentation adapters. Each term is projected onto a concrete function or element and given a drift boundary. If implementation and vocabulary diverge, either the implementation or this contract must be changed explicitly.
 
+Two levels must remain distinct:
+
+| Level | Canonical wording | Purpose |
+| --- | --- | --- |
+| **MML research architecture** | **Represent meaning. Compile knowledge. Compose concepts.** | Names the three hypotheses: encoding, reusable knowledge, and conceptual specificity. |
+| **Current operational flow** | **Ground the known. Focus the intended. Activate the related.** | Names how the present construction and runtime code moves through semantic identity and execution. |
+
 > **Ground the known. Focus the intended. Activate the related.**
 
-The sentence names the functional triad: **ground meaning -> focus intent -> activate relationships**. Compilation prepares the transition model between grounding and activation; it is essential infrastructure, not a fourth dancer. Personalized PageRank is one implementation beneath `activate(...)`, not part of the triad itself.
+The sentence names the operational sequence: **ground meaning -> focus intent -> activate relationships**. Compilation prepares the transition model between grounding and activation. Personalized PageRank is one implementation beneath `activate(...)`, not part of either vocabulary level. Never call Ground–Focus–Activate “the MML triad”; that name is reserved for the research hypotheses represented by Represent–Compile–Compose.
 
 ## Focus, Attention, and Activation
 

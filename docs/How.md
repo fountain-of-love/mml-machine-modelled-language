@@ -2,6 +2,16 @@
 
 The repository demonstrates representation, execution, and evolution of an explicit semantic weighting matrix. Concepts and governed relations form the source model; the compiled matrix is the numerical object that executes. It does not train or imitate a language model.
 
+Those lifecycle stages implement parts of the canonical research architecture:
+
+| Canonical hypothesis | Current mechanism | Evidence status |
+| --- | --- | --- |
+| **Representation** | semantic grounding, query focus, and explicit identities | Addressed by the bounded A/B benchmark. |
+| **Knowledge State Execution** | deterministic compilation into governed reusable state | One bounded typed-chain experiment compares per-query source reconstruction with compiled reuse; broader independent evidence is still needed. |
+| **Combinatorial Uniqueness** | independent propagation and normalized geometric-mean soft intersection | Mechanism present; systematic held-out test still needed. |
+
+In compact form: **Represent meaning. Compile knowledge. Compose concepts.** The sections below retain the prototype lifecycle—representation, execution, and evolution—but each mechanism should be read against that research contract.
+
 ## Run it
 
 ```bash
@@ -32,6 +42,12 @@ Aliases use deterministic longest-match consumption. A phrase such as `selected 
 The initial relation vocabulary is `supports`, `contradicts`, `requires`, and `qualifies`. Positive relation weights use visible type multipliers; contradictions remain a separate negative contribution and never become negative transition probabilities.
 
 The prototype currently folds co-occurrence plus the positive relation types into one transition matrix. It does not yet preserve synonymy, hierarchy, opposition, part/whole, causality, role correspondence, association, or temporal relation as independently weighted matrices. That family-of-matrices model is the proposed next representation step: task policy composes the relevant matrices into an operator and only then normalizes it for execution.
+
+## Compilation And Reuse
+
+`compile_transition_model(...)` deterministically transforms grounded source observations into a reusable `TransitionModel`. The minimal application compiles during knowledge construction and can execute multiple focused queries against the resulting model without rebuilding it between queries. The elaborated engine similarly builds named, content-addressed matrix state from corpora, aliases, relations, and settings.
+
+This compile-once, query-repeatedly shape is the mechanism behind the Knowledge State Execution hypothesis. The separate Knowledge Is State experiment compares deterministic per-query source reconstruction with compiled execution in one authored typed-chain task. Snapshots, updates, and rollback support identity and governance around the compiled state. Broader evidence still needs independently authored cases, a measured language-model baseline, meaningful scale, and full accounting of construction cost, query volume, update frequency, latency, resources, correction effort, and result stability.
 
 ## Execution
 
@@ -75,6 +91,8 @@ Validated multi-hop reasoning additionally requires typed direction, relation-co
 ## Evolution
 
 Snapshots are content-addressed from the executable construction, governed records, and parameters. Relations and aliases are updated by rebuilding immutable state rather than mutating the running model.
+
+Evolution makes compiled reuse governable: it answers which source state produced an operator, what changed, what consequences followed, and whether the previous artifact can be reconstructed exactly. It does not by itself show that compilation is cheaper or more useful than repeated reconstruction.
 
 `make update-demo` performs:
 

@@ -2,13 +2,25 @@
 
 Machine Modelled Language (MML) is an **executable, weighted knowledge representation whose human-governed structure can be updated from text statistics**. Its central proposition is that progress may come not only from more complicated computation, but from a representation of meaning rich enough for established mathematical structures to do more useful work. Language is represented as addressable concepts, senses, semantic roles, aliases, relationships, and transition weights; queries activate that structure through deterministic matrix operations whose relational routes can be interpreted as a graph.
 
+MML develops that proposition through three cumulative hypotheses:
+
+> **Represent meaning. Compile knowledge. Compose concepts.**
+
+| Hypothesis | Architectural claim | Current status |
+| --- | --- | --- |
+| **Representation** | Explicit, sufficiently rich meaning can make ordinary mathematics semantically useful. | Addressed by bounded A/B experiments under fixed mathematics. |
+| **Knowledge State Execution** | Established knowledge compiled into governed state can expose declared consequences without reconstructing equivalent task state at every use. | One bounded exact typed-chain experiment demonstrates compilation, repeated execution, mutation, inspection, and rollback. |
+| **Combinatorial Uniqueness** | Broad, sufficiently independent semantic coordinates can combine into a narrow, distinctive conceptual target. | Soft-intersection execution exists; systematic validation of the scaling proposition is still needed. |
+
+The hypotheses describe encoding, reuse, and resolution respectively. They are related but independently falsifiable: better representation does not by itself establish a reuse advantage, and a reusable compiled model does not by itself establish that conceptual combinations create useful specificity.
+
 The inversion is intentional:
 
 > **An LLM models language inside a machine; MML models language for operation by a machine.**
 
 An LLM may help discover, map, or express knowledge. MML gives validated semantic structure a durable home outside opaque parameters so it can be inspected, corrected, rebuilt, and reused.
 
-## What “Words Carry Weight” Means
+## Hypothesis 1: Represent Meaning
 
 MML separates what happens before execution from what happens during execution. **Focus is representational narrowing**: an ambiguous expression such as `bank` is mapped to a more precise identity such as `bank_river`. **Activation is the numerical distribution produced after a query strategy executes from that focused identity.** The kernel therefore returns `Activation`, not `Focus`. Attention remains an inspiration-level analogy; it does not name Personalized PageRank, matrix propagation, or another implemented MML mechanism.
 
@@ -20,11 +32,13 @@ The proposed **Common Language Model (CML)** extends the same idea beyond surfac
 
 CML also lets a concept occupy a semantic role. `capacity`, `activation`, `boundary`, `substrate`, `gain`, and `storage`, for example, can provide comparable coordinates across domains without claiming that the physical quantities filling those roles are identical. In that list, `activation` names a governed scientific role; `Activation` in the Python kernel names a query result. The qualification and capitalization prevent those two uses from silently merging. Role is therefore part of the representation, not merely another untyped association.
 
-## From One Matrix to Semantic Operators
+## Hypothesis 2: Compile Knowledge
 
 “Graph” and “matrix” describe two views of the same current mechanism, but they are not interchangeable implementation claims. The graph view names concepts and relations and makes routes explainable. The matrix is the compiled numerical object that the Python code actually executes.
 
-The current prototype combines corpus co-occurrence with the positive governed relations `supports`, `requires`, and `qualifies` in one normalized transition matrix. `contradicts` remains outside that positive matrix as an explicit negative scoring contribution. This is a useful seed, not the intended endpoint.
+Compilation transforms governed identities, observations, relations, and policy into an executable operator. That separates knowledge construction from runtime use: the same named artifact can be queried repeatedly, inspected, rebuilt, versioned, and rolled back without asking a language model to reconstruct its semantic structure for each query.
+
+The activation prototype combines corpus co-occurrence with the positive governed relations `supports`, `requires`, and `qualifies` in one normalized transition matrix. `contradicts` remains outside that positive matrix as an explicit negative scoring contribution. The orthogonal `Knowledge Is State` spine compiles `is-a` and `belongs-to` facts into exact executable state without presenting diffusion as logical inference. Together, the mechanisms make compile-once, execute-many reuse directly testable.
 
 A richer MML should preserve relation semantics in a family of matrices, for example:
 
@@ -43,9 +57,13 @@ M = alpha*A + beta*S + gamma*H + delta*P + epsilon*C + zeta*R - eta*O
 
 followed by the normalization appropriate to the execution contract. The coefficients are governed semantic-policy decisions: a legal evidence task, a scientific analogy task, and a lexical disambiguation task need not value the same relation types equally. Execution therefore activates a semantic field shaped by both the governed conceptual model and the declared task policy.
 
-This makes the phrase literal at three levels: relations carry stored transition weight; task policy determines how relation families contribute; and query execution assigns contextual activation weight to the resulting field.
+This makes the Compilation hypothesis concrete: established semantic structure becomes a reusable numerical artifact, while its governed sources remain available for inspection and correction.
+
+## Hypothesis 3: Compose Concepts
 
 **[Combinatorial uniqueness](Combinatorial-Uniqueness.md)** adds another dimension. A broad concept may carry little discriminative weight alone, while several broad but sufficiently independent concepts form a narrow intersection. `attention + systems theory + ranking`, for example, identifies a more distinctive semantic region than any term by itself. MML executes those fields independently and combines their support, so weight emerges not only from individual nodes but from the structured relation between conceptual coordinates.
+
+The current engine implements this as independently propagated activation fields combined through a normalized geometric mean—a soft intersection rather than a simple additive average. That establishes an executable mechanism, not the larger scaling claim. The remaining question is whether reusable semantic coordinates can reliably construct useful specificity across held-out tasks without requiring a separately learned primitive for every meaningful combination.
 
 ## Governed Meaning Made Executable
 
@@ -53,23 +71,24 @@ MML is intentionally supervised semantic construction. People and institutions d
 
 For example, MML does not have to treat `bank` as one undifferentiated token. Governed identities such as `bank_financial` and `bank_river`, their aliases, relations, and the query context make the intended sense addressable. The current prototype demonstrates this distinction directly.
 
-The evidentiary relationship runs in one direction: **MML is the executable innovation demonstrated in this repository. Its ability to preserve and run governed semantic structure motivates Common Language Model (CML) contracts and a wider Semantic Operating System (SOS).** Those downstream proposals are not evidence that MML works.
+The evidentiary relationship runs in one direction: **MML proposes explicit semantic representation, compiled Knowledge State Execution, and runtime conceptual composition. The repository supplies bounded evidence or mechanism seeds for those hypotheses; that work motivates Common Language Model (CML) contracts and a wider Semantic Operating System (SOS).** Those downstream proposals are consequences to explore, not evidence that MML works.
 
 ## Current Evidence and Proposed Direction
 
+The evidence follows the same triad:
+
 The current Python prototype demonstrates:
 
-- governed concepts, aliases, and typed relations;
-- deterministic construction and query activation;
-- bounded matrix propagation and inspectable relation paths;
-- content-addressed snapshots;
-- local updates and exact rollback;
-- an authored semantic-identity benchmark under fixed mathematics;
-- a small legacy retrieval diagnostic beside lexical baselines.
+- **Representation:** governed semantic identities, aliases, typed relations, and an authored A/B benchmark under fixed mathematics;
+- **Knowledge State Execution:** deterministic typed-fact compilation, content-addressed state, exact repeatable execution, local correction, inspectable paths, and rollback;
+- **Combinatorial Uniqueness mechanics:** independently propagated query fields, soft-intersection combination, and inspectable relation paths; and
+- a small legacy retrieval application diagnostic beside lexical baselines.
 
 It does not yet demonstrate:
 
 - general semantic understanding or autonomous concept discovery;
+- a real language-model comparison against compiled knowledge-state execution;
+- systematic held-out evidence for combinatorial scaling;
 - complete logical or multi-hop reasoning;
 - relation-specific matrix composition or a complete multi-layer executor;
 - production integrity, regulatory compliance, or representative coverage;

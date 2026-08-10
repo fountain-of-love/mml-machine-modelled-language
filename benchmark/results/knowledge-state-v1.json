@@ -1,0 +1,326 @@
+{
+  "benchmark_version": "knowledge-state-v1",
+  "reporting_methodology": "OSCARC-v1",
+  "generated_at": "2026-08-10T21:54:01.361088+00:00",
+  "research_intention": "At least one nontrivial semantic knowledge task can be represented once as governed state and reused through deterministic computation without loss of the required answer.",
+  "standards": [
+    "lexical retrieval does not silently claim a derived terminal answer",
+    "per-query source reconstruction returns both expected terminal memberships",
+    "compiled execution returns the same two expected terminal memberships",
+    "compiled execution is deterministic, inspectable, and invokes no source-read operation per query",
+    "the governed mutation changes luma to nora while preserving the original state and the unrelated mira answer"
+  ],
+  "fixture": {
+    "knowledge_facts": 6,
+    "questions": 2,
+    "source": {
+      "utf8_bytes": 93,
+      "tokens": 18
+    }
+  },
+  "treatments": {
+    "lexical_retrieval": {
+      "luma": {
+        "answer": "vek",
+        "path": [
+          "luma",
+          "vek"
+        ],
+        "facts_inspected": 1,
+        "knowledge_tokens_processed": 3,
+        "knowledge_bytes_processed": 13,
+        "source_file_reads": 1,
+        "source_file_bytes_read": 653,
+        "assessment": "partial"
+      },
+      "mira": {
+        "answer": "dal",
+        "path": [
+          "mira",
+          "dal"
+        ],
+        "facts_inspected": 4,
+        "knowledge_tokens_processed": 12,
+        "knowledge_bytes_processed": 60,
+        "source_file_reads": 1,
+        "source_file_bytes_read": 653,
+        "assessment": "partial"
+      }
+    },
+    "source_reconstruction": {
+      "luma": {
+        "answer": "sena",
+        "path": [
+          "luma",
+          "vek",
+          "tor",
+          "sena"
+        ],
+        "facts_parsed": 6,
+        "edges_traversed": 3,
+        "knowledge_tokens_processed": 18,
+        "knowledge_bytes_processed": 93,
+        "source_file_reads": 1,
+        "source_file_bytes_read": 653,
+        "assessment": "correct"
+      },
+      "mira": {
+        "answer": "ralo",
+        "path": [
+          "mira",
+          "dal",
+          "pri",
+          "ralo"
+        ],
+        "facts_parsed": 6,
+        "edges_traversed": 3,
+        "knowledge_tokens_processed": 18,
+        "knowledge_bytes_processed": 93,
+        "source_file_reads": 1,
+        "source_file_bytes_read": 653,
+        "assessment": "correct"
+      }
+    },
+    "compiled_mml": {
+      "luma": {
+        "answer": "sena",
+        "path": [
+          "luma",
+          "vek",
+          "tor",
+          "sena"
+        ],
+        "nodes_visited": 4,
+        "edges_traversed": 3,
+        "knowledge_tokens_processed": 0,
+        "knowledge_bytes_processed": 0,
+        "source_file_reads": 0,
+        "source_file_bytes_read": 0,
+        "assessment": "correct"
+      },
+      "mira": {
+        "answer": "ralo",
+        "path": [
+          "mira",
+          "dal",
+          "pri",
+          "ralo"
+        ],
+        "nodes_visited": 4,
+        "edges_traversed": 3,
+        "knowledge_tokens_processed": 0,
+        "knowledge_bytes_processed": 0,
+        "source_file_reads": 0,
+        "source_file_bytes_read": 0,
+        "assessment": "correct"
+      }
+    }
+  },
+  "accuracy": {
+    "lexical_retrieval": 0,
+    "source_reconstruction": 2,
+    "compiled_mml": 2,
+    "question_count": 2
+  },
+  "compiled_state": {
+    "snapshot_id": "sha256:cf673e6490f3c2c4a4042b69accaddccc5b9733459cf5a354ce7dfe1b1ec75d8",
+    "deterministic": true,
+    "inspectable_paths": true,
+    "compile_work": {
+      "facts_parsed": 6
+    }
+  },
+  "context": {
+    "fixture_status": "authored development case",
+    "expectation_status": "encoded in the fixture and executable checks before report interpretation; not independently preregistered",
+    "declared_limitations": [
+      "the fixture and implementation share project authorship",
+      "the case has no held-out or independent review contract",
+      "no parameter-tuning study is part of this experiment"
+    ],
+    "sample_size": {
+      "facts": 6,
+      "questions": 2
+    },
+    "treatment_sequence": [
+      "lexical retrieval over source facts",
+      "per-query reconstruction from all source facts",
+      "compile facts once",
+      "compiled execution and deterministic replay",
+      "governed fact replacement and post-change execution"
+    ]
+  },
+  "intervention": {
+    "independent_change": "the six source facts are compiled once into an immutable subject index instead of being reparsed for each question",
+    "fixed": [
+      "facts",
+      "questions",
+      "expected answers",
+      "typed composition rule"
+    ],
+    "observed_mechanism": "deterministic traversal of is-a* followed by belongs-to",
+    "causal_isolation": false
+  },
+  "mutation": {
+    "old_fact": {
+      "subject": "tor",
+      "relation": "belongs-to",
+      "object": "sena"
+    },
+    "new_fact": {
+      "subject": "tor",
+      "relation": "belongs-to",
+      "object": "nora"
+    },
+    "entries_replaced": 1,
+    "facts_scanned": 6,
+    "index_entries_copied": 6,
+    "original_snapshot_id": "sha256:cf673e6490f3c2c4a4042b69accaddccc5b9733459cf5a354ce7dfe1b1ec75d8",
+    "changed_snapshot_id": "sha256:4b477d327eff7188d41fb9c6bd922a8a1bbf5f236e679816945ef89f6a4a1dc4",
+    "changed_execution": {
+      "answer": "nora",
+      "path": [
+        "luma",
+        "vek",
+        "tor",
+        "nora"
+      ],
+      "nodes_visited": 4,
+      "edges_traversed": 3,
+      "knowledge_tokens_processed": 0,
+      "knowledge_bytes_processed": 0,
+      "source_file_reads": 0,
+      "source_file_bytes_read": 0
+    },
+    "original_answer_preserved": true,
+    "unaffected_answer_preserved": true,
+    "retraining_required": false,
+    "source_file_reads_per_query": 0
+  },
+  "timing": {
+    "clock": "time.perf_counter_ns",
+    "runtime": {
+      "python": "3.9.6"
+    },
+    "compile": {
+      "repetitions": 101,
+      "median_ns": 57334,
+      "minimum_ns": 55167
+    },
+    "compile_kernel_only": {
+      "repetitions": 101,
+      "median_ns": 18084,
+      "minimum_ns": 17709
+    },
+    "queries": {
+      "luma": {
+        "lexical_retrieval": {
+          "repetitions": 101,
+          "median_ns": 45750,
+          "minimum_ns": 43750
+        },
+        "source_reconstruction": {
+          "repetitions": 101,
+          "median_ns": 76042,
+          "minimum_ns": 72583
+        },
+        "compiled_mml": {
+          "repetitions": 101,
+          "median_ns": 2750,
+          "minimum_ns": 2625
+        }
+      },
+      "mira": {
+        "lexical_retrieval": {
+          "repetitions": 101,
+          "median_ns": 48250,
+          "minimum_ns": 46000
+        },
+        "source_reconstruction": {
+          "repetitions": 101,
+          "median_ns": 78250,
+          "minimum_ns": 72417
+        },
+        "compiled_mml": {
+          "repetitions": 101,
+          "median_ns": 2875,
+          "minimum_ns": 2750
+        }
+      }
+    },
+    "mutation": {
+      "repetitions": 101,
+      "median_ns": 18833,
+      "minimum_ns": 18458
+    },
+    "compile_boundary": "compile includes opening and parsing the source fixture; compile_kernel_only excludes source I/O",
+    "interpretation": "descriptive observations for a tiny fixture; not a production performance comparison",
+    "derived_observations": {
+      "mean_query_median_ns": {
+        "lexical_retrieval": 47000,
+        "source_reconstruction": 77146,
+        "compiled_mml": 2812
+      },
+      "lexical_over_compiled_query_ratio": 16.71,
+      "reconstruction_over_compiled_query_ratio": 27.43,
+      "observed_compile_break_even_queries_vs_reconstruction": 1,
+      "compiled_latency_lower_than_both_local_baselines": true
+    }
+  },
+  "research_implication": {
+    "classification": "early directional architectural signal",
+    "statement": "Intelligence can be distributed between a probabilistic learner and an explicit, executable semantic environment.",
+    "observed_basis": [
+      "compiled execution preserved both required answers",
+      "compiled queries invoked no source-file reads",
+      "compiled query latency was lower than both local baselines in this run",
+      "one governed correction changed the dependent consequence without retraining"
+    ],
+    "hypotheses_not_measured": [
+      "reduced computation at meaningful scale",
+      "lower energy consumption",
+      "comparative efficiency against a probabilistic language model"
+    ]
+  },
+  "measurement_contract": {
+    "tokens": "lowercase lexical units matched by [a-z0-9]+(?:-[a-z0-9]+)*; not model tokens",
+    "knowledge_tokens_processed": "governed-fact lexical tokens parsed or inspected during the operation",
+    "source_file_reads": "instrumented openings of the complete JSON source fixture",
+    "algorithmic_work": "explicit facts inspected or parsed and graph nodes or edges traversed",
+    "wall_clock": "median and minimum elapsed nanoseconds reported separately from other units"
+  },
+  "conformity": {
+    "judgment": "CONSISTENT",
+    "evidence_strength": "LOW",
+    "criteria": {
+      "lexical_control_is_partial": true,
+      "source_reconstruction_answers_all": true,
+      "compiled_execution_answers_all": true,
+      "compiled_execution_is_deterministic": true,
+      "compiled_paths_are_inspectable": true,
+      "compiled_queries_invoke_no_source_read": true,
+      "mutation_changes_dependent_answer": true,
+      "mutation_preserves_original_and_unrelated_answers": true
+    }
+  },
+  "artifact_identities": {
+    "source_fixture_sha256": "25d8252704b8400ff95f51fea2aa28d3b239af9441bed31a9be1ce5a66cbed72",
+    "compiled_state_snapshot": "sha256:cf673e6490f3c2c4a4042b69accaddccc5b9733459cf5a354ce7dfe1b1ec75d8",
+    "changed_state_snapshot": "sha256:4b477d327eff7188d41fb9c6bd922a8a1bbf5f236e679816945ef89f6a4a1dc4",
+    "kernel_sha256": "82ab54d1c8ba70d6685f107f5e00659601e899d68851921f88ec03bf91e2ab25",
+    "operational_flow_sha256": "6dd7921d9bfb76a565b2647972e59ead2383019b104f4284bd2490958127a7e4",
+    "experiment_generator_sha256": "fb1f81cea35657b9dc0e36ca30d992d48fa35c16d756a3884a249d3a6e1ff14a",
+    "fixture_loader_sha256": "27c2b213545ef6bec52f66170b69762ffb50069b9c416fa42d8830eb642911f4",
+    "methodology_sha256": "7943969ededbadba17f60535379ed552d5de812cd3a068cb67cce8693bdd45ae"
+  },
+  "provenance": {
+    "fixture": "data/demonstration/knowledge_is_state.json",
+    "fixture_loader": "knowledge_state_fixture.py",
+    "kernel": "execute_knowledge_state.py",
+    "operational_flow": "knowledge_is_state.py",
+    "experiment": "knowledge_state_experiment.py",
+    "machine_result": "benchmark/results/knowledge-state-v1.json",
+    "human_report": "docs/benchmark/results/knowledge-state-v1.md"
+  },
+  "evidence_boundary": "One authored six-fact case and one declared is-a* then belongs-to rule; not general language understanding, arbitrary inference, or an efficiency comparison with a language model."
+}

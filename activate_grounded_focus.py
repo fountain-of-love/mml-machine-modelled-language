@@ -56,6 +56,9 @@ class Activation:
 
     model: TransitionModel
     weights: np.ndarray
+    converged: object = None
+    iterations: int = 0
+    residual: object = None
 
     def by_identity(self):
         return {
@@ -94,16 +97,30 @@ class PersonalizedPageRankActivationStrategy:
         anchor[model.identity_to_index[semantic_identity]] = 1.0
         activation = anchor.copy()
 
-        for _ in range(self.max_iterations):
+        residual = None
+        for iteration in range(1, self.max_iterations + 1):
             next_activation = (
                 self.damping * (activation @ model.transition)
                 + (1 - self.damping) * anchor
             )
-            if np.linalg.norm(next_activation - activation, ord=1) < self.tolerance:
-                return Activation(model, next_activation)
+            residual = float(np.linalg.norm(next_activation - activation, ord=1))
+            if residual < self.tolerance:
+                return Activation(
+                    model,
+                    next_activation,
+                    converged=True,
+                    iterations=iteration,
+                    residual=residual,
+                )
             activation = next_activation
 
-        return Activation(model, activation)
+        return Activation(
+            model,
+            activation,
+            converged=False,
+            iterations=self.max_iterations,
+            residual=residual,
+        )
 
 
 def compile_transition_model(sentences, window_size=2):

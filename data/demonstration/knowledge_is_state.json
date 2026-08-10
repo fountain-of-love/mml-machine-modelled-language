@@ -1,0 +1,16 @@
+{
+  "facts": [
+    {"subject": "luma", "relation": "is-a", "object": "vek"},
+    {"subject": "vek", "relation": "is-a", "object": "tor"},
+    {"subject": "tor", "relation": "belongs-to", "object": "sena"},
+    {"subject": "mira", "relation": "is-a", "object": "dal"},
+    {"subject": "dal", "relation": "is-a", "object": "pri"},
+    {"subject": "pri", "relation": "belongs-to", "object": "ralo"}
+  ],
+  "questions": ["luma", "mira"],
+  "expected": {"luma": "sena", "mira": "ralo"},
+  "mutation": {
+    "old": {"subject": "tor", "relation": "belongs-to", "object": "sena"},
+    "new": {"subject": "tor", "relation": "belongs-to", "object": "nora"}
+  }
+}

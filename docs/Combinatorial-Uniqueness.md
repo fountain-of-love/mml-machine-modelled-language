@@ -1,10 +1,29 @@
 # Combinatorial Uniqueness
 
-**Combinatorial uniqueness** is the operational name used in this project for a simple but powerful retrieval principle:
+**Combinatorial Uniqueness is the third MML hypothesis.** It is the operational name used in this project for a simple but potentially powerful retrieval principle:
 
 > Several individually broad, sufficiently independent conceptual constraints can form a narrow and highly distinctive intersection.
 
 The phrase does not claim that MML invented conjunction, faceted search, product-of-experts inference, query composition, or vector intersection. It names how MML applies that family of ideas to governed, addressable concepts and typed relationships.
+
+The hypothesis depends on the first two MML hypotheses:
+
+1. **Representation:** semantic coordinates must first be explicit and addressable; otherwise the system cannot know which meanings it is combining.
+2. **Knowledge State Execution:** the relations or activation behavior of those coordinates must be compiled into governed reusable state; otherwise each query must reconstruct the fields it intends to combine.
+3. **Combinatorial Uniqueness:** runtime composition can then test whether those reusable fields form a more distinctive intersection.
+
+In compact form: **Represent meaning. Compile knowledge. Compose concepts.** Failure of the first two stages can make a combination meaningless even when the numerical intersection is calculated correctly.
+
+## Mechanism Status And Scaling Claim
+
+The elaborated engine already implements a **soft-intersection mechanism**: it propagates each query field independently and combines the resulting support through a normalized geometric mean rather than a simple additive average. Tests verify that this combination is not the arithmetic mean of its inputs.
+
+That mechanism does not establish the broader **combinatorial scaling proposition**. The repository has not yet shown that a useful basis of semantic coordinates covers a substantially larger meaningful conceptual space, that useful combinations generalize across held-out domains, or that governance can reject invalid combinations without erasing the proposed efficiency advantage.
+
+The distinction is therefore:
+
+- **implemented:** independent fields and soft-intersection composition;
+- **to test:** specificity, coverage, coordinate reuse, invalid-combination rejection, and end-to-end construction and execution cost.
 
 ## Core Intuition
 
@@ -122,6 +141,8 @@ Literal identifiers and original query terms should therefore be preserved besid
 
 ## How to Test It
 
+This experiment is the hypothesis-three programme defined by the [MML Research Contract](Research-Contract.md#3-combinatorial-uniqueness). Its inputs must come from explicit represented coordinates and named compiled models so failures can be attributed to representation, compilation, or composition rather than blended together.
+
 A defensible experiment should compare:
 
 1. each single concept;
@@ -140,4 +161,4 @@ The central test is not whether three terms always beat one. It is:
 
 > Does independently propagated, governed concept combination retrieve the intended intersection more accurately and inspectably than the relevant lexical, additive, and dense baselines, at an acceptable construction and execution cost?
 
-That is a falsifiable mechanism claim. Academic visibility, search-engine ranking, and universal cross-domain discovery remain possible consequences to measure, not properties established by the current prototype.
+That is a falsifiable hypothesis claim. Results should be reported against the separate evidence requirements in the [Research Contract](Research-Contract.md#combinatorial-uniqueness-1). Academic visibility, search-engine ranking, combinatorial scaling, and universal cross-domain discovery remain possible consequences to measure, not properties established by the current prototype.

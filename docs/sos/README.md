@@ -3,8 +3,9 @@
 This directory contains the architecture that becomes plausible if Machine Modelled Language proves useful. It is downstream of the executable MML evidence; it is not implemented by the current prototype.
 
 ```text
-MML representation, execution, and evolution
-  -> reusable explicit semantic capability
+explicit semantic representation
+  -> compiled reusable knowledge
+  -> runtime conceptual composition
   -> Common Language Model contracts
   -> dual MML/LLM engine and persistence
   -> proposed Semantic Operating System
@@ -13,9 +14,9 @@ MML representation, execution, and evolution
 
 Read [What MML is](../What.md) first for the conceptual portal, then continue here for the downstream architecture:
 
-1. [Architecture.md](Architecture.md) — the proposed Semantic Operating System and CML role.
-2. [Dual-Engine.md](Dual-Engine.md) — MML for governed execution, LLMs for discovery and expression.
-3. [Dual-Persistence.md](Dual-Persistence.md) — readable knowledge plus executable indexes.
+1. [Architecture.md](Architecture.md) — the proposed Semantic Operating System and how CML and MML support representation, compilation, and composition.
+2. [Dual-Engine.md](Dual-Engine.md) — MML for explicit semantic capability and compiled reuse; LLMs for discovery and expression.
+3. [Dual-Persistence.md](Dual-Persistence.md) — readable governed knowledge plus compiled reusable indexes supporting the Knowledge State Execution hypothesis.
 4. [Commons-Governance.md](Commons-Governance.md) — provenance, disagreement, Git history, and participation.
 5. [Initiative-Alignment.md](Initiative-Alignment.md) — existing initiatives to reuse rather than replace.
 

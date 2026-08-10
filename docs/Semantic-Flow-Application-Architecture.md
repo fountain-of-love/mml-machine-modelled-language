@@ -4,9 +4,15 @@
 
 The current Words Carry Weight experiment is deliberately small, but it is not architecturally neutral. A few sentences, two meanings of `bank`, one transition model, and one Personalized PageRank strategy already establish a direction for a much larger system.
 
+MML has a canonical **research triad**:
+
+> **Represent meaning. Compile knowledge. Compose concepts.**
+
+This document describes the smaller **operational flow** through which the current application begins to exercise those hypotheses:
+
 > **Ground the known. Focus the intended. Activate the related.**
 
-The central dance is a triad:
+In functional terms:
 
 > **Ground meaning -> Focus intent -> Activate relationships**
 
@@ -17,6 +23,23 @@ Corpus --ground--> semantic identity <--focus-- Query
                          |
                          `--activate--> semantic field
 ```
+
+The two levels relate as follows:
+
+```text
+Represent meaning
+  -> ground corpus identities
+  -> focus query identity
+
+Compile knowledge
+  -> construct a reusable transition model
+
+Compose concepts
+  -> activate independent fields
+  -> combine them into a task-specific intersection
+```
+
+The minimal experiment directly exercises grounding, focus, compilation, and single-field activation. The elaborated engine supplies independent multi-field activation and soft intersection. Those mechanisms make the hypotheses testable; they do not establish compiled-reuse or combinatorial-scaling advantages by themselves.
 
 ### Ground
 
@@ -50,7 +73,7 @@ Activation answers: **What semantic field follows from this identity under this 
 
 Grounding and focus approach the same identity from opposite sides. Activation carries that identity outward into its semantic field.
 
-The experiment proposes a functional semantic flow:
+The experiment proposes this operational semantic flow:
 
 ```text
 corpus occurrence -> grounding --+
@@ -69,7 +92,7 @@ Each operation is a stable conceptual joint:
 - **Focus:** narrow a query expression to the intended semantic identity.
 - **Activate:** execute a declared strategy and return the query-relative numerical distribution.
 
-Compilation is essential, but it is not one of the three dancers. It prepares the floor:
+Within the operational flow, compilation prepares reusable state between grounded knowledge and runtime activation:
 
 ```text
 grounded knowledge
@@ -87,7 +110,7 @@ focused query
     activate
 ```
 
-Likewise, Personalized PageRank is not part of the triad. It is one way activation can be performed.
+Likewise, Personalized PageRank is not part of the canonical research triad or the operational vocabulary. It is one way activation can be performed.
 
 This is a fishbone architecture. The spine stays small and intelligible; each joint can spiral into a subsystem with multiple implementations:
 
@@ -113,7 +136,7 @@ activate
   `- path-constrained activation
 ```
 
-The current matrix and Personalized PageRank implementation are branches, not the definition of the system. The lasting architecture is the semantic flow and the contracts between its operations.
+The current matrix and Personalized PageRank implementation are branches, not the definition of the system. The lasting application architecture is the operational flow and the contracts between its operations. Above it, the research architecture remains Represent–Compile–Compose.
 
 ## Proposed Application Shape
 

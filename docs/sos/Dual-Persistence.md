@@ -4,12 +4,16 @@ This document focuses on the persistence side of the **Semantic Operating System
 
 ## The Core Idea
 
+Dual persistence is the main SOS architectural support for the **Knowledge State Execution hypothesis**:
+
+> Once established knowledge is compiled into an executable representation, it need not be reconstructed from prose or latent model parameters every time it is used.
+
 SOS needs two complementary persistence forms:
 
 - **Human-readable knowledge:** notes, pages, records, explanations, provenance, contradictions, and links that people can inspect.
 - **MML matrix/index:** weighted transitions, contextual paths, clusters, and pointers that machines can traverse quickly.
 
-The knowledge base is the durable source of meaning. The matrix is the fast navigational layer over it.
+The knowledge base is the governed, human-readable source of meaning. Matrices and indexes are compiled reusable views over it. Queries execute those views while retaining links to the source records, rather than treating prose or latent parameters as the only place from which task knowledge can be reconstructed.
 
 That separation matters. If the matrix becomes the only store of knowledge, the system becomes opaque again. If the knowledge base has no matrix/index, it remains human-readable but slow to query at scale. Dual persistence keeps both properties alive: inspectability and speed.
 
@@ -17,9 +21,9 @@ That separation matters. If the matrix becomes the only store of knowledge, the 
 
 The analogy is the [Svalbard Global Seed Vault](https://www.seedvault.no/): a preservation model built around durable, long-term stewardship.
 
-SOS proposes a similar idea for knowledge. The knowledge base is a semantic seed vault: a durable, human-readable store of concepts, evidence, relationships, contradictions, and patterns that humanity should not have to rediscover from scratch every time. The fuller initiative alignment is described in [Initiative-Alignment.md](Initiative-Alignment.md#svalbard-global-seed-vault-preservation-analogy).
+SOS proposes a similar idea for knowledge. The knowledge base is a semantic seed vault: a durable, human-readable store of concepts, identities, roles, evidence, relationships, contradictions, constraints, and reusable structures. The fuller initiative alignment is described in [Initiative-Alignment.md](Initiative-Alignment.md#svalbard-global-seed-vault-preservation-analogy).
 
-This is also a sustainability claim. If useful patterns are already known, verified, and preserved, they should not need to be recomputed endlessly through dense stochastic inference. They should be stored in a form that can be read, reviewed, corrected, linked, and reused.
+This creates a sustainability hypothesis. If useful knowledge is already known, verified, and preserved, a compiled view may allow it to be executed repeatedly without reconstructing equivalent task state at every query. Any advantage must include the cost of governance, compilation, storage, updates, and source maintenance.
 
 ## Human-Readable Knowledge
 
@@ -104,15 +108,15 @@ This is a small Memento-like contract at the artifact level: sources are the dur
 
 An execution path references the index structure used for a result. Provenance links those edges back to durable source records. A causal decomposition accounts for the numerical score. Dual persistence must support all three without confusing them: a visually plausible path is not sufficient evidence that an edge was governed, and an evidence link does not prove the path contributed the displayed amount.
 
-## Why MML Can Return Known Patterns Quickly
+## How Compiled Views Could Support Reuse
 
 The analogy is the PageRank algorithm.
 
-Once the graph of pages and links exists, PageRank does not rediscover the web from scratch for every query. It propagates weight through a known link structure. That is why it can return useful importance signals from an already-built graph.
+Once a compiled view exists, an execution strategy can operate over it repeatedly. PageRank supplies one analogy: once its page-link representation exists, it propagates weight through that representation rather than rebuilding the web topology for every run.
 
-MML uses the same kind of mechanism for language and knowledge. If a relation is already discovered, validated, and encoded in the matrix/index layer, the engine can retrieve and propagate through it deterministically. It does not need to repeatedly ask a dense model to rediscover the same route by next-token trial-and-error.
+MML generalizes the architectural separation rather than defining itself through PageRank. Governed semantic sources remain readable; a compiler produces named executable views; and queries reuse those views through a selected strategy. The bounded Knowledge Is State experiment compares that shape with deterministic per-query source reconstruction for one typed-chain task. Independent domains, meaningful scale, and a measured language-model baseline remain outstanding.
 
-This is the practical bridge between combinatorial discovery and sustainable AI. Discovery finds useful intersections and patterns. Dual persistence preserves them as human-readable structure plus machine-traversable weight. MML can then reuse those known patterns quickly.
+This is the practical bridge from governed knowledge to compiled reuse. Representation determines what distinctions exist, dual persistence preserves their authoritative sources and executable views, and runtime composition can combine coordinates from those views. Preserved patterns are one possible content type; they do not define MML by themselves.
 
 ## Matrix As Discovery Surface
 
@@ -145,11 +149,11 @@ This matters because the matrix is inspectable. It can show where the system bel
 
 The LLM can feed the knowledge base by discovery. It can read large volumes of raw material, spot candidate patterns, propose relationships, extract entities, summarise documents, identify contradictions, and suggest abstractions.
 
-MML can then preserve and query the resulting structure. Once a pattern has been validated and encoded, it becomes part of the durable knowledge layer and the fast matrix/index layer.
+MML-oriented governance can then make validated candidates explicit in the durable knowledge layer and compile them into reusable matrix/index views.
 
 The two should cooperate, but they should not be confused.
 
-In this sense, LLMs become less like the final storage location of meaning and more like discovery instruments. They help extract patterns from raw material. MML preserves those patterns in a form that is inspectable, queryable, and reusable.
+In this sense, LLMs become less like the final storage location of meaning and more like discovery instruments. They can propose identities, relations, evidence, and patterns from raw material. Governed sources preserve accepted knowledge; MML compiles and composes executable views over it.
 
 ## How The Prototype Reflects This
 

@@ -26,7 +26,7 @@ class SemanticRepresentationBenchmarkTests(unittest.TestCase):
         self.assertGreaterEqual(len(scenarios), 3)
         self.assertTrue(all(scenario.experiment["focused_queries"] for scenario in scenarios))
 
-    def test_richer_identity_improves_every_declared_probe(self):
+    def test_joint_grounding_and_focus_treatment_improves_every_declared_probe(self):
         result = benchmark.run_benchmark()
         self.assertTrue(result["summary"]["all_scenarios_supported"])
         for scenario in result["scenarios"]:
@@ -34,15 +34,44 @@ class SemanticRepresentationBenchmarkTests(unittest.TestCase):
             self.assertGreater(scenario["grounded_occurrence_count"], 0)
             for probe in scenario["probes"]:
                 self.assertGreater(probe["margin_improvement"], 0)
+                self.assertTrue(
+                    probe["checks"]["intended_versus_contrast_margin_improves"]
+                )
                 self.assertGreater(probe["contrast_reduction"], 0)
                 self.assertGreater(probe["grounded_selectivity"], 0.5)
                 self.assertGreater(probe["selectivity_gain"], 0)
+                self.assertTrue(probe["convergence"]["baseline"]["converged"])
+                self.assertTrue(probe["convergence"]["treatment"]["converged"])
 
     def test_benchmark_is_deterministic(self):
         first = benchmark.run_benchmark()
         second = benchmark.run_benchmark()
         self.assertEqual(first["scenarios"], second["scenarios"])
         self.assertTrue(first["summary"]["deterministic"])
+        self.assertTrue(first["summary"]["all_activations_converged"])
+
+    def test_machine_companion_preserves_modern_oscarc_contract(self):
+        result = benchmark.run_benchmark()
+        self.assertIn("joint semantic identity grounding", result["independent_variable"])
+        self.assertIn("standards", result)
+        self.assertIn("context", result)
+        self.assertIn("intervention", result)
+        self.assertIn("conformity", result)
+        self.assertIn("claim_ladder", result)
+        self.assertIn("artifact_identities", result)
+        self.assertIn("provenance", result)
+        self.assertTrue(all(result["conformity"]["criteria"].values()))
+        self.assertTrue(result["conformity"]["criteria"]["all_probe_margins_improve"])
+        self.assertIn("architecture", result["context"]["runtime"])
+        self.assertIn("blas", result["context"]["runtime"])
+        for scenario in result["scenarios"]:
+            cost = scenario["representation_cost"]
+            self.assertGreater(cost["delta"]["identity_count"], 0)
+            self.assertGreater(cost["delta"]["nonzero_transition_count"], 0)
+            self.assertGreater(cost["delta"]["transition_bytes"], 0)
+
+    def test_checked_in_semantic_artifacts_are_fresh(self):
+        benchmark.check_artifact_freshness(benchmark.run_benchmark())
 
     def test_report_leads_with_project_intention_and_evidence_boundary(self):
         report = benchmark.markdown_report(benchmark.run_benchmark())
@@ -57,8 +86,12 @@ class SemanticRepresentationBenchmarkTests(unittest.TestCase):
         self.assertIn("A: intended share", report)
         self.assertIn("B: intended share", report)
         self.assertIn("what percentage reaches the intended field", report)
-        self.assertIn("Secondary observation: evidence volume and gain", report)
+        self.assertIn("Exploratory secondary observation: evidence volume and gain", report)
         self.assertIn("observed association, not evidence that corpus size caused", report)
+        self.assertIn("Claims ladder", report)
+        self.assertIn("does not isolate either component", report)
+        self.assertIn("Representation cost", report)
+        self.assertIn("Numerical integrity", report)
         self.assertIn("Evidence boundary", report)
 
 

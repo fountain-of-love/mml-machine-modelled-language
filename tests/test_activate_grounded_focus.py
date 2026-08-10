@@ -43,6 +43,9 @@ class ActivateGroundedFocusTests(unittest.TestCase):
         self.assertAlmostEqual(float(first.weights.sum()), 1.0, places=6)
         self.assertGreater(first.weight_for("bank"), 0.0)
         self.assertEqual(first.weight_for("unknown"), 0.0)
+        self.assertTrue(first.converged)
+        self.assertGreater(first.iterations, 0)
+        self.assertLess(first.residual, strategy.tolerance)
 
     def test_activate_accepts_an_interchangeable_strategy(self):
         model = compile_transition_model(("alpha beta",))
@@ -57,6 +60,18 @@ class ActivateGroundedFocusTests(unittest.TestCase):
         model = compile_transition_model(("alpha beta",))
         with self.assertRaisesRegex(ValueError, "not in model"):
             activate(model, "unknown", PersonalizedPageRankActivationStrategy())
+
+    def test_non_convergence_is_explicit(self):
+        model = compile_transition_model(("alpha beta gamma", "gamma delta"))
+        strategy = PersonalizedPageRankActivationStrategy(
+            max_iterations=1, tolerance=0.0
+        )
+
+        activation = activate(model, "alpha", strategy)
+
+        self.assertFalse(activation.converged)
+        self.assertEqual(activation.iterations, 1)
+        self.assertGreater(activation.residual, 0.0)
 
 
 class WordsCarryWeightExperimentTests(unittest.TestCase):

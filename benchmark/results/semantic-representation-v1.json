@@ -1,10 +1,83 @@
 {
   "benchmark_version": "semantic-representation-v1",
-  "generated_at": "2026-08-10T13:46:59.178849+00:00",
+  "generated_at": "2026-08-10T22:12:55.822357+00:00",
   "intention": "Richer meaning representation can make established mathematics produce more useful results.",
   "fixed_mathematics": "converged-personalized-pagerank-v1",
   "reporting_methodology": "OSCARC-v1",
-  "independent_variable": "semantic identity grounding and query focus",
+  "independent_variable": "joint semantic identity grounding and matching query focus",
+  "standard_status": "developmental exploratory criteria encoded in executable checks; no independent preregistration artifact exists",
+  "standards": [
+    "the treatment directs more than half of measured competing-field activation to the intended field",
+    "the intended-field share is higher under treatment than baseline",
+    "the intended-versus-contrast margin is higher under treatment than baseline",
+    "absolute activation in the competing field is lower under treatment than baseline",
+    "all measured activations converge and same-process repetition is deterministic"
+  ],
+  "context": {
+    "fixture_status": "authored development scenarios",
+    "sample_size": {
+      "scenarios": 3,
+      "probes": 6
+    },
+    "shared_authorship_declared": true,
+    "independent_review_contract": false,
+    "held_out": false,
+    "tuning_history": "no independent preregistration or frozen tuning history artifact",
+    "compiler": {
+      "tokenization": "lowercase whitespace split",
+      "window_size": 2
+    },
+    "activation_strategy": {
+      "name": "converged-personalized-pagerank-v1",
+      "damping": 0.85,
+      "max_iterations": 100,
+      "tolerance": 1e-06
+    },
+    "runtime": {
+      "python": "3.9.6",
+      "python_implementation": "CPython",
+      "numpy": "2.0.2",
+      "operating_system": "Darwin",
+      "operating_system_release": "25.1.0",
+      "architecture": "arm64",
+      "blas": {
+        "name": "scipy-openblas",
+        "version": "0.3.27"
+      }
+    },
+    "treatment_sequence": [
+      "compile ambiguous corpus and activate surface query",
+      "measure baseline context fields",
+      "ground declared corpus occurrences and compile treatment corpus",
+      "focus query onto matching governed identity",
+      "measure treatment context fields",
+      "compare paired outcomes and repeat in the same process"
+    ],
+    "missing_controls": [
+      "corpus-grounding-only treatment",
+      "query-focus-only treatment",
+      "swapped or incorrect focus sham",
+      "identity-preserving label control",
+      "topology and edge-count control",
+      "context-vocabulary and parameter sensitivity"
+    ]
+  },
+  "intervention": {
+    "performed_action": "jointly replace declared ambiguous corpus occurrences with governed sense identities and focus each query onto the matching identity",
+    "fixed": [
+      "authored sentences apart from declared identity replacement",
+      "transition-model compiler",
+      "window size",
+      "Personalized PageRank algorithm and settings",
+      "context vocabularies",
+      "metrics"
+    ],
+    "not_isolated": [
+      "the separate effect of corpus grounding",
+      "the separate effect of query focus",
+      "semantic identity quality versus added topology"
+    ]
+  },
   "scenarios": [
     {
       "scenario_id": "identity-bank",
@@ -12,6 +85,23 @@
       "surface_identity": "bank",
       "sentence_count": 8,
       "grounded_occurrence_count": 5,
+      "representation_cost": {
+        "baseline": {
+          "identity_count": 60,
+          "nonzero_transition_count": 269,
+          "transition_bytes": 28800
+        },
+        "treatment": {
+          "identity_count": 61,
+          "nonzero_transition_count": 271,
+          "transition_bytes": 29768
+        },
+        "delta": {
+          "identity_count": 1,
+          "nonzero_transition_count": 2,
+          "transition_bytes": 968
+        }
+      },
       "probes": [
         {
           "identity": "bank_river",
@@ -28,9 +118,22 @@
           "baseline_selectivity": 0.5611965912243231,
           "grounded_selectivity": 0.8557197829175281,
           "selectivity_gain": 0.29452319169320507,
+          "convergence": {
+            "baseline": {
+              "converged": true,
+              "iterations": 47,
+              "residual": 8.333702528985144e-07
+            },
+            "treatment": {
+              "converged": true,
+              "iterations": 47,
+              "residual": 8.358724383352811e-07
+            }
+          },
           "checks": {
             "grounded_field_favors_intended_context": true,
             "intended_context_share_improves": true,
+            "intended_versus_contrast_margin_improves": true,
             "contrast_reduces": true
           },
           "supported": true
@@ -50,15 +153,29 @@
           "baseline_selectivity": 0.4388034087756768,
           "grounded_selectivity": 0.6502154572638237,
           "selectivity_gain": 0.21141204848814688,
+          "convergence": {
+            "baseline": {
+              "converged": true,
+              "iterations": 47,
+              "residual": 8.333702528985144e-07
+            },
+            "treatment": {
+              "converged": true,
+              "iterations": 47,
+              "residual": 8.319074730809661e-07
+            }
+          },
           "checks": {
             "grounded_field_favors_intended_context": true,
             "intended_context_share_improves": true,
+            "intended_versus_contrast_margin_improves": true,
             "contrast_reduces": true
           },
           "supported": true
         }
       ],
-      "supported": true
+      "supported": true,
+      "all_activations_converged": true
     },
     {
       "scenario_id": "identity-bass",
@@ -66,6 +183,23 @@
       "surface_identity": "bass",
       "sentence_count": 6,
       "grounded_occurrence_count": 4,
+      "representation_cost": {
+        "baseline": {
+          "identity_count": 33,
+          "nonzero_transition_count": 136,
+          "transition_bytes": 8712
+        },
+        "treatment": {
+          "identity_count": 34,
+          "nonzero_transition_count": 138,
+          "transition_bytes": 9248
+        },
+        "delta": {
+          "identity_count": 1,
+          "nonzero_transition_count": 2,
+          "transition_bytes": 536
+        }
+      },
       "probes": [
         {
           "identity": "bass_fish",
@@ -82,9 +216,22 @@
           "baseline_selectivity": 0.44991968697027457,
           "grounded_selectivity": 0.513950492092142,
           "selectivity_gain": 0.06403080512186748,
+          "convergence": {
+            "baseline": {
+              "converged": true,
+              "iterations": 30,
+              "residual": 8.251683506609736e-07
+            },
+            "treatment": {
+              "converged": true,
+              "iterations": 30,
+              "residual": 7.351416808102848e-07
+            }
+          },
           "checks": {
             "grounded_field_favors_intended_context": true,
             "intended_context_share_improves": true,
+            "intended_versus_contrast_margin_improves": true,
             "contrast_reduces": true
           },
           "supported": true
@@ -104,15 +251,29 @@
           "baseline_selectivity": 0.5500803130297254,
           "grounded_selectivity": 0.6227057169179866,
           "selectivity_gain": 0.07262540388826122,
+          "convergence": {
+            "baseline": {
+              "converged": true,
+              "iterations": 30,
+              "residual": 8.251683506609736e-07
+            },
+            "treatment": {
+              "converged": true,
+              "iterations": 30,
+              "residual": 9.212984207439268e-07
+            }
+          },
           "checks": {
             "grounded_field_favors_intended_context": true,
             "intended_context_share_improves": true,
+            "intended_versus_contrast_margin_improves": true,
             "contrast_reduces": true
           },
           "supported": true
         }
       ],
-      "supported": true
+      "supported": true,
+      "all_activations_converged": true
     },
     {
       "scenario_id": "identity-crane",
@@ -120,6 +281,23 @@
       "surface_identity": "crane",
       "sentence_count": 6,
       "grounded_occurrence_count": 4,
+      "representation_cost": {
+        "baseline": {
+          "identity_count": 31,
+          "nonzero_transition_count": 138,
+          "transition_bytes": 7688
+        },
+        "treatment": {
+          "identity_count": 32,
+          "nonzero_transition_count": 140,
+          "transition_bytes": 8192
+        },
+        "delta": {
+          "identity_count": 1,
+          "nonzero_transition_count": 2,
+          "transition_bytes": 504
+        }
+      },
       "probes": [
         {
           "identity": "crane_bird",
@@ -136,9 +314,22 @@
           "baseline_selectivity": 0.45276235109738777,
           "grounded_selectivity": 0.5220493440794713,
           "selectivity_gain": 0.06928699298208357,
+          "convergence": {
+            "baseline": {
+              "converged": true,
+              "iterations": 36,
+              "residual": 7.8834772252942e-07
+            },
+            "treatment": {
+              "converged": true,
+              "iterations": 31,
+              "residual": 7.530505127849654e-07
+            }
+          },
           "checks": {
             "grounded_field_favors_intended_context": true,
             "intended_context_share_improves": true,
+            "intended_versus_contrast_margin_improves": true,
             "contrast_reduces": true
           },
           "supported": true
@@ -158,15 +349,29 @@
           "baseline_selectivity": 0.5472376489026123,
           "grounded_selectivity": 0.5978552830648078,
           "selectivity_gain": 0.05061763416219556,
+          "convergence": {
+            "baseline": {
+              "converged": true,
+              "iterations": 36,
+              "residual": 7.8834772252942e-07
+            },
+            "treatment": {
+              "converged": true,
+              "iterations": 37,
+              "residual": 9.934559997552307e-07
+            }
+          },
           "checks": {
             "grounded_field_favors_intended_context": true,
             "intended_context_share_improves": true,
+            "intended_versus_contrast_margin_improves": true,
             "contrast_reduces": true
           },
           "supported": true
         }
       ],
-      "supported": true
+      "supported": true,
+      "all_activations_converged": true
     }
   ],
   "summary": {
@@ -174,7 +379,68 @@
     "probe_count": 6,
     "supported_scenarios": 3,
     "all_scenarios_supported": true,
-    "deterministic": true
+    "deterministic": true,
+    "all_activations_converged": true
   },
-  "evidence_boundary": "Authored development scenarios for semantic identity only; not held-out evidence for every form of richer meaning representation."
+  "conformity": {
+    "judgment": "CONSISTENT",
+    "evidence_strength": "LOW",
+    "criteria": {
+      "all_directional_probe_checks_pass": true,
+      "all_probe_margins_improve": true,
+      "same_process_repetition_is_deterministic": true,
+      "all_activations_converged": true
+    }
+  },
+  "claim_ladder": [
+    {
+      "level": "implementation fact",
+      "claim": "both conditions use the same compiler and Personalized PageRank algorithm/settings",
+      "status": "verified"
+    },
+    {
+      "level": "fixture observation",
+      "claim": "all six joint grounding-and-focus probes improved declared context selectivity and reduced competing-field activation",
+      "status": "observed in authored fixtures"
+    },
+    {
+      "level": "exploratory signal",
+      "claim": "explicit sense identity plus matching query focus can produce a more discriminating activation field",
+      "status": "early directional signal"
+    },
+    {
+      "level": "representation hypothesis",
+      "claim": "semantic identity enrichment generalizes across unseen language tasks",
+      "status": "untested beyond authored fixtures"
+    },
+    {
+      "level": "application hypothesis",
+      "claim": "the activation effect improves routing or retrieval outcomes",
+      "status": "untested"
+    },
+    {
+      "level": "wider MML proposition",
+      "claim": "Richer meaning representation can make established mathematics produce more useful results.",
+      "status": "research intention, not established"
+    }
+  ],
+  "artifact_identities": {
+    "generator_sha256": "ac3ebb251693ffb09e84bab7884291fa507cadf5bfff40bc03fa67ddb2ea4612",
+    "kernel_sha256": "c5878818372485340696f2a1b7f5e4c28ed62dcbd1237c4c1510f8359a4c3545",
+    "operational_flow_sha256": "e3296f785679b1e1efc89cdda634b01711e514fe1d8834ebb1df02e929b4e46a",
+    "comparison_adapter_sha256": "7141e7de3c9ac22222d3200495a702e3c910916dc5d00b698e0447fb863cd36f",
+    "bank_fixture_sha256": "795b44b8aad541ca95d492c016ba646f53a594099c1f6592164b55f692e82371",
+    "methodology_sha256": "7943969ededbadba17f60535379ed552d5de812cd3a068cb67cce8693bdd45ae"
+  },
+  "provenance": {
+    "generator": "benchmark.py",
+    "kernel": "activate_grounded_focus.py",
+    "operational_flow": "words_carry_weight.py",
+    "comparison_adapter": "representation_comparison.py",
+    "bank_fixture": "data/demonstration/words_carry_weight.json",
+    "machine_result": "benchmark/results/semantic-representation-v1.json",
+    "human_report": "docs/benchmark/results/semantic-representation-v1.md",
+    "methodology": "docs/benchmark/oscarc-methodology.md"
+  },
+  "evidence_boundary": "Authored development scenarios for the joint semantic grounding-and-focus treatment only; not isolated evidence for grounding alone, not held-out evidence for richer meaning representation generally, and not evidence for MML hypotheses two or three."
 }
