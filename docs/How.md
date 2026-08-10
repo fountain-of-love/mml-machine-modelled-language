@@ -1,6 +1,6 @@
 # How Machine Modelled Language Works Here
 
-The repository demonstrates representation, execution, and evolution of an explicit weighted semantic graph. It does not train or imitate a language model.
+The repository demonstrates representation, execution, and evolution of an explicit semantic weighting matrix. Concepts and governed relations form the source model; the compiled matrix is the numerical object that executes. It does not train or imitate a language model.
 
 ## Run it
 
@@ -14,7 +14,7 @@ make benchmark-check
 make test
 ```
 
-The first three commands show the mechanism at increasing levels of application. `make trace` prints one self-contained representation → execution → evolution record. `make update-demo` shows the wider consequences of the same kind of governed relation change and exact restoration. The benchmark is a small retrieval diagnostic.
+The first three commands show the mechanism at increasing levels of application. `make trace` prints one self-contained representation → execution → evolution record. `make update-demo` shows the wider consequences of the same kind of governed relation change and exact restoration. `make benchmark-check` runs the semantic representation benchmark; the older retrieval application diagnostic remains available through `make retrieval-benchmark-check`.
 
 ## Representation
 
@@ -31,9 +31,17 @@ Aliases use deterministic longest-match consumption. A phrase such as `selected 
 
 The initial relation vocabulary is `supports`, `contradicts`, `requires`, and `qualifies`. Positive relation weights use visible type multipliers; contradictions remain a separate negative contribution and never become negative transition probabilities.
 
+The prototype currently folds co-occurrence plus the positive relation types into one transition matrix. It does not yet preserve synonymy, hierarchy, opposition, part/whole, causality, role correspondence, association, or temporal relation as independently weighted matrices. That family-of-matrices model is the proposed next representation step: task policy composes the relevant matrices into an operator and only then normalizes it for execution.
+
 ## Execution
 
-`GraphModel` is the small facade over construction and activation. It builds positive transition capacity, preserves governed records, and exposes immutable snapshot state.
+Execution begins only after focus has selected a semantic identity. **Focus is representational narrowing** (`bank -> bank_river`); **activation is the numerical distribution produced after the selected query strategy executes from that identity**. Accordingly, `activate_grounded_focus.py` returns `Activation`, not `Focus`. Attention is not an execution stage or implemented mechanism here.
+
+The minimal demonstration makes that sequence executable: `SemanticFocus` records the broader and focused identities, `focus(...)` validates and applies the narrowing, and `activate(...)` receives only the resulting focused identity.
+
+The construction-side complement is semantic grounding. `SemanticGrounding` records which corpus occurrence denotes which governed identity, and `ground(...)` applies that identification before compilation. Grounding and focus converge on the same identity from corpus and query respectively; neither is numerical activation.
+
+`GraphModel` is the historical name of the current facade over construction, matrix activation, relation-path inspection, and immutable snapshot state. The name reflects how the prototype began, but the class now coordinates more than one responsibility. The intended separation and future naming are documented in [MML in depth](MML-In-Depth.md#implementation-boundaries-matrix-paths-and-events).
 
 Surface `bank` resolves from surrounding context to `bank_river`, `bank_financial`, or both. Each query token produces a bounded local activation field. Multi-token queries combine those fields with a normalized geometric mean, requiring support across fields rather than averaging them.
 
@@ -62,7 +70,7 @@ Validated multi-hop reasoning additionally requires typed direction, relation-co
 
 > Diffusion discovers and ranks candidate semantic routes; typed traversal and validation would determine whether a route satisfies a requested reasoning chain.
 
-`activation` is therefore the correct current term. It is not transformer `attention`, and a high activation score is not automatically `reasoning` or proof.
+`activation` is therefore the correct runtime term. It is neither semantic focus nor transformer `attention`, and a high activation score is not automatically `reasoning` or proof.
 
 ## Evolution
 
@@ -78,9 +86,22 @@ original sources -> exact baseline snapshot and rankings
 
 The demo reports how widely the effect propagates without declaring broad propagation a failure. Structural locality means the authored change itself is explicit and bounded; consequence breadth is a separate observation that must remain traceable.
 
-## Retrieval diagnostic
+## Semantic representation benchmark
 
-The diagnostic ranks 20 polysemy and 30 GDPR documents using lexical overlap, TF-IDF, co-occurrence MML, typed MML, and one fixed hybrid:
+The primary benchmark reuses the `words_carry_weight` comparison across three scenarios: `bank`, `bass`, and `crane`. Every scenario runs the same co-occurrence compiler and Personalized PageRank strategy over an ambiguous representation and a semantically grounded representation. Only identity grounding and query focus change.
+
+For each focused identity, the benchmark checks:
+
+- whether intended-context activation exceeds contrast-context activation;
+- whether the intended-versus-contrast margin improves;
+- whether cross-meaning activation decreases; and
+- whether exact replay produces the same result.
+
+This is authored development evidence for one kind of richer representation: governed semantic identity. It does not yet validate synonymy, hierarchy, semantic roles, relation-specific matrices, or policy composition. See the [benchmark proposal](benchmark/semantic-operator-benchmark-proposal.md) and [v1 result](benchmark/results/semantic-representation-v1.md).
+
+## Retrieval application diagnostic
+
+The legacy diagnostic ranks 20 polysemy and 30 GDPR documents using lexical overlap, TF-IDF, co-occurrence MML, typed MML, and one fixed hybrid:
 
 ```text
 hybrid = mml_typed × (0.2 + 0.8 × lexical_overlap)

@@ -1,18 +1,18 @@
-.PHONY: run run-elaborate run-legal trace test benchmark benchmark-check update-demo
+.PHONY: run run-elaborate run-legal trace test benchmark benchmark-check retrieval-benchmark-check update-demo
 
 PYTHON ?= python3
 
 run:
-	$(PYTHON) pagerank_attention.py
+	$(PYTHON) run_words_carry_weight.py
 
 run-elaborate:
-	$(PYTHON) mml_elaborate_corpus.py
+	$(PYTHON) -m elaborations.mml_elaborate_corpus
 
 run-legal:
-	$(PYTHON) mml_legal_usecase.py
+	$(PYTHON) -m elaborations.mml_legal_usecase
 
 trace:
-	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) mml_trace_demo.py
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m elaborations.mml_trace_demo
 
 test:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m unittest discover -s tests -v
@@ -24,5 +24,8 @@ benchmark:
 benchmark-check:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) benchmark.py --check
 
+retrieval-benchmark-check:
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) retrieval_benchmark.py --check
+
 update-demo:
-	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) mml_update_demo.py
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m elaborations.mml_update_demo

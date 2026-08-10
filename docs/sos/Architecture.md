@@ -142,9 +142,9 @@ That feedback loop matters. The LLM can discover new candidate patterns, but MML
 
 The Python scripts do not define the architecture. They reflect it in miniature:
 
-- `pagerank_attention.py` shows that contextual weight can move through a word graph.
-- `mml_elaborate_corpus.py` builds a richer corpus and matrix, acting as a tiny CML-shaped knowledge field.
-- `mml_legal_usecase.py` acts as the use-case layer, querying that corpus-derived field for an authored GDPR evidence problem.
+- `activate_grounded_focus.py` provides the functional contracts and initial implementations; `words_carry_weight.py` coordinates them as an operational application flow. The experiment, benchmark, and presentation modules are adapters over that flow.
+- `elaborations/mml_elaborate_corpus.py` builds a richer corpus and matrix, acting as a tiny CML-shaped knowledge field.
+- `elaborations/mml_legal_usecase.py` acts as the use-case layer, querying that corpus-derived field for an authored GDPR evidence problem.
 
 The scripts are intentionally small. They showcase the architecture, not a production system.
 

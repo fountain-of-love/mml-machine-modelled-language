@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from mml_elaborate_corpus import (
+from .mml_elaborate_corpus import (
     cosine_similarity,
     group_activation,
     known_words,
@@ -10,7 +10,7 @@ from mml_elaborate_corpus import (
 )
 
 
-DEMO_FIXTURES_PATH = Path(__file__).parent / "data" / "demonstration" / "legal_demo.json"
+DEMO_FIXTURES_PATH = Path(__file__).parent.parent / "data" / "demonstration" / "legal_demo.json"
 _DEMO_FIXTURES = json.loads(DEMO_FIXTURES_PATH.read_text(encoding="utf-8"))
 LEGAL_CASE_THEMES = _DEMO_FIXTURES["themes"]
 EMAIL_EVIDENCE_CANDIDATES = _DEMO_FIXTURES["emails"]
@@ -59,7 +59,7 @@ def curation_ab_result(theme_words, top_n=3):
 def display_email_discovery(top_n=3):
     print("=== Practical Use Case: Emails Supporting A GDPR Access Lawsuit ===")
     print("Goal: identify communications that support a claim that the bank failed to respect a GDPR right of access.")
-    print("Source: uses the corpus-derived transition graph from mml_elaborate_corpus.py.")
+    print("Source: uses the corpus-derived transition matrix from elaborations/mml_elaborate_corpus.py.")
     print("Score: graph-activation similarity gated by exact legal signal overlap.")
     print()
 
@@ -126,4 +126,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

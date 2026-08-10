@@ -49,9 +49,10 @@ class DocumentationTests(unittest.TestCase):
         surfaces = [
             ROOT / "README.md",
             ROOT / "docs" / "How.md",
-            ROOT / "pagerank_attention.py",
-            ROOT / "mml_elaborate_corpus.py",
-            ROOT / "mml_legal_usecase.py",
+            ROOT / "activate_grounded_focus.py",
+            ROOT / "words_carry_weight.py",
+            ROOT / "elaborations" / "mml_elaborate_corpus.py",
+            ROOT / "elaborations" / "mml_legal_usecase.py",
         ]
         found = []
 

@@ -4,7 +4,13 @@ from pathlib import Path
 
 import numpy as np
 
-from mml_graph import GraphModel, graph_snapshot_id, load_aliases, load_relations, stable_sentence_id
+from elaborations.mml_graph import (
+    GraphModel,
+    graph_snapshot_id,
+    load_aliases,
+    load_relations,
+    stable_sentence_id,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]

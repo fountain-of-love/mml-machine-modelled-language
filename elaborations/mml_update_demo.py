@@ -2,7 +2,7 @@
 
 import json
 
-import benchmark
+import retrieval_benchmark as benchmark
 
 
 def rank_with(model, documents, queries):

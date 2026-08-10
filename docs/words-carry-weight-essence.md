@@ -1,29 +1,65 @@
 # Words Carry Weight: The Essence
 
-`pagerank_attention.py` is the smallest executable expression of the mechanism explored by this repository. It shows how language can be turned into an explicit weighted graph and queried through deterministic activation.
+[`activate_grounded_focus.py`](../activate_grounded_focus.py) is the technical kernel of the smallest mechanism explored by this repository. [`words_carry_weight.py`](../words_carry_weight.py) is the operational application flow: it coordinates `ground -> compile` for knowledge construction and `focus -> activate` for runtime use. The bounded experiment, benchmark, and console presentation are adapters over that operational flow. The current transition operator is a matrix; the same structure can be interpreted as a graph when relational paths matter.
+
+> **Ground the known. Focus the intended. Activate the related.**
+
+The larger proposition is:
+
+> **We don't necessarily need increasingly complicated computation. We may need a representation of meaning rich enough that powerful mathematical structures already available to us start doing useful work.**
 
 It does not train a language model, reproduce transformer attention, or infer meaning autonomously. It executes the relationships present in a small authored corpus.
 
+The vocabulary boundary is foundational:
+
+> **Focus is representational narrowing** (`bank -> bank_river`), while **activation is the numerical distribution produced after querying that focused identity**. Attention remains an inspiration-level analogy and does not name a mechanism in this project.
+
+Consequently, the kernel result is `Activation`, not `Focus`. Focus projects onto semantic enrichment or query interpretation—the narrowing of an identity before execution. Activation projects onto the numeric runtime result after execution. This ordering must remain explicit:
+
+```text
+ambiguous expression -> semantic focus -> selected identity -> query strategy -> activation
+```
+
+The code reflects this boundary directly. `SemanticFocus` represents the narrowing and `focus(...)` applies it. Only the returned focused identity is passed to `activate(...)`, which returns `Activation`. Focus is therefore an operation before activation, not a documentation-only synonym for its result.
+
+Construction has a complementary operation: **semantic grounding** identifies a surface occurrence in the corpus as a governed identity before compilation. `SemanticGrounding` and `ground(...)` make `bank occurrence -> bank_river` explicit. Focus and grounding are not inverse functions; they are two ingress paths that converge on the same semantic identity:
+
+```text
+corpus occurrence -> semantic grounding --+
+                                          +-> bank_river -> transition model/query
+query expression  -> semantic focus ------+
+```
+
+A true reverse operation, `bank_river -> "river bank"`, would be lexicalization or rendering and is not implemented by this experiment.
+
 ## From Text to an Executable Weighting Structure
 
-The script performs five operations:
+The minimal demonstration performs five operations:
 
 ```text
 small text corpus
     -> vocabulary of addressable words
     -> word co-occurrence matrix
     -> normalized transition matrix
-    -> query-anchored graph diffusion
-    -> inspectable activation weights
+    -> Personalized PageRank query strategy
+    -> inspectable query-relative activation
 ```
 
 First, each distinct word becomes a node. Words that occur near one another within a sliding window receive weighted connections in the co-occurrence matrix. Repeated proximity increases the corresponding connection weight.
 
 The matrix is then normalized so that every non-empty row describes a distribution of transition capacity from one word to its neighbours. Given the same corpus and settings, this representation is reproducible.
 
-At query time, Personalized PageRank anchors its restart distribution on one selected word. Activation repeatedly moves through the transition matrix while retaining a fixed pull toward the query. The result is a distribution over the vocabulary: words connected strongly and repeatedly to the query receive more activation weight.
+Semantic focus first narrows an ambiguous expression onto a more specific identity: `bank -> bank_river`, for example. At query time, the current strategy uses Personalized PageRank with its restart distribution anchored on that selected semantic identity. Activation repeatedly moves through the transition matrix while retaining a fixed pull toward the query. The result is a query-relative **activation** distribution over the addressable identities. Personalized PageRank is the first strategy implementation, not part of the `TransitionModel` contract.
 
-This is the first literal meaning of the repository's phrase **words carry weight**. A word does not possess one universal importance value. Its weight emerges from its relationships, the compiled graph, and the current query.
+This is the first literal meaning of the repository's phrase **words carry weight**. A word does not possess one universal importance value. Stored weight belongs to transitions; semantic focus selects a more precise starting identity; contextual activation emerges from the model, the query, and the selected strategy.
+
+| Phrase | Technical expression |
+| --- | --- |
+| **Words** | Addressable semantic identities in a `TransitionModel`; future models may also include semantic roles, concepts, or other governed identities. |
+| **Carry** | A query strategy propagates transition capacity through the model. |
+| **Weight** | The compiled operator stores explicit transition capacity between identities. |
+| **Focus** | Semantic enrichment or query interpretation narrows an ambiguous expression to a more precise identity. |
+| **Activation** | Query execution produces the contextual numeric distribution for this particular use. |
 
 The phrase also reaches beyond numerical edge weight. What a word or concept can carry depends on how the model perceives and governs it:
 
@@ -40,15 +76,29 @@ The phrase also reaches beyond numerical edge weight. What a word or concept can
 
 Weight is therefore not merely frequency, popularity, or importance. It is the executable consequence of a concept's identity and position inside a governed semantic structure.
 
-## What the Three Queries Show
+## From Related Concepts to Semantic Roles
 
-The script queries `river`, `money`, and `bank`.
+A richer representation does more than state that two concepts are related. A concept can occupy a role such as `capacity`, `activation`, `boundary`, `substrate`, `gain`, or `storage`. The CML experiments use these roles to compare structures across domains while preserving the differences between their physical meanings.
 
-- `river` activates the neighbourhood built from the natural setting.
-- `money` activates the neighbourhood built from the financial setting.
-- `bank` activates connections accumulated from both settings.
+The same principle applies to relation type. Synonymy, hierarchy, opposition, part/whole, causality, role correspondence, association, and temporal order should not be collapsed into one undifferentiated adjacency matrix. They can be compiled as a family of matrices and combined for a task through explicit semantic-policy coefficients:
 
-The third result exposes the important limitation. The corpus uses the same surface token, `bank`, for a river bank and a financial institution. Consequently, the graph contains one node that merges both senses:
+```text
+M = alpha*A + beta*S + gamma*H + delta*P + epsilon*C + zeta*R - eta*O
+```
+
+After suitable normalization, `M` becomes the task-specific propagation operator. A query then activates not just a node but a semantic field shaped by identity, role, relation type, and declared policy. This is the stronger MML meaning of **words carry weight**.
+
+The current prototype has not implemented this family. It uses one positive transition matrix containing co-occurrence and three typed positive relations, with contradiction handled separately. The prototype demonstrates the seed from which the richer representation can be tested.
+
+## What the Current Queries Show
+
+The demonstration compares three related queries across two representations:
+
+- `bank` queries the original model in which one identity accumulates both meanings;
+- `bank_river` queries the grounded model using the river-bank identity; and
+- `bank_financial` queries the same grounded model using the financial identity.
+
+The first result exposes the important limitation. The original corpus uses the same surface token, `bank`, for a river bank and a financial institution. Consequently, its transition model contains one addressable identity that merges both meanings:
 
 ```text
 river -----------+
@@ -58,7 +108,7 @@ money -----------|
 loan ------------+
 ```
 
-The algorithm is not making an error when it produces a mixed activation field. It is faithfully executing an ambiguous representation. The conceptual distinction between the two meanings was never made addressable.
+The query strategy is not making an error when it produces mixed activation. It is faithfully executing an unfocused representation. The conceptual distinction between the two meanings was never made addressable.
 
 ## How It Contributes to MML
 
@@ -70,7 +120,7 @@ The script establishes the statistical substrate of Machine Modelled Language:
 - a query produces contextual activation rather than a permanent word ranking;
 - the representation can be rebuilt when its source structure changes.
 
-This is necessary for MML, but it is not the complete MML proposition. MML adds governed semantic structure: stable concepts, distinct senses, aliases, typed relations, provenance, corrections, snapshots, and rollback. Human or institutional curation decides which distinctions should exist; the machine compiles and executes them.
+This is necessary for MML, but it is not the complete MML proposition. MML adds governed semantic structure: stable concepts, distinct senses, aliases, typed relations, provenance, corrections, snapshots, and rollback. Human or institutional enrichment decides which distinctions should exist; the machine compiles and executes them.
 
 The script makes the minimal conceptual step by comparing two controlled scenarios. Scenario A preserves the ambiguous `bank` node. Scenario B separates it into governed identities, `bank_river` and `bank_financial`:
 
@@ -88,9 +138,9 @@ Run the comparison with:
 make run
 ```
 
-That comparison isolates the essential effect of conceptual curation:
+That comparison isolates the essential effect of enriching semantic identity:
 
-> Human curation makes meaning addressable; MML compiles that structure into reproducible weights and makes its consequences executable and inspectable.
+> Human enrichment makes meaning addressable; MML compiles that structure into reproducible weights and makes its consequences executable and inspectable.
 
 ## From Activation Toward Reasoning
 
@@ -141,11 +191,11 @@ These dimensions can eventually contribute to reasoning because they turn loose 
 
 ## One Small Example of a Larger Field
 
-`pagerank_attention.py` isolates one dimension: **conceptual identity**. It demonstrates that splitting an ambiguous surface word changes the compiled graph and the activation weights produced by the same algorithm.
+The minimal demonstration isolates one dimension: **semantic identity**. It demonstrates that focusing an ambiguous surface word onto distinct semantic identities changes the compiled transition model—and therefore its graph interpretation—and the activation produced by the same query strategy.
 
 Other experiments are required to isolate the remaining dimensions. A useful progression would compare:
 
-1. ambiguous and curated identity;
+1. ambiguous and enriched identity;
 2. untyped and typed relations;
 3. undirected and directed relations;
 4. reachable paths and composition-valid paths;
@@ -154,10 +204,10 @@ Other experiments are required to isolate the remaining dimensions. A useful pro
 7. anonymous edges and provenance-bearing edges;
 8. ranked candidate routes and symbolically validated answers.
 
-Each experiment should change one governed dimension while holding the other inputs and execution settings stable. That makes the consequence of curation observable instead of blending many improvements into one opaque result.
+Each experiment should change one governed dimension while holding the other inputs and execution settings stable. That makes the consequence of enrichment observable instead of blending many improvements into one opaque result.
 
 ## Evidence Boundary
 
-The script demonstrates weighted graph construction, conceptual identity curation, and query-anchored activation over a tiny authored corpus. It does not demonstrate general semantic understanding, automatic word-sense discovery, transformer attention, complete relation composition, symbolic validation, validated reasoning, or superiority over established retrieval systems.
+The demonstration shows transition-model construction, semantic focus through identity enrichment, and query-relative activation over a tiny authored corpus. It does not demonstrate general semantic understanding, automatic word-sense discovery, transformer attention, complete relation composition, symbolic validation, validated reasoning, or superiority over established retrieval systems.
 
 Its value is more foundational: it makes the relationship between representation and execution visible. If two meanings share one node, their weights mix. If governance gives those meanings separate identities, the executable topology—and therefore the resulting activation—can change.

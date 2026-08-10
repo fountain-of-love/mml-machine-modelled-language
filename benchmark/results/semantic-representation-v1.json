@@ -1,0 +1,180 @@
+{
+  "benchmark_version": "semantic-representation-v1",
+  "generated_at": "2026-08-10T13:46:59.178849+00:00",
+  "intention": "Richer meaning representation can make established mathematics produce more useful results.",
+  "fixed_mathematics": "converged-personalized-pagerank-v1",
+  "reporting_methodology": "OSCARC-v1",
+  "independent_variable": "semantic identity grounding and query focus",
+  "scenarios": [
+    {
+      "scenario_id": "identity-bank",
+      "description": "Grounding bank as river land or a financial institution.",
+      "surface_identity": "bank",
+      "sentence_count": 8,
+      "grounded_occurrence_count": 5,
+      "probes": [
+        {
+          "identity": "bank_river",
+          "primary_context": "river",
+          "contrast_context": "financial",
+          "baseline_primary": 0.06187644803018966,
+          "baseline_contrast": 0.048381613044625786,
+          "grounded_primary": 0.11364278864840907,
+          "grounded_contrast": 0.01916095261949807,
+          "baseline_margin": 0.01349483498556387,
+          "grounded_margin": 0.094481836028911,
+          "margin_improvement": 0.08098700104334713,
+          "contrast_reduction": 0.029220660425127717,
+          "baseline_selectivity": 0.5611965912243231,
+          "grounded_selectivity": 0.8557197829175281,
+          "selectivity_gain": 0.29452319169320507,
+          "checks": {
+            "grounded_field_favors_intended_context": true,
+            "intended_context_share_improves": true,
+            "contrast_reduces": true
+          },
+          "supported": true
+        },
+        {
+          "identity": "bank_financial",
+          "primary_context": "financial",
+          "contrast_context": "river",
+          "baseline_primary": 0.048381613044625786,
+          "baseline_contrast": 0.06187644803018966,
+          "grounded_primary": 0.06390410398767933,
+          "grounded_contrast": 0.03437732453540538,
+          "baseline_margin": -0.01349483498556387,
+          "grounded_margin": 0.02952677945227395,
+          "margin_improvement": 0.04302161443783782,
+          "contrast_reduction": 0.027499123494784276,
+          "baseline_selectivity": 0.4388034087756768,
+          "grounded_selectivity": 0.6502154572638237,
+          "selectivity_gain": 0.21141204848814688,
+          "checks": {
+            "grounded_field_favors_intended_context": true,
+            "intended_context_share_improves": true,
+            "contrast_reduces": true
+          },
+          "supported": true
+        }
+      ],
+      "supported": true
+    },
+    {
+      "scenario_id": "identity-bass",
+      "description": "Grounding bass as a fish or a musical instrument.",
+      "surface_identity": "bass",
+      "sentence_count": 6,
+      "grounded_occurrence_count": 4,
+      "probes": [
+        {
+          "identity": "bass_fish",
+          "primary_context": "aquatic",
+          "contrast_context": "musical",
+          "baseline_primary": 0.051118212109694236,
+          "baseline_contrast": 0.06249809228880951,
+          "grounded_primary": 0.06183676627558457,
+          "grounded_contrast": 0.05847981523767595,
+          "baseline_margin": -0.011379880179115273,
+          "grounded_margin": 0.0033569510379086176,
+          "margin_improvement": 0.01473683121702389,
+          "contrast_reduction": 0.004018277051133556,
+          "baseline_selectivity": 0.44991968697027457,
+          "grounded_selectivity": 0.513950492092142,
+          "selectivity_gain": 0.06403080512186748,
+          "checks": {
+            "grounded_field_favors_intended_context": true,
+            "intended_context_share_improves": true,
+            "contrast_reduces": true
+          },
+          "supported": true
+        },
+        {
+          "identity": "bass_instrument",
+          "primary_context": "musical",
+          "contrast_context": "aquatic",
+          "baseline_primary": 0.06249809228880951,
+          "baseline_contrast": 0.051118212109694236,
+          "grounded_primary": 0.06654622347915189,
+          "grounded_contrast": 0.04032002436664451,
+          "baseline_margin": 0.011379880179115273,
+          "grounded_margin": 0.026226199112507377,
+          "margin_improvement": 0.014846318933392104,
+          "contrast_reduction": 0.010798187743049727,
+          "baseline_selectivity": 0.5500803130297254,
+          "grounded_selectivity": 0.6227057169179866,
+          "selectivity_gain": 0.07262540388826122,
+          "checks": {
+            "grounded_field_favors_intended_context": true,
+            "intended_context_share_improves": true,
+            "contrast_reduces": true
+          },
+          "supported": true
+        }
+      ],
+      "supported": true
+    },
+    {
+      "scenario_id": "identity-crane",
+      "description": "Grounding crane as a bird or lifting machinery.",
+      "surface_identity": "crane",
+      "sentence_count": 6,
+      "grounded_occurrence_count": 4,
+      "probes": [
+        {
+          "identity": "crane_bird",
+          "primary_context": "bird",
+          "contrast_context": "machine",
+          "baseline_primary": 0.07890628898113847,
+          "baseline_contrast": 0.0953712073475392,
+          "grounded_primary": 0.0846379212381069,
+          "grounded_contrast": 0.07748836471164139,
+          "baseline_margin": -0.016464918366400738,
+          "grounded_margin": 0.007149556526465511,
+          "margin_improvement": 0.02361447489286625,
+          "contrast_reduction": 0.017882842635897817,
+          "baseline_selectivity": 0.45276235109738777,
+          "grounded_selectivity": 0.5220493440794713,
+          "selectivity_gain": 0.06928699298208357,
+          "checks": {
+            "grounded_field_favors_intended_context": true,
+            "intended_context_share_improves": true,
+            "contrast_reduces": true
+          },
+          "supported": true
+        },
+        {
+          "identity": "crane_machine",
+          "primary_context": "machine",
+          "contrast_context": "bird",
+          "baseline_primary": 0.0953712073475392,
+          "baseline_contrast": 0.07890628898113847,
+          "grounded_primary": 0.11022818045044927,
+          "grounded_contrast": 0.07414449898023577,
+          "baseline_margin": 0.016464918366400738,
+          "grounded_margin": 0.0360836814702135,
+          "margin_improvement": 0.01961876310381276,
+          "contrast_reduction": 0.0047617900009026964,
+          "baseline_selectivity": 0.5472376489026123,
+          "grounded_selectivity": 0.5978552830648078,
+          "selectivity_gain": 0.05061763416219556,
+          "checks": {
+            "grounded_field_favors_intended_context": true,
+            "intended_context_share_improves": true,
+            "contrast_reduces": true
+          },
+          "supported": true
+        }
+      ],
+      "supported": true
+    }
+  ],
+  "summary": {
+    "scenario_count": 3,
+    "probe_count": 6,
+    "supported_scenarios": 3,
+    "all_scenarios_supported": true,
+    "deterministic": true
+  },
+  "evidence_boundary": "Authored development scenarios for semantic identity only; not held-out evidence for every form of richer meaning representation."
+}

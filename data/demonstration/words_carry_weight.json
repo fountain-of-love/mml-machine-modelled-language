@@ -1,0 +1,32 @@
+{
+  "sentences": [
+    "i ate a crisp apple while sitting by the river bank",
+    "a cool breeze moved through the trees and across the water",
+    "dark clouds gathered above the river and a storm was coming",
+    "i left the river bank before the rain began",
+    "i needed money and asked an eu bank for a loan",
+    "the process went badly and the bank made several mistakes",
+    "i used my gdpr rights to understand what had happened",
+    "instead of fixing the problem the bank kept digging a bigger hole"
+  ],
+  "semantic_groundings": [
+    {"sentence_index": 0, "surface_identity": "bank", "grounded_identity": "bank_river"},
+    {"sentence_index": 3, "surface_identity": "bank", "grounded_identity": "bank_river"},
+    {"sentence_index": 4, "surface_identity": "bank", "grounded_identity": "bank_financial"},
+    {"sentence_index": 5, "surface_identity": "bank", "grounded_identity": "bank_financial"},
+    {"sentence_index": 7, "surface_identity": "bank", "grounded_identity": "bank_financial"}
+  ],
+  "original_query": "bank",
+  "focused_queries": [
+    {"source_identity": "bank", "focused_identity": "bank_river", "primary_context": "river", "contrast_context": "financial"},
+    {"source_identity": "bank", "focused_identity": "bank_financial", "primary_context": "financial", "contrast_context": "river"}
+  ],
+  "contexts": {
+    "river": ["river", "water", "rain"],
+    "financial": ["money", "loan", "eu", "mistakes"]
+  },
+  "display_exclusions": [
+    "a", "an", "and", "before", "by", "for", "i", "instead", "my", "of",
+    "the", "to", "was", "what", "while"
+  ]
+}

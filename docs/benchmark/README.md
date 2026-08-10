@@ -1,4 +1,14 @@
-# Retrieval Diagnostic
+# Benchmarks
+
+The primary benchmark evaluates MML's central research intention: **richer meaning representation can make established mathematics produce more useful results**. Its design is documented in the [Semantic Representation Benchmark Proposal](semantic-operator-benchmark-proposal.md), and its first executable report is [Semantic Representation Benchmark v1](results/semantic-representation-v1.md).
+
+Run it with `make benchmark-check`, or regenerate its JSON and Markdown evidence with `make benchmark`.
+
+Benchmark and scientific results are reported using the [OSCARC methodology](oscarc-methodology.md), separating observation, standard, chronology/context, actions, measured result, conformity judgment, and recommendation.
+
+## Legacy retrieval diagnostic
+
+The retrieval diagnostic remains an application-level regression and can be run with `make retrieval-benchmark-check`.
 
 The active benchmark is intentionally small. It checks that MML remains deterministic and useful on two authored development fixtures; it does not decide whether MML succeeds as executable semantic infrastructure.
 
@@ -22,9 +32,9 @@ The active prototype checks are limited to:
 - low absolute retrieval floors;
 - regression against the recorded reference.
 
-They are opportunities for early failure detection, not production-grade integrity guarantees. The current runner does not yet provide exhaustive schema/judgment validation, signing, protected release history, independent assessment, or held-out evidence. `make benchmark` refuses to replace a known regressed reference unless the operator explicitly supplies `--accept-regression`; that override should accompany a documented rationale.
+They are opportunities for early failure detection, not production-grade integrity guarantees. The current runner does not yet provide exhaustive schema/judgment validation, signing, protected release history, independent assessment, or held-out evidence. `python3 retrieval_benchmark.py --write` refuses to replace a known regressed reference unless the operator explicitly supplies `--accept-regression`; that override should accompany a documented rationale.
 
-Run `make benchmark` to regenerate [the report](results/v1.md) and `make benchmark-check` to verify without rewriting it.
+Run `python3 retrieval_benchmark.py --write` to regenerate [the report](results/v1.md) and `make retrieval-benchmark-check` to verify without rewriting it.
 
 Earlier work on challenge slices, seven rankers, hybrid selection, sensitivity tuning, acceptance verdicts, and provisional locality thresholds is preserved in [the archived research note](archive/v1-retrieval-research.md). Those findings remain available without organizing the project around them.
 

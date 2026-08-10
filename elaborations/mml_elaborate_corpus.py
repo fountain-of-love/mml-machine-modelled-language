@@ -11,8 +11,8 @@ def tokenize(text):
 
 # 1. Load the balanced polysemy and separate GDPR-law construction layers.
 CORPUS_PATHS = [
-    Path(__file__).parent / "data" / "construction" / "polysemy_corpus.txt",
-    Path(__file__).parent / "data" / "construction" / "gdpr_law_corpus.txt",
+    Path(__file__).parent.parent / "data" / "construction" / "polysemy_corpus.txt",
+    Path(__file__).parent.parent / "data" / "construction" / "gdpr_law_corpus.txt",
 ]
 corpus = [
     line.strip()
@@ -455,4 +455,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

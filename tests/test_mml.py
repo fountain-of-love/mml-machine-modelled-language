@@ -2,9 +2,8 @@ import unittest
 
 import numpy as np
 
-import mml_elaborate_corpus as mml
-import mml_legal_usecase as legal
-import pagerank_attention as essence
+from elaborations import mml_elaborate_corpus as mml
+from elaborations import mml_legal_usecase as legal
 
 
 class TransitionGraphTests(unittest.TestCase):
@@ -52,32 +51,6 @@ class TransitionGraphTests(unittest.TestCase):
     def test_all_unknown_query_fails_explicitly(self):
         with self.assertRaisesRegex(ValueError, "no words"):
             mml.activation_distribution(["not_in_vocabulary"])
-
-    def test_essence_demo_returns_converged_distribution(self):
-        scores = essence.query_anchored_diffusion("river", essence.P)
-        self.assertAlmostEqual(float(scores.sum()), 1.0, places=6)
-
-    def test_essence_curation_separates_bank_senses(self):
-        result = essence.curation_ab_result()
-        river = result["bank_river"]
-        financial = result["bank_financial"]
-
-        self.assertGreater(river["own_context_weight"], river["opposite_context_weight"])
-        self.assertGreater(financial["own_context_weight"], financial["opposite_context_weight"])
-
-    def test_essence_curation_reduces_cross_sense_leakage(self):
-        result = essence.curation_ab_result()
-        ambiguous = result["ambiguous"]
-
-        self.assertLess(
-            result["bank_river"]["opposite_context_weight"],
-            ambiguous["financial_context_weight"],
-        )
-        self.assertLess(
-            result["bank_financial"]["opposite_context_weight"],
-            ambiguous["river_context_weight"],
-        )
-
 
 class LegalDemoTests(unittest.TestCase):
     def test_empty_theme_ranking_is_safe_for_package_selection(self):

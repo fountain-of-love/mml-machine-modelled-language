@@ -2,8 +2,8 @@
 
 import json
 
-import benchmark
-from mml_graph import stable_sentence_id
+import retrieval_benchmark as benchmark
+from .mml_graph import stable_sentence_id
 
 
 QUERY_ID = "QG3"

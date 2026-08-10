@@ -74,7 +74,7 @@ $$
 
 A candidate cannot dominate merely because one broad field assigns it a very high score. Weak support from another field suppresses the product. This behaves like a soft intersection over graph activation rather than an arithmetic average of query meanings. The larger probe bench normalises this combination directly; `GraphModel` first corrects it for background hub frequency and then normalises the final field.
 
-The executable implementation is visible in [`GraphModel.activation`](../mml_graph.py) and the larger probe bench in [`query_anchored_diffusion`](../mml_elaborate_corpus.py). The regression test explicitly verifies that multi-token activation is not the additive average of individual fields.
+The elaborated implementation is visible in [`GraphModel.activation`](../elaborations/mml_graph.py) and the larger probe bench in [`query_anchored_diffusion`](../elaborations/mml_elaborate_corpus.py). The regression test explicitly verifies that multi-token activation is not the additive average of individual fields.
 
 ## Why the Broad Combination Can Be Useful
 

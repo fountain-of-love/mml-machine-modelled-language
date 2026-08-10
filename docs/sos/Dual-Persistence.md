@@ -155,8 +155,8 @@ In this sense, LLMs become less like the final storage location of meaning and m
 
 The current scripts show dual persistence in miniature:
 
-- `mml_elaborate_corpus.py` contains the small knowledge source: the corpus that expresses distinctions, relationships, contrasts, and escalation patterns.
+- `elaborations/mml_elaborate_corpus.py` contains the small knowledge source: the corpus that expresses distinctions, relationships, contrasts, and escalation patterns.
 - The generated vocabulary, co-occurrence matrix, and transition matrix act as the MML index.
-- `mml_legal_usecase.py` queries the corpus-derived matrix and uses activation weights to rank authored evidence snippets.
+- `elaborations/mml_legal_usecase.py` queries the corpus-derived matrix and uses activation weights to rank authored evidence snippets.
 
 This remains a small in-memory prototype. It now includes explicit bank-sense concepts, governed GDPR aliases and relations, content snapshots, observable update consequences, and exact restoration. Its current revision is dirty and pre-publication, so the snapshot proves content replay rather than public Git governance. The architectural shape is nevertheless testable: readable sources on one side, a reproducible weighted index on the other, and explicit identities connecting them.

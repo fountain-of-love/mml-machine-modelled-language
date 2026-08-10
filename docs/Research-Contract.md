@@ -53,7 +53,13 @@ Deterministic replay is one component of auditability. It does not replace prove
 
 These three demonstrations are the current centre of the project.
 
-## Retrieval diagnostic
+## Semantic representation benchmark
+
+The primary executable benchmark reuses the Words Carry Weight mechanism across three authored ambiguity scenarios. It holds the co-occurrence compiler and Personalized PageRank query strategy fixed while changing semantic identity grounding and query focus. It measures intended-versus-contrast margin, cross-meaning activation, and deterministic replay.
+
+This first version is development evidence that richer semantic identity can improve the usefulness of the same mathematics in these bounded cases. It does not establish the broader hypothesis for association, synonymy, hierarchy, roles, constraints, or policy-composed relation matrices. Those require new controlled suites with the same representation-first experimental discipline.
+
+## Retrieval application diagnostic
 
 The 50-document, six-query synthetic fixture is retained as a small downstream diagnostic. It compares lexical overlap, TF-IDF, co-occurrence MML, typed MML, and one fixed multiplicative MML/lexical hybrid. The hybrid makes complementarity reproducible without calibration or parameter search. MML additionally receives supervised concept mappings and negative evidence; the lexical baselines do not. The comparison therefore measures end-to-end treatments, not equal-input algorithms. The diagnostic checks determinism, basic usefulness, and regression; it is not an acceptance test for MML or a production integrity system.
 
@@ -70,7 +76,7 @@ Those harder diagnostics compare useful observable outcomes, but they do not def
 5. Community proposal, review, correction, fork, and publication history.
 6. Sparse performance and resource measurements at meaningful scale.
 
-The active [retrieval report](benchmark/results/v1.md) and [governance contract](sos/Commons-Governance.md) state the present boundary.
+The active [semantic representation report](benchmark/results/semantic-representation-v1.md), legacy [retrieval report](benchmark/results/v1.md), and [governance contract](sos/Commons-Governance.md) state the present boundary.
 
 ## Proposed next step: one Linked Open Data slice
 

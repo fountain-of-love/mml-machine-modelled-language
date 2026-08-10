@@ -4,6 +4,12 @@ This document focuses on **Machine Modelled Language (MML)** itself: how its exp
 
 This document describes the executable innovation independently. If that mechanism proves useful, it opens the door to the proposed [dual engine](sos/Dual-Engine.md), [Semantic Operating System](sos/Architecture.md), and [dual persistence](sos/Dual-Persistence.md) architecture.
 
+> **Ground the known. Focus the intended. Activate the related.**
+
+This triad separates corpus grounding, query focus, and relational activation. Compilation prepares their executable transition model; Personalized PageRank is one activation strategy.
+
+The central design claim is that MML does not begin by inventing a more complicated computation. It begins by making meaning more explicit so that matrices, weighted operators, normalization, and propagation can do useful semantic work.
+
 ## MML Initialization: Construction Phase
 
 MML begins with an explicit semantic construction: concepts, aliases, relation types, evidence, and sense distinctions that the machine can execute. The current prototype uses a small local vocabulary and governed records; it does not require the wider SOS architecture to operate.
@@ -42,12 +48,14 @@ The difference is that a production architecture would update transitions betwee
 
 ## MML Execution: Runtime Phase
 
-When a user enters a query, the system maps the input tokens onto the designed knowledge representation: graph nodes, sense candidates, ontology links, and contextual edges. Those activated nodes become the teleportation vector `v`.
+The representation/query boundary precedes runtime: focus narrows an ambiguous expression to a selected semantic identity; activation is the numeric distribution produced by executing from that identity. Attention remains an analogy to orientation, not an implemented mechanism or a synonym for either stage.
 
-In the current script, querying `river` creates a vector where all probability mass starts at the `river` index:
+When a user enters a query, the system maps the input tokens onto the designed knowledge representation: semantic identities, sense candidates, ontology links, and contextual relations. The selected query identities become the restart vector `v`.
+
+In the minimal demonstration, querying `bank`, `bank_river`, or `bank_financial` creates a vector where all probability mass starts at the selected identity's index. For example:
 
 ```text
-v_river = 1.0
+v_bank_river = 1.0
 ```
 
 The benchmark engine then runs a fixed number of local propagation steps:
@@ -56,11 +64,11 @@ The benchmark engine then runs a fixed number of local propagation steps:
 pi_next = d * (pi @ P) + (1 - d) * v
 ```
 
-The resulting activation distribution assigns weight to nodes reachable within the declared execution horizon. It deliberately stops after a bounded number of steps rather than converging to a stationary distribution, which helps preserve local query structure. Multiple query fields are propagated independently and combined through a normalized geometric mean. This is graph activation, not transformer attention and not proof that the representation understands the query.
+The benchmark's resulting activation distribution assigns weight to nodes reachable within the declared execution horizon. It deliberately stops after a bounded number of steps rather than converging to a stationary distribution, which helps preserve local query structure. Multiple query fields are propagated independently and combined through a normalized geometric mean. This is graph-interpretable matrix activation, not transformer attention and not proof that the representation understands the query.
 
 The combination implements **[combinatorial uniqueness](Combinatorial-Uniqueness.md)**: individually broad conceptual fields can form a narrow intersection when they impose distinct constraints. A combination can therefore carry greater discriminative weight than any participating term alone, because a candidate must retain support across the independently propagated fields. This is related to established conjunction, faceted search, and product-of-experts ideas. MML's specific contribution is to execute that intersection over governed, addressable semantic identities and relations.
 
-The minimal script still demonstrates conventional personalized PageRank convergence. That historical demonstration should not be confused with the bounded `GraphModel` used by the development benchmark.
+The minimal demonstration uses semantic focus to select identities such as `bank_river`; the kernel calls its query-relative numeric result `Activation`. It provides conventional Personalized PageRank as its first interchangeable query strategy. Its converged behavior should not be confused with the bounded `GraphModel` activation used by the development benchmark.
 
 ## Governed Typed Relations
 
@@ -87,6 +95,26 @@ The current mechanism must label unavailable guarantees instead of treating a st
 
 The snapshot identity is derived from construction sources, relation artifacts, graph configuration, vocabulary version, and algorithm version. This provides deterministic replay before publication. Once public Git history exists, the governing commit or tag additionally identifies the human review state.
 
+## Implementation Boundaries: Matrices, Paths, and Events
+
+The current `GraphModel` is a convenient prototype facade, but it combines three concerns that should become explicit as MML evolves:
+
+1. **Matrix execution:** compile governed relation families and task policy into semantic operators, then produce activation fields. A future execution core could be named `SemanticOperator` or `MmlOperator`; `SemanticFieldModel` remains suitable if the object owns both operator construction and the resulting field semantics.
+2. **Relation-path interpretation:** project non-zero operator contributions back onto governed concepts, relation records, paths, and evidence. This is where a graph view is useful, but it is an explanatory adapter over the semantic structure rather than the identity of MML itself.
+3. **Event observation:** publish construction, execution, update, snapshot, and rollback events to a future event sink. The sink should observe immutable facts about execution without becoming a hidden dependency of the numerical core or changing its result.
+
+The intended dependency direction is therefore:
+
+```text
+governed semantic sources + task policy
+    -> semantic operator / matrix execution
+    -> activation result
+         |-> relation-path interpreter
+         `-> event sink
+```
+
+The event schema, delivery guarantees, persistence, and replay policy remain to be designed. Until those contracts exist, the repository should retain `GraphModel` for compatibility rather than perform a cosmetic rename. The architectural trigger for extraction is the implementation of relation-specific matrices or the event sink, when these responsibilities become independently testable.
+
 ## Why We Still Need Embeddings: A Pragmatic Trade-Off
 
 Pure graph diffusion over a dictionary has strong advantages: efficiency, factual stability, inspectability, and resistance to noisy training data. But classical graph methods have historically struggled with compositional fluid syntax.
@@ -107,15 +135,34 @@ A smaller Transformer can take the top candidate nodes from the graph engine and
 
 In this design, the Transformer does not carry the full burden of memorizing and retrieving semantic knowledge. The graph engine narrows the semantic field first, then a smaller neural model composes the final language.
 
-## Next Evolutionary Step: Multi-Dimensional MML Field
+## Next Evolutionary Step: Relation-Specific Semantic Operators
 
-The current Python script uses one flat graph: a single transition matrix `P` built from word co-occurrence. A richer model would need more than one kind of relationship.
+The current Python script uses one flat relational structure compiled into a single transition matrix `P`. The typed prototype also adds `supports`, `requires`, and `qualifies` to that positive matrix, while keeping contradiction separate. A richer model needs to preserve more than one kind of relationship rather than erase their semantics during compilation.
 
-The next evolutionary step is to expand from a single graph to a multi-dimensional graph structure. This turns the design into a Multiplex Network, also known as a Heterogeneous Information Network.
+The smallest useful next step is a family of relation-specific matrices:
 
-This tensor or multiplex engine is a proposed deterministic extension, not a current feature. Given identical layer sources, identifiers, weights, build algorithm, parameters, and execution settings, it should compile to the same tensor and produce the same activation result. That reproducibility must be tested rather than assumed. Sparse execution cost, cross-layer normalization, typed path semantics, and deterministic build artifacts are part of the future implementation contract.
+```text
+S = synonymy             H = hierarchy
+O = opposition           P = part/whole
+C = causality            R = role correspondence
+A = association          T = temporal relation
+```
 
-Instead of one flat transition matrix, the engine operates on a 3D tensor:
+For a declared task policy, MML can construct a semantic operator such as:
+
+```text
+M = alpha*A + beta*S + gamma*H + delta*P + epsilon*C + zeta*R - eta*O
+```
+
+and normalize it according to the execution contract. The coefficients are governed and inspectable. They express how a particular task treats semantic relations; they are not opaque parameters learned inside a model. A scientific analogy task may emphasize role correspondence, while lexical disambiguation may emphasize synonymy, hierarchy, opposition, and association.
+
+This operator-family design can later be represented as a multiplex network or tensor when execution needs to retain per-layer state rather than compose the layers before propagation. A tensor is therefore one possible implementation of the semantic model, not the essence of MML.
+
+Relation-specific composition and any tensor or multiplex engine are proposed deterministic extensions, not current features. Given identical layer sources, identifiers, policy coefficients, build algorithm, parameters, and execution settings, they should compile to the same operators and produce the same activation result. That reproducibility must be tested rather than assumed. Sparse execution cost, cross-layer normalization, typed path semantics, and deterministic build artifacts are part of the future implementation contract.
+
+### Optional multiplex representation
+
+When a use case must retain layer identity during propagation instead of composing a task-specific matrix first, the family can be represented as a 3D tensor:
 
 ```text
 T in R^(M x N x N)
@@ -127,7 +174,7 @@ Where:
 - `M` is the number of relational layers or dimensions.
 - Each `N x N` slice is a different kind of transition matrix.
 
-In the current script, `P` is one `N x N` matrix. In the multi-dimensional version, `P` becomes one layer inside a larger tensor `T`.
+In the current minimal kernel, `TransitionModel.transition` is one `N x N` matrix. In a multi-dimensional version, one or more transition operators could become layers inside a larger tensor `T`.
 
 ## The Multi-Dimensional Layer Topology
 
@@ -180,10 +227,10 @@ v = [
 
 For example, if the input is `apple stock`, the mapper might inject most of the teleportation weight into `Ontology:FinancialAsset` and `Lexical:Apple_Inc`, while setting `Ontology:Fruit` close to `0`.
 
-This is the multi-layer version of what the current script does here:
+This is the multi-layer version of what the current Personalized PageRank strategy does here:
 
 ```python
-v[word2idx[target_word]] = 1.0
+anchor[model.identity_to_index[semantic_identity]] = 1.0
 ```
 
 ### 2. Multi-Dimensional MML Diffusion Engine

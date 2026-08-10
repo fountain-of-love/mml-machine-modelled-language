@@ -1,6 +1,6 @@
 # What MML Is
 
-Machine Modelled Language (MML) is an **executable, weighted knowledge representation whose human-governed structure can be updated from text statistics**. Language is represented as addressable concepts, senses, aliases, relationships, and transition weights; queries activate that structure through inspectable graph propagation.
+Machine Modelled Language (MML) is an **executable, weighted knowledge representation whose human-governed structure can be updated from text statistics**. Its central proposition is that progress may come not only from more complicated computation, but from a representation of meaning rich enough for established mathematical structures to do more useful work. Language is represented as addressable concepts, senses, semantic roles, aliases, relationships, and transition weights; queries activate that structure through deterministic matrix operations whose relational routes can be interpreted as a graph.
 
 The inversion is intentional:
 
@@ -10,11 +10,42 @@ An LLM may help discover, map, or express knowledge. MML gives validated semanti
 
 ## What “Words Carry Weight” Means
 
+MML separates what happens before execution from what happens during execution. **Focus is representational narrowing**: an ambiguous expression such as `bank` is mapped to a more precise identity such as `bank_river`. **Activation is the numerical distribution produced after a query strategy executes from that focused identity.** The kernel therefore returns `Activation`, not `Focus`. Attention remains an inspiration-level analogy; it does not name Personalized PageRank, matrix propagation, or another implemented MML mechanism.
+
+The construction-side complement to focus is **semantic grounding**: a surface occurrence of `bank` in the corpus is identified as `bank_river` before compilation. Grounding and focus are two ingress paths converging on the same governed semantic identity—corpus to identity and query to identity—not inverse functions. Rendering an identity back into surface language would be a separate lexicalization operation.
+
 The phrase begins literally in the executable representation. Words or governed concepts occupy nodes in a weighting matrix, while their relationships supply transition weights. Corpus observations and governed typed relations determine how strongly activation can move from one node to another. At query time, the resulting activation distribution assigns contextual weight to the nodes supported by the query and its reachable structure. A word therefore does not own one permanent importance score; it carries weight in relation to other nodes, a named snapshot, and the current query.
 
 The proposed **Common Language Model (CML)** extends the same idea beyond surface words. Stable senses, conceptual terms, abstractions, facts, evidence types, and constraints become addressable semantic identities. Once compiled into an MML matrix or index, these conceptual nodes and their typed relations can carry transition and activation weight too. “More weight” here means stronger governed or contextual support in a particular execution—not an assertion that an abstract concept is universally more important than a concrete word.
 
-**[Combinatorial uniqueness](Combinatorial-Uniqueness.md)** supplies the third meaning. A broad concept may carry little discriminative weight alone, while several broad but sufficiently independent concepts form a narrow intersection. `attention + systems theory + ranking`, for example, identifies a more distinctive semantic region than any term by itself. MML executes those fields independently and combines their support, so weight emerges not only from individual nodes but from the structured relation between conceptual coordinates.
+CML also lets a concept occupy a semantic role. `capacity`, `activation`, `boundary`, `substrate`, `gain`, and `storage`, for example, can provide comparable coordinates across domains without claiming that the physical quantities filling those roles are identical. In that list, `activation` names a governed scientific role; `Activation` in the Python kernel names a query result. The qualification and capitalization prevent those two uses from silently merging. Role is therefore part of the representation, not merely another untyped association.
+
+## From One Matrix to Semantic Operators
+
+“Graph” and “matrix” describe two views of the same current mechanism, but they are not interchangeable implementation claims. The graph view names concepts and relations and makes routes explainable. The matrix is the compiled numerical object that the Python code actually executes.
+
+The current prototype combines corpus co-occurrence with the positive governed relations `supports`, `requires`, and `qualifies` in one normalized transition matrix. `contradicts` remains outside that positive matrix as an explicit negative scoring contribution. This is a useful seed, not the intended endpoint.
+
+A richer MML should preserve relation semantics in a family of matrices, for example:
+
+```text
+S = synonymy             H = hierarchy
+O = opposition           P = part/whole
+C = causality            R = role correspondence
+A = association          T = temporal relation
+```
+
+A task can then construct an operator such as:
+
+```text
+M = alpha*A + beta*S + gamma*H + delta*P + epsilon*C + zeta*R - eta*O
+```
+
+followed by the normalization appropriate to the execution contract. The coefficients are governed semantic-policy decisions: a legal evidence task, a scientific analogy task, and a lexical disambiguation task need not value the same relation types equally. Execution therefore activates a semantic field shaped by both the governed conceptual model and the declared task policy.
+
+This makes the phrase literal at three levels: relations carry stored transition weight; task policy determines how relation families contribute; and query execution assigns contextual activation weight to the resulting field.
+
+**[Combinatorial uniqueness](Combinatorial-Uniqueness.md)** adds another dimension. A broad concept may carry little discriminative weight alone, while several broad but sufficiently independent concepts form a narrow intersection. `attention + systems theory + ranking`, for example, identifies a more distinctive semantic region than any term by itself. MML executes those fields independently and combines their support, so weight emerges not only from individual nodes but from the structured relation between conceptual coordinates.
 
 ## Governed Meaning Made Executable
 
@@ -30,16 +61,17 @@ The current Python prototype demonstrates:
 
 - governed concepts, aliases, and typed relations;
 - deterministic construction and query activation;
-- bounded graph diffusion and inspectable paths;
+- bounded matrix propagation and inspectable relation paths;
 - content-addressed snapshots;
 - local updates and exact rollback;
-- a small authored retrieval diagnostic beside lexical baselines.
+- an authored semantic-identity benchmark under fixed mathematics;
+- a small legacy retrieval diagnostic beside lexical baselines.
 
 It does not yet demonstrate:
 
 - general semantic understanding or autonomous concept discovery;
 - complete logical or multi-hop reasoning;
-- a multiplex tensor or complete multi-layer graph engine;
+- relation-specific matrix composition or a complete multi-layer executor;
 - production integrity, regulatory compliance, or representative coverage;
 - a complete SOS runtime or competitive equivalence with a language model.
 
