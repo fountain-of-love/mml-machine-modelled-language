@@ -1,0 +1,106 @@
+# How Machine Modelled Language Works Here
+
+The repository demonstrates representation, execution, and evolution of an explicit weighted semantic graph. It does not train or imitate a language model.
+
+## Run it
+
+```bash
+make run
+make run-elaborate
+make run-legal
+make trace
+make update-demo
+make benchmark-check
+make test
+```
+
+The first three commands show the mechanism at increasing levels of application. `make trace` prints one self-contained representation → execution → evolution record. `make update-demo` shows the wider consequences of the same kind of governed relation change and exact restoration. The benchmark is a small retrieval diagnostic.
+
+## Representation
+
+Construction is separated by responsibility:
+
+- `polysemy_corpus.txt` contains ten river-bank and ten financial-bank sentences;
+- `gdpr_law_corpus.txt` supplies legal concepts and formulations;
+- `gdpr_aliases.jsonl` maps governed phrases to declared concepts;
+- `gdpr_relations.jsonl` records typed, weighted relations and evidence.
+
+These inputs populate the weighting matrix. Its values belong primarily to relationships: they express how much transition capacity connects one addressable word or concept to another. After normalisation, the matrix is reproducible for the same governed inputs and construction settings.
+
+Aliases use deterministic longest-match consumption. A phrase such as `selected records` resolves once to `information_control` rather than also leaking both component tokens.
+
+The initial relation vocabulary is `supports`, `contradicts`, `requires`, and `qualifies`. Positive relation weights use visible type multipliers; contradictions remain a separate negative contribution and never become negative transition probabilities.
+
+## Execution
+
+`GraphModel` is the small facade over construction and activation. It builds positive transition capacity, preserves governed records, and exposes immutable snapshot state.
+
+Surface `bank` resolves from surrounding context to `bank_river`, `bank_financial`, or both. Each query token produces a bounded local activation field. Multi-token queries combine those fields with a normalized geometric mean, requiring support across fields rather than averaging them.
+
+The execution therefore uses two related kinds of weight: stored transition weights in the matrix and contextual activation weights produced for the current query. Neither is a permanent declaration of a word's universal importance.
+
+This intersection is called **[combinatorial uniqueness](Combinatorial-Uniqueness.md)** here. Broad concepts can be noisy and weakly discriminative alone, while several broad but sufficiently independent constraints can identify a much narrower semantic region. Their combination carries evidentiary weight because support must survive across the independently activated fields. `attention + systems theory + ranking`, for example, specifies a different intent than any term alone. The phrase names an operational design principle—not a claim that MML invented conjunction, product-of-experts inference, faceted retrieval, or vector intersection.
+
+Document scoring combines informative-token weighting, hub correction, graph-field similarity, and declared contradictory evidence. The same calculation powers ordinary and explained scoring.
+
+An explanation can expose:
+
+- resolved query and document concepts;
+- positive and negative score components;
+- graph paths;
+- relation or alias identifiers;
+- construction evidence;
+- the graph snapshot.
+
+A graph path proves an executable route. Provenance identifies its governed source. Neither automatically provides a full causal decomposition of the final score.
+
+### Activation, propagation, and reasoning
+
+The current engine performs activation and propagation. Power iteration or bounded diffusion moves weight through connected structure and ranks reachable concepts. That can surface candidate multi-hop routes, but it does not by itself prove the logical composition expressed by those routes.
+
+Validated multi-hop reasoning additionally requires typed direction, relation-composition rules, entity identity, constraints, exclusions, provenance, and often a query planner or symbolic verifier. A future MML may add those requirements as deterministic execution layers. Until then, the safer distinction is:
+
+> Diffusion discovers and ranks candidate semantic routes; typed traversal and validation would determine whether a route satisfies a requested reasoning chain.
+
+`activation` is therefore the correct current term. It is not transformer `attention`, and a high activation score is not automatically `reasoning` or proof.
+
+## Evolution
+
+Snapshots are content-addressed from the executable construction, governed records, and parameters. Relations and aliases are updated by rebuilding immutable state rather than mutating the running model.
+
+`make update-demo` performs:
+
+```text
+baseline sources -> baseline snapshot and rankings
+one governed relation addition -> new snapshot and observable effects
+original sources -> exact baseline snapshot and rankings
+```
+
+The demo reports how widely the effect propagates without declaring broad propagation a failure. Structural locality means the authored change itself is explicit and bounded; consequence breadth is a separate observation that must remain traceable.
+
+## Retrieval diagnostic
+
+The diagnostic ranks 20 polysemy and 30 GDPR documents using lexical overlap, TF-IDF, co-occurrence MML, typed MML, and one fixed hybrid:
+
+```text
+hybrid = mml_typed × (0.2 + 0.8 × lexical_overlap)
+```
+
+This formula is not selected through a calibration search. It exists to make the complementary lexical/semantic observation reproducible. Rankers receive documents and queries, never judgments. Judgments are used only afterward for P@5, R@10, MRR, and nDCG@10.
+
+The diagnostic performs prototype checks for selected hashes, balance, determinism, low absolute floors, and reference regression. It is not a production integrity framework. Missing opportunities include complete schema and judgment validation, leakage diagnostics, independent artifact signing, protected release history, and held-out evaluation. A regressed reference cannot be overwritten silently; `--accept-regression` is an explicit reviewed escape hatch. It is synthetic development evidence, not an MML verdict. See [benchmark/README.md](benchmark/README.md).
+
+MML receives governed concept mappings and negative evidence that lexical and TF-IDF baselines do not receive. This is inherent to the supervised mechanism, but it makes the systems different treatments rather than identical-input algorithms. The table measures end-to-end retrieval behavior, not the isolated value of graph propagation.
+
+## Current limits
+
+- Construction and demonstrations remain authored.
+- The graph is small and in memory.
+- Typed relation coverage is provisional and narrow.
+- Explanations are not complete causal decompositions.
+- There is no public graph ingestion, API/UI, access-control layer, or community review process yet.
+- The code does not determine legal merits.
+- `make trace` deliberately selects one legible QG3/G14 example; it is not representative coverage.
+- The legal demo reports an A/B diagnostic comparing curated lexical candidate generation with graph scoring over all authored candidates. It demonstrates the effect of curation, not generalization.
+
+See [Research-Contract.md](Research-Contract.md) for the claim and [Commons-Governance.md](sos/Commons-Governance.md) for the intended public workflow.

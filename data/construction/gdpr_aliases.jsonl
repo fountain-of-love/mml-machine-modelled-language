@@ -1,0 +1,9 @@
+{"id":"gdpr:alias:request-personal-data","phrase":"request for personal data","concept":"access_request","evidence_ids":["sentence:cb92178c7f13b1d2"],"confidence":1.0,"review_state":"provisional"}
+{"id":"gdpr:alias:omitted-records","phrase":"omitted records","concept":"incomplete_disclosure","evidence_ids":["sentence:05e8a65d8f029785"],"confidence":0.9,"review_state":"provisional"}
+{"id":"gdpr:alias:missing-communications","phrase":"missing communications","concept":"incomplete_disclosure","evidence_ids":["sentence:d0aba294f1e67a79"],"confidence":0.9,"review_state":"provisional"}
+{"id":"gdpr:alias:selected-records","phrase":"selected records","concept":"information_control","evidence_ids":["sentence:d4b62239822d382e"],"confidence":0.9,"review_state":"provisional"}
+{"id":"gdpr:alias:chooses-records","phrase":"chooses which records","concept":"information_control","evidence_ids":["sentence:a41f4ea36f7288ce"],"confidence":1.0,"review_state":"provisional"}
+{"id":"gdpr:alias:full-file","phrase":"complete file available","concept":"complete_access","evidence_ids":["sentence:0edaaceeb841e79e"],"confidence":0.9,"review_state":"provisional"}
+{"id":"gdpr:alias:missing-chronology","phrase":"missing chronology","concept":"verification_blocked","evidence_ids":["sentence:70ffa70f706b8116"],"confidence":1.0,"review_state":"provisional"}
+{"id":"gdpr:alias:withheld-evidence","phrase":"withheld evidence","concept":"verification_blocked","evidence_ids":["sentence:70ffa70f706b8116"],"confidence":0.9,"review_state":"provisional"}
+{"id":"gdpr:alias:audit-trail","phrase":"complete audit trail","concept":"verification_enabled","evidence_ids":["sentence:a08fbadd7afa9e4f"],"confidence":1.0,"review_state":"provisional"}

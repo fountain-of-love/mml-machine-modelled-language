@@ -1,0 +1,302 @@
+{
+  "benchmark_version": "1.0.0",
+  "purpose": "small deterministic retrieval diagnostic; not an MML acceptance test",
+  "generated_at": "2026-08-09T18:00:30.783913+00:00",
+  "source_revision": "uncommitted-pre-publication-dirty",
+  "runtime": {
+    "python": "3.9.6",
+    "numpy": "2.0.2"
+  },
+  "configuration": {
+    "systems": [
+      "lexical_overlap",
+      "tfidf_cosine",
+      "mml_cooccurrence",
+      "mml_typed",
+      "mml_lexical_hybrid"
+    ],
+    "quality_floors": {
+      "mrr": 0.25,
+      "ndcg_at_10": 0.35
+    },
+    "regression_tolerance": 0.01
+  },
+  "snapshots": {
+    "polysemy_cooccurrence": "sha256:5ea5916d907564d2792d88c8cfaacc8ffd555fa19ea145748e16d5893d9309f2",
+    "polysemy_typed": "sha256:5ea5916d907564d2792d88c8cfaacc8ffd555fa19ea145748e16d5893d9309f2",
+    "gdpr_cooccurrence": "sha256:1761d77c5dd85f1dddd6f8a548ef896702efeb36f713d2672eb9565c910b26d6",
+    "gdpr_typed": "sha256:bf37189841b04e8a9c2e0df8fee7742d3416f67bc2dbce994de24737b5b73bcb"
+  },
+  "metrics": {
+    "per_query": {
+      "lexical_overlap": {
+        "QP1": {
+          "precision_at_5": 1.0,
+          "recall_at_10": 0.7272727272727273,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.8452445379531976
+        },
+        "QP2": {
+          "precision_at_5": 0.4,
+          "recall_at_10": 0.5,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.5733863484799928
+        },
+        "QG1": {
+          "precision_at_5": 0.8,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.8884157599174193
+        },
+        "QG2": {
+          "precision_at_5": 0.4,
+          "recall_at_10": 0.5,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.5297626313977926
+        },
+        "QG3": {
+          "precision_at_5": 0.6,
+          "recall_at_10": 0.5,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.6448244864271548
+        },
+        "QG4": {
+          "precision_at_5": 0.6,
+          "recall_at_10": 0.6666666666666666,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.715930570794872
+        }
+      },
+      "tfidf_cosine": {
+        "QP1": {
+          "precision_at_5": 1.0,
+          "recall_at_10": 0.7272727272727273,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.7367563703790826
+        },
+        "QP2": {
+          "precision_at_5": 1.0,
+          "recall_at_10": 0.7,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.809825813988791
+        },
+        "QG1": {
+          "precision_at_5": 0.8,
+          "recall_at_10": 0.8,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.656771367008154
+        },
+        "QG2": {
+          "precision_at_5": 0.4,
+          "recall_at_10": 0.5,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.5751439335160204
+        },
+        "QG3": {
+          "precision_at_5": 0.6,
+          "recall_at_10": 0.5,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.6448244864271548
+        },
+        "QG4": {
+          "precision_at_5": 0.6,
+          "recall_at_10": 0.6666666666666666,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.7374381612032188
+        }
+      },
+      "mml_cooccurrence": {
+        "QP1": {
+          "precision_at_5": 1.0,
+          "recall_at_10": 0.8181818181818182,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.7549294879381662
+        },
+        "QP2": {
+          "precision_at_5": 1.0,
+          "recall_at_10": 0.7,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.7954403470266588
+        },
+        "QG1": {
+          "precision_at_5": 0.6,
+          "recall_at_10": 0.8,
+          "mrr": 0.5,
+          "ndcg_at_10": 0.49379664223642866
+        },
+        "QG2": {
+          "precision_at_5": 0.4,
+          "recall_at_10": 0.5,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.6276426076361649
+        },
+        "QG3": {
+          "precision_at_5": 0.2,
+          "recall_at_10": 0.3333333333333333,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.4103915680233244
+        },
+        "QG4": {
+          "precision_at_5": 0.4,
+          "recall_at_10": 0.6666666666666666,
+          "mrr": 0.5,
+          "ndcg_at_10": 0.4557124478114998
+        }
+      },
+      "mml_typed": {
+        "QP1": {
+          "precision_at_5": 1.0,
+          "recall_at_10": 0.8181818181818182,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.7549294879381662
+        },
+        "QP2": {
+          "precision_at_5": 1.0,
+          "recall_at_10": 0.7,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.7954403470266588
+        },
+        "QG1": {
+          "precision_at_5": 0.6,
+          "recall_at_10": 0.8,
+          "mrr": 0.5,
+          "ndcg_at_10": 0.49379664223642866
+        },
+        "QG2": {
+          "precision_at_5": 0.4,
+          "recall_at_10": 0.5,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.6276426076361649
+        },
+        "QG3": {
+          "precision_at_5": 0.6,
+          "recall_at_10": 0.5,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.5709662133861837
+        },
+        "QG4": {
+          "precision_at_5": 0.4,
+          "recall_at_10": 0.6666666666666666,
+          "mrr": 0.5,
+          "ndcg_at_10": 0.4688503847401038
+        }
+      },
+      "mml_lexical_hybrid": {
+        "QP1": {
+          "precision_at_5": 1.0,
+          "recall_at_10": 0.8181818181818182,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.7807535824085711
+        },
+        "QP2": {
+          "precision_at_5": 1.0,
+          "recall_at_10": 0.7,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.8014038812182486
+        },
+        "QG1": {
+          "precision_at_5": 0.8,
+          "recall_at_10": 1.0,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.7258414039094401
+        },
+        "QG2": {
+          "precision_at_5": 0.4,
+          "recall_at_10": 0.6666666666666666,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.6690541908665122
+        },
+        "QG3": {
+          "precision_at_5": 0.6,
+          "recall_at_10": 0.5,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.6448244864271548
+        },
+        "QG4": {
+          "precision_at_5": 0.8,
+          "recall_at_10": 0.8333333333333334,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.7889223054128837
+        }
+      }
+    },
+    "macro": {
+      "lexical_overlap": {
+        "polysemy": {
+          "precision_at_5": 0.7,
+          "recall_at_10": 0.6136363636363636,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.7093154432165952
+        },
+        "gdpr": {
+          "precision_at_5": 0.6000000000000001,
+          "recall_at_10": 0.6666666666666666,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.6947333621343097
+        }
+      },
+      "tfidf_cosine": {
+        "polysemy": {
+          "precision_at_5": 1.0,
+          "recall_at_10": 0.7136363636363636,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.7732910921839369
+        },
+        "gdpr": {
+          "precision_at_5": 0.6000000000000001,
+          "recall_at_10": 0.6166666666666667,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.653544487038637
+        }
+      },
+      "mml_cooccurrence": {
+        "polysemy": {
+          "precision_at_5": 1.0,
+          "recall_at_10": 0.759090909090909,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.7751849174824125
+        },
+        "gdpr": {
+          "precision_at_5": 0.4,
+          "recall_at_10": 0.575,
+          "mrr": 0.75,
+          "ndcg_at_10": 0.4968858164268544
+        }
+      },
+      "mml_typed": {
+        "polysemy": {
+          "precision_at_5": 1.0,
+          "recall_at_10": 0.759090909090909,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.7751849174824125
+        },
+        "gdpr": {
+          "precision_at_5": 0.5,
+          "recall_at_10": 0.6166666666666667,
+          "mrr": 0.75,
+          "ndcg_at_10": 0.5403139619997203
+        }
+      },
+      "mml_lexical_hybrid": {
+        "polysemy": {
+          "precision_at_5": 1.0,
+          "recall_at_10": 0.759090909090909,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.7910787318134098
+        },
+        "gdpr": {
+          "precision_at_5": 0.6500000000000001,
+          "recall_at_10": 0.75,
+          "mrr": 1.0,
+          "ndcg_at_10": 0.7071605966539978
+        }
+      }
+    }
+  },
+  "checks": {
+    "quality_floor": true,
+    "regression": true,
+    "quality_failures": [],
+    "regressions": []
+  }
+}

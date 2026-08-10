@@ -1,0 +1,42 @@
+{
+  "schema_version": "1",
+  "controlled_tags": [
+    "zero_query_overlap",
+    "paraphrase",
+    "polysemy",
+    "indirect_evidence",
+    "contradiction",
+    "hard_negative"
+  ],
+  "annotations": [
+    {"query_id":"QP1","document_id":"P04","tags":["paraphrase","polysemy"],"expected_role":"relevant","rationale":"Muddy river edge expresses the river-bank sense without the ambiguous noun."},
+    {"query_id":"QP1","document_id":"P06","tags":["zero_query_overlap","paraphrase","polysemy"],"expected_role":"relevant","rationale":"Shoreline erosion expresses the river-bank sense without any query term."},
+    {"query_id":"QP1","document_id":"P09","tags":["zero_query_overlap","paraphrase","polysemy"],"expected_role":"relevant","rationale":"Mud and waterline describe a river bank without query vocabulary."},
+    {"query_id":"QP1","document_id":"P11","tags":["polysemy","hard_negative"],"expected_role":"hard_negative","rationale":"Bank is present in the competing financial sense."},
+    {"query_id":"QP1","document_id":"P13","tags":["polysemy","hard_negative"],"expected_role":"hard_negative","rationale":"Bank is present in a financial-account context."},
+    {"query_id":"QP2","document_id":"P12","tags":["paraphrase","polysemy"],"expected_role":"relevant","rationale":"Financial institution and savings account express the financial-bank sense indirectly."},
+    {"query_id":"QP2","document_id":"P14","tags":["paraphrase","polysemy"],"expected_role":"relevant","rationale":"Branch, manager, and credit application imply a financial bank without naming it."},
+    {"query_id":"QP2","document_id":"P18","tags":["zero_query_overlap","paraphrase","polysemy"],"expected_role":"relevant","rationale":"Lender, interest, and mortgages express financial banking without query terms."},
+    {"query_id":"QP2","document_id":"P02","tags":["polysemy","hard_negative"],"expected_role":"hard_negative","rationale":"Bank is present in the competing river sense."},
+    {"query_id":"QP2","document_id":"P08","tags":["polysemy","hard_negative"],"expected_role":"hard_negative","rationale":"Bank is present in a flooded river context."},
+    {"query_id":"QG1","document_id":"G01","tags":["paraphrase"],"expected_role":"relevant","rationale":"A request for every held item expresses access without the phrase access request."},
+    {"query_id":"QG1","document_id":"G04","tags":["paraphrase"],"expected_role":"relevant","rationale":"Personal information paraphrases personal data."},
+    {"query_id":"QG1","document_id":"G03","tags":["contradiction","hard_negative"],"expected_role":"hard_negative","rationale":"The text explicitly denies that personal information was requested."},
+    {"query_id":"QG1","document_id":"G05","tags":["hard_negative"],"expected_role":"hard_negative","rationale":"An account update is operationally plausible but not an access request."},
+    {"query_id":"QG2","document_id":"G06","tags":["zero_query_overlap","paraphrase","indirect_evidence"],"expected_role":"relevant","rationale":"Omitted material expresses incomplete disclosure without a query term."},
+    {"query_id":"QG2","document_id":"G09","tags":["paraphrase","indirect_evidence"],"expected_role":"relevant","rationale":"Failure to include named statements implies incomplete disclosure."},
+    {"query_id":"QG2","document_id":"G12","tags":["paraphrase","indirect_evidence"],"expected_role":"relevant","rationale":"Retaining notes and refusing provision indirectly establishes omission."},
+    {"query_id":"QG2","document_id":"G07","tags":["contradiction","hard_negative"],"expected_role":"hard_negative","rationale":"The package is described as complete, contradicting incomplete disclosure."},
+    {"query_id":"QG2","document_id":"G23","tags":["contradiction","hard_negative"],"expected_role":"hard_negative","rationale":"A complete downloadable copy contradicts missing disclosure."},
+    {"query_id":"QG3","document_id":"G11","tags":["indirect_evidence"],"expected_role":"relevant","rationale":"Institutional selection rather than complete access operationalizes information control."},
+    {"query_id":"QG3","document_id":"G14","tags":["paraphrase","indirect_evidence"],"expected_role":"relevant","rationale":"Exclusive visibility of a decision log expresses institutional information control."},
+    {"query_id":"QG3","document_id":"G29","tags":["indirect_evidence"],"expected_role":"relevant","rationale":"Control over information and inspection directly instantiates the governed concept."},
+    {"query_id":"QG3","document_id":"G13","tags":["contradiction","hard_negative"],"expected_role":"hard_negative","rationale":"Complete-file inspection contradicts unilateral information restriction."},
+    {"query_id":"QG3","document_id":"G23","tags":["contradiction","hard_negative"],"expected_role":"hard_negative","rationale":"Complete downloadable evidence contradicts information restriction."},
+    {"query_id":"QG4","document_id":"G16","tags":["paraphrase","indirect_evidence"],"expected_role":"relevant","rationale":"Inability to reconstruct a decision expresses blocked verification."},
+    {"query_id":"QG4","document_id":"G18","tags":["paraphrase","indirect_evidence"],"expected_role":"relevant","rationale":"The inability to test accuracy expresses blocked verification."},
+    {"query_id":"QG4","document_id":"G30","tags":["indirect_evidence"],"expected_role":"relevant","rationale":"Missing evidence is linked to inability to seek an effective remedy."},
+    {"query_id":"QG4","document_id":"G17","tags":["contradiction","hard_negative"],"expected_role":"hard_negative","rationale":"An independently checkable chronology contradicts blocked verification."},
+    {"query_id":"QG4","document_id":"G23","tags":["contradiction","hard_negative"],"expected_role":"hard_negative","rationale":"Available correspondence and audit trail contradict blocked verification."}
+  ]
+}

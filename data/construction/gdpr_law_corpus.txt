@@ -1,0 +1,60 @@
+the gdpr protects personal data relating to an identified or identifiable person
+a data subject has a right of access to personal data under article 15
+the controller shall confirm whether personal data concerning the data subject are processed
+the controller shall provide access to personal data and information about processing
+access information includes purposes categories recipients and storage periods
+the data subject may request a copy of personal data undergoing processing
+the first copy of personal data shall generally be provided without charge
+the right of access supports awareness and verification of lawful processing
+information must be provided in a concise transparent intelligible and accessible form
+the controller shall facilitate the exercise of data subject rights
+a request may be made by electronic means
+the controller must verify identity where reasonable doubt exists
+identity verification must not become an unnecessary barrier to access
+the controller shall respond without undue delay
+the ordinary response period is one month after receipt of the request
+complexity or multiple requests may permit a limited extension with notice
+refusal requires reasons and information about complaint and judicial remedy
+restrictions on access require a lawful basis and proportionate application
+the rights and freedoms of others may affect the form of disclosure
+protecting another person does not justify withholding all available information
+personal data can include correspondence account records logs and decision information
+metadata may be personal data when it relates to the data subject
+internal records may fall within access when they contain personal data
+a selected summary may be insufficient when it does not make personal data intelligible
+the controller remains accountable for demonstrating compliance
+records of processing support transparency and accountability
+accurate records enable rectification of incorrect personal data
+access can enable objection restriction erasure or another effective remedy
+automated decision information may include meaningful information about logic and consequences
+the data subject may complain to a supervisory authority
+the data subject may seek an effective judicial remedy
+evidence and audit logs can support independent verification
+missing chronology can prevent reconstruction of processing events
+withheld communications can prevent evaluation of decision context
+exclusive control of records can create informational asymmetry
+provenance identifies the source and history of a record
+version history supports verification of later changes
+disclosure should preserve context needed to understand personal data
+security measures must protect personal data during access delivery
+data minimisation does not remove the controller duty to provide lawful access
+the concept access_request connects request access personal data records and copy
+an access_request is made when a data subject asks the controller for personal data
+receipt and acknowledgment are evidence that an access_request exists
+an access_request differs from an ordinary account service request
+the concept incomplete_disclosure connects missing omitted absent withheld and unanswered records
+an incomplete_disclosure does not provide every relevant category within the request
+missing communications and absent logs can indicate incomplete_disclosure
+the concept complete_disclosure connects available included supplied complete copy and full records
+a complete_disclosure provides the requested information with intelligible context
+the concept information_control connects selected retained withheld exclusive control and evidence
+information_control exists when one institution chooses which records another party can inspect
+selection and exclusion of records can preserve information_control
+the concept complete_access connects complete file available inspection and independent review
+complete_access reduces unilateral control over evidence
+the concept verification_blocked connects missing logs unavailable chronology withheld evidence and cannot verify
+verification_blocked prevents reconstruction challenge accuracy testing or effective remedy
+the concept verification_enabled connects complete audit trail available chronology and independent verification
+verification_enabled allows an external reviewer to check processing events
+effective remedy depends on access to evidence needed for challenge
+successful verification requires available records rather than withheld traces

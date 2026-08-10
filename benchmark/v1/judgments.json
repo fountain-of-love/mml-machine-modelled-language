@@ -1,0 +1,24 @@
+{
+  "unlisted_relevance": 0,
+  "assessor_count": 1,
+  "judgments": {
+    "QP1": {
+      "P01":{"relevance":3,"rationale":"Explicit river shoreline."},"P02":{"relevance":3,"rationale":"Bank beside water."},"P03":{"relevance":3,"rationale":"Flooded river bank."},"P04":{"relevance":2,"rationale":"River edge without the word bank."},"P05":{"relevance":3,"rationale":"Grassy bank and ducks."},"P06":{"relevance":2,"rationale":"Shoreline erosion."},"P07":{"relevance":2,"rationale":"River-side scene."},"P08":{"relevance":3,"rationale":"Flooded bank reached by boat."},"P09":{"relevance":1,"rationale":"Waterline context."},"P10":{"relevance":3,"rationale":"Banks of a stream."},"P20":{"relevance":1,"rationale":"Both senses occur; river sense is secondary."}
+    },
+    "QP2": {
+      "P11":{"relevance":3,"rationale":"Bank loan and account."},"P12":{"relevance":3,"rationale":"Savings interest and institution."},"P13":{"relevance":3,"rationale":"Money transfer between accounts."},"P14":{"relevance":3,"rationale":"Branch and credit application."},"P15":{"relevance":2,"rationale":"Loan balance."},"P16":{"relevance":2,"rationale":"Institutional money transfer."},"P17":{"relevance":3,"rationale":"Deposit account at branch."},"P18":{"relevance":2,"rationale":"Lender and interest rate."},"P19":{"relevance":3,"rationale":"Online banking and withdrawals."},"P20":{"relevance":2,"rationale":"Financial branch is the main subject."}
+    },
+    "QG1": {
+      "G01":{"relevance":3,"rationale":"Direct request for all personal data."},"G02":{"relevance":3,"rationale":"Explicit exercise of access rights."},"G04":{"relevance":2,"rationale":"Acknowledgment of an access request."},"G21":{"relevance":2,"rationale":"Acknowledges data access request."},"G27":{"relevance":3,"rationale":"Specifies categories in an earlier request."}
+    },
+    "QG2": {
+      "G06":{"relevance":3,"rationale":"Named categories were omitted."},"G08":{"relevance":3,"rationale":"Requested communications absent."},"G09":{"relevance":3,"rationale":"Named statements missing."},"G22":{"relevance":3,"rationale":"Communications excluded from disclosure."},"G28":{"relevance":3,"rationale":"Named categories remain unanswered."},"G12":{"relevance":2,"rationale":"Notes retained and undisclosed."}
+    },
+    "QG3": {
+      "G11":{"relevance":3,"rationale":"Institution selects records instead of complete file."},"G12":{"relevance":3,"rationale":"Bank retains notes from disclosure."},"G14":{"relevance":3,"rationale":"Institution exclusively controls decision log."},"G19":{"relevance":3,"rationale":"Evidence remains solely under bank control."},"G24":{"relevance":3,"rationale":"Management selects and excludes evidence."},"G29":{"relevance":3,"rationale":"Bank controls information and inspection."}
+    },
+    "QG4": {
+      "G16":{"relevance":3,"rationale":"Withheld logs prevent reconstruction."},"G18":{"relevance":3,"rationale":"Missing records block accuracy testing."},"G19":{"relevance":3,"rationale":"Controlled evidence blocks challenge."},"G25":{"relevance":3,"rationale":"Absent audit trail blocks external verification."},"G30":{"relevance":3,"rationale":"Missing evidence blocks effective remedy."},"G22":{"relevance":2,"rationale":"Missing communications prevent understanding decision."}
+    }
+  }
+}

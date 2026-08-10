@@ -1,0 +1,135 @@
+{
+  "themes": {
+    "gdpr_access_request": {
+      "label": "GDPR Access Request",
+      "words": [
+        "access",
+        "request",
+        "personal",
+        "data",
+        "subject",
+        "records",
+        "information",
+        "logs"
+      ]
+    },
+    "incomplete_disclosure": {
+      "label": "Incomplete Disclosure",
+      "words": [
+        "incomplete",
+        "missing",
+        "undisclosed",
+        "disclosure",
+        "records",
+        "summary",
+        "retained"
+      ]
+    },
+    "bank_information_control": {
+      "label": "Bank Information Control",
+      "words": [
+        "bank",
+        "controlled",
+        "controls",
+        "control",
+        "select",
+        "selected",
+        "information",
+        "records",
+        "file",
+        "decisions"
+      ]
+    },
+    "verification_blocked": {
+      "label": "Verification Blocked",
+      "words": [
+        "verify",
+        "verification",
+        "reconstructed",
+        "logs",
+        "chronology",
+        "trace",
+        "evidence"
+      ]
+    },
+    "procedural_imbalance": {
+      "label": "Procedural Imbalance",
+      "words": [
+        "imbalance",
+        "advantage",
+        "procedural",
+        "evidentiary",
+        "asymmetry",
+        "power",
+        "fairness"
+      ]
+    },
+    "effective_remedy": {
+      "label": "Effective Remedy",
+      "words": [
+        "remedy",
+        "rights",
+        "justice",
+        "lawfulness",
+        "accountability",
+        "transparency",
+        "protection",
+        "ineffective",
+        "evidence"
+      ]
+    }
+  },
+  "emails": [
+    {
+      "id": "E01",
+      "sender": "customer",
+      "text": "I request access to all personal data, communications records, decision logs, and internal notes concerning my account."
+    },
+    {
+      "id": "E02",
+      "sender": "bank",
+      "text": "We provide the account summary and consider this disclosure complete. No further information is necessary."
+    },
+    {
+      "id": "E03",
+      "sender": "customer",
+      "text": "The disclosure is incomplete because communications, decision logs, and underlying records are missing."
+    },
+    {
+      "id": "E04",
+      "sender": "bank",
+      "text": "Internal decision records and review logs are retained in the file but will not be disclosed to the customer."
+    },
+    {
+      "id": "E05",
+      "sender": "bank",
+      "text": "The bank controls the complete file and will select which records are relevant for disclosure."
+    },
+    {
+      "id": "E06",
+      "sender": "customer",
+      "text": "Without the logs and records I cannot verify the chronology or challenge whether the processing was lawful."
+    },
+    {
+      "id": "E07",
+      "sender": "customer",
+      "text": "The information gap creates an evidentiary imbalance and prevents an effective remedy."
+    },
+    {
+      "id": "E08",
+      "sender": "bank",
+      "text": "The branch manager reviewed the customer file and decided that selected disclosure was sufficient."
+    },
+    {
+      "id": "E09",
+      "sender": "customer",
+      "text": "Formal access rights are ineffective if the evidence needed to exercise those rights remains controlled by the bank."
+    },
+    {
+      "id": "E10",
+      "sender": "bank",
+      "text": "The river bank near the branch flooded during winter and delayed access to the office archive."
+    }
+  ]
+}
+

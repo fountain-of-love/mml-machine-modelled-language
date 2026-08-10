@@ -1,0 +1,50 @@
+{"id":"P01","tier":"polysemy","text":"After the canoe landed, we rested on the sandy bank beside the river."}
+{"id":"P02","tier":"polysemy","text":"Reeds and wet stones covered the bank along the slow water."}
+{"id":"P03","tier":"polysemy","text":"Flood water climbed over the eastern bank and entered the meadow."}
+{"id":"P04","tier":"polysemy","text":"The fisherman left his boots near the muddy edge of the river."}
+{"id":"P05","tier":"polysemy","text":"Children watched ducks from the grassy bank downstream of the bridge."}
+{"id":"P06","tier":"polysemy","text":"Erosion made the steep shoreline unstable after winter rain."}
+{"id":"P07","tier":"polysemy","text":"A willow leaned above the water where the river curved north."}
+{"id":"P08","tier":"polysemy","text":"The rescue crew approached the flooded bank by boat."}
+{"id":"P09","tier":"polysemy","text":"Tracks in the mud followed the waterline for several metres."}
+{"id":"P10","tier":"polysemy","text":"The picnic area overlooked both banks of the narrow stream."}
+{"id":"P11","tier":"polysemy","text":"The bank approved a business loan after reviewing the customer account."}
+{"id":"P12","tier":"polysemy","text":"Interest on the savings account was paid by the financial institution."}
+{"id":"P13","tier":"polysemy","text":"A customer transferred money between two bank accounts."}
+{"id":"P14","tier":"polysemy","text":"The branch manager rejected the credit application."}
+{"id":"P15","tier":"polysemy","text":"Monthly payments reduced the outstanding loan balance."}
+{"id":"P16","tier":"polysemy","text":"The institution charged a fee for an international money transfer."}
+{"id":"P17","tier":"polysemy","text":"She opened a deposit account at the city branch."}
+{"id":"P18","tier":"polysemy","text":"The lender changed its interest rate for new mortgages."}
+{"id":"P19","tier":"polysemy","text":"Online banking showed the latest account withdrawals."}
+{"id":"P20","tier":"polysemy","text":"The bank branch near the river closed because the office network failed."}
+{"id":"G01","tier":"gdpr","text":"Please send me every item of personal data held about me, including correspondence and internal notes."}
+{"id":"G02","tier":"gdpr","text":"I am exercising my access rights and request a copy of my records and decision history."}
+{"id":"G03","tier":"gdpr","text":"The customer asked only for a new debit card and did not request personal information."}
+{"id":"G04","tier":"gdpr","text":"This message confirms receipt of your request for access to personal information."}
+{"id":"G05","tier":"gdpr","text":"Could you update my postal address in the account profile?"}
+{"id":"G06","tier":"gdpr","text":"We attached a summary but omitted the correspondence, review notes, and decision history you identified."}
+{"id":"G07","tier":"gdpr","text":"The response package contains all records located in the search."}
+{"id":"G08","tier":"gdpr","text":"Several requested communications are absent from the disclosure bundle."}
+{"id":"G09","tier":"gdpr","text":"No transaction statements were included even though the request named them."}
+{"id":"G10","tier":"gdpr","text":"The archive export completed successfully and contained the requested material."}
+{"id":"G11","tier":"gdpr","text":"Internal reviewers decided that the customer would receive selected records rather than the complete file."}
+{"id":"G12","tier":"gdpr","text":"The bank will retain the investigation notes and will not provide them in the disclosure."}
+{"id":"G13","tier":"gdpr","text":"The customer may inspect the complete file through the secure portal."}
+{"id":"G14","tier":"gdpr","text":"Only the institution can see the decision log used to determine what was released."}
+{"id":"G15","tier":"gdpr","text":"A river flood damaged paper files stored below the branch office."}
+{"id":"G16","tier":"gdpr","text":"Without the withheld logs I cannot reconstruct when or why the decision was made."}
+{"id":"G17","tier":"gdpr","text":"The supplied chronology allows each processing step to be checked independently."}
+{"id":"G18","tier":"gdpr","text":"Missing records prevent me from testing whether the account information is accurate."}
+{"id":"G19","tier":"gdpr","text":"The evidence required to challenge the processing remains solely under bank control."}
+{"id":"G20","tier":"gdpr","text":"The customer thanked the support team for resolving a password reset."}
+{"id":"G21","tier":"gdpr","text":"We acknowledge your data access request and expect to answer within the stated period."}
+{"id":"G22","tier":"gdpr","text":"The disclosure includes account statements but not the communications that explain the adverse decision."}
+{"id":"G23","tier":"gdpr","text":"A complete copy of the correspondence and audit trail is available for download."}
+{"id":"G24","tier":"gdpr","text":"Management selected the evidence it considered relevant and excluded the remainder from review."}
+{"id":"G25","tier":"gdpr","text":"Because the audit trail is unavailable, an external reviewer cannot verify the sequence of events."}
+{"id":"G26","tier":"gdpr","text":"The loan balance was corrected after a routine accounting error."}
+{"id":"G27","tier":"gdpr","text":"My earlier request specifically covered profiling inputs, staff messages, and reasons for the decision."}
+{"id":"G28","tier":"gdpr","text":"The response states that no further documents will be supplied although named categories remain unanswered."}
+{"id":"G29","tier":"gdpr","text":"The bank controls both the underlying information and the choice of what the opposing party can inspect."}
+{"id":"G30","tier":"gdpr","text":"Practical access to the missing evidence is necessary before the customer can seek an effective remedy."}

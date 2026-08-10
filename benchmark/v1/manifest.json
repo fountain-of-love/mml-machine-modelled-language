@@ -1,0 +1,17 @@
+{
+  "benchmark_version": "1.0.0",
+  "schema_version": "1",
+  "status": "development-synthetic",
+  "protocol": "The original judgments remain frozen, but v1 is now an explicit development benchmark used to guide representation and weighting changes. Unlisted query/document pairs have relevance 0. Scores are not held-out validation.",
+  "counts": {"documents": 50, "queries": 6, "polysemy_documents": 20, "gdpr_documents": 30},
+  "sha256": {
+    "polysemy_corpus": "43311ce2343046e8257df40de15ea36d64bf50bf1f0f45e3bebb6efa1636524e",
+    "gdpr_law_corpus": "e28caf45445bd8eb7a3db6dc54deb5dbf69fc194dbfed93cb8fed5612a275cf0",
+    "gdpr_relations": "3065944f679c2973bda3e1607ca1bc825fa3de4197e3a8774e2652c7b119fc4d",
+    "gdpr_aliases": "c8eea240c9ebc19b2a8e6fb189d2f1bf5f418237323e2a671022a6c8dd0d2c48",
+    "documents": "a5340006a8fea2ac03dcbdb23c7c2af354f6853e4ab2b28d4561f10e23159d88",
+    "queries": "5601feba4e486998374bc70c5d3e71bf2c27e0ac63aa1d17cd8f3add7ad7df78",
+    "judgments": "bd74ccdf64c29e8acceb507689481e5412d7353c6e23383b26b285ed10c1c89c",
+    "rubric": "70325ccdd77d7c2a3e900ac31592feacbfe6419473f6817a84e8193a858b0dce"
+  }
+}
