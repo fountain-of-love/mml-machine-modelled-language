@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "experiment-3.2-governed-legal-qualification-v1",
+  "title": "Governed Legal Qualification",
+  "status": "implemented_development_evidence_not_held_out",
+  "protocol": "docs/benchmark/experiment-3.2-governed-legal-qualification.md",
+  "experiment_role": "Atomic test of direct legal qualification, contrast, and governed refusal",
+  "artifacts": {
+    "state": {
+      "path": "data/demonstration/combinatorial_uniqueness_legal_banking_state_v1.json",
+      "freeze_status": "candidate_not_confirmatory_freeze"
+    },
+    "probes": {
+      "path": "data/demonstration/governed_legal_qualification_probes_v1.json",
+      "holdout_status": "not_held_out"
+    }
+  },
+  "evidence_boundary": "The legal state and atomic 3.2 probes are separate but co-authored synthetic artifacts. Cross-level transitions are not part of this manifest. This version cannot establish legal conclusions or generalization.",
+  "confirmatory_progression": [
+    "Validate the doctrine-oriented distinctions and epistemic contract without using confirmatory outcomes.",
+    "Freeze and hash a confirmatory state version.",
+    "Author and freeze a new direct-qualification probe suite only after that state freeze.",
+    "Freeze thresholds and execution settings before running the confirmatory suite."
+  ]
+}

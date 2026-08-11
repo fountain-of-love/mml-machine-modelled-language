@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "probe_suite_id": "governed_legal_qualification_probes_v1",
+  "title": "Governed Legal Qualification",
+  "status": "authored_development_probes",
+  "state_id": "combinatorial_uniqueness_legal_banking_state_v1",
+  "holdout_status": "not_held_out",
+  "holdout_rationale": "The legal state and direct-qualification probes were co-designed. They support bounded mechanism development, not confirmatory held-out evidence.",
+  "research_intention": {
+    "hypothesis": "Independent legal, governance, evidential, and processing characteristics can narrow a direct semantic qualification while unsupported combinations remain insufficient.",
+    "primary_question": "Can independent legal dimensions compose into a specific governed semantic region without encoding that conclusion as a bespoke primitive?",
+    "secondary_questions": [
+      "Does adding independent legal dimensions progressively increase specificity?",
+      "Do repeated dimensions from the same family add less specificity?",
+      "Can unsupported states remain unresolved rather than being forced into a conclusion?",
+      "Can near-identical starting constraints diverge under qualifying information?",
+      "Does numerical activation preserve rather than promote epistemic status?"
+    ],
+    "evidence_boundary": "This synthetic direct-qualification experiment does not execute cross-level transitions and does not determine whether any real institution violated an obligation."
+  },
+  "independent_composition_probes": [
+    {"id": "probe_selective_access", "target": "selective_access", "constraints": ["access", "incomplete_disclosure", "source_coverage", "exclusive_control"]},
+    {"id": "probe_search_burden_shift", "target": "search_burden_shift", "constraints": ["access", "burden_shift", "exclusive_control", "information_asymmetry"]},
+    {"id": "probe_unverified_rectification", "target": "unverified_rectification", "constraints": ["rectification", "accuracy", "downstream_propagation", "traceability"]},
+    {"id": "probe_internal_access", "target": "non_auditable_internal_access", "constraints": ["access_logging", "confidentiality", "auditability", "traceability"]},
+    {"id": "probe_governance_chain", "target": "non_auditable_governance_chain", "constraints": ["responsibility", "traceability", "independent_oversight", "accountability"]},
+    {"id": "probe_recording_transparency", "target": "recording_transparency_issue", "constraints": ["recording", "personal_data", "transparency", "metadata"]},
+    {"id": "probe_disproportionate_restriction", "target": "disproportionate_access_restriction", "constraints": ["access", "rights_of_others", "redaction_available", "incomplete_disclosure"]},
+    {"id": "probe_opaque_profiling", "target": "opaque_profiling", "constraints": ["profiling", "personal_data", "decision_logging", "contestability"]},
+    {"id": "probe_evidence_asymmetry", "target": "evidence_asymmetry", "constraints": ["exclusive_control", "evidence", "incomplete_disclosure", "dispute"]},
+    {"id": "probe_effective_remedy", "target": "effective_remedy_impairment", "constraints": ["evidence", "incomplete_disclosure", "contestability", "effective_remedy"]},
+    {"id": "probe_equality_of_arms", "target": "equality_of_arms_impairment", "constraints": ["exclusive_control", "evidence", "equality_of_arms", "dispute"]},
+    {"id": "probe_judicial_evidence_measure", "target": "judicial_evidence_measure", "constraints": ["evidence", "exclusive_control", "judicial_disclosure", "effective_remedy"]}
+  ],
+  "redundant_composition_probes": [
+    {"id": "redundant_auditability", "constraints": ["auditability", "traceability", "access_logging"], "expected_relation": "same_family_control"},
+    {"id": "redundant_access", "constraints": ["access", "transparency", "source_coverage"], "expected_relation": "same_family_control"},
+    {"id": "redundant_procedural", "constraints": ["contestability", "effective_remedy", "adversarial_process"], "expected_relation": "same_family_control"}
+  ],
+  "unsupported_composition_probes": [
+    {
+      "id": "unsupported_automatic_violation",
+      "constraints": ["employee_privacy", "access", "regulated_bank"],
+      "expected_status": "no_valid_intersection",
+      "expected_reason": "unsupported_combination",
+      "rationale": "These dimensions do not determine whether a restriction is lawful or unlawful."
+    },
+    {
+      "id": "unsupported_automatic_article_22",
+      "constraints": ["profiling", "customer_relationship", "personal_data"],
+      "expected_status": "no_valid_intersection",
+      "expected_reason": "unsupported_combination",
+      "rationale": "Profiling alone does not establish the legally required kind or effect of automated decision-making."
+    },
+    {
+      "id": "unsupported_automatic_fair_trial",
+      "constraints": ["incomplete_disclosure", "dispute", "personal_data"],
+      "expected_status": "no_valid_intersection",
+      "expected_reason": "unsupported_combination",
+      "rationale": "Incomplete disclosure does not by itself establish impairment of fair-trial or effective-remedy guarantees."
+    }
+  ],
+  "contrast_probes": [
+    {
+      "id": "restriction_lawfulness_contrast",
+      "shared_constraints": ["access", "rights_of_others"],
+      "branches": [
+        {
+          "id": "lawful_branch",
+          "additional_constraints": ["necessity", "proportionality", "partial_disclosure_available"],
+          "expected_region": "legitimate_access_restriction"
+        },
+        {
+          "id": "problematic_branch",
+          "additional_constraints": ["incomplete_disclosure", "redaction_available"],
+          "expected_region": "disproportionate_access_restriction"
+        }
+      ]
+    }
+  ],
+  "measurement_contract": {
+    "evaluate_prefixes": true,
+    "per_prefix_metrics": ["target_rank", "target_activation", "runner_up_activation", "target_margin", "entropy", "normalized_entropy", "effective_candidate_count"],
+    "composition_metrics": ["rank_improvement", "entropy_reduction", "margin_growth", "cross_family_specificity_gain"],
+    "controls": ["constraint_permutation", "leave_one_constraint_out_ablation", "repeat_execution", "same_family_vs_cross_family_composition", "epistemic_non_promotion"]
+  },
+  "conformity_criteria": {
+    "status": "development_directional_criteria",
+    "threshold_freeze_required_before_confirmatory_execution": true,
+    "independent_composition": {
+      "median_final_target_rank_max": 1,
+      "median_entropy_change_must_be_negative": true,
+      "median_target_margin_change_must_be_positive": true
+    },
+    "cross_family_composition": {"must_outperform_same_family_redundancy": true},
+    "unsupported_composition": {"must_not_resolve_confidently": true},
+    "contrast_probe": {"branches_must_resolve_to_different_regions": true},
+    "epistemic_contract": {"classification_must_not_be_promoted": true},
+    "determinism": {"repeat_execution_must_match": true},
+    "order_invariance": {"full_constraint_permutations_must_preserve_top_target": true}
+  }
+}

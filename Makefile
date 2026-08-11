@@ -1,4 +1,4 @@
-.PHONY: run run-knowledge-state experiment-3-1 run-elaborate run-legal trace test benchmark benchmark-check knowledge-state-benchmark knowledge-state-benchmark-check experiment-3-1-benchmark experiment-3-1-check retrieval-benchmark-check update-demo
+.PHONY: run run-knowledge-state experiment-3-1 experiment-3-2 run-elaborate run-legal trace test benchmark benchmark-check knowledge-state-benchmark knowledge-state-benchmark-check experiment-3-1-benchmark experiment-3-1-check experiment-3-2-benchmark experiment-3-2-check retrieval-benchmark-check update-demo
 
 PYTHON ?= python3
 
@@ -10,6 +10,9 @@ run-knowledge-state:
 
 experiment-3-1:
 	$(PYTHON) run_experiment_3_1.py
+
+experiment-3-2:
+	$(PYTHON) run_experiment_3_2.py
 
 run-elaborate:
 	$(PYTHON) -m elaborations.mml_elaborate_corpus
@@ -25,6 +28,7 @@ test:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) benchmark.py --check >/dev/null
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) knowledge_state_experiment.py --check >/dev/null
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) direct_combinatorial_intersection_experiment.py --check >/dev/null
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) governed_legal_qualification_experiment.py --check >/dev/null
 
 benchmark:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) benchmark.py --write
@@ -43,6 +47,12 @@ experiment-3-1-benchmark:
 
 experiment-3-1-check:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) direct_combinatorial_intersection_experiment.py --check
+
+experiment-3-2-benchmark:
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) governed_legal_qualification_experiment.py --write
+
+experiment-3-2-check:
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) governed_legal_qualification_experiment.py --check
 
 retrieval-benchmark-check:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) retrieval_benchmark.py --check
