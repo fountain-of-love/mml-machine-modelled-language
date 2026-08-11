@@ -1,0 +1,224 @@
+{
+  "schema_version": "1.0",
+  "state_id": "combinatorial_uniqueness_state_v1",
+  "title": "Synthetic semantic universe for compositional specificity",
+  "status": "authored_development_candidate",
+  "evidence_boundary": "This small synthetic state is designed for inspectability and mechanism development. It is not real-world ontology evidence and was co-authored with the development probes.",
+  "dimensions": [
+    {"id": "storage", "family": "function"},
+    {"id": "electrical", "family": "domain"},
+    {"id": "mechanical", "family": "domain"},
+    {"id": "fluid", "family": "domain"},
+    {"id": "thermal", "family": "domain"},
+    {"id": "biological", "family": "domain"},
+    {"id": "reversible", "family": "behaviour"},
+    {"id": "bounded", "family": "structure"},
+    {"id": "boundary", "family": "function"},
+    {"id": "passive", "family": "behaviour"},
+    {"id": "active", "family": "behaviour"},
+    {"id": "selective", "family": "behaviour"},
+    {"id": "magnetic", "family": "mechanism"},
+    {"id": "electrostatic", "family": "mechanism"},
+    {"id": "chemical", "family": "mechanism"},
+    {"id": "gravitational", "family": "mechanism"},
+    {"id": "elastic", "family": "mechanism"},
+    {"id": "rotational", "family": "mechanism"},
+    {"id": "coupling", "family": "function"},
+    {"id": "conversion", "family": "function"},
+    {"id": "amplifying", "family": "function"},
+    {"id": "catalytic", "family": "function"},
+    {"id": "directional", "family": "function"},
+    {"id": "flexible", "family": "structure"},
+    {"id": "structural", "family": "structure"},
+    {"id": "portable", "family": "structure"},
+    {"id": "containment", "family": "storage_like"},
+    {"id": "retention", "family": "storage_like"}
+  ],
+  "concepts": [
+    {
+      "id": "capacitor",
+      "domain": "electrical",
+      "traits": ["storage", "containment", "retention", "electrical", "reversible", "bounded", "passive", "electrostatic"]
+    },
+    {
+      "id": "battery",
+      "domain": "electrical",
+      "traits": ["storage", "containment", "retention", "electrical", "chemical", "bounded", "portable"]
+    },
+    {
+      "id": "inductor",
+      "domain": "electrical",
+      "traits": ["storage", "containment", "retention", "electrical", "reversible", "magnetic", "passive"]
+    },
+    {
+      "id": "flywheel",
+      "domain": "mechanical",
+      "traits": ["storage", "containment", "retention", "mechanical", "reversible", "rotational"]
+    },
+    {
+      "id": "spring",
+      "domain": "mechanical",
+      "traits": ["storage", "containment", "retention", "mechanical", "reversible", "elastic", "passive"]
+    },
+    {
+      "id": "reservoir",
+      "domain": "fluid",
+      "traits": ["storage", "containment", "retention", "fluid", "bounded", "gravitational", "passive"]
+    },
+    {
+      "id": "fuel_tank",
+      "domain": "fluid",
+      "traits": ["storage", "containment", "retention", "fluid", "bounded", "chemical", "portable"]
+    },
+    {
+      "id": "thermal_mass",
+      "domain": "thermal",
+      "traits": ["storage", "containment", "retention", "thermal", "reversible", "passive", "structural"]
+    },
+    {
+      "id": "transformer",
+      "domain": "electrical",
+      "traits": ["electrical", "magnetic", "passive", "reversible", "coupling"]
+    },
+    {
+      "id": "electrostatic_sensor",
+      "domain": "electrical",
+      "traits": ["electrical", "electrostatic", "passive", "selective", "bounded"]
+    },
+    {
+      "id": "transistor",
+      "domain": "electrical",
+      "traits": ["electrical", "selective", "active", "bounded", "amplifying"]
+    },
+    {
+      "id": "muscle",
+      "domain": "biological",
+      "traits": ["biological", "mechanical", "active", "reversible", "elastic", "flexible"]
+    },
+    {
+      "id": "cell_membrane",
+      "domain": "biological",
+      "traits": ["biological", "boundary", "selective", "passive", "flexible"]
+    },
+    {
+      "id": "cell_wall",
+      "domain": "biological",
+      "traits": ["biological", "boundary", "selective", "passive", "structural"]
+    },
+    {
+      "id": "enzyme",
+      "domain": "biological",
+      "traits": ["biological", "selective", "active", "chemical", "catalytic"]
+    },
+    {
+      "id": "valve",
+      "domain": "fluid",
+      "traits": ["fluid", "boundary", "selective", "mechanical", "passive", "directional"]
+    },
+    {
+      "id": "pump",
+      "domain": "fluid",
+      "traits": ["fluid", "mechanical", "active", "directional", "bounded"]
+    },
+    {
+      "id": "turbine",
+      "domain": "mechanical",
+      "traits": ["fluid", "mechanical", "rotational", "active", "conversion"]
+    },
+    {
+      "id": "clutch",
+      "domain": "mechanical",
+      "traits": ["mechanical", "rotational", "coupling", "selective", "passive"]
+    },
+    {
+      "id": "dam",
+      "domain": "fluid",
+      "traits": ["fluid", "boundary", "gravitational", "structural", "passive"]
+    },
+    {
+      "id": "heat_exchanger",
+      "domain": "thermal",
+      "traits": ["thermal", "fluid", "passive", "coupling", "bounded"]
+    },
+    {
+      "id": "compressed_air_tank",
+      "domain": "fluid",
+      "traits": ["storage", "containment", "retention", "fluid", "bounded", "reversible", "passive"]
+    },
+    {
+      "id": "hydraulic_accumulator",
+      "domain": "fluid",
+      "traits": ["storage", "containment", "retention", "fluid", "bounded", "reversible", "mechanical"]
+    },
+    {
+      "id": "pendulum",
+      "domain": "mechanical",
+      "traits": ["storage", "containment", "retention", "mechanical", "reversible", "gravitational"]
+    },
+    {
+      "id": "magnetic_core",
+      "domain": "electrical",
+      "traits": ["electrical", "magnetic", "passive", "bounded"]
+    },
+    {
+      "id": "electrostatic_precipitator",
+      "domain": "electrical",
+      "traits": ["electrical", "electrostatic", "active", "bounded", "selective"]
+    },
+    {
+      "id": "diode",
+      "domain": "electrical",
+      "traits": ["electrical", "selective", "passive", "directional", "bounded"]
+    },
+    {
+      "id": "gearbox",
+      "domain": "mechanical",
+      "traits": ["mechanical", "rotational", "coupling", "passive", "bounded"]
+    },
+    {
+      "id": "generator",
+      "domain": "mechanical",
+      "traits": ["mechanical", "electrical", "rotational", "active", "conversion"]
+    },
+    {
+      "id": "bioreactor",
+      "domain": "biological",
+      "traits": ["biological", "bounded", "active", "chemical", "conversion"]
+    },
+    {
+      "id": "flexible_hose",
+      "domain": "fluid",
+      "traits": ["fluid", "boundary", "flexible", "passive", "directional"]
+    }
+  ],
+  "redundancy_groups": [
+    {
+      "id": "storage_synonyms",
+      "members": ["storage", "containment", "retention"],
+      "rationale": "These fixture dimensions intentionally have identical concept membership and control for repeated rather than independent information."
+    }
+  ],
+  "composition_exclusions": [
+    {
+      "left": "electrical",
+      "right": "biological",
+      "scope": "combinatorial_uniqueness_state_v1",
+      "kind": "fixture_local_exclusion",
+      "rationale": "Synthetic-universe classification rule for this mechanism fixture; not a universal ontological claim."
+    },
+    {
+      "left": "passive",
+      "right": "active",
+      "scope": "combinatorial_uniqueness_state_v1",
+      "kind": "fixture_local_exclusion",
+      "rationale": "Mutually exclusive operating-role labels within this fixture; real systems may require contextual or modal qualification."
+    },
+    {
+      "left": "structural",
+      "right": "flexible",
+      "scope": "combinatorial_uniqueness_state_v1",
+      "kind": "fixture_local_exclusion",
+      "rationale": "Synthetic classification rule used only to exercise governed rejection; not a universal ontological claim."
+    }
+  ]
+}

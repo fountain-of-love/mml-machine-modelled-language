@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "combinatorial_uniqueness_v1",
+  "title": "Compose the Broad. Resolve the Specific.",
+  "status": "implemented_development_evidence_not_held_out",
+  "protocol": "docs/benchmark/experiment-3-combinatorial-uniqueness.md",
+  "artifacts": {
+    "state": {
+      "path": "data/demonstration/combinatorial_uniqueness_state_v1.json",
+      "freeze_status": "candidate_not_confirmatory_freeze"
+    },
+    "probes": {
+      "path": "data/demonstration/combinatorial_uniqueness_probes_v1.json",
+      "holdout_status": "not_held_out"
+    }
+  },
+  "evidence_boundary": "The state and probes are separate inspectable artifacts but were co-authored. This version supports mechanism development only; it cannot establish the held-out construction claim.",
+  "confirmatory_progression": [
+    "Validate and revise the synthetic state without using confirmatory probe outcomes.",
+    "Freeze and hash a confirmatory state version.",
+    "Author and freeze a new probe suite only after that state freeze.",
+    "Freeze thresholds and execution settings before running the confirmatory suite."
+  ]
+}

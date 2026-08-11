@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0",
+  "probe_suite_id": "combinatorial_uniqueness_probes_v1",
+  "title": "Compose the Broad. Resolve the Specific.",
+  "status": "authored_development_probes",
+  "state_id": "combinatorial_uniqueness_state_v1",
+  "holdout_status": "not_held_out",
+  "holdout_rationale": "These initial probes were designed together with the synthetic state and are suitable for implementation development and calibration only. A confirmatory suite must be authored after a future state freeze.",
+  "research_intention": {
+    "hypothesis": "Several individually broad and sufficiently independent semantic constraints can combine over a fixed governed semantic state into a narrower and more distinctive conceptual coordinate without requiring a bespoke primitive for that combination.",
+    "primary_question": "Does semantic specificity increase as independent constraints are composed?",
+    "secondary_questions": [
+      "Do independent constraints narrow the candidate field more strongly than redundant constraints?",
+      "Do governed incompatible constraints fail to resolve confidently?",
+      "Is the final composition invariant to constraint order?",
+      "Can the contribution of each constraint be inspected through ablation?"
+    ],
+    "evidence_boundary": "This is a bounded mechanism-development suite over an authored synthetic semantic state. It tests implementation behaviour, not held-out composition, natural-language generalisation, real-world knowledge coverage, or production-scale performance."
+  },
+  "independent_composition_probes": [
+    {
+      "id": "independent_capacitor",
+      "target": "capacitor",
+      "constraints": ["storage", "electrical", "reversible", "electrostatic"]
+    },
+    {
+      "id": "independent_inductor",
+      "target": "inductor",
+      "constraints": ["storage", "electrical", "reversible", "magnetic"]
+    },
+    {
+      "id": "independent_spring",
+      "target": "spring",
+      "constraints": ["storage", "mechanical", "reversible", "elastic"]
+    },
+    {
+      "id": "independent_flywheel",
+      "target": "flywheel",
+      "constraints": ["storage", "mechanical", "reversible", "rotational"]
+    },
+    {
+      "id": "independent_reservoir",
+      "target": "reservoir",
+      "constraints": ["storage", "fluid", "bounded", "gravitational"]
+    },
+    {
+      "id": "independent_fuel_tank",
+      "target": "fuel_tank",
+      "constraints": ["storage", "fluid", "bounded", "chemical"]
+    },
+    {
+      "id": "independent_transformer",
+      "target": "transformer",
+      "constraints": ["electrical", "magnetic", "passive", "coupling"]
+    },
+    {
+      "id": "independent_cell_membrane",
+      "target": "cell_membrane",
+      "constraints": ["biological", "boundary", "selective", "flexible"]
+    }
+  ],
+  "redundant_composition_probes": [
+    {
+      "id": "redundant_storage_order_a",
+      "constraints": ["storage", "containment", "retention"],
+      "expected_relation": "matched_redundant_control"
+    },
+    {
+      "id": "redundant_storage_order_b",
+      "constraints": ["containment", "storage", "retention"],
+      "expected_relation": "matched_redundant_control"
+    }
+  ],
+  "invalid_composition_probes": [
+    {
+      "id": "invalid_electrical_biological",
+      "constraints": ["storage", "electrical", "biological"],
+      "expected_status": "no_valid_intersection",
+      "expected_reason": "contradictory_constraints",
+      "exclusion_scope": "combinatorial_uniqueness_state_v1"
+    },
+    {
+      "id": "invalid_passive_active",
+      "constraints": ["mechanical", "passive", "active"],
+      "expected_status": "no_valid_intersection",
+      "expected_reason": "contradictory_constraints",
+      "exclusion_scope": "combinatorial_uniqueness_state_v1"
+    },
+    {
+      "id": "invalid_structural_flexible",
+      "constraints": ["biological", "structural", "flexible"],
+      "expected_status": "no_valid_intersection",
+      "expected_reason": "contradictory_constraints",
+      "exclusion_scope": "combinatorial_uniqueness_state_v1"
+    }
+  ],
+  "measurement_contract": {
+    "evaluate_prefixes": true,
+    "per_prefix_metrics": [
+      "target_rank",
+      "target_activation",
+      "runner_up_activation",
+      "target_margin",
+      "entropy",
+      "normalized_entropy",
+      "effective_candidate_count"
+    ],
+    "composition_metrics": ["rank_improvement", "entropy_reduction", "margin_growth"],
+    "controls": [
+      "constraint_permutation",
+      "leave_one_constraint_out_ablation",
+      "repeat_execution"
+    ]
+  },
+  "conformity_criteria": {
+    "status": "development_directional_criteria",
+    "threshold_freeze_required_before_confirmatory_execution": true,
+    "independent_composition": {
+      "median_final_target_rank_max": 1,
+      "median_entropy_change_must_be_negative": true,
+      "median_target_margin_change_must_be_positive": true,
+      "target_rank_should_be_nonincreasing_across_prefixes": true
+    },
+    "redundancy_control": {
+      "must_improve_less_than_independent_composition": true
+    },
+    "invalid_composition": {
+      "must_not_resolve": true
+    },
+    "determinism": {
+      "repeat_execution_must_match": true
+    },
+    "order_invariance": {
+      "full_constraint_permutations_must_preserve_top_target": true
+    }
+  }
+}

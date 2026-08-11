@@ -1,0 +1,70 @@
+# Experiment 3.1 — Direct Combinatorial Intersection
+
+## Atomic Claim
+
+> Given a fixed governed semantic state, independently broad dimensions that are individually insufficient to identify a target will produce progressively greater direct specificity when composed, and will do so more strongly than redundant dimensions.
+
+Experiment 3.1 tests only direct cumulative intersection. Every coordinate is interpreted as a required property of the final target.
+
+It does not test:
+
+- legal qualification;
+- cross-level semantic transition;
+- natural-language interpretation; or
+- generalization to post-freeze or independently authored probes.
+
+## Fixture
+
+The experiment uses only the physical synthetic state and probe suite:
+
+```text
+combinatorial_uniqueness_state_v1.json
+combinatorial_uniqueness_probes_v1.json
+```
+
+The legal-banking state is outside the experiment boundary.
+
+## Treatments
+
+1. Eight independent four-coordinate target probes.
+2. Two redundant storage controls.
+3. Three declared-invalid compositions.
+4. All 24 permutations of every valid probe.
+5. Every leave-one-coordinate-out ablation.
+6. A hard incidence reference used only as an authored governance/control oracle.
+
+## Primary Measurements
+
+- normalized entropy and effective candidate count;
+- target margin and tie count;
+- structural-information-to-entropy association;
+- independent-versus-redundant entropy change;
+- final target resolution;
+- invalid-combination rejection; and
+- permutation invariance.
+
+## Verdict Contract
+
+The claim-specific verdict is:
+
+```text
+LOCALLY_CONSISTENT
+INCONSISTENT
+```
+
+`LOCALLY_CONSISTENT` is bounded to the authored development fixture. Generalization is reported separately as `UNTESTED` until a state is frozen before an independently authored probe suite.
+
+## Artifacts And Commands
+
+```text
+benchmark/results/direct-combinatorial-intersection-v1.json
+docs/benchmark/results/direct-combinatorial-intersection-v1.md
+```
+
+```bash
+make experiment-3-1
+make experiment-3-1-benchmark
+make experiment-3-1-check
+```
+
+The [OSCARC report](results/direct-combinatorial-intersection-v1.md) and its machine-readable companion form an evidence pair. A scientifically negative verdict remains valid evidence; freshness checks validate reproduction rather than favorability.

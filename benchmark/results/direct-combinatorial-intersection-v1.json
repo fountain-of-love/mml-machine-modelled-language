@@ -1,0 +1,4103 @@
+{
+  "result_schema_version": "1.0",
+  "experiment_id": "experiment-3.1-direct-combinatorial-intersection-v1",
+  "generated_at": "2026-08-11T09:10:40.276320+00:00",
+  "title": "Experiment 3.1 \u2014 Direct Combinatorial Intersection",
+  "research_question": "Do independent broad dimensions increase direct semantic specificity more strongly than redundant dimensions?",
+  "reporting_methodology": "OSCARC-v1",
+  "claim_scope": "Direct cumulative intersection only; no legal qualification, cross-level transition, or generalization claim.",
+  "fixture": {
+    "manifest": "data/demonstration/combinatorial_uniqueness_v1.json",
+    "lifecycle": "AUTHORED_DEVELOPMENT",
+    "holdout_status": "not_held_out",
+    "concept_count": 31,
+    "dimension_count": 28,
+    "relation_count": 177,
+    "snapshot_id": "sha256:18b4f65e2c41a9a3f4e088acad757e42d2b853dbafda6673329743ffd7bf156f"
+  },
+  "diagnostic_policy": {
+    "policy_id": "direct-intersection-development-v1",
+    "minimum_per_field_support": 0.0,
+    "minimum_top_concentration": 0.0,
+    "minimum_top_margin": 0.0,
+    "purpose": "zero-threshold development diagnostic; not calibrated confidence"
+  },
+  "treatments": {
+    "independent": [
+      {
+        "probe_id": "independent_capacitor",
+        "target": "capacitor",
+        "constraints": [
+          "storage",
+          "electrical",
+          "reversible",
+          "electrostatic"
+        ],
+        "status": "RESOLVED",
+        "reason_code": "RESOLVED_SEMANTIC_REGION",
+        "mechanism": {
+          "status": "RESOLVED",
+          "reason_code": "NUMERIC_FIELD_RESOLVED"
+        },
+        "governance": {
+          "status": "RESOLVED",
+          "reason_code": "GOVERNED_INTERSECTION_SATISFIED"
+        },
+        "top_candidate": "capacitor",
+        "soft_top_candidate": "capacitor",
+        "hard_intersection_candidates": [
+          "capacitor"
+        ],
+        "snapshot_id": "sha256:18b4f65e2c41a9a3f4e088acad757e42d2b853dbafda6673329743ffd7bf156f",
+        "policy": {
+          "policy_id": "direct-intersection-development-v1",
+          "minimum_per_field_support": 0.0,
+          "minimum_top_concentration": 0.0,
+          "minimum_top_margin": 0.0,
+          "purpose": "zero-threshold development diagnostic; not calibrated confidence"
+        },
+        "prefixes": [
+          {
+            "constraints": [
+              "storage"
+            ],
+            "constraint_count": 1,
+            "constraint_families": [
+              "function"
+            ],
+            "family_transitions": 0,
+            "cumulative_structural_information_bits": 1.4947646917495778,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 2.3978952727983707,
+            "normalized_entropy": 0.6982831123151737,
+            "effective_candidate_count": 11.000000000000002,
+            "concentration": 0.09090909090909091,
+            "top_k": 3,
+            "top_k_mass": 0.2727272727272727,
+            "top_margin": 0.0,
+            "top_tie_count": 11,
+            "hard_intersection_candidates": [
+              "battery",
+              "capacitor",
+              "compressed_air_tank",
+              "flywheel",
+              "fuel_tank",
+              "hydraulic_accumulator",
+              "inductor",
+              "pendulum",
+              "reservoir",
+              "spring",
+              "thermal_mass"
+            ],
+            "candidate_values": [
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "target_rank": 1,
+            "target_activation": 0.0909090909090909,
+            "runner_up_activation": 0.0909090909090909,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "storage",
+              "electrical"
+            ],
+            "constraint_count": 2,
+            "constraint_families": [
+              "function",
+              "domain"
+            ],
+            "family_transitions": 1,
+            "cumulative_structural_information_bits": 3.369233809665719,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.0986122886681096,
+            "normalized_entropy": 0.31992323303744613,
+            "effective_candidate_count": 2.9999999999999996,
+            "concentration": 0.3333333333333333,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 0.0,
+            "top_tie_count": 3,
+            "hard_intersection_candidates": [
+              "battery",
+              "capacitor",
+              "inductor"
+            ],
+            "candidate_values": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333,
+              3.296554503147339e-154,
+              3.296554503147339e-154,
+              3.296554503147339e-154,
+              3.296554503147339e-154,
+              3.296554503147339e-154,
+              3.4574555313760445e-154,
+              3.4574555313760445e-154,
+              3.4574555313760445e-154,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.296554503147339e-154,
+              3.296554503147339e-154,
+              3.296554503147339e-154,
+              3.4574555313760445e-154,
+              3.4574555313760445e-154,
+              3.4574555313760445e-154,
+              3.4193071804168747e-307,
+              3.4574555313760445e-154,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307
+            ],
+            "target_rank": 1,
+            "target_activation": 0.3333333333333333,
+            "runner_up_activation": 0.3333333333333333,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "storage",
+              "electrical",
+              "reversible"
+            ],
+            "constraint_count": 3,
+            "constraint_families": [
+              "function",
+              "domain",
+              "behaviour"
+            ],
+            "family_transitions": 2,
+            "cumulative_structural_information_bits": 3.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 0.6931471805599453,
+            "normalized_entropy": 0.20184908658209985,
+            "effective_candidate_count": 2.0,
+            "concentration": 0.5,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 0.0,
+            "top_tie_count": 2,
+            "hard_intersection_candidates": [
+              "capacitor",
+              "inductor"
+            ],
+            "candidate_values": [
+              0.5,
+              4.963153201878763e-103,
+              0.5,
+              4.963153201878763e-103,
+              4.963153201878763e-103,
+              4.926577941064086e-205,
+              4.926577941064086e-205,
+              4.963153201878763e-103,
+              5.123364360262958e-103,
+              5.085608445806194e-205,
+              5.085608445806194e-205,
+              5.0856084458064825e-205,
+              5.0481307682605725e-307,
+              5.0481307682605725e-307,
+              5.0481307682605725e-307,
+              5.0481307682605725e-307,
+              5.0481307682605725e-307,
+              5.0481307682605725e-307,
+              5.0481307682605725e-307,
+              5.0481307682605725e-307,
+              5.0481307682605725e-307,
+              4.963153201878763e-103,
+              4.963153201878763e-103,
+              4.963153201878763e-103,
+              5.085608445806194e-205,
+              5.085608445806194e-205,
+              5.085608445806194e-205,
+              5.0481307682605725e-307,
+              5.085608445806194e-205,
+              5.0481307682605725e-307,
+              5.0481307682605725e-307
+            ],
+            "target_rank": 1,
+            "target_activation": 0.5,
+            "runner_up_activation": 0.5,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "storage",
+              "electrical",
+              "reversible",
+              "electrostatic"
+            ],
+            "constraint_count": 4,
+            "constraint_families": [
+              "function",
+              "domain",
+              "behaviour",
+              "mechanism"
+            ],
+            "family_transitions": 3,
+            "cumulative_structural_information_bits": 4.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 4.106797775749893e-75,
+            "normalized_entropy": 1.1959269301836612e-75,
+            "effective_candidate_count": 1.0,
+            "concentration": 1.0,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 1.0,
+            "top_tie_count": 1,
+            "hard_intersection_candidates": [
+              "capacitor"
+            ],
+            "candidate_values": [
+              1.0,
+              7.319169905552818e-154,
+              2.327400221332214e-77,
+              7.319169905552818e-154,
+              7.319169905552818e-154,
+              2.30172050407782e-230,
+              2.30172050407782e-230,
+              7.319169905552818e-154,
+              7.495662093011501e-154,
+              1.0128139780457909e-153,
+              2.3572234766722967e-230,
+              2.3572234766722967e-230,
+              7.412957588036496e-307,
+              7.412957588036496e-307,
+              7.412957588036496e-307,
+              7.412957588036496e-307,
+              7.412957588036496e-307,
+              7.412957588036496e-307,
+              7.412957588036496e-307,
+              7.412957588036496e-307,
+              7.412957588036496e-307,
+              7.319169905552818e-154,
+              7.319169905552818e-154,
+              7.319169905552818e-154,
+              2.3572234766722967e-230,
+              1.0128139780457909e-153,
+              2.3572234766722967e-230,
+              7.412957588036496e-307,
+              2.3572234766722967e-230,
+              7.412957588036496e-307,
+              7.412957588036496e-307
+            ],
+            "target_rank": 1,
+            "target_activation": 1.0,
+            "runner_up_activation": 2.327400221332214e-77,
+            "target_margin": 1.0
+          }
+        ]
+      },
+      {
+        "probe_id": "independent_inductor",
+        "target": "inductor",
+        "constraints": [
+          "storage",
+          "electrical",
+          "reversible",
+          "magnetic"
+        ],
+        "status": "RESOLVED",
+        "reason_code": "RESOLVED_SEMANTIC_REGION",
+        "mechanism": {
+          "status": "RESOLVED",
+          "reason_code": "NUMERIC_FIELD_RESOLVED"
+        },
+        "governance": {
+          "status": "RESOLVED",
+          "reason_code": "GOVERNED_INTERSECTION_SATISFIED"
+        },
+        "top_candidate": "inductor",
+        "soft_top_candidate": "inductor",
+        "hard_intersection_candidates": [
+          "inductor"
+        ],
+        "snapshot_id": "sha256:18b4f65e2c41a9a3f4e088acad757e42d2b853dbafda6673329743ffd7bf156f",
+        "policy": {
+          "policy_id": "direct-intersection-development-v1",
+          "minimum_per_field_support": 0.0,
+          "minimum_top_concentration": 0.0,
+          "minimum_top_margin": 0.0,
+          "purpose": "zero-threshold development diagnostic; not calibrated confidence"
+        },
+        "prefixes": [
+          {
+            "constraints": [
+              "storage"
+            ],
+            "constraint_count": 1,
+            "constraint_families": [
+              "function"
+            ],
+            "family_transitions": 0,
+            "cumulative_structural_information_bits": 1.4947646917495778,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 2.3978952727983707,
+            "normalized_entropy": 0.6982831123151737,
+            "effective_candidate_count": 11.000000000000002,
+            "concentration": 0.09090909090909091,
+            "top_k": 3,
+            "top_k_mass": 0.2727272727272727,
+            "top_margin": 0.0,
+            "top_tie_count": 11,
+            "hard_intersection_candidates": [
+              "battery",
+              "capacitor",
+              "compressed_air_tank",
+              "flywheel",
+              "fuel_tank",
+              "hydraulic_accumulator",
+              "inductor",
+              "pendulum",
+              "reservoir",
+              "spring",
+              "thermal_mass"
+            ],
+            "candidate_values": [
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "target_rank": 1,
+            "target_activation": 0.0909090909090909,
+            "runner_up_activation": 0.0909090909090909,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "storage",
+              "electrical"
+            ],
+            "constraint_count": 2,
+            "constraint_families": [
+              "function",
+              "domain"
+            ],
+            "family_transitions": 1,
+            "cumulative_structural_information_bits": 3.369233809665719,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.0986122886681096,
+            "normalized_entropy": 0.31992323303744613,
+            "effective_candidate_count": 2.9999999999999996,
+            "concentration": 0.3333333333333333,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 0.0,
+            "top_tie_count": 3,
+            "hard_intersection_candidates": [
+              "battery",
+              "capacitor",
+              "inductor"
+            ],
+            "candidate_values": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333,
+              3.296554503147339e-154,
+              3.296554503147339e-154,
+              3.296554503147339e-154,
+              3.296554503147339e-154,
+              3.296554503147339e-154,
+              3.4574555313760445e-154,
+              3.4574555313760445e-154,
+              3.4574555313760445e-154,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.296554503147339e-154,
+              3.296554503147339e-154,
+              3.296554503147339e-154,
+              3.4574555313760445e-154,
+              3.4574555313760445e-154,
+              3.4574555313760445e-154,
+              3.4193071804168747e-307,
+              3.4574555313760445e-154,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307
+            ],
+            "target_rank": 1,
+            "target_activation": 0.3333333333333333,
+            "runner_up_activation": 0.3333333333333333,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "storage",
+              "electrical",
+              "reversible"
+            ],
+            "constraint_count": 3,
+            "constraint_families": [
+              "function",
+              "domain",
+              "behaviour"
+            ],
+            "family_transitions": 2,
+            "cumulative_structural_information_bits": 3.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 0.6931471805599453,
+            "normalized_entropy": 0.20184908658209985,
+            "effective_candidate_count": 2.0,
+            "concentration": 0.5,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 0.0,
+            "top_tie_count": 2,
+            "hard_intersection_candidates": [
+              "capacitor",
+              "inductor"
+            ],
+            "candidate_values": [
+              0.5,
+              4.963153201878763e-103,
+              0.5,
+              4.963153201878763e-103,
+              4.963153201878763e-103,
+              4.926577941064086e-205,
+              4.926577941064086e-205,
+              4.963153201878763e-103,
+              5.123364360262958e-103,
+              5.085608445806194e-205,
+              5.085608445806194e-205,
+              5.0856084458064825e-205,
+              5.0481307682605725e-307,
+              5.0481307682605725e-307,
+              5.0481307682605725e-307,
+              5.0481307682605725e-307,
+              5.0481307682605725e-307,
+              5.0481307682605725e-307,
+              5.0481307682605725e-307,
+              5.0481307682605725e-307,
+              5.0481307682605725e-307,
+              4.963153201878763e-103,
+              4.963153201878763e-103,
+              4.963153201878763e-103,
+              5.085608445806194e-205,
+              5.085608445806194e-205,
+              5.085608445806194e-205,
+              5.0481307682605725e-307,
+              5.085608445806194e-205,
+              5.0481307682605725e-307,
+              5.0481307682605725e-307
+            ],
+            "target_rank": 1,
+            "target_activation": 0.5,
+            "runner_up_activation": 0.5,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "storage",
+              "electrical",
+              "reversible",
+              "magnetic"
+            ],
+            "constraint_count": 4,
+            "constraint_families": [
+              "function",
+              "domain",
+              "behaviour",
+              "mechanism"
+            ],
+            "family_transitions": 3,
+            "cumulative_structural_information_bits": 4.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 9.779251749327665e-75,
+            "normalized_entropy": 2.847783397839963e-75,
+            "effective_candidate_count": 1.0,
+            "concentration": 1.0,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 1.0,
+            "top_tie_count": 1,
+            "hard_intersection_candidates": [
+              "inductor"
+            ],
+            "candidate_values": [
+              2.327400221332214e-77,
+              7.319169905552818e-154,
+              1.0,
+              7.319169905552818e-154,
+              7.319169905552818e-154,
+              2.30172050407782e-230,
+              2.30172050407782e-230,
+              7.319169905552818e-154,
+              3.2206158718679996e-77,
+              2.3572234766722967e-230,
+              2.3572234766722967e-230,
+              2.3572234766722967e-230,
+              7.412957588036496e-307,
+              7.412957588036496e-307,
+              7.412957588036496e-307,
+              7.412957588036496e-307,
+              7.412957588036496e-307,
+              7.412957588036496e-307,
+              7.412957588036496e-307,
+              7.412957588036496e-307,
+              7.412957588036496e-307,
+              7.319169905552818e-154,
+              7.319169905552818e-154,
+              7.319169905552818e-154,
+              1.0128139780457909e-153,
+              2.3572234766722967e-230,
+              2.3572234766722967e-230,
+              7.412957588036496e-307,
+              2.3572234766722967e-230,
+              7.412957588036496e-307,
+              7.412957588036496e-307
+            ],
+            "target_rank": 1,
+            "target_activation": 1.0,
+            "runner_up_activation": 3.2206158718679996e-77,
+            "target_margin": 1.0
+          }
+        ]
+      },
+      {
+        "probe_id": "independent_spring",
+        "target": "spring",
+        "constraints": [
+          "storage",
+          "mechanical",
+          "reversible",
+          "elastic"
+        ],
+        "status": "RESOLVED",
+        "reason_code": "RESOLVED_SEMANTIC_REGION",
+        "mechanism": {
+          "status": "RESOLVED",
+          "reason_code": "NUMERIC_FIELD_RESOLVED"
+        },
+        "governance": {
+          "status": "RESOLVED",
+          "reason_code": "GOVERNED_INTERSECTION_SATISFIED"
+        },
+        "top_candidate": "spring",
+        "soft_top_candidate": "spring",
+        "hard_intersection_candidates": [
+          "spring"
+        ],
+        "snapshot_id": "sha256:18b4f65e2c41a9a3f4e088acad757e42d2b853dbafda6673329743ffd7bf156f",
+        "policy": {
+          "policy_id": "direct-intersection-development-v1",
+          "minimum_per_field_support": 0.0,
+          "minimum_top_concentration": 0.0,
+          "minimum_top_margin": 0.0,
+          "purpose": "zero-threshold development diagnostic; not calibrated confidence"
+        },
+        "prefixes": [
+          {
+            "constraints": [
+              "storage"
+            ],
+            "constraint_count": 1,
+            "constraint_families": [
+              "function"
+            ],
+            "family_transitions": 0,
+            "cumulative_structural_information_bits": 1.4947646917495778,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 2.3978952727983707,
+            "normalized_entropy": 0.6982831123151737,
+            "effective_candidate_count": 11.000000000000002,
+            "concentration": 0.09090909090909091,
+            "top_k": 3,
+            "top_k_mass": 0.2727272727272727,
+            "top_margin": 0.0,
+            "top_tie_count": 11,
+            "hard_intersection_candidates": [
+              "battery",
+              "capacitor",
+              "compressed_air_tank",
+              "flywheel",
+              "fuel_tank",
+              "hydraulic_accumulator",
+              "inductor",
+              "pendulum",
+              "reservoir",
+              "spring",
+              "thermal_mass"
+            ],
+            "candidate_values": [
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "target_rank": 1,
+            "target_activation": 0.0909090909090909,
+            "runner_up_activation": 0.0909090909090909,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "storage",
+              "mechanical"
+            ],
+            "constraint_count": 2,
+            "constraint_families": [
+              "function",
+              "domain"
+            ],
+            "family_transitions": 1,
+            "cumulative_structural_information_bits": 2.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.3862943611198906,
+            "normalized_entropy": 0.4036981731641997,
+            "effective_candidate_count": 4.0,
+            "concentration": 0.25,
+            "top_k": 3,
+            "top_k_mass": 0.75,
+            "top_margin": 0.0,
+            "top_tie_count": 4,
+            "hard_intersection_candidates": [
+              "flywheel",
+              "hydraulic_accumulator",
+              "pendulum",
+              "spring"
+            ],
+            "candidate_values": [
+              2.593091648532065e-154,
+              2.593091648532065e-154,
+              2.593091648532065e-154,
+              0.25,
+              0.25,
+              2.593091648532065e-154,
+              2.593091648532065e-154,
+              2.593091648532065e-154,
+              2.6896497190747133e-307,
+              2.6896497190747133e-307,
+              2.6896497190747133e-307,
+              2.593091648532065e-154,
+              2.6896497190747133e-307,
+              2.6896497190747133e-307,
+              2.6896497190747133e-307,
+              2.593091648532065e-154,
+              2.593091648532065e-154,
+              2.593091648532065e-154,
+              2.593091648532065e-154,
+              2.6896497190747133e-307,
+              2.6896497190747133e-307,
+              2.593091648532065e-154,
+              0.25,
+              0.25,
+              2.6896497190747133e-307,
+              2.6896497190747133e-307,
+              2.6896497190747133e-307,
+              2.593091648532065e-154,
+              2.593091648532065e-154,
+              2.6896497190747133e-307,
+              2.6896497190747133e-307
+            ],
+            "target_rank": 1,
+            "target_activation": 0.25,
+            "runner_up_activation": 0.25,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "storage",
+              "mechanical",
+              "reversible"
+            ],
+            "constraint_count": 3,
+            "constraint_families": [
+              "function",
+              "domain",
+              "behaviour"
+            ],
+            "family_transitions": 2,
+            "cumulative_structural_information_bits": 2.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.3862943611198906,
+            "normalized_entropy": 0.4036981731641997,
+            "effective_candidate_count": 4.0,
+            "concentration": 0.25,
+            "top_k": 3,
+            "top_k_mass": 0.75,
+            "top_margin": 0.0,
+            "top_tie_count": 4,
+            "hard_intersection_candidates": [
+              "flywheel",
+              "hydraulic_accumulator",
+              "pendulum",
+              "spring"
+            ],
+            "candidate_values": [
+              2.5616821801315244e-103,
+              2.5428042229032142e-205,
+              2.5616821801315244e-103,
+              0.25,
+              0.25,
+              2.5428042229032142e-205,
+              2.5428042229032142e-205,
+              2.5616821801315244e-103,
+              2.6248862368014966e-205,
+              2.6055425061494322e-307,
+              2.6055425061494322e-307,
+              2.5616821801315244e-103,
+              2.6055425061494322e-307,
+              2.6055425061494322e-307,
+              2.6055425061494322e-307,
+              2.5428042229032142e-205,
+              2.5428042229032142e-205,
+              2.5428042229032142e-205,
+              2.5428042229032142e-205,
+              2.6055425061494322e-307,
+              2.6055425061494322e-307,
+              2.5616821801315244e-103,
+              0.25,
+              0.25,
+              2.6055425061494322e-307,
+              2.6055425061494322e-307,
+              2.6055425061494322e-307,
+              2.5428042229032142e-205,
+              2.5428042229032142e-205,
+              2.6055425061494322e-307,
+              2.6055425061494322e-307
+            ],
+            "target_rank": 1,
+            "target_activation": 0.25,
+            "runner_up_activation": 0.25,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "storage",
+              "mechanical",
+              "reversible",
+              "elastic"
+            ],
+            "constraint_count": 4,
+            "constraint_families": [
+              "function",
+              "domain",
+              "behaviour",
+              "mechanism"
+            ],
+            "family_transitions": 3,
+            "cumulative_structural_information_bits": 4.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.6811581400052078e-74,
+            "normalized_entropy": 4.895644741510509e-75,
+            "effective_candidate_count": 1.0,
+            "concentration": 1.0,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 1.0,
+            "top_tie_count": 1,
+            "hard_intersection_candidates": [
+              "spring"
+            ],
+            "candidate_values": [
+              6.773095285627597e-154,
+              2.1299918564773853e-230,
+              6.773095285627597e-154,
+              2.103043503197738e-77,
+              1.0,
+              2.1299918564773853e-230,
+              2.1299918564773853e-230,
+              6.773095285627597e-154,
+              2.181353817856744e-230,
+              6.8598855799201516e-307,
+              6.8598855799201516e-307,
+              3.2206158718680157e-77,
+              6.8598855799201516e-307,
+              6.8598855799201516e-307,
+              6.8598855799201516e-307,
+              2.1299918564773853e-230,
+              2.1299918564773853e-230,
+              2.1299918564773853e-230,
+              2.1299918564773853e-230,
+              6.8598855799201516e-307,
+              6.8598855799201516e-307,
+              6.773095285627597e-154,
+              2.103043503197738e-77,
+              2.103043503197738e-77,
+              6.8598855799201516e-307,
+              6.8598855799201516e-307,
+              6.8598855799201516e-307,
+              2.1299918564773853e-230,
+              2.1299918564773853e-230,
+              6.8598855799201516e-307,
+              6.8598855799201516e-307
+            ],
+            "target_rank": 1,
+            "target_activation": 1.0,
+            "runner_up_activation": 3.2206158718680157e-77,
+            "target_margin": 1.0
+          }
+        ]
+      },
+      {
+        "probe_id": "independent_flywheel",
+        "target": "flywheel",
+        "constraints": [
+          "storage",
+          "mechanical",
+          "reversible",
+          "rotational"
+        ],
+        "status": "RESOLVED",
+        "reason_code": "RESOLVED_SEMANTIC_REGION",
+        "mechanism": {
+          "status": "RESOLVED",
+          "reason_code": "NUMERIC_FIELD_RESOLVED"
+        },
+        "governance": {
+          "status": "RESOLVED",
+          "reason_code": "GOVERNED_INTERSECTION_SATISFIED"
+        },
+        "top_candidate": "flywheel",
+        "soft_top_candidate": "flywheel",
+        "hard_intersection_candidates": [
+          "flywheel"
+        ],
+        "snapshot_id": "sha256:18b4f65e2c41a9a3f4e088acad757e42d2b853dbafda6673329743ffd7bf156f",
+        "policy": {
+          "policy_id": "direct-intersection-development-v1",
+          "minimum_per_field_support": 0.0,
+          "minimum_top_concentration": 0.0,
+          "minimum_top_margin": 0.0,
+          "purpose": "zero-threshold development diagnostic; not calibrated confidence"
+        },
+        "prefixes": [
+          {
+            "constraints": [
+              "storage"
+            ],
+            "constraint_count": 1,
+            "constraint_families": [
+              "function"
+            ],
+            "family_transitions": 0,
+            "cumulative_structural_information_bits": 1.4947646917495778,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 2.3978952727983707,
+            "normalized_entropy": 0.6982831123151737,
+            "effective_candidate_count": 11.000000000000002,
+            "concentration": 0.09090909090909091,
+            "top_k": 3,
+            "top_k_mass": 0.2727272727272727,
+            "top_margin": 0.0,
+            "top_tie_count": 11,
+            "hard_intersection_candidates": [
+              "battery",
+              "capacitor",
+              "compressed_air_tank",
+              "flywheel",
+              "fuel_tank",
+              "hydraulic_accumulator",
+              "inductor",
+              "pendulum",
+              "reservoir",
+              "spring",
+              "thermal_mass"
+            ],
+            "candidate_values": [
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "target_rank": 1,
+            "target_activation": 0.0909090909090909,
+            "runner_up_activation": 0.0909090909090909,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "storage",
+              "mechanical"
+            ],
+            "constraint_count": 2,
+            "constraint_families": [
+              "function",
+              "domain"
+            ],
+            "family_transitions": 1,
+            "cumulative_structural_information_bits": 2.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.3862943611198906,
+            "normalized_entropy": 0.4036981731641997,
+            "effective_candidate_count": 4.0,
+            "concentration": 0.25,
+            "top_k": 3,
+            "top_k_mass": 0.75,
+            "top_margin": 0.0,
+            "top_tie_count": 4,
+            "hard_intersection_candidates": [
+              "flywheel",
+              "hydraulic_accumulator",
+              "pendulum",
+              "spring"
+            ],
+            "candidate_values": [
+              2.593091648532065e-154,
+              2.593091648532065e-154,
+              2.593091648532065e-154,
+              0.25,
+              0.25,
+              2.593091648532065e-154,
+              2.593091648532065e-154,
+              2.593091648532065e-154,
+              2.6896497190747133e-307,
+              2.6896497190747133e-307,
+              2.6896497190747133e-307,
+              2.593091648532065e-154,
+              2.6896497190747133e-307,
+              2.6896497190747133e-307,
+              2.6896497190747133e-307,
+              2.593091648532065e-154,
+              2.593091648532065e-154,
+              2.593091648532065e-154,
+              2.593091648532065e-154,
+              2.6896497190747133e-307,
+              2.6896497190747133e-307,
+              2.593091648532065e-154,
+              0.25,
+              0.25,
+              2.6896497190747133e-307,
+              2.6896497190747133e-307,
+              2.6896497190747133e-307,
+              2.593091648532065e-154,
+              2.593091648532065e-154,
+              2.6896497190747133e-307,
+              2.6896497190747133e-307
+            ],
+            "target_rank": 1,
+            "target_activation": 0.25,
+            "runner_up_activation": 0.25,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "storage",
+              "mechanical",
+              "reversible"
+            ],
+            "constraint_count": 3,
+            "constraint_families": [
+              "function",
+              "domain",
+              "behaviour"
+            ],
+            "family_transitions": 2,
+            "cumulative_structural_information_bits": 2.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.3862943611198906,
+            "normalized_entropy": 0.4036981731641997,
+            "effective_candidate_count": 4.0,
+            "concentration": 0.25,
+            "top_k": 3,
+            "top_k_mass": 0.75,
+            "top_margin": 0.0,
+            "top_tie_count": 4,
+            "hard_intersection_candidates": [
+              "flywheel",
+              "hydraulic_accumulator",
+              "pendulum",
+              "spring"
+            ],
+            "candidate_values": [
+              2.5616821801315244e-103,
+              2.5428042229032142e-205,
+              2.5616821801315244e-103,
+              0.25,
+              0.25,
+              2.5428042229032142e-205,
+              2.5428042229032142e-205,
+              2.5616821801315244e-103,
+              2.6248862368014966e-205,
+              2.6055425061494322e-307,
+              2.6055425061494322e-307,
+              2.5616821801315244e-103,
+              2.6055425061494322e-307,
+              2.6055425061494322e-307,
+              2.6055425061494322e-307,
+              2.5428042229032142e-205,
+              2.5428042229032142e-205,
+              2.5428042229032142e-205,
+              2.5428042229032142e-205,
+              2.6055425061494322e-307,
+              2.6055425061494322e-307,
+              2.5616821801315244e-103,
+              0.25,
+              0.25,
+              2.6055425061494322e-307,
+              2.6055425061494322e-307,
+              2.6055425061494322e-307,
+              2.5428042229032142e-205,
+              2.5428042229032142e-205,
+              2.6055425061494322e-307,
+              2.6055425061494322e-307
+            ],
+            "target_rank": 1,
+            "target_activation": 0.25,
+            "runner_up_activation": 0.25,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "storage",
+              "mechanical",
+              "reversible",
+              "rotational"
+            ],
+            "constraint_count": 4,
+            "constraint_families": [
+              "function",
+              "domain",
+              "behaviour",
+              "mechanism"
+            ],
+            "family_transitions": 3,
+            "cumulative_structural_information_bits": 4.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.3988538153782078e-74,
+            "normalized_entropy": 4.073555700939009e-75,
+            "effective_candidate_count": 1.0,
+            "concentration": 1.0,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 1.0,
+            "top_tie_count": 1,
+            "hard_intersection_candidates": [
+              "flywheel"
+            ],
+            "candidate_values": [
+              8.516716434576031e-154,
+              2.678322965287082e-230,
+              8.516716434576031e-154,
+              1.0,
+              2.644437204998347e-77,
+              2.678322965287082e-230,
+              2.678322965287082e-230,
+              8.516716434576031e-154,
+              2.742907212539571e-230,
+              8.62584945199151e-307,
+              8.62584945199151e-307,
+              8.516716434576031e-154,
+              8.62584945199151e-307,
+              8.62584945199151e-307,
+              8.62584945199151e-307,
+              2.678322965287082e-230,
+              2.678322965287082e-230,
+              1.0128139780458858e-153,
+              1.0128139780458858e-153,
+              8.62584945199151e-307,
+              8.62584945199151e-307,
+              8.516716434576031e-154,
+              2.644437204998347e-77,
+              2.644437204998347e-77,
+              8.62584945199151e-307,
+              8.62584945199151e-307,
+              8.62584945199151e-307,
+              1.0128139780458858e-153,
+              1.0128139780458858e-153,
+              8.62584945199151e-307,
+              8.62584945199151e-307
+            ],
+            "target_rank": 1,
+            "target_activation": 1.0,
+            "runner_up_activation": 2.644437204998347e-77,
+            "target_margin": 1.0
+          }
+        ]
+      },
+      {
+        "probe_id": "independent_reservoir",
+        "target": "reservoir",
+        "constraints": [
+          "storage",
+          "fluid",
+          "bounded",
+          "gravitational"
+        ],
+        "status": "RESOLVED",
+        "reason_code": "RESOLVED_SEMANTIC_REGION",
+        "mechanism": {
+          "status": "RESOLVED",
+          "reason_code": "NUMERIC_FIELD_RESOLVED"
+        },
+        "governance": {
+          "status": "RESOLVED",
+          "reason_code": "GOVERNED_INTERSECTION_SATISFIED"
+        },
+        "top_candidate": "reservoir",
+        "soft_top_candidate": "reservoir",
+        "hard_intersection_candidates": [
+          "reservoir"
+        ],
+        "snapshot_id": "sha256:18b4f65e2c41a9a3f4e088acad757e42d2b853dbafda6673329743ffd7bf156f",
+        "policy": {
+          "policy_id": "direct-intersection-development-v1",
+          "minimum_per_field_support": 0.0,
+          "minimum_top_concentration": 0.0,
+          "minimum_top_margin": 0.0,
+          "purpose": "zero-threshold development diagnostic; not calibrated confidence"
+        },
+        "prefixes": [
+          {
+            "constraints": [
+              "storage"
+            ],
+            "constraint_count": 1,
+            "constraint_families": [
+              "function"
+            ],
+            "family_transitions": 0,
+            "cumulative_structural_information_bits": 1.4947646917495778,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 2.3978952727983707,
+            "normalized_entropy": 0.6982831123151737,
+            "effective_candidate_count": 11.000000000000002,
+            "concentration": 0.09090909090909091,
+            "top_k": 3,
+            "top_k_mass": 0.2727272727272727,
+            "top_margin": 0.0,
+            "top_tie_count": 11,
+            "hard_intersection_candidates": [
+              "battery",
+              "capacitor",
+              "compressed_air_tank",
+              "flywheel",
+              "fuel_tank",
+              "hydraulic_accumulator",
+              "inductor",
+              "pendulum",
+              "reservoir",
+              "spring",
+              "thermal_mass"
+            ],
+            "candidate_values": [
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "target_rank": 1,
+            "target_activation": 0.0909090909090909,
+            "runner_up_activation": 0.0909090909090909,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "storage",
+              "fluid"
+            ],
+            "constraint_count": 2,
+            "constraint_families": [
+              "function",
+              "domain"
+            ],
+            "family_transitions": 1,
+            "cumulative_structural_information_bits": 2.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.3862943611198906,
+            "normalized_entropy": 0.4036981731641997,
+            "effective_candidate_count": 4.0,
+            "concentration": 0.25,
+            "top_k": 3,
+            "top_k_mass": 0.75,
+            "top_margin": 0.0,
+            "top_tie_count": 4,
+            "hard_intersection_candidates": [
+              "compressed_air_tank",
+              "fuel_tank",
+              "hydraulic_accumulator",
+              "reservoir"
+            ],
+            "candidate_values": [
+              2.472415877360504e-154,
+              2.472415877360504e-154,
+              2.472415877360504e-154,
+              2.472415877360504e-154,
+              2.472415877360504e-154,
+              0.25,
+              0.25,
+              2.472415877360504e-154,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.593091648532034e-154,
+              2.593091648532034e-154,
+              2.593091648532034e-154,
+              2.564480385312656e-307,
+              2.593091648532034e-154,
+              2.593091648532034e-154,
+              0.25,
+              0.25,
+              2.472415877360504e-154,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.593091648532034e-154
+            ],
+            "target_rank": 1,
+            "target_activation": 0.25,
+            "runner_up_activation": 0.25,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "storage",
+              "fluid",
+              "bounded"
+            ],
+            "constraint_count": 3,
+            "constraint_families": [
+              "function",
+              "domain",
+              "structure"
+            ],
+            "family_transitions": 2,
+            "cumulative_structural_information_bits": 2.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.3862943611198906,
+            "normalized_entropy": 0.4036981731641997,
+            "effective_candidate_count": 4.0,
+            "concentration": 0.25,
+            "top_k": 3,
+            "top_k_mass": 0.75,
+            "top_margin": 0.0,
+            "top_tie_count": 4,
+            "hard_intersection_candidates": [
+              "compressed_air_tank",
+              "fuel_tank",
+              "hydraulic_accumulator",
+              "reservoir"
+            ],
+            "candidate_values": [
+              2.481576600939386e-103,
+              2.481576600939386e-103,
+              2.8197619680925654e-205,
+              2.8197619680925654e-205,
+              2.8197619680925654e-205,
+              0.25,
+              0.25,
+              2.8197619680925654e-205,
+              2.889333594349786e-307,
+              2.542804222903101e-205,
+              2.542804222903101e-205,
+              2.889333594349786e-307,
+              2.889333594349786e-307,
+              2.889333594349786e-307,
+              2.889333594349786e-307,
+              2.910784209981933e-205,
+              2.561682180131484e-103,
+              2.910784209981933e-205,
+              2.889333594349786e-307,
+              2.910784209981933e-205,
+              2.561682180131484e-103,
+              0.25,
+              0.25,
+              2.8197619680925654e-205,
+              2.542804222903101e-205,
+              2.542804222903101e-205,
+              2.542804222903101e-205,
+              2.542804222903101e-205,
+              2.889333594349786e-307,
+              2.542804222903101e-205,
+              2.910784209981933e-205
+            ],
+            "target_rank": 1,
+            "target_activation": 0.25,
+            "runner_up_activation": 0.25,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "storage",
+              "fluid",
+              "bounded",
+              "gravitational"
+            ],
+            "constraint_count": 4,
+            "constraint_families": [
+              "function",
+              "domain",
+              "structure",
+              "mechanism"
+            ],
+            "family_transitions": 3,
+            "cumulative_structural_information_bits": 4.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.2320393327249696e-74,
+            "normalized_entropy": 3.5877807905509884e-75,
+            "effective_candidate_count": 1.0,
+            "concentration": 1.0,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 1.0,
+            "top_tie_count": 1,
+            "hard_intersection_candidates": [
+              "reservoir"
+            ],
+            "candidate_values": [
+              7.319169905552619e-154,
+              7.319169905552619e-154,
+              2.547272466066434e-230,
+              2.547272466066434e-230,
+              2.547272466066434e-230,
+              1.0,
+              2.3274002213322175e-77,
+              2.547272466066434e-230,
+              8.203786134185297e-307,
+              2.3572234766722326e-230,
+              2.3572234766722326e-230,
+              8.203786134185297e-307,
+              8.203786134185297e-307,
+              8.203786134185297e-307,
+              8.203786134185297e-307,
+              2.608696602326364e-230,
+              7.495662093011724e-154,
+              2.608696602326364e-230,
+              8.203786134185297e-307,
+              1.1208629175230355e-153,
+              7.495662093011724e-154,
+              2.3274002213322175e-77,
+              2.3274002213322175e-77,
+              1.0944711797819582e-153,
+              2.3572234766722326e-230,
+              2.3572234766722326e-230,
+              2.3572234766722326e-230,
+              2.3572234766722326e-230,
+              8.203786134185297e-307,
+              2.3572234766722326e-230,
+              2.608696602326364e-230
+            ],
+            "target_rank": 1,
+            "target_activation": 1.0,
+            "runner_up_activation": 2.3274002213322175e-77,
+            "target_margin": 1.0
+          }
+        ]
+      },
+      {
+        "probe_id": "independent_fuel_tank",
+        "target": "fuel_tank",
+        "constraints": [
+          "storage",
+          "fluid",
+          "bounded",
+          "chemical"
+        ],
+        "status": "RESOLVED",
+        "reason_code": "RESOLVED_SEMANTIC_REGION",
+        "mechanism": {
+          "status": "RESOLVED",
+          "reason_code": "NUMERIC_FIELD_RESOLVED"
+        },
+        "governance": {
+          "status": "RESOLVED",
+          "reason_code": "GOVERNED_INTERSECTION_SATISFIED"
+        },
+        "top_candidate": "fuel_tank",
+        "soft_top_candidate": "fuel_tank",
+        "hard_intersection_candidates": [
+          "fuel_tank"
+        ],
+        "snapshot_id": "sha256:18b4f65e2c41a9a3f4e088acad757e42d2b853dbafda6673329743ffd7bf156f",
+        "policy": {
+          "policy_id": "direct-intersection-development-v1",
+          "minimum_per_field_support": 0.0,
+          "minimum_top_concentration": 0.0,
+          "minimum_top_margin": 0.0,
+          "purpose": "zero-threshold development diagnostic; not calibrated confidence"
+        },
+        "prefixes": [
+          {
+            "constraints": [
+              "storage"
+            ],
+            "constraint_count": 1,
+            "constraint_families": [
+              "function"
+            ],
+            "family_transitions": 0,
+            "cumulative_structural_information_bits": 1.4947646917495778,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 2.3978952727983707,
+            "normalized_entropy": 0.6982831123151737,
+            "effective_candidate_count": 11.000000000000002,
+            "concentration": 0.09090909090909091,
+            "top_k": 3,
+            "top_k_mass": 0.2727272727272727,
+            "top_margin": 0.0,
+            "top_tie_count": 11,
+            "hard_intersection_candidates": [
+              "battery",
+              "capacitor",
+              "compressed_air_tank",
+              "flywheel",
+              "fuel_tank",
+              "hydraulic_accumulator",
+              "inductor",
+              "pendulum",
+              "reservoir",
+              "spring",
+              "thermal_mass"
+            ],
+            "candidate_values": [
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "target_rank": 1,
+            "target_activation": 0.0909090909090909,
+            "runner_up_activation": 0.0909090909090909,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "storage",
+              "fluid"
+            ],
+            "constraint_count": 2,
+            "constraint_families": [
+              "function",
+              "domain"
+            ],
+            "family_transitions": 1,
+            "cumulative_structural_information_bits": 2.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.3862943611198906,
+            "normalized_entropy": 0.4036981731641997,
+            "effective_candidate_count": 4.0,
+            "concentration": 0.25,
+            "top_k": 3,
+            "top_k_mass": 0.75,
+            "top_margin": 0.0,
+            "top_tie_count": 4,
+            "hard_intersection_candidates": [
+              "compressed_air_tank",
+              "fuel_tank",
+              "hydraulic_accumulator",
+              "reservoir"
+            ],
+            "candidate_values": [
+              2.472415877360504e-154,
+              2.472415877360504e-154,
+              2.472415877360504e-154,
+              2.472415877360504e-154,
+              2.472415877360504e-154,
+              0.25,
+              0.25,
+              2.472415877360504e-154,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.593091648532034e-154,
+              2.593091648532034e-154,
+              2.593091648532034e-154,
+              2.564480385312656e-307,
+              2.593091648532034e-154,
+              2.593091648532034e-154,
+              0.25,
+              0.25,
+              2.472415877360504e-154,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.564480385312656e-307,
+              2.593091648532034e-154
+            ],
+            "target_rank": 1,
+            "target_activation": 0.25,
+            "runner_up_activation": 0.25,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "storage",
+              "fluid",
+              "bounded"
+            ],
+            "constraint_count": 3,
+            "constraint_families": [
+              "function",
+              "domain",
+              "structure"
+            ],
+            "family_transitions": 2,
+            "cumulative_structural_information_bits": 2.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.3862943611198906,
+            "normalized_entropy": 0.4036981731641997,
+            "effective_candidate_count": 4.0,
+            "concentration": 0.25,
+            "top_k": 3,
+            "top_k_mass": 0.75,
+            "top_margin": 0.0,
+            "top_tie_count": 4,
+            "hard_intersection_candidates": [
+              "compressed_air_tank",
+              "fuel_tank",
+              "hydraulic_accumulator",
+              "reservoir"
+            ],
+            "candidate_values": [
+              2.481576600939386e-103,
+              2.481576600939386e-103,
+              2.8197619680925654e-205,
+              2.8197619680925654e-205,
+              2.8197619680925654e-205,
+              0.25,
+              0.25,
+              2.8197619680925654e-205,
+              2.889333594349786e-307,
+              2.542804222903101e-205,
+              2.542804222903101e-205,
+              2.889333594349786e-307,
+              2.889333594349786e-307,
+              2.889333594349786e-307,
+              2.889333594349786e-307,
+              2.910784209981933e-205,
+              2.561682180131484e-103,
+              2.910784209981933e-205,
+              2.889333594349786e-307,
+              2.910784209981933e-205,
+              2.561682180131484e-103,
+              0.25,
+              0.25,
+              2.8197619680925654e-205,
+              2.542804222903101e-205,
+              2.542804222903101e-205,
+              2.542804222903101e-205,
+              2.542804222903101e-205,
+              2.889333594349786e-307,
+              2.542804222903101e-205,
+              2.910784209981933e-205
+            ],
+            "target_rank": 1,
+            "target_activation": 0.25,
+            "runner_up_activation": 0.25,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "storage",
+              "fluid",
+              "bounded",
+              "chemical"
+            ],
+            "constraint_count": 4,
+            "constraint_families": [
+              "function",
+              "domain",
+              "structure",
+              "mechanism"
+            ],
+            "family_transitions": 3,
+            "cumulative_structural_information_bits": 4.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.8773368325549122e-74,
+            "normalized_entropy": 5.466930191536282e-75,
+            "effective_candidate_count": 1.0,
+            "concentration": 1.0,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 1.0,
+            "top_tie_count": 1,
+            "hard_intersection_candidates": [
+              "fuel_tank"
+            ],
+            "candidate_values": [
+              7.864959906414596e-154,
+              3.1447835393619174e-77,
+              2.737222400196993e-230,
+              2.737222400196993e-230,
+              2.737222400196993e-230,
+              2.5009542971630568e-77,
+              1.0,
+              2.737222400196993e-230,
+              8.815541906906411e-307,
+              2.533001470620533e-230,
+              2.533001470620533e-230,
+              8.815541906906411e-307,
+              8.815541906906411e-307,
+              8.815541906906411e-307,
+              3.5248712529075545e-230,
+              2.8032269301101453e-230,
+              8.054613104259913e-154,
+              2.8032269301101453e-230,
+              8.815541906906411e-307,
+              2.8032269301101453e-230,
+              8.054613104259913e-154,
+              2.5009542971630568e-77,
+              2.5009542971630568e-77,
+              2.737222400196993e-230,
+              2.533001470620533e-230,
+              2.533001470620533e-230,
+              2.533001470620533e-230,
+              2.533001470620533e-230,
+              8.815541906906411e-307,
+              1.0128139780458625e-153,
+              2.8032269301101453e-230
+            ],
+            "target_rank": 1,
+            "target_activation": 1.0,
+            "runner_up_activation": 3.1447835393619174e-77,
+            "target_margin": 1.0
+          }
+        ]
+      },
+      {
+        "probe_id": "independent_transformer",
+        "target": "transformer",
+        "constraints": [
+          "electrical",
+          "magnetic",
+          "passive",
+          "coupling"
+        ],
+        "status": "RESOLVED",
+        "reason_code": "RESOLVED_SEMANTIC_REGION",
+        "mechanism": {
+          "status": "RESOLVED",
+          "reason_code": "NUMERIC_FIELD_RESOLVED"
+        },
+        "governance": {
+          "status": "RESOLVED",
+          "reason_code": "GOVERNED_INTERSECTION_SATISFIED"
+        },
+        "top_candidate": "transformer",
+        "soft_top_candidate": "transformer",
+        "hard_intersection_candidates": [
+          "transformer"
+        ],
+        "snapshot_id": "sha256:18b4f65e2c41a9a3f4e088acad757e42d2b853dbafda6673329743ffd7bf156f",
+        "policy": {
+          "policy_id": "direct-intersection-development-v1",
+          "minimum_per_field_support": 0.0,
+          "minimum_top_concentration": 0.0,
+          "minimum_top_margin": 0.0,
+          "purpose": "zero-threshold development diagnostic; not calibrated confidence"
+        },
+        "prefixes": [
+          {
+            "constraints": [
+              "electrical"
+            ],
+            "constraint_count": 1,
+            "constraint_families": [
+              "domain"
+            ],
+            "family_transitions": 0,
+            "cumulative_structural_information_bits": 1.632268215499513,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 2.302585092994046,
+            "normalized_entropy": 0.6705281516444292,
+            "effective_candidate_count": 10.000000000000002,
+            "concentration": 0.10000000000000002,
+            "top_k": 3,
+            "top_k_mass": 0.30000000000000004,
+            "top_margin": 0.0,
+            "top_tie_count": 10,
+            "hard_intersection_candidates": [
+              "battery",
+              "capacitor",
+              "diode",
+              "electrostatic_precipitator",
+              "electrostatic_sensor",
+              "generator",
+              "inductor",
+              "magnetic_core",
+              "transformer",
+              "transistor"
+            ],
+            "candidate_values": [
+              0.10000000000000002,
+              0.10000000000000002,
+              0.10000000000000002,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.10000000000000002,
+              0.10000000000000002,
+              0.10000000000000002,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.10000000000000002,
+              0.10000000000000002,
+              0.10000000000000002,
+              0.0,
+              0.10000000000000002,
+              0.0,
+              0.0
+            ],
+            "target_rank": 1,
+            "target_activation": 0.10000000000000002,
+            "runner_up_activation": 0.10000000000000002,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "electrical",
+              "magnetic"
+            ],
+            "constraint_count": 2,
+            "constraint_families": [
+              "domain",
+              "mechanism"
+            ],
+            "family_transitions": 1,
+            "cumulative_structural_information_bits": 3.3692338096657193,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.0986122886681096,
+            "normalized_entropy": 0.31992323303744613,
+            "effective_candidate_count": 2.9999999999999996,
+            "concentration": 0.33333333333333337,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 0.0,
+            "top_tie_count": 3,
+            "hard_intersection_candidates": [
+              "inductor",
+              "magnetic_core",
+              "transformer"
+            ],
+            "candidate_values": [
+              1.8055972634190113e-154,
+              1.8055972634190113e-154,
+              0.33333333333333337,
+              1.7856749368783685e-307,
+              1.7856749368783685e-307,
+              1.7856749368783685e-307,
+              1.7856749368783685e-307,
+              1.7856749368783685e-307,
+              0.33333333333333337,
+              1.8055972634190113e-154,
+              1.8055972634190113e-154,
+              1.7856749368783685e-307,
+              1.7856749368783685e-307,
+              1.7856749368783685e-307,
+              1.7856749368783685e-307,
+              1.7856749368783685e-307,
+              1.7856749368783685e-307,
+              1.7856749368783685e-307,
+              1.7856749368783685e-307,
+              1.7856749368783685e-307,
+              1.7856749368783685e-307,
+              1.7856749368783685e-307,
+              1.7856749368783685e-307,
+              1.7856749368783685e-307,
+              0.33333333333333337,
+              1.8055972634190113e-154,
+              1.8055972634190113e-154,
+              1.7856749368783685e-307,
+              1.8055972634190113e-154,
+              1.7856749368783685e-307,
+              1.7856749368783685e-307
+            ],
+            "target_rank": 1,
+            "target_activation": 0.33333333333333337,
+            "runner_up_activation": 0.33333333333333337,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "electrical",
+              "magnetic",
+              "passive"
+            ],
+            "constraint_count": 3,
+            "constraint_families": [
+              "domain",
+              "mechanism",
+              "behaviour"
+            ],
+            "family_transitions": 2,
+            "cumulative_structural_information_bits": 3.3692338096657193,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.0986122886681096,
+            "normalized_entropy": 0.31992323303744613,
+            "effective_candidate_count": 2.9999999999999996,
+            "concentration": 0.33333333333333337,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 0.0,
+            "top_tie_count": 3,
+            "hard_intersection_candidates": [
+              "inductor",
+              "magnetic_core",
+              "transformer"
+            ],
+            "candidate_values": [
+              2.2149988597623513e-103,
+              2.674557990550322e-205,
+              0.33333333333333337,
+              2.6548482108818597e-307,
+              2.1986757365973674e-205,
+              2.1986757365973674e-205,
+              2.6548482108818597e-307,
+              2.1986757365973674e-205,
+              0.33333333333333337,
+              2.2149988597623513e-103,
+              2.674557990550322e-205,
+              2.6548482108818597e-307,
+              2.1986757365973674e-205,
+              2.1986757365973674e-205,
+              2.6548482108818597e-307,
+              2.1986757365973674e-205,
+              2.6548482108818597e-307,
+              2.6548482108818597e-307,
+              2.1986757365973674e-205,
+              2.1986757365973674e-205,
+              2.1986757365973674e-205,
+              2.1986757365973674e-205,
+              2.6548482108818597e-307,
+              2.6548482108818597e-307,
+              0.33333333333333337,
+              2.674557990550322e-205,
+              2.2149988597623513e-103,
+              2.1986757365973674e-205,
+              2.674557990550322e-205,
+              2.6548482108818597e-307,
+              2.1986757365973674e-205
+            ],
+            "target_rank": 1,
+            "target_activation": 0.33333333333333337,
+            "runner_up_activation": 0.33333333333333337,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "electrical",
+              "magnetic",
+              "passive",
+              "coupling"
+            ],
+            "constraint_count": 4,
+            "constraint_families": [
+              "domain",
+              "mechanism",
+              "behaviour",
+              "function"
+            ],
+            "family_transitions": 3,
+            "cumulative_structural_information_bits": 4.954196310386876,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 8.822485413224612e-75,
+            "normalized_entropy": 2.5691666531842413e-75,
+            "effective_candidate_count": 1.0,
+            "concentration": 1.0,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 1.0,
+            "top_tie_count": 1,
+            "hard_intersection_candidates": [
+              "transformer"
+            ],
+            "candidate_values": [
+              5.820721584758892e-154,
+              2.120243354165636e-230,
+              2.5009542971630295e-77,
+              6.6677063996215804e-307,
+              1.8304909426957305e-230,
+              1.8304909426957305e-230,
+              6.6677063996215804e-307,
+              1.8304909426957305e-230,
+              1.0,
+              5.820721584758892e-154,
+              2.120243354165636e-230,
+              6.6677063996215804e-307,
+              1.8304909426957305e-230,
+              1.8304909426957305e-230,
+              6.6677063996215804e-307,
+              1.8304909426957305e-230,
+              6.6677063996215804e-307,
+              6.6677063996215804e-307,
+              7.31916990555284e-154,
+              1.8304909426957305e-230,
+              7.31916990555284e-154,
+              1.8304909426957305e-230,
+              6.6677063996215804e-307,
+              6.6677063996215804e-307,
+              2.5009542971630295e-77,
+              2.120243354165636e-230,
+              5.820721584758892e-154,
+              7.31916990555284e-154,
+              2.120243354165636e-230,
+              6.6677063996215804e-307,
+              1.8304909426957305e-230
+            ],
+            "target_rank": 1,
+            "target_activation": 1.0,
+            "runner_up_activation": 2.5009542971630295e-77,
+            "target_margin": 1.0
+          }
+        ]
+      },
+      {
+        "probe_id": "independent_cell_membrane",
+        "target": "cell_membrane",
+        "constraints": [
+          "biological",
+          "boundary",
+          "selective",
+          "flexible"
+        ],
+        "status": "RESOLVED",
+        "reason_code": "RESOLVED_SEMANTIC_REGION",
+        "mechanism": {
+          "status": "RESOLVED",
+          "reason_code": "NUMERIC_FIELD_RESOLVED"
+        },
+        "governance": {
+          "status": "RESOLVED",
+          "reason_code": "GOVERNED_INTERSECTION_SATISFIED"
+        },
+        "top_candidate": "cell_membrane",
+        "soft_top_candidate": "cell_membrane",
+        "hard_intersection_candidates": [
+          "cell_membrane"
+        ],
+        "snapshot_id": "sha256:18b4f65e2c41a9a3f4e088acad757e42d2b853dbafda6673329743ffd7bf156f",
+        "policy": {
+          "policy_id": "direct-intersection-development-v1",
+          "minimum_per_field_support": 0.0,
+          "minimum_top_concentration": 0.0,
+          "minimum_top_margin": 0.0,
+          "purpose": "zero-threshold development diagnostic; not calibrated confidence"
+        },
+        "prefixes": [
+          {
+            "constraints": [
+              "biological"
+            ],
+            "constraint_count": 1,
+            "constraint_families": [
+              "domain"
+            ],
+            "family_transitions": 0,
+            "cumulative_structural_information_bits": 2.6322682154995127,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.6094379124341005,
+            "normalized_entropy": 0.46867906506232937,
+            "effective_candidate_count": 5.000000000000001,
+            "concentration": 0.2,
+            "top_k": 3,
+            "top_k_mass": 0.6000000000000001,
+            "top_margin": 0.0,
+            "top_tie_count": 5,
+            "hard_intersection_candidates": [
+              "bioreactor",
+              "cell_membrane",
+              "cell_wall",
+              "enzyme",
+              "muscle"
+            ],
+            "candidate_values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.19999999999999998,
+              0.19999999999999998,
+              0.19999999999999998,
+              0.19999999999999998,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.19999999999999998,
+              0.0
+            ],
+            "target_rank": 1,
+            "target_activation": 0.19999999999999998,
+            "runner_up_activation": 0.19999999999999998,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "biological",
+              "boundary"
+            ],
+            "constraint_count": 2,
+            "constraint_families": [
+              "domain",
+              "function"
+            ],
+            "family_transitions": 1,
+            "cumulative_structural_information_bits": 3.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 0.6931471805599453,
+            "normalized_entropy": 0.20184908658209985,
+            "effective_candidate_count": 2.0,
+            "concentration": 0.5,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 0.0,
+            "top_tie_count": 2,
+            "hard_intersection_candidates": [
+              "cell_membrane",
+              "cell_wall"
+            ],
+            "candidate_values": [
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              3.49652406558986e-154,
+              0.5,
+              0.5,
+              3.49652406558986e-154,
+              3.49652406558986e-154,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              3.49652406558986e-154,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              2.4451361082497394e-307,
+              3.49652406558986e-154,
+              3.49652406558986e-154
+            ],
+            "target_rank": 1,
+            "target_activation": 0.5,
+            "runner_up_activation": 0.5,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "biological",
+              "boundary",
+              "selective"
+            ],
+            "constraint_count": 3,
+            "constraint_families": [
+              "domain",
+              "function",
+              "behaviour"
+            ],
+            "family_transitions": 2,
+            "cumulative_structural_information_bits": 3.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 0.6931471805599453,
+            "normalized_entropy": 0.20184908658209985,
+            "effective_candidate_count": 2.0,
+            "concentration": 0.5,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 0.0,
+            "top_tie_count": 2,
+            "hard_intersection_candidates": [
+              "cell_membrane",
+              "cell_wall"
+            ],
+            "candidate_values": [
+              2.97436234340869e-307,
+              2.97436234340869e-307,
+              2.97436234340869e-307,
+              2.97436234340869e-307,
+              2.97436234340869e-307,
+              2.97436234340869e-307,
+              2.97436234340869e-307,
+              2.97436234340869e-307,
+              2.97436234340869e-307,
+              3.103549625947163e-205,
+              3.103549625947163e-205,
+              3.775283145659463e-205,
+              0.5,
+              0.5,
+              3.9392573068709184e-103,
+              3.9392573068709184e-103,
+              2.97436234340869e-307,
+              2.97436234340869e-307,
+              3.103549625947163e-205,
+              3.775283145659463e-205,
+              2.97436234340869e-307,
+              2.97436234340869e-307,
+              2.97436234340869e-307,
+              2.97436234340869e-307,
+              2.97436234340869e-307,
+              3.103549625947163e-205,
+              3.103549625947163e-205,
+              2.97436234340869e-307,
+              2.97436234340869e-307,
+              3.775283145659463e-205,
+              3.775283145659463e-205
+            ],
+            "target_rank": 1,
+            "target_activation": 0.5,
+            "runner_up_activation": 0.5,
+            "target_margin": 0.0
+          },
+          {
+            "constraints": [
+              "biological",
+              "boundary",
+              "selective",
+              "flexible"
+            ],
+            "constraint_count": 4,
+            "constraint_families": [
+              "domain",
+              "function",
+              "behaviour",
+              "structure"
+            ],
+            "family_transitions": 3,
+            "cumulative_structural_information_bits": 4.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 4.1067977757498684e-75,
+            "normalized_entropy": 1.1959269301836538e-75,
+            "effective_candidate_count": 1.0,
+            "concentration": 1.0,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 1.0,
+            "top_tie_count": 1,
+            "hard_intersection_candidates": [
+              "cell_membrane"
+            ],
+            "candidate_values": [
+              4.985273319107533e-307,
+              4.985273319107533e-307,
+              4.985273319107533e-307,
+              4.985273319107533e-307,
+              4.985273319107533e-307,
+              4.985273319107533e-307,
+              4.985273319107533e-307,
+              4.985273319107533e-307,
+              4.985273319107533e-307,
+              1.6275621768293483e-230,
+              1.6275621768293483e-230,
+              8.099993001689956e-154,
+              1.0,
+              2.3274002213322e-77,
+              6.154663736212454e-154,
+              6.154663736212454e-154,
+              4.985273319107533e-307,
+              4.985273319107533e-307,
+              1.6275621768293483e-230,
+              1.8851925504923884e-230,
+              4.985273319107533e-307,
+              4.985273319107533e-307,
+              4.985273319107533e-307,
+              4.985273319107533e-307,
+              4.985273319107533e-307,
+              1.6275621768293483e-230,
+              1.6275621768293483e-230,
+              4.985273319107533e-307,
+              4.985273319107533e-307,
+              1.8851925504923884e-230,
+              8.099993001689956e-154
+            ],
+            "target_rank": 1,
+            "target_activation": 1.0,
+            "runner_up_activation": 2.3274002213322e-77,
+            "target_margin": 1.0
+          }
+        ]
+      }
+    ],
+    "redundant": [
+      {
+        "probe_id": "redundant_storage_order_a",
+        "target": null,
+        "constraints": [
+          "storage",
+          "containment",
+          "retention"
+        ],
+        "status": "UNRESOLVED",
+        "reason_code": "AMBIGUOUS_FIELD",
+        "mechanism": {
+          "status": "UNRESOLVED",
+          "reason_code": "AMBIGUOUS_FIELD"
+        },
+        "governance": {
+          "status": "RESOLVED",
+          "reason_code": "GOVERNED_INTERSECTION_SATISFIED"
+        },
+        "top_candidate": null,
+        "soft_top_candidate": "capacitor",
+        "hard_intersection_candidates": [
+          "battery",
+          "capacitor",
+          "compressed_air_tank",
+          "flywheel",
+          "fuel_tank",
+          "hydraulic_accumulator",
+          "inductor",
+          "pendulum",
+          "reservoir",
+          "spring",
+          "thermal_mass"
+        ],
+        "snapshot_id": "sha256:18b4f65e2c41a9a3f4e088acad757e42d2b853dbafda6673329743ffd7bf156f",
+        "policy": {
+          "policy_id": "direct-intersection-development-v1",
+          "minimum_per_field_support": 0.0,
+          "minimum_top_concentration": 0.0,
+          "minimum_top_margin": 0.0,
+          "purpose": "zero-threshold development diagnostic; not calibrated confidence"
+        },
+        "prefixes": [
+          {
+            "constraints": [
+              "storage"
+            ],
+            "constraint_count": 1,
+            "constraint_families": [
+              "function"
+            ],
+            "family_transitions": 0,
+            "cumulative_structural_information_bits": 1.4947646917495778,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 2.3978952727983707,
+            "normalized_entropy": 0.6982831123151737,
+            "effective_candidate_count": 11.000000000000002,
+            "concentration": 0.09090909090909091,
+            "top_k": 3,
+            "top_k_mass": 0.2727272727272727,
+            "top_margin": 0.0,
+            "top_tie_count": 11,
+            "hard_intersection_candidates": [
+              "battery",
+              "capacitor",
+              "compressed_air_tank",
+              "flywheel",
+              "fuel_tank",
+              "hydraulic_accumulator",
+              "inductor",
+              "pendulum",
+              "reservoir",
+              "spring",
+              "thermal_mass"
+            ],
+            "candidate_values": [
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "constraints": [
+              "storage",
+              "containment"
+            ],
+            "constraint_count": 2,
+            "constraint_families": [
+              "function",
+              "storage_like"
+            ],
+            "family_transitions": 1,
+            "cumulative_structural_information_bits": 1.4947646917495778,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 2.3978952727983707,
+            "normalized_entropy": 0.6982831123151737,
+            "effective_candidate_count": 11.000000000000002,
+            "concentration": 0.09090909090909091,
+            "top_k": 3,
+            "top_k_mass": 0.2727272727272727,
+            "top_margin": 0.0,
+            "top_tie_count": 11,
+            "hard_intersection_candidates": [
+              "battery",
+              "capacitor",
+              "compressed_air_tank",
+              "flywheel",
+              "fuel_tank",
+              "hydraulic_accumulator",
+              "inductor",
+              "pendulum",
+              "reservoir",
+              "spring",
+              "thermal_mass"
+            ],
+            "candidate_values": [
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308
+            ]
+          },
+          {
+            "constraints": [
+              "storage",
+              "containment",
+              "retention"
+            ],
+            "constraint_count": 3,
+            "constraint_families": [
+              "function",
+              "storage_like",
+              "storage_like"
+            ],
+            "family_transitions": 1,
+            "cumulative_structural_information_bits": 1.4947646917495778,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 2.3978952727983707,
+            "normalized_entropy": 0.6982831123151737,
+            "effective_candidate_count": 11.000000000000002,
+            "concentration": 0.09090909090909091,
+            "top_k": 3,
+            "top_k_mass": 0.2727272727272727,
+            "top_margin": 0.0,
+            "top_tie_count": 11,
+            "hard_intersection_candidates": [
+              "battery",
+              "capacitor",
+              "compressed_air_tank",
+              "flywheel",
+              "fuel_tank",
+              "hydraulic_accumulator",
+              "inductor",
+              "pendulum",
+              "reservoir",
+              "spring",
+              "thermal_mass"
+            ],
+            "candidate_values": [
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308
+            ]
+          }
+        ]
+      },
+      {
+        "probe_id": "redundant_storage_order_b",
+        "target": null,
+        "constraints": [
+          "containment",
+          "storage",
+          "retention"
+        ],
+        "status": "UNRESOLVED",
+        "reason_code": "AMBIGUOUS_FIELD",
+        "mechanism": {
+          "status": "UNRESOLVED",
+          "reason_code": "AMBIGUOUS_FIELD"
+        },
+        "governance": {
+          "status": "RESOLVED",
+          "reason_code": "GOVERNED_INTERSECTION_SATISFIED"
+        },
+        "top_candidate": null,
+        "soft_top_candidate": "capacitor",
+        "hard_intersection_candidates": [
+          "battery",
+          "capacitor",
+          "compressed_air_tank",
+          "flywheel",
+          "fuel_tank",
+          "hydraulic_accumulator",
+          "inductor",
+          "pendulum",
+          "reservoir",
+          "spring",
+          "thermal_mass"
+        ],
+        "snapshot_id": "sha256:18b4f65e2c41a9a3f4e088acad757e42d2b853dbafda6673329743ffd7bf156f",
+        "policy": {
+          "policy_id": "direct-intersection-development-v1",
+          "minimum_per_field_support": 0.0,
+          "minimum_top_concentration": 0.0,
+          "minimum_top_margin": 0.0,
+          "purpose": "zero-threshold development diagnostic; not calibrated confidence"
+        },
+        "prefixes": [
+          {
+            "constraints": [
+              "containment"
+            ],
+            "constraint_count": 1,
+            "constraint_families": [
+              "storage_like"
+            ],
+            "family_transitions": 0,
+            "cumulative_structural_information_bits": 1.4947646917495778,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 2.3978952727983707,
+            "normalized_entropy": 0.6982831123151737,
+            "effective_candidate_count": 11.000000000000002,
+            "concentration": 0.09090909090909091,
+            "top_k": 3,
+            "top_k_mass": 0.2727272727272727,
+            "top_margin": 0.0,
+            "top_tie_count": 11,
+            "hard_intersection_candidates": [
+              "battery",
+              "capacitor",
+              "compressed_air_tank",
+              "flywheel",
+              "fuel_tank",
+              "hydraulic_accumulator",
+              "inductor",
+              "pendulum",
+              "reservoir",
+              "spring",
+              "thermal_mass"
+            ],
+            "candidate_values": [
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "constraints": [
+              "containment",
+              "storage"
+            ],
+            "constraint_count": 2,
+            "constraint_families": [
+              "storage_like",
+              "function"
+            ],
+            "family_transitions": 1,
+            "cumulative_structural_information_bits": 1.4947646917495778,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 2.3978952727983707,
+            "normalized_entropy": 0.6982831123151737,
+            "effective_candidate_count": 11.000000000000002,
+            "concentration": 0.09090909090909091,
+            "top_k": 3,
+            "top_k_mass": 0.2727272727272727,
+            "top_margin": 0.0,
+            "top_tie_count": 11,
+            "hard_intersection_candidates": [
+              "battery",
+              "capacitor",
+              "compressed_air_tank",
+              "flywheel",
+              "fuel_tank",
+              "hydraulic_accumulator",
+              "inductor",
+              "pendulum",
+              "reservoir",
+              "spring",
+              "thermal_mass"
+            ],
+            "candidate_values": [
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308,
+              9.780544432998957e-308
+            ]
+          },
+          {
+            "constraints": [
+              "containment",
+              "storage",
+              "retention"
+            ],
+            "constraint_count": 3,
+            "constraint_families": [
+              "storage_like",
+              "function",
+              "storage_like"
+            ],
+            "family_transitions": 2,
+            "cumulative_structural_information_bits": 1.4947646917495778,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 2.3978952727983707,
+            "normalized_entropy": 0.6982831123151737,
+            "effective_candidate_count": 11.000000000000002,
+            "concentration": 0.09090909090909091,
+            "top_k": 3,
+            "top_k_mass": 0.2727272727272727,
+            "top_margin": 0.0,
+            "top_tie_count": 11,
+            "hard_intersection_candidates": [
+              "battery",
+              "capacitor",
+              "compressed_air_tank",
+              "flywheel",
+              "fuel_tank",
+              "hydraulic_accumulator",
+              "inductor",
+              "pendulum",
+              "reservoir",
+              "spring",
+              "thermal_mass"
+            ],
+            "candidate_values": [
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              0.09090909090909091,
+              0.09090909090909091,
+              0.09090909090909091,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308,
+              9.78054443299785e-308
+            ]
+          }
+        ]
+      }
+    ],
+    "invalid": [
+      {
+        "probe_id": "invalid_electrical_biological",
+        "target": null,
+        "constraints": [
+          "storage",
+          "electrical",
+          "biological"
+        ],
+        "status": "INVALID",
+        "reason_code": "DECLARED_CONTRADICTION",
+        "mechanism": {
+          "status": "UNRESOLVED",
+          "reason_code": "AMBIGUOUS_FIELD"
+        },
+        "governance": {
+          "status": "INVALID",
+          "reason_code": "DECLARED_CONTRADICTION"
+        },
+        "top_candidate": null,
+        "soft_top_candidate": "capacitor",
+        "hard_intersection_candidates": [],
+        "snapshot_id": "sha256:18b4f65e2c41a9a3f4e088acad757e42d2b853dbafda6673329743ffd7bf156f",
+        "policy": {
+          "policy_id": "direct-intersection-development-v1",
+          "minimum_per_field_support": 0.0,
+          "minimum_top_concentration": 0.0,
+          "minimum_top_margin": 0.0,
+          "purpose": "zero-threshold development diagnostic; not calibrated confidence"
+        },
+        "prefixes": [
+          {
+            "constraints": [
+              "storage"
+            ],
+            "constraint_count": 1,
+            "constraint_families": [
+              "function"
+            ],
+            "family_transitions": 0,
+            "cumulative_structural_information_bits": 1.4947646917495778,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 2.3978952727983707,
+            "normalized_entropy": 0.6982831123151737,
+            "effective_candidate_count": 11.000000000000002,
+            "concentration": 0.09090909090909091,
+            "top_k": 3,
+            "top_k_mass": 0.2727272727272727,
+            "top_margin": 0.0,
+            "top_tie_count": 11,
+            "hard_intersection_candidates": [
+              "battery",
+              "capacitor",
+              "compressed_air_tank",
+              "flywheel",
+              "fuel_tank",
+              "hydraulic_accumulator",
+              "inductor",
+              "pendulum",
+              "reservoir",
+              "spring",
+              "thermal_mass"
+            ],
+            "candidate_values": [
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0909090909090909,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "constraints": [
+              "storage",
+              "electrical"
+            ],
+            "constraint_count": 2,
+            "constraint_families": [
+              "function",
+              "domain"
+            ],
+            "family_transitions": 1,
+            "cumulative_structural_information_bits": 3.369233809665719,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.0986122886681096,
+            "normalized_entropy": 0.31992323303744613,
+            "effective_candidate_count": 2.9999999999999996,
+            "concentration": 0.3333333333333333,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 0.0,
+            "top_tie_count": 3,
+            "hard_intersection_candidates": [
+              "battery",
+              "capacitor",
+              "inductor"
+            ],
+            "candidate_values": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333,
+              3.296554503147339e-154,
+              3.296554503147339e-154,
+              3.296554503147339e-154,
+              3.296554503147339e-154,
+              3.296554503147339e-154,
+              3.4574555313760445e-154,
+              3.4574555313760445e-154,
+              3.4574555313760445e-154,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307,
+              3.296554503147339e-154,
+              3.296554503147339e-154,
+              3.296554503147339e-154,
+              3.4574555313760445e-154,
+              3.4574555313760445e-154,
+              3.4574555313760445e-154,
+              3.4193071804168747e-307,
+              3.4574555313760445e-154,
+              3.4193071804168747e-307,
+              3.4193071804168747e-307
+            ]
+          },
+          {
+            "constraints": [
+              "storage",
+              "electrical",
+              "biological"
+            ],
+            "constraint_count": 3,
+            "constraint_families": [
+              "function",
+              "domain",
+              "domain"
+            ],
+            "family_transitions": 1,
+            "cumulative_structural_information_bits": null,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.0986122886681096,
+            "normalized_entropy": 0.31992323303744613,
+            "effective_candidate_count": 2.9999999999999996,
+            "concentration": 0.3333333333333333,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 0.0,
+            "top_tie_count": 3,
+            "hard_intersection_candidates": [],
+            "candidate_values": [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.3333333333333333,
+              3.308768801252645e-103,
+              3.308768801252645e-103,
+              3.308768801252645e-103,
+              3.308768801252645e-103,
+              3.308768801252645e-103,
+              3.4155762401753494e-103,
+              3.4155762401753494e-103,
+              3.4155762401753494e-103,
+              4.303356402517957e-103,
+              4.303356402517957e-103,
+              4.303356402517957e-103,
+              4.303356402517957e-103,
+              3.390405630537217e-205,
+              3.390405630537217e-205,
+              3.390405630537217e-205,
+              3.390405630537217e-205,
+              3.390405630537217e-205,
+              3.390405630537217e-205,
+              3.308768801252645e-103,
+              3.308768801252645e-103,
+              3.308768801252645e-103,
+              3.4155762401753494e-103,
+              3.4155762401753494e-103,
+              3.4155762401753494e-103,
+              3.390405630537217e-205,
+              3.4155762401753494e-103,
+              4.303356402517957e-103,
+              3.390405630537217e-205
+            ]
+          }
+        ]
+      },
+      {
+        "probe_id": "invalid_passive_active",
+        "target": null,
+        "constraints": [
+          "mechanical",
+          "passive",
+          "active"
+        ],
+        "status": "INVALID",
+        "reason_code": "DECLARED_CONTRADICTION",
+        "mechanism": {
+          "status": "UNRESOLVED",
+          "reason_code": "AMBIGUOUS_FIELD"
+        },
+        "governance": {
+          "status": "INVALID",
+          "reason_code": "DECLARED_CONTRADICTION"
+        },
+        "top_candidate": null,
+        "soft_top_candidate": "muscle",
+        "hard_intersection_candidates": [],
+        "snapshot_id": "sha256:18b4f65e2c41a9a3f4e088acad757e42d2b853dbafda6673329743ffd7bf156f",
+        "policy": {
+          "policy_id": "direct-intersection-development-v1",
+          "minimum_per_field_support": 0.0,
+          "minimum_top_concentration": 0.0,
+          "minimum_top_margin": 0.0,
+          "purpose": "zero-threshold development diagnostic; not calibrated confidence"
+        },
+        "prefixes": [
+          {
+            "constraints": [
+              "mechanical"
+            ],
+            "constraint_count": 1,
+            "constraint_families": [
+              "domain"
+            ],
+            "family_transitions": 0,
+            "cumulative_structural_information_bits": 1.4947646917495778,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 2.3978952727983707,
+            "normalized_entropy": 0.6982831123151737,
+            "effective_candidate_count": 11.000000000000002,
+            "concentration": 0.09090909090909093,
+            "top_k": 3,
+            "top_k_mass": 0.27272727272727276,
+            "top_margin": 0.0,
+            "top_tie_count": 11,
+            "hard_intersection_candidates": [
+              "clutch",
+              "flywheel",
+              "gearbox",
+              "generator",
+              "hydraulic_accumulator",
+              "muscle",
+              "pendulum",
+              "pump",
+              "spring",
+              "turbine",
+              "valve"
+            ],
+            "candidate_values": [
+              0.0,
+              0.0,
+              0.0,
+              0.09090909090909088,
+              0.09090909090909088,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.09090909090909088,
+              0.0,
+              0.0,
+              0.0,
+              0.09090909090909088,
+              0.09090909090909088,
+              0.09090909090909088,
+              0.09090909090909088,
+              0.0,
+              0.0,
+              0.0,
+              0.09090909090909088,
+              0.09090909090909088,
+              0.0,
+              0.0,
+              0.0,
+              0.09090909090909088,
+              0.09090909090909088,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "constraints": [
+              "mechanical",
+              "passive"
+            ],
+            "constraint_count": 2,
+            "constraint_families": [
+              "domain",
+              "behaviour"
+            ],
+            "family_transitions": 1,
+            "cumulative_structural_information_bits": 2.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.3862943611198906,
+            "normalized_entropy": 0.4036981731641997,
+            "effective_candidate_count": 4.0,
+            "concentration": 0.25,
+            "top_k": 3,
+            "top_k_mass": 0.75,
+            "top_margin": 0.0,
+            "top_tie_count": 4,
+            "hard_intersection_candidates": [
+              "clutch",
+              "gearbox",
+              "spring",
+              "valve"
+            ],
+            "candidate_values": [
+              2.5930916485320994e-154,
+              3.440611481114373e-307,
+              2.5930916485320994e-154,
+              3.3170939822567236e-154,
+              0.25,
+              2.5930916485320994e-154,
+              3.440611481114373e-307,
+              2.5930916485320994e-154,
+              2.5930916485320994e-154,
+              2.5930916485320994e-154,
+              3.440611481114373e-307,
+              3.3170939822567236e-154,
+              2.5930916485320994e-154,
+              2.5930916485320994e-154,
+              3.440611481114373e-307,
+              0.25,
+              3.3170939822567236e-154,
+              3.3170939822567236e-154,
+              0.25,
+              2.5930916485320994e-154,
+              2.5930916485320994e-154,
+              2.5930916485320994e-154,
+              3.3170939822567236e-154,
+              3.3170939822567236e-154,
+              2.5930916485320994e-154,
+              3.440611481114373e-307,
+              2.5930916485320994e-154,
+              0.25,
+              3.3170939822567236e-154,
+              3.440611481114373e-307,
+              2.5930916485320994e-154
+            ]
+          },
+          {
+            "constraints": [
+              "mechanical",
+              "passive",
+              "active"
+            ],
+            "constraint_count": 3,
+            "constraint_families": [
+              "domain",
+              "behaviour",
+              "behaviour"
+            ],
+            "family_transitions": 1,
+            "cumulative_structural_information_bits": null,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 2.0703908475226616,
+            "normalized_entropy": 0.6029116371833053,
+            "effective_candidate_count": 7.927921120716565,
+            "concentration": 0.1417922564057268,
+            "top_k": 3,
+            "top_k_mass": 0.4253767692171804,
+            "top_margin": 0.0,
+            "top_tie_count": 4,
+            "hard_intersection_candidates": [],
+            "candidate_values": [
+              1.1087753940707262e-103,
+              1.3388196914266257e-205,
+              1.1087753940707262e-103,
+              1.3065825474084037e-103,
+              0.10820774359427321,
+              1.1087753940707262e-103,
+              1.3388196914266257e-205,
+              1.1087753940707262e-103,
+              1.1087753940707262e-103,
+              1.1087753940707262e-103,
+              1.4529067860607128e-103,
+              0.1417922564057268,
+              1.1087753940707262e-103,
+              1.1087753940707262e-103,
+              1.4529067860607128e-103,
+              0.10820774359427321,
+              0.1417922564057268,
+              0.1417922564057268,
+              0.10820774359427321,
+              1.1087753940707262e-103,
+              1.1087753940707262e-103,
+              1.1087753940707262e-103,
+              1.3065825474084037e-103,
+              1.3065825474084037e-103,
+              1.1087753940707262e-103,
+              1.4529067860607128e-103,
+              1.1087753940707262e-103,
+              0.10820774359427321,
+              0.1417922564057268,
+              1.4529067860607128e-103,
+              1.1087753940707262e-103
+            ]
+          }
+        ]
+      },
+      {
+        "probe_id": "invalid_structural_flexible",
+        "target": null,
+        "constraints": [
+          "biological",
+          "structural",
+          "flexible"
+        ],
+        "status": "INVALID",
+        "reason_code": "DECLARED_CONTRADICTION",
+        "mechanism": {
+          "status": "UNRESOLVED",
+          "reason_code": "AMBIGUOUS_FIELD"
+        },
+        "governance": {
+          "status": "INVALID",
+          "reason_code": "DECLARED_CONTRADICTION"
+        },
+        "top_candidate": null,
+        "soft_top_candidate": "muscle",
+        "hard_intersection_candidates": [],
+        "snapshot_id": "sha256:18b4f65e2c41a9a3f4e088acad757e42d2b853dbafda6673329743ffd7bf156f",
+        "policy": {
+          "policy_id": "direct-intersection-development-v1",
+          "minimum_per_field_support": 0.0,
+          "minimum_top_concentration": 0.0,
+          "minimum_top_margin": 0.0,
+          "purpose": "zero-threshold development diagnostic; not calibrated confidence"
+        },
+        "prefixes": [
+          {
+            "constraints": [
+              "biological"
+            ],
+            "constraint_count": 1,
+            "constraint_families": [
+              "domain"
+            ],
+            "family_transitions": 0,
+            "cumulative_structural_information_bits": 2.6322682154995127,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.6094379124341005,
+            "normalized_entropy": 0.46867906506232937,
+            "effective_candidate_count": 5.000000000000001,
+            "concentration": 0.2,
+            "top_k": 3,
+            "top_k_mass": 0.6000000000000001,
+            "top_margin": 0.0,
+            "top_tie_count": 5,
+            "hard_intersection_candidates": [
+              "bioreactor",
+              "cell_membrane",
+              "cell_wall",
+              "enzyme",
+              "muscle"
+            ],
+            "candidate_values": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.19999999999999998,
+              0.19999999999999998,
+              0.19999999999999998,
+              0.19999999999999998,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.19999999999999998,
+              0.0
+            ]
+          },
+          {
+            "constraints": [
+              "biological",
+              "structural"
+            ],
+            "constraint_count": 2,
+            "constraint_families": [
+              "domain",
+              "structure"
+            ],
+            "family_transitions": 1,
+            "cumulative_structural_information_bits": 4.954196310386875,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.2578771073451005e-150,
+            "normalized_entropy": 3.663022115231476e-151,
+            "effective_candidate_count": 1.0,
+            "concentration": 1.0,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 1.0,
+            "top_tie_count": 1,
+            "hard_intersection_candidates": [
+              "cell_wall"
+            ],
+            "candidate_values": [
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              6.993048131179688e-154,
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              5.416791790257192e-154,
+              5.416791790257192e-154,
+              1.0,
+              5.416791790257192e-154,
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              6.993048131179688e-154,
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              3.787988570584663e-307,
+              5.416791790257192e-154,
+              3.787988570584663e-307
+            ]
+          },
+          {
+            "constraints": [
+              "biological",
+              "structural",
+              "flexible"
+            ],
+            "constraint_count": 3,
+            "constraint_families": [
+              "domain",
+              "structure",
+              "structure"
+            ],
+            "family_transitions": 1,
+            "cumulative_structural_information_bits": null,
+            "structural_information_role": "authored incidence control; not a kernel outcome",
+            "entropy": 1.0986122886681096,
+            "normalized_entropy": 0.31992323303744613,
+            "effective_candidate_count": 2.9999999999999996,
+            "concentration": 0.33333333333333337,
+            "top_k": 3,
+            "top_k_mass": 1.0,
+            "top_margin": 0.0,
+            "top_tie_count": 3,
+            "hard_intersection_candidates": [],
+            "candidate_values": [
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              2.6261715379137784e-103,
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              0.33333333333333337,
+              0.33333333333333337,
+              0.33333333333333337,
+              2.2149988597623865e-103,
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              2.6261715379137784e-103,
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              1.7450900886056867e-205,
+              2.2149988597623865e-103,
+              2.6261715379137784e-103
+            ]
+          }
+        ]
+      }
+    ],
+    "permutations": [
+      {
+        "probe_id": "independent_capacitor",
+        "count": 24,
+        "canonical_field_sha256": "sha256:a61eb8749e7ad65fc871ce5a35b8bcb40b6966bb016a2a1f5730644ef533c38e",
+        "maximum_absolute_field_difference": 6.558242051296182e-91,
+        "all_fields_equal": true,
+        "status_preserved": true,
+        "top_candidate_preserved": true
+      },
+      {
+        "probe_id": "independent_inductor",
+        "count": 24,
+        "canonical_field_sha256": "sha256:d0e396903c727fcfbf947a92be70a0118c254c8d5421fa723a698a9598809afd",
+        "maximum_absolute_field_difference": 9.166197954735599e-91,
+        "all_fields_equal": true,
+        "status_preserved": true,
+        "top_candidate_preserved": true
+      },
+      {
+        "probe_id": "independent_spring",
+        "count": 24,
+        "canonical_field_sha256": "sha256:0cd6357ce776b6acef9a31965d1739a6f37a7d4b65d5238c641d185e7e644e43",
+        "maximum_absolute_field_difference": 1.1505687809291547e-92,
+        "all_fields_equal": true,
+        "status_preserved": true,
+        "top_candidate_preserved": true
+      },
+      {
+        "probe_id": "independent_flywheel",
+        "count": 24,
+        "canonical_field_sha256": "sha256:763628d8d64bed05cb9a46596802e5334400771136abd92c23baafeb232d9793",
+        "maximum_absolute_field_difference": 4.822517542913963e-167,
+        "all_fields_equal": true,
+        "status_preserved": true,
+        "top_candidate_preserved": true
+      },
+      {
+        "probe_id": "independent_reservoir",
+        "count": 24,
+        "canonical_field_sha256": "sha256:41f46089850b1ced0ef750e356b90008aa82aebbc3448d475da0b5f8461128b1",
+        "maximum_absolute_field_difference": 6.634946636691459e-91,
+        "all_fields_equal": true,
+        "status_preserved": true,
+        "top_candidate_preserved": true
+      },
+      {
+        "probe_id": "independent_fuel_tank",
+        "count": 24,
+        "canonical_field_sha256": "sha256:9f6e633897bb59d7ea15ffacb4c63cbac410dd94565527673cd2720e149f58e7",
+        "maximum_absolute_field_difference": 9.12784566203796e-91,
+        "all_fields_equal": true,
+        "status_preserved": true,
+        "top_candidate_preserved": true
+      },
+      {
+        "probe_id": "independent_transformer",
+        "count": 24,
+        "canonical_field_sha256": "sha256:31cb6c2bad761dca6feb8e23f22325a92cd7d45ced6a8201aef4026f6922608f",
+        "maximum_absolute_field_difference": 1.5340917079055395e-92,
+        "all_fields_equal": true,
+        "status_preserved": true,
+        "top_candidate_preserved": true
+      },
+      {
+        "probe_id": "independent_cell_membrane",
+        "count": 24,
+        "canonical_field_sha256": "sha256:f9566c4efa58de22511bbe0db18fc6f85b7b41f7f8e7004dc6af95fa85cb45f2",
+        "maximum_absolute_field_difference": 2.1396126113775863e-243,
+        "all_fields_equal": true,
+        "status_preserved": true,
+        "top_candidate_preserved": true
+      }
+    ],
+    "ablations": [
+      {
+        "probe_id": "independent_capacitor",
+        "leave_one_out": [
+          {
+            "omitted": "storage",
+            "target_margin": 1.0,
+            "normalized_entropy": 2.2683756991602904e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -1.1959269301836612e-75
+          },
+          {
+            "omitted": "electrical",
+            "target_margin": 1.0,
+            "normalized_entropy": 3.1868756111739043e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -1.1959269301836612e-75
+          },
+          {
+            "omitted": "reversible",
+            "target_margin": 1.0,
+            "normalized_entropy": 2.312017326638058e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -1.1959269301836612e-75
+          },
+          {
+            "omitted": "electrostatic",
+            "target_margin": 0.0,
+            "normalized_entropy": 0.20184908658209985,
+            "delta_target_margin": 1.0,
+            "delta_normalized_entropy": 0.20184908658209985
+          }
+        ]
+      },
+      {
+        "probe_id": "independent_inductor",
+        "leave_one_out": [
+          {
+            "omitted": "storage",
+            "target_margin": 0.0,
+            "normalized_entropy": 0.20184908658209985,
+            "delta_target_margin": 1.0,
+            "delta_normalized_entropy": 0.20184908658209985
+          },
+          {
+            "omitted": "electrical",
+            "target_margin": 1.0,
+            "normalized_entropy": 3.8876163300395187e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -2.847783397839963e-75
+          },
+          {
+            "omitted": "reversible",
+            "target_margin": 1.0,
+            "normalized_entropy": 2.312017326638058e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -2.847783397839963e-75
+          },
+          {
+            "omitted": "magnetic",
+            "target_margin": 0.0,
+            "normalized_entropy": 0.20184908658209985,
+            "delta_target_margin": 1.0,
+            "delta_normalized_entropy": 0.20184908658209985
+          }
+        ]
+      },
+      {
+        "probe_id": "independent_spring",
+        "leave_one_out": [
+          {
+            "omitted": "storage",
+            "target_margin": 0.0,
+            "normalized_entropy": 0.20184908658209985,
+            "delta_target_margin": 1.0,
+            "delta_normalized_entropy": 0.20184908658209985
+          },
+          {
+            "omitted": "mechanical",
+            "target_margin": 1.0,
+            "normalized_entropy": 3.4863322938946145e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -4.895644741510509e-75
+          },
+          {
+            "omitted": "reversible",
+            "target_margin": 1.0,
+            "normalized_entropy": 1.8945656795923416e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -4.895644741510509e-75
+          },
+          {
+            "omitted": "elastic",
+            "target_margin": 0.0,
+            "normalized_entropy": 0.4036981731641997,
+            "delta_target_margin": 1.0,
+            "delta_normalized_entropy": 0.4036981731641997
+          }
+        ]
+      },
+      {
+        "probe_id": "independent_flywheel",
+        "leave_one_out": [
+          {
+            "omitted": "storage",
+            "target_margin": 1.0,
+            "normalized_entropy": 4.873236325011969e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -4.073555700939009e-75
+          },
+          {
+            "omitted": "mechanical",
+            "target_margin": 1.0,
+            "normalized_entropy": 3.7757242328839097e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -4.073555700939009e-75
+          },
+          {
+            "omitted": "reversible",
+            "target_margin": 1.0,
+            "normalized_entropy": 4.421130403841335e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -4.073555700939009e-75
+          },
+          {
+            "omitted": "rotational",
+            "target_margin": 0.0,
+            "normalized_entropy": 0.4036981731641997,
+            "delta_target_margin": 1.0,
+            "delta_normalized_entropy": 0.4036981731641997
+          }
+        ]
+      },
+      {
+        "probe_id": "independent_reservoir",
+        "leave_one_out": [
+          {
+            "omitted": "storage",
+            "target_margin": 1.0,
+            "normalized_entropy": 3.053061790198708e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -3.5877807905509884e-75
+          },
+          {
+            "omitted": "fluid",
+            "target_margin": 1.0,
+            "normalized_entropy": 3.0530617901987386e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -3.5877807905509884e-75
+          },
+          {
+            "omitted": "bounded",
+            "target_margin": 1.0,
+            "normalized_entropy": 2.7454644573525637e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -3.5877807905509884e-75
+          },
+          {
+            "omitted": "gravitational",
+            "target_margin": 0.0,
+            "normalized_entropy": 0.4036981731641997,
+            "delta_target_margin": 1.0,
+            "delta_normalized_entropy": 0.4036981731641997
+          }
+        ]
+      },
+      {
+        "probe_id": "independent_fuel_tank",
+        "leave_one_out": [
+          {
+            "omitted": "storage",
+            "target_margin": 1.0,
+            "normalized_entropy": 3.8622546787639285e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -5.466930191536282e-75
+          },
+          {
+            "omitted": "fluid",
+            "target_margin": 0.0,
+            "normalized_entropy": 0.20184908658209985,
+            "delta_target_margin": 1.0,
+            "delta_normalized_entropy": 0.20184908658209985
+          },
+          {
+            "omitted": "bounded",
+            "target_margin": 1.0,
+            "normalized_entropy": 2.1815688262330534e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -5.466930191536282e-75
+          },
+          {
+            "omitted": "chemical",
+            "target_margin": 0.0,
+            "normalized_entropy": 0.4036981731641997,
+            "delta_target_margin": 1.0,
+            "delta_normalized_entropy": 0.4036981731641997
+          }
+        ]
+      },
+      {
+        "probe_id": "independent_transformer",
+        "leave_one_out": [
+          {
+            "omitted": "electrical",
+            "target_margin": 1.0,
+            "normalized_entropy": 2.367569780764496e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -2.5691666531842413e-75
+          },
+          {
+            "omitted": "magnetic",
+            "target_margin": 1.0,
+            "normalized_entropy": 4.541174583890719e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -2.5691666531842413e-75
+          },
+          {
+            "omitted": "passive",
+            "target_margin": 1.0,
+            "normalized_entropy": 1.0017659474042515e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -2.5691666531842413e-75
+          },
+          {
+            "omitted": "coupling",
+            "target_margin": 0.0,
+            "normalized_entropy": 0.31992323303744613,
+            "delta_target_margin": 1.0,
+            "delta_normalized_entropy": 0.31992323303744613
+          }
+        ]
+      },
+      {
+        "probe_id": "independent_cell_membrane",
+        "leave_one_out": [
+          {
+            "omitted": "biological",
+            "target_margin": 1.0,
+            "normalized_entropy": 1.566123865438635e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -1.1959269301836538e-75
+          },
+          {
+            "omitted": "boundary",
+            "target_margin": 1.0,
+            "normalized_entropy": 1.566123865438635e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -1.1959269301836538e-75
+          },
+          {
+            "omitted": "selective",
+            "target_margin": 1.0,
+            "normalized_entropy": 1.534046296705999e-100,
+            "delta_target_margin": 0.0,
+            "delta_normalized_entropy": -1.1959269301836538e-75
+          },
+          {
+            "omitted": "flexible",
+            "target_margin": 0.0,
+            "normalized_entropy": 0.20184908658209985,
+            "delta_target_margin": 1.0,
+            "delta_normalized_entropy": 0.20184908658209985
+          }
+        ]
+      }
+    ],
+    "bespoke_primitive_audit": {
+      "passed": true,
+      "vocabulary_count": 59,
+      "relation_count": 177,
+      "expected_single_trait_relation_count": 177,
+      "probe_identity_count": 8,
+      "complete_constraint_tuple_count": 8,
+      "vocabulary_violations": [],
+      "relation_violations": [],
+      "relation_count_matches": true
+    }
+  },
+  "results": {
+    "independent_probe_count": 8,
+    "redundant_control_count": 2,
+    "declared_invalid_count": 3,
+    "independent_final_resolution_rate": 1.0,
+    "declared_invalid_rejection_rate": 1.0,
+    "median_independent_normalized_entropy_change": -0.6982831123151737,
+    "median_redundant_normalized_entropy_change": 0.0,
+    "median_independent_target_margin_change": 1.0,
+    "structural_information_to_normalized_entropy_association": -1.0,
+    "specificity_curve": [
+      {
+        "cumulative_structural_information_bits": 1.4947646917495778,
+        "normalized_entropy": 0.6982831123151737
+      },
+      {
+        "cumulative_structural_information_bits": 3.369233809665719,
+        "normalized_entropy": 0.31992323303744613
+      },
+      {
+        "cumulative_structural_information_bits": 3.954196310386875,
+        "normalized_entropy": 0.20184908658209985
+      },
+      {
+        "cumulative_structural_information_bits": 4.954196310386875,
+        "normalized_entropy": 1.1959269301836612e-75
+      },
+      {
+        "cumulative_structural_information_bits": 1.4947646917495778,
+        "normalized_entropy": 0.6982831123151737
+      },
+      {
+        "cumulative_structural_information_bits": 3.369233809665719,
+        "normalized_entropy": 0.31992323303744613
+      },
+      {
+        "cumulative_structural_information_bits": 3.954196310386875,
+        "normalized_entropy": 0.20184908658209985
+      },
+      {
+        "cumulative_structural_information_bits": 4.954196310386875,
+        "normalized_entropy": 2.847783397839963e-75
+      },
+      {
+        "cumulative_structural_information_bits": 1.4947646917495778,
+        "normalized_entropy": 0.6982831123151737
+      },
+      {
+        "cumulative_structural_information_bits": 2.954196310386875,
+        "normalized_entropy": 0.4036981731641997
+      },
+      {
+        "cumulative_structural_information_bits": 2.954196310386875,
+        "normalized_entropy": 0.4036981731641997
+      },
+      {
+        "cumulative_structural_information_bits": 4.954196310386875,
+        "normalized_entropy": 4.895644741510509e-75
+      },
+      {
+        "cumulative_structural_information_bits": 1.4947646917495778,
+        "normalized_entropy": 0.6982831123151737
+      },
+      {
+        "cumulative_structural_information_bits": 2.954196310386875,
+        "normalized_entropy": 0.4036981731641997
+      },
+      {
+        "cumulative_structural_information_bits": 2.954196310386875,
+        "normalized_entropy": 0.4036981731641997
+      },
+      {
+        "cumulative_structural_information_bits": 4.954196310386875,
+        "normalized_entropy": 4.073555700939009e-75
+      },
+      {
+        "cumulative_structural_information_bits": 1.4947646917495778,
+        "normalized_entropy": 0.6982831123151737
+      },
+      {
+        "cumulative_structural_information_bits": 2.954196310386875,
+        "normalized_entropy": 0.4036981731641997
+      },
+      {
+        "cumulative_structural_information_bits": 2.954196310386875,
+        "normalized_entropy": 0.4036981731641997
+      },
+      {
+        "cumulative_structural_information_bits": 4.954196310386875,
+        "normalized_entropy": 3.5877807905509884e-75
+      },
+      {
+        "cumulative_structural_information_bits": 1.4947646917495778,
+        "normalized_entropy": 0.6982831123151737
+      },
+      {
+        "cumulative_structural_information_bits": 2.954196310386875,
+        "normalized_entropy": 0.4036981731641997
+      },
+      {
+        "cumulative_structural_information_bits": 2.954196310386875,
+        "normalized_entropy": 0.4036981731641997
+      },
+      {
+        "cumulative_structural_information_bits": 4.954196310386875,
+        "normalized_entropy": 5.466930191536282e-75
+      },
+      {
+        "cumulative_structural_information_bits": 1.632268215499513,
+        "normalized_entropy": 0.6705281516444292
+      },
+      {
+        "cumulative_structural_information_bits": 3.3692338096657193,
+        "normalized_entropy": 0.31992323303744613
+      },
+      {
+        "cumulative_structural_information_bits": 3.3692338096657193,
+        "normalized_entropy": 0.31992323303744613
+      },
+      {
+        "cumulative_structural_information_bits": 4.954196310386876,
+        "normalized_entropy": 2.5691666531842413e-75
+      },
+      {
+        "cumulative_structural_information_bits": 2.6322682154995127,
+        "normalized_entropy": 0.46867906506232937
+      },
+      {
+        "cumulative_structural_information_bits": 3.954196310386875,
+        "normalized_entropy": 0.20184908658209985
+      },
+      {
+        "cumulative_structural_information_bits": 3.954196310386875,
+        "normalized_entropy": 0.20184908658209985
+      },
+      {
+        "cumulative_structural_information_bits": 4.954196310386875,
+        "normalized_entropy": 1.1959269301836538e-75
+      }
+    ]
+  },
+  "conformity": {
+    "judgment": "LOCALLY_CONSISTENT",
+    "evidence_strength": "DEVELOPMENT",
+    "criteria": {
+      "independent_compositions_resolve_declared_targets": true,
+      "independent_composition_reduces_median_entropy": true,
+      "independent_composition_increases_median_margin": true,
+      "independent_outperforms_unmatched_redundant_control": true,
+      "declared_invalid_compositions_are_rejected": true,
+      "full_composition_is_order_invariant": true,
+      "compiled_state_contains_no_bespoke_probe_primitive": true
+    }
+  },
+  "generalization": {
+    "status": "UNTESTED",
+    "required_next": "Post-freeze independently authored probes."
+  },
+  "artifact_identities": {
+    "state_sha256": "sha256:8da486af66110e387ed71865ed533c73e0183d8cecc7c35d9a28fccabf1197fa",
+    "probes_sha256": "sha256:f3c0f0e8f7f48347d4c33e04c6a9bdaf25ea6fa68e3f3a7101a165ec26a11b72",
+    "manifest_sha256": "sha256:42b824c5d0eaf7dbf7bc8586a5f8a47d14dcb8ede35bbe987f0043ea988c8b69",
+    "compiled_snapshot_id": "sha256:18b4f65e2c41a9a3f4e088acad757e42d2b853dbafda6673329743ffd7bf156f",
+    "kernel_sha256": "sha256:69155fb887f6e73fc9822a8493e1cb3f3559aea1d5cc0b19b1d0dd6772c00829",
+    "flow_sha256": "sha256:9d4627b7889342455478c86cbf2a301f49064f23e39b64e7ebb7146e27f2ad95",
+    "fixture_loader_sha256": "sha256:2090ec9f51c0ff26268e893f1db62e76a64747d08af4699dfa0031f63553d85b",
+    "experiment_sha256": "sha256:4faf3e5422f0d0401ead371d50190fe916bbda24ad38176654ba791c216e09be",
+    "methodology_sha256": "sha256:7943969ededbadba17f60535379ed552d5de812cd3a068cb67cce8693bdd45ae"
+  },
+  "provenance": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "kernel": "compose_concepts.py",
+    "flow": "combinatorial_uniqueness_flow.py",
+    "experiment": "direct_combinatorial_intersection_experiment.py"
+  },
+  "evidence_boundary": "One co-authored synthetic physical development fixture; not held out and not evidence of cross-domain generalization."
+}

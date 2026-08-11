@@ -11,6 +11,8 @@ from types import MappingProxyType
 
 import numpy as np
 
+from compose_concepts import ActivatedField, soft_intersection
+
 
 ALGORITHM_VERSION = "mml-typed-graph-v1"
 RELATION_TYPES = frozenset({"supports", "contradicts", "requires", "qualifies"})
@@ -371,19 +373,26 @@ class GraphModel:
             field = self.damping * (field @ self.transition) + (1 - self.damping) * anchor
         return field
 
+    def single_field_activation(self, word):
+        """Return one independently propagated field for a governed graph token."""
+        if word not in self.word2idx:
+            raise KeyError(f"unknown graph token: {word}")
+        return self._single_field(word).copy()
+
     def activation(self, query):
         words = self.resolve_tokens(query)
         if not words:
             return np.zeros(len(self.vocab))
-        fields = [self._single_field(word) for word in words]
-        if len(fields) == 1:
-            combined = fields[0]
-        else:
-            epsilon = np.finfo(float).tiny
-            combined = np.exp(np.mean(np.log(np.maximum(fields, epsilon)), axis=0))
-        adjusted = combined / np.sqrt(np.maximum(self.background, np.finfo(float).tiny))
-        total = adjusted.sum()
-        return adjusted / total if total else adjusted
+        fields = tuple(
+            ActivatedField(word, tuple(self.single_field_activation(word)))
+            for word in words
+        )
+        # Preserve the accepted legacy result for a fully damped isolated node:
+        # there is no probability distribution to normalize in this case.
+        if not any(any(field.values) for field in fields):
+            return np.zeros(len(self.vocab))
+        composed = soft_intersection(fields, background=self.background)
+        return np.asarray(composed.values)
 
     def text_activation(self, text):
         words = self.resolve_tokens(tokenize(text))
