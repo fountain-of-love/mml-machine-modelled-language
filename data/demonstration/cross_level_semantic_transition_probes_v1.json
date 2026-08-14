@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0",
+  "probe_suite_id": "cross_level_semantic_transition_probes_v1",
+  "title": "Cross-Level Semantic Transition",
+  "status": "authored_development_probes",
+  "state_id": "combinatorial_uniqueness_legal_banking_state_v1",
+  "holdout_status": "not_held_out",
+  "holdout_rationale": "The stage scopes were authored after the first cumulative-intersection failure. They test the proposed stage-reset operation and are not confirmatory held-out evidence.",
+  "research_intention": {
+    "hypothesis": "Explicitly governed stage-local constraint scopes can carry an interpretation from one resolved semantic region to another while retaining the earlier region as provenance, whereas flat cumulative conjunction can remain unsupported.",
+    "primary_question": "Can an interpretation transition from one semantic level to another as qualifying context is added, or does the current direct mechanism only perform flat conjunction?",
+    "evidence_boundary": "This synthetic operation experiment tests authored stage scoping. It does not infer legal causation, validate typed transition relations, establish facts, or determine a real legal conclusion."
+  },
+  "cross_level_probes": [
+    {
+      "id": "cross_access_to_evidence",
+      "description": "Resolve an access-level qualification, then scope the evidential stage without retaining access as a final-target property.",
+      "stages": [
+        {
+          "id": "access_qualification",
+          "constraints": ["access", "incomplete_disclosure", "source_coverage", "exclusive_control"],
+          "expected_region": "selective_access"
+        },
+        {
+          "id": "evidence_qualification",
+          "constraints": ["exclusive_control", "incomplete_disclosure", "evidence", "dispute"],
+          "expected_region": "evidence_asymmetry"
+        }
+      ]
+    },
+    {
+      "id": "cross_profile_to_contestability",
+      "description": "Resolve opaque profiling, then qualify the dispute-level consequence under a stage-local scope.",
+      "stages": [
+        {
+          "id": "profiling_qualification",
+          "constraints": ["profiling", "personal_data", "decision_logging", "contestability"],
+          "expected_region": "opaque_profiling"
+        },
+        {
+          "id": "contestability_qualification",
+          "constraints": ["profiling", "decision_logging", "incomplete_disclosure", "contestability", "dispute"],
+          "expected_region": "uncontestable_adverse_decision"
+        }
+      ]
+    },
+    {
+      "id": "cross_record_to_evidence",
+      "description": "Resolve recording transparency, then qualify the same recording as an evidential record.",
+      "stages": [
+        {
+          "id": "recording_qualification",
+          "constraints": ["recording", "personal_data", "transparency", "metadata"],
+          "expected_region": "recording_transparency_issue"
+        },
+        {
+          "id": "evidential_record_qualification",
+          "constraints": ["recording", "professional_record", "reconstruction", "evidence"],
+          "expected_region": "evidential_record"
+        }
+      ]
+    }
+  ],
+  "measurement_contract": {
+    "treatments": ["flat_cumulative_intersection", "governed_stage_reset_transition"],
+    "per_stage_metrics": ["status", "resolved_region", "retained_constraints", "introduced_constraints", "released_constraints", "entropy", "target_margin"],
+    "controls": ["flat_conjunction", "repeat_execution", "trace_completeness", "epistemic_non_promotion"]
+  },
+  "conformity_criteria": {
+    "all_stage_local_regions_must_resolve": true,
+    "final_regions_must_match_declarations": true,
+    "antecedent_regions_must_be_preserved_in_trace": true,
+    "at_least_one_constraint_must_be_released_at_each_level_change": true,
+    "flat_control_must_remain_distinguishable": true,
+    "repeat_execution_must_match": true,
+    "epistemic_classification_must_not_be_promoted": true
+  }
+}

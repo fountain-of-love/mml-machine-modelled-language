@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "experiment-3.3-cross-level-semantic-transition-v1",
+  "title": "Cross-Level Semantic Transition",
+  "status": "implemented_development_evidence_not_held_out",
+  "protocol": "docs/benchmark/experiment-3.3-cross-level-semantic-transition.md",
+  "experiment_role": "Atomic comparison of flat conjunction and governed stage-local semantic transition",
+  "artifacts": {
+    "state": {
+      "path": "data/demonstration/combinatorial_uniqueness_legal_banking_state_v1.json",
+      "freeze_status": "candidate_not_confirmatory_freeze"
+    },
+    "probes": {
+      "path": "data/demonstration/cross_level_semantic_transition_probes_v1.json",
+      "holdout_status": "not_held_out"
+    }
+  },
+  "evidence_boundary": "The state predates this atomic extraction, but the stage scopes were authored after observing the cumulative-intersection failure. This is development evidence for an explicit operation, not held-out generalization or legal adjudication."
+}

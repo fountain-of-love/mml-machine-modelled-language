@@ -1,0 +1,502 @@
+{
+  "result_schema_version": "1.0",
+  "experiment_id": "experiment-3.3-cross-level-semantic-transition-v1",
+  "generated_at": "2026-08-11T13:05:01.719504+00:00",
+  "title": "Experiment 3.3 \u2014 Cross-Level Semantic Transition",
+  "research_question": "Can an interpretation transition from one semantic level to another as qualifying context is added, or does direct composition only perform flat conjunction?",
+  "claim": "Explicit governed stage-local scopes can resolve successive semantic regions while preserving antecedent provenance and releasing coordinates that are not properties of the later region.",
+  "claim_scope": "Authored stage-reset transition over one synthetic legal state; not automatic scope inference, typed relation traversal, legal causation, factual adjudication, or generalization.",
+  "reporting_methodology": "OSCARC-v1",
+  "fixture": {
+    "manifest": "data/demonstration/cross_level_semantic_transition_v1.json",
+    "lifecycle": "AUTHORED_DEVELOPMENT",
+    "holdout_status": "not_held_out",
+    "concept_count": 33,
+    "dimension_count": 44,
+    "relation_count": 150,
+    "snapshot_id": "sha256:5c0eea4aaf7950e39f646bfb8ead25c32a3329d17e6ca263dd9629672a78c5ab",
+    "epistemic_classification": "synthetic_doctrinal_construction"
+  },
+  "operation_contract": {
+    "operation": "STAGE_RESET_TRANSITION",
+    "stage_constraints_are_explicit": true,
+    "antecedent_is_provenance_not_target_membership": true,
+    "flat_control": "ordered union of all stage constraints under direct intersection",
+    "policy_id": "cross-level-transition-development-v1"
+  },
+  "probes": [
+    {
+      "probe_id": "cross_access_to_evidence",
+      "description": "Resolve an access-level qualification, then scope the evidential stage without retaining access as a final-target property.",
+      "operation": "STAGE_RESET_TRANSITION",
+      "status": "RESOLVED",
+      "reason_code": "GOVERNED_STAGE_TRANSITION_RESOLVED",
+      "final_region": "evidence_asymmetry",
+      "stages": [
+        {
+          "stage_id": "access_qualification",
+          "expected_region": "selective_access",
+          "matches_expected_region": true,
+          "antecedent_region": null,
+          "retained_constraints": [],
+          "introduced_constraints": [
+            "access",
+            "incomplete_disclosure",
+            "source_coverage",
+            "exclusive_control"
+          ],
+          "released_constraints": [],
+          "execution": {
+            "constraints": [
+              "access",
+              "incomplete_disclosure",
+              "source_coverage",
+              "exclusive_control"
+            ],
+            "status": "RESOLVED",
+            "reason_code": "RESOLVED_SEMANTIC_REGION",
+            "mechanism": {
+              "status": "RESOLVED",
+              "reason_code": "NUMERIC_FIELD_RESOLVED"
+            },
+            "governance": {
+              "status": "RESOLVED",
+              "reason_code": "GOVERNED_INTERSECTION_SATISFIED"
+            },
+            "resolved_region": "selective_access",
+            "soft_top_candidate": "selective_access",
+            "hard_intersection_candidates": [
+              "selective_access"
+            ],
+            "epistemic_classification": "synthetic_doctrinal_construction",
+            "final_metrics": {
+              "entropy": 3.0114283043968233e-75,
+              "normalized_entropy": 8.612674937656338e-76,
+              "effective_candidate_count": 1.0,
+              "concentration": 1.0,
+              "top_margin": 1.0,
+              "target_rank": 1,
+              "target_activation": 1.0,
+              "target_margin": 1.0
+            }
+          }
+        },
+        {
+          "stage_id": "evidence_qualification",
+          "expected_region": "evidence_asymmetry",
+          "matches_expected_region": true,
+          "antecedent_region": "selective_access",
+          "retained_constraints": [
+            "exclusive_control",
+            "incomplete_disclosure"
+          ],
+          "introduced_constraints": [
+            "evidence",
+            "dispute"
+          ],
+          "released_constraints": [
+            "access",
+            "source_coverage"
+          ],
+          "execution": {
+            "constraints": [
+              "exclusive_control",
+              "incomplete_disclosure",
+              "evidence",
+              "dispute"
+            ],
+            "status": "RESOLVED",
+            "reason_code": "RESOLVED_SEMANTIC_REGION",
+            "mechanism": {
+              "status": "RESOLVED",
+              "reason_code": "NUMERIC_FIELD_RESOLVED"
+            },
+            "governance": {
+              "status": "RESOLVED",
+              "reason_code": "GOVERNED_INTERSECTION_SATISFIED"
+            },
+            "resolved_region": "evidence_asymmetry",
+            "soft_top_candidate": "evidence_asymmetry",
+            "hard_intersection_candidates": [
+              "evidence_asymmetry"
+            ],
+            "epistemic_classification": "synthetic_doctrinal_construction",
+            "final_metrics": {
+              "entropy": 0.6876321897733214,
+              "normalized_entropy": 0.19666257763930578,
+              "effective_candidate_count": 1.989000377714092,
+              "concentration": 0.5524635346336693,
+              "top_margin": 0.10492706926733852,
+              "target_rank": 1,
+              "target_activation": 0.5524635346336693,
+              "target_margin": 0.10492706926733852
+            }
+          }
+        }
+      ],
+      "flat_cumulative_control": {
+        "constraints": [
+          "access",
+          "incomplete_disclosure",
+          "source_coverage",
+          "exclusive_control",
+          "evidence",
+          "dispute"
+        ],
+        "status": "UNRESOLVED",
+        "reason_code": "UNSUPPORTED_COMBINATION",
+        "mechanism": {
+          "status": "RESOLVED",
+          "reason_code": "NUMERIC_FIELD_RESOLVED"
+        },
+        "governance": {
+          "status": "UNRESOLVED",
+          "reason_code": "UNSUPPORTED_COMBINATION"
+        },
+        "resolved_region": null,
+        "soft_top_candidate": "selective_access",
+        "hard_intersection_candidates": [],
+        "epistemic_classification": "synthetic_doctrinal_construction",
+        "final_metrics": {
+          "entropy": 1.0866483033597198,
+          "normalized_entropy": 0.3107810534532251,
+          "effective_candidate_count": 2.9643218958022763,
+          "concentration": 0.40267032551207615,
+          "top_margin": 0.08307067635496196
+        }
+      },
+      "repeat_execution_matches": true,
+      "snapshot_id": "sha256:5c0eea4aaf7950e39f646bfb8ead25c32a3329d17e6ca263dd9629672a78c5ab"
+    },
+    {
+      "probe_id": "cross_profile_to_contestability",
+      "description": "Resolve opaque profiling, then qualify the dispute-level consequence under a stage-local scope.",
+      "operation": "STAGE_RESET_TRANSITION",
+      "status": "RESOLVED",
+      "reason_code": "GOVERNED_STAGE_TRANSITION_RESOLVED",
+      "final_region": "uncontestable_adverse_decision",
+      "stages": [
+        {
+          "stage_id": "profiling_qualification",
+          "expected_region": "opaque_profiling",
+          "matches_expected_region": true,
+          "antecedent_region": null,
+          "retained_constraints": [],
+          "introduced_constraints": [
+            "profiling",
+            "personal_data",
+            "decision_logging",
+            "contestability"
+          ],
+          "released_constraints": [],
+          "execution": {
+            "constraints": [
+              "profiling",
+              "personal_data",
+              "decision_logging",
+              "contestability"
+            ],
+            "status": "RESOLVED",
+            "reason_code": "RESOLVED_SEMANTIC_REGION",
+            "mechanism": {
+              "status": "RESOLVED",
+              "reason_code": "NUMERIC_FIELD_RESOLVED"
+            },
+            "governance": {
+              "status": "RESOLVED",
+              "reason_code": "GOVERNED_INTERSECTION_SATISFIED"
+            },
+            "resolved_region": "opaque_profiling",
+            "soft_top_candidate": "opaque_profiling",
+            "hard_intersection_candidates": [
+              "opaque_profiling"
+            ],
+            "epistemic_classification": "synthetic_doctrinal_construction",
+            "final_metrics": {
+              "entropy": 1.060926540350585e-74,
+              "normalized_entropy": 3.034246377850299e-75,
+              "effective_candidate_count": 1.0,
+              "concentration": 1.0,
+              "top_margin": 1.0,
+              "target_rank": 1,
+              "target_activation": 1.0,
+              "target_margin": 1.0
+            }
+          }
+        },
+        {
+          "stage_id": "contestability_qualification",
+          "expected_region": "uncontestable_adverse_decision",
+          "matches_expected_region": true,
+          "antecedent_region": "opaque_profiling",
+          "retained_constraints": [
+            "profiling",
+            "decision_logging",
+            "contestability"
+          ],
+          "introduced_constraints": [
+            "incomplete_disclosure",
+            "dispute"
+          ],
+          "released_constraints": [
+            "personal_data"
+          ],
+          "execution": {
+            "constraints": [
+              "profiling",
+              "decision_logging",
+              "incomplete_disclosure",
+              "contestability",
+              "dispute"
+            ],
+            "status": "RESOLVED",
+            "reason_code": "RESOLVED_SEMANTIC_REGION",
+            "mechanism": {
+              "status": "RESOLVED",
+              "reason_code": "NUMERIC_FIELD_RESOLVED"
+            },
+            "governance": {
+              "status": "RESOLVED",
+              "reason_code": "GOVERNED_INTERSECTION_SATISFIED"
+            },
+            "resolved_region": "uncontestable_adverse_decision",
+            "soft_top_candidate": "uncontestable_adverse_decision",
+            "hard_intersection_candidates": [
+              "uncontestable_adverse_decision"
+            ],
+            "epistemic_classification": "synthetic_doctrinal_construction",
+            "final_metrics": {
+              "entropy": 2.8070020226817732e-120,
+              "normalized_entropy": 8.028016451663216e-121,
+              "effective_candidate_count": 1.0,
+              "concentration": 1.0,
+              "top_margin": 1.0,
+              "target_rank": 1,
+              "target_activation": 1.0,
+              "target_margin": 1.0
+            }
+          }
+        }
+      ],
+      "flat_cumulative_control": {
+        "constraints": [
+          "profiling",
+          "personal_data",
+          "decision_logging",
+          "contestability",
+          "incomplete_disclosure",
+          "dispute"
+        ],
+        "status": "UNRESOLVED",
+        "reason_code": "UNSUPPORTED_COMBINATION",
+        "mechanism": {
+          "status": "RESOLVED",
+          "reason_code": "NUMERIC_FIELD_RESOLVED"
+        },
+        "governance": {
+          "status": "UNRESOLVED",
+          "reason_code": "UNSUPPORTED_COMBINATION"
+        },
+        "resolved_region": null,
+        "soft_top_candidate": "uncontestable_adverse_decision",
+        "hard_intersection_candidates": [],
+        "epistemic_classification": "synthetic_doctrinal_construction",
+        "final_metrics": {
+          "entropy": 1.06311916526775e-49,
+          "normalized_entropy": 3.040517277822972e-50,
+          "effective_candidate_count": 1.0,
+          "concentration": 1.0,
+          "top_margin": 1.0
+        }
+      },
+      "repeat_execution_matches": true,
+      "snapshot_id": "sha256:5c0eea4aaf7950e39f646bfb8ead25c32a3329d17e6ca263dd9629672a78c5ab"
+    },
+    {
+      "probe_id": "cross_record_to_evidence",
+      "description": "Resolve recording transparency, then qualify the same recording as an evidential record.",
+      "operation": "STAGE_RESET_TRANSITION",
+      "status": "RESOLVED",
+      "reason_code": "GOVERNED_STAGE_TRANSITION_RESOLVED",
+      "final_region": "evidential_record",
+      "stages": [
+        {
+          "stage_id": "recording_qualification",
+          "expected_region": "recording_transparency_issue",
+          "matches_expected_region": true,
+          "antecedent_region": null,
+          "retained_constraints": [],
+          "introduced_constraints": [
+            "recording",
+            "personal_data",
+            "transparency",
+            "metadata"
+          ],
+          "released_constraints": [],
+          "execution": {
+            "constraints": [
+              "recording",
+              "personal_data",
+              "transparency",
+              "metadata"
+            ],
+            "status": "RESOLVED",
+            "reason_code": "RESOLVED_SEMANTIC_REGION",
+            "mechanism": {
+              "status": "RESOLVED",
+              "reason_code": "NUMERIC_FIELD_RESOLVED"
+            },
+            "governance": {
+              "status": "RESOLVED",
+              "reason_code": "GOVERNED_INTERSECTION_SATISFIED"
+            },
+            "resolved_region": "recording_transparency_issue",
+            "soft_top_candidate": "recording_transparency_issue",
+            "hard_intersection_candidates": [
+              "recording_transparency_issue"
+            ],
+            "epistemic_classification": "synthetic_doctrinal_construction",
+            "final_metrics": {
+              "entropy": 4.106797775749852e-75,
+              "normalized_entropy": 1.1745427983651803e-75,
+              "effective_candidate_count": 1.0,
+              "concentration": 1.0,
+              "top_margin": 1.0,
+              "target_rank": 1,
+              "target_activation": 1.0,
+              "target_margin": 1.0
+            }
+          }
+        },
+        {
+          "stage_id": "evidential_record_qualification",
+          "expected_region": "evidential_record",
+          "matches_expected_region": true,
+          "antecedent_region": "recording_transparency_issue",
+          "retained_constraints": [
+            "recording"
+          ],
+          "introduced_constraints": [
+            "professional_record",
+            "reconstruction",
+            "evidence"
+          ],
+          "released_constraints": [
+            "personal_data",
+            "transparency",
+            "metadata"
+          ],
+          "execution": {
+            "constraints": [
+              "recording",
+              "professional_record",
+              "reconstruction",
+              "evidence"
+            ],
+            "status": "RESOLVED",
+            "reason_code": "RESOLVED_SEMANTIC_REGION",
+            "mechanism": {
+              "status": "RESOLVED",
+              "reason_code": "NUMERIC_FIELD_RESOLVED"
+            },
+            "governance": {
+              "status": "RESOLVED",
+              "reason_code": "GOVERNED_INTERSECTION_SATISFIED"
+            },
+            "resolved_region": "evidential_record",
+            "soft_top_candidate": "evidential_record",
+            "hard_intersection_candidates": [
+              "evidential_record"
+            ],
+            "epistemic_classification": "synthetic_doctrinal_construction",
+            "final_metrics": {
+              "entropy": 1.0294321735233918e-150,
+              "normalized_entropy": 2.9441725934424543e-151,
+              "effective_candidate_count": 1.0,
+              "concentration": 1.0,
+              "top_margin": 1.0,
+              "target_rank": 1,
+              "target_activation": 1.0,
+              "target_margin": 1.0
+            }
+          }
+        }
+      ],
+      "flat_cumulative_control": {
+        "constraints": [
+          "recording",
+          "personal_data",
+          "transparency",
+          "metadata",
+          "professional_record",
+          "reconstruction",
+          "evidence"
+        ],
+        "status": "UNRESOLVED",
+        "reason_code": "AMBIGUOUS_FIELD",
+        "mechanism": {
+          "status": "UNRESOLVED",
+          "reason_code": "AMBIGUOUS_FIELD"
+        },
+        "governance": {
+          "status": "UNRESOLVED",
+          "reason_code": "UNSUPPORTED_COMBINATION"
+        },
+        "resolved_region": null,
+        "soft_top_candidate": "recording_transparency_issue",
+        "hard_intersection_candidates": [],
+        "epistemic_classification": "synthetic_doctrinal_construction",
+        "final_metrics": {
+          "entropy": 1.0971610839983108,
+          "normalized_entropy": 0.3137877052203906,
+          "effective_candidate_count": 2.9956495434555332,
+          "concentration": 0.3459475829546198,
+          "top_margin": 0.0
+        }
+      },
+      "repeat_execution_matches": true,
+      "snapshot_id": "sha256:5c0eea4aaf7950e39f646bfb8ead25c32a3329d17e6ca263dd9629672a78c5ab"
+    }
+  ],
+  "results": {
+    "probe_count": 3,
+    "stage_count": 6,
+    "stage_resolution_rate": 1.0,
+    "declared_region_match_rate": 1.0,
+    "flat_control_non_resolution_rate": 1.0
+  },
+  "conformity": {
+    "judgment": "CONSISTENT",
+    "evidence_strength": "DEVELOPMENT",
+    "criteria": {
+      "all_stage_local_regions_resolve": true,
+      "all_regions_match_predeclared_targets": true,
+      "antecedent_regions_are_preserved_in_trace": true,
+      "level_changes_explicitly_release_constraints": true,
+      "flat_conjunction_control_remains_unresolved": true,
+      "repeat_execution_is_deterministic": true,
+      "epistemic_classification_is_not_promoted": true
+    }
+  },
+  "generalization": {
+    "status": "UNTESTED",
+    "required_next": "Freeze the operation and state before independently authoring transition probes."
+  },
+  "artifact_identities": {
+    "state_sha256": "sha256:bcf9d736522436e42af98d2566ab03321b840f4b557515b2f2536373dcedc824",
+    "probes_sha256": "sha256:b2b991ef1d5520b6a37a42378085a56145cf6c741d83dee29f26279f62807455",
+    "manifest_sha256": "sha256:7861c3c81106fde96cf48eb1c9c5db03b4a4c37e76a56c3f67199361e4cdca26",
+    "compiled_snapshot_id": "sha256:5c0eea4aaf7950e39f646bfb8ead25c32a3329d17e6ca263dd9629672a78c5ab",
+    "intersection_flow_sha256": "sha256:9d4627b7889342455478c86cbf2a301f49064f23e39b64e7ebb7146e27f2ad95",
+    "transition_operation_sha256": "sha256:660afde2ac6bd5229624534dac7bea8ff585c0da3af35fc335e18bd18002e2be",
+    "experiment_sha256": "sha256:77d6c29b6cc507193dcaaf09f38b9162bf16986ba8a83d53d7a5a1630aa49da7",
+    "methodology_sha256": "sha256:7943969ededbadba17f60535379ed552d5de812cd3a068cb67cce8693bdd45ae"
+  },
+  "provenance": {
+    "python": "3.9.6",
+    "numpy": "2.0.2",
+    "operation": "cross_level_semantic_transition.execute_stage_transition",
+    "experiment": "cross_level_semantic_transition_experiment.py"
+  },
+  "evidence_boundary": "The stage-reset treatment was authored after the cumulative-intersection failure. A CONSISTENT result establishes only reproducible behavior of this explicit scoped operation in the co-authored synthetic fixture."
+}

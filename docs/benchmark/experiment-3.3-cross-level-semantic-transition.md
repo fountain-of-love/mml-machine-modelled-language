@@ -1,0 +1,74 @@
+# Experiment 3.3 — Cross-Level Semantic Transition
+
+## Atomic claim
+
+> Explicitly governed stage-local constraint scopes can resolve successive semantic regions while preserving the earlier region as provenance and releasing coordinates that are not properties of the later region.
+
+The experiment asks:
+
+> Can an interpretation transition from one semantic level to another as qualifying context is added, or does direct composition only perform flat conjunction?
+
+## Operation boundary
+
+Direct intersection treats all coordinates as permanent requirements of one target. Stage-reset transition instead gives every stage an explicit local scope:
+
+```text
+stage 1 constraints -> antecedent semantic region
+                           |
+                           | retained as provenance
+                           v
+stage 2 constraints -> consequent semantic region
+```
+
+The transition operation records which coordinates are retained, introduced, and released. Adjacent stages must retain at least one governed coordinate, preventing an unrelated second query from masquerading as a transition.
+
+This operation does not infer where a stage boundary belongs. It does not traverse typed causal or doctrinal relations. Those are separate future claims.
+
+## Control
+
+Every probe also executes the ordered union of all stage constraints through the original direct-intersection flow. This preserves the failure discovered by the first integrated run:
+
+```text
+access + incomplete disclosure + source coverage
++ exclusive control + evidence + dispute
+-> no valid direct intersection
+```
+
+The treatment releases `access` and `source_coverage` at the evidential boundary while retaining `exclusive_control` and `incomplete_disclosure`. The earlier `selective_access` result remains in the trace.
+
+## Treatments
+
+Three two-stage authored development probes cover:
+
+1. access qualification → evidence asymmetry;
+2. opaque profiling → uncontestable adverse decision; and
+3. recording transparency → evidential record.
+
+Each stage declares ordinary broad constraints and an expected synthetic region. No transition edge or bespoke combined-query primitive names an answer.
+
+## Conformity
+
+The atomic claim is `CONSISTENT` only when:
+
+- every stage resolves;
+- every resolved region matches its predeclared target;
+- antecedent regions remain in the trace;
+- each level change explicitly releases at least one coordinate;
+- flat conjunction remains observably distinct;
+- repeat execution is identical; and
+- synthetic epistemic classification is not promoted.
+
+Generalization remains `UNTESTED` because the stage scopes were authored after the original cumulative-intersection failure.
+
+## Commands and artifacts
+
+```bash
+make experiment-3-3
+make experiment-3-3-benchmark
+make experiment-3-3-check
+```
+
+```text
+benchmark/results/cross-level-semantic-transition-v1.json
+docs/benchmark/results/cross-level-semantic-transition-v1.md
+```
