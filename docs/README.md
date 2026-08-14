@@ -16,7 +16,8 @@ The documentation follows that progression from definition, through current mech
 4. [Why](Why.md) — why explicit representation, compiled reuse, and runtime composition may relocate work currently assigned to learned models; sustainability is treated as a consequence to test.
 5. [How](How.md) — shows the current representation, compilation, activation, soft-intersection, and update mechanisms.
 6. [MML in depth](MML-In-Depth.md) — expands Represent–Compile–Compose into semantic contracts, compiled operators, soft intersection, execution strategies, and future operator-family evolution.
-7. [Research contract](Research-Contract.md) — states each hypothesis independently, records its present status, and separates the evidence still required.
+7. [Scaling challenges](Scaling-Challenges.md) — separates computational, semantic, and governance scaling so evidence does not leak between cost, coverage, and correctness claims.
+8. [Research contract](Research-Contract.md) — states each hypothesis independently, records its present status, and separates the evidence still required.
 
 ## Deeper Areas
 

@@ -8,7 +8,7 @@ Machine Modelled Language (MML) explores a simple proposition:
 
 **MML isn't merely proposing a cheaper execution engine over a knowledge graph. It's proposing an alternative way for machines to obtain semantic specificity in the first place—explicit representation, compiled reuse, and combinatorial construction.**
 
-MML compiles governed concepts, senses, semantic roles, aliases, and typed relations into deterministic weighting operators. The current Python experiment uses matrices and PageRank-style propagation; it does not generate language or reproduce an LLM's internal mechanism. It gives explicit semantic structure a reusable, inspectable form whose weights can be rebuilt from the same governed inputs.
+MML compiles governed concepts, senses, semantic roles, aliases, and typed relations into deterministic weighting operators. It does not itself interpret raw language or decide what the semantic representation should be. That construction belongs upstream: LLMs, CML tools, experts, public sources, and evidence processes can propose candidate structure; governance turns accepted structure into stable CML knowledge; MML then compiles and executes it. The current Python experiment uses matrices and PageRank-style propagation; it does not generate language or reproduce an LLM's internal mechanism. It gives explicit semantic structure a reusable, inspectable form whose weights can be rebuilt from the same governed inputs.
 
 This is the literal seed of the idea **words carry weight**: concepts become addressable semantic coordinates, established relationships are compiled into reusable transition capacity, and queries compose those coordinates into task-specific semantic fields.
 
@@ -57,7 +57,7 @@ established knowledge
   -> compile once
   -> execute many times
 
-Resolution and discovery
+Composition
 broad concept A + broad concept B + broad concept C
   -> distinctive intersection
 ```
@@ -129,7 +129,7 @@ The corpus and probes were authored together. They demonstrate mechanics and pro
 
 ## Scientific Foundation: The Semantic Seed Vault
 
-Alongside the executable MML experiments, the repository includes a [Semantic Seed Vault](docs/explorations/seed-vault/README.md). It develops both a scientific derivation and a demonstration of how a **Common Language Model (CML)** could organize knowledge across a complex research domain.
+Alongside the executable MML experiments, the repository includes a [Semantic Seed Vault](docs/explorations/seed-vault/README.md). It is not merely a collection of facts. It asks whether heterogeneous bodies of knowledge can be expressed through stable semantic roles while preserving the real differences between their domains.
 
 The scientific work derives Resonant Capacity as a universal representation law for a declared class of stable quadratic two-store systems. It begins from one frozen parent system, derives
 
@@ -141,11 +141,11 @@ and applies the same definitions, conventions, and admission rules to mechanics,
 
 For scientists, the current contribution is this bounded, falsifiable cross-domain synthesis: Resonant Capacity provides one role-preserving mathematical representation for the admitted systems and makes both successful mappings and failures explicit; its exact novelty relative to the full literature remains under review.
 
-The vault uses shared semantic roles—such as capacity, substrate, activation, gain, storage, boundary, evidence, maturity, and failure—to compare those realizations without erasing their physical differences. It records papers and formulas together with claim maturity, scientific concerns, derivations, negative mappings, provenance, competing interpretations, and possible future research.
+The vault uses shared semantic roles—such as capacity, substrate, activation, gain, storage, boundary, evidence, maturity, and failure—to compare realizations across domains without pretending that mechanics, thermodynamics, acoustics, electromagnetism, and hydraulics are the same phenomenon. It records papers and formulas together with claim maturity, scientific concerns, derivations, negative mappings, provenance, competing interpretations, and possible future research.
 
 This is a scientific foundation for **words carry weight**. CML can give scientific concepts, roles, equations, constraints, and failure conditions stable identities and typed relationships. MML can then transpose that governed scientific structure into mathematical weights and task-specific operators. Scientific discovery could potentially become directly usable in deterministic mathematical operations instead of remaining only in prose or being repeatedly reconstructed by a language model.
 
-Combinations such as `capacity + activation + boundary` can create a more distinctive conceptual coordinate than any broad term alone—the CML expression of [combinatorial uniqueness](docs/capabilities/combinatorial-uniqueness/mechanism.md). The Seed Vault supplies the scientific and semantic structure; compiling that structure into relation-specific MML operators is the next executable step.
+Combinations such as `capacity + activation + boundary` can create a more distinctive conceptual coordinate than any broad term alone—the CML expression of [combinatorial uniqueness](docs/capabilities/combinatorial-uniqueness/mechanism.md). The point is not “everything is a graph, therefore everything connects.” It is: find reusable semantic dimensions that survive translation between contexts, preserve their type and scope, and then compose them to obtain specificity. The Seed Vault supplies the scientific and semantic structure; compiling that structure into relation-specific MML operators is the next executable step.
 
 This makes the Seed Vault evidence for several proposed CML capabilities:
 
