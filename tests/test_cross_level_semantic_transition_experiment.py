@@ -2,7 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from cross_level_semantic_transition_experiment import (
+from experiments.combinatorial_uniqueness.cross_level_transition_benchmark import (
     check_result,
     markdown_report,
     run_experiment,

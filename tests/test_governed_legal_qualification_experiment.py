@@ -2,7 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from governed_legal_qualification_experiment import (
+from experiments.combinatorial_uniqueness.governed_legal_qualification_benchmark import (
     check_result,
     markdown_report,
     run_experiment,

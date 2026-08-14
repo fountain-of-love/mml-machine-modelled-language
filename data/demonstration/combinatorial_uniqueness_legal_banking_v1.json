@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "combinatorial_uniqueness_legal_banking_v1",
+  "title": "From Broad Duties to Specific Legal Consequences",
+  "status": "implemented_development_evidence_not_held_out",
+  "protocol": "docs/benchmark/experiment-3-combinatorial-uniqueness.md",
+  "experiment_role": "Second-context test of combinatorial qualification and cross-level composition",
+  "artifacts": {
+    "state": {
+      "path": "data/demonstration/combinatorial_uniqueness_legal_banking_state_v1.json",
+      "freeze_status": "candidate_not_confirmatory_freeze"
+    },
+    "probes": {
+      "path": "data/demonstration/combinatorial_uniqueness_legal_banking_probes_v1.json",
+      "holdout_status": "not_held_out"
+    }
+  },
+  "evidence_boundary": "The state and probes are separate but co-authored synthetic artifacts. This version supports mechanism development and cross-context testing; it cannot establish legal conclusions or the held-out construction claim.",
+  "confirmatory_progression": [
+    "Validate the doctrinal distinctions and epistemic contract without using confirmatory outcomes.",
+    "Freeze and hash a confirmatory state version.",
+    "Author and freeze a new probe suite only after that state freeze.",
+    "Freeze thresholds and execution settings before running the confirmatory suite."
+  ]
+}

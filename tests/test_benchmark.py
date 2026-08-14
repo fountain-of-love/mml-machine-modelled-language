@@ -2,7 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-import benchmark
+from experiments.semantic_representation import benchmark
 import retrieval_benchmark
 from elaborations.mml_update_demo import run_update_demo
 from elaborations.mml_trace_demo import build_trace_record

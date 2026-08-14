@@ -2,7 +2,7 @@ import unittest
 
 import numpy as np
 
-from activate_grounded_focus import (
+from src.semantic_representation.activate_grounded_focus import (
     ActivationStrategy,
     Activation,
     PersonalizedPageRankActivationStrategy,
@@ -13,9 +13,9 @@ from activate_grounded_focus import (
     focus,
     ground,
 )
-from words_carry_weight import WordsCarryWeightFlow
-from experiment_fixture import load_experiment
-from representation_comparison import compare_representations
+from src.semantic_representation.words_carry_weight import WordsCarryWeightFlow
+from experiments.semantic_representation.fixture import load_experiment
+from experiments.semantic_representation.comparison import compare_representations
 
 
 class FixedActivationStrategy:

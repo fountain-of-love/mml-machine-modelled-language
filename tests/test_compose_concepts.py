@@ -4,7 +4,7 @@ import unittest
 
 import numpy as np
 
-from compose_concepts import (
+from src.combinatorial_uniqueness.compose_concepts import (
     ActivatedField,
     distribution_metrics,
     normalize,

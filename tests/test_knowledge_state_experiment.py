@@ -1,6 +1,6 @@
 import unittest
 
-from knowledge_state_experiment import markdown_report, run_experiment
+from experiments.knowledge_state_execution.benchmark import markdown_report, run_experiment
 
 
 class KnowledgeStateExperimentTests(unittest.TestCase):

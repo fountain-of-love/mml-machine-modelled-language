@@ -1,18 +1,26 @@
 # Benchmarks
 
+This directory contains shared benchmark methodology, the cross-programme benchmark proposal, legacy retrieval diagnostics, and links to programme-owned evidence. Each capability now keeps its protocol and human-readable results beside its definition under [`docs/capabilities/`](../capabilities/README.md); machine-readable artifacts remain in the repository-level `benchmark/` tree. Benchmarks are evidence instruments, not capability definitions.
+
 The benchmark programme follows MML's three hypotheses and reports a separate evidence boundary for each:
 
 | Hypothesis | Benchmark | Current status |
 | --- | --- | --- |
-| **1. Representation** | [Semantic Representation Benchmark v1](results/semantic-representation-v1.md) | Six authored identity probes under fixed mathematics; low-strength development evidence. |
-| **2. Knowledge State Execution** | [Knowledge State Execution Experiment v1](results/knowledge-state-v1.md) | One authored typed-chain comparison of per-query reconstruction and compiled reuse. |
-| **3. Combinatorial Uniqueness** | Defined in the [MML Hypothesis Benchmark Programme](semantic-operator-benchmark-proposal.md) | Soft-intersection mechanism exists; systematic benchmark pending. |
+| **1. Representation** | [Capability definition](../capabilities/semantic-representation/README.md) · [Experiment 1 protocol](../capabilities/semantic-representation/experiment.md) | Identity-focused development benchmark implemented. |
+| **2. Knowledge State Execution** | [Capability definition](../capabilities/knowledge-state-execution/README.md) · [Experiment 2 protocol](../capabilities/knowledge-state-execution/experiment.md) | One bounded typed-chain development experiment implemented. |
+| **3. Combinatorial Uniqueness** | [Capability definition](../capabilities/combinatorial-uniqueness/README.md) · [Experiment 3 protocol](../capabilities/combinatorial-uniqueness/experiment.md) · [3.1 direct intersection](../capabilities/combinatorial-uniqueness/results/direct-intersection-v1.md) · [3.2 governed qualification](../capabilities/combinatorial-uniqueness/results/governed-legal-qualification-v1.md) · [3.3 cross-level transition](../capabilities/combinatorial-uniqueness/results/cross-level-semantic-transition-v1.md) | Three atomic authored development studies distinguish locally consistent direct intersection and legal qualification from consistent explicit stage-scoped transition; held-out generalization remains untested. |
 
 In compact form: **Represent meaning. Compile knowledge. Compose concepts.** A result for one row is not evidence for the other two.
 
+The earlier [combined Experiment 3 result](../capabilities/combinatorial-uniqueness/results/v1.md) is `SUPERSEDED_BY_DECOMPOSITION`: it no longer acts as the programme-level verdict. The [cross-level root-cause analysis](../capabilities/combinatorial-uniqueness/studies/cross-level-root-cause.md) traces its unresolved access-to-evidence trajectory to the difference between flat conjunction and semantic transition. Experiment 3.3 tests explicit stage-local scope while retaining that failed conjunction as its control.
+
 Run the Representation benchmark with `make benchmark-check`, or regenerate its JSON and Markdown evidence with `make benchmark`.
 
-The orthogonal [Knowledge State Execution Experiment](results/knowledge-state-v1.md) asks whether one exact semantic consequence can be compiled into governed state and reused without rereading the source knowledge for each query. Run it with `make knowledge-state-benchmark-check`, or regenerate its JSON and Markdown evidence with `make knowledge-state-benchmark`. Its local source-reconstruction treatment is not an LLM measurement.
+The [Experiment 1 blueprint](../capabilities/semantic-representation/experiment.md) defines the stronger factorial, held-out, sham-control, and representation-ladder protocol that the current identity-focused report only begins to address.
+
+The orthogonal [Knowledge State Execution Experiment](../capabilities/knowledge-state-execution/results/v1.md) asks whether one exact semantic consequence can be compiled into governed state and reused without rereading the source knowledge for each query. Run it with `make knowledge-state-benchmark-check`, or regenerate its JSON and Markdown evidence with `make knowledge-state-benchmark`. Its local source-reconstruction treatment is not an LLM measurement.
+
+The [Experiment 2 blueprint](../capabilities/knowledge-state-execution/experiment.md) defines the stronger reuse-curve, refusal, mutation, provenance, and full-cost-accounting protocol.
 
 Benchmark and scientific results are reported using the [OSCARC methodology](oscarc-methodology.md), separating observation, standard, chronology/context, actions, measured result, conformity judgment, and recommendation.
 

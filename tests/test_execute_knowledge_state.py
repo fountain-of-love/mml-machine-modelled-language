@@ -1,13 +1,13 @@
 import unittest
 
-from execute_knowledge_state import (
+from src.knowledge_state_execution.execute_knowledge_state import (
     KnowledgeFact,
     compile_knowledge_state,
     execute,
     replace_fact,
 )
-from knowledge_is_state import KnowledgeIsStateFlow
-from knowledge_state_fixture import load_knowledge_state_fixture
+from src.knowledge_state_execution.knowledge_is_state import KnowledgeIsStateFlow
+from experiments.knowledge_state_execution.fixture import load_knowledge_state_fixture
 
 
 class ExecuteKnowledgeStateTests(unittest.TestCase):

@@ -20,9 +20,29 @@ The CML work makes the representation richer still. Concepts such as `capacity`,
 
 MML develops through a coherent triad:
 
-1. **Representation hypothesis — addressed by the current experiment:** If meaning is represented explicitly and richly enough, simple mathematics becomes semantically useful.
-2. **Knowledge State Execution hypothesis:** Once established knowledge is compiled into governed state, its declared consequences can be executed repeatedly without reconstructing equivalent task state at every use.
-3. **Combinatorial uniqueness hypothesis — mechanism present, systematic test next:** Several individually broad but sufficiently independent semantic constraints can combine into a narrow, distinctive conceptual coordinate or retrieval target.
+1. **[Semantic Representation](docs/capabilities/semantic-representation/README.md) — addressed by the current experiment:** If meaning is represented explicitly and richly enough, simple mathematics becomes semantically useful.
+2. **[Knowledge State Execution](docs/capabilities/knowledge-state-execution/README.md):** Once established knowledge is compiled into governed state, its declared consequences can be executed repeatedly without reconstructing equivalent task state at every use.
+3. **[Combinatorial Uniqueness](docs/capabilities/combinatorial-uniqueness/README.md) — implemented development evidence, not held out:** Several individually broad but sufficiently independent semantic constraints can combine into a narrow, distinctive conceptual coordinate or retrieval target.
+
+The canonical [MML Research Programme](docs/capabilities/README.md) defines each capability before linking its architectural proposition, controlled experiment protocol, implementation, and bounded evidence.
+
+Each hypothesis has a corresponding in-depth mechanism proposition:
+
+- **[Representational Leverage Proposition](docs/capabilities/semantic-representation/proposition.md):** making task-relevant meaning explicit and addressable may enable fixed ordinary mathematics to produce more useful and attributable behavior.
+- **[Compiled Knowledge Reuse Proposition](docs/capabilities/knowledge-state-execution/proposition.md):** compiling established knowledge once into governed executable state may avoid reconstructing equivalent task state for every use.
+- **[Combinatorial Scaling Proposition](docs/capabilities/combinatorial-uniqueness/proposition.md):** a reusable basis of governed semantic dimensions may construct many more useful query-time coordinates than were encoded as bespoke primitives.
+
+The experiment blueprints define primary empirical outcomes, confirmatory fixtures, freeze protocols, controls, measurements, falsification criteria, and required artifacts beneath those broader capability definitions.
+
+Human-readable reports are available for all three executed development experiments:
+
+- **[Semantic Representation Benchmark v1](docs/capabilities/semantic-representation/results/v1.md):** Six authored probes across `bank`, `bass`, and `crane` produced a consistent low-strength directional signal that joint semantic grounding and matching query focus improve contextual discrimination under fixed mathematics.
+- **[Knowledge State Execution Experiment v1](docs/capabilities/knowledge-state-execution/results/v1.md):** One authored typed-chain case showed that compiled governed state can reproduce reconstruction answers, execute without rereading source knowledge per query, accept a bounded correction, and preserve the original and unrelated results.
+- **[Experiment 3.1 — Direct Combinatorial Intersection](docs/capabilities/combinatorial-uniqueness/results/direct-intersection-v1.md):** Eight authored physical compositions narrowed broad coordinates to their declared targets; redundant coordinates stayed broad and declared-invalid combinations were rejected. Verdict: `LOCALLY_CONSISTENT` development evidence.
+- **[Experiment 3.2 — Governed Legal Qualification](docs/capabilities/combinatorial-uniqueness/results/governed-legal-qualification-v1.md):** Authored legal dimensions produced direct qualifications and contrasting regions while unsupported combinations remained unresolved and epistemic status was not promoted. Verdict: `LOCALLY_CONSISTENT` development evidence.
+- **[Experiment 3.3 — Cross-Level Semantic Transition](docs/capabilities/combinatorial-uniqueness/results/cross-level-semantic-transition-v1.md):** Explicit stage-local scope reproduced three authored semantic transitions while preserving failed flat conjunction as the control. Verdict: `CONSISTENT` development evidence.
+
+The earlier [combined Experiment 3 result](docs/capabilities/combinatorial-uniqueness/results/v1.md) is now classified as **`SUPERSEDED_BY_DECOMPOSITION`**, not as the current programme verdict. Its one failed access-to-evidence trajectory remains valid historical evidence: it exposed that flat cumulative intersection and cross-level transition are different operations. Experiments 3.1, 3.2, and 3.3 now carry the current claim-specific conclusions.
 
 Each hypothesis concerns a different architectural operation:
 
@@ -44,34 +64,6 @@ broad concept A + broad concept B + broad concept C
 
 In compact form: **Represent meaning. Compile knowledge. Compose concepts.**
 
-As computational claims:
-
-- representation makes computation possible;
-- compilation removes repeated reconstruction;
-- combination creates specificity without requiring bespoke primitives.
-
-The repository has tackled the Representation hypothesis through its Words Carry Weight experiment. It applies fixed activation mathematics to ambiguous and explicitly grounded representations so that the effect of semantic representation can be observed directly. This is bounded experimental evidence, not a claim that the hypothesis has been established universally.
-
-The current elaborated engine also contains the operational seed of Combinatorial Uniqueness: independently propagated activation fields are combined as a soft intersection rather than a simple additive average. The repository describes the underlying proposition as: “Several individually broad, sufficiently independent conceptual constraints can form a narrow and highly distinctive intersection.” What remains is to test that mechanism systematically as a scaling proposition.
-
-The Knowledge Is State experiment now makes the second hypothesis executable in one bounded typed-chain task. Research still needs broader, independently authored cases and a measured language-model baseline. The third hypothesis remains to be tested systematically.
-
-### The Combinatorial Scaling Proposition
-
-The intended shift in the scaling argument is from:
-
-> “We need to learn an enormous number of concepts and combinations.”
-
-to:
-
-> “We need a useful basis of semantic dimensions whose combinations cover a much larger conceptual space.”
-
-If a system has `n` useful semantic dimensions, the number of possible combinations can grow vastly faster than `n`. MML therefore asks whether rich conceptual coordinates can be constructed when needed rather than each requiring a separately learned primitive.
-
-Most possible combinations will be meaningless, contradictory, or invalid. Combinatorial growth is useful only when governed by stable identity, typed and directed relations, permitted composition, constraints, exclusions, provenance, query intent, and validation. These are not secondary metadata around numerical edge strength; together they determine what semantic weight an execution is allowed to carry.
-
-This is a research proposition, not a demonstrated scaling law. The next experiments must measure whether compiled semantic dimensions can be reused, whether their combinations add specificity, and whether governance can reject invalid combinations without erasing the proposed efficiency advantage.
-
 Architectural misuse of LLMs contributes to:
 
 - hallucination and convincing unsupported answers;
@@ -89,20 +81,27 @@ This repository contains a bounded Python mechanism experiment. It demonstrates 
 
 ## Start Here
 
-Start with the functional spine in [`activate_grounded_focus.py`](activate_grounded_focus.py) and the operational application flow in [`words_carry_weight.py`](words_carry_weight.py). Corpus grounding identifies occurrences of `bank` as governed identities such as `bank_river`; query focus narrows `bank` to the same identity; a Personalized PageRank activation strategy turns that selected identity into inspectable activation. The current experiment and benchmark are adapters over this flow, not its definition. Run the bounded demonstration through [`run_words_carry_weight.py`](run_words_carry_weight.py). The accompanying [vocabulary contract](docs/activate-grounded-focus-vocabulary.md) fixes these terms and their drift boundaries.
+Start with the functional spine in [`activate_grounded_focus.py`](src/semantic_representation/activate_grounded_focus.py) and the operational application flow in [`words_carry_weight.py`](src/semantic_representation/words_carry_weight.py). Corpus grounding identifies occurrences of `bank` as governed identities such as `bank_river`; query focus narrows `bank` to the same identity; a Personalized PageRank activation strategy turns that selected identity into inspectable activation. The current experiment and benchmark are adapters over this flow, not its definition. The bounded [`demo.py`](experiments/semantic_representation/demo.py) composition root runs through `make run`. The accompanying [vocabulary contract](docs/activate-grounded-focus-vocabulary.md) fixes these terms and their drift boundaries.
 
 > **Ground the known. Focus the intended. Activate the related.**
 
-The orthogonal Knowledge Is State spine follows the same separation. [`execute_knowledge_state.py`](execute_knowledge_state.py) compiles governed typed facts and executes their declared consequence; [`knowledge_is_state.py`](knowledge_is_state.py) coordinates compilation, execution, and immutable correction. Run it through [`run_knowledge_is_state.py`](run_knowledge_is_state.py).
+The orthogonal Knowledge Is State spine follows the same separation. [`execute_knowledge_state.py`](src/knowledge_state_execution/execute_knowledge_state.py) compiles governed typed facts and executes their declared consequence; [`knowledge_is_state.py`](src/knowledge_state_execution/knowledge_is_state.py) coordinates compilation, execution, and immutable correction. Its [`demo.py`](experiments/knowledge_state_execution/demo.py) composition root runs through `make run-knowledge-state`.
 
 > **State the known. Execute the consequence.**
 
 In short: **focus is representational narrowing** (`bank -> bank_river`); **activation is the numerical distribution produced by querying that focused identity**. Attention is an inspiration-level analogy only and is not the name of an MML mechanism.
 
-Everything else in the repository builds outward from that seed:
+The executable [`src/` tree](src/) follows the same triad:
 
-- **Operational flow:** `activate_grounded_focus.py` supplies the functional contracts; `words_carry_weight.py` coordinates knowledge construction and runtime activation.
-- **Current demonstration:** `run_words_carry_weight.py` composes fixture loading, representation comparison, and activation-console presentation around the operational flow.
+- **Semantic Representation:** [`src/semantic_representation/`](src/semantic_representation/) owns grounding, focus, activation, and the Words Carry Weight flow.
+- **Knowledge State Execution:** [`src/knowledge_state_execution/`](src/knowledge_state_execution/) owns compiled state, governed correction, and rollback.
+- **Combinatorial Uniqueness:** [`src/combinatorial_uniqueness/`](src/combinatorial_uniqueness/) owns field composition, governed state loading, validity, specificity measurements, and semantic transition.
+
+Research instrumentation mirrors the triad under [`experiments/`](experiments/). It owns authored fixtures, comparisons, benchmark adapters, evidence generation, console presentation, and executable demonstrations. Nothing in `src/` imports it.
+
+Everything else in the repository builds outward from those capability seeds:
+
+- **Current demonstration:** `experiments/semantic_representation/demo.py` composes fixture loading, representation comparison, and console presentation around the operational flow.
 - **Mechanism elaboration:** the `elaborations/` package adds governed aliases, typed relations, provenance, paths, snapshots, updates, and rollback.
 - **Authored application:** the legal demonstration applies those elaborations to bounded GDPR evidence ranking.
 
@@ -121,6 +120,9 @@ Begin with [Words Carry Weight: The Essence](docs/words-carry-weight-essence.md)
 | Governed change | `make update-demo` | Local relation updates, consequences, and rollback |
 | Semantic representation benchmark | `make benchmark-check` | Whether governed identity enrichment improves semantic focus under fixed mathematics |
 | Knowledge-state execution benchmark | `make knowledge-state-benchmark-check` | Compiled semantic-state reuse beside lexical and per-query source treatments |
+| Direct combinatorial intersection | `make experiment-3-1-check` | Progressive specificity, redundant controls, invalidity, permutations, and ablations |
+| Governed legal qualification | `make experiment-3-2-check` | Direct legal-region qualification, contrast, refusal, and epistemic non-promotion |
+| Cross-level semantic transition | `make experiment-3-3-check` | Stage-local semantic transition with failed flat conjunction retained as control |
 | Retrieval application diagnostic | `make retrieval-benchmark-check` | Legacy deterministic regression checks beside lexical baselines |
 
 The corpus and probes were authored together. They demonstrate mechanics and protect regressions; they are not independent evidence of generalisation, legal validity, production readiness, or superiority over TF-IDF, BM25, RAG, or LLMs. The exact evidence boundary is defined in the [research contract](docs/Research-Contract.md).
@@ -143,7 +145,7 @@ The vault uses shared semantic roles—such as capacity, substrate, activation, 
 
 This is a scientific foundation for **words carry weight**. CML can give scientific concepts, roles, equations, constraints, and failure conditions stable identities and typed relationships. MML can then transpose that governed scientific structure into mathematical weights and task-specific operators. Scientific discovery could potentially become directly usable in deterministic mathematical operations instead of remaining only in prose or being repeatedly reconstructed by a language model.
 
-Combinations such as `capacity + activation + boundary` can create a more distinctive conceptual coordinate than any broad term alone—the CML expression of [combinatorial uniqueness](docs/Combinatorial-Uniqueness.md). The Seed Vault supplies the scientific and semantic structure; compiling that structure into relation-specific MML operators is the next executable step.
+Combinations such as `capacity + activation + boundary` can create a more distinctive conceptual coordinate than any broad term alone—the CML expression of [combinatorial uniqueness](docs/capabilities/combinatorial-uniqueness/mechanism.md). The Seed Vault supplies the scientific and semantic structure; compiling that structure into relation-specific MML operators is the next executable step.
 
 This makes the Seed Vault evidence for several proposed CML capabilities:
 

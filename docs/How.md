@@ -8,7 +8,7 @@ Those lifecycle stages implement parts of the canonical research architecture:
 | --- | --- | --- |
 | **Representation** | semantic grounding, query focus, and explicit identities | Addressed by the bounded A/B benchmark. |
 | **Knowledge State Execution** | deterministic compilation into governed reusable state | One bounded typed-chain experiment compares per-query source reconstruction with compiled reuse; broader independent evidence is still needed. |
-| **Combinatorial Uniqueness** | independent propagation and normalized geometric-mean soft intersection | Mechanism present; systematic held-out test still needed. |
+| **Combinatorial Uniqueness** | independent propagation, normalized geometric-mean soft intersection, governed qualification, and explicit stage-local transition | Three atomic authored development experiments are consistent within their declared scopes; held-out construction and scaling remain untested. |
 
 In compact form: **Represent meaning. Compile knowledge. Compose concepts.** The sections below retain the prototype lifecycle—representation, execution, and evolution—but each mechanism should be read against that research contract.
 
@@ -63,7 +63,9 @@ Surface `bank` resolves from surrounding context to `bank_river`, `bank_financia
 
 The execution therefore uses two related kinds of weight: stored transition weights in the matrix and contextual activation weights produced for the current query. Neither is a permanent declaration of a word's universal importance.
 
-This intersection is called **[combinatorial uniqueness](Combinatorial-Uniqueness.md)** here. Broad concepts can be noisy and weakly discriminative alone, while several broad but sufficiently independent constraints can identify a much narrower semantic region. Their combination carries evidentiary weight because support must survive across the independently activated fields. `attention + systems theory + ranking`, for example, specifies a different intent than any term alone. The phrase names an operational design principle—not a claim that MML invented conjunction, product-of-experts inference, faceted retrieval, or vector intersection.
+This intersection is called **[combinatorial uniqueness](capabilities/combinatorial-uniqueness/mechanism.md)** here. Broad concepts can be noisy and weakly discriminative alone, while several broad but sufficiently independent constraints can identify a much narrower semantic region. Their combination carries evidentiary weight because support must survive across the independently activated fields. `attention + systems theory + ranking`, for example, specifies a different intent than any term alone. The phrase names an operational design principle—not a claim that MML invented conjunction, product-of-experts inference, faceted retrieval, or vector intersection.
+
+The authored Experiment 3 studies now separate three operations that the original combined run had conflated. [Direct intersection](capabilities/combinatorial-uniqueness/results/direct-intersection-v1.md) progressively narrows one candidate field. [Governed legal qualification](capabilities/combinatorial-uniqueness/results/governed-legal-qualification-v1.md) adds refusal, contrast, and epistemic non-promotion. [Cross-level transition](capabilities/combinatorial-uniqueness/results/cross-level-semantic-transition-v1.md) resets constraint scope at declared semantic boundaries and preserves earlier regions as antecedent provenance. These are development observations over co-authored fixtures, not held-out generalization or evidence of combinatorial scaling.
 
 Document scoring combines informative-token weighting, hub correction, graph-field similarity, and declared contradictory evidence. The same calculation powers ordinary and explained scoring.
 
@@ -115,7 +117,7 @@ For each focused identity, the benchmark checks:
 - whether cross-meaning activation decreases; and
 - whether exact replay produces the same result.
 
-This is authored development evidence for one kind of richer representation: governed semantic identity. It does not yet validate synonymy, hierarchy, semantic roles, relation-specific matrices, or policy composition. See the [benchmark proposal](benchmark/semantic-operator-benchmark-proposal.md) and [v1 result](benchmark/results/semantic-representation-v1.md).
+This is authored development evidence for one kind of richer representation: governed semantic identity. It does not yet validate synonymy, hierarchy, semantic roles, relation-specific matrices, or policy composition. See the [benchmark proposal](benchmark/semantic-operator-benchmark-proposal.md) and [v1 result](capabilities/semantic-representation/results/v1.md).
 
 ## Retrieval application diagnostic
 

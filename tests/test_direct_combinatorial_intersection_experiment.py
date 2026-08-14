@@ -2,7 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from direct_combinatorial_intersection_experiment import (
+from experiments.combinatorial_uniqueness.direct_intersection_benchmark import (
     check_result,
     markdown_report,
     run_experiment,

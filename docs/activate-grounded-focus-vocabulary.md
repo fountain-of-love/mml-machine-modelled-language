@@ -2,7 +2,7 @@
 
 LLMs reason with concepts expressed through language. They use names, descriptions, examples, and surrounding context to infer what code is intended to mean. If one term silently acquires several meanings, an LLM—and often a person—can cross a design boundary while still producing locally plausible text or code. Clear vocabulary is therefore part of the executable architecture, not merely editorial polish.
 
-This document governs the vocabulary surrounding [`activate_grounded_focus.py`](../activate_grounded_focus.py), the operational [`words_carry_weight.py`](../words_carry_weight.py) application flow, and their experiment and presentation adapters. Each term is projected onto a concrete function or element and given a drift boundary. If implementation and vocabulary diverge, either the implementation or this contract must be changed explicitly.
+This document governs the vocabulary surrounding [`activate_grounded_focus.py`](../src/semantic_representation/activate_grounded_focus.py), the operational [`words_carry_weight.py`](../src/semantic_representation/words_carry_weight.py) application flow, and their experiment and presentation adapters. Each term is projected onto a concrete function or element and given a drift boundary. If implementation and vocabulary diverge, either the implementation or this contract must be changed explicitly.
 
 Two levels must remain distinct:
 

@@ -7,6 +7,15 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class DocumentationTests(unittest.TestCase):
+    def test_kernel_does_not_import_research_instrumentation(self):
+        violations = []
+        for module in (ROOT / "src").rglob("*.py"):
+            text = module.read_text(encoding="utf-8")
+            if re.search(r"^(?:from|import)\s+experiments(?:\.|\s|$)", text, re.MULTILINE):
+                violations.append(module.relative_to(ROOT).as_posix())
+
+        self.assertEqual(violations, [])
+
     def test_documentation_is_consolidated_under_docs(self):
         allowed_outside_docs = {ROOT / "README.md", ROOT / "LICENSE.md"}
         misplaced = [
@@ -49,8 +58,8 @@ class DocumentationTests(unittest.TestCase):
         surfaces = [
             ROOT / "README.md",
             ROOT / "docs" / "How.md",
-            ROOT / "activate_grounded_focus.py",
-            ROOT / "words_carry_weight.py",
+            ROOT / "src" / "semantic_representation" / "activate_grounded_focus.py",
+            ROOT / "src" / "semantic_representation" / "words_carry_weight.py",
             ROOT / "elaborations" / "mml_elaborate_corpus.py",
             ROOT / "elaborations" / "mml_legal_usecase.py",
         ]

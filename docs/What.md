@@ -10,7 +10,7 @@ MML develops that proposition through three cumulative hypotheses:
 | --- | --- | --- |
 | **Representation** | Explicit, sufficiently rich meaning can make ordinary mathematics semantically useful. | Addressed by bounded A/B experiments under fixed mathematics. |
 | **Knowledge State Execution** | Established knowledge compiled into governed state can expose declared consequences without reconstructing equivalent task state at every use. | One bounded exact typed-chain experiment demonstrates compilation, repeated execution, mutation, inspection, and rollback. |
-| **Combinatorial Uniqueness** | Broad, sufficiently independent semantic coordinates can combine into a narrow, distinctive conceptual target. | Soft-intersection execution exists; systematic validation of the scaling proposition is still needed. |
+| **Combinatorial Uniqueness** | Broad, sufficiently independent semantic coordinates can combine into a narrow, distinctive conceptual target. | Direct intersection, governed legal qualification, and stage-scoped transition have bounded authored development evidence; held-out construction and scaling remain untested. |
 
 The hypotheses describe encoding, reuse, and resolution respectively. They are related but independently falsifiable: better representation does not by itself establish a reuse advantage, and a reusable compiled model does not by itself establish that conceptual combinations create useful specificity.
 
@@ -61,9 +61,11 @@ This makes the Compilation hypothesis concrete: established semantic structure b
 
 ## Hypothesis 3: Compose Concepts
 
-**[Combinatorial uniqueness](Combinatorial-Uniqueness.md)** adds another dimension. A broad concept may carry little discriminative weight alone, while several broad but sufficiently independent concepts form a narrow intersection. `attention + systems theory + ranking`, for example, identifies a more distinctive semantic region than any term by itself. MML executes those fields independently and combines their support, so weight emerges not only from individual nodes but from the structured relation between conceptual coordinates.
+**[Combinatorial uniqueness](capabilities/combinatorial-uniqueness/mechanism.md)** adds another dimension. A broad concept may carry little discriminative weight alone, while several broad but sufficiently independent concepts form a narrow intersection. `attention + systems theory + ranking`, for example, identifies a more distinctive semantic region than any term by itself. MML executes those fields independently and combines their support, so weight emerges not only from individual nodes but from the structured relation between conceptual coordinates.
 
-The current engine implements this as independently propagated activation fields combined through a normalized geometric mean—a soft intersection rather than a simple additive average. That establishes an executable mechanism, not the larger scaling claim. The remaining question is whether reusable semantic coordinates can reliably construct useful specificity across held-out tasks without requiring a separately learned primitive for every meaningful combination.
+The current engine implements direct composition as independently propagated activation fields combined through a normalized geometric mean—a soft intersection rather than a simple additive average. Experiment 3.1 found progressive narrowing across eight authored physical probes while redundant coordinates stayed broad. Experiment 3.2 showed that the same governed composition flow can resolve authored legal regions, separate contrast branches, and leave insufficient combinations unresolved without promoting their epistemic status. Experiment 3.3 established a distinct orchestration contract for cross-level transition: each semantic stage has local constraints, and the preceding region is retained as an antecedent rather than forced to remain a trait of the final target.
+
+Those results establish bounded, inspectable development behavior—not the larger scaling claim. The remaining question is whether reusable semantic coordinates can reliably construct useful specificity on independently authored combinations created after a genuine state freeze, and whether that basis offers useful coverage or efficiency without bespoke primitives for every meaningful combination.
 
 ## Governed Meaning Made Executable
 
@@ -71,7 +73,7 @@ MML is intentionally supervised semantic construction. People and institutions d
 
 For example, MML does not have to treat `bank` as one undifferentiated token. Governed identities such as `bank_financial` and `bank_river`, their aliases, relations, and the query context make the intended sense addressable. The current prototype demonstrates this distinction directly.
 
-The evidentiary relationship runs in one direction: **MML proposes explicit semantic representation, compiled Knowledge State Execution, and runtime conceptual composition. The repository supplies bounded evidence or mechanism seeds for those hypotheses; that work motivates Common Language Model (CML) contracts and a wider Semantic Operating System (SOS).** Those downstream proposals are consequences to explore, not evidence that MML works.
+The evidentiary relationship runs in one direction: **MML proposes explicit semantic representation, compiled Knowledge State Execution, and runtime conceptual composition. The repository supplies bounded authored development evidence for each hypothesis, at different levels of maturity; that work motivates Common Language Model (CML) contracts and a wider Semantic Operating System (SOS).** Those downstream proposals are consequences to explore, not evidence that MML works.
 
 ## Current Evidence and Proposed Direction
 
@@ -81,7 +83,7 @@ The current Python prototype demonstrates:
 
 - **Representation:** governed semantic identities, aliases, typed relations, and an authored A/B benchmark under fixed mathematics;
 - **Knowledge State Execution:** deterministic typed-fact compilation, content-addressed state, exact repeatable execution, local correction, inspectable paths, and rollback;
-- **Combinatorial Uniqueness mechanics:** independently propagated query fields, soft-intersection combination, and inspectable relation paths; and
+- **Combinatorial Uniqueness:** independently propagated query fields, direct soft intersection, governed qualification and refusal, explicit stage-local transition, permutations, ablations, and inspectable traces across three atomic authored experiments; and
 - a small legacy retrieval application diagnostic beside lexical baselines.
 
 It does not yet demonstrate:

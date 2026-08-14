@@ -12,21 +12,21 @@ Its learning contract is supervised and governed: humans or accountable institut
 
 ## The Three Hypotheses
 
-The MML research programme is organized around three cumulative but independently falsifiable hypotheses:
+The MML research programme is organized around three cumulative but independently falsifiable hypotheses. Their canonical capability definitions live in the [MML Research Programme](capabilities/README.md):
 
-### 1. Representation
+### 1. [Semantic Representation](capabilities/semantic-representation/README.md)
 
 > Meaning represented explicitly and richly enough can make ordinary mathematics semantically useful.
 
 The controlled intervention changes governed semantic identity while holding the corpus, compiler, query strategy, and numerical settings fixed. This hypothesis is weakened if richer representation does not improve declared semantic outcomes across independently designed ambiguity and relation tasks, or if any observed benefit depends on hidden changes to the mathematics.
 
-### 2. Knowledge State Execution
+### 2. [Knowledge State Execution](capabilities/knowledge-state-execution/README.md)
 
 > Once established knowledge is compiled into an executable representation, it need not be reconstructed from prose or latent model parameters every time it is used.
 
 This hypothesis concerns reusable capability, not merely deterministic serialization. It is weakened if compiling, governing, updating, and executing established knowledge offers no operational advantage over reconstructing the same task state at use time, or if the compiled artifact cannot preserve identity, provenance, correction, replay, and rollback.
 
-### 3. Combinatorial Uniqueness
+### 3. [Combinatorial Uniqueness](capabilities/combinatorial-uniqueness/README.md)
 
 > Several individually broad but sufficiently independent semantic constraints can combine into a narrow, distinctive conceptual coordinate or retrieval target.
 
@@ -38,7 +38,7 @@ In compact form: **Represent meaning. Compile knowledge. Compose concepts.**
 | --- | --- |
 | **Representation** | Addressed by bounded A/B experiments; not established universally. |
 | **Knowledge State Execution** | One bounded exact typed-chain experiment demonstrates compiled reuse and governed mutation; broader independent evidence is still needed. |
-| **Combinatorial Uniqueness** | Soft-intersection combination exists; a systematic held-out test is still needed. |
+| **Combinatorial Uniqueness** | Three atomic authored studies now distinguish direct intersection (`LOCALLY_CONSISTENT`), governed legal qualification (`LOCALLY_CONSISTENT`), and explicit stage-scoped transition (`CONSISTENT`). The original failed flat-conjunction control is preserved. Held-out construction, useful basis coverage, and scaling remain untested. |
 
 The programme becomes uninteresting if the structure cannot support useful applications, cannot expose valid routes back to governed sources, or offers no operational advantage relative to its construction and governance cost. It does not require universal superiority over TF-IDF and does not ask MML to imitate an LLM.
 
@@ -70,18 +70,20 @@ The programme becomes uninteresting if the structure cannot support useful appli
 
 These mechanics make compile-once, execute-many testable. They do not yet compare reuse cost, latency, resource demand, correction effort, or result stability against repeated reconstruction.
 
-### Combinatorial Uniqueness mechanics
+### Combinatorial Uniqueness development evidence
 
 - independently propagated activation fields;
 - normalized geometric-mean combination rather than additive averaging;
-- explicit positive and contradictory evidence; and
-- source-addressed relation paths and score components.
+- redundant-coordinate, invalidity, permutation, and leave-one-out controls;
+- governed direct legal qualification, contrast, unsupported non-resolution, and epistemic non-promotion;
+- explicit stage-local semantic transition with antecedent provenance; and
+- preservation of failed flat conjunction as a distinct control rather than relabelling it as transition.
 
-These mechanics make soft intersection executable. They do not yet establish useful combinatorial coverage or scaling across held-out domains.
+These studies make three composition contracts executable and inspectable over co-authored synthetic fixtures. They do not establish independently authored construction, useful combinatorial coverage, real legal validity, automatic stage-boundary discovery, or scaling across held-out domains.
 
 Deterministic replay is one component of auditability. It does not replace provenance completeness, event logging, validation, documented limitations, human oversight, or governance, and it is not by itself an EU AI Act compliance claim.
 
-Representation evidence plus the compilation and combination mechanism seeds are the current centre of the project.
+Bounded development evidence now exists for all three hypotheses. Its maturity differs by programme and remains below confirmatory evidence: the fixtures are authored, small, and not independently held out.
 
 ## Semantic representation benchmark
 
@@ -127,7 +129,7 @@ Those harder diagnostics compare useful observable outcomes, but they do not def
 2. Schema validation, access control, operational monitoring, and integrity controls.
 3. Representative domain coverage and independent replication.
 
-The active [semantic representation report](benchmark/results/semantic-representation-v1.md), legacy [retrieval report](benchmark/results/v1.md), and [governance contract](sos/Commons-Governance.md) state the present boundary.
+The active [semantic representation report](capabilities/semantic-representation/results/v1.md), legacy [retrieval report](benchmark/results/v1.md), and [governance contract](sos/Commons-Governance.md) state the present boundary.
 
 ## Proposed Next Step: A Knowledge State Execution Slice
 

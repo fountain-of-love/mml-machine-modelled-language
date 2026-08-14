@@ -1,5 +1,7 @@
 # MML Hypothesis Benchmark Programme
 
+This document aligns evidence instruments beneath the canonical [MML Research Programme](../capabilities/README.md). The capability definitions are authoritative for research scope; this document coordinates shared benchmark design and prevents evidence from leaking between programmes.
+
 ## Purpose
 
 This benchmark is designed around the central intention of Machine Modelled Language:
@@ -231,7 +233,7 @@ Wall-clock time, bytes or tokens, and algorithmic work are different measurement
 
 ### Current Evidence Boundary
 
-The [Knowledge State Execution Experiment v1](results/knowledge-state-v1.md) implements deterministic source reconstruction and compiled execution for one authored six-fact typed-chain case. It demonstrates exact reuse and governed mutation locally. It does not provide a language-model comparison, independent fixtures, general inference, or meaningful-scale efficiency evidence.
+The [Knowledge State Execution Experiment v1](../capabilities/knowledge-state-execution/results/v1.md) implements deterministic source reconstruction and compiled execution for one authored six-fact typed-chain case. It demonstrates exact reuse and governed mutation locally. It does not provide a language-model comparison, independent fixtures, general inference, or meaningful-scale efficiency evidence.
 
 ## Programme 3 — Combinatorial Uniqueness
 
@@ -272,7 +274,7 @@ Report:
 
 ### Current Evidence Boundary
 
-The elaborated engine already propagates fields independently and combines them through a normalized geometric mean. Regression tests show that this is not a simple additive average. No systematic held-out benchmark yet establishes combinatorial specificity, useful coverage, coordinate-basis scaling, or a net efficiency advantage. The full falsification contract is defined in [Combinatorial Uniqueness](../Combinatorial-Uniqueness.md) and the [MML Research Contract](../Research-Contract.md#3-combinatorial-uniqueness).
+The elaborated engine already propagates fields independently and combines them through a normalized geometric mean. Regression tests show that this is not a simple additive average. No systematic held-out benchmark yet establishes combinatorial specificity, useful coverage, coordinate-basis scaling, or a net efficiency advantage. The full falsification contract is defined in [Combinatorial Uniqueness](../capabilities/combinatorial-uniqueness/mechanism.md) and the [MML Research Contract](../Research-Contract.md#3-combinatorial-uniqueness).
 
 ## Case Format
 
@@ -434,9 +436,9 @@ Under this programme, retrieval remains an optional application diagnostic fed b
 
 ## Programme Status And Next Implementations
 
-The identity-focused Representation version is implemented in [`benchmark.py`](../../benchmark.py), with its report in [Semantic Representation Benchmark v1](results/semantic-representation-v1.md). Its experiment adapter reuses the operational `WordsCarryWeightFlow` across `bank`, `bass`, and `crane` scenarios while keeping the compiler and Personalized PageRank settings fixed. It records a consistent, low-strength directional signal for a joint grounding-and-query-focus treatment; it does not isolate either factor. Its next step is the frozen factorial v2 protocol, followed by held-out and independently authored cases.
+The identity-focused Representation version is implemented in [`benchmark.py`](../../experiments/semantic_representation/benchmark.py), with its report in [Semantic Representation Benchmark v1](../capabilities/semantic-representation/results/v1.md). Its experiment adapter reuses the operational `WordsCarryWeightFlow` across `bank`, `bass`, and `crane` scenarios while keeping the compiler and Personalized PageRank settings fixed. It records a consistent, low-strength directional signal for a joint grounding-and-query-focus treatment; it does not isolate either factor. Its next step is the frozen factorial v2 protocol, followed by held-out and independently authored cases.
 
-The first bounded Knowledge State Execution version is also implemented, with its report in [Knowledge State Execution Experiment v1](results/knowledge-state-v1.md). It compares per-query deterministic reconstruction with compiled execution over one authored typed-chain fixture. Its next step is independent cases and a measured language-model baseline.
+The first bounded Knowledge State Execution version is also implemented, with its report in [Knowledge State Execution Experiment v1](../capabilities/knowledge-state-execution/results/v1.md). It compares per-query deterministic reconstruction with compiled execution over one authored typed-chain fixture. Its next step is independent cases and a measured language-model baseline.
 
 Combinatorial Uniqueness is the next unimplemented systematic benchmark. Its first version should remain small and reuse the existing independent-field and soft-intersection mechanism without adding new operator complexity.
 

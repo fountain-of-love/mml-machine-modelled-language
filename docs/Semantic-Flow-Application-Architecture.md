@@ -143,7 +143,7 @@ The current matrix and Personalized PageRank implementation are branches, not th
 As the experiment grows, the functional representation can become a small composition spine:
 
 ```text
-activate_grounded_focus.py
+src/semantic_representation/activate_grounded_focus.py
   SemanticGrounding
   SemanticFocus
   TransitionModel
@@ -159,21 +159,21 @@ semantic/
   focus/          # query interpretation implementations
   activation/     # Personalized PageRank and future strategies
 
-words_carry_weight.py
+src/semantic_representation/words_carry_weight.py
   WordsCarryWeightFlow
   ground_and_compile(...)
   focus_and_activate(...)
 
-experiment_fixture.py
+experiments/semantic_representation/fixture.py
   # fixture loading
 
-representation_comparison.py
+experiments/semantic_representation/comparison.py
   # experiment and benchmark comparison
 
-activation_console.py
+experiments/semantic_representation/console.py
   # console presentation
 
-run_words_carry_weight.py
+experiments/semantic_representation/demo.py
   # executable composition root
 
 data/demonstration/
@@ -236,12 +236,12 @@ If that orientation is correct, AI can help each branch grow. If it is wrong, AI
 
 Today, the repository implements the pieces across two files:
 
-- [`activate_grounded_focus.py`](../activate_grounded_focus.py) contains first-class semantic grounding and focus, the transition model, activation result, activation-strategy contract, Personalized PageRank implementation, compiler, and activation facade.
-- [`words_carry_weight.py`](../words_carry_weight.py) contains the operational construction and runtime flows.
-- [`experiment_fixture.py`](../experiment_fixture.py) owns external fixture loading.
-- [`representation_comparison.py`](../representation_comparison.py) owns comparison for experiments and benchmarks.
-- [`activation_console.py`](../activation_console.py) owns console presentation.
-- [`run_words_carry_weight.py`](../run_words_carry_weight.py) is the executable composition root for the current demonstration.
+- [`activate_grounded_focus.py`](../src/semantic_representation/activate_grounded_focus.py) contains first-class semantic grounding and focus, the transition model, activation result, activation-strategy contract, Personalized PageRank implementation, compiler, and activation facade.
+- [`words_carry_weight.py`](../src/semantic_representation/words_carry_weight.py) contains the operational construction and runtime flows.
+- [`fixture.py`](../experiments/semantic_representation/fixture.py) owns external fixture loading.
+- [`comparison.py`](../experiments/semantic_representation/comparison.py) owns comparison for experiments and benchmarks.
+- [`console.py`](../experiments/semantic_representation/console.py) owns console presentation.
+- [`demo.py`](../experiments/semantic_representation/demo.py) is the executable composition root for the current demonstration.
 
 The filename expresses the flow as a small sentence: **activate grounded focus**. Grounding and focus prepare a meaning-bearing coordinate; activation executes its relationships. Concrete grounding, focus, compilation, and activation implementations should move into branches only when an actual next experiment requires more than one implementation.
 

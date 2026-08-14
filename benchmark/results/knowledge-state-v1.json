@@ -1,7 +1,7 @@
 {
   "benchmark_version": "knowledge-state-v1",
   "reporting_methodology": "OSCARC-v1",
-  "generated_at": "2026-08-10T21:54:01.361088+00:00",
+  "generated_at": "2026-08-11T15:59:16.495790+00:00",
   "research_intention": "At least one nontrivial semantic knowledge task can be represented once as governed state and reused through deterministic computation without loss of the required answer.",
   "standards": [
     "lexical retrieval does not silently claim a derived terminal answer",
@@ -204,65 +204,65 @@
     },
     "compile": {
       "repetitions": 101,
-      "median_ns": 57334,
-      "minimum_ns": 55167
+      "median_ns": 58416,
+      "minimum_ns": 55708
     },
     "compile_kernel_only": {
       "repetitions": 101,
-      "median_ns": 18084,
-      "minimum_ns": 17709
+      "median_ns": 18583,
+      "minimum_ns": 17708
     },
     "queries": {
       "luma": {
         "lexical_retrieval": {
           "repetitions": 101,
-          "median_ns": 45750,
-          "minimum_ns": 43750
+          "median_ns": 48833,
+          "minimum_ns": 44833
         },
         "source_reconstruction": {
           "repetitions": 101,
-          "median_ns": 76042,
-          "minimum_ns": 72583
+          "median_ns": 79250,
+          "minimum_ns": 75625
         },
         "compiled_mml": {
           "repetitions": 101,
-          "median_ns": 2750,
-          "minimum_ns": 2625
+          "median_ns": 2834,
+          "minimum_ns": 2750
         }
       },
       "mira": {
         "lexical_retrieval": {
           "repetitions": 101,
-          "median_ns": 48250,
-          "minimum_ns": 46000
+          "median_ns": 49167,
+          "minimum_ns": 48458
         },
         "source_reconstruction": {
           "repetitions": 101,
-          "median_ns": 78250,
-          "minimum_ns": 72417
+          "median_ns": 79750,
+          "minimum_ns": 74250
         },
         "compiled_mml": {
           "repetitions": 101,
-          "median_ns": 2875,
-          "minimum_ns": 2750
+          "median_ns": 2958,
+          "minimum_ns": 2791
         }
       }
     },
     "mutation": {
       "repetitions": 101,
-      "median_ns": 18833,
-      "minimum_ns": 18458
+      "median_ns": 19375,
+      "minimum_ns": 19042
     },
     "compile_boundary": "compile includes opening and parsing the source fixture; compile_kernel_only excludes source I/O",
     "interpretation": "descriptive observations for a tiny fixture; not a production performance comparison",
     "derived_observations": {
       "mean_query_median_ns": {
-        "lexical_retrieval": 47000,
-        "source_reconstruction": 77146,
-        "compiled_mml": 2812
+        "lexical_retrieval": 49000,
+        "source_reconstruction": 79500,
+        "compiled_mml": 2896
       },
-      "lexical_over_compiled_query_ratio": 16.71,
-      "reconstruction_over_compiled_query_ratio": 27.43,
+      "lexical_over_compiled_query_ratio": 16.92,
+      "reconstruction_over_compiled_query_ratio": 27.45,
       "observed_compile_break_even_queries_vs_reconstruction": 1,
       "compiled_latency_lower_than_both_local_baselines": true
     }
@@ -308,19 +308,19 @@
     "compiled_state_snapshot": "sha256:cf673e6490f3c2c4a4042b69accaddccc5b9733459cf5a354ce7dfe1b1ec75d8",
     "changed_state_snapshot": "sha256:4b477d327eff7188d41fb9c6bd922a8a1bbf5f236e679816945ef89f6a4a1dc4",
     "kernel_sha256": "82ab54d1c8ba70d6685f107f5e00659601e899d68851921f88ec03bf91e2ab25",
-    "operational_flow_sha256": "6dd7921d9bfb76a565b2647972e59ead2383019b104f4284bd2490958127a7e4",
-    "experiment_generator_sha256": "fb1f81cea35657b9dc0e36ca30d992d48fa35c16d756a3884a249d3a6e1ff14a",
-    "fixture_loader_sha256": "27c2b213545ef6bec52f66170b69762ffb50069b9c416fa42d8830eb642911f4",
+    "operational_flow_sha256": "1d92aafe3850bdc60218c74d665e02bb8466f493f92f08d94e619b309323d56d",
+    "experiment_generator_sha256": "37c975f5066f2a7d294e90f0342b663ed845e0fd1aa995558d14d3b0c9661967",
+    "fixture_loader_sha256": "c7caff504013b0cc0cf20a2efebce7f6881d3b6345dfdd75d711b53215ab812f",
     "methodology_sha256": "7943969ededbadba17f60535379ed552d5de812cd3a068cb67cce8693bdd45ae"
   },
   "provenance": {
     "fixture": "data/demonstration/knowledge_is_state.json",
-    "fixture_loader": "knowledge_state_fixture.py",
+    "fixture_loader": "experiments/knowledge_state_execution/fixture.py",
     "kernel": "execute_knowledge_state.py",
     "operational_flow": "knowledge_is_state.py",
     "experiment": "knowledge_state_experiment.py",
     "machine_result": "benchmark/results/knowledge-state-v1.json",
-    "human_report": "docs/benchmark/results/knowledge-state-v1.md"
+    "human_report": "docs/capabilities/knowledge-state-execution/results/v1.md"
   },
   "evidence_boundary": "One authored six-fact case and one declared is-a* then belongs-to rule; not general language understanding, arbitrary inference, or an efficiency comparison with a language model."
 }

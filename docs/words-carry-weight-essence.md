@@ -1,6 +1,6 @@
 # Words Carry Weight: The Essence
 
-[`activate_grounded_focus.py`](../activate_grounded_focus.py) is the technical kernel of the smallest mechanism explored by this repository. [`words_carry_weight.py`](../words_carry_weight.py) is the operational application flow: it coordinates `ground -> compile` for knowledge construction and `focus -> activate` for runtime use. The bounded experiment, benchmark, and console presentation are adapters over that operational flow. The current transition operator is a matrix; the same structure can be interpreted as a graph when relational paths matter.
+[`activate_grounded_focus.py`](../src/semantic_representation/activate_grounded_focus.py) is the technical kernel of the smallest mechanism explored by this repository. [`words_carry_weight.py`](../src/semantic_representation/words_carry_weight.py) is the operational application flow: it coordinates `ground -> compile` for knowledge construction and `focus -> activate` for runtime use. The bounded experiment, benchmark, and console presentation are adapters over that operational flow. The current transition operator is a matrix; the same structure can be interpreted as a graph when relational paths matter.
 
 > **Ground the known. Focus the intended. Activate the related.**
 
@@ -16,7 +16,7 @@ MML develops that proposition through a canonical triad:
 - **Knowledge State Execution:** compile established structure once as governed state so declared consequences can be executed repeatedly.
 - **Combinatorial Uniqueness:** compose reusable, sufficiently independent semantic coordinates into a more distinctive query-specific field.
 
-The minimal flow touches all three at different levels of maturity. `ground -> compile` makes a semantic distinction addressable and builds a reusable transition model. `focus -> activate` executes from the selected identity. The elaborated engine can independently propagate several fields and combine them as a soft intersection. Only the first hypothesis currently has a purpose-built controlled benchmark; compilation reuse and combinatorial scaling remain hypotheses to test systematically.
+The minimal flow touches all three at different levels of maturity. `ground -> compile` makes a semantic distinction addressable and builds a reusable transition model. `focus -> activate` executes from the selected identity. Separate controlled development experiments now test semantic representation, compiled knowledge-state execution, direct combinatorial intersection, governed legal qualification, and explicit cross-level transition. All remain authored and bounded; held-out construction, comparative efficiency, useful combinatorial coverage, and scaling remain hypotheses to test systematically.
 
 It does not train a language model, reproduce transformer attention, or infer meaning autonomously. It executes the relationships present in a small authored corpus.
 
@@ -234,6 +234,6 @@ Its value is more foundational: it makes the relationship between representation
 | --- | --- |
 | **Representation** | The bounded `bank`, `bass`, and `crane` A/B fixtures provide development evidence under fixed compilation and activation mathematics. They do not establish the claim across arbitrary semantic dimensions or domains. |
 | **Knowledge State Execution** | The separate Knowledge Is State spine demonstrates exact typed-chain compilation, repeated execution, inspectable consequences, governed correction, and preserved state in one bounded case. |
-| **Combinatorial Uniqueness** | The elaborated engine independently propagates fields and combines them through a normalized geometric mean. It has not yet established held-out specificity, useful combinatorial coverage, or a scaling advantage. |
+| **Combinatorial Uniqueness** | Independent fields and normalized geometric-mean composition now have atomic development studies for direct intersection, governed legal qualification, and stage-scoped transition. They have not established held-out specificity, useful combinatorial coverage, automatic transition discovery, or a scaling advantage. |
 
-The current research progression is therefore precise: Representation has been tackled in bounded experiments; Compilation and Combinatorial Uniqueness have executable mechanism seeds and are the next hypotheses to test directly.
+The current research progression is therefore precise: Representation, compiled Knowledge State Execution, and three distinct composition operations have bounded development evidence. The next evidentiary boundary is independence—freeze governed state first, author probes afterward, and test whether the observed behavior survives held-out combinations and meaningful baselines.

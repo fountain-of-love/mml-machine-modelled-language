@@ -26,7 +26,7 @@ In this sense, context engineering can externally instantiate part of the worldv
 
 ## Memory as a Combinatorial Uniqueness Playground
 
-Enigma's account-level context has served as an informal playground for **[combinatorial uniqueness](Combinatorial-Uniqueness.md)**. Recurring conceptual coordinates are not introduced as isolated keywords. They are related across questions: MML with governed execution, CML with conceptual identity, SOS with architectural separation, and the five-domain grammar with cross-domain comparison and drift controls.
+Enigma's account-level context has served as an informal playground for **[combinatorial uniqueness](capabilities/combinatorial-uniqueness/mechanism.md)**. Recurring conceptual coordinates are not introduced as isolated keywords. They are related across questions: MML with governed execution, CML with conceptual identity, SOS with architectural separation, and the five-domain grammar with cross-domain comparison and drift controls.
 
 During this work, the researcher observed responses that felt faster, became longer and more complete when depth was useful, adhered more closely to the intended conceptual distinctions, and required fewer corrective turns. The working interpretation is that reusable conceptual combinations reduce the need to reconstruct intent from scratch. If the context already preserves several independent coordinates, their intersection can constrain the active meaning more precisely than one broad instruction.
 

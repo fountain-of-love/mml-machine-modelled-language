@@ -1,21 +1,24 @@
-.PHONY: run run-knowledge-state experiment-3-1 experiment-3-2 experiment-3-3 run-elaborate run-legal trace test benchmark benchmark-check knowledge-state-benchmark knowledge-state-benchmark-check experiment-3-1-benchmark experiment-3-1-check experiment-3-2-benchmark experiment-3-2-check experiment-3-3-benchmark experiment-3-3-check retrieval-benchmark-check update-demo
+.PHONY: run run-knowledge-state experiment-3 experiment-3-1 experiment-3-2 experiment-3-3 run-elaborate run-legal trace test benchmark benchmark-check knowledge-state-benchmark knowledge-state-benchmark-check experiment-3-1-benchmark experiment-3-1-check experiment-3-2-benchmark experiment-3-2-check experiment-3-3-benchmark experiment-3-3-check retrieval-benchmark-check update-demo
 
 PYTHON ?= python3
 
 run:
-	$(PYTHON) run_words_carry_weight.py
+	$(PYTHON) -m experiments.semantic_representation.demo
 
 run-knowledge-state:
-	$(PYTHON) run_knowledge_is_state.py
+	$(PYTHON) -m experiments.knowledge_state_execution.demo
+
+experiment-3:
+	$(PYTHON) -m experiments.combinatorial_uniqueness.demo
 
 experiment-3-1:
-	$(PYTHON) run_experiment_3_1.py
+	$(PYTHON) -m experiments.combinatorial_uniqueness.run_direct_intersection
 
 experiment-3-2:
-	$(PYTHON) run_experiment_3_2.py
+	$(PYTHON) -m experiments.combinatorial_uniqueness.run_governed_legal_qualification
 
 experiment-3-3:
-	$(PYTHON) run_experiment_3_3.py
+	$(PYTHON) -m experiments.combinatorial_uniqueness.run_cross_level_transition
 
 run-elaborate:
 	$(PYTHON) -m elaborations.mml_elaborate_corpus
@@ -28,41 +31,41 @@ trace:
 
 test:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m unittest discover -s tests -v
-	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) benchmark.py --check >/dev/null
-	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) knowledge_state_experiment.py --check >/dev/null
-	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) direct_combinatorial_intersection_experiment.py --check >/dev/null
-	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) governed_legal_qualification_experiment.py --check >/dev/null
-	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) cross_level_semantic_transition_experiment.py --check >/dev/null
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.semantic_representation.benchmark --check >/dev/null
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.knowledge_state_execution.benchmark --check >/dev/null
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.combinatorial_uniqueness.direct_intersection_benchmark --check >/dev/null
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.combinatorial_uniqueness.governed_legal_qualification_benchmark --check >/dev/null
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.combinatorial_uniqueness.cross_level_transition_benchmark --check >/dev/null
 
 benchmark:
-	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) benchmark.py --write
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.semantic_representation.benchmark --write
 
 benchmark-check:
-	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) benchmark.py --check
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.semantic_representation.benchmark --check
 
 knowledge-state-benchmark:
-	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) knowledge_state_experiment.py --write
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.knowledge_state_execution.benchmark --write
 
 knowledge-state-benchmark-check:
-	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) knowledge_state_experiment.py --check
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.knowledge_state_execution.benchmark --check
 
 experiment-3-1-benchmark:
-	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) direct_combinatorial_intersection_experiment.py --write
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.combinatorial_uniqueness.direct_intersection_benchmark --write
 
 experiment-3-1-check:
-	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) direct_combinatorial_intersection_experiment.py --check
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.combinatorial_uniqueness.direct_intersection_benchmark --check
 
 experiment-3-2-benchmark:
-	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) governed_legal_qualification_experiment.py --write
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.combinatorial_uniqueness.governed_legal_qualification_benchmark --write
 
 experiment-3-2-check:
-	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) governed_legal_qualification_experiment.py --check
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.combinatorial_uniqueness.governed_legal_qualification_benchmark --check
 
 experiment-3-3-benchmark:
-	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) cross_level_semantic_transition_experiment.py --write
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.combinatorial_uniqueness.cross_level_transition_benchmark --write
 
 experiment-3-3-check:
-	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) cross_level_semantic_transition_experiment.py --check
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.combinatorial_uniqueness.cross_level_transition_benchmark --check
 
 retrieval-benchmark-check:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) retrieval_benchmark.py --check

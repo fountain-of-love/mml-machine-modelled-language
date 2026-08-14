@@ -11,7 +11,7 @@ from types import MappingProxyType
 
 import numpy as np
 
-from compose_concepts import ActivatedField, soft_intersection
+from src.combinatorial_uniqueness.compose_concepts import ActivatedField, soft_intersection
 
 
 ALGORITHM_VERSION = "mml-typed-graph-v1"

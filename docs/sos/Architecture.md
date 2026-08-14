@@ -6,7 +6,7 @@ This document describes a proposed **Semantic Operating System (SOS)** made plau
 
 An execution engine makes those propositions operational; it is one component of MML, not its complete definition. SOS is the downstream architecture they could enable. A structured knowledge base, grounded in a **Common Language Model (CML)**, would supply governed semantic coordinates and knowledge to MML, while **Large Language Models (LLMs)** could support discovery, generation, and under-modelled situations.
 
-The current Python prototype does not implement SOS. It provides bounded Representation evidence plus mechanism seeds for compilation, reuse, soft intersection, provenance, snapshots, and updates. Those mechanisms open the architectural door without validating the complete SOS or all three MML hypotheses.
+The current Python prototype does not implement SOS. It provides bounded authored development evidence for semantic Representation, compiled Knowledge State Execution, direct intersection, governed qualification, and explicit stage-scoped transition, together with provenance, snapshots, updates, and rollback. Those results open the architectural door without validating the complete SOS, held-out generalization, combinatorial scaling, or production usefulness.
 
 The name is intentional. SOS is an operating model for meaning, but it is also a small distress signal for the current LLM situation: too much compute, too much opacity, and too much semantic and knowledge work assigned only to latent reconstruction when some of it may be representable, compilable, and reusable.
 

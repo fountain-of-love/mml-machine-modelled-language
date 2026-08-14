@@ -58,7 +58,7 @@ An MML system operates over **Common Language Model (CML)-shaped knowledge**: co
 
 In the current Python prototype, MML is represented at toy scale by governed semantic identities, a compiled co-occurrence transition matrix, and a Personalized PageRank activation strategy. Grounding and focus change which meanings are addressable; compilation makes the transition model reusable; the elaborated engine independently propagates and softly intersects multiple fields.
 
-That is not production MML yet. Representation has bounded development evidence; compilation reuse and combinatorial scaling still require controlled tests under the [research contract](../Research-Contract.md).
+That is not production MML yet. Representation, compiled reuse, direct intersection, governed qualification, and explicit stage-scoped transition have bounded authored development evidence. Independently held-out construction, comparative reuse economics, useful combinatorial coverage, and scaling still require controlled tests under the [research contract](../Research-Contract.md).
 
 The deeper MML design lives in [MML-In-Depth.md](../MML-In-Depth.md). That page develops Represent–Compile–Compose, execution strategies, semantic operators, language-model integration, and the next step toward multi-dimensional MML fields.
 

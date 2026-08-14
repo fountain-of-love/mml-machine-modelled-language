@@ -1,9 +1,9 @@
 import unittest
 from pathlib import Path
 
-from combinatorial_uniqueness_fixture import load_experiment_fixture
-from combinatorial_uniqueness_flow import RESOLVED, CombinatorialUniquenessFlow, ValidityPolicy
-from cross_level_semantic_transition import TransitionStage, execute_stage_transition
+from experiments.combinatorial_uniqueness.fixture import load_experiment_fixture
+from src.combinatorial_uniqueness.combinatorial_uniqueness_flow import RESOLVED, CombinatorialUniquenessFlow, ValidityPolicy
+from src.combinatorial_uniqueness.cross_level_semantic_transition import TransitionStage, execute_stage_transition
 
 
 ROOT = Path(__file__).resolve().parents[1]

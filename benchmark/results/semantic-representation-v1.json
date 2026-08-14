@@ -1,6 +1,6 @@
 {
   "benchmark_version": "semantic-representation-v1",
-  "generated_at": "2026-08-10T22:12:55.822357+00:00",
+  "generated_at": "2026-08-11T15:59:16.354184+00:00",
   "intention": "Richer meaning representation can make established mathematics produce more useful results.",
   "fixed_mathematics": "converged-personalized-pagerank-v1",
   "reporting_methodology": "OSCARC-v1",
@@ -425,21 +425,21 @@
     }
   ],
   "artifact_identities": {
-    "generator_sha256": "ac3ebb251693ffb09e84bab7884291fa507cadf5bfff40bc03fa67ddb2ea4612",
-    "kernel_sha256": "c5878818372485340696f2a1b7f5e4c28ed62dcbd1237c4c1510f8359a4c3545",
-    "operational_flow_sha256": "e3296f785679b1e1efc89cdda634b01711e514fe1d8834ebb1df02e929b4e46a",
-    "comparison_adapter_sha256": "7141e7de3c9ac22222d3200495a702e3c910916dc5d00b698e0447fb863cd36f",
+    "generator_sha256": "60ec4f0ea756db2996510390e3b67d66c05ef27765f0daae0f5bfd079aaef3f5",
+    "kernel_sha256": "a2262e17940106e19a45b3533ce55eff7528feff68001937fd019f9ca7c9dc9a",
+    "operational_flow_sha256": "e29e5f35b3c6b26de7b5104682a529b7231655669d734096c93f1e3951498631",
+    "comparison_adapter_sha256": "4fec662d4b63161dee260855b074ad44ae83321a766c8f7a466944c4d6665fb3",
     "bank_fixture_sha256": "795b44b8aad541ca95d492c016ba646f53a594099c1f6592164b55f692e82371",
     "methodology_sha256": "7943969ededbadba17f60535379ed552d5de812cd3a068cb67cce8693bdd45ae"
   },
   "provenance": {
-    "generator": "benchmark.py",
-    "kernel": "activate_grounded_focus.py",
-    "operational_flow": "words_carry_weight.py",
-    "comparison_adapter": "representation_comparison.py",
+    "generator": "experiments/semantic_representation/benchmark.py",
+    "kernel": "src/semantic_representation/activate_grounded_focus.py",
+    "operational_flow": "src/semantic_representation/words_carry_weight.py",
+    "comparison_adapter": "experiments/semantic_representation/comparison.py",
     "bank_fixture": "data/demonstration/words_carry_weight.json",
     "machine_result": "benchmark/results/semantic-representation-v1.json",
-    "human_report": "docs/benchmark/results/semantic-representation-v1.md",
+    "human_report": "docs/capabilities/semantic-representation/results/v1.md",
     "methodology": "docs/benchmark/oscarc-methodology.md"
   },
   "evidence_boundary": "Authored development scenarios for the joint semantic grounding-and-focus treatment only; not isolated evidence for grounding alone, not held-out evidence for richer meaning representation generally, and not evidence for MML hypotheses two or three."

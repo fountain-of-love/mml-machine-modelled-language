@@ -1,8 +1,8 @@
 import unittest
 from pathlib import Path
 
-from combinatorial_uniqueness_fixture import load_experiment_fixture
-from combinatorial_uniqueness_flow import (
+from experiments.combinatorial_uniqueness.fixture import load_experiment_fixture
+from src.combinatorial_uniqueness.combinatorial_uniqueness_flow import (
     INVALID,
     RESOLVED,
     CombinatorialUniquenessFlow,
