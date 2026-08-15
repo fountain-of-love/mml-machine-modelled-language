@@ -12,6 +12,8 @@ from types import MappingProxyType
 import numpy as np
 
 from src.combinatorial_uniqueness.compose_concepts import ActivatedField, soft_intersection
+from src.helpers.hashing import sha256_bytes
+from src.helpers.json_io import canonical_json_bytes
 
 
 ALGORITHM_VERSION = "mml-typed-graph-v1"
@@ -146,8 +148,7 @@ def graph_snapshot_id(sentences, relations=(), aliases=(), window_size=2, dampin
         "relation_multipliers": dict(RELATION_MULTIPLIERS),
         "configuration": {"window_size": window_size, "damping": damping, "steps": steps},
     }
-    encoded = json.dumps(payload, sort_keys=True, separators=(",", ":"), default=list).encode()
-    return f"sha256:{hashlib.sha256(encoded).hexdigest()}"
+    return sha256_bytes(canonical_json_bytes(payload, default=list))
 
 
 def _executable_snapshot_id(source_id, vocab, arrays):

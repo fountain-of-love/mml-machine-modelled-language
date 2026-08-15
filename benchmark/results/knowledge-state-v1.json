@@ -1,7 +1,7 @@
 {
   "benchmark_version": "knowledge-state-v1",
   "reporting_methodology": "OSCARC-v1",
-  "generated_at": "2026-08-11T15:59:16.495790+00:00",
+  "generated_at": "2026-08-15T20:43:11.044346+00:00",
   "research_intention": "At least one nontrivial semantic knowledge task can be represented once as governed state and reused through deterministic computation without loss of the required answer.",
   "standards": [
     "lexical retrieval does not silently claim a derived terminal answer",
@@ -204,65 +204,65 @@
     },
     "compile": {
       "repetitions": 101,
-      "median_ns": 58416,
-      "minimum_ns": 55708
+      "median_ns": 56000,
+      "minimum_ns": 53917
     },
     "compile_kernel_only": {
       "repetitions": 101,
-      "median_ns": 18583,
+      "median_ns": 18083,
       "minimum_ns": 17708
     },
     "queries": {
       "luma": {
         "lexical_retrieval": {
           "repetitions": 101,
-          "median_ns": 48833,
-          "minimum_ns": 44833
+          "median_ns": 47250,
+          "minimum_ns": 44250
         },
         "source_reconstruction": {
           "repetitions": 101,
-          "median_ns": 79250,
-          "minimum_ns": 75625
+          "median_ns": 75750,
+          "minimum_ns": 73208
         },
         "compiled_mml": {
           "repetitions": 101,
-          "median_ns": 2834,
-          "minimum_ns": 2750
+          "median_ns": 2750,
+          "minimum_ns": 2666
         }
       },
       "mira": {
         "lexical_retrieval": {
           "repetitions": 101,
-          "median_ns": 49167,
-          "minimum_ns": 48458
+          "median_ns": 46375,
+          "minimum_ns": 45792
         },
         "source_reconstruction": {
           "repetitions": 101,
-          "median_ns": 79750,
-          "minimum_ns": 74250
+          "median_ns": 73458,
+          "minimum_ns": 72292
         },
         "compiled_mml": {
           "repetitions": 101,
-          "median_ns": 2958,
-          "minimum_ns": 2791
+          "median_ns": 2750,
+          "minimum_ns": 2667
         }
       }
     },
     "mutation": {
       "repetitions": 101,
-      "median_ns": 19375,
-      "minimum_ns": 19042
+      "median_ns": 19084,
+      "minimum_ns": 18208
     },
     "compile_boundary": "compile includes opening and parsing the source fixture; compile_kernel_only excludes source I/O",
     "interpretation": "descriptive observations for a tiny fixture; not a production performance comparison",
     "derived_observations": {
       "mean_query_median_ns": {
-        "lexical_retrieval": 49000,
-        "source_reconstruction": 79500,
-        "compiled_mml": 2896
+        "lexical_retrieval": 46812,
+        "source_reconstruction": 74604,
+        "compiled_mml": 2750
       },
-      "lexical_over_compiled_query_ratio": 16.92,
-      "reconstruction_over_compiled_query_ratio": 27.45,
+      "lexical_over_compiled_query_ratio": 17.02,
+      "reconstruction_over_compiled_query_ratio": 27.13,
       "observed_compile_break_even_queries_vs_reconstruction": 1,
       "compiled_latency_lower_than_both_local_baselines": true
     }
@@ -305,13 +305,13 @@
   },
   "artifact_identities": {
     "source_fixture_sha256": "25d8252704b8400ff95f51fea2aa28d3b239af9441bed31a9be1ce5a66cbed72",
-    "compiled_state_snapshot": "sha256:cf673e6490f3c2c4a4042b69accaddccc5b9733459cf5a354ce7dfe1b1ec75d8",
-    "changed_state_snapshot": "sha256:4b477d327eff7188d41fb9c6bd922a8a1bbf5f236e679816945ef89f6a4a1dc4",
-    "kernel_sha256": "82ab54d1c8ba70d6685f107f5e00659601e899d68851921f88ec03bf91e2ab25",
+    "kernel_sha256": "89cfed27150c0441b8391b1a85af3b7f591a36936967f5e8e7677b088c747632",
     "operational_flow_sha256": "1d92aafe3850bdc60218c74d665e02bb8466f493f92f08d94e619b309323d56d",
-    "experiment_generator_sha256": "37c975f5066f2a7d294e90f0342b663ed845e0fd1aa995558d14d3b0c9661967",
+    "experiment_generator_sha256": "c446901dfa7807c987fe1b33bd5cf8095325d7c2d6ff8c2d9d729cf5e689d6ab",
     "fixture_loader_sha256": "c7caff504013b0cc0cf20a2efebce7f6881d3b6345dfdd75d711b53215ab812f",
-    "methodology_sha256": "7943969ededbadba17f60535379ed552d5de812cd3a068cb67cce8693bdd45ae"
+    "methodology_sha256": "7943969ededbadba17f60535379ed552d5de812cd3a068cb67cce8693bdd45ae",
+    "compiled_state_snapshot": "sha256:cf673e6490f3c2c4a4042b69accaddccc5b9733459cf5a354ce7dfe1b1ec75d8",
+    "changed_state_snapshot": "sha256:4b477d327eff7188d41fb9c6bd922a8a1bbf5f236e679816945ef89f6a4a1dc4"
   },
   "provenance": {
     "fixture": "data/demonstration/knowledge_is_state.json",

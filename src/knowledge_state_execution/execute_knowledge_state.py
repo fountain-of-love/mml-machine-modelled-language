@@ -7,11 +7,12 @@ facts are represented once as typed structure, and declared semantic
 consequences are obtained by ordinary deterministic traversal.
 """
 
-import hashlib
-import json
 import re
 from dataclasses import dataclass
 from types import MappingProxyType
+
+from src.helpers.hashing import sha256_bytes
+from src.helpers.json_io import canonical_json_bytes
 
 
 IDENTITY = re.compile(r"^[a-z][a-z0-9_-]*$")
@@ -63,8 +64,7 @@ def _snapshot_id(facts):
         "algorithm": ALGORITHM_VERSION,
         "facts": [fact.__dict__ for fact in sorted(facts)],
     }
-    encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode()
-    return f"sha256:{hashlib.sha256(encoded).hexdigest()}"
+    return sha256_bytes(canonical_json_bytes(payload))
 
 
 def _build_outgoing(facts):

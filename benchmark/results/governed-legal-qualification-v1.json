@@ -1,7 +1,7 @@
 {
   "result_schema_version": "1.0",
   "experiment_id": "experiment-3.2-governed-legal-qualification-v1",
-  "generated_at": "2026-08-11T15:59:18.147044+00:00",
+  "generated_at": "2026-08-15T20:43:12.635645+00:00",
   "title": "Experiment 3.2 \u2014 Governed Legal Qualification",
   "research_question": "Can independent legal dimensions narrow a semantic interpretation while unsupported combinations remain insufficient?",
   "reporting_methodology": "OSCARC-v1",
@@ -6267,8 +6267,8 @@
     "compiled_snapshot_id": "sha256:5c0eea4aaf7950e39f646bfb8ead25c32a3329d17e6ca263dd9629672a78c5ab",
     "kernel_sha256": "sha256:69155fb887f6e73fc9822a8493e1cb3f3559aea1d5cc0b19b1d0dd6772c00829",
     "flow_sha256": "sha256:4ac8893734b6ccbbac72b02eaa520df7122c5a774727e74f4f09cb44ebc4ecc1",
-    "fixture_loader_sha256": "sha256:b05c7036571d2a3ab84ed2fcd386bef4541a32ee8112d0363743d5a0d1b5bbf4",
-    "experiment_sha256": "sha256:0cd436b18693edb118285823c64787dadfc455d3b931f0ffd0c86dcbf3f76527",
+    "fixture_loader_sha256": "sha256:7eb8cf3067c333066267ca6fc888d9b0086ed38dd18619cd3045756d031b4d00",
+    "experiment_sha256": "sha256:b49bb0273d2f928a484ea85b95294146f6ab7a6c93f6e5d7864381bd2eb34607",
     "methodology_sha256": "sha256:7943969ededbadba17f60535379ed552d5de812cd3a068cb67cce8693bdd45ae"
   },
   "provenance": {

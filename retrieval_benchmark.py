@@ -6,19 +6,20 @@ authored tasks, and visible beside simple lexical baselines.
 """
 
 import argparse
-import hashlib
 import json
 import math
-import platform
 import subprocess
 import tempfile
 from collections import Counter, defaultdict
-from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
 
 from elaborations.mml_graph import GraphModel, load_aliases, load_relations, tokenize
+from src.helpers.artifacts import write_artifact_pair
+from src.helpers.hashing import sha256_file
+from src.helpers.json_io import read_json
+from src.helpers.provenance import runtime_identity, utc_now_iso
 
 
 ROOT = Path(__file__).parent
@@ -54,7 +55,7 @@ def load_sentences(path):
 
 
 def load_json(path):
-    return json.loads(path.read_text(encoding="utf-8"))
+    return read_json(path)
 
 
 def load_documents(path):
@@ -67,10 +68,6 @@ def load_documents(path):
         except json.JSONDecodeError as error:
             raise BenchmarkIntegrityError(f"Invalid JSON on documents line {line_number}: {error}") from error
     return documents
-
-
-def sha256(path):
-    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def source_revision():
@@ -116,7 +113,7 @@ def validate_benchmark(benchmark_dir=BENCHMARK_DIR):
     }
     manifest = load_json(benchmark_dir / "manifest.json")
     for name, path in paths.items():
-        if manifest["sha256"].get(name) != sha256(path):
+        if manifest["sha256"].get(name) != sha256_file(path, prefixed=False):
             raise BenchmarkIntegrityError(f"Hash mismatch for {name}")
 
     documents = load_documents(paths["documents"])
@@ -286,9 +283,9 @@ def run_benchmark(reference=None):
     return {
         "benchmark_version": validated["manifest"]["benchmark_version"],
         "purpose": "small deterministic retrieval diagnostic; not an MML acceptance test",
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": utc_now_iso(),
         "source_revision": source_revision(),
-        "runtime": {"python": platform.python_version(), "numpy": np.__version__},
+        "runtime": runtime_identity({"numpy": np.__version__}),
         "configuration": {"systems": list(SYSTEMS), "quality_floors": QUALITY_FLOORS,
                           "regression_tolerance": REGRESSION_TOLERANCE},
         "snapshots": {name: model.snapshot_id for name, model in MODELS.items()},
@@ -338,8 +335,9 @@ def write_results(result, output_dir=RESULTS_DIR, report_dir=None):
     report_dir = report_output_dir(output_dir, report_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
     report_dir.mkdir(parents=True, exist_ok=True)
-    (output_dir / "v1.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
-    (report_dir / "v1.md").write_text(markdown_report(result), encoding="utf-8")
+    write_artifact_pair(
+        output_dir / "v1.json", result, report_dir / "v1.md", markdown_report(result)
+    )
 
 
 def write_checked_results(result, output_dir=RESULTS_DIR, accept_regression=False):

@@ -6,13 +6,9 @@ fixture only. It does not define composition and does not load legal fixtures.
 
 from __future__ import annotations
 
-import argparse
 import hashlib
 import itertools
-import json
-import platform
 import statistics
-from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
@@ -24,6 +20,10 @@ from src.combinatorial_uniqueness.combinatorial_uniqueness_flow import (
     CombinatorialUniquenessFlow,
     ValidityPolicy,
 )
+from src.helpers.artifacts import compare_artifact_pair, write_artifact_pair
+from src.helpers.hashing import sha256_file
+from src.helpers.research_cli import ResearchCommand, run_research_command
+from src.helpers.provenance import runtime_identity, utc_now_iso
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -39,10 +39,6 @@ POLICY_RECORD = {
     "minimum_top_margin": POLICY.minimum_top_margin,
     "purpose": "zero-threshold development diagnostic; not calibrated confidence",
 }
-
-
-def _sha(path):
-    return "sha256:" + hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
 def _target_measurement(prefix, target, concepts):
@@ -279,7 +275,7 @@ def run_experiment():
     return {
         "result_schema_version": "1.0",
         "experiment_id": "experiment-3.1-direct-combinatorial-intersection-v1",
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": utc_now_iso(),
         "title": "Experiment 3.1 — Direct Combinatorial Intersection",
         "research_question": "Do independent broad dimensions increase direct semantic specificity more strongly than redundant dimensions?",
         "reporting_methodology": "OSCARC-v1",
@@ -307,15 +303,14 @@ def run_experiment():
             "probes_sha256": fixture.probes.source_sha256,
             "manifest_sha256": fixture.manifest_sha256,
             "compiled_snapshot_id": state.snapshot_id,
-            "kernel_sha256": _sha(ROOT / "src" / "combinatorial_uniqueness" / "compose_concepts.py"),
-            "flow_sha256": _sha(ROOT / "src" / "combinatorial_uniqueness" / "combinatorial_uniqueness_flow.py"),
-            "fixture_loader_sha256": _sha(ROOT / "experiments" / "combinatorial_uniqueness" / "fixture.py"),
-            "experiment_sha256": _sha(__file__),
-            "methodology_sha256": _sha(METHODOLOGY_PATH),
+            "kernel_sha256": sha256_file(ROOT / "src" / "combinatorial_uniqueness" / "compose_concepts.py"),
+            "flow_sha256": sha256_file(ROOT / "src" / "combinatorial_uniqueness" / "combinatorial_uniqueness_flow.py"),
+            "fixture_loader_sha256": sha256_file(ROOT / "experiments" / "combinatorial_uniqueness" / "fixture.py"),
+            "experiment_sha256": sha256_file(__file__),
+            "methodology_sha256": sha256_file(METHODOLOGY_PATH),
         },
         "provenance": {
-            "python": platform.python_version(),
-            "numpy": np.__version__,
+            **runtime_identity({"numpy": np.__version__}),
             "kernel": "compose_concepts.py",
             "flow": "combinatorial_uniqueness_flow.py",
             "experiment": "direct_combinatorial_intersection_experiment.py",
@@ -519,41 +514,28 @@ def markdown_report(result):
     return "\n".join(lines) + "\n"
 
 
-def _comparable(result):
-    comparable = json.loads(json.dumps(result))
-    comparable.pop("generated_at", None)
-    return comparable
-
-
 def write_results(result, result_path=RESULT_PATH, report_path=REPORT_PATH):
-    result_path.parent.mkdir(parents=True, exist_ok=True)
-    report_path.parent.mkdir(parents=True, exist_ok=True)
-    result_path.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
-    report_path.write_text(markdown_report(result), encoding="utf-8")
+    write_artifact_pair(result_path, result, report_path, markdown_report(result))
 
 
 def check_result(result, result_path=RESULT_PATH, report_path=REPORT_PATH):
-    if not result_path.exists() or not report_path.exists():
+    comparison = compare_artifact_pair(result, markdown_report(result), result_path, report_path)
+    if comparison.missing_paths:
         raise SystemExit("Experiment 3.1 reference artifacts are missing; run --write.")
-    reference = json.loads(result_path.read_text(encoding="utf-8"))
-    if _comparable(reference) != _comparable(result):
+    if not comparison.json_matches:
         raise SystemExit("Experiment 3.1 machine evidence differs from the reference artifact.")
-    if report_path.read_text(encoding="utf-8") != markdown_report(result):
+    if not comparison.text_matches:
         raise SystemExit("Experiment 3.1 OSCARC report differs from the reference artifact.")
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run Experiment 3.1 direct intersection.")
-    mode = parser.add_mutually_exclusive_group(required=True)
-    mode.add_argument("--write", action="store_true")
-    mode.add_argument("--check", action="store_true")
-    args = parser.parse_args()
-    result = run_experiment()
-    if args.write:
-        write_results(result)
-    else:
-        check_result(result)
-    print(markdown_report(result))
+    run_research_command(ResearchCommand(
+        description="Run Experiment 3.1 direct intersection.",
+        run=run_experiment,
+        write=write_results,
+        check=check_result,
+        render=markdown_report,
+    ))
 
 
 if __name__ == "__main__":

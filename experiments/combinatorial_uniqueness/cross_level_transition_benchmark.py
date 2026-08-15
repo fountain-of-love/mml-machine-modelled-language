@@ -2,11 +2,6 @@
 
 from __future__ import annotations
 
-import argparse
-import hashlib
-import json
-import platform
-from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
@@ -14,6 +9,10 @@ import numpy as np
 from .fixture import load_experiment_fixture
 from src.combinatorial_uniqueness.combinatorial_uniqueness_flow import RESOLVED, CombinatorialUniquenessFlow, ValidityPolicy
 from src.combinatorial_uniqueness.cross_level_semantic_transition import TransitionStage, execute_stage_transition
+from src.helpers.artifacts import compare_artifact_pair, write_artifact_pair
+from src.helpers.hashing import sha256_file
+from src.helpers.research_cli import ResearchCommand, run_research_command
+from src.helpers.provenance import runtime_identity, utc_now_iso
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -22,10 +21,6 @@ RESULT_PATH = ROOT / "benchmark" / "results" / "cross-level-semantic-transition-
 REPORT_PATH = ROOT / "docs" / "capabilities" / "combinatorial-uniqueness" / "results" / "cross-level-semantic-transition-v1.md"
 METHODOLOGY_PATH = ROOT / "docs" / "benchmark" / "oscarc-methodology.md"
 POLICY = ValidityPolicy("cross-level-transition-development-v1", 0.0, 0.0, 0.0)
-
-
-def _sha(path: str | Path) -> str:
-    return "sha256:" + hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
 def _target_metrics(prefix, target: str, concepts: tuple[str, ...]) -> dict:
@@ -140,7 +135,7 @@ def run_experiment() -> dict:
     return {
         "result_schema_version": "1.0",
         "experiment_id": "experiment-3.3-cross-level-semantic-transition-v1",
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": utc_now_iso(),
         "title": "Experiment 3.3 — Cross-Level Semantic Transition",
         "research_question": "Can an interpretation transition from one semantic level to another as qualifying context is added, or does direct composition only perform flat conjunction?",
         "claim": "Explicit governed stage-local scopes can resolve successive semantic regions while preserving antecedent provenance and releasing coordinates that are not properties of the later region.",
@@ -192,14 +187,13 @@ def run_experiment() -> dict:
             "probes_sha256": fixture.probes.source_sha256,
             "manifest_sha256": fixture.manifest_sha256,
             "compiled_snapshot_id": state.snapshot_id,
-            "intersection_flow_sha256": _sha(ROOT / "src" / "combinatorial_uniqueness" / "combinatorial_uniqueness_flow.py"),
-            "transition_operation_sha256": _sha(ROOT / "src" / "combinatorial_uniqueness" / "cross_level_semantic_transition.py"),
-            "experiment_sha256": _sha(__file__),
-            "methodology_sha256": _sha(METHODOLOGY_PATH),
+            "intersection_flow_sha256": sha256_file(ROOT / "src" / "combinatorial_uniqueness" / "combinatorial_uniqueness_flow.py"),
+            "transition_operation_sha256": sha256_file(ROOT / "src" / "combinatorial_uniqueness" / "cross_level_semantic_transition.py"),
+            "experiment_sha256": sha256_file(__file__),
+            "methodology_sha256": sha256_file(METHODOLOGY_PATH),
         },
         "provenance": {
-            "python": platform.python_version(),
-            "numpy": np.__version__,
+            **runtime_identity({"numpy": np.__version__}),
             "operation": "cross_level_semantic_transition.execute_stage_transition",
             "experiment": "cross_level_semantic_transition_experiment.py",
         },
@@ -398,41 +392,28 @@ def markdown_report(result: dict) -> str:
     return "\n".join(lines) + "\n"
 
 
-def _comparable(result: dict) -> dict:
-    comparable = json.loads(json.dumps(result))
-    comparable.pop("generated_at", None)
-    return comparable
-
-
 def write_results(result: dict, result_path: Path = RESULT_PATH, report_path: Path = REPORT_PATH) -> None:
-    result_path.parent.mkdir(parents=True, exist_ok=True)
-    report_path.parent.mkdir(parents=True, exist_ok=True)
-    result_path.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
-    report_path.write_text(markdown_report(result), encoding="utf-8")
+    write_artifact_pair(result_path, result, report_path, markdown_report(result))
 
 
 def check_result(result: dict, result_path: Path = RESULT_PATH, report_path: Path = REPORT_PATH) -> None:
-    if not result_path.exists() or not report_path.exists():
+    comparison = compare_artifact_pair(result, markdown_report(result), result_path, report_path)
+    if comparison.missing_paths:
         raise SystemExit("Experiment 3.3 reference artifacts are missing; run --write.")
-    reference = json.loads(result_path.read_text(encoding="utf-8"))
-    if _comparable(reference) != _comparable(result):
+    if not comparison.json_matches:
         raise SystemExit("Experiment 3.3 machine evidence differs from the reference artifact.")
-    if report_path.read_text(encoding="utf-8") != markdown_report(result):
+    if not comparison.text_matches:
         raise SystemExit("Experiment 3.3 OSCARC report differs from the reference artifact.")
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run Experiment 3.3 cross-level semantic transition.")
-    mode = parser.add_mutually_exclusive_group(required=True)
-    mode.add_argument("--write", action="store_true")
-    mode.add_argument("--check", action="store_true")
-    args = parser.parse_args()
-    result = run_experiment()
-    if args.write:
-        write_results(result)
-    else:
-        check_result(result)
-    print(markdown_report(result))
+    run_research_command(ResearchCommand(
+        description="Run Experiment 3.3 cross-level semantic transition.",
+        run=run_experiment,
+        write=write_results,
+        check=check_result,
+        render=markdown_report,
+    ))
 
 
 if __name__ == "__main__":

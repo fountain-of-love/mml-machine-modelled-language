@@ -6,17 +6,16 @@ first over ambiguous surface identities and then over governed identities. The
 representation is the independent variable; the mathematics remains fixed.
 """
 
-import argparse
-import hashlib
-import json
-import platform
 from dataclasses import dataclass
-from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
 
 from src.semantic_representation.activate_grounded_focus import PersonalizedPageRankActivationStrategy
+from src.helpers.artifacts import compare_artifact_pair, without_fields, write_artifact_pair
+from src.helpers.json_io import read_json
+from src.helpers.research_cli import ResearchCommand, run_research_command
+from src.helpers.provenance import hash_named_artifacts, runtime_identity as shared_runtime_identity, utc_now_iso
 from .fixture import load_experiment
 from .comparison import compare_representations
 
@@ -34,10 +33,6 @@ BENCHMARK_VERSION = "semantic-representation-v1"
 INTENTION = "Richer meaning representation can make established mathematics produce more useful results."
 FIXED_MATHEMATICS = "converged-personalized-pagerank-v1"
 METHODOLOGY = "OSCARC-v1"
-
-
-def sha256_file(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
 def convergence_record(activation):
@@ -61,12 +56,7 @@ def runtime_identity():
     numpy_config = getattr(np.__config__, "CONFIG", {})
     blas = numpy_config.get("Build Dependencies", {}).get("blas", {})
     return {
-        "python": platform.python_version(),
-        "python_implementation": platform.python_implementation(),
-        "numpy": np.__version__,
-        "operating_system": platform.system(),
-        "operating_system_release": platform.release(),
-        "architecture": platform.machine(),
+        **shared_runtime_identity({"numpy": np.__version__}, include_host=True),
         "blas": {
             "name": blas.get("name", "unknown"),
             "version": blas.get("version", "unknown"),
@@ -263,7 +253,7 @@ def run_benchmark():
     all_probes_supported = supported_scenarios == len(first)
     result = {
         "benchmark_version": BENCHMARK_VERSION,
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": utc_now_iso(),
         "intention": INTENTION,
         "fixed_mathematics": FIXED_MATHEMATICS,
         "reporting_methodology": METHODOLOGY,
@@ -388,14 +378,14 @@ def run_benchmark():
                 "status": "research intention, not established",
             },
         ],
-        "artifact_identities": {
-            "generator_sha256": sha256_file(GENERATOR_PATH),
-            "kernel_sha256": sha256_file(KERNEL_PATH),
-            "operational_flow_sha256": sha256_file(FLOW_PATH),
-            "comparison_adapter_sha256": sha256_file(COMPARISON_PATH),
-            "bank_fixture_sha256": sha256_file(FIXTURE_PATH),
-            "methodology_sha256": sha256_file(METHODOLOGY_PATH),
-        },
+        "artifact_identities": hash_named_artifacts({
+            "generator_sha256": GENERATOR_PATH,
+            "kernel_sha256": KERNEL_PATH,
+            "operational_flow_sha256": FLOW_PATH,
+            "comparison_adapter_sha256": COMPARISON_PATH,
+            "bank_fixture_sha256": FIXTURE_PATH,
+            "methodology_sha256": METHODOLOGY_PATH,
+        }, prefixed=False),
         "provenance": {
             "generator": str(GENERATOR_PATH.relative_to(ROOT)),
             "kernel": str(KERNEL_PATH.relative_to(ROOT)),
@@ -656,26 +646,22 @@ def markdown_report(result):
 
 
 def write_results(result, result_path=RESULT_PATH, report_path=REPORT_PATH):
-    result_path.parent.mkdir(parents=True, exist_ok=True)
-    report_path.parent.mkdir(parents=True, exist_ok=True)
-    result_path.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
-    report_path.write_text(markdown_report(result), encoding="utf-8")
+    write_artifact_pair(result_path, result, report_path, markdown_report(result))
 
 
 def stable_result(result):
     """Remove intentionally volatile fields before artifact comparison."""
-    stable = json.loads(json.dumps(result))
-    stable.pop("generated_at", None)
-    return stable
+    return without_fields(result)
 
 
 def check_artifact_freshness(result, result_path=RESULT_PATH, report_path=REPORT_PATH):
     if not result_path.exists() or not report_path.exists():
         raise SystemExit("Semantic representation artifacts are missing; run with --write.")
-    reference = json.loads(result_path.read_text(encoding="utf-8"))
-    if stable_result(reference) != stable_result(result):
+    reference = read_json(result_path)
+    comparison = compare_artifact_pair(result, markdown_report(reference), result_path, report_path)
+    if not comparison.json_matches:
         raise SystemExit("Semantic representation JSON is stale; regenerate with --write.")
-    if report_path.read_text(encoding="utf-8") != markdown_report(reference):
+    if not comparison.text_matches:
         raise SystemExit("Semantic representation report is stale; regenerate with --write.")
 
 
@@ -692,18 +678,15 @@ def check_result(result):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run the semantic representation benchmark.")
-    mode = parser.add_mutually_exclusive_group(required=True)
-    mode.add_argument("--write", action="store_true", help="Write JSON and Markdown results.")
-    mode.add_argument("--check", action="store_true", help="Run checks without changing results.")
-    args = parser.parse_args()
-    result = run_benchmark()
-    check_result(result)
-    if args.write:
-        write_results(result)
-    else:
-        check_artifact_freshness(result)
-    print(markdown_report(result))
+    run_research_command(ResearchCommand(
+        description="Run the semantic representation benchmark.",
+        run=run_benchmark,
+        validate=check_result,
+        write=write_results,
+        check=check_artifact_freshness,
+        render=markdown_report,
+        check_help="Run checks without changing results.",
+    ))
 
 
 if __name__ == "__main__":

@@ -2,14 +2,10 @@
 
 from __future__ import annotations
 
-import argparse
 import hashlib
 import itertools
-import json
 import math
-import platform
 import statistics
-from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
@@ -19,6 +15,10 @@ from src.combinatorial_uniqueness.combinatorial_uniqueness_flow import (
     INVALID, RESOLVED, UNRESOLVED, CombinatorialUniquenessFlow, ValidityPolicy,
 )
 from src.combinatorial_uniqueness.compose_concepts import ActivatedField, distribution_metrics
+from src.helpers.artifacts import compare_artifact_pair, write_artifact_pair
+from src.helpers.hashing import sha256_file
+from src.helpers.research_cli import ResearchCommand, run_research_command
+from src.helpers.provenance import runtime_identity, utc_now_iso
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -40,10 +40,6 @@ SENSITIVITY_POLICIES = (
     ValidityPolicy("composition-posthoc-sensitivity-low-v1", 0.0, 0.25, 0.01),
     ValidityPolicy("composition-posthoc-sensitivity-high-v1", 0.0, 0.50, 0.05),
 )
-
-
-def _sha(path):
-    return "sha256:" + hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
 def _target(prefix, target, concepts):
@@ -375,7 +371,7 @@ def run_experiment():
     }
     judgment = "CONSISTENT" if all(criteria.values()) else "INCONSISTENT"
     return {"result_schema_version": "1.0", "benchmark_version": "combinatorial-uniqueness-v1",
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": utc_now_iso(),
         "research_intention": "More independent information can narrow a semantic or legal interpretation, while insufficient information remains insufficient.",
         "reporting_methodology": "OSCARC-v1", "diagnostic_policy": dict(POLICY_RECORD),
         "contexts": contexts, "suite_results": summaries, "threshold_sensitivity": sensitivity,
@@ -383,10 +379,10 @@ def run_experiment():
         "artifact_identities": {"physical_state_sha256": fixtures[0].state.source_sha256, "physical_probes_sha256": fixtures[0].probes.source_sha256,
             "legal_state_sha256": fixtures[1].state.source_sha256, "legal_probes_sha256": fixtures[1].probes.source_sha256,
             "physical_manifest_sha256": fixtures[0].manifest_sha256, "legal_manifest_sha256": fixtures[1].manifest_sha256,
-            "compiled_snapshot_ids": [c["state"]["snapshot_id"] for c in contexts], "kernel_sha256": _sha(ROOT / "src" / "combinatorial_uniqueness" / "compose_concepts.py"),
-            "operational_flow_sha256": _sha(ROOT / "src" / "combinatorial_uniqueness" / "combinatorial_uniqueness_flow.py"), "experiment_sha256": _sha(__file__),
-            "fixture_loader_sha256": _sha(ROOT / "experiments" / "combinatorial_uniqueness" / "fixture.py"), "methodology_sha256": _sha(ROOT / "docs/benchmark/oscarc-methodology.md")},
-        "provenance": {"python": platform.python_version(), "numpy": np.__version__, "kernel": "compose_concepts.py", "flow": "combinatorial_uniqueness_flow.py",
+            "compiled_snapshot_ids": [c["state"]["snapshot_id"] for c in contexts], "kernel_sha256": sha256_file(ROOT / "src" / "combinatorial_uniqueness" / "compose_concepts.py"),
+            "operational_flow_sha256": sha256_file(ROOT / "src" / "combinatorial_uniqueness" / "combinatorial_uniqueness_flow.py"), "experiment_sha256": sha256_file(__file__),
+            "fixture_loader_sha256": sha256_file(ROOT / "experiments" / "combinatorial_uniqueness" / "fixture.py"), "methodology_sha256": sha256_file(ROOT / "docs/benchmark/oscarc-methodology.md")},
+        "provenance": {**runtime_identity({"numpy": np.__version__}), "kernel": "compose_concepts.py", "flow": "combinatorial_uniqueness_flow.py",
                        "experiment": "combinatorial_uniqueness_experiment.py", "fixtures": [str(PHYSICAL_MANIFEST.relative_to(ROOT)), str(LEGAL_MANIFEST.relative_to(ROOT))]},
         "evidence_boundary": "Two co-authored synthetic development fixtures; not held-out generalisation, natural-language understanding, factual legal adjudication, or production-scale performance."}
 
@@ -431,38 +427,32 @@ def markdown_report(result):
     return "\n".join(lines) + "\n"
 
 
-def _comparable(result):
-    copy = json.loads(json.dumps(result)); copy.pop("generated_at", None); return copy
-
-
 def check_result(result, result_path=RESULT_PATH, report_path=REPORT_PATH):
     if not result["conformity"]["criteria"]["repeat_execution_is_deterministic"]:
         raise SystemExit("Experiment replay is nondeterministic.")
     if not all(p["count"] == 24 for c in result["contexts"] for p in c["treatments"]["permutations"]):
         raise SystemExit("Permutation control is incomplete.")
-    if not result_path.exists():
+    comparison = compare_artifact_pair(result, markdown_report(result), result_path, report_path)
+    if comparison.missing_paths:
         raise SystemExit("Reference artifact is missing; run --write first.")
-    reference = json.loads(result_path.read_text())
-    if _comparable(reference) != _comparable(result):
+    if not comparison.json_matches:
         raise SystemExit("Generated evidence differs from the reference artifact.")
-    if not report_path.exists() or report_path.read_text(encoding="utf-8") != markdown_report(result):
+    if not comparison.text_matches:
         raise SystemExit("Generated OSCARC report differs from the reference artifact.")
 
 
 def write_results(result, result_path=RESULT_PATH, report_path=REPORT_PATH):
-    result_path.parent.mkdir(parents=True, exist_ok=True); report_path.parent.mkdir(parents=True, exist_ok=True)
-    result_path.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
-    report_path.write_text(markdown_report(result), encoding="utf-8")
+    write_artifact_pair(result_path, result, report_path, markdown_report(result))
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run Combinatorial Uniqueness Experiment 3")
-    mode = parser.add_mutually_exclusive_group(required=True)
-    mode.add_argument("--write", action="store_true"); mode.add_argument("--check", action="store_true")
-    args = parser.parse_args(); result = run_experiment()
-    if args.write: write_results(result)
-    else: check_result(result)
-    print(markdown_report(result))
+    run_research_command(ResearchCommand(
+        description="Run Combinatorial Uniqueness Experiment 3",
+        run=run_experiment,
+        write=write_results,
+        check=check_result,
+        render=markdown_report,
+    ))
 
 
 if __name__ == "__main__": main()

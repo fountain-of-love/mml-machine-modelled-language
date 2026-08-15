@@ -2,13 +2,14 @@
 
 from __future__ import annotations
 
-import hashlib
 import json
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 from types import MappingProxyType
 from typing import Any, Mapping
+
+from src.helpers.hashing import sha256_bytes
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -79,7 +80,7 @@ def _read(path: Path) -> tuple[dict[str, Any], str]:
         value = json.loads(raw)
     except json.JSONDecodeError as error:
         raise ValueError(f"invalid fixture JSON: {path}") from error
-    return value, f"sha256:{hashlib.sha256(raw).hexdigest()}"
+    return value, sha256_bytes(raw)
 
 
 def _unique(records: list[dict[str, Any]], label: str) -> None:

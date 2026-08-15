@@ -4,19 +4,19 @@ This adapter benchmarks the Knowledge Is State flow; it does not define it.
 Input volume, algorithmic work, and wall-clock observations remain separate.
 """
 
-import argparse
-import hashlib
 import json
 import math
-import platform
 import re
 import statistics
 import time
-from datetime import datetime, timezone
 from pathlib import Path
 
 from src.knowledge_state_execution.execute_knowledge_state import KnowledgeFact, compile_knowledge_state
 from src.knowledge_state_execution.knowledge_is_state import KnowledgeIsStateFlow
+from src.helpers.artifacts import compare_artifact_pair, write_artifact_pair
+from src.helpers.json_io import read_json
+from src.helpers.research_cli import ResearchCommand, run_research_command
+from src.helpers.provenance import hash_named_artifacts, runtime_identity, utc_now_iso
 from .fixture import DEFAULT_FIXTURE, load_knowledge_state_fixture
 
 
@@ -51,10 +51,6 @@ def count_tokens(text):
 def source_measure(facts):
     text = "\n".join(render_fact(fact) for fact in facts)
     return {"utf8_bytes": len(text.encode("utf-8")), "tokens": count_tokens(text)}
-
-
-def sha256_file(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
 def measure_ns(operation, repetitions=TIMING_REPETITIONS):
@@ -177,7 +173,7 @@ def run_experiment():
     }
     timing = {
         "clock": "time.perf_counter_ns",
-        "runtime": {"python": platform.python_version()},
+        "runtime": runtime_identity(),
         "compile": measure_ns(
             lambda: flow.govern_and_compile(load_source_facts(DEFAULT_FIXTURE))
         ),
@@ -244,7 +240,7 @@ def run_experiment():
     return {
         "benchmark_version": BENCHMARK_VERSION,
         "reporting_methodology": METHODOLOGY,
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": utc_now_iso(),
         "research_intention": RESEARCH_INTENTION,
         "standards": [
             "lexical retrieval does not silently claim a derived terminal answer",
@@ -374,14 +370,16 @@ def run_experiment():
             },
         },
         "artifact_identities": {
-            "source_fixture_sha256": sha256_file(DEFAULT_FIXTURE),
+            **hash_named_artifacts({
+                "source_fixture_sha256": DEFAULT_FIXTURE,
+                "kernel_sha256": KERNEL_PATH,
+                "operational_flow_sha256": FLOW_PATH,
+                "experiment_generator_sha256": EXPERIMENT_PATH,
+                "fixture_loader_sha256": FIXTURE_LOADER_PATH,
+                "methodology_sha256": METHODOLOGY_PATH,
+            }, prefixed=False),
             "compiled_state_snapshot": state.snapshot_id,
             "changed_state_snapshot": change.changed_state.snapshot_id,
-            "kernel_sha256": sha256_file(KERNEL_PATH),
-            "operational_flow_sha256": sha256_file(FLOW_PATH),
-            "experiment_generator_sha256": sha256_file(EXPERIMENT_PATH),
-            "fixture_loader_sha256": sha256_file(FIXTURE_LOADER_PATH),
-            "methodology_sha256": sha256_file(METHODOLOGY_PATH),
         },
         "provenance": {
             "fixture": str(DEFAULT_FIXTURE.relative_to(ROOT)),
@@ -628,23 +626,36 @@ def check_result(result):
 
 
 def write_results(result, result_path=RESULT_PATH, report_path=REPORT_PATH):
-    result_path.parent.mkdir(parents=True, exist_ok=True)
-    report_path.parent.mkdir(parents=True, exist_ok=True)
-    result_path.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
-    report_path.write_text(markdown_report(result), encoding="utf-8")
+    write_artifact_pair(result_path, result, report_path, markdown_report(result))
+
+
+def check_artifact_freshness(result, result_path=RESULT_PATH, report_path=REPORT_PATH):
+    """Check stable evidence while excluding explicitly descriptive local timings."""
+    if not result_path.exists() or not report_path.exists():
+        raise SystemExit("Knowledge-state artifacts are missing; run with --write.")
+    reference = read_json(result_path)
+    comparison = compare_artifact_pair(
+        result,
+        markdown_report(reference),
+        result_path,
+        report_path,
+        volatile_fields=("generated_at", "timing"),
+    )
+    if not comparison.json_matches:
+        raise SystemExit("Knowledge-state JSON is stale; regenerate with --write.")
+    if not comparison.text_matches:
+        raise SystemExit("Knowledge-state report is stale; regenerate with --write.")
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run the Knowledge State experiment.")
-    mode = parser.add_mutually_exclusive_group(required=True)
-    mode.add_argument("--write", action="store_true", help="Write JSON and Markdown results.")
-    mode.add_argument("--check", action="store_true", help="Check without changing results.")
-    args = parser.parse_args()
-    result = run_experiment()
-    check_result(result)
-    if args.write:
-        write_results(result)
-    print(markdown_report(result))
+    run_research_command(ResearchCommand(
+        description="Run the Knowledge State experiment.",
+        run=run_experiment,
+        validate=check_result,
+        write=write_results,
+        check=check_artifact_freshness,
+        render=markdown_report,
+    ))
 
 
 if __name__ == "__main__":

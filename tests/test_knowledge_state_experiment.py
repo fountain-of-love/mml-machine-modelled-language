@@ -1,6 +1,10 @@
 import unittest
 
-from experiments.knowledge_state_execution.benchmark import markdown_report, run_experiment
+from experiments.knowledge_state_execution.benchmark import (
+    check_artifact_freshness,
+    markdown_report,
+    run_experiment,
+)
 
 
 class KnowledgeStateExperimentTests(unittest.TestCase):
@@ -71,6 +75,9 @@ class KnowledgeStateExperimentTests(unittest.TestCase):
         self.assertEqual(self.result["conformity"]["judgment"], "CONSISTENT")
         self.assertTrue(all(self.result["conformity"]["criteria"].values()))
         self.assertIn("source_fixture_sha256", self.result["artifact_identities"])
+
+    def test_checked_in_artifacts_are_fresh(self):
+        check_artifact_freshness(self.result)
         self.assertIn("human_report", self.result["provenance"])
         self.assertIn("research_implication", self.result)
 

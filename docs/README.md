@@ -45,6 +45,7 @@ The documentation follows that progression from definition, through current mech
 - [Experiment 3 cross-level root-cause analysis](capabilities/combinatorial-uniqueness/studies/cross-level-root-cause.md) — explains why the legal access-to-evidence trajectory failed, distinguishes data-model and mechanism-validation causes, and proposes controlled stage-reset and typed-transition follow-ups.
 - [MML hypothesis benchmark programme](benchmark/semantic-operator-benchmark-proposal.md) — separates tests for semantic Representation, Knowledge State Execution, and Combinatorial Uniqueness so evidence cannot leak between hypotheses.
 - [OSCARC research-reporting methodology](benchmark/oscarc-methodology.md) — guides readers from observations through standards, chronology, interventions, measured results, bounded conformity judgments, and next steps.
+- [Shared helper contracts](Shared-Helper-Contracts.md) — defines the canonical intermediate layers, loose-coupling rules, format-neutral text boundary, and build-only-what-is-needed constraint for shared infrastructure.
 - [Scientific and architectural explorations](explorations/README.md) — the Semantic Seed Vault, its bounded five-domain representation theorem, and the governed structure that could feed future MML operators.
 - [Enigma](enigma.md) — the account-level context-engineering model used to articulate this research.
 
