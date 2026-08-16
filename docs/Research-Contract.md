@@ -10,9 +10,9 @@ MML is an executable, weighted knowledge representation whose explicit structure
 
 Its learning contract is supervised and governed: humans or accountable institutions author and review semantic identities, aliases, relations, evidence, and corrections. Statistical construction adjusts explicit weights. LLM training is generally self-supervised prediction over large corpora; MML is not evaluated on whether it autonomously rediscovers semantics that its architecture intentionally asks people to govern.
 
-## The Three Hypotheses
+## The Research Streams
 
-The MML research programme is organized around three cumulative but independently falsifiable hypotheses. Their canonical capability definitions live in the [MML Research Programme](capabilities/README.md):
+The MML research programme is organized around three independently falsifiable foundation hypotheses and one accumulated application hypothesis. Their canonical capability definitions live in the [MML Research Programme](capabilities/README.md):
 
 ### 1. [Semantic Representation](capabilities/semantic-representation/README.md)
 
@@ -32,13 +32,20 @@ This hypothesis concerns reusable capability, not merely deterministic serializa
 
 This hypothesis is weakened if composed fields do not add useful specificity beyond their individual coordinates, simple additive combination, or relevant retrieval baselines; if useful combinations require bespoke learned primitives after all; or if governance and validation costs erase the proposed advantage.
 
-In compact form: **Represent meaning. Compile knowledge. Compose concepts.**
+### 4. [Semantic Navigation](capabilities/semantic-navigation/README.md)
+
+> Represented dimensions, compiled knowledge state, and coordinate composition can accumulate into exact retrieval and useful ambiguity navigation without inventing unsupported specificity.
+
+This hypothesis is weakened if meaning is lost between capability layers, persistent compilation changes the answer, exact composition omits compatible candidates, ambiguity is forced into one identity, navigation invents imputations, or realistic repeated use does not amortize the represented and compiled state. Its success does not independently validate the three upstream hypotheses.
+
+In compact form: **Represent meaning. Compile knowledge. Compose concepts. Navigate governed knowledge.**
 
 | Hypothesis | Current status |
 | --- | --- |
 | **Representation** | Addressed by bounded A/B experiments; not established universally. |
 | **Knowledge State Execution** | One bounded exact typed-chain experiment demonstrates compiled reuse and governed mutation; broader independent evidence is still needed. |
 | **Combinatorial Uniqueness** | Three atomic authored studies now distinguish direct intersection (`LOCALLY_CONSISTENT`), governed legal qualification (`LOCALLY_CONSISTENT`), and explicit stage-scoped transition (`CONSISTENT`). The original failed flat-conjunction control is preserved. Held-out construction, useful basis coverage, and scaling remain untested. |
+| **Semantic Navigation** | One prompt-provided 60-animal seed composes the four operational contracts and reports exact retrieval, navigation, code equivalence, and deterministic reuse accounting. Independent source quality, larger scale, and wall-clock evidence remain untested. |
 
 The programme becomes uninteresting if the structure cannot support useful applications, cannot expose valid routes back to governed sources, or offers no operational advantage relative to its construction and governance cost. It does not require universal superiority over TF-IDF and does not ask MML to imitate an LLM.
 
@@ -81,9 +88,19 @@ These mechanics make compile-once, execute-many testable. They do not yet compar
 
 These studies make three composition contracts executable and inspectable over co-authored synthetic fixtures. They do not establish independently authored construction, useful combinatorial coverage, real legal validity, automatic stage-boundary discovery, or scaling across held-out domains.
 
+### Semantic Navigation accumulated evidence
+
+- governed dimension/value identities and reversible compact codes;
+- immutable many-to-many incidence state with separate representation and compilation snapshots;
+- exact candidate-region composition without forced top-1 selection;
+- deterministic imputation, remaining partitions, commonality, and next-question selection; and
+- flat-scan, per-query reconstruction, warm execution, and amortization accounting.
+
+This seed demonstrates that the operational contracts compose. It does not replace the controlled evidence required by the three foundation programmes.
+
 Deterministic replay is one component of auditability. It does not replace provenance completeness, event logging, validation, documented limitations, human oversight, or governance, and it is not by itself an EU AI Act compliance claim.
 
-Bounded development evidence now exists for all three hypotheses. Its maturity differs by programme and remains below confirmatory evidence: the fixtures are authored, small, and not independently held out.
+Bounded development evidence now exists for all four streams. Its maturity differs by programme and remains below confirmatory evidence: the fixtures are authored, small, and not independently held out.
 
 ## Semantic representation benchmark
 
@@ -122,6 +139,13 @@ Those harder diagnostics compare useful observable outcomes, but they do not def
 2. Comparisons with Boolean conjunction, additive activation, lexical retrieval, and available dense-retrieval baselines.
 3. Ablations for coordinate independence, aliases, relation types, policy coefficients, and each participating concept.
 4. Measurements of specificity, coverage, invalid-combination rejection, construction cost, and execution cost at meaningful scale.
+
+### Semantic Navigation
+
+1. Independently sourced, reviewed, and frozen 100-, 250-, and 500-entity states.
+2. Capability-contribution controls for unqualified values, reconstruction, redundant coordinates, forced ranking, and navigation ablation.
+3. Wall-clock, memory, update, and realistic reuse-horizon measurements beside deterministic operation counts.
+4. A separately evaluated natural-language-to-governed-query translation layer.
 
 ### Shared production evidence
 

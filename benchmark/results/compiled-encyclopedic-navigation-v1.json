@@ -1,0 +1,1318 @@
+{
+  "schema_version": "3.1",
+  "experiment_id": "experiment-4.1-compiled-encyclopedic-navigation-v1",
+  "title": "Experiment 4.1 - Compiled Encyclopedic Navigation",
+  "research_stream": "Programme 4 - Semantic Navigation",
+  "research_question": "Can represented semantic dimensions, compiled once and composed at query time, support exact candidate retrieval and useful ambiguity navigation with lower repeated work?",
+  "fixture": {
+    "state_id": "compiled_encyclopedic_navigation_seed_v1",
+    "lifecycle": "USER_PROVIDED_SEED_NOT_INDEPENDENTLY_SOURCED",
+    "annotation_status": "seed_fixture_from_user_prompt_not_external_review",
+    "record_count": 60,
+    "incomplete_probe_count": 2,
+    "dimensions": [
+      "habitat",
+      "diet",
+      "activity",
+      "sociality"
+    ],
+    "evidence_boundary": "Real animal names with prompt-provided canonical attributes. This is a controlled seed fixture for compiled retrieval and semantic navigation mechanics, not an independently sourced encyclopedic dataset."
+  },
+  "capability_contributions": {
+    "semantic_representation": {
+      "contract": "GovernedCoordinateBasis",
+      "snapshot_id": "sha256:3f384af3bc3e5a27ab1625caeaa3062608d40227a43832fc8a564b3791baa6a6",
+      "coordinate_count": 26,
+      "coordinate_codes": {
+        "activity:crepuscular": 0,
+        "activity:diurnal": 1,
+        "activity:nocturnal": 2,
+        "diet:carnivore": 3,
+        "diet:herbivore": 4,
+        "diet:omnivore": 5,
+        "habitat:coastal": 6,
+        "habitat:desert": 7,
+        "habitat:freshwater": 8,
+        "habitat:grassland": 9,
+        "habitat:ocean": 10,
+        "habitat:polar": 11,
+        "habitat:rainforest": 12,
+        "habitat:tundra": 13,
+        "habitat:wetland": 14,
+        "habitat:woodland": 15,
+        "sociality:colony": 16,
+        "sociality:family": 17,
+        "sociality:group": 18,
+        "sociality:herd": 19,
+        "sociality:pack": 20,
+        "sociality:pod": 21,
+        "sociality:pride": 22,
+        "sociality:school": 23,
+        "sociality:social": 24,
+        "sociality:solitary": 25
+      },
+      "metrics": {
+        "source_field_reads": 240,
+        "coordinate_assignments": 240,
+        "logical_bytes": 8920,
+        "total_operations": 480
+      }
+    },
+    "knowledge_state_execution": {
+      "contract": "CompiledIncidenceState",
+      "snapshot_id": "sha256:b8a58c9ad944b68f280e4968e7a08a001c49d147de7683134546e56529f59639",
+      "posting_count": 26,
+      "signature_class_count": 48,
+      "metrics": {
+        "source_field_reads": 240,
+        "posting_entries": 240,
+        "signature_writes": 60,
+        "entity_index_entries": 60,
+        "logical_bytes": 4971,
+        "total_operations": 600
+      }
+    },
+    "combinatorial_uniqueness": {
+      "contract": "compose_candidate_region",
+      "query_count": 320,
+      "query_operations": 6914,
+      "exact_set_accuracy": 1.0
+    },
+    "semantic_navigation": {
+      "contract": "SemanticNavigationFlow",
+      "navigation_accuracy": 1.0,
+      "status_accuracy": 1.0,
+      "code_equivalence_rate": 1.0
+    }
+  },
+  "incomplete_records": {
+    "unresolved_observation_001": [
+      "activity"
+    ],
+    "unresolved_observation_002": [
+      "diet",
+      "sociality"
+    ]
+  },
+  "aggregate": {
+    "query_count": 320,
+    "condition_counts": {
+      "complete": 48,
+      "multiple_missing": 136,
+      "one_missing": 133,
+      "unsupported": 3
+    },
+    "status_counts": {
+      "AMBIGUOUS": 160,
+      "IDENTIFIABLE": 157,
+      "UNSUPPORTED": 3
+    },
+    "exact_set_accuracy": 1.0,
+    "mean_candidate_precision": 1.0,
+    "mean_candidate_recall": 1.0,
+    "mean_candidate_jaccard": 1.0,
+    "status_accuracy": 1.0,
+    "commonality_accuracy": 1.0,
+    "deterministic_imputation_accuracy": 1.0,
+    "next_dimension_accuracy": 1.0,
+    "navigation_accuracy": 1.0,
+    "code_equivalence_rate": 1.0,
+    "reconstructed_equivalence_rate": 1.0,
+    "compiled_query_operations": 6914,
+    "flat_scan_operations": 24611,
+    "reconstructed_execution_operations": 352514
+  },
+  "identification": {
+    "equivalence_class_count": 48,
+    "uniquely_identifiable_class_count": 38,
+    "ambiguous_complete_signature_class_count": 10,
+    "animal_count_in_ambiguous_complete_signatures": 22,
+    "minimum_dimension_count_distribution": {
+      "1": 4,
+      "2": 22,
+      "3": 21,
+      "4": 1
+    }
+  },
+  "identification_profiles": [
+    {
+      "candidate_ids": [
+        "african_wild_dog"
+      ],
+      "complete_signature": {
+        "habitat": "grassland",
+        "diet": "carnivore",
+        "activity": "diurnal",
+        "sociality": "pack"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet",
+          "sociality"
+        ],
+        [
+          "habitat",
+          "activity",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "albatross"
+      ],
+      "complete_signature": {
+        "habitat": "ocean",
+        "diet": "carnivore",
+        "activity": "diurnal",
+        "sociality": "colony"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "american_black_bear",
+        "red_panda"
+      ],
+      "complete_signature": {
+        "habitat": "woodland",
+        "diet": "omnivore",
+        "activity": "crepuscular",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet",
+          "activity"
+        ]
+      ],
+      "uniquely_identifiable": false
+    },
+    {
+      "candidate_ids": [
+        "arctic_fox"
+      ],
+      "complete_signature": {
+        "habitat": "tundra",
+        "diet": "omnivore",
+        "activity": "crepuscular",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "axolotl"
+      ],
+      "complete_signature": {
+        "habitat": "wetland",
+        "diet": "carnivore",
+        "activity": "nocturnal",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet",
+          "activity"
+        ],
+        [
+          "habitat",
+          "activity",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "bald_eagle",
+        "crocodile"
+      ],
+      "complete_signature": {
+        "habitat": "wetland",
+        "diet": "carnivore",
+        "activity": "diurnal",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "activity",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": false
+    },
+    {
+      "candidate_ids": [
+        "beaver"
+      ],
+      "complete_signature": {
+        "habitat": "wetland",
+        "diet": "herbivore",
+        "activity": "nocturnal",
+        "sociality": "family"
+      },
+      "minimum_dimension_count": 1,
+      "minimum_dimension_sets": [
+        [
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "blue_whale",
+        "great_white_shark"
+      ],
+      "complete_signature": {
+        "habitat": "ocean",
+        "diet": "carnivore",
+        "activity": "diurnal",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": false
+    },
+    {
+      "candidate_ids": [
+        "brown_bear"
+      ],
+      "complete_signature": {
+        "habitat": "woodland",
+        "diet": "omnivore",
+        "activity": "diurnal",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet",
+          "activity"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "canada_lynx",
+        "leopard",
+        "owl"
+      ],
+      "complete_signature": {
+        "habitat": "woodland",
+        "diet": "carnivore",
+        "activity": "nocturnal",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet",
+          "activity"
+        ]
+      ],
+      "uniquely_identifiable": false
+    },
+    {
+      "candidate_ids": [
+        "cheetah"
+      ],
+      "complete_signature": {
+        "habitat": "grassland",
+        "diet": "carnivore",
+        "activity": "diurnal",
+        "sociality": "social"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "chimpanzee"
+      ],
+      "complete_signature": {
+        "habitat": "rainforest",
+        "diet": "omnivore",
+        "activity": "diurnal",
+        "sociality": "group"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "clownfish"
+      ],
+      "complete_signature": {
+        "habitat": "coastal",
+        "diet": "omnivore",
+        "activity": "diurnal",
+        "sociality": "group"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet"
+        ],
+        [
+          "habitat",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "coyote"
+      ],
+      "complete_signature": {
+        "habitat": "grassland",
+        "diet": "omnivore",
+        "activity": "nocturnal",
+        "sociality": "pack"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet"
+        ],
+        [
+          "diet",
+          "sociality"
+        ],
+        [
+          "activity",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "dolphin",
+        "orca"
+      ],
+      "complete_signature": {
+        "habitat": "ocean",
+        "diet": "carnivore",
+        "activity": "diurnal",
+        "sociality": "pod"
+      },
+      "minimum_dimension_count": 1,
+      "minimum_dimension_sets": [
+        [
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": false
+    },
+    {
+      "candidate_ids": [
+        "elephant",
+        "giraffe",
+        "zebra"
+      ],
+      "complete_signature": {
+        "habitat": "grassland",
+        "diet": "herbivore",
+        "activity": "diurnal",
+        "sociality": "herd"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "activity",
+          "sociality"
+        ],
+        [
+          "diet",
+          "activity",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": false
+    },
+    {
+      "candidate_ids": [
+        "eurasian_lynx",
+        "cougar"
+      ],
+      "complete_signature": {
+        "habitat": "woodland",
+        "diet": "carnivore",
+        "activity": "crepuscular",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet",
+          "activity"
+        ]
+      ],
+      "uniquely_identifiable": false
+    },
+    {
+      "candidate_ids": [
+        "european_badger"
+      ],
+      "complete_signature": {
+        "habitat": "woodland",
+        "diet": "omnivore",
+        "activity": "nocturnal",
+        "sociality": "social"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "fennec_fox"
+      ],
+      "complete_signature": {
+        "habitat": "desert",
+        "diet": "omnivore",
+        "activity": "nocturnal",
+        "sociality": "social"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "activity"
+        ],
+        [
+          "habitat",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "flamingo"
+      ],
+      "complete_signature": {
+        "habitat": "wetland",
+        "diet": "omnivore",
+        "activity": "diurnal",
+        "sociality": "colony"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet"
+        ],
+        [
+          "habitat",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "giant_panda"
+      ],
+      "complete_signature": {
+        "habitat": "woodland",
+        "diet": "herbivore",
+        "activity": "diurnal",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet",
+          "activity"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "gorilla"
+      ],
+      "complete_signature": {
+        "habitat": "rainforest",
+        "diet": "herbivore",
+        "activity": "diurnal",
+        "sociality": "group"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "diet",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "gray_wolf"
+      ],
+      "complete_signature": {
+        "habitat": "woodland",
+        "diet": "carnivore",
+        "activity": "diurnal",
+        "sociality": "pack"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "green_sea_turtle"
+      ],
+      "complete_signature": {
+        "habitat": "coastal",
+        "diet": "herbivore",
+        "activity": "diurnal",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet"
+        ],
+        [
+          "habitat",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "hammerhead_shark"
+      ],
+      "complete_signature": {
+        "habitat": "ocean",
+        "diet": "carnivore",
+        "activity": "diurnal",
+        "sociality": "school"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "sociality"
+        ],
+        [
+          "diet",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "harbor_seal",
+        "penguin"
+      ],
+      "complete_signature": {
+        "habitat": "coastal",
+        "diet": "carnivore",
+        "activity": "diurnal",
+        "sociality": "colony"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet"
+        ],
+        [
+          "habitat",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": false
+    },
+    {
+      "candidate_ids": [
+        "hare"
+      ],
+      "complete_signature": {
+        "habitat": "grassland",
+        "diet": "herbivore",
+        "activity": "crepuscular",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "diet",
+          "activity",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "hippopotamus"
+      ],
+      "complete_signature": {
+        "habitat": "grassland",
+        "diet": "herbivore",
+        "activity": "nocturnal",
+        "sociality": "herd"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "activity",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "humpback_whale"
+      ],
+      "complete_signature": {
+        "habitat": "ocean",
+        "diet": "carnivore",
+        "activity": "diurnal",
+        "sociality": "social"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "jaguar"
+      ],
+      "complete_signature": {
+        "habitat": "rainforest",
+        "diet": "carnivore",
+        "activity": "nocturnal",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "activity"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "king_cobra"
+      ],
+      "complete_signature": {
+        "habitat": "woodland",
+        "diet": "carnivore",
+        "activity": "diurnal",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 4,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet",
+          "activity",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "koala"
+      ],
+      "complete_signature": {
+        "habitat": "woodland",
+        "diet": "herbivore",
+        "activity": "nocturnal",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet",
+          "activity"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "lion"
+      ],
+      "complete_signature": {
+        "habitat": "grassland",
+        "diet": "carnivore",
+        "activity": "diurnal",
+        "sociality": "pride"
+      },
+      "minimum_dimension_count": 1,
+      "minimum_dimension_sets": [
+        [
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "meerkat"
+      ],
+      "complete_signature": {
+        "habitat": "desert",
+        "diet": "omnivore",
+        "activity": "diurnal",
+        "sociality": "colony"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "activity"
+        ],
+        [
+          "habitat",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "orangutan"
+      ],
+      "complete_signature": {
+        "habitat": "rainforest",
+        "diet": "omnivore",
+        "activity": "diurnal",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "otter"
+      ],
+      "complete_signature": {
+        "habitat": "wetland",
+        "diet": "carnivore",
+        "activity": "diurnal",
+        "sociality": "social"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "peregrine_falcon",
+        "komodo_dragon"
+      ],
+      "complete_signature": {
+        "habitat": "grassland",
+        "diet": "carnivore",
+        "activity": "diurnal",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "activity",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": false
+    },
+    {
+      "candidate_ids": [
+        "poison_dart_frog"
+      ],
+      "complete_signature": {
+        "habitat": "rainforest",
+        "diet": "carnivore",
+        "activity": "diurnal",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet",
+          "activity"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "polar_bear"
+      ],
+      "complete_signature": {
+        "habitat": "polar",
+        "diet": "carnivore",
+        "activity": "diurnal",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "red_fox",
+        "raccoon"
+      ],
+      "complete_signature": {
+        "habitat": "woodland",
+        "diet": "omnivore",
+        "activity": "nocturnal",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "diet",
+          "activity",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": false
+    },
+    {
+      "candidate_ids": [
+        "red_kangaroo"
+      ],
+      "complete_signature": {
+        "habitat": "grassland",
+        "diet": "herbivore",
+        "activity": "crepuscular",
+        "sociality": "social"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "activity",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "salmon"
+      ],
+      "complete_signature": {
+        "habitat": "freshwater",
+        "diet": "omnivore",
+        "activity": "diurnal",
+        "sociality": "school"
+      },
+      "minimum_dimension_count": 1,
+      "minimum_dimension_sets": [
+        [
+          "habitat"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "sloth"
+      ],
+      "complete_signature": {
+        "habitat": "rainforest",
+        "diet": "herbivore",
+        "activity": "diurnal",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "tiger"
+      ],
+      "complete_signature": {
+        "habitat": "grassland",
+        "diet": "carnivore",
+        "activity": "crepuscular",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet",
+          "activity"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "walrus"
+      ],
+      "complete_signature": {
+        "habitat": "polar",
+        "diet": "carnivore",
+        "activity": "diurnal",
+        "sociality": "herd"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "sociality"
+        ],
+        [
+          "diet",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "white_rhinoceros"
+      ],
+      "complete_signature": {
+        "habitat": "grassland",
+        "diet": "herbivore",
+        "activity": "diurnal",
+        "sociality": "social"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "diet",
+          "activity",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "wolverine"
+      ],
+      "complete_signature": {
+        "habitat": "tundra",
+        "diet": "carnivore",
+        "activity": "crepuscular",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 2,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "diet"
+        ]
+      ],
+      "uniquely_identifiable": true
+    },
+    {
+      "candidate_ids": [
+        "wombat"
+      ],
+      "complete_signature": {
+        "habitat": "grassland",
+        "diet": "herbivore",
+        "activity": "nocturnal",
+        "sociality": "solitary"
+      },
+      "minimum_dimension_count": 3,
+      "minimum_dimension_sets": [
+        [
+          "habitat",
+          "activity",
+          "sociality"
+        ]
+      ],
+      "uniquely_identifiable": true
+    }
+  ],
+  "scaling": [
+    {
+      "record_count": 15,
+      "query_count": 104,
+      "exact_set_accuracy": 1.0,
+      "representation_operations": 120,
+      "knowledge_compilation_operations": 150,
+      "compiled_once_operations": 1647,
+      "flat_scan_operations": 2536,
+      "reconstructed_per_query_operations": 29457,
+      "warm_compiled_query_operations": 1377,
+      "compiled_vs_scan_operation_ratio_including_construction": 0.6494479495268138,
+      "warm_compiled_vs_scan_operation_ratio": 0.542981072555205,
+      "amortization_break_even_query_count": 25,
+      "represented_logical_bytes": 2506,
+      "compiled_index_logical_bytes": 1407
+    },
+    {
+      "record_count": 30,
+      "query_count": 196,
+      "exact_set_accuracy": 1.0,
+      "representation_operations": 240,
+      "knowledge_compilation_operations": 300,
+      "compiled_once_operations": 3994,
+      "flat_scan_operations": 8102,
+      "reconstructed_per_query_operations": 109294,
+      "warm_compiled_query_operations": 3454,
+      "compiled_vs_scan_operation_ratio_including_construction": 0.4929647000740558,
+      "warm_compiled_vs_scan_operation_ratio": 0.42631449024932117,
+      "amortization_break_even_query_count": 23,
+      "represented_logical_bytes": 4636,
+      "compiled_index_logical_bytes": 2658
+    },
+    {
+      "record_count": 60,
+      "query_count": 320,
+      "exact_set_accuracy": 1.0,
+      "representation_operations": 480,
+      "knowledge_compilation_operations": 600,
+      "compiled_once_operations": 7994,
+      "flat_scan_operations": 24611,
+      "reconstructed_per_query_operations": 352514,
+      "warm_compiled_query_operations": 6914,
+      "compiled_vs_scan_operation_ratio_including_construction": 0.32481410751290074,
+      "warm_compiled_vs_scan_operation_ratio": 0.2809312908861891,
+      "amortization_break_even_query_count": 20,
+      "represented_logical_bytes": 8888,
+      "compiled_index_logical_bytes": 4971
+    }
+  ],
+  "conformity": {
+    "judgment": "ACCUMULATED_MECHANICS_CONFORMANT",
+    "evidence_strength": "PROMPT_PROVIDED_SEED",
+    "criteria": {
+      "all_candidate_sets_exact": true,
+      "all_statuses_correct": true,
+      "all_navigation_diagnostics_exact": true,
+      "all_semantic_and_code_queries_equivalent": true,
+      "all_reconstructed_states_equivalent": true,
+      "incomplete_records_detected": true,
+      "ambiguous_complete_signatures_reported": true,
+      "all_capability_snapshots_present": true,
+      "compiled_warm_queries_cheaper_than_flat_scan": true,
+      "compiled_cost_amortizes": true
+    }
+  },
+  "artifact_identities": {
+    "fixture_sha256": "sha256:d16fe8a1151f862600bd3e4a30b071e577497f93b9b10737b7d0ba43d00f13d9",
+    "semantic_representation_sha256": "sha256:00a01221e7152722d547524f57b0dce942637d46e2811560219498ba9cc85e34",
+    "knowledge_state_execution_sha256": "sha256:8a54d591fa9a303004407be134866ab616c74856f14a46cf04a2e2306d6e520a",
+    "combinatorial_uniqueness_sha256": "sha256:80a7d9f0980ebd685a45968ff6d755ee56be5bd2b86a4cada3baa4a4f6c18be4",
+    "semantic_navigation_sha256": "sha256:c669f2dcc47ee65cc04b189fbb03e804dae2f2932711627792f257282313f212",
+    "experiment_sha256": "sha256:0966aee02f1ae7fabeec404164d7d486d45d15e4b24266da61bdeb0ab9908736",
+    "study_sha256": "sha256:2ac9a98b18d1852e2f3275360fd27554e5526ce751dfc110a50f1a13f3cf825c"
+  },
+  "interpretation": "The seed positively demonstrates one accumulated source path: governed coordinate representation, persistent incidence compilation, exact candidate-region composition, and explicit semantic navigation. Accuracy parity with correct exact controls is required.",
+  "evidence_boundary": "This is a mechanics result over prompt-provided animal attributes and deterministic operation counts. It is not the independently sourced 100/250/500-animal study, a wall-clock claim, natural-language understanding, relational inference, or independent validation of the three upstream programmes.",
+  "query_evidence": {
+    "query_count": 320,
+    "trace_sha256": "sha256:fe0489c3f018930c1508dc9c88ddf26ab2e8a4f48119e69e90d5d88ae3eb4ac5",
+    "condition_summaries": {
+      "complete": {
+        "query_count": 48,
+        "condition_counts": {
+          "complete": 48
+        },
+        "status_counts": {
+          "AMBIGUOUS": 10,
+          "IDENTIFIABLE": 38
+        },
+        "exact_set_accuracy": 1.0,
+        "mean_candidate_precision": 1.0,
+        "mean_candidate_recall": 1.0,
+        "mean_candidate_jaccard": 1.0,
+        "status_accuracy": 1.0,
+        "commonality_accuracy": 1.0,
+        "deterministic_imputation_accuracy": 1.0,
+        "next_dimension_accuracy": 1.0,
+        "navigation_accuracy": 1.0,
+        "code_equivalence_rate": 1.0,
+        "reconstructed_equivalence_rate": 1.0,
+        "compiled_query_operations": 1197,
+        "flat_scan_operations": 3732,
+        "reconstructed_execution_operations": 53037
+      },
+      "multiple_missing": {
+        "query_count": 136,
+        "condition_counts": {
+          "multiple_missing": 136
+        },
+        "status_counts": {
+          "AMBIGUOUS": 93,
+          "IDENTIFIABLE": 43
+        },
+        "exact_set_accuracy": 1.0,
+        "mean_candidate_precision": 1.0,
+        "mean_candidate_recall": 1.0,
+        "mean_candidate_jaccard": 1.0,
+        "status_accuracy": 1.0,
+        "commonality_accuracy": 1.0,
+        "deterministic_imputation_accuracy": 1.0,
+        "next_dimension_accuracy": 1.0,
+        "navigation_accuracy": 1.0,
+        "code_equivalence_rate": 1.0,
+        "reconstructed_equivalence_rate": 1.0,
+        "compiled_query_operations": 2706,
+        "flat_scan_operations": 10271,
+        "reconstructed_execution_operations": 149586
+      },
+      "one_missing": {
+        "query_count": 133,
+        "condition_counts": {
+          "one_missing": 133
+        },
+        "status_counts": {
+          "AMBIGUOUS": 57,
+          "IDENTIFIABLE": 76
+        },
+        "exact_set_accuracy": 1.0,
+        "mean_candidate_precision": 1.0,
+        "mean_candidate_recall": 1.0,
+        "mean_candidate_jaccard": 1.0,
+        "status_accuracy": 1.0,
+        "commonality_accuracy": 1.0,
+        "deterministic_imputation_accuracy": 1.0,
+        "next_dimension_accuracy": 1.0,
+        "navigation_accuracy": 1.0,
+        "code_equivalence_rate": 1.0,
+        "reconstructed_equivalence_rate": 1.0,
+        "compiled_query_operations": 2982,
+        "flat_scan_operations": 10417,
+        "reconstructed_execution_operations": 146622
+      },
+      "unsupported": {
+        "query_count": 3,
+        "condition_counts": {
+          "unsupported": 3
+        },
+        "status_counts": {
+          "UNSUPPORTED": 3
+        },
+        "exact_set_accuracy": 1.0,
+        "mean_candidate_precision": 1.0,
+        "mean_candidate_recall": 1.0,
+        "mean_candidate_jaccard": 1.0,
+        "status_accuracy": 1.0,
+        "commonality_accuracy": 1.0,
+        "deterministic_imputation_accuracy": 1.0,
+        "next_dimension_accuracy": 1.0,
+        "navigation_accuracy": 1.0,
+        "code_equivalence_rate": 1.0,
+        "reconstructed_equivalence_rate": 1.0,
+        "compiled_query_operations": 29,
+        "flat_scan_operations": 191,
+        "reconstructed_execution_operations": 3269
+      }
+    },
+    "failed_query_count": 0,
+    "failed_query_ids": [],
+    "failed_query_samples": []
+  }
+}

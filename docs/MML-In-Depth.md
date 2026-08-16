@@ -2,7 +2,7 @@
 
 This document focuses on **Machine Modelled Language (MML)** itself through its canonical research architecture:
 
-> **Represent meaning. Compile knowledge. Compose concepts.**
+> **Represent meaning. Compile knowledge. Compose concepts. Navigate governed knowledge.**
 
 | Part | Architectural operation | Current implementation |
 | --- | --- | --- |
@@ -16,7 +16,7 @@ The kernel has a separate operational flow:
 
 > **Ground the known. Focus the intended. Activate the related.**
 
-Ground–Focus–Activate describes how the current code runs beneath the research architecture. It does not replace the three MML hypotheses. Compilation prepares the reusable transition model; Personalized PageRank is one interchangeable activation strategy.
+Ground–Focus–Activate describes how the current code runs beneath the research architecture. It does not replace the three foundation hypotheses or their accumulated Semantic Navigation stream. Compilation prepares the reusable transition model; Personalized PageRank is one interchangeable activation strategy.
 
 The central design claim is that MML does not begin by inventing a more complicated computation. It begins by making meaning more explicit so that matrices, weighted operators, normalization, and propagation can do useful semantic work.
 

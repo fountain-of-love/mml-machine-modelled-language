@@ -2,7 +2,7 @@
 
 This document describes a proposed **Semantic Operating System (SOS)** made plausible by the problems that **Machine Modelled Language (MML)** begins to address. MML's proposed innovation is the combination of explicit semantic representation, compiled reusable knowledge, and runtime conceptual composition:
 
-> **Represent meaning. Compile knowledge. Compose concepts.**
+> **Represent meaning. Compile knowledge. Compose concepts. Navigate governed knowledge.**
 
 An execution engine makes those propositions operational; it is one component of MML, not its complete definition. SOS is the downstream architecture they could enable. A structured knowledge base, grounded in a **Common Language Model (CML)**, would supply governed semantic coordinates and knowledge to MML, while **Large Language Models (LLMs)** could support discovery, generation, and under-modelled situations.
 

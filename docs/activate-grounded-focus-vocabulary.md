@@ -8,7 +8,7 @@ Two levels must remain distinct:
 
 | Level | Canonical wording | Purpose |
 | --- | --- | --- |
-| **MML research architecture** | **Represent meaning. Compile knowledge. Compose concepts.** | Names the three hypotheses: encoding, reusable knowledge, and conceptual specificity. |
+| **MML research architecture** | **Represent meaning. Compile knowledge. Compose concepts. Navigate governed knowledge.** | Names the three foundation hypotheses and their accumulated navigation stream. |
 | **Current operational flow** | **Ground the known. Focus the intended. Activate the related.** | Names how the present construction and runtime code moves through semantic identity and execution. |
 
 > **Ground the known. Focus the intended. Activate the related.**

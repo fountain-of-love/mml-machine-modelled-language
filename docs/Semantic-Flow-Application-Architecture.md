@@ -4,9 +4,9 @@
 
 The current Words Carry Weight experiment is deliberately small, but it is not architecturally neutral. A few sentences, two meanings of `bank`, one transition model, and one Personalized PageRank strategy already establish a direction for a much larger system.
 
-MML has a canonical **research triad**:
+MML has a canonical **foundation triad** and an accumulated navigation stream:
 
-> **Represent meaning. Compile knowledge. Compose concepts.**
+> **Represent meaning. Compile knowledge. Compose concepts. Navigate governed knowledge.**
 
 This document describes the smaller **operational flow** through which the current application begins to exercise those hypotheses:
 
@@ -110,7 +110,7 @@ focused query
     activate
 ```
 
-Likewise, Personalized PageRank is not part of the canonical research triad or the operational vocabulary. It is one way activation can be performed.
+Likewise, Personalized PageRank is not part of the canonical foundation triad, accumulated navigation contract, or operational vocabulary. It is one way activation can be performed.
 
 This is a fishbone architecture. The spine stays small and intelligible; each joint can spiral into a subsystem with multiple implementations:
 

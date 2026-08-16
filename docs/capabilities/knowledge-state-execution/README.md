@@ -87,6 +87,8 @@ Within that bounded fixture:
 - the unrelated answer and original immutable state remain preserved; and
 - exact rollback reconstructs the original snapshot and result.
 
+The operational capability now also exposes `CompiledIncidenceState` for many-to-many semantic membership. It compiles a governed coordinate basis into immutable postings and complete-signature equivalence classes with a separate state snapshot and construction metrics. Experiment 4.1 consumes this contract. The integrated seed demonstrates reuse of the contract, but it does not replace the independent reuse-curve, mutation, rollback, provenance, or public-knowledge evidence required here.
+
 ## Evidence Boundary
 
 The current evidence is one co-authored synthetic task. It is not a language-model comparison, general reasoning, public-knowledge demonstration, production-scale performance result, or universal efficiency claim. A single short reuse horizon cannot establish amortization across realistic compilation, governance, update, and query costs.

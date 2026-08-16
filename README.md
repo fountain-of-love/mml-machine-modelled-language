@@ -16,17 +16,18 @@ The current code compiles co-occurrence and three positive governed relation typ
 
 The CML work makes the representation richer still. Concepts such as `capacity`, `activation`, `boundary`, `substrate`, `gain`, and `storage` can occupy comparable semantic roles across domains rather than merely being connected by an undifferentiated “related to” edge. MML is the proposed numerical execution layer over that governed structure.
 
-## The Three MML Hypotheses
+## The MML Research Streams
 
-MML develops through a coherent triad:
+MML develops through three independently testable foundation capabilities and one accumulated capability:
 
 1. **[Semantic Representation](docs/capabilities/semantic-representation/README.md) — addressed by the current experiment:** If meaning is represented explicitly and richly enough, simple mathematics becomes semantically useful.
 2. **[Knowledge State Execution](docs/capabilities/knowledge-state-execution/README.md):** Once established knowledge is compiled into governed state, its declared consequences can be executed repeatedly without reconstructing equivalent task state at every use.
 3. **[Combinatorial Uniqueness](docs/capabilities/combinatorial-uniqueness/README.md) — local and structurally held-out development evidence:** Several individually broad but sufficiently independent semantic constraints can combine into a narrow, distinctive conceptual coordinate or retrieval target.
+4. **[Semantic Navigation](docs/capabilities/semantic-navigation/README.md) — accumulated mechanics evidence:** Represented dimensions, compiled state, and exact coordinate composition can combine into candidate retrieval, explicit ambiguity, and useful next-question navigation.
 
 The canonical [MML Research Programme](docs/capabilities/README.md) defines each capability before linking its architectural proposition, controlled experiment protocol, implementation, and bounded evidence.
 
-Each hypothesis has a corresponding in-depth mechanism proposition:
+Each foundation hypothesis has a corresponding in-depth mechanism proposition. Semantic Navigation tests whether those foundations accumulate into a useful application capability:
 
 - **[Representational Leverage Proposition](docs/capabilities/semantic-representation/proposition.md):** making task-relevant meaning explicit and addressable may enable fixed ordinary mathematics to produce more useful and attributable behavior.
 - **[Compiled Knowledge Reuse Proposition](docs/capabilities/knowledge-state-execution/proposition.md):** compiling established knowledge once into governed executable state may avoid reconstructing equivalent task state for every use.
@@ -34,17 +35,18 @@ Each hypothesis has a corresponding in-depth mechanism proposition:
 
 The experiment blueprints define primary empirical outcomes, confirmatory fixtures, freeze protocols, controls, measurements, falsification criteria, and required artifacts beneath those broader capability definitions.
 
-Human-readable reports are available for all three executed development experiments:
+Human-readable reports are available across all four research streams:
 
 - **[Semantic Representation Benchmark v1](docs/capabilities/semantic-representation/results/v1.md):** Six authored probes across `bank`, `bass`, and `crane` produced a consistent low-strength directional signal that joint semantic grounding and matching query focus improve contextual discrimination under fixed mathematics.
 - **[Knowledge State Execution Experiment v1](docs/capabilities/knowledge-state-execution/results/v1.md):** One authored typed-chain case showed that compiled governed state can reproduce reconstruction answers, execute without rereading source knowledge per query, accept a bounded correction, and preserve the original and unrelated results.
 - **[Experiment 3.1 — Direct Combinatorial Intersection](docs/capabilities/combinatorial-uniqueness/results/direct-intersection-v1.md):** Eight authored physical compositions narrowed broad coordinates to their declared targets; redundant coordinates stayed broad and declared-invalid combinations were rejected. Verdict: `LOCALLY_CONSISTENT` development evidence.
 - **[Experiment 3.2 — Governed Legal Qualification](docs/capabilities/combinatorial-uniqueness/results/governed-legal-qualification-v1.md):** Authored legal dimensions produced direct qualifications and contrasting regions while unsupported combinations remained unresolved and epistemic status was not promoted. Verdict: `LOCALLY_CONSISTENT` development evidence.
 - **[Experiment 3.3 — Cross-Level Semantic Transition](docs/capabilities/combinatorial-uniqueness/results/cross-level-semantic-transition-v1.md):** Explicit stage-local scope reproduced three authored semantic transitions while preserving failed flat conjunction as the control. Verdict: `CONSISTENT` development evidence.
+- **[Experiment 4.1 — Compiled Encyclopedic Navigation](docs/capabilities/semantic-navigation/results/compiled-encyclopedic-navigation-v1.md):** The prompt-provided animal seed composes governed coordinate representation, persistent incidence state, exact candidate regions, and ambiguity navigation through one accumulated source path. Verdict: `ACCUMULATED_MECHANICS_CONFORMANT` seed evidence.
 
 The earlier [combined Experiment 3 result](docs/capabilities/combinatorial-uniqueness/results/v1.md) is now classified as **`SUPERSEDED_BY_DECOMPOSITION`**, not as the current programme verdict. Its one failed access-to-evidence trajectory remains valid historical evidence: it exposed that flat cumulative intersection and cross-level transition are different operations. Experiments 3.1, 3.2, and 3.3 now carry the current claim-specific conclusions.
 
-Each hypothesis concerns a different architectural operation:
+Each foundation capability concerns a different architectural operation; the fourth accumulates them:
 
 ```text
 Encoding
@@ -60,9 +62,13 @@ established knowledge
 Composition
 broad concept A + broad concept B + broad concept C
   -> distinctive intersection
+
+Navigation
+represented + compiled + composed candidate region
+  -> exact retrieval + explicit ambiguity + next distinction
 ```
 
-In compact form: **Represent meaning. Compile knowledge. Compose concepts.**
+In compact form: **Represent meaning. Compile knowledge. Compose concepts. Navigate governed knowledge.**
 
 Architectural misuse of LLMs contributes to:
 
@@ -91,13 +97,14 @@ The orthogonal Knowledge Is State spine follows the same separation. [`execute_k
 
 In short: **focus is representational narrowing** (`bank -> bank_river`); **activation is the numerical distribution produced by querying that focused identity**. Attention is an inspiration-level analogy only and is not the name of an MML mechanism.
 
-The executable [`src/` tree](src/) follows the same triad:
+The executable [`src/` tree](src/) follows the three foundations and accumulated navigation flow:
 
-- **Semantic Representation:** [`src/semantic_representation/`](src/semantic_representation/) owns grounding, focus, activation, and the Words Carry Weight flow.
-- **Knowledge State Execution:** [`src/knowledge_state_execution/`](src/knowledge_state_execution/) owns compiled state, governed correction, and rollback.
-- **Combinatorial Uniqueness:** [`src/combinatorial_uniqueness/`](src/combinatorial_uniqueness/) owns field composition, governed state loading, validity, specificity measurements, and semantic transition.
+- **Semantic Representation:** [`src/semantic_representation/`](src/semantic_representation/) owns grounding, focus, governed coordinate bases, stable codes, activation, and the Words Carry Weight flow.
+- **Knowledge State Execution:** [`src/knowledge_state_execution/`](src/knowledge_state_execution/) owns compiled chain and incidence state, governed correction, and rollback.
+- **Combinatorial Uniqueness:** [`src/combinatorial_uniqueness/`](src/combinatorial_uniqueness/) owns exact candidate regions, field composition, governed validity, specificity measurements, and semantic transition.
+- **Semantic Navigation:** [`src/semantic_navigation/`](src/semantic_navigation/) composes those capabilities into status, imputation, distinctions, commonality, and next-question navigation.
 
-Research instrumentation mirrors the triad under [`experiments/`](experiments/). It owns authored fixtures, comparisons, benchmark adapters, evidence generation, console presentation, and executable demonstrations. Nothing in `src/` imports it.
+Research instrumentation mirrors the four streams under [`experiments/`](experiments/). It owns authored fixtures, comparisons, benchmark adapters, evidence generation, console presentation, and executable demonstrations. Nothing in `src/` imports it.
 
 Everything else in the repository builds outward from those capability seeds:
 
@@ -116,7 +123,7 @@ Begin with [Words Carry Weight: The Essence](docs/words-carry-weight-essence.md)
 | Essential seed | `make run` | Transition-model construction, semantic focus, and query-relative activation |
 | Knowledge Is State | `make run-knowledge-state` | Exact typed-chain execution, inspectable paths, governed correction, and preserved state |
 | Mechanism elaboration | `make run-elaborate` | Polysemy, field combination, paths, and higher-order activation |
-| Compositional generalization | `make experiment-3-4-check` | Structurally held-out higher-order signatures, six baseline treatments, leakage audit, and accuracy curves across `k=1..20` |
+| Compositional generalization | `make experiment-3-4-check` | Structurally held-out signatures in a 20-dimensional representation generated from four latent variables, six baseline treatments, leakage audit, and accuracy curves across `k=1..20` |
 | Authored application | `make run-legal` | GDPR evidence ranking as a mechanism demonstration |
 | Governed change | `make update-demo` | Local relation updates, consequences, and rollback |
 | Semantic representation benchmark | `make benchmark-check` | Whether governed identity enrichment improves semantic focus under fixed mathematics |
@@ -125,6 +132,7 @@ Begin with [Words Carry Weight: The Essence](docs/words-carry-weight-essence.md)
 | Governed legal qualification | `make experiment-3-2-check` | Direct legal-region qualification, contrast, refusal, and epistemic non-promotion |
 | Cross-level semantic transition | `make experiment-3-3-check` | Stage-local semantic transition with failed flat conjunction retained as control |
 | Retrieval application diagnostic | `make retrieval-benchmark-check` | Legacy deterministic regression checks beside lexical baselines |
+| Compiled encyclopedic navigation seed | `make experiment-4-1-check` | Accumulated semantic representation, knowledge-state compilation, exact candidate-region composition, ambiguity navigation, and deterministic query-work scaling |
 
 The corpus and probes were authored together. They demonstrate mechanics and protect regressions; they are not independent evidence of generalisation, legal validity, production readiness, or superiority over TF-IDF, BM25, RAG, or LLMs. The exact evidence boundary is defined in the [research contract](docs/Research-Contract.md).
 

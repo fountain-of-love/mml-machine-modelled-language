@@ -37,15 +37,21 @@ class CompositionalGeneralizationExperimentTests(unittest.TestCase):
 
     def test_negative_comparative_result_is_preserved(self):
         comparison = self.result["comparative_assessment"]
+        self.assertIn("20-dimensional semantic representation", comparison["demonstrated_capability"])
+        self.assertIn("four latent variables", comparison["demonstrated_capability"])
         self.assertEqual(comparison["scaling_claim_status"], "NOT_SUPPORTED_BY_THIS_FIXTURE")
         self.assertEqual(comparison["maximum_mml_top_1_advantage"], 0.0)
         self.assertFalse(comparison["mml_has_distinctive_accuracy_advantage"])
         self.assertEqual(self.result["conformity"]["judgment"], "EXECUTION_CONFORMANT")
+        self.assertEqual(self.result["scaling_summary"]["projected_dimension_count"], 20)
+        self.assertEqual(self.result["scaling_summary"]["latent_variable_count"], 4)
 
     def test_report_leads_with_the_scientific_limitation(self):
         report = markdown_report(self.result)
+        self.assertIn("Demonstrated capability", report)
+        self.assertIn("20-dimensional semantic representation generated from four latent variables", report)
         self.assertIn("NOT_SUPPORTED_BY_THIS_FIXTURE", report)
-        self.assertIn("does not provide distinctive evidence for MML", report)
+        self.assertIn("does not provide distinctive evidence for MML-specific scaling", report)
         self.assertIn("realizes only `256`", report)
         self.assertIn("soft intersection outperforms exact or additive controls | not observed", report)
 

@@ -1,0 +1,1 @@
+"""Accumulated semantic navigation capability."""

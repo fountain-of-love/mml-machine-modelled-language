@@ -6,7 +6,7 @@ The current AI race repeatedly assigns learned models work that may not always r
 2. **Reconstruct established knowledge.** MML asks whether governed knowledge should be compiled once and executed repeatedly.
 3. **Learn every useful combination as an individual latent pattern.** MML asks whether sufficiently independent semantic coordinates can be composed at runtime into a more specific field.
 
-In compact form: **Represent meaning. Compile knowledge. Compose concepts.**
+In compact form: **Represent meaning. Compile knowledge. Compose concepts. Navigate governed knowledge.**
 
 MML is therefore not merely a cheaper execution engine over a knowledge graph. It proposes another way for machines to obtain semantic specificity in the first place: explicit representation, compiled reuse, and combinatorial construction. Matrix propagation, Personalized PageRank, typed traversal, and future semantic operators are possible execution strategies beneath that proposition; none of them alone defines MML.
 

@@ -197,12 +197,22 @@ def _comparative_assessment(aggregate: list[dict], widths: tuple[int, ...]) -> d
     advantages = {width: mml[width] - control[width] for width in widths}
     maximum = max(advantages.values())
     return {
+        "demonstrated_capability": (
+            "MML executed a 20-dimensional semantic representation generated from "
+            "four latent variables while complete target signatures were absent "
+            "from construction."
+        ),
         "strong_exact_controls": list(exact_controls),
         "mml_top_1_advantage_by_k": {str(key): value for key, value in advantages.items()},
         "maximum_mml_top_1_advantage": maximum,
         "mml_has_distinctive_accuracy_advantage": maximum > 1e-12,
         "scaling_claim_status": "DIRECTIONAL_SIGNAL" if maximum > 1e-12 else "NOT_SUPPORTED_BY_THIS_FIXTURE",
-        "interpretation": "A held-out curve supports a distinctive MML claim only when it adds value beyond exact overlap, explicit vectors, and symbolic conjunction; shared success demonstrates fixture identifiability, not MML-specific scaling.",
+        "interpretation": (
+            "The positive result is execution over held-out complete signatures in "
+            "a 20-dimensional projection of a four-latent-variable generator. "
+            "A distinctive MML scaling claim would require additional value beyond "
+            "exact overlap, explicit vectors, and symbolic conjunction."
+        ),
     }
 
 
@@ -283,6 +293,8 @@ def run_experiment() -> dict:
         "target_traces": target_traces,
         "scaling_summary": {
             "possible_full_signatures": 4 ** 20,
+            "projected_dimension_count": len(families),
+            "latent_variable_count": 4,
             "generator_realizable_complete_signatures": len(training) + len(held_out),
             "evaluated_held_out_complete_signatures": len(held_out),
             "mml_first_k_at_90_percent_top_1": _accuracy_threshold_width(aggregate, "mml_soft_intersection", 0.90),
@@ -334,9 +346,11 @@ def markdown_report(result: dict) -> str:
         "",
         f"**Conformity judgment: `{result['conformity']['judgment']}`. Evidence strength: `{result['conformity']['evidence_strength']}`.**",
         "",
-        f"Construction retained only coordinate-pair counts from {result['fixture']['training_entity_count']} synthetic training entities. The evaluation registry contained {result['fixture']['held_out_entity_count']} disjoint complete signatures, queried at every width from 1 through 20 across six treatments. The coordinate basis permits `{result['scaling_summary']['possible_full_signatures']:,}` theoretical signatures, but this generator realizes only `{result['scaling_summary']['generator_realizable_complete_signatures']}` of them.",
+        f"**Demonstrated capability:** {result['comparative_assessment']['demonstrated_capability']}",
         "",
-        f"**Scaling assessment: `{result['comparative_assessment']['scaling_claim_status']}`.** MML's maximum top-1 advantage over the strongest exact control was `{result['comparative_assessment']['maximum_mml_top_1_advantage']:.3f}`. The curve therefore tests the protocol successfully but does not provide distinctive evidence for MML in this fixture.",
+        f"Construction retained only coordinate-pair counts from {result['fixture']['training_entity_count']} synthetic training entities. The evaluation registry contained {result['fixture']['held_out_entity_count']} disjoint complete signatures, queried at every width from 1 through 20 across six treatments. The representation has `{result['scaling_summary']['projected_dimension_count']}` semantic dimensions, but they are generated from `{result['scaling_summary']['latent_variable_count']}` latent variables. The coordinate basis permits `{result['scaling_summary']['possible_full_signatures']:,}` theoretical signatures, while this generator realizes only `{result['scaling_summary']['generator_realizable_complete_signatures']}` of them.",
+        "",
+        f"**Scaling assessment: `{result['comparative_assessment']['scaling_claim_status']}`.** MML's maximum top-1 advantage over the strongest exact control was `{result['comparative_assessment']['maximum_mml_top_1_advantage']:.3f}`. The curve therefore demonstrates held-out execution in this projected representation, but it does not provide distinctive evidence for MML-specific scaling.",
         "",
         "## Accuracy curves",
         "",
@@ -371,7 +385,7 @@ def markdown_report(result: dict) -> str:
         "",
         "## C — Context and chronology",
         "",
-        "The split is structural and deterministic: latent tuples whose digit sum is zero modulo four are held out; all others contribute aggregate pair counts. The state stores no entity identity or complete signature. Test signatures are materialized only by the evaluation adapter after construction.",
+        "The split is structural and deterministic: four-value latent tuples whose digit sum is zero modulo four are held out; all others are projected into 20 semantic dimensions and contribute aggregate coordinate-pair counts. The state stores no entity identity or complete signature. Test signatures are materialized only by the evaluation adapter after construction.",
         "",
         "## A — Actions and mechanisms",
         "",
@@ -379,7 +393,7 @@ def markdown_report(result: dict) -> str:
         "",
         "## R — Result",
         "",
-        f"MML first reached at least 90% deterministic top-1 accuracy at `k={result['scaling_summary']['mml_first_k_at_90_percent_top_1']}` and 100% at `k={result['scaling_summary']['mml_first_k_at_100_percent_top_1']}`. Flat overlap, explicit vector composition, symbolic conjunction, and additive KG traversal reached the same accuracy at the same width. At `k=20`, MML resolved all 64 held-out signatures, but that shared success does not isolate an MML advantage.",
+        f"MML first reached at least 90% deterministic top-1 accuracy at `k={result['scaling_summary']['mml_first_k_at_90_percent_top_1']}` and 100% at `k={result['scaling_summary']['mml_first_k_at_100_percent_top_1']}`. Flat overlap, explicit vector composition, symbolic conjunction, and additive KG traversal reached the same accuracy at the same width. At `k=20`, MML resolved all 64 held-out signatures in a 20-dimensional representation generated from four latent variables, but that shared success does not isolate an MML advantage.",
         "",
         "### Conformity criteria",
         "",
@@ -389,7 +403,7 @@ def markdown_report(result: dict) -> str:
         "",
         "## C — Comparative assessment and research conclusion",
         "",
-        "This is the first repository experiment in which complete target signatures are structurally absent from construction rather than merely absent as authored query strings. It verifies the stricter protocol and shows that higher-order evaluation can execute from pairwise state. However, exact overlap and symbolic controls match MML's curve, so the observed accuracy is explained by fixture identifiability without requiring soft intersection.",
+        "This is the first repository experiment in which complete target signatures are structurally absent from construction rather than merely absent as authored query strings. It verifies the stricter protocol and shows that MML can execute a 20-dimensional semantic representation generated from four latent variables without seeing complete target signatures. However, exact overlap and symbolic controls match MML's curve, so the observed accuracy is explained by fixture identifiability without requiring soft intersection.",
         "",
         "The result remains development evidence and does not support the distinctive scaling claim. The coordinate generator, split, mechanism, and evaluation were authored together; the four-latent-variable algebra realizes only 256 signatures; and evaluation supplies clean held-out candidate attributes. The next fixture must make exact controls insufficient while leaving genuinely inferable lower-order structure, then add irregularity, noise, missing coordinates, a much larger realized candidate universe, and a declared external embedding model.",
         "",
@@ -400,7 +414,7 @@ def markdown_report(result: dict) -> str:
         "| implementation fact | construction retains pairwise coordinate counts only | verified |",
         "| fixture observation | exact held-out signatures are disjoint from construction signatures | verified |",
         "| bounded result | six treatments execute across `k=1..20` and 64 held-out targets | observed |",
-        "| architectural signal | pairwise semantic state can execute against unseen complete signatures | bounded mechanism evidence |",
+        "| architectural signal | pairwise semantic state can execute a 20-dimensional projection against unseen complete signatures | bounded mechanism evidence |",
         "| distinctive MML signal | soft intersection outperforms exact or additive controls | not observed |",
         "| scaling hypothesis | accuracy remains useful as meaningful realized combinations explode | not supported by this 256-signature generator |",
         "| application claim | MML generalizes to unseen natural-language or factual entities | not established |",

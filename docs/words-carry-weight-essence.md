@@ -10,7 +10,7 @@ The larger proposition is:
 
 MML develops that proposition through a canonical triad:
 
-> **Represent meaning. Compile knowledge. Compose concepts.**
+> **Represent meaning. Compile knowledge. Compose concepts. Navigate governed knowledge.**
 
 - **Representation:** make important semantic identities, roles, and relations explicit.
 - **Knowledge State Execution:** compile established structure once as governed state so declared consequences can be executed repeatedly.
@@ -77,7 +77,7 @@ A word does not possess one universal importance value. Its executable weight de
 | **Focus** | Semantic enrichment or query interpretation narrows an ambiguous expression to a more precise identity. |
 | **Activation** | Query execution produces the contextual numeric distribution for this particular use. |
 
-This table describes the minimal operational vocabulary. The canonical research triad sits above it: grounding and focus contribute to representation, compilation creates reusable execution state, and combined activation fields seed conceptual composition.
+This table describes the minimal operational vocabulary. The canonical foundation triad sits above it: grounding and focus contribute to representation, compilation creates reusable execution state, and combined activation fields seed conceptual composition. Semantic Navigation is the accumulated fourth stream that tests whether those foundations form a useful interaction surface.
 
 The phrase also reaches beyond numerical edge weight. What a word or concept can carry depends on how the model perceives and governs it:
 

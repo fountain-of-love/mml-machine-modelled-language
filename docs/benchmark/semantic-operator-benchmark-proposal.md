@@ -16,7 +16,7 @@ The benchmark must therefore evaluate the consequence of representational enrich
 
 The benchmark programme follows the canonical triad:
 
-> **Represent meaning. Compile knowledge. Compose concepts.**
+> **Represent meaning. Compile knowledge. Compose concepts. Navigate governed knowledge.**
 
 | Programme | Hypothesis tested | Current state |
 | --- | --- | --- |
@@ -440,17 +440,21 @@ The identity-focused Representation version is implemented in [`benchmark.py`](.
 
 The first bounded Knowledge State Execution version is also implemented, with its report in [Knowledge State Execution Experiment v1](../capabilities/knowledge-state-execution/results/v1.md). It compares per-query deterministic reconstruction with compiled execution over one authored typed-chain fixture. Its next step is independent cases and a measured language-model baseline.
 
-Combinatorial Uniqueness now has four bounded development studies. Experiments 3.1–3.3 test direct intersection, governed legal qualification, and cross-level transition on co-authored fixtures. Experiment 3.4 adds a structurally held-out signature split and six treatments across `k=1..20`; execution conforms, but exact controls match MML, so the scaling claim is `NOT_SUPPORTED_BY_THIS_FIXTURE`.
+Combinatorial Uniqueness now has four bounded development studies. Experiments 3.1–3.3 test direct intersection, governed legal qualification, and cross-level transition on co-authored fixtures. Experiment 3.4 adds a structurally held-out signature split and six treatments across `k=1..20`; it demonstrates that MML can execute a 20-dimensional representation generated from four latent variables without seeing complete target signatures. Exact controls match MML, so the scaling claim is `NOT_SUPPORTED_BY_THIS_FIXTURE`.
 
-The next version should build directly on that negative comparative result:
+Programme 4 adds an accumulated research stream: Semantic Navigation. Experiment 4.1 composes the first three operational capabilities over recurring governed animal attributes. It represents stable dimension-qualified values and codes, compiles persistent postings and complete-signature equivalence classes, executes supported subset queries as exact candidate-region intersections, and exposes ambiguity as navigable state. The engine also reports deterministic imputations, remaining value partitions, the highest-information next dimension, commonality, and incomplete construction records.
 
-1. Freeze an irregular generator with a much larger realized signature universe before changing the soft-intersection implementation.
-2. Make exact overlap and symbolic conjunction insufficient while preserving genuinely inferable lower-order structure.
-3. Add missing, noisy, redundant, unsupported, and contradictory coordinates under declared corruption policies.
-4. Retain the six-treatment comparison and add one named external embedding model with frozen version and configuration.
-5. Add an independently authored suite before making a scaling claim.
+The prompt-derived 60-animal seed executes 320 distinct structured queries with exact candidate sets, correct `IDENTIFIABLE` / `AMBIGUOUS` / `UNSUPPORTED` statuses, complete navigation diagnostics, and semantic/code equivalence. Deterministic warm-query operation counts are lower than flat scans in the 15-, 30-, and 60-animal seed slices. Accuracy parity with a correct exact control is required; the architectural question is whether the accumulated capability chain preserves meaning and correctness while reducing repeated work and exposing useful navigation state.
+
+The next version should:
+
+1. Freeze independently sourced and reviewed 100-, 250-, and 500-animal datasets.
+2. Increase real semantic-neighbourhood density while retaining the same core coordinate contract.
+3. Measure wall-clock time and memory beside deterministic operation counts, including compilation amortization.
+4. Evaluate a separate natural-language-to-governed-query translation layer without attributing parser errors to MML execution.
+5. Reserve noisy soft constraints and lower-order relational inference for a separately preregistered Experiment 3.6 with equal-information controls.
 6. Extend Representation with typed-relation and semantic-role suites, and extend Knowledge State Execution with public knowledge, only as separately reported programmes.
 
 This sequence preserves separate hypothesis attribution while expanding the mechanism:
 
-> Represent meaning. Compile knowledge. Compose concepts. Test each claim separately.
+> Represent meaning. Compile knowledge. Compose concepts. Navigate governed knowledge. Test foundations separately and accumulation explicitly.

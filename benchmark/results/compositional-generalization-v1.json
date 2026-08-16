@@ -37945,6 +37945,8 @@
   ],
   "scaling_summary": {
     "possible_full_signatures": 1099511627776,
+    "projected_dimension_count": 20,
+    "latent_variable_count": 4,
     "generator_realizable_complete_signatures": 256,
     "evaluated_held_out_complete_signatures": 64,
     "mml_first_k_at_90_percent_top_1": 3,
@@ -37959,6 +37961,7 @@
     }
   },
   "comparative_assessment": {
+    "demonstrated_capability": "MML executed a 20-dimensional semantic representation generated from four latent variables while complete target signatures were absent from construction.",
     "strong_exact_controls": [
       "flat_keyword_retrieval",
       "vector_composition",
@@ -37989,7 +37992,7 @@
     "maximum_mml_top_1_advantage": 0.0,
     "mml_has_distinctive_accuracy_advantage": false,
     "scaling_claim_status": "NOT_SUPPORTED_BY_THIS_FIXTURE",
-    "interpretation": "A held-out curve supports a distinctive MML claim only when it adds value beyond exact overlap, explicit vectors, and symbolic conjunction; shared success demonstrates fixture identifiability, not MML-specific scaling."
+    "interpretation": "The positive result is execution over held-out complete signatures in a 20-dimensional projection of a four-latent-variable generator. A distinctive MML scaling claim would require additional value beyond exact overlap, explicit vectors, and symbolic conjunction."
   },
   "conformity": {
     "criteria": {
@@ -38008,8 +38011,8 @@
     "state_sha256": "sha256:4d35be46bb670856dc9d8a5e9c376f2e092516b2e868c0aa5ede352d3f98c25a",
     "probes_sha256": "sha256:a7bbb6c21834758bedcaceb54e4b9f6def640fed71165adac53f097cb193770f",
     "kernel_sha256": "sha256:48070ca0e4216e8150242318d80c4a277453146d7a2694dfe3346b22cc820984",
-    "experiment_sha256": "sha256:fff6dee4f6a611eca5eb0b01f5bb9057cd4a3f43556c645a81f74e1e10c690d1",
-    "study_sha256": "sha256:95037ee9e956f1a680f50e855a4e657c1f56ba836537bccdfa1424fed91c41e5"
+    "experiment_sha256": "sha256:51fb7fec8c5f53650d45dcd9f1da15198b274898cee85c1a844916c818d84ae9",
+    "study_sha256": "sha256:7af6e076cc76c99245acf8ced6a5c15b95b5301bee98d7faf8886c74c73e331b"
   },
   "evidence_boundary": "The evaluation is zero-shot with respect to complete entity signatures: construction retains only pairwise coordinate counts. The split is synthetic and structurally held out, not independently authored or real-world evidence.",
   "claim_scope": "This tests structural holdout of complete signatures under a deterministic synthetic generator. It does not establish independently authored, natural-language, real-world, or production-scale generalization."

@@ -1,1 +1,1 @@
-"""Research instrumentation for the three MML capability programmes."""
+"""Research instrumentation for the MML foundation and accumulated programmes."""

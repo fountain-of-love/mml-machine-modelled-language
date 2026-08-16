@@ -2,15 +2,16 @@
 
 This directory contains shared benchmark methodology, the cross-programme benchmark proposal, legacy retrieval diagnostics, and links to programme-owned evidence. Each capability now keeps its protocol and human-readable results beside its definition under [`docs/capabilities/`](../capabilities/README.md); machine-readable artifacts remain in the repository-level `benchmark/` tree. Benchmarks are evidence instruments, not capability definitions.
 
-The benchmark programme follows MML's three hypotheses and reports a separate evidence boundary for each:
+The benchmark programme follows MML's three foundation hypotheses and accumulated Semantic Navigation stream, with a separate evidence boundary for each:
 
 | Hypothesis | Benchmark | Current status |
 | --- | --- | --- |
 | **1. Representation** | [Capability definition](../capabilities/semantic-representation/README.md) · [Experiment 1 protocol](../capabilities/semantic-representation/experiment.md) | Identity-focused development benchmark implemented. |
 | **2. Knowledge State Execution** | [Capability definition](../capabilities/knowledge-state-execution/README.md) · [Experiment 2 protocol](../capabilities/knowledge-state-execution/experiment.md) | One bounded typed-chain development experiment implemented. |
 | **3. Combinatorial Uniqueness** | [Capability definition](../capabilities/combinatorial-uniqueness/README.md) · [Experiment 3 protocol](../capabilities/combinatorial-uniqueness/experiment.md) · [3.1 direct intersection](../capabilities/combinatorial-uniqueness/results/direct-intersection-v1.md) · [3.2 governed qualification](../capabilities/combinatorial-uniqueness/results/governed-legal-qualification-v1.md) · [3.3 cross-level transition](../capabilities/combinatorial-uniqueness/results/cross-level-semantic-transition-v1.md) | Three atomic authored development studies distinguish locally consistent direct intersection and legal qualification from consistent explicit stage-scoped transition; held-out generalization remains untested. |
+| **4. Semantic Navigation** | [Capability definition](../capabilities/semantic-navigation/README.md) · [Experiment 4.1 blueprint](../capabilities/semantic-navigation/experiment.md) · [seed result](../capabilities/semantic-navigation/results/compiled-encyclopedic-navigation-v1.md) | One prompt-provided accumulated mechanics seed executes exact retrieval and navigation through all four source contracts. |
 
-In compact form: **Represent meaning. Compile knowledge. Compose concepts.** A result for one row is not evidence for the other two.
+In compact form: **Represent meaning. Compile knowledge. Compose concepts. Navigate governed knowledge.** Programme 4 deliberately consumes the first three, but its result is not independent evidence for them.
 
 The earlier [combined Experiment 3 result](../capabilities/combinatorial-uniqueness/results/v1.md) is `SUPERSEDED_BY_DECOMPOSITION`: it no longer acts as the programme-level verdict. The [cross-level root-cause analysis](../capabilities/combinatorial-uniqueness/studies/cross-level-root-cause.md) traces its unresolved access-to-evidence trajectory to the difference between flat conjunction and semantic transition. Experiment 3.3 tests explicit stage-local scope while retaining that failed conjunction as its control.
 

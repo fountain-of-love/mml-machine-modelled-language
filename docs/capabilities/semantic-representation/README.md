@@ -91,6 +91,8 @@ All six authored probes produced a consistent directional signal: the represente
 - grounding and query focus are changed together rather than isolated factorially; and
 - only semantic identity is tested, not relation type, role, constraint, exclusion, or policy composition.
 
+The operational capability now also exposes `GovernedCoordinateBasis` for accumulated experiments. It validates a finite dimension/value vocabulary, qualifies values by dimension, reports incomplete entities, assigns reversible stable codes, and produces a representation snapshot. Experiment 4.1 consumes this contract. Its integration success is mechanics evidence for interoperability, not an additional controlled Representation result.
+
 ## Evidence Boundary
 
 The current result supports one bounded joint semantic-identity treatment. It does not establish that richer representation always helps, that the represented identities are universally correct, that MML discovers meaning autonomously, or that hypotheses two and three are valid.

@@ -18,7 +18,7 @@ MML, or Machine Modelled Language, is the structured counterpart introduced by t
 | **Durable knowledge** | Reconstruct task-relevant knowledge from prose or parameters at use time. | Compile governed knowledge into reusable executable views. |
 | **Conceptual resolution** | Depend on a learned latent pattern for each useful combination. | Compose sufficiently independent semantic coordinates into a task-specific field at runtime. |
 
-In compact form: **Represent meaning. Compile knowledge. Compose concepts.** Deterministic propagation is one possible execution mechanism beneath those transfers, not the definition of MML.
+In compact form: **Represent meaning. Compile knowledge. Compose concepts. Navigate governed knowledge.** Deterministic propagation is one possible execution mechanism beneath those transfers, not the definition of MML.
 
 At runtime, SOS prefers governed MML capability for represented and compiled tasks, then uses an LLM when the structure is insufficient or language generation is required. In discovery, the order is inverted: the LLM reads and proposes, while accountable governance validates candidates for representation, compilation, and reuse.
 

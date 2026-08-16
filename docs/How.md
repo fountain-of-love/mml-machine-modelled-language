@@ -10,7 +10,7 @@ Those lifecycle stages implement parts of the canonical research architecture:
 | **Knowledge State Execution** | deterministic compilation into governed reusable state | One bounded typed-chain experiment compares per-query source reconstruction with compiled reuse; broader independent evidence is still needed. |
 | **Combinatorial Uniqueness** | independent propagation, normalized geometric-mean soft intersection, governed qualification, and explicit stage-local transition | Three atomic authored development experiments are consistent within their declared scopes; held-out construction and scaling remain untested. |
 
-In compact form: **Represent meaning. Compile knowledge. Compose concepts.** The sections below retain the prototype lifecycle—representation, execution, and evolution—but each mechanism should be read against that research contract.
+In compact form: **Represent meaning. Compile knowledge. Compose concepts. Navigate governed knowledge.** The sections below retain the prototype lifecycle—representation, execution, and evolution—but each mechanism should be read against that research contract.
 
 ## Run it
 

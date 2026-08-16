@@ -2,17 +2,18 @@
 
 Machine Modelled Language (MML) is an **executable, weighted knowledge representation whose human-governed structure can be updated from text statistics**. Its central proposition is that progress may come not only from more complicated computation, but from a representation of meaning rich enough for established mathematical structures to do more useful work. Language is represented as addressable concepts, senses, semantic roles, aliases, relationships, and transition weights; queries activate that structure through deterministic matrix operations whose relational routes can be interpreted as a graph.
 
-MML develops that proposition through three cumulative hypotheses:
+MML develops that proposition through three independently testable foundation hypotheses and one accumulated application hypothesis:
 
-> **Represent meaning. Compile knowledge. Compose concepts.**
+> **Represent meaning. Compile knowledge. Compose concepts. Navigate governed knowledge.**
 
 | Hypothesis | Architectural claim | Current status |
 | --- | --- | --- |
 | **Representation** | Explicit, sufficiently rich meaning can make ordinary mathematics semantically useful. | Addressed by bounded A/B experiments under fixed mathematics. |
 | **Knowledge State Execution** | Established knowledge compiled into governed state can expose declared consequences without reconstructing equivalent task state at every use. | One bounded exact typed-chain experiment demonstrates compilation, repeated execution, mutation, inspection, and rollback. |
 | **Combinatorial Uniqueness** | Broad, sufficiently independent semantic coordinates can combine into a narrow, distinctive conceptual target. | Direct intersection, governed legal qualification, and stage-scoped transition have bounded authored development evidence; held-out construction and scaling remain untested. |
+| **Semantic Navigation** | The first three capabilities can accumulate into exact candidate retrieval and useful ambiguity navigation. | One prompt-provided 60-animal mechanics seed executes through all four operational contracts; independent source and scaling evidence remain untested. |
 
-The hypotheses describe encoding, reuse, and resolution respectively. They are related but independently falsifiable: better representation does not by itself establish a reuse advantage, and a reusable compiled model does not by itself establish that conceptual combinations create useful specificity.
+The foundation hypotheses describe encoding, reuse, and resolution respectively. They are related but independently falsifiable: better representation does not by itself establish a reuse advantage, and a reusable compiled model does not by itself establish that conceptual combinations create useful specificity. Semantic Navigation deliberately accumulates them, but its success cannot substitute for their independent evidence.
 
 The inversion is intentional:
 
@@ -67,23 +68,30 @@ The current engine implements direct composition as independently propagated act
 
 Those results establish bounded, inspectable development behavior—not the larger scaling claim. The remaining question is whether reusable semantic coordinates can reliably construct useful specificity on independently authored combinations created after a genuine state freeze, and whether that basis offers useful coverage or efficiency without bespoke primitives for every meaningful combination.
 
+## Hypothesis 4: Navigate Governed Knowledge
+
+**[Semantic Navigation](capabilities/semantic-navigation/README.md)** composes the first three operational capabilities into a downstream interaction surface. Governed dimensions and values are represented as stable coordinates, compiled into immutable many-to-many incidence state, and intersected into exact candidate regions. Navigation then exposes whether the region is identifiable, ambiguous, or unsupported; which missing values are unanimous; which distinctions remain; what the candidates share; and which unobserved dimension would partition them most informatively.
+
+This is not relational inference or language understanding. It executes previously governed knowledge and turns insufficient specificity into inspectable next actions rather than a forced answer.
+
 ## Governed Meaning Made Executable
 
 MML is intentionally supervised semantic construction. People and institutions define stable concepts, sense identities, aliases, typed relations, provenance, and corrections. Corpus statistics adjust explicit weights inside that governed structure. MML therefore does not claim to discover meaning autonomously; it makes curated meaning executable and contestable.
 
 For example, MML does not have to treat `bank` as one undifferentiated token. Governed identities such as `bank_financial` and `bank_river`, their aliases, relations, and the query context make the intended sense addressable. The current prototype demonstrates this distinction directly.
 
-The evidentiary relationship runs in one direction: **MML proposes explicit semantic representation, compiled Knowledge State Execution, and runtime conceptual composition. The repository supplies bounded authored development evidence for each hypothesis, at different levels of maturity; that work motivates Common Language Model (CML) contracts and a wider Semantic Operating System (SOS).** Those downstream proposals are consequences to explore, not evidence that MML works.
+The evidentiary relationship runs in one direction: **MML proposes explicit semantic representation, compiled Knowledge State Execution, runtime conceptual composition, and accumulated semantic navigation. The repository supplies bounded authored development evidence for each stream at different levels of maturity; that work motivates Common Language Model (CML) contracts and a wider Semantic Operating System (SOS).** Those downstream proposals are consequences to explore, not evidence that MML works.
 
 ## Current Evidence and Proposed Direction
 
-The evidence follows the same triad:
+The evidence follows the three foundations and their accumulated application:
 
 The current Python prototype demonstrates:
 
 - **Representation:** governed semantic identities, aliases, typed relations, and an authored A/B benchmark under fixed mathematics;
 - **Knowledge State Execution:** deterministic typed-fact compilation, content-addressed state, exact repeatable execution, local correction, inspectable paths, and rollback;
 - **Combinatorial Uniqueness:** independently propagated query fields, direct soft intersection, governed qualification and refusal, explicit stage-local transition, permutations, ablations, and inspectable traces across three atomic authored experiments; and
+- **Semantic Navigation:** governed coordinate codes, persistent incidence state, exact candidate regions, equivalence classes, deterministic imputation, commonality, and next-question selection through one integrated source path; and
 - a small legacy retrieval application diagnostic beside lexical baselines.
 
 It does not yet demonstrate:

@@ -54,6 +54,8 @@ The repository implements independent activation fields and normalized geometric
 
 The broader [Combinatorial Scaling Proposition](proposition.md) is not established by implementing soft intersection. It asks whether a reusable basis of governed coordinates can cover a substantially larger useful conceptual space without bespoke primitives for every meaningful combination.
 
+The operational capability also exposes `compose_candidate_region`, a small exact-incidence operator over compiled coordinate postings. Programme 4 consumes it to retrieve complete compatible regions without soft ranking or forced uniqueness. That reuse demonstrates interoperability; exact retrieval parity does not establish this programme's stronger soft-intersection or scaling proposition.
+
 The distinction is:
 
 - **implemented:** independent fields, soft intersection, additive and hard controls, governed validity checks, ablations, two authored development contexts, and one structurally held-out synthetic signature split;
@@ -113,13 +115,13 @@ That failure exposed three different semantic operations, now tested atomically:
 | [3.1 — Direct Combinatorial Intersection](results/direct-intersection-v1.md) | Cumulative coordinates remain requirements of one target. | `LOCALLY_CONSISTENT`: 8/8 authored targets resolved; redundant controls stayed broad; 3/3 declared-invalid combinations were rejected. |
 | [3.2 — Governed Legal Qualification](results/governed-legal-qualification-v1.md) | Direct legal-region qualification with contrast, refusal, and epistemic non-promotion. | `LOCALLY_CONSISTENT`: authored qualifications and contrasts resolved while insufficient combinations remained unresolved. |
 | [3.3 — Cross-Level Semantic Transition](results/cross-level-semantic-transition-v1.md) | Each declared stage has local constraints; the previous region becomes antecedent provenance. | `CONSISTENT`: all authored stages resolved while failed flat cumulative conjunction remained visible as the control. |
-| [3.4 — Compositional Generalization](results/compositional-generalization-v1.md) | Pairwise-only construction is tested against disjoint higher-order entity signatures across `k=1..20`. | `EXECUTION_CONFORMANT`, but scaling claim `NOT_SUPPORTED_BY_THIS_FIXTURE`: exact controls matched MML's curve. |
+| [3.4 — Compositional Generalization](results/compositional-generalization-v1.md) | Pairwise-only construction is tested against disjoint complete signatures in a 20-dimensional representation generated from four latent variables. | `EXECUTION_CONFORMANT`: MML executed the held-out projected representation, but scaling claim `NOT_SUPPORTED_BY_THIS_FIXTURE` because exact controls matched MML's curve. |
 
 These results do not turn the original failed conjunction into a success. They show that direct intersection and semantic transition require different contracts. The [cross-level root-cause report](studies/cross-level-root-cause.md) preserves the numerical, representational, and governance diagnosis.
 
 ## Evidence Boundary
 
-The physical and legal fixtures are synthetic, co-authored with the mechanism, and not held out. Experiment 3.4 adds a structurally disjoint signature split, but its exact controls match MML and its generator realizes only 256 complete signatures. The programme therefore does not establish natural-language understanding, factual legal adjudication, production-scale performance, independently authored cross-domain generalization, a distinctive MML advantage, or the combinatorial scaling proposition.
+The physical and legal fixtures are synthetic, co-authored with the mechanism, and not held out. Experiment 3.4 adds a structurally disjoint signature split and demonstrates execution over a 20-dimensional representation generated from four latent variables, but its exact controls match MML and its generator realizes only 256 complete signatures. The programme therefore does not establish natural-language understanding, factual legal adjudication, production-scale performance, independently authored cross-domain generalization, a distinctive soft-intersection advantage, or the full combinatorial scaling proposition. Compiled encyclopaedic retrieval now belongs to the accumulated [Semantic Navigation programme](../semantic-navigation/README.md), which consumes exact candidate-region composition without treating retrieval parity as evidence for this programme's stronger uniqueness claim.
 
 ## Research Layers And Next Step
 
@@ -133,4 +135,4 @@ The physical and legal fixtures are synthetic, co-authored with the mechanism, a
 - **Atomic cross-level-transition evidence:** [Experiment 3.3](results/cross-level-semantic-transition-v1.md)
 - **Structurally held-out generalization evidence:** [Experiment 3.4](results/compositional-generalization-v1.md)
 - **Root-cause analysis:** [Cross-level root-cause analysis](studies/cross-level-root-cause.md)
-- **Next step:** independently reproduce Experiment 3.4 with an irregular semantic generator, noisy and missing coordinates, and a named external embedding baseline. Typed-transition relations and automatic stage-boundary discovery remain separate follow-ups.
+- **Next step:** independently reproduce Experiment 3.4 with an irregular semantic generator and named external baselines. Keep accumulated retrieval and interaction evaluation in Programme 4.

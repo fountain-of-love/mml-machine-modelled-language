@@ -6,9 +6,11 @@
 
 **Conformity judgment: `EXECUTION_CONFORMANT`. Evidence strength: `LOW`.**
 
-Construction retained only coordinate-pair counts from 192 synthetic training entities. The evaluation registry contained 64 disjoint complete signatures, queried at every width from 1 through 20 across six treatments. The coordinate basis permits `1,099,511,627,776` theoretical signatures, but this generator realizes only `256` of them.
+**Demonstrated capability:** MML executed a 20-dimensional semantic representation generated from four latent variables while complete target signatures were absent from construction.
 
-**Scaling assessment: `NOT_SUPPORTED_BY_THIS_FIXTURE`.** MML's maximum top-1 advantage over the strongest exact control was `0.000`. The curve therefore tests the protocol successfully but does not provide distinctive evidence for MML in this fixture.
+Construction retained only coordinate-pair counts from 192 synthetic training entities. The evaluation registry contained 64 disjoint complete signatures, queried at every width from 1 through 20 across six treatments. The representation has `20` semantic dimensions, but they are generated from `4` latent variables. The coordinate basis permits `1,099,511,627,776` theoretical signatures, while this generator realizes only `256` of them.
+
+**Scaling assessment: `NOT_SUPPORTED_BY_THIS_FIXTURE`.** MML's maximum top-1 advantage over the strongest exact control was `0.000`. The curve therefore demonstrates held-out execution in this projected representation, but it does not provide distinctive evidence for MML-specific scaling.
 
 ## Accuracy curves
 
@@ -58,7 +60,7 @@ The declared standard required disjoint complete signatures, pairwise-only const
 
 ## C — Context and chronology
 
-The split is structural and deterministic: latent tuples whose digit sum is zero modulo four are held out; all others contribute aggregate pair counts. The state stores no entity identity or complete signature. Test signatures are materialized only by the evaluation adapter after construction.
+The split is structural and deterministic: four-value latent tuples whose digit sum is zero modulo four are held out; all others are projected into 20 semantic dimensions and contribute aggregate coordinate-pair counts. The state stores no entity identity or complete signature. Test signatures are materialized only by the evaluation adapter after construction.
 
 ## A — Actions and mechanisms
 
@@ -66,7 +68,7 @@ MML independently propagates each query coordinate through the pairwise training
 
 ## R — Result
 
-MML first reached at least 90% deterministic top-1 accuracy at `k=3` and 100% at `k=3`. Flat overlap, explicit vector composition, symbolic conjunction, and additive KG traversal reached the same accuracy at the same width. At `k=20`, MML resolved all 64 held-out signatures, but that shared success does not isolate an MML advantage.
+MML first reached at least 90% deterministic top-1 accuracy at `k=3` and 100% at `k=3`. Flat overlap, explicit vector composition, symbolic conjunction, and additive KG traversal reached the same accuracy at the same width. At `k=20`, MML resolved all 64 held-out signatures in a 20-dimensional representation generated from four latent variables, but that shared success does not isolate an MML advantage.
 
 ### Conformity criteria
 
@@ -81,7 +83,7 @@ MML first reached at least 90% deterministic top-1 accuracy at `k=3` and 100% at
 
 ## C — Comparative assessment and research conclusion
 
-This is the first repository experiment in which complete target signatures are structurally absent from construction rather than merely absent as authored query strings. It verifies the stricter protocol and shows that higher-order evaluation can execute from pairwise state. However, exact overlap and symbolic controls match MML's curve, so the observed accuracy is explained by fixture identifiability without requiring soft intersection.
+This is the first repository experiment in which complete target signatures are structurally absent from construction rather than merely absent as authored query strings. It verifies the stricter protocol and shows that MML can execute a 20-dimensional semantic representation generated from four latent variables without seeing complete target signatures. However, exact overlap and symbolic controls match MML's curve, so the observed accuracy is explained by fixture identifiability without requiring soft intersection.
 
 The result remains development evidence and does not support the distinctive scaling claim. The coordinate generator, split, mechanism, and evaluation were authored together; the four-latent-variable algebra realizes only 256 signatures; and evaluation supplies clean held-out candidate attributes. The next fixture must make exact controls insufficient while leaving genuinely inferable lower-order structure, then add irregularity, noise, missing coordinates, a much larger realized candidate universe, and a declared external embedding model.
 
@@ -92,7 +94,7 @@ The result remains development evidence and does not support the distinctive sca
 | implementation fact | construction retains pairwise coordinate counts only | verified |
 | fixture observation | exact held-out signatures are disjoint from construction signatures | verified |
 | bounded result | six treatments execute across `k=1..20` and 64 held-out targets | observed |
-| architectural signal | pairwise semantic state can execute against unseen complete signatures | bounded mechanism evidence |
+| architectural signal | pairwise semantic state can execute a 20-dimensional projection against unseen complete signatures | bounded mechanism evidence |
 | distinctive MML signal | soft intersection outperforms exact or additive controls | not observed |
 | scaling hypothesis | accuracy remains useful as meaningful realized combinations explode | not supported by this 256-signature generator |
 | application claim | MML generalizes to unseen natural-language or factual entities | not established |
