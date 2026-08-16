@@ -22,7 +22,7 @@ MML develops through a coherent triad:
 
 1. **[Semantic Representation](docs/capabilities/semantic-representation/README.md) — addressed by the current experiment:** If meaning is represented explicitly and richly enough, simple mathematics becomes semantically useful.
 2. **[Knowledge State Execution](docs/capabilities/knowledge-state-execution/README.md):** Once established knowledge is compiled into governed state, its declared consequences can be executed repeatedly without reconstructing equivalent task state at every use.
-3. **[Combinatorial Uniqueness](docs/capabilities/combinatorial-uniqueness/README.md) — implemented development evidence, not held out:** Several individually broad but sufficiently independent semantic constraints can combine into a narrow, distinctive conceptual coordinate or retrieval target.
+3. **[Combinatorial Uniqueness](docs/capabilities/combinatorial-uniqueness/README.md) — local and structurally held-out development evidence:** Several individually broad but sufficiently independent semantic constraints can combine into a narrow, distinctive conceptual coordinate or retrieval target.
 
 The canonical [MML Research Programme](docs/capabilities/README.md) defines each capability before linking its architectural proposition, controlled experiment protocol, implementation, and bounded evidence.
 
@@ -116,6 +116,7 @@ Begin with [Words Carry Weight: The Essence](docs/words-carry-weight-essence.md)
 | Essential seed | `make run` | Transition-model construction, semantic focus, and query-relative activation |
 | Knowledge Is State | `make run-knowledge-state` | Exact typed-chain execution, inspectable paths, governed correction, and preserved state |
 | Mechanism elaboration | `make run-elaborate` | Polysemy, field combination, paths, and higher-order activation |
+| Compositional generalization | `make experiment-3-4-check` | Structurally held-out higher-order signatures, six baseline treatments, leakage audit, and accuracy curves across `k=1..20` |
 | Authored application | `make run-legal` | GDPR evidence ranking as a mechanism demonstration |
 | Governed change | `make update-demo` | Local relation updates, consequences, and rollback |
 | Semantic representation benchmark | `make benchmark-check` | Whether governed identity enrichment improves semantic focus under fixed mathematics |

@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "state_id": "compositional_generalization_state_v1",
+  "title": "Pairwise animal-coordinate construction state",
+  "lifecycle": "FROZEN_DEVELOPMENT",
+  "evidence_boundary": "Synthetic structurally held-out development fixture. The split is deterministic and leakage-auditable, but generator, mechanism, and evaluation share project authorship.",
+  "coordinate_values": ["v0", "v1", "v2", "v3"],
+  "latent_radix": 4,
+  "families": [
+    {"id": "animal", "labels": ["mammal", "bird", "reptile", "amphibian"], "coefficients": [1, 0, 0, 0]},
+    {"id": "habitat", "labels": ["forest", "grassland", "wetland", "desert"], "coefficients": [0, 1, 0, 0]},
+    {"id": "diet", "labels": ["herbivore", "carnivore", "omnivore", "insectivore"], "coefficients": [0, 0, 1, 0]},
+    {"id": "size", "labels": ["small", "medium", "large", "very_large"], "coefficients": [0, 0, 0, 1]},
+    {"id": "behaviour", "labels": ["nocturnal", "diurnal", "crepuscular", "cathemeral"], "coefficients": [1, 1, 0, 0]},
+    {"id": "colour", "labels": ["brown", "grey", "black", "patterned"], "coefficients": [1, 0, 1, 0]},
+    {"id": "geography", "labels": ["africa", "eurasia", "americas", "oceania"], "coefficients": [1, 0, 0, 1]},
+    {"id": "time", "labels": ["contemporary", "ice_age", "mesozoic", "ancient"], "coefficients": [0, 1, 1, 0]},
+    {"id": "social_structure", "labels": ["solitary", "pair", "group", "colony"], "coefficients": [0, 1, 0, 1]},
+    {"id": "locomotion", "labels": ["terrestrial", "arboreal", "aquatic", "aerial"], "coefficients": [0, 0, 1, 1]},
+    {"id": "climate", "labels": ["tropical", "temperate", "arid", "polar"], "coefficients": [1, 1, 1, 0]},
+    {"id": "activity", "labels": ["ambush", "foraging", "grazing", "pursuit"], "coefficients": [1, 1, 0, 1]},
+    {"id": "reproduction", "labels": ["eggs", "live_birth", "spawning", "brooding"], "coefficients": [1, 0, 1, 1]},
+    {"id": "migration", "labels": ["sedentary", "seasonal", "nomadic", "dispersive"], "coefficients": [0, 1, 1, 1]},
+    {"id": "lifespan", "labels": ["short", "moderate", "long", "very_long"], "coefficients": [1, 1, 1, 1]},
+    {"id": "body_covering", "labels": ["fur", "feathers", "scales", "moist_skin"], "coefficients": [1, 2, 0, 0]},
+    {"id": "altitude", "labels": ["lowland", "montane", "alpine", "coastal"], "coefficients": [0, 1, 2, 0]},
+    {"id": "water_dependency", "labels": ["low", "moderate", "high", "obligate"], "coefficients": [0, 0, 1, 2]},
+    {"id": "nesting", "labels": ["burrow", "ground", "tree", "water_edge"], "coefficients": [2, 0, 0, 1]},
+    {"id": "defense", "labels": ["camouflage", "armor", "speed", "toxin"], "coefficients": [1, 2, 3, 1]}
+  ],
+  "construction_contract": {
+    "training_split": "sum(latent_digits) mod 4 != 0",
+    "stored_relation_arity": 2,
+    "stored_records": "coordinate_pair_counts_only",
+    "entity_identities_retained": false,
+    "complete_training_signatures_retained": false,
+    "complete_test_signatures_retained": false
+  }
+}

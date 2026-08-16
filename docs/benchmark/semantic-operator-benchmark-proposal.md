@@ -440,15 +440,15 @@ The identity-focused Representation version is implemented in [`benchmark.py`](.
 
 The first bounded Knowledge State Execution version is also implemented, with its report in [Knowledge State Execution Experiment v1](../capabilities/knowledge-state-execution/results/v1.md). It compares per-query deterministic reconstruction with compiled execution over one authored typed-chain fixture. Its next step is independent cases and a measured language-model baseline.
 
-Combinatorial Uniqueness is the next unimplemented systematic benchmark. Its first version should remain small and reuse the existing independent-field and soft-intersection mechanism without adding new operator complexity.
+Combinatorial Uniqueness now has four bounded development studies. Experiments 3.1–3.3 test direct intersection, governed legal qualification, and cross-level transition on co-authored fixtures. Experiment 3.4 adds a structurally held-out signature split and six treatments across `k=1..20`; execution conforms, but exact controls match MML, so the scaling claim is `NOT_SUPPORTED_BY_THIS_FIXTURE`.
 
-The first version should remain small and build directly on the current code:
+The next version should build directly on that negative comparative result:
 
-1. Freeze a small coordinate-combination suite before changing the soft-intersection implementation.
-2. Compare every single coordinate, pair, and full combination with additive and Boolean controls.
-3. Include correlated-coordinate, empty-intersection, contradictory-combination, and lexical-hard-negative cases.
-4. Measure retained candidates, specificity gain, hard-negative intrusion, and every-coordinate ablation.
-5. Add one held-out and one independently authored suite before making a scaling claim.
+1. Freeze an irregular generator with a much larger realized signature universe before changing the soft-intersection implementation.
+2. Make exact overlap and symbolic conjunction insufficient while preserving genuinely inferable lower-order structure.
+3. Add missing, noisy, redundant, unsupported, and contradictory coordinates under declared corruption policies.
+4. Retain the six-treatment comparison and add one named external embedding model with frozen version and configuration.
+5. Add an independently authored suite before making a scaling claim.
 6. Extend Representation with typed-relation and semantic-role suites, and extend Knowledge State Execution with public knowledge, only as separately reported programmes.
 
 This sequence preserves separate hypothesis attribution while expanding the mechanism:

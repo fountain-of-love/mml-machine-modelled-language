@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "probe_suite_id": "compositional_generalization_probes_v1",
+  "state_id": "compositional_generalization_state_v1",
+  "title": "Structurally held-out animal-coordinate combinations",
+  "holdout_status": "STRUCTURALLY_HELD_OUT_DEVELOPMENT",
+  "holdout_contract": {
+    "test_split": "sum(latent_digits) mod 4 == 0",
+    "exact_test_signatures_must_not_appear_in_training": true,
+    "test_entity_count": 64,
+    "query_widths": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+    "family_order": [
+      "behaviour",
+      "time",
+      "climate",
+      "body_covering",
+      "animal",
+      "activity",
+      "colour",
+      "altitude",
+      "habitat",
+      "reproduction",
+      "geography",
+      "water_dependency",
+      "diet",
+      "migration",
+      "social_structure",
+      "nesting",
+      "size",
+      "lifespan",
+      "locomotion",
+      "defense"
+    ]
+  },
+  "treatments": [
+    "flat_keyword_retrieval",
+    "embedding_centroid",
+    "vector_composition",
+    "kg_traversal",
+    "symbolic_conjunction",
+    "mml_soft_intersection"
+  ],
+  "measurement_contract": {
+    "primary_metric": "top_1_accuracy",
+    "secondary_metrics": ["tie_adjusted_accuracy", "mean_reciprocal_rank", "mean_target_rank", "mean_target_margin"],
+    "scaling_axes": ["query_dimension_count", "possible_query_combinations", "possible_full_signatures"],
+    "possible_query_combinations": "4^k",
+    "possible_full_signatures": "4^20"
+  },
+  "evidence_boundary": "The evaluation is zero-shot with respect to complete entity signatures: construction retains only pairwise coordinate counts. The split is synthetic and structurally held out, not independently authored or real-world evidence."
+}

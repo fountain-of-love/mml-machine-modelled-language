@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "compositional_generalization_v1",
+  "title": "Experiment 3.4 — Compositional Generalization",
+  "lifecycle": "FROZEN_DEVELOPMENT",
+  "artifacts": {
+    "state": {"path": "data/demonstration/compositional_generalization_state_v1.json"},
+    "probes": {"path": "data/demonstration/compositional_generalization_probes_v1.json"}
+  },
+  "evidence_boundary": "Structurally held-out synthetic development experiment; not independent confirmatory evidence."
+}

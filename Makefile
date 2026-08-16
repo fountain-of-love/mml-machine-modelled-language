@@ -1,4 +1,4 @@
-.PHONY: run run-knowledge-state experiment-3 experiment-3-1 experiment-3-2 experiment-3-3 run-elaborate run-legal trace test benchmark benchmark-check knowledge-state-benchmark knowledge-state-benchmark-check experiment-3-1-benchmark experiment-3-1-check experiment-3-2-benchmark experiment-3-2-check experiment-3-3-benchmark experiment-3-3-check retrieval-benchmark-check update-demo
+.PHONY: run run-knowledge-state experiment-3 experiment-3-1 experiment-3-2 experiment-3-3 experiment-3-4 run-elaborate run-legal trace test benchmark benchmark-check knowledge-state-benchmark knowledge-state-benchmark-check experiment-3-1-benchmark experiment-3-1-check experiment-3-2-benchmark experiment-3-2-check experiment-3-3-benchmark experiment-3-3-check experiment-3-4-benchmark experiment-3-4-check retrieval-benchmark-check update-demo
 
 PYTHON ?= python3
 
@@ -20,6 +20,9 @@ experiment-3-2:
 experiment-3-3:
 	$(PYTHON) -m experiments.combinatorial_uniqueness.run_cross_level_transition
 
+experiment-3-4:
+	$(PYTHON) -m experiments.combinatorial_uniqueness.run_compositional_generalization
+
 run-elaborate:
 	$(PYTHON) -m elaborations.mml_elaborate_corpus
 
@@ -36,6 +39,7 @@ test:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.combinatorial_uniqueness.direct_intersection_benchmark --check >/dev/null
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.combinatorial_uniqueness.governed_legal_qualification_benchmark --check >/dev/null
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.combinatorial_uniqueness.cross_level_transition_benchmark --check >/dev/null
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.combinatorial_uniqueness.compositional_generalization_benchmark --check >/dev/null
 
 benchmark:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.semantic_representation.benchmark --write
@@ -66,6 +70,12 @@ experiment-3-3-benchmark:
 
 experiment-3-3-check:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.combinatorial_uniqueness.cross_level_transition_benchmark --check
+
+experiment-3-4-benchmark:
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.combinatorial_uniqueness.compositional_generalization_benchmark --write
+
+experiment-3-4-check:
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.combinatorial_uniqueness.compositional_generalization_benchmark --check
 
 retrieval-benchmark-check:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) retrieval_benchmark.py --check
