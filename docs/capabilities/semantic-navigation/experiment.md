@@ -80,7 +80,7 @@ The seed uses oracle structured queries. Parser errors must never be attributed 
 3. **Incomplete-state diagnosis:** construction reports required semantic fields absent from governed records.
 4. **Deterministic imputation:** a missing query dimension is imputed only when every candidate shares one non-missing value.
 5. **Identification depth:** report the minimum available dimensions required to isolate every complete-signature equivalence class.
-6. **Next question:** choose the unobserved dimension with maximum partition information gain under deterministic ties.
+6. **Next question:** choose the unobserved dimension with maximum explicit partition information gain under deterministic ties, exposing prior entropy, expected posterior entropy, normalized gain, and missingness for every eligible dimension.
 7. **Commonality:** return dimensions and values shared by every member of a selected set.
 8. **Code equivalence:** governed labels and compact codes produce identical regions and navigation.
 9. **Compiled reuse:** report compilation, warm query, flat scan, per-query reconstruction, storage, and amortization separately.
@@ -135,7 +135,9 @@ MRR and target margin are not primary metrics. An equivalence class is a correct
 
 ## Scaling Protocol
 
-Execute independently frozen and reviewed datasets at 100, 250, and 500 animals. Increase real near-neighbour density while retaining the same core dimensions. Report cold and warm costs separately over reuse horizons sufficient to cross or fail the measured amortization point.
+Execute independently frozen and reviewed datasets at 100, 250, and 500 animals. Increase real near-neighbour density and expand into the governed dimension pool defined by Experiment 4.2. Report cold and warm costs separately over reuse horizons sufficient to cross or fail the measured amortization point.
+
+The completed mechanics seed uses the default all-dimensions lens. [Experiment 4.2](dimension-contribution-experiment.md) defines explicit entropy accounting, overlapping user lenses, and dimension-contribution statistics for the larger states.
 
 ## Success Criteria
 

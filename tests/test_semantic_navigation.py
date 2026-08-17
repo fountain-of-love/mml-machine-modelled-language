@@ -14,6 +14,7 @@ from src.semantic_navigation.navigation import (
     AMBIGUOUS,
     IDENTIFIABLE,
     UNSUPPORTED,
+    NavigationLens,
     SemanticNavigationFlow,
 )
 from src.semantic_representation.governed_coordinates import (
@@ -135,6 +136,28 @@ class AccumulatedCapabilityContractTests(unittest.TestCase):
 
         self.assertEqual(result.next_dimension, "activity")
         self.assertEqual(set(result.distinctions["activity"]), {"nocturnal", "diurnal", "crepuscular"})
+        information = result.partition_information["activity"]
+        self.assertEqual(information.prior_entropy_bits, 2.0)
+        self.assertEqual(information.expected_posterior_entropy_bits, 0.5)
+        self.assertEqual(information.information_gain_bits, 1.5)
+        self.assertEqual(information.normalized_information_gain, 0.75)
+
+    def test_navigation_lens_constrains_the_next_question(self):
+        result = self.flow.execute(
+            self.state,
+            {"habitat": "woodland"},
+            lens=NavigationLens("behavioral", ("activity", "sociality")),
+        )
+
+        self.assertEqual(result.lens_id, "behavioral")
+        self.assertEqual(set(result.partition_information), {"activity", "sociality"})
+        self.assertEqual(result.next_dimension, "activity")
+
+    def test_navigation_lens_rejects_unknown_dimensions(self):
+        lens = NavigationLens("invalid", ("wing_shape",))
+
+        with self.assertRaisesRegex(ValueError, "lens uses unknown dimensions"):
+            self.flow.execute(self.state, {"habitat": "woodland"}, lens=lens)
 
     def test_commonality_is_a_separate_set_query(self):
         common = self.flow.common_dimensions(

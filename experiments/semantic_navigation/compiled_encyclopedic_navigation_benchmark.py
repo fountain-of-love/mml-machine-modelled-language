@@ -142,6 +142,8 @@ def _equivalent(left, right) -> bool:
         and dict(left.deterministic_imputations) == dict(right.deterministic_imputations)
         and {key: dict(value) for key, value in left.distinctions.items()}
         == {key: dict(value) for key, value in right.distinctions.items()}
+        and dict(left.partition_information) == dict(right.partition_information)
+        and left.lens_id == right.lens_id
         and left.next_dimension == right.next_dimension
         and math.isclose(
             left.next_dimension_information_gain,
@@ -214,6 +216,11 @@ def _serialize_navigation(result) -> dict:
             dimension: {value: list(ids) for value, ids in partition.items()}
             for dimension, partition in result.distinctions.items()
         },
+        "partition_information": {
+            dimension: asdict(information)
+            for dimension, information in result.partition_information.items()
+        },
+        "lens_id": result.lens_id,
         "next_dimension": result.next_dimension,
         "next_dimension_information_gain": result.next_dimension_information_gain,
         "region_cost": asdict(cost) | {"total_operations": cost.total_operations},

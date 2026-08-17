@@ -26,7 +26,7 @@ The seed positively demonstrates one accumulated source path: governed coordinat
 | Status accuracy | 1.000 |
 | Navigation accuracy | 1.000 |
 | Semantic/code equivalence | 1.000 |
-| Query-trace digest | `sha256:fe0489c3f018930c1508dc9c88ddf26ab2e8a4f48119e69e90d5d88ae3eb4ac5` |
+| Query-trace digest | `sha256:fbcba5d8833c158c52e79e7eb1b1159a23ec461733bb838ebf35f221d0392a4e` |
 
 ## Matrix Resolution
 

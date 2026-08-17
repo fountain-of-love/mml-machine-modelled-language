@@ -1205,15 +1205,15 @@
     "semantic_representation_sha256": "sha256:00a01221e7152722d547524f57b0dce942637d46e2811560219498ba9cc85e34",
     "knowledge_state_execution_sha256": "sha256:8a54d591fa9a303004407be134866ab616c74856f14a46cf04a2e2306d6e520a",
     "combinatorial_uniqueness_sha256": "sha256:80a7d9f0980ebd685a45968ff6d755ee56be5bd2b86a4cada3baa4a4f6c18be4",
-    "semantic_navigation_sha256": "sha256:c669f2dcc47ee65cc04b189fbb03e804dae2f2932711627792f257282313f212",
-    "experiment_sha256": "sha256:0966aee02f1ae7fabeec404164d7d486d45d15e4b24266da61bdeb0ab9908736",
-    "study_sha256": "sha256:2ac9a98b18d1852e2f3275360fd27554e5526ce751dfc110a50f1a13f3cf825c"
+    "semantic_navigation_sha256": "sha256:34f47c0f65dfbe9f707ba6fc6cd2b42412c78196343354ca8185e49efb1230c0",
+    "experiment_sha256": "sha256:81f81d2102480993ae1d8e78725a366a33553d12d06f09c8b4ca0d290b176ebe",
+    "study_sha256": "sha256:b8fd248e303f36ccc058a2c6554b097116c53306ec0bc78affd38d45483642a6"
   },
   "interpretation": "The seed positively demonstrates one accumulated source path: governed coordinate representation, persistent incidence compilation, exact candidate-region composition, and explicit semantic navigation. Accuracy parity with correct exact controls is required.",
   "evidence_boundary": "This is a mechanics result over prompt-provided animal attributes and deterministic operation counts. It is not the independently sourced 100/250/500-animal study, a wall-clock claim, natural-language understanding, relational inference, or independent validation of the three upstream programmes.",
   "query_evidence": {
     "query_count": 320,
-    "trace_sha256": "sha256:fe0489c3f018930c1508dc9c88ddf26ab2e8a4f48119e69e90d5d88ae3eb4ac5",
+    "trace_sha256": "sha256:fbcba5d8833c158c52e79e7eb1b1159a23ec461733bb838ebf35f221d0392a4e",
     "condition_summaries": {
       "complete": {
         "query_count": 48,

@@ -30,6 +30,35 @@ IDENTIFIABLE = "IDENTIFIABLE"
 AMBIGUOUS = "AMBIGUOUS"
 UNSUPPORTED = "UNSUPPORTED"
 UNKNOWN_VALUE = "UNKNOWN"
+ALL_DIMENSIONS_LENS = "all_dimensions"
+
+
+@dataclass(frozen=True)
+class NavigationLens:
+    """A governed subset of dimensions eligible for navigation questions."""
+
+    id: str
+    dimensions: tuple[str, ...]
+
+    def __post_init__(self) -> None:
+        if not self.id:
+            raise ValueError("a navigation lens requires a non-empty ID")
+        if not self.dimensions or len(self.dimensions) != len(set(self.dimensions)):
+            raise ValueError("navigation lens dimensions must be non-empty and unique")
+
+
+@dataclass(frozen=True)
+class PartitionInformation:
+    """Information contributed by one dimension over the current candidate region."""
+
+    dimension: str
+    candidate_count: int
+    value_count: int
+    prior_entropy_bits: float
+    expected_posterior_entropy_bits: float
+    information_gain_bits: float
+    normalized_information_gain: float
+    missing_candidate_count: int
 
 
 @dataclass(frozen=True)
@@ -49,6 +78,8 @@ class NavigationResult:
     commonality: Mapping[str, str]
     deterministic_imputations: Mapping[str, str]
     distinctions: Mapping[str, Mapping[str, tuple[str, ...]]]
+    partition_information: Mapping[str, PartitionInformation]
+    lens_id: str
     next_dimension: str | None
     next_dimension_information_gain: float
     region: CandidateRegion
@@ -82,14 +113,29 @@ def _status(candidate_count: int) -> str:
     return AMBIGUOUS
 
 
-def _information_gain(partition: Mapping[str, Sequence[str]]) -> float:
+def _partition_information(
+    dimension: str,
+    partition: Mapping[str, Sequence[str]],
+) -> PartitionInformation:
     total = sum(len(ids) for ids in partition.values())
-    if total <= 1:
-        return 0.0
-    return -sum(
-        (len(ids) / total) * math.log2(len(ids) / total)
+    prior_entropy = math.log2(total) if total > 1 else 0.0
+    expected_posterior = sum(
+        (len(ids) / total) * math.log2(len(ids))
         for ids in partition.values()
-        if ids
+        if total and ids
+    )
+    information_gain = max(0.0, prior_entropy - expected_posterior)
+    return PartitionInformation(
+        dimension=dimension,
+        candidate_count=total,
+        value_count=sum(bool(ids) for ids in partition.values()),
+        prior_entropy_bits=prior_entropy,
+        expected_posterior_entropy_bits=expected_posterior,
+        information_gain_bits=information_gain,
+        normalized_information_gain=(
+            information_gain / prior_entropy if prior_entropy else 0.0
+        ),
+        missing_candidate_count=len(partition.get(UNKNOWN_VALUE, ())),
     )
 
 
@@ -109,19 +155,32 @@ class SemanticNavigationFlow:
         self,
         state: SemanticNavigationState,
         observed: Mapping[str, str],
+        lens: NavigationLens | None = None,
     ) -> NavigationResult:
-        return self.execute_codes(state, encode_query(state.basis, observed))
+        return self.execute_codes(
+            state,
+            encode_query(state.basis, observed),
+            lens=lens,
+        )
 
     def execute_codes(
         self,
         state: SemanticNavigationState,
         query: CodedSemanticQuery,
+        lens: NavigationLens | None = None,
     ) -> NavigationResult:
         decoded = decode_query(state.basis, query)
+        eligible_dimensions = self._eligible_dimensions(state, lens)
         region = compose_candidate_region(
             state.knowledge_state, query.coordinate_codes
         )
-        return self._navigate(state, region, tuple(decoded))
+        return self._navigate(
+            state,
+            region,
+            tuple(decoded),
+            eligible_dimensions,
+            ALL_DIMENSIONS_LENS if lens is None else lens.id,
+        )
 
     def common_dimensions(
         self,
@@ -177,10 +236,12 @@ class SemanticNavigationFlow:
         state: SemanticNavigationState,
         region: CandidateRegion,
         observed_dimensions: Sequence[str],
+        eligible_dimensions: Sequence[str],
+        lens_id: str,
     ) -> NavigationResult:
         missing = tuple(
             dimension
-            for dimension in state.basis.dimensions
+            for dimension in eligible_dimensions
             if dimension not in observed_dimensions
         )
         distinctions = self._partitions(state, region.entity_positions, missing)
@@ -189,10 +250,14 @@ class SemanticNavigationFlow:
             for dimension, partition in distinctions.items()
             if len(partition) == 1 and UNKNOWN_VALUE not in partition
         }
-        gains = {
-            dimension: _information_gain(partition)
+        partition_information = {
+            dimension: _partition_information(dimension, partition)
             for dimension, partition in distinctions.items()
-            if len(partition) > 1
+        }
+        gains = {
+            dimension: information.information_gain_bits
+            for dimension, information in partition_information.items()
+            if information.information_gain_bits > 0.0
         }
         next_dimension = max(
             gains,
@@ -204,12 +269,26 @@ class SemanticNavigationFlow:
             commonality=_freeze(self._commonality(state, region.entity_positions)),
             deterministic_imputations=_freeze(imputations),
             distinctions=_freeze_nested(distinctions),
+            partition_information=_freeze(partition_information),
+            lens_id=lens_id,
             next_dimension=next_dimension,
             next_dimension_information_gain=(
                 0.0 if next_dimension is None else gains[next_dimension]
             ),
             region=region,
         )
+
+    def _eligible_dimensions(
+        self,
+        state: SemanticNavigationState,
+        lens: NavigationLens | None,
+    ) -> tuple[str, ...]:
+        if lens is None:
+            return state.basis.dimensions
+        unknown = sorted(set(lens.dimensions) - set(state.basis.dimensions))
+        if unknown:
+            raise ValueError(f"lens uses unknown dimensions: {', '.join(unknown)}")
+        return lens.dimensions
 
     def _commonality(
         self,

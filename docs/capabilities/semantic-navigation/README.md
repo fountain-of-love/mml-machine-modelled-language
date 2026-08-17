@@ -69,6 +69,8 @@ Semantic Navigation defines:
 - deterministic imputation only where all candidates agree;
 - minimum dimension sets required to isolate each complete-signature equivalence class;
 - information-gain selection of the next distinguishing dimension;
+- explicit prior entropy, expected posterior entropy, information gain, normalized gain, and missingness for every eligible dimension;
+- overlapping governed lenses that constrain the eligible next questions without creating separate knowledge states;
 - commonality queries over selected candidate sets;
 - behaviorally equivalent label and compact-code execution;
 - inspectable contribution and snapshot identities from all upstream capabilities; and
@@ -80,6 +82,10 @@ It does not define natural-language understanding or infer facts absent from gov
 
 [Experiment 4.1](results/compiled-encyclopedic-navigation-v1.md) is a prompt-provided 60-animal mechanics seed. It exercises the accumulated source path and reports exact retrieval, navigation correctness, code equivalence, incomplete-record diagnostics, equivalence-class resolution, and deterministic operation scaling.
 
+The [layered Canidae source-backed seeds](animal-encyclopedic-navigation-seed.md) begin the data-governance path for Experiment 4.2 with a shared 12-species registry, a 13-dimension ecology-behavior field, and a separate six-dimension zoological-detail field. Claim provenance and unsupported cells remain explicit, while detailed measurements cannot shape the foundational navigation result.
+
+The [Canidae dimension and measurement review](results/canidae-dimension-review-v0-2.md) reports ecology-behavior information contribution separately from the optional PanTHERIA body-length review.
+
 ## Evidence Boundary
 
 The current fixture is not independently sourced zoological evidence. Programme 4 does not establish the quality of its canonical animal annotations, production performance, natural-language translation, relational inference, or independent generalization. The planned 100/250/500-animal study must source, review, govern, and freeze its records before evaluation.
@@ -87,5 +93,7 @@ The current fixture is not independently sourced zoological evidence. Programme 
 ## Research Layers And Next Step
 
 - **Experiment blueprint:** [Experiment 4.1 - Compiled Encyclopedic Navigation](experiment.md)
-- **Current seed evidence:** [Compiled Encyclopedic Navigation v1](results/compiled-encyclopedic-navigation-v1.md)
-- **Next step:** independently source and freeze the 100-, 250-, and 500-animal states, then measure wall-clock and memory scaling alongside deterministic operation counts.
+- **Dimension study blueprint:** [Experiment 4.2 - Lens-Aware Dimension Contribution](dimension-contribution-experiment.md)
+- **Mechanics evidence:** [Compiled Encyclopedic Navigation v1](results/compiled-encyclopedic-navigation-v1.md)
+- **Dimension contribution evidence:** [Layered Canidae review](results/canidae-dimension-review-v0-2.md)
+- **Next step:** widen the ecology-behavior registry and seed, freeze the 100-, 250-, and 500-species states, then measure dimension contribution, lens behavior, wall-clock, memory, and deterministic operation scaling. Domain-detail seeds evolve independently.

@@ -1,0 +1,1803 @@
+{
+  "schema_version": "1.0",
+  "state_id": "canidae_zoological_detail_seed_v0_1",
+  "title": "Canidae zoological detail navigation seed",
+  "lifecycle": "DEVELOPMENT_PARTIAL_SOURCE_BACKED",
+  "purpose": "Optional vertical drill-down for morphology, physiology, reproduction, and care; excluded from the default ecology-behavior experiment.",
+  "species_registry_state_id": "species_registry_canidae_v0_1",
+  "scope": {
+    "domain": "Mammalia / Carnivora / Canidae",
+    "record_count": 12,
+    "possible_dimension_cells": 72
+  },
+  "evidence_boundary": "Only populated dimension claims are admitted. Every populated claim names its source and locator. Unresolved or unsupported dimensions are explicit empty arrays; empty cells are not negative assertions.",
+  "dimensions": [
+    "body_mass_band",
+    "body_length_band",
+    "body_covering",
+    "thermoregulation",
+    "reproductive_mode",
+    "parental_care"
+  ],
+  "semantic_hierarchy": [
+    {
+      "id": "zoological_detail",
+      "label": "Zoological detail",
+      "children": [
+        {
+          "id": "morphology",
+          "label": "Morphology",
+          "dimensions": [
+            "body_mass_band",
+            "body_length_band",
+            "body_covering"
+          ]
+        },
+        {
+          "id": "physiology",
+          "label": "Physiology",
+          "dimensions": [
+            "thermoregulation"
+          ]
+        },
+        {
+          "id": "reproduction_and_care",
+          "label": "Reproduction and care",
+          "dimensions": [
+            "reproductive_mode",
+            "parental_care"
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "eltontraits_1_0_mammals": {
+      "title": "EltonTraits 1.0: Species-level foraging attributes of the world's birds and mammals",
+      "paper_doi": "10.1890/13-1917.1",
+      "dataset_doi": "10.6084/m9.figshare.c.3306933.v1",
+      "catalogue_url": "https://opentraits.org/datasets/elton-traits.html",
+      "download_url": "https://figshare.com/ndownloader/files/5631084",
+      "artifact": "EltonTraits_Mammals.txt",
+      "artifact_sha256": "51acbe6215b3c1f742463ff3fb37ef607150c052e0f7a9dc0d97fcaca61d3f76",
+      "license": "CC BY 4.0",
+      "accessed_on": "2026-08-16",
+      "use": "diet composition, activity flags, and body mass"
+    },
+    "animal_diversity_web_species_accounts": {
+      "title": "Animal Diversity Web species accounts",
+      "publisher": "University of Michigan Museum of Zoology",
+      "url": "https://animaldiversity.org/",
+      "accessed_on": "2026-08-16",
+      "use": "structured habitat, behavior, reproduction, parental investment, thermoregulation, and body-length observations",
+      "evidence_note": "Account age and completeness vary by species; source absences are not interpreted as biological absences."
+    },
+    "pantheria_1_0_msw05": {
+      "title": "PanTHERIA 1.0: species-level mammal life history, ecology, and geography",
+      "citation": "Jones et al. 2009, Ecology 90:2648",
+      "dataset_url": "https://www.esapubs.org/archive/ecol/E090/184/PanTHERIA_1-0_WR05_Aug2008.txt",
+      "metadata_url": "https://www.esapubs.org/archive/ecol/E090/184/metadata.htm",
+      "artifact": "PanTHERIA_1-0_WR05_Aug2008.txt",
+      "artifact_sha256": "36e64314cae0394a966a63b949504d1975ac5c5629e05e36c1b139b3348f044a",
+      "accessed_on": "2026-08-17",
+      "use": "canonical adult head-body length cross-check and harmonization",
+      "variable_definition": "13-1_AdultHeadBodyLen_mm: total length from tip of nose to anus or base of tail; consolidated to a sex-unspecified unique median."
+    }
+  },
+  "mapping_rules": {
+    "body_mass_log_band_v1": {
+      "input": "EltonTraits BodyMass-Value in grams",
+      "method": "Use left-closed bands: under 100 g; 100 g to 1 kg; 1 to 10 kg; 10 to 100 kg; 100 to 1000 kg; over 1000 kg.",
+      "provenance_boundary": "Repository-authored deterministic projection over sourced body mass."
+    },
+    "adw_controlled_keyword_normalization_v1": {
+      "input": "Animal Diversity Web controlled keyword",
+      "method": "Lowercase and convert separators to a stable snake-case value without adding biological meaning.",
+      "provenance_boundary": "Repository-authored lexical normalization over a sourced controlled keyword."
+    },
+    "adw_reproduction_and_care_projection_v1": {
+      "input": "Animal Diversity Web Mating System, Key Reproductive Features, and Parental Investment keywords",
+      "method": "Place reproductive keywords in reproductive mode and cooperative breeding, explicit parental care, post-independence association, and extended learning in parental care.",
+      "provenance_boundary": "Repository-authored semantic placement of sourced controlled keywords."
+    },
+    "pantheria_adult_head_body_length_band_v1": {
+      "input": "PanTHERIA 13-1_AdultHeadBodyLen_mm",
+      "method": "Classify the canonical adult head-body length into under 50 cm, 50 to 75 cm, 75 to 100 cm, or over 100 cm.",
+      "provenance_boundary": "Repository-authored deterministic band over an independently defined and consolidated head-body measurement."
+    }
+  },
+  "records": [
+    {
+      "species_id": "canis_lupus",
+      "dimensions": {
+        "body_mass_band": [
+          {
+            "value": "10_to_100_kg",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Canis lupus:BodyMass-Value",
+            "evidence_type": "derived",
+            "mapping_rule_id": "body_mass_log_band_v1"
+          }
+        ],
+        "body_length_band": [
+          {
+            "value": "over_100_cm",
+            "source_id": "pantheria_1_0_msw05",
+            "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Canis lupus:13-1_AdultHeadBodyLen_mm",
+            "evidence_type": "derived",
+            "mapping_rule_id": "pantheria_adult_head_body_length_band_v1"
+          }
+        ],
+        "body_covering": [],
+        "thermoregulation": [
+          {
+            "value": "endothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "homoiothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "reproductive_mode": [
+          {
+            "value": "iteroparous",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "seasonal_breeding",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "sexual",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "viviparous",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ],
+        "parental_care": [
+          {
+            "value": "cooperative_breeding",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "post_independence_association",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "extended_juvenile_learning",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ]
+      },
+      "source_observations": {
+        "eltontraits_1_0_mammals": {
+          "body_mass_g": 32183.33,
+          "body_mass_source_reference": "Ref_117",
+          "body_mass_species_level": 1
+        },
+        "animal_diversity_web_species_account": {
+          "account_url": "https://animaldiversity.org/accounts/Canis_lupus/",
+          "accessed_on": "2026-08-16",
+          "mating_system": [
+            "monogamous",
+            "cooperative breeder"
+          ],
+          "key_reproductive_features": [
+            "iteroparous",
+            "seasonal breeding",
+            "sexual",
+            "viviparous"
+          ],
+          "parental_investment": [
+            "altricial",
+            "pre-fertilization",
+            "pre-hatching/birth",
+            "pre-weaning/fledging",
+            "pre-independence",
+            "post-independence association with parents",
+            "extended period of juvenile learning"
+          ],
+          "other_physical_features": [
+            "endothermic",
+            "homoiothermic",
+            "bilateral symmetry"
+          ],
+          "body_length_range": {
+            "minimum_mm": 870,
+            "maximum_mm": 1300,
+            "source_text": "870 to 1300 mm"
+          }
+        },
+        "pantheria_1_0_msw05": {
+          "adult_head_body_length_mm": 1055,
+          "variable": "13-1_AdultHeadBodyLen_mm",
+          "source_references": "367;542;543;730;1015;1052;1113;1297;1573;1594;2338;2655",
+          "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Canis lupus:13-1_AdultHeadBodyLen_mm"
+        }
+      },
+      "measurement_review": {
+        "body_length": {
+          "status": "INDEPENDENT_SOURCE_CROSS_CHECK_COMPLETE_HUMAN_REVIEW_PENDING",
+          "canonical_measurement": "adult_head_body_length_mm",
+          "canonical_definition": "tip of nose to anus or base of tail",
+          "canonical_source_id": "pantheria_1_0_msw05",
+          "adw_treatment": "contextual_noncanonical_range",
+          "comparison": {
+            "adw_range_midpoint_mm": 1085,
+            "pantheria_head_body_length_mm": 1055,
+            "relative_difference": 0.028436,
+            "outcome": "CONSISTENT_WITHIN_20_PERCENT"
+          }
+        }
+      }
+    },
+    {
+      "species_id": "canis_latrans",
+      "dimensions": {
+        "body_mass_band": [
+          {
+            "value": "10_to_100_kg",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Canis latrans:BodyMass-Value",
+            "evidence_type": "derived",
+            "mapping_rule_id": "body_mass_log_band_v1"
+          }
+        ],
+        "body_length_band": [
+          {
+            "value": "75_to_100_cm",
+            "source_id": "pantheria_1_0_msw05",
+            "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Canis latrans:13-1_AdultHeadBodyLen_mm",
+            "evidence_type": "derived",
+            "mapping_rule_id": "pantheria_adult_head_body_length_band_v1"
+          }
+        ],
+        "body_covering": [],
+        "thermoregulation": [
+          {
+            "value": "endothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "homoiothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "reproductive_mode": [
+          {
+            "value": "iteroparous",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "seasonal_breeding",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "sexual",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "viviparous",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ],
+        "parental_care": [
+          {
+            "value": "post_independence_association",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "extended_juvenile_learning",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ]
+      },
+      "source_observations": {
+        "eltontraits_1_0_mammals": {
+          "body_mass_g": 13406.33,
+          "body_mass_source_reference": "Ref_117",
+          "body_mass_species_level": 1
+        },
+        "animal_diversity_web_species_account": {
+          "account_url": "https://animaldiversity.org/accounts/Canis_latrans/",
+          "accessed_on": "2026-08-16",
+          "mating_system": [
+            "monogamous"
+          ],
+          "key_reproductive_features": [
+            "iteroparous",
+            "seasonal breeding",
+            "sexual",
+            "viviparous"
+          ],
+          "parental_investment": [
+            "altricial",
+            "pre-fertilization",
+            "pre-hatching/birth",
+            "pre-weaning/fledging",
+            "pre-independence",
+            "post-independence association with parents",
+            "extended period of juvenile learning"
+          ],
+          "other_physical_features": [
+            "endothermic",
+            "homoiothermic",
+            "bilateral symmetry"
+          ],
+          "body_length_range": {
+            "minimum_mm": 750,
+            "maximum_mm": 1000,
+            "source_text": "75 to 100 cm"
+          }
+        },
+        "pantheria_1_0_msw05": {
+          "adult_head_body_length_mm": 872.39,
+          "variable": "13-1_AdultHeadBodyLen_mm",
+          "source_references": "367;542;543;730;1113;1297;1573;1822;2655",
+          "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Canis latrans:13-1_AdultHeadBodyLen_mm"
+        }
+      },
+      "measurement_review": {
+        "body_length": {
+          "status": "INDEPENDENT_SOURCE_CROSS_CHECK_COMPLETE_HUMAN_REVIEW_PENDING",
+          "canonical_measurement": "adult_head_body_length_mm",
+          "canonical_definition": "tip of nose to anus or base of tail",
+          "canonical_source_id": "pantheria_1_0_msw05",
+          "adw_treatment": "contextual_noncanonical_range",
+          "comparison": {
+            "adw_range_midpoint_mm": 875,
+            "pantheria_head_body_length_mm": 872.39,
+            "relative_difference": 0.002992,
+            "outcome": "CONSISTENT_WITHIN_20_PERCENT"
+          }
+        }
+      }
+    },
+    {
+      "species_id": "canis_aureus",
+      "dimensions": {
+        "body_mass_band": [
+          {
+            "value": "10_to_100_kg",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Canis aureus:BodyMass-Value",
+            "evidence_type": "derived",
+            "mapping_rule_id": "body_mass_log_band_v1"
+          }
+        ],
+        "body_length_band": [
+          {
+            "value": "75_to_100_cm",
+            "source_id": "pantheria_1_0_msw05",
+            "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Canis aureus:13-1_AdultHeadBodyLen_mm",
+            "evidence_type": "derived",
+            "mapping_rule_id": "pantheria_adult_head_body_length_band_v1"
+          }
+        ],
+        "body_covering": [],
+        "thermoregulation": [
+          {
+            "value": "endothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_aureus/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "reproductive_mode": [
+          {
+            "value": "sexual",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_aureus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ],
+        "parental_care": [
+          {
+            "value": "cooperative_breeding",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_aureus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "post_independence_association",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_aureus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "extended_juvenile_learning",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_aureus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ]
+      },
+      "source_observations": {
+        "eltontraits_1_0_mammals": {
+          "body_mass_g": 10345.23,
+          "body_mass_source_reference": "Ref_117",
+          "body_mass_species_level": 1
+        },
+        "animal_diversity_web_species_account": {
+          "account_url": "https://animaldiversity.org/accounts/Canis_aureus/",
+          "accessed_on": "2026-08-16",
+          "mating_system": [
+            "monogamous",
+            "cooperative breeder"
+          ],
+          "key_reproductive_features": [
+            "sexual"
+          ],
+          "parental_investment": [
+            "altricial",
+            "post-independence association with parents",
+            "extended period of juvenile learning"
+          ],
+          "other_physical_features": [
+            "endothermic",
+            "bilateral symmetry"
+          ],
+          "body_length_range": {
+            "minimum_mm": 700,
+            "maximum_mm": 850,
+            "source_text": "70 to 85 cm"
+          }
+        },
+        "pantheria_1_0_msw05": {
+          "adult_head_body_length_mm": 827.53,
+          "variable": "13-1_AdultHeadBodyLen_mm",
+          "source_references": "543;679;730;1113;1297;1573;2655",
+          "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Canis aureus:13-1_AdultHeadBodyLen_mm"
+        }
+      },
+      "measurement_review": {
+        "body_length": {
+          "status": "INDEPENDENT_SOURCE_CROSS_CHECK_COMPLETE_HUMAN_REVIEW_PENDING",
+          "canonical_measurement": "adult_head_body_length_mm",
+          "canonical_definition": "tip of nose to anus or base of tail",
+          "canonical_source_id": "pantheria_1_0_msw05",
+          "adw_treatment": "contextual_noncanonical_range",
+          "comparison": {
+            "adw_range_midpoint_mm": 775,
+            "pantheria_head_body_length_mm": 827.53,
+            "relative_difference": 0.063478,
+            "outcome": "CONSISTENT_WITHIN_20_PERCENT"
+          }
+        }
+      }
+    },
+    {
+      "species_id": "canis_simensis",
+      "dimensions": {
+        "body_mass_band": [
+          {
+            "value": "10_to_100_kg",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Canis simensis:BodyMass-Value",
+            "evidence_type": "derived",
+            "mapping_rule_id": "body_mass_log_band_v1"
+          }
+        ],
+        "body_length_band": [
+          {
+            "value": "75_to_100_cm",
+            "source_id": "pantheria_1_0_msw05",
+            "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Canis simensis:13-1_AdultHeadBodyLen_mm",
+            "evidence_type": "derived",
+            "mapping_rule_id": "pantheria_adult_head_body_length_band_v1"
+          }
+        ],
+        "body_covering": [],
+        "thermoregulation": [
+          {
+            "value": "endothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_simensis/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "homoiothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_simensis/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "reproductive_mode": [
+          {
+            "value": "sexual",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_simensis/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ],
+        "parental_care": [
+          {
+            "value": "cooperative_breeding",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_simensis/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "post_independence_association",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_simensis/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "extended_juvenile_learning",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_simensis/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ]
+      },
+      "source_observations": {
+        "eltontraits_1_0_mammals": {
+          "body_mass_g": 10000,
+          "body_mass_source_reference": "Ref_117",
+          "body_mass_species_level": 1
+        },
+        "animal_diversity_web_species_account": {
+          "account_url": "https://animaldiversity.org/accounts/Canis_simensis/",
+          "accessed_on": "2026-08-16",
+          "mating_system": [
+            "monogamous",
+            "cooperative breeder"
+          ],
+          "key_reproductive_features": [
+            "sexual"
+          ],
+          "parental_investment": [
+            "altricial",
+            "post-independence association with parents",
+            "extended period of juvenile learning"
+          ],
+          "other_physical_features": [
+            "endothermic",
+            "homoiothermic",
+            "bilateral symmetry"
+          ],
+          "body_length_range": {
+            "minimum_mm": 841,
+            "maximum_mm": 1012,
+            "source_text": "841 to 1012 mm"
+          }
+        },
+        "pantheria_1_0_msw05": {
+          "adult_head_body_length_mm": 938.19,
+          "variable": "13-1_AdultHeadBodyLen_mm",
+          "source_references": "542;730;1113;1573;2655",
+          "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Canis simensis:13-1_AdultHeadBodyLen_mm"
+        }
+      },
+      "measurement_review": {
+        "body_length": {
+          "status": "INDEPENDENT_SOURCE_CROSS_CHECK_COMPLETE_HUMAN_REVIEW_PENDING",
+          "canonical_measurement": "adult_head_body_length_mm",
+          "canonical_definition": "tip of nose to anus or base of tail",
+          "canonical_source_id": "pantheria_1_0_msw05",
+          "adw_treatment": "contextual_noncanonical_range",
+          "comparison": {
+            "adw_range_midpoint_mm": 926.5,
+            "pantheria_head_body_length_mm": 938.19,
+            "relative_difference": 0.01246,
+            "outcome": "CONSISTENT_WITHIN_20_PERCENT"
+          }
+        }
+      }
+    },
+    {
+      "species_id": "lycaon_pictus",
+      "dimensions": {
+        "body_mass_band": [
+          {
+            "value": "10_to_100_kg",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Lycaon pictus:BodyMass-Value",
+            "evidence_type": "derived",
+            "mapping_rule_id": "body_mass_log_band_v1"
+          }
+        ],
+        "body_length_band": [
+          {
+            "value": "75_to_100_cm",
+            "source_id": "pantheria_1_0_msw05",
+            "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Lycaon pictus:13-1_AdultHeadBodyLen_mm",
+            "evidence_type": "derived",
+            "mapping_rule_id": "pantheria_adult_head_body_length_band_v1"
+          }
+        ],
+        "body_covering": [],
+        "thermoregulation": [
+          {
+            "value": "endothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "homoiothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "reproductive_mode": [
+          {
+            "value": "iteroparous",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "seasonal_breeding",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "sexual",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "viviparous",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ],
+        "parental_care": [
+          {
+            "value": "cooperative_breeding",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "post_independence_association",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "extended_juvenile_learning",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ]
+      },
+      "source_observations": {
+        "eltontraits_1_0_mammals": {
+          "body_mass_g": 22050.07,
+          "body_mass_source_reference": "Ref_117",
+          "body_mass_species_level": 1
+        },
+        "animal_diversity_web_species_account": {
+          "account_url": "https://animaldiversity.org/accounts/Lycaon_pictus/",
+          "accessed_on": "2026-08-16",
+          "mating_system": [
+            "monogamous",
+            "cooperative breeder"
+          ],
+          "key_reproductive_features": [
+            "iteroparous",
+            "seasonal breeding",
+            "sexual",
+            "viviparous"
+          ],
+          "parental_investment": [
+            "altricial",
+            "post-independence association with parents",
+            "extended period of juvenile learning"
+          ],
+          "other_physical_features": [
+            "endothermic",
+            "homoiothermic",
+            "bilateral symmetry"
+          ],
+          "body_length_range": {
+            "minimum_mm": 750,
+            "maximum_mm": 1100,
+            "source_text": "75 to 110 cm"
+          }
+        },
+        "pantheria_1_0_msw05": {
+          "adult_head_body_length_mm": 923.86,
+          "variable": "13-1_AdultHeadBodyLen_mm",
+          "source_references": "367;542;543;730;1113;1297;1573;1822;2655",
+          "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Lycaon pictus:13-1_AdultHeadBodyLen_mm"
+        }
+      },
+      "measurement_review": {
+        "body_length": {
+          "status": "INDEPENDENT_SOURCE_CROSS_CHECK_COMPLETE_HUMAN_REVIEW_PENDING",
+          "canonical_measurement": "adult_head_body_length_mm",
+          "canonical_definition": "tip of nose to anus or base of tail",
+          "canonical_source_id": "pantheria_1_0_msw05",
+          "adw_treatment": "contextual_noncanonical_range",
+          "comparison": {
+            "adw_range_midpoint_mm": 925,
+            "pantheria_head_body_length_mm": 923.86,
+            "relative_difference": 0.001234,
+            "outcome": "CONSISTENT_WITHIN_20_PERCENT"
+          }
+        }
+      }
+    },
+    {
+      "species_id": "cuon_alpinus",
+      "dimensions": {
+        "body_mass_band": [
+          {
+            "value": "10_to_100_kg",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Cuon alpinus:BodyMass-Value",
+            "evidence_type": "derived",
+            "mapping_rule_id": "body_mass_log_band_v1"
+          }
+        ],
+        "body_length_band": [
+          {
+            "value": "75_to_100_cm",
+            "source_id": "pantheria_1_0_msw05",
+            "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Cuon alpinus:13-1_AdultHeadBodyLen_mm",
+            "evidence_type": "derived",
+            "mapping_rule_id": "pantheria_adult_head_body_length_band_v1"
+          }
+        ],
+        "body_covering": [],
+        "thermoregulation": [
+          {
+            "value": "endothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Cuon_alpinus/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "reproductive_mode": [
+          {
+            "value": "sexual",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Cuon_alpinus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ],
+        "parental_care": [
+          {
+            "value": "cooperative_breeding",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Cuon_alpinus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "post_independence_association",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Cuon_alpinus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "extended_juvenile_learning",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Cuon_alpinus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ]
+      },
+      "source_observations": {
+        "eltontraits_1_0_mammals": {
+          "body_mass_g": 14173.33,
+          "body_mass_source_reference": "Ref_117",
+          "body_mass_species_level": 1
+        },
+        "animal_diversity_web_species_account": {
+          "account_url": "https://animaldiversity.org/accounts/Cuon_alpinus/",
+          "accessed_on": "2026-08-16",
+          "mating_system": [
+            "monogamous",
+            "cooperative breeder"
+          ],
+          "key_reproductive_features": [
+            "sexual"
+          ],
+          "parental_investment": [
+            "altricial",
+            "post-independence association with parents",
+            "extended period of juvenile learning"
+          ],
+          "other_physical_features": [
+            "endothermic",
+            "bilateral symmetry"
+          ],
+          "body_length_range": null
+        },
+        "pantheria_1_0_msw05": {
+          "adult_head_body_length_mm": 987.74,
+          "variable": "13-1_AdultHeadBodyLen_mm",
+          "source_references": "542;543;679;730;1113;1297;1573;2655",
+          "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Cuon alpinus:13-1_AdultHeadBodyLen_mm"
+        }
+      },
+      "measurement_review": {
+        "body_length": {
+          "status": "INDEPENDENT_SOURCE_CROSS_CHECK_COMPLETE_HUMAN_REVIEW_PENDING",
+          "canonical_measurement": "adult_head_body_length_mm",
+          "canonical_definition": "tip of nose to anus or base of tail",
+          "canonical_source_id": "pantheria_1_0_msw05",
+          "adw_treatment": "contextual_noncanonical_range",
+          "comparison": {
+            "outcome": "NO_ADW_RANGE_AVAILABLE",
+            "pantheria_head_body_length_mm": 987.74
+          }
+        }
+      }
+    },
+    {
+      "species_id": "vulpes_vulpes",
+      "dimensions": {
+        "body_mass_band": [
+          {
+            "value": "1_to_10_kg",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Vulpes vulpes:BodyMass-Value",
+            "evidence_type": "derived",
+            "mapping_rule_id": "body_mass_log_band_v1"
+          }
+        ],
+        "body_length_band": [
+          {
+            "value": "50_to_75_cm",
+            "source_id": "pantheria_1_0_msw05",
+            "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Vulpes vulpes:13-1_AdultHeadBodyLen_mm",
+            "evidence_type": "derived",
+            "mapping_rule_id": "pantheria_adult_head_body_length_band_v1"
+          }
+        ],
+        "body_covering": [],
+        "thermoregulation": [
+          {
+            "value": "endothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "homoiothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "reproductive_mode": [
+          {
+            "value": "iteroparous",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "seasonal_breeding",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "sexual",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "viviparous",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ],
+        "parental_care": [
+          {
+            "value": "cooperative_breeding",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "post_independence_association",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "extended_juvenile_learning",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ]
+      },
+      "source_observations": {
+        "eltontraits_1_0_mammals": {
+          "body_mass_g": 5476.17,
+          "body_mass_source_reference": "Ref_117",
+          "body_mass_species_level": 1
+        },
+        "animal_diversity_web_species_account": {
+          "account_url": "https://animaldiversity.org/accounts/Vulpes_vulpes/",
+          "accessed_on": "2026-08-16",
+          "mating_system": [
+            "monogamous",
+            "polygynous",
+            "cooperative breeder"
+          ],
+          "key_reproductive_features": [
+            "iteroparous",
+            "seasonal breeding",
+            "sexual",
+            "viviparous"
+          ],
+          "parental_investment": [
+            "altricial",
+            "pre-fertilization",
+            "pre-hatching/birth",
+            "pre-weaning/fledging",
+            "pre-independence",
+            "post-independence association with parents",
+            "extended period of juvenile learning"
+          ],
+          "other_physical_features": [
+            "endothermic",
+            "homoiothermic",
+            "bilateral symmetry"
+          ],
+          "body_length_range": {
+            "minimum_mm": 455,
+            "maximum_mm": 900,
+            "source_text": "455 to 900 mm"
+          }
+        },
+        "pantheria_1_0_msw05": {
+          "adult_head_body_length_mm": 627.12,
+          "variable": "13-1_AdultHeadBodyLen_mm",
+          "source_references": "367;542;543;730;1113;1297;1573;1577;1594;2338;2655",
+          "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Vulpes vulpes:13-1_AdultHeadBodyLen_mm"
+        }
+      },
+      "measurement_review": {
+        "body_length": {
+          "status": "INDEPENDENT_SOURCE_CROSS_CHECK_COMPLETE_HUMAN_REVIEW_PENDING",
+          "canonical_measurement": "adult_head_body_length_mm",
+          "canonical_definition": "tip of nose to anus or base of tail",
+          "canonical_source_id": "pantheria_1_0_msw05",
+          "adw_treatment": "contextual_noncanonical_range",
+          "comparison": {
+            "adw_range_midpoint_mm": 677.5,
+            "pantheria_head_body_length_mm": 627.12,
+            "relative_difference": 0.080336,
+            "outcome": "CONSISTENT_WITHIN_20_PERCENT"
+          }
+        }
+      }
+    },
+    {
+      "species_id": "vulpes_lagopus",
+      "dimensions": {
+        "body_mass_band": [
+          {
+            "value": "1_to_10_kg",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Vulpes lagopus:BodyMass-Value",
+            "evidence_type": "derived",
+            "mapping_rule_id": "body_mass_log_band_v1"
+          }
+        ],
+        "body_length_band": [
+          {
+            "value": "50_to_75_cm",
+            "source_id": "pantheria_1_0_msw05",
+            "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Vulpes lagopus:13-1_AdultHeadBodyLen_mm",
+            "evidence_type": "derived",
+            "mapping_rule_id": "pantheria_adult_head_body_length_band_v1"
+          }
+        ],
+        "body_covering": [],
+        "thermoregulation": [
+          {
+            "value": "endothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_lagopus/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "reproductive_mode": [
+          {
+            "value": "sexual",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_lagopus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ],
+        "parental_care": [
+          {
+            "value": "post_independence_association",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_lagopus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "extended_juvenile_learning",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_lagopus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ]
+      },
+      "source_observations": {
+        "eltontraits_1_0_mammals": {
+          "body_mass_g": 3584.37,
+          "body_mass_source_reference": "Ref_58",
+          "body_mass_species_level": 1
+        },
+        "animal_diversity_web_species_account": {
+          "account_url": "https://animaldiversity.org/accounts/Vulpes_lagopus/",
+          "accessed_on": "2026-08-16",
+          "mating_system": [
+            "monogamous"
+          ],
+          "key_reproductive_features": [
+            "sexual"
+          ],
+          "parental_investment": [
+            "altricial",
+            "post-independence association with parents",
+            "extended period of juvenile learning"
+          ],
+          "other_physical_features": [
+            "endothermic",
+            "bilateral symmetry"
+          ],
+          "body_length_range": null
+        },
+        "pantheria_1_0_msw05": {
+          "adult_head_body_length_mm": 564.81,
+          "variable": "13-1_AdultHeadBodyLen_mm",
+          "source_references": "367;542;543;730;1113;1297;1573;2655",
+          "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Vulpes lagopus:13-1_AdultHeadBodyLen_mm"
+        }
+      },
+      "measurement_review": {
+        "body_length": {
+          "status": "INDEPENDENT_SOURCE_CROSS_CHECK_COMPLETE_HUMAN_REVIEW_PENDING",
+          "canonical_measurement": "adult_head_body_length_mm",
+          "canonical_definition": "tip of nose to anus or base of tail",
+          "canonical_source_id": "pantheria_1_0_msw05",
+          "adw_treatment": "contextual_noncanonical_range",
+          "comparison": {
+            "outcome": "NO_ADW_RANGE_AVAILABLE",
+            "pantheria_head_body_length_mm": 564.81
+          }
+        }
+      }
+    },
+    {
+      "species_id": "vulpes_zerda",
+      "dimensions": {
+        "body_mass_band": [
+          {
+            "value": "1_to_10_kg",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Vulpes zerda:BodyMass-Value",
+            "evidence_type": "derived",
+            "mapping_rule_id": "body_mass_log_band_v1"
+          }
+        ],
+        "body_length_band": [
+          {
+            "value": "under_50_cm",
+            "source_id": "pantheria_1_0_msw05",
+            "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Vulpes zerda:13-1_AdultHeadBodyLen_mm",
+            "evidence_type": "derived",
+            "mapping_rule_id": "pantheria_adult_head_body_length_band_v1"
+          }
+        ],
+        "body_covering": [],
+        "thermoregulation": [
+          {
+            "value": "endothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_zerda/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "homoiothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_zerda/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "reproductive_mode": [
+          {
+            "value": "iteroparous",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_zerda/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "seasonal_breeding",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_zerda/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "sexual",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_zerda/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "viviparous",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_zerda/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ],
+        "parental_care": [
+          {
+            "value": "cooperative_breeding",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_zerda/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "post_independence_association",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_zerda/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "extended_juvenile_learning",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_zerda/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ]
+      },
+      "source_observations": {
+        "eltontraits_1_0_mammals": {
+          "body_mass_g": 1100,
+          "body_mass_source_reference": "Ref_117",
+          "body_mass_species_level": 1
+        },
+        "animal_diversity_web_species_account": {
+          "account_url": "https://animaldiversity.org/accounts/Vulpes_zerda/",
+          "accessed_on": "2026-08-16",
+          "mating_system": [
+            "monogamous",
+            "cooperative breeder"
+          ],
+          "key_reproductive_features": [
+            "iteroparous",
+            "seasonal breeding",
+            "sexual",
+            "viviparous"
+          ],
+          "parental_investment": [
+            "altricial",
+            "pre-fertilization",
+            "pre-hatching/birth",
+            "pre-weaning/fledging",
+            "pre-independence",
+            "post-independence association with parents",
+            "extended period of juvenile learning"
+          ],
+          "other_physical_features": [
+            "endothermic",
+            "homoiothermic",
+            "bilateral symmetry"
+          ],
+          "body_length_range": {
+            "minimum_mm": 300,
+            "maximum_mm": 400,
+            "source_text": "30 to 40 cm"
+          }
+        },
+        "pantheria_1_0_msw05": {
+          "adult_head_body_length_mm": 374.23,
+          "variable": "13-1_AdultHeadBodyLen_mm",
+          "source_references": "367;543;1113;1297;1822;2655",
+          "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Vulpes zerda:13-1_AdultHeadBodyLen_mm"
+        }
+      },
+      "measurement_review": {
+        "body_length": {
+          "status": "INDEPENDENT_SOURCE_CROSS_CHECK_COMPLETE_HUMAN_REVIEW_PENDING",
+          "canonical_measurement": "adult_head_body_length_mm",
+          "canonical_definition": "tip of nose to anus or base of tail",
+          "canonical_source_id": "pantheria_1_0_msw05",
+          "adw_treatment": "contextual_noncanonical_range",
+          "comparison": {
+            "adw_range_midpoint_mm": 350,
+            "pantheria_head_body_length_mm": 374.23,
+            "relative_difference": 0.064746,
+            "outcome": "CONSISTENT_WITHIN_20_PERCENT"
+          }
+        }
+      }
+    },
+    {
+      "species_id": "urocyon_cinereoargenteus",
+      "dimensions": {
+        "body_mass_band": [
+          {
+            "value": "1_to_10_kg",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Urocyon cinereoargenteus:BodyMass-Value",
+            "evidence_type": "derived",
+            "mapping_rule_id": "body_mass_log_band_v1"
+          }
+        ],
+        "body_length_band": [
+          {
+            "value": "50_to_75_cm",
+            "source_id": "pantheria_1_0_msw05",
+            "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Urocyon cinereoargenteus:13-1_AdultHeadBodyLen_mm",
+            "evidence_type": "derived",
+            "mapping_rule_id": "pantheria_adult_head_body_length_band_v1"
+          }
+        ],
+        "body_covering": [],
+        "thermoregulation": [
+          {
+            "value": "endothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "homoiothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "reproductive_mode": [
+          {
+            "value": "iteroparous",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "seasonal_breeding",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "sexual",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "viviparous",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ],
+        "parental_care": [
+          {
+            "value": "male_parental_care",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "female_parental_care",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ]
+      },
+      "source_observations": {
+        "eltontraits_1_0_mammals": {
+          "body_mass_g": 3833.72,
+          "body_mass_source_reference": "Ref_117",
+          "body_mass_species_level": 1
+        },
+        "animal_diversity_web_species_account": {
+          "account_url": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/",
+          "accessed_on": "2026-08-16",
+          "mating_system": [
+            "monogamous"
+          ],
+          "key_reproductive_features": [
+            "iteroparous",
+            "seasonal breeding",
+            "sexual",
+            "viviparous"
+          ],
+          "parental_investment": [
+            "precocial",
+            "male parental care",
+            "female parental care",
+            "pre-hatching/birth",
+            "pre-weaning/fledging",
+            "pre-independence"
+          ],
+          "other_physical_features": [
+            "endothermic",
+            "homoiothermic",
+            "bilateral symmetry"
+          ],
+          "body_length_range": {
+            "minimum_mm": 800,
+            "maximum_mm": 1125,
+            "source_text": "800 to 1125 mm"
+          }
+        },
+        "pantheria_1_0_msw05": {
+          "adult_head_body_length_mm": 601.7,
+          "variable": "13-1_AdultHeadBodyLen_mm",
+          "source_references": "543;730;1113;1297;1573;2151;2338;2620;2655",
+          "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Urocyon cinereoargenteus:13-1_AdultHeadBodyLen_mm"
+        }
+      },
+      "measurement_review": {
+        "body_length": {
+          "status": "INDEPENDENT_SOURCE_CROSS_CHECK_COMPLETE_HUMAN_REVIEW_PENDING",
+          "canonical_measurement": "adult_head_body_length_mm",
+          "canonical_definition": "tip of nose to anus or base of tail",
+          "canonical_source_id": "pantheria_1_0_msw05",
+          "adw_treatment": "contextual_noncanonical_range",
+          "comparison": {
+            "adw_range_midpoint_mm": 962.5,
+            "pantheria_head_body_length_mm": 601.7,
+            "relative_difference": 0.599634,
+            "outcome": "MEASUREMENT_DEFINITION_OR_AGGREGATION_CONFLICT"
+          }
+        }
+      }
+    },
+    {
+      "species_id": "nyctereutes_procyonoides",
+      "dimensions": {
+        "body_mass_band": [
+          {
+            "value": "1_to_10_kg",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Nyctereutes procyonoides:BodyMass-Value",
+            "evidence_type": "derived",
+            "mapping_rule_id": "body_mass_log_band_v1"
+          }
+        ],
+        "body_length_band": [
+          {
+            "value": "under_50_cm",
+            "source_id": "pantheria_1_0_msw05",
+            "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Nyctereutes procyonoides:13-1_AdultHeadBodyLen_mm",
+            "evidence_type": "derived",
+            "mapping_rule_id": "pantheria_adult_head_body_length_band_v1"
+          }
+        ],
+        "body_covering": [],
+        "thermoregulation": [
+          {
+            "value": "endothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "homoiothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "reproductive_mode": [
+          {
+            "value": "iteroparous",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "seasonal_breeding",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "sexual",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "viviparous",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ],
+        "parental_care": [
+          {
+            "value": "post_independence_association",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ]
+      },
+      "source_observations": {
+        "eltontraits_1_0_mammals": {
+          "body_mass_g": 4040,
+          "body_mass_source_reference": "Ref_117",
+          "body_mass_species_level": 1
+        },
+        "animal_diversity_web_species_account": {
+          "account_url": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/",
+          "accessed_on": "2026-08-16",
+          "mating_system": [
+            "monogamous",
+            "polygynous"
+          ],
+          "key_reproductive_features": [
+            "iteroparous",
+            "seasonal breeding",
+            "sexual",
+            "viviparous"
+          ],
+          "parental_investment": [
+            "altricial",
+            "pre-hatching/birth",
+            "pre-weaning/fledging",
+            "pre-independence",
+            "post-independence association with parents"
+          ],
+          "other_physical_features": [
+            "endothermic",
+            "homoiothermic",
+            "bilateral symmetry"
+          ],
+          "body_length_range": {
+            "minimum_mm": 500,
+            "maximum_mm": 680,
+            "source_text": "50 to 68 cm"
+          }
+        },
+        "pantheria_1_0_msw05": {
+          "adult_head_body_length_mm": 447.38,
+          "variable": "13-1_AdultHeadBodyLen_mm",
+          "source_references": "367;543;1113;1297;1573;2655",
+          "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Nyctereutes procyonoides:13-1_AdultHeadBodyLen_mm"
+        }
+      },
+      "measurement_review": {
+        "body_length": {
+          "status": "INDEPENDENT_SOURCE_CROSS_CHECK_COMPLETE_HUMAN_REVIEW_PENDING",
+          "canonical_measurement": "adult_head_body_length_mm",
+          "canonical_definition": "tip of nose to anus or base of tail",
+          "canonical_source_id": "pantheria_1_0_msw05",
+          "adw_treatment": "contextual_noncanonical_range",
+          "comparison": {
+            "adw_range_midpoint_mm": 590,
+            "pantheria_head_body_length_mm": 447.38,
+            "relative_difference": 0.318789,
+            "outcome": "MEASUREMENT_DEFINITION_OR_AGGREGATION_CONFLICT"
+          }
+        }
+      }
+    },
+    {
+      "species_id": "otocyon_megalotis",
+      "dimensions": {
+        "body_mass_band": [
+          {
+            "value": "1_to_10_kg",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Otocyon megalotis:BodyMass-Value",
+            "evidence_type": "derived",
+            "mapping_rule_id": "body_mass_log_band_v1"
+          }
+        ],
+        "body_length_band": [
+          {
+            "value": "50_to_75_cm",
+            "source_id": "pantheria_1_0_msw05",
+            "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Otocyon megalotis:13-1_AdultHeadBodyLen_mm",
+            "evidence_type": "derived",
+            "mapping_rule_id": "pantheria_adult_head_body_length_band_v1"
+          }
+        ],
+        "body_covering": [],
+        "thermoregulation": [
+          {
+            "value": "endothermic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Otocyon_megalotis/#Physical_Description",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "reproductive_mode": [
+          {
+            "value": "iteroparous",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Otocyon_megalotis/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "seasonal_breeding",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Otocyon_megalotis/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "sexual",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Otocyon_megalotis/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          },
+          {
+            "value": "viviparous",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Otocyon_megalotis/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ],
+        "parental_care": [
+          {
+            "value": "extended_juvenile_learning",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Otocyon_megalotis/#Reproduction",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_reproduction_and_care_projection_v1"
+          }
+        ]
+      },
+      "source_observations": {
+        "eltontraits_1_0_mammals": {
+          "body_mass_g": 4150.02,
+          "body_mass_source_reference": "Ref_117",
+          "body_mass_species_level": 1
+        },
+        "animal_diversity_web_species_account": {
+          "account_url": "https://animaldiversity.org/accounts/Otocyon_megalotis/",
+          "accessed_on": "2026-08-16",
+          "mating_system": [
+            "monogamous"
+          ],
+          "key_reproductive_features": [
+            "iteroparous",
+            "seasonal breeding",
+            "sexual",
+            "viviparous"
+          ],
+          "parental_investment": [
+            "altricial",
+            "extended period of juvenile learning"
+          ],
+          "other_physical_features": [
+            "endothermic",
+            "bilateral symmetry"
+          ],
+          "body_length_range": {
+            "minimum_mm": 460,
+            "maximum_mm": 660,
+            "source_text": "460 to 660 mm"
+          }
+        },
+        "pantheria_1_0_msw05": {
+          "adult_head_body_length_mm": 537.63,
+          "variable": "13-1_AdultHeadBodyLen_mm",
+          "source_references": "543;730;966;1113;1297;1573;2655",
+          "source_locator": "PanTHERIA_1-0_WR05_Aug2008.txt:MSW05_Binomial=Otocyon megalotis:13-1_AdultHeadBodyLen_mm"
+        }
+      },
+      "measurement_review": {
+        "body_length": {
+          "status": "INDEPENDENT_SOURCE_CROSS_CHECK_COMPLETE_HUMAN_REVIEW_PENDING",
+          "canonical_measurement": "adult_head_body_length_mm",
+          "canonical_definition": "tip of nose to anus or base of tail",
+          "canonical_source_id": "pantheria_1_0_msw05",
+          "adw_treatment": "contextual_noncanonical_range",
+          "comparison": {
+            "adw_range_midpoint_mm": 560,
+            "pantheria_head_body_length_mm": 537.63,
+            "relative_difference": 0.041609,
+            "outcome": "CONSISTENT_WITHIN_20_PERCENT"
+          }
+        }
+      }
+    }
+  ],
+  "dimension_statistics": {
+    "body_mass_band": {
+      "populated_record_count": 12,
+      "missing_record_count": 0,
+      "observed_partition_entropy_bits": 1.0
+    },
+    "body_length_band": {
+      "populated_record_count": 12,
+      "missing_record_count": 0,
+      "observed_partition_entropy_bits": 1.784159
+    },
+    "body_covering": {
+      "populated_record_count": 0,
+      "missing_record_count": 12,
+      "observed_partition_entropy_bits": 0.0
+    },
+    "thermoregulation": {
+      "populated_record_count": 12,
+      "missing_record_count": 0,
+      "observed_partition_entropy_bits": 0.918296
+    },
+    "reproductive_mode": {
+      "populated_record_count": 12,
+      "missing_record_count": 0,
+      "observed_partition_entropy_bits": 0.918296
+    },
+    "parental_care": {
+      "populated_record_count": 12,
+      "missing_record_count": 0,
+      "observed_partition_entropy_bits": 1.780672
+    }
+  },
+  "data_quality": {
+    "populated_dimension_cells": 60,
+    "empty_dimension_cells": 12,
+    "dimension_cell_completeness": 0.833333,
+    "direct_dimension_cells": 0,
+    "derived_dimension_cells": 60,
+    "populated_claims": 109,
+    "direct_claims": 0,
+    "derived_claims": 109,
+    "populated_claim_source_traceability": 1.0,
+    "independently_reviewed_claim_rate": 0.0,
+    "populated_dimensions": [
+      "body_mass_band",
+      "body_length_band",
+      "thermoregulation",
+      "reproductive_mode",
+      "parental_care"
+    ],
+    "intentionally_empty_dimensions": [
+      "body_covering"
+    ],
+    "body_length_measurement_review": {
+      "status": "INDEPENDENT_SOURCE_CROSS_CHECK_COMPLETE_HUMAN_REVIEW_PENDING",
+      "canonical_source_coverage": 1,
+      "adw_crosscheck_record_count": 10,
+      "consistent_within_20_percent_count": 8,
+      "measurement_definition_or_aggregation_conflict_count": 2,
+      "no_adw_range_count": 2,
+      "canonical_claim_count": 12
+    }
+  },
+  "source_observation_role": "Raw source observations are retained here to make detailed projections replayable; they are evidence, not additional navigation dimensions."
+}

@@ -1,0 +1,1117 @@
+{
+  "schema_version": "1.0",
+  "state_id": "species_registry_canidae_v0_1",
+  "title": "Canidae species identity and provenance registry",
+  "lifecycle": "DEVELOPMENT_SOURCE_BACKED",
+  "record_count": 12,
+  "sources": {
+    "catalogue_of_life_2026_07_17_xr": {
+      "title": "Catalogue of Life",
+      "version": "2026-07-17 XR",
+      "checklistbank_key": "315834",
+      "doi": "10.48580/dgykv",
+      "url": "https://www.catalogueoflife.org/",
+      "api_documentation_url": "https://www.catalogueoflife.org/tools/api",
+      "match_endpoint": "https://api.gbif.org/v2/species/match?checklistKey=xcol",
+      "accessed_on": "2026-08-16",
+      "use": "accepted species identity and taxonomic class"
+    },
+    "mammal_diversity_database_v2_5": {
+      "title": "Mammal Diversity Database",
+      "version": "2.5",
+      "release_date": "2026-07-28",
+      "doi": "10.5281/zenodo.17033774",
+      "url": "https://www.mammaldiversity.org/",
+      "download_url": "https://raw.githubusercontent.com/mammaldiversity/mammaldiversity.github.io/master/assets/data/MDD.zip",
+      "artifact": "MDD_v2.5_6904species.csv",
+      "artifact_sha256": "0d07a7e9409712fa86c1e3afadcf4c67bf4f9e16d5693a878e11ec1bf6860493",
+      "accessed_on": "2026-08-16",
+      "use": "common names and native biogeographic realms"
+    },
+    "eltontraits_1_0_mammals": {
+      "title": "EltonTraits 1.0: Species-level foraging attributes of the world's birds and mammals",
+      "paper_doi": "10.1890/13-1917.1",
+      "dataset_doi": "10.6084/m9.figshare.c.3306933.v1",
+      "catalogue_url": "https://opentraits.org/datasets/elton-traits.html",
+      "download_url": "https://figshare.com/ndownloader/files/5631084",
+      "artifact": "EltonTraits_Mammals.txt",
+      "artifact_sha256": "51acbe6215b3c1f742463ff3fb37ef607150c052e0f7a9dc0d97fcaca61d3f76",
+      "license": "CC BY 4.0",
+      "accessed_on": "2026-08-16",
+      "use": "diet composition, activity flags, and body mass"
+    },
+    "animal_diversity_web_species_accounts": {
+      "title": "Animal Diversity Web species accounts",
+      "publisher": "University of Michigan Museum of Zoology",
+      "url": "https://animaldiversity.org/",
+      "accessed_on": "2026-08-16",
+      "use": "structured habitat, behavior, reproduction, parental investment, thermoregulation, and body-length observations",
+      "evidence_note": "Account age and completeness vary by species; source absences are not interpreted as biological absences."
+    },
+    "iucn_ssc_canid_specialist_group_species_accounts": {
+      "title": "IUCN SSC Canid Specialist Group species accounts",
+      "publisher": "IUCN Species Survival Commission Canid Specialist Group",
+      "url": "https://www.canids.org/speciespage",
+      "accessed_on": "2026-08-16",
+      "use": "high-quality species-level consultation source for conservation, taxonomy, range, ecology, projects, and linked assessments",
+      "evidence_note": "Included in per-species reading lists; not used to populate iteration 0.2 claims."
+    },
+    "pantheria_1_0_msw05": {
+      "title": "PanTHERIA 1.0: species-level mammal life history, ecology, and geography",
+      "citation": "Jones et al. 2009, Ecology 90:2648",
+      "dataset_url": "https://www.esapubs.org/archive/ecol/E090/184/PanTHERIA_1-0_WR05_Aug2008.txt",
+      "metadata_url": "https://www.esapubs.org/archive/ecol/E090/184/metadata.htm",
+      "artifact": "PanTHERIA_1-0_WR05_Aug2008.txt",
+      "artifact_sha256": "36e64314cae0394a966a63b949504d1975ac5c5629e05e36c1b139b3348f044a",
+      "accessed_on": "2026-08-17",
+      "use": "canonical adult head-body length cross-check and harmonization",
+      "variable_definition": "13-1_AdultHeadBodyLen_mm: total length from tip of nose to anus or base of tail; consolidated to a sex-unspecified unique median."
+    }
+  },
+  "records": [
+    {
+      "species_id": "canis_lupus",
+      "label": "Gray Wolf",
+      "scientific_name": "Canis lupus",
+      "identity": {
+        "catalogue_of_life_id": "QLXL",
+        "mammal_diversity_database_id": "1005943",
+        "rank": "species",
+        "catalogue_match": "EXACT",
+        "catalogue_match_confidence": 100,
+        "sources": [
+          {
+            "source_id": "catalogue_of_life_2026_07_17_xr",
+            "source_locator": "Catalogue of Life taxon QLXL",
+            "assertion": "accepted scientific identity"
+          },
+          {
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Canis_lupus",
+            "assertion": "scientific identity and common name"
+          }
+        ]
+      },
+      "consultation_sources": [
+        {
+          "source_id": "catalogue_of_life_2026_07_17_xr",
+          "title": "Catalogue of Life: Canis lupus",
+          "url": "https://www.catalogueoflife.org/data/taxon/QLXL",
+          "scope": [
+            "accepted_name",
+            "classification",
+            "synonymy"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "mammal_diversity_database_v2_5",
+          "title": "Mammal Diversity Database: Canis lupus",
+          "url": "https://www.mammaldiversity.org/taxon/1005943",
+          "scope": [
+            "mammal_taxonomy",
+            "nomenclature",
+            "distribution",
+            "references"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "animal_diversity_web_species_accounts",
+          "title": "Animal Diversity Web: Canis lupus",
+          "url": "https://animaldiversity.org/accounts/Canis_lupus/",
+          "scope": [
+            "natural_history",
+            "habitat",
+            "morphology",
+            "reproduction",
+            "behavior",
+            "diet"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "iucn_ssc_canid_specialist_group_species_accounts",
+          "title": "IUCN SSC Canid Specialist Group: Canis lupus",
+          "url": "https://www.canids.org/species/view/PREKLD895731",
+          "scope": [
+            "conservation",
+            "range",
+            "taxonomy",
+            "ecology",
+            "specialist_resources"
+          ],
+          "used_for_seed_claims": false
+        },
+        {
+          "source_id": "pantheria_1_0_msw05",
+          "title": "PanTHERIA: Canis lupus",
+          "url": "https://www.esapubs.org/archive/ecol/E090/184/default.htm",
+          "scope": [
+            "harmonized_morphology",
+            "adult_head_body_length",
+            "life_history"
+          ],
+          "used_for_seed_claims": true
+        }
+      ]
+    },
+    {
+      "species_id": "canis_latrans",
+      "label": "Coyote",
+      "scientific_name": "Canis latrans",
+      "identity": {
+        "catalogue_of_life_id": "QLXJ",
+        "mammal_diversity_database_id": "1005941",
+        "rank": "species",
+        "catalogue_match": "EXACT",
+        "catalogue_match_confidence": 100,
+        "sources": [
+          {
+            "source_id": "catalogue_of_life_2026_07_17_xr",
+            "source_locator": "Catalogue of Life taxon QLXJ",
+            "assertion": "accepted scientific identity"
+          },
+          {
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Canis_latrans",
+            "assertion": "scientific identity and common name"
+          }
+        ]
+      },
+      "consultation_sources": [
+        {
+          "source_id": "catalogue_of_life_2026_07_17_xr",
+          "title": "Catalogue of Life: Canis latrans",
+          "url": "https://www.catalogueoflife.org/data/taxon/QLXJ",
+          "scope": [
+            "accepted_name",
+            "classification",
+            "synonymy"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "mammal_diversity_database_v2_5",
+          "title": "Mammal Diversity Database: Canis latrans",
+          "url": "https://www.mammaldiversity.org/taxon/1005941",
+          "scope": [
+            "mammal_taxonomy",
+            "nomenclature",
+            "distribution",
+            "references"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "animal_diversity_web_species_accounts",
+          "title": "Animal Diversity Web: Canis latrans",
+          "url": "https://animaldiversity.org/accounts/Canis_latrans/",
+          "scope": [
+            "natural_history",
+            "habitat",
+            "morphology",
+            "reproduction",
+            "behavior",
+            "diet"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "iucn_ssc_canid_specialist_group_species_accounts",
+          "title": "IUCN SSC Canid Specialist Group: Canis latrans",
+          "url": "https://www.canids.org/species/view/prekja587951",
+          "scope": [
+            "conservation",
+            "range",
+            "taxonomy",
+            "ecology",
+            "specialist_resources"
+          ],
+          "used_for_seed_claims": false
+        },
+        {
+          "source_id": "pantheria_1_0_msw05",
+          "title": "PanTHERIA: Canis latrans",
+          "url": "https://www.esapubs.org/archive/ecol/E090/184/default.htm",
+          "scope": [
+            "harmonized_morphology",
+            "adult_head_body_length",
+            "life_history"
+          ],
+          "used_for_seed_claims": true
+        }
+      ]
+    },
+    {
+      "species_id": "canis_aureus",
+      "label": "Golden Jackal",
+      "scientific_name": "Canis aureus",
+      "identity": {
+        "catalogue_of_life_id": "QLX7",
+        "mammal_diversity_database_id": "1005939",
+        "rank": "species",
+        "catalogue_match": "EXACT",
+        "catalogue_match_confidence": 100,
+        "sources": [
+          {
+            "source_id": "catalogue_of_life_2026_07_17_xr",
+            "source_locator": "Catalogue of Life taxon QLX7",
+            "assertion": "accepted scientific identity"
+          },
+          {
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Canis_aureus",
+            "assertion": "scientific identity and common name"
+          }
+        ]
+      },
+      "consultation_sources": [
+        {
+          "source_id": "catalogue_of_life_2026_07_17_xr",
+          "title": "Catalogue of Life: Canis aureus",
+          "url": "https://www.catalogueoflife.org/data/taxon/QLX7",
+          "scope": [
+            "accepted_name",
+            "classification",
+            "synonymy"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "mammal_diversity_database_v2_5",
+          "title": "Mammal Diversity Database: Canis aureus",
+          "url": "https://www.mammaldiversity.org/taxon/1005939",
+          "scope": [
+            "mammal_taxonomy",
+            "nomenclature",
+            "distribution",
+            "references"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "animal_diversity_web_species_accounts",
+          "title": "Animal Diversity Web: Canis aureus",
+          "url": "https://animaldiversity.org/accounts/Canis_aureus/",
+          "scope": [
+            "natural_history",
+            "habitat",
+            "morphology",
+            "reproduction",
+            "behavior",
+            "diet"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "iucn_ssc_canid_specialist_group_species_accounts",
+          "title": "IUCN SSC Canid Specialist Group: Canis aureus",
+          "url": "https://www.canids.org/species/view/PREKMW872861",
+          "scope": [
+            "conservation",
+            "range",
+            "taxonomy",
+            "ecology",
+            "specialist_resources"
+          ],
+          "used_for_seed_claims": false
+        },
+        {
+          "source_id": "pantheria_1_0_msw05",
+          "title": "PanTHERIA: Canis aureus",
+          "url": "https://www.esapubs.org/archive/ecol/E090/184/default.htm",
+          "scope": [
+            "harmonized_morphology",
+            "adult_head_body_length",
+            "life_history"
+          ],
+          "used_for_seed_claims": true
+        }
+      ]
+    },
+    {
+      "species_id": "canis_simensis",
+      "label": "Ethiopian Wolf",
+      "scientific_name": "Canis simensis",
+      "identity": {
+        "catalogue_of_life_id": "5WXTW",
+        "mammal_diversity_database_id": "1005946",
+        "rank": "species",
+        "catalogue_match": "EXACT",
+        "catalogue_match_confidence": 100,
+        "sources": [
+          {
+            "source_id": "catalogue_of_life_2026_07_17_xr",
+            "source_locator": "Catalogue of Life taxon 5WXTW",
+            "assertion": "accepted scientific identity"
+          },
+          {
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Canis_simensis",
+            "assertion": "scientific identity and common name"
+          }
+        ]
+      },
+      "consultation_sources": [
+        {
+          "source_id": "catalogue_of_life_2026_07_17_xr",
+          "title": "Catalogue of Life: Canis simensis",
+          "url": "https://www.catalogueoflife.org/data/taxon/5WXTW",
+          "scope": [
+            "accepted_name",
+            "classification",
+            "synonymy"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "mammal_diversity_database_v2_5",
+          "title": "Mammal Diversity Database: Canis simensis",
+          "url": "https://www.mammaldiversity.org/taxon/1005946",
+          "scope": [
+            "mammal_taxonomy",
+            "nomenclature",
+            "distribution",
+            "references"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "animal_diversity_web_species_accounts",
+          "title": "Animal Diversity Web: Canis simensis",
+          "url": "https://animaldiversity.org/accounts/Canis_simensis/",
+          "scope": [
+            "natural_history",
+            "habitat",
+            "morphology",
+            "reproduction",
+            "behavior",
+            "diet"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "iucn_ssc_canid_specialist_group_species_accounts",
+          "title": "IUCN SSC Canid Specialist Group: Canis simensis",
+          "url": "https://www.canids.org/species/view/preknl433181",
+          "scope": [
+            "conservation",
+            "range",
+            "taxonomy",
+            "ecology",
+            "specialist_resources"
+          ],
+          "used_for_seed_claims": false
+        },
+        {
+          "source_id": "pantheria_1_0_msw05",
+          "title": "PanTHERIA: Canis simensis",
+          "url": "https://www.esapubs.org/archive/ecol/E090/184/default.htm",
+          "scope": [
+            "harmonized_morphology",
+            "adult_head_body_length",
+            "life_history"
+          ],
+          "used_for_seed_claims": true
+        }
+      ]
+    },
+    {
+      "species_id": "lycaon_pictus",
+      "label": "African Wild Dog",
+      "scientific_name": "Lycaon pictus",
+      "identity": {
+        "catalogue_of_life_id": "73256",
+        "mammal_diversity_database_id": "1005960",
+        "rank": "species",
+        "catalogue_match": "EXACT",
+        "catalogue_match_confidence": 100,
+        "sources": [
+          {
+            "source_id": "catalogue_of_life_2026_07_17_xr",
+            "source_locator": "Catalogue of Life taxon 73256",
+            "assertion": "accepted scientific identity"
+          },
+          {
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Lycaon_pictus",
+            "assertion": "scientific identity and common name"
+          }
+        ]
+      },
+      "consultation_sources": [
+        {
+          "source_id": "catalogue_of_life_2026_07_17_xr",
+          "title": "Catalogue of Life: Lycaon pictus",
+          "url": "https://www.catalogueoflife.org/data/taxon/73256",
+          "scope": [
+            "accepted_name",
+            "classification",
+            "synonymy"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "mammal_diversity_database_v2_5",
+          "title": "Mammal Diversity Database: Lycaon pictus",
+          "url": "https://www.mammaldiversity.org/taxon/1005960",
+          "scope": [
+            "mammal_taxonomy",
+            "nomenclature",
+            "distribution",
+            "references"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "animal_diversity_web_species_accounts",
+          "title": "Animal Diversity Web: Lycaon pictus",
+          "url": "https://animaldiversity.org/accounts/Lycaon_pictus/",
+          "scope": [
+            "natural_history",
+            "habitat",
+            "morphology",
+            "reproduction",
+            "behavior",
+            "diet"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "iucn_ssc_canid_specialist_group_species_accounts",
+          "title": "IUCN SSC Canid Specialist Group: Lycaon pictus",
+          "url": "https://www.canids.org/species/view/PREKNU724601",
+          "scope": [
+            "conservation",
+            "range",
+            "taxonomy",
+            "ecology",
+            "specialist_resources"
+          ],
+          "used_for_seed_claims": false
+        },
+        {
+          "source_id": "pantheria_1_0_msw05",
+          "title": "PanTHERIA: Lycaon pictus",
+          "url": "https://www.esapubs.org/archive/ecol/E090/184/default.htm",
+          "scope": [
+            "harmonized_morphology",
+            "adult_head_body_length",
+            "life_history"
+          ],
+          "used_for_seed_claims": true
+        }
+      ]
+    },
+    {
+      "species_id": "cuon_alpinus",
+      "label": "Dhole",
+      "scientific_name": "Cuon alpinus",
+      "identity": {
+        "catalogue_of_life_id": "6C3NM",
+        "mammal_diversity_database_id": "1005949",
+        "rank": "species",
+        "catalogue_match": "EXACT",
+        "catalogue_match_confidence": 100,
+        "sources": [
+          {
+            "source_id": "catalogue_of_life_2026_07_17_xr",
+            "source_locator": "Catalogue of Life taxon 6C3NM",
+            "assertion": "accepted scientific identity"
+          },
+          {
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Cuon_alpinus",
+            "assertion": "scientific identity and common name"
+          }
+        ]
+      },
+      "consultation_sources": [
+        {
+          "source_id": "catalogue_of_life_2026_07_17_xr",
+          "title": "Catalogue of Life: Cuon alpinus",
+          "url": "https://www.catalogueoflife.org/data/taxon/6C3NM",
+          "scope": [
+            "accepted_name",
+            "classification",
+            "synonymy"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "mammal_diversity_database_v2_5",
+          "title": "Mammal Diversity Database: Cuon alpinus",
+          "url": "https://www.mammaldiversity.org/taxon/1005949",
+          "scope": [
+            "mammal_taxonomy",
+            "nomenclature",
+            "distribution",
+            "references"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "animal_diversity_web_species_accounts",
+          "title": "Animal Diversity Web: Cuon alpinus",
+          "url": "https://animaldiversity.org/accounts/Cuon_alpinus/",
+          "scope": [
+            "natural_history",
+            "habitat",
+            "morphology",
+            "reproduction",
+            "behavior",
+            "diet"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "iucn_ssc_canid_specialist_group_species_accounts",
+          "title": "IUCN SSC Canid Specialist Group: Cuon alpinus",
+          "url": "https://www.canids.org/species/view/PREKQW171301",
+          "scope": [
+            "conservation",
+            "range",
+            "taxonomy",
+            "ecology",
+            "specialist_resources"
+          ],
+          "used_for_seed_claims": false
+        },
+        {
+          "source_id": "pantheria_1_0_msw05",
+          "title": "PanTHERIA: Cuon alpinus",
+          "url": "https://www.esapubs.org/archive/ecol/E090/184/default.htm",
+          "scope": [
+            "harmonized_morphology",
+            "adult_head_body_length",
+            "life_history"
+          ],
+          "used_for_seed_claims": true
+        }
+      ]
+    },
+    {
+      "species_id": "vulpes_vulpes",
+      "label": "Red Fox",
+      "scientific_name": "Vulpes vulpes",
+      "identity": {
+        "catalogue_of_life_id": "5BSG3",
+        "mammal_diversity_database_id": "1005977",
+        "rank": "species",
+        "catalogue_match": "EXACT",
+        "catalogue_match_confidence": 100,
+        "sources": [
+          {
+            "source_id": "catalogue_of_life_2026_07_17_xr",
+            "source_locator": "Catalogue of Life taxon 5BSG3",
+            "assertion": "accepted scientific identity"
+          },
+          {
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Vulpes_vulpes",
+            "assertion": "scientific identity and common name"
+          }
+        ]
+      },
+      "consultation_sources": [
+        {
+          "source_id": "catalogue_of_life_2026_07_17_xr",
+          "title": "Catalogue of Life: Vulpes vulpes",
+          "url": "https://www.catalogueoflife.org/data/taxon/5BSG3",
+          "scope": [
+            "accepted_name",
+            "classification",
+            "synonymy"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "mammal_diversity_database_v2_5",
+          "title": "Mammal Diversity Database: Vulpes vulpes",
+          "url": "https://www.mammaldiversity.org/taxon/1005977",
+          "scope": [
+            "mammal_taxonomy",
+            "nomenclature",
+            "distribution",
+            "references"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "animal_diversity_web_species_accounts",
+          "title": "Animal Diversity Web: Vulpes vulpes",
+          "url": "https://animaldiversity.org/accounts/Vulpes_vulpes/",
+          "scope": [
+            "natural_history",
+            "habitat",
+            "morphology",
+            "reproduction",
+            "behavior",
+            "diet"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "iucn_ssc_canid_specialist_group_species_accounts",
+          "title": "IUCN SSC Canid Specialist Group: Vulpes vulpes",
+          "url": "https://www.canids.org/species/view/preklp237241",
+          "scope": [
+            "conservation",
+            "range",
+            "taxonomy",
+            "ecology",
+            "specialist_resources"
+          ],
+          "used_for_seed_claims": false
+        },
+        {
+          "source_id": "pantheria_1_0_msw05",
+          "title": "PanTHERIA: Vulpes vulpes",
+          "url": "https://www.esapubs.org/archive/ecol/E090/184/default.htm",
+          "scope": [
+            "harmonized_morphology",
+            "adult_head_body_length",
+            "life_history"
+          ],
+          "used_for_seed_claims": true
+        }
+      ]
+    },
+    {
+      "species_id": "vulpes_lagopus",
+      "label": "Arctic Fox",
+      "scientific_name": "Vulpes lagopus",
+      "identity": {
+        "catalogue_of_life_id": "7G4SC",
+        "mammal_diversity_database_id": "1005972",
+        "rank": "species",
+        "catalogue_match": "EXACT",
+        "catalogue_match_confidence": 100,
+        "sources": [
+          {
+            "source_id": "catalogue_of_life_2026_07_17_xr",
+            "source_locator": "Catalogue of Life taxon 7G4SC",
+            "assertion": "accepted scientific identity"
+          },
+          {
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Vulpes_lagopus",
+            "assertion": "scientific identity and common name"
+          }
+        ]
+      },
+      "consultation_sources": [
+        {
+          "source_id": "catalogue_of_life_2026_07_17_xr",
+          "title": "Catalogue of Life: Vulpes lagopus",
+          "url": "https://www.catalogueoflife.org/data/taxon/7G4SC",
+          "scope": [
+            "accepted_name",
+            "classification",
+            "synonymy"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "mammal_diversity_database_v2_5",
+          "title": "Mammal Diversity Database: Vulpes lagopus",
+          "url": "https://www.mammaldiversity.org/taxon/1005972",
+          "scope": [
+            "mammal_taxonomy",
+            "nomenclature",
+            "distribution",
+            "references"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "animal_diversity_web_species_accounts",
+          "title": "Animal Diversity Web: Vulpes lagopus",
+          "url": "https://animaldiversity.org/accounts/Vulpes_lagopus/",
+          "scope": [
+            "natural_history",
+            "habitat",
+            "morphology",
+            "reproduction",
+            "behavior",
+            "diet"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "iucn_ssc_canid_specialist_group_species_accounts",
+          "title": "IUCN SSC Canid Specialist Group: Vulpes lagopus",
+          "url": "https://www.canids.org/species/view/PREKKS663901",
+          "scope": [
+            "conservation",
+            "range",
+            "taxonomy",
+            "ecology",
+            "specialist_resources"
+          ],
+          "used_for_seed_claims": false
+        },
+        {
+          "source_id": "pantheria_1_0_msw05",
+          "title": "PanTHERIA: Vulpes lagopus",
+          "url": "https://www.esapubs.org/archive/ecol/E090/184/default.htm",
+          "scope": [
+            "harmonized_morphology",
+            "adult_head_body_length",
+            "life_history"
+          ],
+          "used_for_seed_claims": true
+        }
+      ]
+    },
+    {
+      "species_id": "vulpes_zerda",
+      "label": "Fennec Fox",
+      "scientific_name": "Vulpes zerda",
+      "identity": {
+        "catalogue_of_life_id": "5BSG4",
+        "mammal_diversity_database_id": "1005978",
+        "rank": "species",
+        "catalogue_match": "EXACT",
+        "catalogue_match_confidence": 100,
+        "sources": [
+          {
+            "source_id": "catalogue_of_life_2026_07_17_xr",
+            "source_locator": "Catalogue of Life taxon 5BSG4",
+            "assertion": "accepted scientific identity"
+          },
+          {
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Vulpes_zerda",
+            "assertion": "scientific identity and common name"
+          }
+        ]
+      },
+      "consultation_sources": [
+        {
+          "source_id": "catalogue_of_life_2026_07_17_xr",
+          "title": "Catalogue of Life: Vulpes zerda",
+          "url": "https://www.catalogueoflife.org/data/taxon/5BSG4",
+          "scope": [
+            "accepted_name",
+            "classification",
+            "synonymy"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "mammal_diversity_database_v2_5",
+          "title": "Mammal Diversity Database: Vulpes zerda",
+          "url": "https://www.mammaldiversity.org/taxon/1005978",
+          "scope": [
+            "mammal_taxonomy",
+            "nomenclature",
+            "distribution",
+            "references"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "animal_diversity_web_species_accounts",
+          "title": "Animal Diversity Web: Vulpes zerda",
+          "url": "https://animaldiversity.org/accounts/Vulpes_zerda/",
+          "scope": [
+            "natural_history",
+            "habitat",
+            "morphology",
+            "reproduction",
+            "behavior",
+            "diet"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "iucn_ssc_canid_specialist_group_species_accounts",
+          "title": "IUCN SSC Canid Specialist Group: Vulpes zerda",
+          "url": "https://www.canids.org/species/view/PREKPF521541",
+          "scope": [
+            "conservation",
+            "range",
+            "taxonomy",
+            "ecology",
+            "specialist_resources"
+          ],
+          "used_for_seed_claims": false
+        },
+        {
+          "source_id": "pantheria_1_0_msw05",
+          "title": "PanTHERIA: Vulpes zerda",
+          "url": "https://www.esapubs.org/archive/ecol/E090/184/default.htm",
+          "scope": [
+            "harmonized_morphology",
+            "adult_head_body_length",
+            "life_history"
+          ],
+          "used_for_seed_claims": true
+        }
+      ]
+    },
+    {
+      "species_id": "urocyon_cinereoargenteus",
+      "label": "Northern Gray Fox",
+      "scientific_name": "Urocyon cinereoargenteus",
+      "identity": {
+        "catalogue_of_life_id": "7DTJY",
+        "mammal_diversity_database_id": "1005965",
+        "rank": "species",
+        "catalogue_match": "EXACT",
+        "catalogue_match_confidence": 100,
+        "sources": [
+          {
+            "source_id": "catalogue_of_life_2026_07_17_xr",
+            "source_locator": "Catalogue of Life taxon 7DTJY",
+            "assertion": "accepted scientific identity"
+          },
+          {
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Urocyon_cinereoargenteus",
+            "assertion": "scientific identity and common name"
+          }
+        ]
+      },
+      "consultation_sources": [
+        {
+          "source_id": "catalogue_of_life_2026_07_17_xr",
+          "title": "Catalogue of Life: Urocyon cinereoargenteus",
+          "url": "https://www.catalogueoflife.org/data/taxon/7DTJY",
+          "scope": [
+            "accepted_name",
+            "classification",
+            "synonymy"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "mammal_diversity_database_v2_5",
+          "title": "Mammal Diversity Database: Urocyon cinereoargenteus",
+          "url": "https://www.mammaldiversity.org/taxon/1005965",
+          "scope": [
+            "mammal_taxonomy",
+            "nomenclature",
+            "distribution",
+            "references"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "animal_diversity_web_species_accounts",
+          "title": "Animal Diversity Web: Urocyon cinereoargenteus",
+          "url": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/",
+          "scope": [
+            "natural_history",
+            "habitat",
+            "morphology",
+            "reproduction",
+            "behavior",
+            "diet"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "iucn_ssc_canid_specialist_group_species_accounts",
+          "title": "IUCN SSC Canid Specialist Group: Urocyon cinereoargenteus",
+          "url": "https://www.canids.org/species/view/PREKJP597461",
+          "scope": [
+            "conservation",
+            "range",
+            "taxonomy",
+            "ecology",
+            "specialist_resources"
+          ],
+          "used_for_seed_claims": false
+        },
+        {
+          "source_id": "pantheria_1_0_msw05",
+          "title": "PanTHERIA: Urocyon cinereoargenteus",
+          "url": "https://www.esapubs.org/archive/ecol/E090/184/default.htm",
+          "scope": [
+            "harmonized_morphology",
+            "adult_head_body_length",
+            "life_history"
+          ],
+          "used_for_seed_claims": true
+        }
+      ]
+    },
+    {
+      "species_id": "nyctereutes_procyonoides",
+      "label": "Common Raccoon Dog",
+      "scientific_name": "Nyctereutes procyonoides",
+      "identity": {
+        "catalogue_of_life_id": "4859P",
+        "mammal_diversity_database_id": "1005961",
+        "rank": "species",
+        "catalogue_match": "EXACT",
+        "catalogue_match_confidence": 100,
+        "sources": [
+          {
+            "source_id": "catalogue_of_life_2026_07_17_xr",
+            "source_locator": "Catalogue of Life taxon 4859P",
+            "assertion": "accepted scientific identity"
+          },
+          {
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Nyctereutes_procyonoides",
+            "assertion": "scientific identity and common name"
+          }
+        ]
+      },
+      "consultation_sources": [
+        {
+          "source_id": "catalogue_of_life_2026_07_17_xr",
+          "title": "Catalogue of Life: Nyctereutes procyonoides",
+          "url": "https://www.catalogueoflife.org/data/taxon/4859P",
+          "scope": [
+            "accepted_name",
+            "classification",
+            "synonymy"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "mammal_diversity_database_v2_5",
+          "title": "Mammal Diversity Database: Nyctereutes procyonoides",
+          "url": "https://www.mammaldiversity.org/taxon/1005961",
+          "scope": [
+            "mammal_taxonomy",
+            "nomenclature",
+            "distribution",
+            "references"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "animal_diversity_web_species_accounts",
+          "title": "Animal Diversity Web: Nyctereutes procyonoides",
+          "url": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/",
+          "scope": [
+            "natural_history",
+            "habitat",
+            "morphology",
+            "reproduction",
+            "behavior",
+            "diet"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "iucn_ssc_canid_specialist_group_species_accounts",
+          "title": "IUCN SSC Canid Specialist Group: Nyctereutes procyonoides",
+          "url": "https://www.canids.org/species/view/PREKLY462191",
+          "scope": [
+            "conservation",
+            "range",
+            "taxonomy",
+            "ecology",
+            "specialist_resources"
+          ],
+          "used_for_seed_claims": false
+        },
+        {
+          "source_id": "pantheria_1_0_msw05",
+          "title": "PanTHERIA: Nyctereutes procyonoides",
+          "url": "https://www.esapubs.org/archive/ecol/E090/184/default.htm",
+          "scope": [
+            "harmonized_morphology",
+            "adult_head_body_length",
+            "life_history"
+          ],
+          "used_for_seed_claims": true
+        }
+      ]
+    },
+    {
+      "species_id": "otocyon_megalotis",
+      "label": "Bat-eared Fox",
+      "scientific_name": "Otocyon megalotis",
+      "identity": {
+        "catalogue_of_life_id": "4B7CH",
+        "mammal_diversity_database_id": "1005963",
+        "rank": "species",
+        "catalogue_match": "EXACT",
+        "catalogue_match_confidence": 100,
+        "sources": [
+          {
+            "source_id": "catalogue_of_life_2026_07_17_xr",
+            "source_locator": "Catalogue of Life taxon 4B7CH",
+            "assertion": "accepted scientific identity"
+          },
+          {
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Otocyon_megalotis",
+            "assertion": "scientific identity and common name"
+          }
+        ]
+      },
+      "consultation_sources": [
+        {
+          "source_id": "catalogue_of_life_2026_07_17_xr",
+          "title": "Catalogue of Life: Otocyon megalotis",
+          "url": "https://www.catalogueoflife.org/data/taxon/4B7CH",
+          "scope": [
+            "accepted_name",
+            "classification",
+            "synonymy"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "mammal_diversity_database_v2_5",
+          "title": "Mammal Diversity Database: Otocyon megalotis",
+          "url": "https://www.mammaldiversity.org/taxon/1005963",
+          "scope": [
+            "mammal_taxonomy",
+            "nomenclature",
+            "distribution",
+            "references"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "animal_diversity_web_species_accounts",
+          "title": "Animal Diversity Web: Otocyon megalotis",
+          "url": "https://animaldiversity.org/accounts/Otocyon_megalotis/",
+          "scope": [
+            "natural_history",
+            "habitat",
+            "morphology",
+            "reproduction",
+            "behavior",
+            "diet"
+          ],
+          "used_for_seed_claims": true
+        },
+        {
+          "source_id": "iucn_ssc_canid_specialist_group_species_accounts",
+          "title": "IUCN SSC Canid Specialist Group: Otocyon megalotis",
+          "url": "https://www.canids.org/species/view/PREKO4241281",
+          "scope": [
+            "conservation",
+            "range",
+            "taxonomy",
+            "ecology",
+            "specialist_resources"
+          ],
+          "used_for_seed_claims": false
+        },
+        {
+          "source_id": "pantheria_1_0_msw05",
+          "title": "PanTHERIA: Otocyon megalotis",
+          "url": "https://www.esapubs.org/archive/ecol/E090/184/default.htm",
+          "scope": [
+            "harmonized_morphology",
+            "adult_head_body_length",
+            "life_history"
+          ],
+          "used_for_seed_claims": true
+        }
+      ]
+    }
+  ]
+}

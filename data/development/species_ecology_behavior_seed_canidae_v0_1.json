@@ -1,0 +1,1893 @@
+{
+  "schema_version": "1.0",
+  "state_id": "species_ecology_behavior_seed_canidae_v0_1",
+  "title": "Canidae ecology and behavior navigation seed",
+  "lifecycle": "DEVELOPMENT_PARTIAL_SOURCE_BACKED",
+  "purpose": "Horizontal semantic navigation over reusable ecology and behavior dimensions; this is the default contribution-analysis field.",
+  "species_registry_state_id": "species_registry_canidae_v0_1",
+  "scope": {
+    "domain": "Mammalia / Carnivora / Canidae",
+    "record_count": 12,
+    "possible_dimension_cells": 156
+  },
+  "evidence_boundary": "Only populated dimension claims are admitted. Every populated claim names its source and locator. Unresolved or unsupported dimensions are explicit empty arrays; empty cells are not negative assertions.",
+  "dimensions": [
+    "environmental_system",
+    "biome",
+    "microhabitat",
+    "ecological_stratum",
+    "climate_zone",
+    "trophic_mode",
+    "primary_food",
+    "activity_cycle",
+    "social_organization",
+    "locomotor_mode",
+    "migratory_strategy",
+    "shelter_or_nesting",
+    "native_range_realm"
+  ],
+  "semantic_hierarchy": [
+    {
+      "id": "ecology",
+      "label": "Ecology",
+      "children": [
+        {
+          "id": "habitat",
+          "label": "Habitat",
+          "anchor_role": "habitat",
+          "dimensions": [
+            "environmental_system",
+            "biome",
+            "microhabitat",
+            "ecological_stratum",
+            "climate_zone"
+          ]
+        },
+        {
+          "id": "resource_use",
+          "label": "Resource use",
+          "anchor_role": "diet",
+          "dimensions": [
+            "trophic_mode",
+            "primary_food"
+          ]
+        },
+        {
+          "id": "distribution",
+          "label": "Distribution",
+          "dimensions": [
+            "native_range_realm"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "behavior",
+      "label": "Behavior",
+      "children": [
+        {
+          "id": "temporal_strategy",
+          "label": "Temporal strategy",
+          "anchor_role": "activity",
+          "dimensions": [
+            "activity_cycle"
+          ]
+        },
+        {
+          "id": "organization_strategy",
+          "label": "Organization strategy",
+          "anchor_role": "sociality",
+          "dimensions": [
+            "social_organization"
+          ]
+        },
+        {
+          "id": "movement_strategy",
+          "label": "Movement strategy",
+          "dimensions": [
+            "locomotor_mode",
+            "migratory_strategy"
+          ]
+        },
+        {
+          "id": "shelter_strategy",
+          "label": "Shelter strategy",
+          "dimensions": [
+            "shelter_or_nesting"
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "mammal_diversity_database_v2_5": {
+      "title": "Mammal Diversity Database",
+      "version": "2.5",
+      "release_date": "2026-07-28",
+      "doi": "10.5281/zenodo.17033774",
+      "url": "https://www.mammaldiversity.org/",
+      "download_url": "https://raw.githubusercontent.com/mammaldiversity/mammaldiversity.github.io/master/assets/data/MDD.zip",
+      "artifact": "MDD_v2.5_6904species.csv",
+      "artifact_sha256": "0d07a7e9409712fa86c1e3afadcf4c67bf4f9e16d5693a878e11ec1bf6860493",
+      "accessed_on": "2026-08-16",
+      "use": "common names and native biogeographic realms"
+    },
+    "eltontraits_1_0_mammals": {
+      "title": "EltonTraits 1.0: Species-level foraging attributes of the world's birds and mammals",
+      "paper_doi": "10.1890/13-1917.1",
+      "dataset_doi": "10.6084/m9.figshare.c.3306933.v1",
+      "catalogue_url": "https://opentraits.org/datasets/elton-traits.html",
+      "download_url": "https://figshare.com/ndownloader/files/5631084",
+      "artifact": "EltonTraits_Mammals.txt",
+      "artifact_sha256": "51acbe6215b3c1f742463ff3fb37ef607150c052e0f7a9dc0d97fcaca61d3f76",
+      "license": "CC BY 4.0",
+      "accessed_on": "2026-08-16",
+      "use": "diet composition, activity flags, and body mass"
+    },
+    "animal_diversity_web_species_accounts": {
+      "title": "Animal Diversity Web species accounts",
+      "publisher": "University of Michigan Museum of Zoology",
+      "url": "https://animaldiversity.org/",
+      "accessed_on": "2026-08-16",
+      "use": "structured habitat, behavior, reproduction, parental investment, thermoregulation, and body-length observations",
+      "evidence_note": "Account age and completeness vary by species; source absences are not interpreted as biological absences."
+    }
+  },
+  "mapping_rules": {
+    "elton_dominant_diet_guild_v1": {
+      "input": "EltonTraits diet percentages",
+      "method": "Map invertebrates; vertebrates+fish+carrion; fruit+nectar; and seeds+other plant material to invertivore, carnivore, frugivore, and herbivore respectively. A group at or above 50 percent is emitted; otherwise emit omnivore.",
+      "provenance_boundary": "Repository-authored deterministic projection over sourced percentages; not a direct source assertion."
+    },
+    "elton_max_diet_component_v1": {
+      "input": "EltonTraits diet percentages",
+      "method": "Emit every positive diet component tied for the largest percentage.",
+      "provenance_boundary": "Repository-authored deterministic projection over sourced percentages; ties remain multi-valued."
+    },
+    "elton_activity_flags_v1": {
+      "input": "EltonTraits nocturnal, crepuscular, and diurnal binary flags",
+      "method": "Encode one active flag directly, two active flags as a compound cycle, and all three as cathemeral.",
+      "provenance_boundary": "Repository-authored deterministic projection over sourced flags."
+    },
+    "adw_controlled_keyword_normalization_v1": {
+      "input": "Animal Diversity Web controlled keyword",
+      "method": "Lowercase and convert separators to a stable snake-case value without adding biological meaning.",
+      "provenance_boundary": "Repository-authored lexical normalization over a sourced controlled keyword."
+    },
+    "adw_behavior_semantic_projection_v1": {
+      "input": "Animal Diversity Web Key Behaviors keyword",
+      "method": "Project terricolous to ground ecological stratum; cursorial, scansorial, and natatorial to locomotor mode; nomadic and sedentary to migratory strategy; and social or solitary to social organization.",
+      "provenance_boundary": "Repository-authored placement of sourced behavior keywords into governed dimensions."
+    },
+    "adw_shelter_narrative_projection_v1": {
+      "input": "Animal Diversity Web Habitat, Reproduction, and Behavior account sections",
+      "method": "Normalize explicitly described den, burrow, vegetation, tree/log, rock/cave, and fallen-tree shelter forms into a compact controlled vocabulary.",
+      "provenance_boundary": "Repository-authored semantic projection over species-account narrative; requires independent review."
+    }
+  },
+  "records": [
+    {
+      "species_id": "canis_lupus",
+      "dimensions": {
+        "environmental_system": [
+          {
+            "value": "terrestrial",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "biome": [
+          {
+            "value": "tundra",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "taiga",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "chaparral",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "forest",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "scrub_forest",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "mountains",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "microhabitat": [],
+        "ecological_stratum": [
+          {
+            "value": "ground",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "climate_zone": [
+          {
+            "value": "temperate",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "trophic_mode": [
+          {
+            "value": "carnivore",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Canis lupus:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_dominant_diet_guild_v1"
+          }
+        ],
+        "primary_food": [
+          {
+            "value": "endothermic_vertebrates",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Canis lupus:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_max_diet_component_v1"
+          }
+        ],
+        "activity_cycle": [
+          {
+            "value": "nocturnal_crepuscular",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Canis lupus:Activity-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_activity_flags_v1"
+          }
+        ],
+        "social_organization": [
+          {
+            "value": "social",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "locomotor_mode": [
+          {
+            "value": "cursorial",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "migratory_strategy": [
+          {
+            "value": "nomadic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "shelter_or_nesting": [
+          {
+            "value": "excavated_den",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          },
+          {
+            "value": "rock_crevice_or_cave",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          },
+          {
+            "value": "fallen_tree_shelter",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_lupus/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          }
+        ],
+        "native_range_realm": [
+          {
+            "value": "nearctic",
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Canis_lupus:biogeographicRealm",
+            "evidence_type": "direct"
+          },
+          {
+            "value": "palearctic",
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Canis_lupus:biogeographicRealm",
+            "evidence_type": "direct"
+          }
+        ]
+      }
+    },
+    {
+      "species_id": "canis_latrans",
+      "dimensions": {
+        "environmental_system": [
+          {
+            "value": "terrestrial",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "biome": [
+          {
+            "value": "taiga",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "desert_or_dune",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "savanna_or_grassland",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "chaparral",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "forest",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "scrub_forest",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "mountains",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "microhabitat": [
+          {
+            "value": "urban",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "suburban",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "agricultural",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "riparian",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "ecological_stratum": [],
+        "climate_zone": [
+          {
+            "value": "temperate",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "trophic_mode": [
+          {
+            "value": "carnivore",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Canis latrans:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_dominant_diet_guild_v1"
+          }
+        ],
+        "primary_food": [
+          {
+            "value": "endothermic_vertebrates",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Canis latrans:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_max_diet_component_v1"
+          }
+        ],
+        "activity_cycle": [
+          {
+            "value": "nocturnal_crepuscular",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Canis latrans:Activity-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_activity_flags_v1"
+          }
+        ],
+        "social_organization": [
+          {
+            "value": "social",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "locomotor_mode": [],
+        "migratory_strategy": [],
+        "shelter_or_nesting": [
+          {
+            "value": "excavated_den",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          },
+          {
+            "value": "reused_burrow",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_latrans/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          }
+        ],
+        "native_range_realm": [
+          {
+            "value": "nearctic",
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Canis_latrans:biogeographicRealm",
+            "evidence_type": "direct"
+          },
+          {
+            "value": "neotropic",
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Canis_latrans:biogeographicRealm",
+            "evidence_type": "direct"
+          }
+        ]
+      }
+    },
+    {
+      "species_id": "canis_aureus",
+      "dimensions": {
+        "environmental_system": [],
+        "biome": [
+          {
+            "value": "desert_or_dune",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_aureus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "savanna_or_grassland",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_aureus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "forest",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_aureus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "scrub_forest",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_aureus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "microhabitat": [],
+        "ecological_stratum": [],
+        "climate_zone": [],
+        "trophic_mode": [
+          {
+            "value": "carnivore",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Canis aureus:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_dominant_diet_guild_v1"
+          }
+        ],
+        "primary_food": [
+          {
+            "value": "endothermic_vertebrates",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Canis aureus:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_max_diet_component_v1"
+          }
+        ],
+        "activity_cycle": [
+          {
+            "value": "nocturnal_crepuscular",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Canis aureus:Activity-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_activity_flags_v1"
+          }
+        ],
+        "social_organization": [
+          {
+            "value": "social",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_aureus/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "locomotor_mode": [],
+        "migratory_strategy": [],
+        "shelter_or_nesting": [
+          {
+            "value": "den",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_aureus/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          },
+          {
+            "value": "rock_crevice_or_cave",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_aureus/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          }
+        ],
+        "native_range_realm": [
+          {
+            "value": "indomalaya",
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Canis_aureus:biogeographicRealm",
+            "evidence_type": "direct"
+          },
+          {
+            "value": "palearctic",
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Canis_aureus:biogeographicRealm",
+            "evidence_type": "direct"
+          }
+        ]
+      }
+    },
+    {
+      "species_id": "canis_simensis",
+      "dimensions": {
+        "environmental_system": [
+          {
+            "value": "terrestrial",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_simensis/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "biome": [
+          {
+            "value": "savanna_or_grassland",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_simensis/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "mountains",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_simensis/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "microhabitat": [],
+        "ecological_stratum": [
+          {
+            "value": "ground",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_simensis/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "climate_zone": [
+          {
+            "value": "temperate",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_simensis/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "trophic_mode": [
+          {
+            "value": "carnivore",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Canis simensis:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_dominant_diet_guild_v1"
+          }
+        ],
+        "primary_food": [
+          {
+            "value": "endothermic_vertebrates",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Canis simensis:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_max_diet_component_v1"
+          }
+        ],
+        "activity_cycle": [
+          {
+            "value": "cathemeral",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Canis simensis:Activity-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_activity_flags_v1"
+          }
+        ],
+        "social_organization": [
+          {
+            "value": "solitary",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_simensis/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          },
+          {
+            "value": "social",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_simensis/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "locomotor_mode": [],
+        "migratory_strategy": [],
+        "shelter_or_nesting": [
+          {
+            "value": "excavated_den",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_simensis/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          },
+          {
+            "value": "rock_crevice_or_cave",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Canis_simensis/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          }
+        ],
+        "native_range_realm": [
+          {
+            "value": "afrotropic",
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Canis_simensis:biogeographicRealm",
+            "evidence_type": "direct"
+          }
+        ]
+      }
+    },
+    {
+      "species_id": "lycaon_pictus",
+      "dimensions": {
+        "environmental_system": [
+          {
+            "value": "terrestrial",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "biome": [
+          {
+            "value": "savanna_or_grassland",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "chaparral",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "forest",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "microhabitat": [],
+        "ecological_stratum": [
+          {
+            "value": "ground",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "climate_zone": [
+          {
+            "value": "temperate",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "tropical",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "trophic_mode": [
+          {
+            "value": "carnivore",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Lycaon pictus:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_dominant_diet_guild_v1"
+          }
+        ],
+        "primary_food": [
+          {
+            "value": "endothermic_vertebrates",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Lycaon pictus:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_max_diet_component_v1"
+          }
+        ],
+        "activity_cycle": [
+          {
+            "value": "crepuscular_diurnal",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Lycaon pictus:Activity-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_activity_flags_v1"
+          }
+        ],
+        "social_organization": [
+          {
+            "value": "social",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "locomotor_mode": [
+          {
+            "value": "cursorial",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "migratory_strategy": [
+          {
+            "value": "nomadic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "shelter_or_nesting": [
+          {
+            "value": "reused_burrow",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Lycaon_pictus/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          }
+        ],
+        "native_range_realm": [
+          {
+            "value": "afrotropic",
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Lycaon_pictus:biogeographicRealm",
+            "evidence_type": "direct"
+          }
+        ]
+      }
+    },
+    {
+      "species_id": "cuon_alpinus",
+      "dimensions": {
+        "environmental_system": [],
+        "biome": [
+          {
+            "value": "forest",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Cuon_alpinus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "rainforest",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Cuon_alpinus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "scrub_forest",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Cuon_alpinus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "microhabitat": [],
+        "ecological_stratum": [
+          {
+            "value": "ground",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Cuon_alpinus/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "climate_zone": [],
+        "trophic_mode": [
+          {
+            "value": "carnivore",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Cuon alpinus:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_dominant_diet_guild_v1"
+          }
+        ],
+        "primary_food": [
+          {
+            "value": "endothermic_vertebrates",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Cuon alpinus:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_max_diet_component_v1"
+          }
+        ],
+        "activity_cycle": [
+          {
+            "value": "crepuscular_diurnal",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Cuon alpinus:Activity-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_activity_flags_v1"
+          }
+        ],
+        "social_organization": [
+          {
+            "value": "social",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Cuon_alpinus/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "locomotor_mode": [],
+        "migratory_strategy": [],
+        "shelter_or_nesting": [
+          {
+            "value": "den",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Cuon_alpinus/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          },
+          {
+            "value": "rock_crevice_or_cave",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Cuon_alpinus/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          }
+        ],
+        "native_range_realm": [
+          {
+            "value": "indomalaya",
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Cuon_alpinus:biogeographicRealm",
+            "evidence_type": "direct"
+          }
+        ]
+      }
+    },
+    {
+      "species_id": "vulpes_vulpes",
+      "dimensions": {
+        "environmental_system": [
+          {
+            "value": "terrestrial",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "biome": [
+          {
+            "value": "desert_or_dune",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "savanna_or_grassland",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "chaparral",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "forest",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "scrub_forest",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "mountains",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "microhabitat": [
+          {
+            "value": "urban",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "suburban",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "agricultural",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "riparian",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "ecological_stratum": [
+          {
+            "value": "ground",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "climate_zone": [
+          {
+            "value": "temperate",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "trophic_mode": [
+          {
+            "value": "carnivore",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Vulpes vulpes:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_dominant_diet_guild_v1"
+          }
+        ],
+        "primary_food": [
+          {
+            "value": "endothermic_vertebrates",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Vulpes vulpes:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_max_diet_component_v1"
+          }
+        ],
+        "activity_cycle": [
+          {
+            "value": "nocturnal_crepuscular",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Vulpes vulpes:Activity-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_activity_flags_v1"
+          }
+        ],
+        "social_organization": [
+          {
+            "value": "solitary",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          },
+          {
+            "value": "social",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "locomotor_mode": [],
+        "migratory_strategy": [
+          {
+            "value": "sedentary",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "shelter_or_nesting": [
+          {
+            "value": "excavated_den",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          },
+          {
+            "value": "reused_burrow",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_vulpes/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          }
+        ],
+        "native_range_realm": [
+          {
+            "value": "nearctic",
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Vulpes_vulpes:biogeographicRealm",
+            "evidence_type": "direct"
+          },
+          {
+            "value": "palearctic",
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Vulpes_vulpes:biogeographicRealm",
+            "evidence_type": "direct"
+          }
+        ]
+      }
+    },
+    {
+      "species_id": "vulpes_lagopus",
+      "dimensions": {
+        "environmental_system": [
+          {
+            "value": "terrestrial",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_lagopus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "biome": [
+          {
+            "value": "tundra",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_lagopus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "icecap",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_lagopus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "microhabitat": [],
+        "ecological_stratum": [
+          {
+            "value": "ground",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_lagopus/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "climate_zone": [
+          {
+            "value": "polar",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_lagopus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "trophic_mode": [
+          {
+            "value": "carnivore",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Vulpes lagopus:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_dominant_diet_guild_v1"
+          }
+        ],
+        "primary_food": [
+          {
+            "value": "endothermic_vertebrates",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Vulpes lagopus:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_max_diet_component_v1"
+          }
+        ],
+        "activity_cycle": [
+          {
+            "value": "diurnal",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Vulpes lagopus:Activity-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_activity_flags_v1"
+          }
+        ],
+        "social_organization": [
+          {
+            "value": "social",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_lagopus/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "locomotor_mode": [],
+        "migratory_strategy": [
+          {
+            "value": "nomadic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_lagopus/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "shelter_or_nesting": [
+          {
+            "value": "den",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_lagopus/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          },
+          {
+            "value": "rock_crevice_or_cave",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_lagopus/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          }
+        ],
+        "native_range_realm": [
+          {
+            "value": "nearctic",
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Vulpes_lagopus:biogeographicRealm",
+            "evidence_type": "direct"
+          },
+          {
+            "value": "palearctic",
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Vulpes_lagopus:biogeographicRealm",
+            "evidence_type": "direct"
+          }
+        ]
+      }
+    },
+    {
+      "species_id": "vulpes_zerda",
+      "dimensions": {
+        "environmental_system": [
+          {
+            "value": "terrestrial",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_zerda/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "biome": [
+          {
+            "value": "desert_or_dune",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_zerda/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "microhabitat": [],
+        "ecological_stratum": [
+          {
+            "value": "ground",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_zerda/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "climate_zone": [
+          {
+            "value": "temperate",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_zerda/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "tropical",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_zerda/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "trophic_mode": [
+          {
+            "value": "carnivore",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Vulpes zerda:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_dominant_diet_guild_v1"
+          }
+        ],
+        "primary_food": [
+          {
+            "value": "endothermic_vertebrates",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Vulpes zerda:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_max_diet_component_v1"
+          },
+          {
+            "value": "other_plant_material",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Vulpes zerda:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_max_diet_component_v1"
+          }
+        ],
+        "activity_cycle": [
+          {
+            "value": "nocturnal",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Vulpes zerda:Activity-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_activity_flags_v1"
+          }
+        ],
+        "social_organization": [
+          {
+            "value": "social",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_zerda/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "locomotor_mode": [],
+        "migratory_strategy": [
+          {
+            "value": "sedentary",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_zerda/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "shelter_or_nesting": [
+          {
+            "value": "excavated_den",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Vulpes_zerda/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          }
+        ],
+        "native_range_realm": [
+          {
+            "value": "afrotropic",
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Vulpes_zerda:biogeographicRealm",
+            "evidence_type": "direct"
+          }
+        ]
+      }
+    },
+    {
+      "species_id": "urocyon_cinereoargenteus",
+      "dimensions": {
+        "environmental_system": [
+          {
+            "value": "terrestrial",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "biome": [
+          {
+            "value": "savanna_or_grassland",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "forest",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "scrub_forest",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "microhabitat": [],
+        "ecological_stratum": [
+          {
+            "value": "ground",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "climate_zone": [
+          {
+            "value": "temperate",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "trophic_mode": [
+          {
+            "value": "omnivore",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Urocyon cinereoargenteus:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_dominant_diet_guild_v1"
+          }
+        ],
+        "primary_food": [
+          {
+            "value": "unspecified_vertebrates",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Urocyon cinereoargenteus:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_max_diet_component_v1"
+          }
+        ],
+        "activity_cycle": [
+          {
+            "value": "nocturnal_crepuscular",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Urocyon cinereoargenteus:Activity-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_activity_flags_v1"
+          }
+        ],
+        "social_organization": [
+          {
+            "value": "solitary",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "locomotor_mode": [
+          {
+            "value": "scansorial",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "migratory_strategy": [
+          {
+            "value": "nomadic",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "shelter_or_nesting": [
+          {
+            "value": "hollow_tree_or_log",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          },
+          {
+            "value": "rock_crevice_or_cave",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          },
+          {
+            "value": "burrow",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Urocyon_cinereoargenteus/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          }
+        ],
+        "native_range_realm": [
+          {
+            "value": "nearctic",
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Urocyon_cinereoargenteus:biogeographicRealm",
+            "evidence_type": "direct"
+          },
+          {
+            "value": "neotropic",
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Urocyon_cinereoargenteus:biogeographicRealm",
+            "evidence_type": "direct"
+          }
+        ]
+      }
+    },
+    {
+      "species_id": "nyctereutes_procyonoides",
+      "dimensions": {
+        "environmental_system": [
+          {
+            "value": "terrestrial",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "biome": [
+          {
+            "value": "taiga",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "forest",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "mountains",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "microhabitat": [
+          {
+            "value": "suburban",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "riparian",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "ecological_stratum": [
+          {
+            "value": "ground",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "climate_zone": [
+          {
+            "value": "temperate",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          },
+          {
+            "value": "polar",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "trophic_mode": [
+          {
+            "value": "omnivore",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Nyctereutes procyonoides:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_dominant_diet_guild_v1"
+          }
+        ],
+        "primary_food": [
+          {
+            "value": "ectothermic_vertebrates",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Nyctereutes procyonoides:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_max_diet_component_v1"
+          },
+          {
+            "value": "fruit",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Nyctereutes procyonoides:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_max_diet_component_v1"
+          }
+        ],
+        "activity_cycle": [
+          {
+            "value": "nocturnal",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Nyctereutes procyonoides:Activity-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_activity_flags_v1"
+          }
+        ],
+        "social_organization": [
+          {
+            "value": "social",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "locomotor_mode": [
+          {
+            "value": "natatorial",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "migratory_strategy": [],
+        "shelter_or_nesting": [
+          {
+            "value": "dense_vegetation",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          },
+          {
+            "value": "reused_burrow",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Nyctereutes_procyonoides/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          }
+        ],
+        "native_range_realm": [
+          {
+            "value": "palearctic",
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Nyctereutes_procyonoides:biogeographicRealm",
+            "evidence_type": "direct"
+          }
+        ]
+      }
+    },
+    {
+      "species_id": "otocyon_megalotis",
+      "dimensions": {
+        "environmental_system": [
+          {
+            "value": "terrestrial",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Otocyon_megalotis/#Habitat",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_controlled_keyword_normalization_v1"
+          }
+        ],
+        "biome": [],
+        "microhabitat": [],
+        "ecological_stratum": [],
+        "climate_zone": [],
+        "trophic_mode": [
+          {
+            "value": "invertivore",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Otocyon megalotis:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_dominant_diet_guild_v1"
+          }
+        ],
+        "primary_food": [
+          {
+            "value": "invertebrates",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Otocyon megalotis:Diet-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_max_diet_component_v1"
+          }
+        ],
+        "activity_cycle": [
+          {
+            "value": "cathemeral",
+            "source_id": "eltontraits_1_0_mammals",
+            "source_locator": "EltonTraits_Mammals.txt:Scientific=Otocyon megalotis:Activity-*",
+            "evidence_type": "derived",
+            "mapping_rule_id": "elton_activity_flags_v1"
+          }
+        ],
+        "social_organization": [
+          {
+            "value": "social",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Otocyon_megalotis/#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_behavior_semantic_projection_v1"
+          }
+        ],
+        "locomotor_mode": [],
+        "migratory_strategy": [],
+        "shelter_or_nesting": [
+          {
+            "value": "excavated_den",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Otocyon_megalotis/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          },
+          {
+            "value": "reused_burrow",
+            "source_id": "animal_diversity_web_species_accounts",
+            "source_locator": "https://animaldiversity.org/accounts/Otocyon_megalotis/#Habitat;#Reproduction;#Behavior",
+            "evidence_type": "derived",
+            "mapping_rule_id": "adw_shelter_narrative_projection_v1"
+          }
+        ],
+        "native_range_realm": [
+          {
+            "value": "afrotropic",
+            "source_id": "mammal_diversity_database_v2_5",
+            "source_locator": "MDD_v2.5_6904species.csv:sciName=Otocyon_megalotis:biogeographicRealm",
+            "evidence_type": "direct"
+          }
+        ]
+      }
+    }
+  ],
+  "dimension_statistics": {
+    "environmental_system": {
+      "populated_record_count": 10,
+      "missing_record_count": 2,
+      "observed_partition_entropy_bits": -0.0
+    },
+    "biome": {
+      "populated_record_count": 11,
+      "missing_record_count": 1,
+      "observed_partition_entropy_bits": 3.459432
+    },
+    "microhabitat": {
+      "populated_record_count": 3,
+      "missing_record_count": 9,
+      "observed_partition_entropy_bits": 0.918296
+    },
+    "ecological_stratum": {
+      "populated_record_count": 9,
+      "missing_record_count": 3,
+      "observed_partition_entropy_bits": -0.0
+    },
+    "climate_zone": {
+      "populated_record_count": 9,
+      "missing_record_count": 3,
+      "observed_partition_entropy_bits": 1.657743
+    },
+    "trophic_mode": {
+      "populated_record_count": 12,
+      "missing_record_count": 0,
+      "observed_partition_entropy_bits": 1.040852
+    },
+    "primary_food": {
+      "populated_record_count": 12,
+      "missing_record_count": 0,
+      "observed_partition_entropy_bits": 1.584963
+    },
+    "activity_cycle": {
+      "populated_record_count": 12,
+      "missing_record_count": 0,
+      "observed_partition_entropy_bits": 2.117492
+    },
+    "social_organization": {
+      "populated_record_count": 12,
+      "missing_record_count": 0,
+      "observed_partition_entropy_bits": 1.040852
+    },
+    "locomotor_mode": {
+      "populated_record_count": 4,
+      "missing_record_count": 8,
+      "observed_partition_entropy_bits": 1.5
+    },
+    "migratory_strategy": {
+      "populated_record_count": 6,
+      "missing_record_count": 6,
+      "observed_partition_entropy_bits": 0.918296
+    },
+    "shelter_or_nesting": {
+      "populated_record_count": 12,
+      "missing_record_count": 0,
+      "observed_partition_entropy_bits": 2.792481
+    },
+    "native_range_realm": {
+      "populated_record_count": 12,
+      "missing_record_count": 0,
+      "observed_partition_entropy_bits": 2.355389
+    }
+  },
+  "data_quality": {
+    "populated_dimension_cells": 124,
+    "empty_dimension_cells": 32,
+    "dimension_cell_completeness": 0.794872,
+    "direct_dimension_cells": 12,
+    "derived_dimension_cells": 112,
+    "populated_claims": 185,
+    "direct_claims": 18,
+    "derived_claims": 167,
+    "populated_claim_source_traceability": 1.0,
+    "independently_reviewed_claim_rate": 0.0,
+    "populated_dimensions": [
+      "environmental_system",
+      "biome",
+      "microhabitat",
+      "ecological_stratum",
+      "climate_zone",
+      "trophic_mode",
+      "primary_food",
+      "activity_cycle",
+      "social_organization",
+      "locomotor_mode",
+      "migratory_strategy",
+      "shelter_or_nesting",
+      "native_range_realm"
+    ],
+    "intentionally_empty_dimensions": []
+  },
+  "conceptual_contract": {
+    "identity_expression": "ecology_and_behavior",
+    "original_anchor_roles": [
+      "habitat",
+      "diet",
+      "activity",
+      "sociality"
+    ],
+    "cross_domain_intent": "Dimensions express reusable strategies. Future plant or other-domain adapters may supply domain-specific values without changing navigation mechanics.",
+    "excluded_detail_state_id": "canidae_zoological_detail_seed_v0_1"
+  }
+}
