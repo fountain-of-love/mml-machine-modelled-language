@@ -50,10 +50,15 @@ src/combinatorial_uniqueness/candidate_regions.py
                          v
 src/semantic_navigation/navigation.py
     SemanticNavigationFlow, ambiguity status, imputation, distinctions,
-    next question, commonality, identification depth
+    strategy injection, next question, commonality, identification depth
+src/semantic_navigation/strategies.py
+    NavigationStrategy, default information gain, fixed order, cardinality,
+    coverage, and reproducibly random eligible selection
 ```
 
 The dependency direction is one-way. Upstream capabilities do not import Semantic Navigation, and the experiment adapter does not define operational semantics.
+
+`NavigationStrategy` varies only next-question selection. Exact candidate retrieval remains `compose_candidate_region` over the same compiled incidence state for every strategy. Highest cardinality and highest coverage are therefore reusable MML navigation strategies, not alternative retrieval systems.
 
 ## Research Question
 
@@ -69,6 +74,7 @@ Semantic Navigation defines:
 - deterministic imputation only where all candidates agree;
 - minimum dimension sets required to isolate each complete-signature equivalence class;
 - information-gain selection of the next distinguishing dimension;
+- interchangeable next-question strategies, with information gain as the default;
 - explicit prior entropy, expected posterior entropy, information gain, normalized gain, and missingness for every eligible dimension;
 - overlapping governed lenses that constrain the eligible next questions without creating separate knowledge states;
 - commonality queries over selected candidate sets;
@@ -81,6 +87,8 @@ It does not define natural-language understanding or infer facts absent from gov
 ## Current Evidence
 
 [Experiment 4.1](results/compiled-encyclopedic-navigation-v1.md) is a prompt-provided 60-animal mechanics seed. It exercises the accumulated source path and reports exact retrieval, navigation correctness, code equivalence, incomplete-record diagnostics, equivalence-class resolution, and deterministic operation scaling.
+
+[Experiment 4.2](results/semantic-navigation-strategy-v1.md) injects information gain, fixed order, seeded random, highest cardinality, and highest coverage through the same `NavigationStrategy` contract over one compiled MML state under a uniform candidate prior. Information gain improves on fixed and random selection but ties highest cardinality on the four-dimension fixture; this is a strategy ablation, not an MML-versus-control result.
 
 The [layered Canidae source-backed seeds](animal-encyclopedic-navigation-seed.md) begin the data-governance path for Experiment 4.2 with a shared 12-species registry, a 13-dimension ecology-behavior field, and a separate six-dimension zoological-detail field. Claim provenance and unsupported cells remain explicit, while detailed measurements cannot shape the foundational navigation result.
 
@@ -95,5 +103,6 @@ The current fixture is not independently sourced zoological evidence. Programme 
 - **Experiment blueprint:** [Experiment 4.1 - Compiled Encyclopedic Navigation](experiment.md)
 - **Dimension study blueprint:** [Experiment 4.2 - Lens-Aware Dimension Contribution](dimension-contribution-experiment.md)
 - **Mechanics evidence:** [Compiled Encyclopedic Navigation v1](results/compiled-encyclopedic-navigation-v1.md)
+- **Strategy evidence:** [Semantic Navigation Strategy Comparison v1](results/semantic-navigation-strategy-v1.md)
 - **Dimension contribution evidence:** [Layered Canidae review](results/canidae-dimension-review-v0-2.md)
 - **Next step:** widen the ecology-behavior registry and seed, freeze the 100-, 250-, and 500-species states, then measure dimension contribution, lens behavior, wall-clock, memory, and deterministic operation scaling. Domain-detail seeds evolve independently.

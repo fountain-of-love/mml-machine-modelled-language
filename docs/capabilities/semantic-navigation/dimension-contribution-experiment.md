@@ -1,6 +1,6 @@
 # Experiment 4.2 - Lens-Aware Dimension Contribution
 
-**Status:** implementation blueprint  
+**Status:** uniform-prior scalar treatment implemented; multi-valued expansion pending
 **Research stream:** Programme 4 - Semantic Navigation  
 **Operation:** measure how governed semantic dimensions reduce candidate uncertainty under multiple navigation lenses  
 **Primary claim:** the contribution of a semantic dimension is contextual and can be measured by the candidate partition it induces, rather than fixed in one authored decision tree
@@ -10,6 +10,24 @@
 > Across a governed ecology-behavior state, which reusable dimensions reduce ambiguity, in which candidate regions, under which user lenses, and with how much unique or redundant information?
 
 Experiment 4.2 does not search for one universal dimension hierarchy. A lens defines the dimensions eligible in one interaction; the candidate region determines their information value at that moment.
+
+## Executed Foundational Treatment
+
+The first controlled strategy comparison uses the frozen 60-animal, four-dimension scalar field from Experiment 4.1. Its `habitat`, `diet`, `activity`, and `sociality` values are complete, so missing-source treatment and multi-value projection cannot confound strategy selection.
+
+Every strategy begins with the same 60 candidates and receives the governed value of the same target equivalence class after each selected question. Information gain is the default MML strategy; fixed dimension order, 32-replicate seeded random selection, highest current cardinality, and highest current coverage are interchangeable strategies over the same representation, compiled state, retrieval, ambiguity, and refusal mechanisms. The open lens uses all four dimensions; ecological and behavioral lenses deliberately restrict the available distinctions.
+
+The varied component is question selection, not retrieval. Every treatment retrieves candidate regions through the same exact compiled intersection operator.
+
+The [uniform-prior result](results/semantic-navigation-strategy-v1.md) found:
+
+- information gain reached every target equivalence class in 2.750 mean questions;
+- fixed order and highest coverage required 2.938 mean questions;
+- seeded random required 3.087 mean questions after removing hidden-target dependence from its seed;
+- highest cardinality tied information gain at 2.750 questions, so the result does not establish one preferred strategy on this fixture;
+- all strategies retained the same 0.233 bits of irreducible complete-signature entropy;
+- ecological and behavioral lenses exhausted before the target class in 56.2% and 87.5% of cases respectively; and
+- all three unsupported controls remained unsupported.
 
 ## Explicit Information Contract
 
@@ -46,9 +64,9 @@ The execution result must expose, for every eligible dimension:
 - missing candidate count; and
 - whether the dimension was selected.
 
-## Foundational Dimension Pool
+## Expansion Dimension Pool
 
-The default experiment uses one horizontal ecology-behavior field. It deliberately contains useful, weak, and potentially redundant dimensions. Contribution is measured rather than assumed. Identity and taxonomy live in the linked species registry and are not candidate coordinates.
+The next treatment expands into the horizontal ecology-behavior field. It deliberately contains useful, weak, and potentially redundant dimensions. Contribution is measured rather than assumed. Identity and taxonomy live in the linked species registry and are not candidate coordinates.
 
 | # | Dimension | Initial controlled-value target | Principal lenses |
 | ---: | --- | ---: | --- |
@@ -87,13 +105,22 @@ Lenses are overlapping governed dimension sets, not separate knowledge states an
 
 The experiment must also accept an arbitrary governed lens assembled for a particular interaction. Report lens regret as the information difference between the best open question and the best question allowed by the lens. Optional detail lenses are declared against a particular detail seed and reported separately; they do not silently extend `open`.
 
+For every visited candidate state, the strategy treatment reports:
+
+```text
+strategy regret = max IG(open dimensions | C) - IG(selected dimension | C)
+lens regret   = max IG(open dimensions | C) - max IG(lens dimensions | C)
+```
+
+Trajectory summaries average these step-local quantities. In the complete scalar treatment, all dimensions have equal coverage; the highest-coverage strategy therefore reduces to the frozen-order tie-break. Coverage becomes discriminating only in the partial-state expansion.
+
 ## Single- And Multi-Valued Dimensions
 
-Phase A assigns one governed canonical value or `UNKNOWN` per entity and dimension, producing disjoint partitions and directly testable entropy.
+Phase A is the completed scalar strategy comparison: one governed canonical value per entity and dimension produces disjoint partitions and directly testable entropy.
 
 The source record must still preserve all sourced values. Phase B evaluates genuinely multi-valued dimensions such as habitat and native range through explicit binary coordinate questions. For value `v`, covered candidates are partitioned into `HAS(v)` and `DOES_NOT_HAVE(v)`. Unannotated candidates do not form an `UNKNOWN` semantic answer; they are excluded from the binary partition and coverage multiplies the information gain. Exact value-set entropy is retained only as an apparent-inflation diagnostic.
 
-The initial Canidae pilot also measures conditional information gain after one positive value observation from another dimension narrows the candidate region. Later treatments must add negative observations, multi-step contexts, and declared non-uniform priors.
+The initial Canidae pilot measures conditional information gain after one positive value observation from another dimension narrows the candidate region. Later treatments must add negative observations and multi-step contexts. Non-uniform priors remain a separately identified experiment using `IG(d | C, P)`; they are intentionally excluded from the foundational result.
 
 ## Contribution Statistics
 
@@ -120,14 +147,15 @@ The [Canidae layered review](results/canidae-dimension-review-v0-2.md) operation
 ## Experimental Protocol
 
 1. Freeze definitions, controlled values, aliases, lens membership, missing-value semantics, and source priorities.
-2. Source and independently review linked 100-, 250-, and 500-species registries and ecology-behavior states.
-3. Freeze the animal state before generating navigation queries.
-4. Generate complete, partial, ambiguous, unsupported, and lens-constrained query contexts.
-5. Record every eligible dimension partition before selecting the maximum-information question.
-6. Continue navigation until the region is identifiable, irreducibly ambiguous, or the lens has no informative dimension.
-7. Compare open, lens-constrained, fixed-order, random-eligible, highest-cardinality, and highest-coverage question policies over identical state.
-8. Publish compact aggregate evidence plus a content hash of complete query and navigation traces; retain failing traces as diagnostics.
-9. Run separately identified domain-detail treatments only after the foundational result is frozen.
+2. Execute the frozen scalar uniform-prior strategy comparison over identical candidate states and target classes. **Completed.**
+3. Source and independently review linked 100-, 250-, and 500-species registries and ecology-behavior states.
+4. Freeze each expanded animal state before generating navigation queries.
+5. Generate complete, partial, ambiguous, unsupported, and lens-constrained query contexts.
+6. Record every eligible dimension partition before selecting the maximum-information question.
+7. Continue navigation until the region is identifiable, irreducibly ambiguous, or the lens has no informative dimension.
+8. Repeat the strategy comparison over the expanded states.
+9. Publish compact aggregate evidence plus a content hash of complete query and navigation traces; retain failing traces as diagnostics.
+10. Run separately identified non-uniform-prior, LLM-strategy, non-MML-system, and domain-detail treatments only after the corresponding foundational state is frozen.
 
 ## Primary Outcomes
 

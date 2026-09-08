@@ -58,4 +58,4 @@ The biome result confirms the original concern: eleven observed records have ele
 
 For biome, 41 of 42 eligible one-value contexts have positive adjusted information gain. The maximum reaches 1 bit in balanced narrowed regions. This does not validate biome as globally optimal; it shows that its contribution is contextual and must be evaluated after the current candidate region is known.
 
-The pilot deliberately stops short of causal or biological interpretation. The next foundational experiment must add negative observations, multi-step contexts, pairwise redundancy, source-confidence weighting, and independently reviewed annotations before comparing navigation policies. Zoological-detail contribution is a separate depth treatment.
+The pilot deliberately stops short of causal or biological interpretation. The next expanded treatment must add negative observations, multi-step contexts, pairwise redundancy, source-confidence weighting, and independently reviewed annotations before comparing navigation strategies. Zoological-detail contribution is a separate depth treatment.
