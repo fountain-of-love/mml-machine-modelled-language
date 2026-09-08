@@ -17,6 +17,10 @@ from src.semantic_navigation.navigation import (
     NavigationLens,
     SemanticNavigationFlow,
 )
+from src.semantic_navigation.strategies import (
+    FixedDimensionOrderNavigationStrategy,
+    INFORMATION_GAIN,
+)
 from src.semantic_representation.governed_coordinates import (
     CodedSemanticQuery,
     SemanticEntity,
@@ -141,6 +145,25 @@ class AccumulatedCapabilityContractTests(unittest.TestCase):
         self.assertEqual(information.expected_posterior_entropy_bits, 0.5)
         self.assertEqual(information.information_gain_bits, 1.5)
         self.assertEqual(information.normalized_information_gain, 0.75)
+
+    def test_navigation_can_start_from_the_complete_candidate_universe(self):
+        result = self.flow.start(self.state)
+
+        self.assertEqual(result.candidate_ids, tuple(record.id for record in self.records))
+        self.assertEqual(result.status, AMBIGUOUS)
+        self.assertEqual(result.next_dimension, "activity")
+        self.assertEqual(result.strategy_id, INFORMATION_GAIN)
+        self.assertEqual(result.region.coordinate_codes, ())
+
+    def test_navigation_strategy_is_injected_without_changing_retrieval(self):
+        fixed_flow = SemanticNavigationFlow(FixedDimensionOrderNavigationStrategy())
+        information_gain = self.flow.start(self.state)
+        fixed = fixed_flow.start(self.state)
+
+        self.assertEqual(fixed.candidate_ids, information_gain.candidate_ids)
+        self.assertEqual(fixed.region, information_gain.region)
+        self.assertEqual(fixed.next_dimension, "habitat")
+        self.assertEqual(fixed.strategy_id, "fixed_dimension_order")
 
     def test_navigation_lens_constrains_the_next_question(self):
         result = self.flow.execute(

@@ -10,6 +10,7 @@ from typing import Mapping, Sequence
 
 from src.combinatorial_uniqueness.candidate_regions import (
     CandidateRegion,
+    RegionExecutionCost,
     compose_candidate_region,
 )
 from src.knowledge_state_execution.compiled_incidence import (
@@ -23,6 +24,10 @@ from src.semantic_representation.governed_coordinates import (
     decode_query,
     encode_query,
     represent_coordinate_basis,
+)
+from src.semantic_navigation.strategies import (
+    DEFAULT_NAVIGATION_STRATEGY,
+    NavigationStrategy,
 )
 
 
@@ -80,6 +85,7 @@ class NavigationResult:
     distinctions: Mapping[str, Mapping[str, tuple[str, ...]]]
     partition_information: Mapping[str, PartitionInformation]
     lens_id: str
+    strategy_id: str
     next_dimension: str | None
     next_dimension_information_gain: float
     region: CandidateRegion
@@ -142,6 +148,13 @@ def _partition_information(
 class SemanticNavigationFlow:
     """Facade accumulating representation, compilation, composition, and navigation."""
 
+    def __init__(self, strategy: NavigationStrategy | None = None) -> None:
+        self._strategy = strategy or DEFAULT_NAVIGATION_STRATEGY
+
+    @property
+    def strategy(self) -> NavigationStrategy:
+        return self._strategy
+
     def govern_and_compile(
         self,
         state_id: str,
@@ -161,6 +174,28 @@ class SemanticNavigationFlow:
             state,
             encode_query(state.basis, observed),
             lens=lens,
+        )
+
+    def start(
+        self,
+        state: SemanticNavigationState,
+        lens: NavigationLens | None = None,
+    ) -> NavigationResult:
+        """Start navigation over the complete governed candidate universe."""
+        positions = tuple(range(len(state.basis.entities)))
+        region = CandidateRegion(
+            coordinate_codes=(),
+            entity_positions=positions,
+            entity_ids=tuple(entity.id for entity in state.basis.entities),
+            cost=RegionExecutionCost(result_materializations=len(positions)),
+        )
+        eligible_dimensions = self._eligible_dimensions(state, lens)
+        return self._navigate(
+            state,
+            region,
+            (),
+            eligible_dimensions,
+            ALL_DIMENSIONS_LENS if lens is None else lens.id,
         )
 
     def execute_codes(
@@ -254,26 +289,32 @@ class SemanticNavigationFlow:
             dimension: _partition_information(dimension, partition)
             for dimension, partition in distinctions.items()
         }
-        gains = {
-            dimension: information.information_gain_bits
-            for dimension, information in partition_information.items()
-            if information.information_gain_bits > 0.0
-        }
-        next_dimension = max(
-            gains,
-            key=lambda item: (gains[item], -state.basis.dimensions.index(item)),
-        ) if gains else None
+        frozen_information = _freeze(partition_information)
+        next_dimension = self._strategy.select(
+            frozen_information,
+            state.basis.dimensions,
+        )
+        if next_dimension is not None and (
+            next_dimension not in frozen_information
+            or frozen_information[next_dimension].information_gain_bits <= 0.0
+        ):
+            raise ValueError(
+                f"navigation strategy '{self._strategy.id}' selected an ineligible dimension"
+            )
         return NavigationResult(
             candidate_ids=region.entity_ids,
             status=_status(len(region.entity_ids)),
             commonality=_freeze(self._commonality(state, region.entity_positions)),
             deterministic_imputations=_freeze(imputations),
             distinctions=_freeze_nested(distinctions),
-            partition_information=_freeze(partition_information),
+            partition_information=frozen_information,
             lens_id=lens_id,
+            strategy_id=self._strategy.id,
             next_dimension=next_dimension,
             next_dimension_information_gain=(
-                0.0 if next_dimension is None else gains[next_dimension]
+                0.0
+                if next_dimension is None
+                else frozen_information[next_dimension].information_gain_bits
             ),
             region=region,
         )
