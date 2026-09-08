@@ -13,7 +13,7 @@ The seed positively demonstrates one accumulated source path: governed coordinat
 | Semantic Representation | `GovernedCoordinateBasis` | 26 governed coordinates and reversible codes |
 | Knowledge State Execution | `CompiledIncidenceState` | Persistent postings, 48 signature classes, and named snapshot |
 | Combinatorial Uniqueness | `compose_candidate_region` | 320 exact candidate-region compositions |
-| Semantic Navigation | `SemanticNavigationFlow` | Exact statuses, imputations, partitions, next questions, and commonality |
+| Semantic Navigation | `SemanticNavigationFlow` | Exact statuses, imputations, partitions, commonality, and default `information_gain` next-question strategy |
 
 ## Retrieval And Navigation
 
@@ -26,7 +26,7 @@ The seed positively demonstrates one accumulated source path: governed coordinat
 | Status accuracy | 1.000 |
 | Navigation accuracy | 1.000 |
 | Semantic/code equivalence | 1.000 |
-| Query-trace digest | `sha256:fbcba5d8833c158c52e79e7eb1b1159a23ec461733bb838ebf35f221d0392a4e` |
+| Query-trace digest | `sha256:dd6a6780bdc48346975ad8f9ced0b8f1bc61405badb2292d9efab1e18775377c` |
 
 ## Matrix Resolution
 

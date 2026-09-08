@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import itertools
-import json
 import math
 import statistics
 from collections import Counter
@@ -22,9 +21,14 @@ from src.semantic_navigation.navigation import (
 )
 from src.semantic_representation.governed_coordinates import SemanticEntity, encode_query
 
+from .fixtures import (
+    COMPILED_NAVIGATION_SEED_PATH,
+    load_compiled_navigation_fixture,
+)
+
 
 ROOT = Path(__file__).resolve().parents[2]
-DATA_PATH = ROOT / "data" / "demonstration" / "compiled_encyclopedic_navigation_seed_v1.json"
+DATA_PATH = COMPILED_NAVIGATION_SEED_PATH
 RESULT_PATH = ROOT / "benchmark" / "results" / "compiled-encyclopedic-navigation-v1.json"
 REPORT_PATH = ROOT / "docs" / "capabilities" / "semantic-navigation" / "results" / "compiled-encyclopedic-navigation-v1.md"
 STUDY_PATH = ROOT / "docs" / "capabilities" / "semantic-navigation" / "experiment.md"
@@ -49,22 +53,6 @@ class FlatScanCost:
     @property
     def total_operations(self) -> int:
         return self.record_field_comparisons + self.result_materializations
-
-
-def _entity(item: dict, dimensions: tuple[str, ...]) -> SemanticEntity:
-    return SemanticEntity(
-        item["id"],
-        item["label"],
-        {dimension: item.get(dimension) for dimension in dimensions},
-    )
-
-
-def _load_fixture() -> tuple[dict, tuple[str, ...], tuple[SemanticEntity, ...], tuple[SemanticEntity, ...]]:
-    fixture = json.loads(DATA_PATH.read_text(encoding="utf-8"))
-    dimensions = tuple(fixture["dimensions"])
-    records = tuple(_entity(item, dimensions) for item in fixture["records"])
-    incomplete = tuple(_entity(item, dimensions) for item in fixture.get("incomplete_records", ()))
-    return fixture, dimensions, records, incomplete
 
 
 def _condition(width: int, dimension_count: int) -> str:
@@ -144,6 +132,7 @@ def _equivalent(left, right) -> bool:
         == {key: dict(value) for key, value in right.distinctions.items()}
         and dict(left.partition_information) == dict(right.partition_information)
         and left.lens_id == right.lens_id
+        and left.strategy_id == right.strategy_id
         and left.next_dimension == right.next_dimension
         and math.isclose(
             left.next_dimension_information_gain,
@@ -221,6 +210,7 @@ def _serialize_navigation(result) -> dict:
             for dimension, information in result.partition_information.items()
         },
         "lens_id": result.lens_id,
+        "strategy_id": result.strategy_id,
         "next_dimension": result.next_dimension,
         "next_dimension_information_gain": result.next_dimension_information_gain,
         "region_cost": asdict(cost) | {"total_operations": cost.total_operations},
@@ -419,7 +409,7 @@ def _scaling_row(
 
 
 def run_experiment() -> dict:
-    fixture, dimensions, records, incomplete = _load_fixture()
+    fixture, dimensions, records, incomplete = load_compiled_navigation_fixture()
     flow = SemanticNavigationFlow()
     state = flow.govern_and_compile(fixture["state_id"], dimensions, records)
     incomplete_state = flow.govern_and_compile(f"{fixture['state_id']}:incomplete", dimensions, incomplete)
@@ -498,6 +488,7 @@ def run_experiment() -> dict:
             },
             "semantic_navigation": {
                 "contract": "SemanticNavigationFlow",
+                "default_strategy": flow.strategy.id,
                 "navigation_accuracy": aggregate["navigation_accuracy"],
                 "status_accuracy": aggregate["status_accuracy"],
                 "code_equivalence_rate": aggregate["code_equivalence_rate"],
@@ -558,7 +549,7 @@ def markdown_report(result: dict) -> str:
         f"| Semantic Representation | `{result['capability_contributions']['semantic_representation']['contract']}` | {result['capability_contributions']['semantic_representation']['coordinate_count']} governed coordinates and reversible codes |",
         f"| Knowledge State Execution | `{result['capability_contributions']['knowledge_state_execution']['contract']}` | Persistent postings, {result['capability_contributions']['knowledge_state_execution']['signature_class_count']} signature classes, and named snapshot |",
         f"| Combinatorial Uniqueness | `{result['capability_contributions']['combinatorial_uniqueness']['contract']}` | {aggregate['query_count']} exact candidate-region compositions |",
-        f"| Semantic Navigation | `{result['capability_contributions']['semantic_navigation']['contract']}` | Exact statuses, imputations, partitions, next questions, and commonality |",
+        f"| Semantic Navigation | `{result['capability_contributions']['semantic_navigation']['contract']}` | Exact statuses, imputations, partitions, commonality, and default `{result['capability_contributions']['semantic_navigation']['default_strategy']}` next-question strategy |",
         "",
         "## Retrieval And Navigation",
         "",
