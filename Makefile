@@ -1,4 +1,4 @@
-.PHONY: run run-knowledge-state experiment-3 experiment-3-1 experiment-3-2 experiment-3-3 experiment-3-4 experiment-4-1 run-elaborate run-legal trace test benchmark benchmark-check knowledge-state-benchmark knowledge-state-benchmark-check experiment-3-1-benchmark experiment-3-1-check experiment-3-2-benchmark experiment-3-2-check experiment-3-3-benchmark experiment-3-3-check experiment-3-4-benchmark experiment-3-4-check experiment-4-1-benchmark experiment-4-1-check retrieval-benchmark-check update-demo
+.PHONY: run run-knowledge-state experiment-3 experiment-3-1 experiment-3-2 experiment-3-3 experiment-3-4 experiment-4-1 experiment-4-2 run-elaborate run-legal trace test benchmark benchmark-check knowledge-state-benchmark knowledge-state-benchmark-check experiment-3-1-benchmark experiment-3-1-check experiment-3-2-benchmark experiment-3-2-check experiment-3-3-benchmark experiment-3-3-check experiment-3-4-benchmark experiment-3-4-check experiment-4-1-benchmark experiment-4-1-check experiment-4-2-benchmark experiment-4-2-check retrieval-benchmark-check update-demo
 
 PYTHON ?= python3
 
@@ -26,6 +26,9 @@ experiment-3-4:
 experiment-4-1:
 	$(PYTHON) -m experiments.semantic_navigation.run_compiled_encyclopedic_navigation
 
+experiment-4-2:
+	$(PYTHON) -m experiments.semantic_navigation.run_navigation_strategy
+
 run-elaborate:
 	$(PYTHON) -m elaborations.mml_elaborate_corpus
 
@@ -44,6 +47,7 @@ test:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.combinatorial_uniqueness.cross_level_transition_benchmark --check >/dev/null
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.combinatorial_uniqueness.compositional_generalization_benchmark --check >/dev/null
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.semantic_navigation.compiled_encyclopedic_navigation_benchmark --check >/dev/null
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.semantic_navigation.navigation_strategy_benchmark --check >/dev/null
 
 benchmark:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.semantic_representation.benchmark --write
@@ -86,6 +90,12 @@ experiment-4-1-benchmark:
 
 experiment-4-1-check:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.semantic_navigation.compiled_encyclopedic_navigation_benchmark --check
+
+experiment-4-2-benchmark:
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.semantic_navigation.navigation_strategy_benchmark --write
+
+experiment-4-2-check:
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.semantic_navigation.navigation_strategy_benchmark --check
 
 retrieval-benchmark-check:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) retrieval_benchmark.py --check

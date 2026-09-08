@@ -1,0 +1,485 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "experiment-4.2-semantic-navigation-strategy-v1",
+  "title": "Experiment 4.2 - Semantic Navigation Strategy Comparison",
+  "research_stream": "Programme 4 - Semantic Navigation",
+  "research_question": "Given one shared MML candidate state, which next-question strategy navigates it most effectively?",
+  "fixture": {
+    "state_id": "compiled_encyclopedic_navigation_seed_v1",
+    "record_count": 60,
+    "equivalence_class_count": 48,
+    "dimensions": [
+      "habitat",
+      "diet",
+      "activity",
+      "sociality"
+    ],
+    "complete_scalar_field": true,
+    "evidence_boundary": "Real animal names with prompt-provided canonical attributes. This is a controlled seed fixture for compiled retrieval and semantic navigation mechanics, not an independently sourced encyclopedic dataset."
+  },
+  "protocol": {
+    "candidate_prior": "uniform",
+    "target_unit": "complete-signature equivalence class",
+    "question_answer": "target exemplar's governed scalar value",
+    "eligible_question": "unobserved lens dimension with positive information gain",
+    "random_seed": 42042,
+    "random_replicates": 32,
+    "shared_substrate": "MML governed representation, compiled incidence state, exact composition, ambiguity, and refusal",
+    "varied_component": "NavigationStrategy",
+    "strategies": [
+      "information_gain",
+      "fixed_dimension_order",
+      "highest_cardinality_dimension",
+      "highest_coverage_dimension",
+      "random_eligible_dimension"
+    ],
+    "lenses": {
+      "open": [
+        "habitat",
+        "diet",
+        "activity",
+        "sociality"
+      ],
+      "ecological": [
+        "habitat",
+        "diet",
+        "activity"
+      ],
+      "behavioral": [
+        "activity",
+        "sociality"
+      ]
+    },
+    "deferred_treatments": [
+      "non_uniform_candidate_priors",
+      "llm_selected_question",
+      "multi_valued_source_state",
+      "non_mml_system_comparison"
+    ]
+  },
+  "strategy_results": {
+    "open": {
+      "information_gain": {
+        "trajectory_count": 48,
+        "target_class_resolution_rate": 1.0,
+        "mean_questions_asked": 2.75,
+        "mean_questions_to_target_class": 2.75,
+        "mean_final_candidate_count": 1.25,
+        "mean_residual_entropy_bits": 0.2327067708633815,
+        "mean_candidate_reduction": 58.75,
+        "mean_candidate_reduction_fraction": 0.9791666666666666,
+        "mean_candidate_reduction_per_question": 23.262152777777775,
+        "identifiable_rate": 0.7916666666666666,
+        "ambiguous_rate": 0.20833333333333334,
+        "unsupported_rate": 0.0,
+        "lens_exhausted_rate": 0.0,
+        "mean_selected_question_regret_bits": 0.0,
+        "mean_lens_regret_bits": 0.0
+      },
+      "fixed_dimension_order": {
+        "trajectory_count": 48,
+        "target_class_resolution_rate": 1.0,
+        "mean_questions_asked": 2.9375,
+        "mean_questions_to_target_class": 2.9375,
+        "mean_final_candidate_count": 1.25,
+        "mean_residual_entropy_bits": 0.2327067708633815,
+        "mean_candidate_reduction": 58.75,
+        "mean_candidate_reduction_fraction": 0.9791666666666666,
+        "mean_candidate_reduction_per_question": 22.244791666666668,
+        "identifiable_rate": 0.7916666666666666,
+        "ambiguous_rate": 0.20833333333333334,
+        "unsupported_rate": 0.0,
+        "lens_exhausted_rate": 0.0,
+        "mean_selected_question_regret_bits": 0.11954086661305313,
+        "mean_lens_regret_bits": 0.0
+      },
+      "highest_cardinality_dimension": {
+        "trajectory_count": 48,
+        "target_class_resolution_rate": 1.0,
+        "mean_questions_asked": 2.75,
+        "mean_questions_to_target_class": 2.75,
+        "mean_final_candidate_count": 1.25,
+        "mean_residual_entropy_bits": 0.2327067708633815,
+        "mean_candidate_reduction": 58.75,
+        "mean_candidate_reduction_fraction": 0.9791666666666666,
+        "mean_candidate_reduction_per_question": 23.262152777777775,
+        "identifiable_rate": 0.7916666666666666,
+        "ambiguous_rate": 0.20833333333333334,
+        "unsupported_rate": 0.0,
+        "lens_exhausted_rate": 0.0,
+        "mean_selected_question_regret_bits": 0.006290729184695587,
+        "mean_lens_regret_bits": 0.0
+      },
+      "highest_coverage_dimension": {
+        "trajectory_count": 48,
+        "target_class_resolution_rate": 1.0,
+        "mean_questions_asked": 2.9375,
+        "mean_questions_to_target_class": 2.9375,
+        "mean_final_candidate_count": 1.25,
+        "mean_residual_entropy_bits": 0.2327067708633815,
+        "mean_candidate_reduction": 58.75,
+        "mean_candidate_reduction_fraction": 0.9791666666666666,
+        "mean_candidate_reduction_per_question": 22.244791666666668,
+        "identifiable_rate": 0.7916666666666666,
+        "ambiguous_rate": 0.20833333333333334,
+        "unsupported_rate": 0.0,
+        "lens_exhausted_rate": 0.0,
+        "mean_selected_question_regret_bits": 0.11954086661305313,
+        "mean_lens_regret_bits": 0.0
+      },
+      "random_eligible_dimension": {
+        "trajectory_count": 1536,
+        "target_class_resolution_rate": 1.0,
+        "mean_questions_asked": 3.0872395833333335,
+        "mean_questions_to_target_class": 3.0872395833333335,
+        "mean_final_candidate_count": 1.25,
+        "mean_residual_entropy_bits": 0.2327067708633815,
+        "mean_candidate_reduction": 58.75,
+        "mean_candidate_reduction_fraction": 0.9791666666666666,
+        "mean_candidate_reduction_per_question": 20.96245659722222,
+        "identifiable_rate": 0.7916666666666666,
+        "ambiguous_rate": 0.20833333333333334,
+        "unsupported_rate": 0.0,
+        "lens_exhausted_rate": 0.0,
+        "mean_selected_question_regret_bits": 0.3551146624641958,
+        "mean_lens_regret_bits": 0.0
+      }
+    },
+    "ecological": {
+      "information_gain": {
+        "trajectory_count": 48,
+        "target_class_resolution_rate": 0.4375,
+        "mean_questions_asked": 2.3958333333333335,
+        "mean_questions_to_target_class": 2.4761904761904763,
+        "mean_final_candidate_count": 2.6041666666666665,
+        "mean_residual_entropy_bits": 1.046860406113401,
+        "mean_candidate_reduction": 57.395833333333336,
+        "mean_candidate_reduction_fraction": 0.9565972222222222,
+        "mean_candidate_reduction_per_question": 27.88888888888889,
+        "identifiable_rate": 0.3541666666666667,
+        "ambiguous_rate": 0.6458333333333334,
+        "unsupported_rate": 0.0,
+        "lens_exhausted_rate": 0.5625,
+        "mean_selected_question_regret_bits": 0.15153661188831988,
+        "mean_lens_regret_bits": 0.15153661188831988
+      },
+      "fixed_dimension_order": {
+        "trajectory_count": 48,
+        "target_class_resolution_rate": 0.4375,
+        "mean_questions_asked": 2.375,
+        "mean_questions_to_target_class": 2.4285714285714284,
+        "mean_final_candidate_count": 2.6041666666666665,
+        "mean_residual_entropy_bits": 1.046860406113401,
+        "mean_candidate_reduction": 57.395833333333336,
+        "mean_candidate_reduction_fraction": 0.9565972222222222,
+        "mean_candidate_reduction_per_question": 28.09375,
+        "identifiable_rate": 0.3541666666666667,
+        "ambiguous_rate": 0.6458333333333334,
+        "unsupported_rate": 0.0,
+        "lens_exhausted_rate": 0.5625,
+        "mean_selected_question_regret_bits": 0.1452659432920451,
+        "mean_lens_regret_bits": 0.12976539357861486
+      },
+      "highest_cardinality_dimension": {
+        "trajectory_count": 48,
+        "target_class_resolution_rate": 0.4375,
+        "mean_questions_asked": 2.375,
+        "mean_questions_to_target_class": 2.4285714285714284,
+        "mean_final_candidate_count": 2.6041666666666665,
+        "mean_residual_entropy_bits": 1.046860406113401,
+        "mean_candidate_reduction": 57.395833333333336,
+        "mean_candidate_reduction_fraction": 0.9565972222222222,
+        "mean_candidate_reduction_per_question": 28.09375,
+        "identifiable_rate": 0.3541666666666667,
+        "ambiguous_rate": 0.6458333333333334,
+        "unsupported_rate": 0.0,
+        "lens_exhausted_rate": 0.5625,
+        "mean_selected_question_regret_bits": 0.1452659432920451,
+        "mean_lens_regret_bits": 0.12976539357861486
+      },
+      "highest_coverage_dimension": {
+        "trajectory_count": 48,
+        "target_class_resolution_rate": 0.4375,
+        "mean_questions_asked": 2.375,
+        "mean_questions_to_target_class": 2.4285714285714284,
+        "mean_final_candidate_count": 2.6041666666666665,
+        "mean_residual_entropy_bits": 1.046860406113401,
+        "mean_candidate_reduction": 57.395833333333336,
+        "mean_candidate_reduction_fraction": 0.9565972222222222,
+        "mean_candidate_reduction_per_question": 28.09375,
+        "identifiable_rate": 0.3541666666666667,
+        "ambiguous_rate": 0.6458333333333334,
+        "unsupported_rate": 0.0,
+        "lens_exhausted_rate": 0.5625,
+        "mean_selected_question_regret_bits": 0.1452659432920451,
+        "mean_lens_regret_bits": 0.12976539357861486
+      },
+      "random_eligible_dimension": {
+        "trajectory_count": 1536,
+        "target_class_resolution_rate": 0.4375,
+        "mean_questions_asked": 2.6770833333333335,
+        "mean_questions_to_target_class": 2.7083333333333335,
+        "mean_final_candidate_count": 2.6041666666666665,
+        "mean_residual_entropy_bits": 1.046860406113401,
+        "mean_candidate_reduction": 57.395833333333336,
+        "mean_candidate_reduction_fraction": 0.9565972222222222,
+        "mean_candidate_reduction_per_question": 23.045247395833332,
+        "identifiable_rate": 0.3541666666666667,
+        "ambiguous_rate": 0.6458333333333334,
+        "unsupported_rate": 0.0,
+        "lens_exhausted_rate": 0.5625,
+        "mean_selected_question_regret_bits": 0.5735472355767361,
+        "mean_lens_regret_bits": 0.07316973748340587
+      }
+    },
+    "behavioral": {
+      "information_gain": {
+        "trajectory_count": 48,
+        "target_class_resolution_rate": 0.125,
+        "mean_questions_asked": 1.75,
+        "mean_questions_to_target_class": 1.5,
+        "mean_final_candidate_count": 6.833333333333333,
+        "mean_residual_entropy_bits": 2.3321469590208426,
+        "mean_candidate_reduction": 53.166666666666664,
+        "mean_candidate_reduction_fraction": 0.8861111111111111,
+        "mean_candidate_reduction_per_question": 33.697916666666664,
+        "identifiable_rate": 0.10416666666666667,
+        "ambiguous_rate": 0.8958333333333334,
+        "unsupported_rate": 0.0,
+        "lens_exhausted_rate": 0.875,
+        "mean_selected_question_regret_bits": 0.5740909654216594,
+        "mean_lens_regret_bits": 0.5740909654216594
+      },
+      "fixed_dimension_order": {
+        "trajectory_count": 48,
+        "target_class_resolution_rate": 0.125,
+        "mean_questions_asked": 2.0,
+        "mean_questions_to_target_class": 2.0,
+        "mean_final_candidate_count": 6.833333333333333,
+        "mean_residual_entropy_bits": 2.3321469590208426,
+        "mean_candidate_reduction": 53.166666666666664,
+        "mean_candidate_reduction_fraction": 0.8861111111111111,
+        "mean_candidate_reduction_per_question": 26.583333333333332,
+        "identifiable_rate": 0.10416666666666667,
+        "ambiguous_rate": 0.8958333333333334,
+        "unsupported_rate": 0.0,
+        "lens_exhausted_rate": 0.875,
+        "mean_selected_question_regret_bits": 0.9308201277304738,
+        "mean_lens_regret_bits": 0.3923081075599611
+      },
+      "highest_cardinality_dimension": {
+        "trajectory_count": 48,
+        "target_class_resolution_rate": 0.125,
+        "mean_questions_asked": 1.75,
+        "mean_questions_to_target_class": 1.5,
+        "mean_final_candidate_count": 6.833333333333333,
+        "mean_residual_entropy_bits": 2.3321469590208426,
+        "mean_candidate_reduction": 53.166666666666664,
+        "mean_candidate_reduction_fraction": 0.8861111111111111,
+        "mean_candidate_reduction_per_question": 33.697916666666664,
+        "identifiable_rate": 0.10416666666666667,
+        "ambiguous_rate": 0.8958333333333334,
+        "unsupported_rate": 0.0,
+        "lens_exhausted_rate": 0.875,
+        "mean_selected_question_regret_bits": 0.5740909654216594,
+        "mean_lens_regret_bits": 0.5740909654216594
+      },
+      "highest_coverage_dimension": {
+        "trajectory_count": 48,
+        "target_class_resolution_rate": 0.125,
+        "mean_questions_asked": 2.0,
+        "mean_questions_to_target_class": 2.0,
+        "mean_final_candidate_count": 6.833333333333333,
+        "mean_residual_entropy_bits": 2.3321469590208426,
+        "mean_candidate_reduction": 53.166666666666664,
+        "mean_candidate_reduction_fraction": 0.8861111111111111,
+        "mean_candidate_reduction_per_question": 26.583333333333332,
+        "identifiable_rate": 0.10416666666666667,
+        "ambiguous_rate": 0.8958333333333334,
+        "unsupported_rate": 0.0,
+        "lens_exhausted_rate": 0.875,
+        "mean_selected_question_regret_bits": 0.9308201277304738,
+        "mean_lens_regret_bits": 0.3923081075599611
+      },
+      "random_eligible_dimension": {
+        "trajectory_count": 1536,
+        "target_class_resolution_rate": 0.125,
+        "mean_questions_asked": 1.90625,
+        "mean_questions_to_target_class": 1.8125,
+        "mean_final_candidate_count": 6.833333333333333,
+        "mean_residual_entropy_bits": 2.3321469590208426,
+        "mean_candidate_reduction": 53.166666666666664,
+        "mean_candidate_reduction_fraction": 0.8861111111111111,
+        "mean_candidate_reduction_per_question": 29.251302083333332,
+        "identifiable_rate": 0.10416666666666667,
+        "ambiguous_rate": 0.8958333333333334,
+        "unsupported_rate": 0.0,
+        "lens_exhausted_rate": 0.875,
+        "mean_selected_question_regret_bits": 0.7970466918646685,
+        "mean_lens_regret_bits": 0.46047667925809793
+      }
+    }
+  },
+  "open_comparison": {
+    "best_other_strategy_by_mean_questions": "highest_cardinality_dimension",
+    "information_gain_minus_best_other_strategy_mean_questions": 0.0,
+    "information_gain_minus_best_other_strategy_residual_entropy_bits": 0.0
+  },
+  "unsupported_probes": {
+    "count": 3,
+    "unsupported_rate": 1.0
+  },
+  "trace_evidence": {
+    "trajectory_count": 5184,
+    "trace_sha256": "sha256:7894578626f31e9be895cbd50a3502e5d72b60317d21f30b993118772803d836",
+    "sample": [
+      {
+        "strategy_id": "information_gain",
+        "lens_id": "open",
+        "replicate": 0,
+        "target_class": [
+          "african_wild_dog"
+        ],
+        "questions_asked": 3,
+        "target_class_reached": true,
+        "termination": "TARGET_EQUIVALENCE_CLASS_REACHED",
+        "final_status": "IDENTIFIABLE",
+        "final_candidate_count": 1,
+        "residual_entropy_bits": 0.0,
+        "candidate_reduction": 59,
+        "candidate_reduction_fraction": 0.9833333333333333,
+        "candidate_reduction_per_question": 19.666666666666668,
+        "mean_selected_question_regret_bits": 0.0,
+        "mean_lens_regret_bits": 0.0,
+        "steps": [
+          {
+            "candidate_count_before": 60,
+            "selected_dimension": "habitat",
+            "observed_value": "grassland",
+            "selected_information_gain_bits": 2.875594723419974,
+            "selected_question_regret_bits": 0.0,
+            "lens_regret_bits": 0.0
+          },
+          {
+            "candidate_count_before": 15,
+            "selected_dimension": "sociality",
+            "observed_value": "pack",
+            "selected_information_gain_bits": 2.1492553971685,
+            "selected_question_regret_bits": 0.0,
+            "lens_regret_bits": 0.0
+          },
+          {
+            "candidate_count_before": 2,
+            "selected_dimension": "diet",
+            "observed_value": "carnivore",
+            "selected_information_gain_bits": 1.0,
+            "selected_question_regret_bits": 0.0,
+            "lens_regret_bits": 0.0
+          }
+        ]
+      },
+      {
+        "strategy_id": "information_gain",
+        "lens_id": "open",
+        "replicate": 0,
+        "target_class": [
+          "albatross"
+        ],
+        "questions_asked": 2,
+        "target_class_reached": true,
+        "termination": "TARGET_EQUIVALENCE_CLASS_REACHED",
+        "final_status": "IDENTIFIABLE",
+        "final_candidate_count": 1,
+        "residual_entropy_bits": 0.0,
+        "candidate_reduction": 59,
+        "candidate_reduction_fraction": 0.9833333333333333,
+        "candidate_reduction_per_question": 29.5,
+        "mean_selected_question_regret_bits": 0.0,
+        "mean_lens_regret_bits": 0.0,
+        "steps": [
+          {
+            "candidate_count_before": 60,
+            "selected_dimension": "habitat",
+            "observed_value": "ocean",
+            "selected_information_gain_bits": 2.875594723419974,
+            "selected_question_regret_bits": 0.0,
+            "lens_regret_bits": 0.0
+          },
+          {
+            "candidate_count_before": 7,
+            "selected_dimension": "sociality",
+            "observed_value": "colony",
+            "selected_information_gain_bits": 2.2359263506290326,
+            "selected_question_regret_bits": 0.0,
+            "lens_regret_bits": 0.0
+          }
+        ]
+      },
+      {
+        "strategy_id": "information_gain",
+        "lens_id": "open",
+        "replicate": 0,
+        "target_class": [
+          "american_black_bear",
+          "red_panda"
+        ],
+        "questions_asked": 3,
+        "target_class_reached": true,
+        "termination": "TARGET_EQUIVALENCE_CLASS_REACHED",
+        "final_status": "AMBIGUOUS",
+        "final_candidate_count": 2,
+        "residual_entropy_bits": 1.0,
+        "candidate_reduction": 58,
+        "candidate_reduction_fraction": 0.9666666666666667,
+        "candidate_reduction_per_question": 19.333333333333332,
+        "mean_selected_question_regret_bits": 0.0,
+        "mean_lens_regret_bits": 0.0,
+        "steps": [
+          {
+            "candidate_count_before": 60,
+            "selected_dimension": "habitat",
+            "observed_value": "woodland",
+            "selected_information_gain_bits": 2.875594723419974,
+            "selected_question_regret_bits": 0.0,
+            "lens_regret_bits": 0.0
+          },
+          {
+            "candidate_count_before": 15,
+            "selected_dimension": "activity",
+            "observed_value": "crepuscular",
+            "selected_information_gain_bits": 1.53012496531497,
+            "selected_question_regret_bits": 0.0,
+            "lens_regret_bits": 0.0
+          },
+          {
+            "candidate_count_before": 4,
+            "selected_dimension": "diet",
+            "observed_value": "omnivore",
+            "selected_information_gain_bits": 1.0,
+            "selected_question_regret_bits": 0.0,
+            "lens_regret_bits": 0.0
+          }
+        ]
+      }
+    ]
+  },
+  "conformity": {
+    "judgment": "UNIFORM_STRATEGY_EXPERIMENT_CONFORMANT",
+    "criteria": {
+      "uniform_candidate_prior_declared": true,
+      "all_strategies_share_initial_state": true,
+      "information_gain_questions_maximize_local_information_gain": true,
+      "valid_target_trajectories_never_become_unsupported": true,
+      "unsupported_probes_remain_unsupported": true,
+      "random_strategy_is_seeded_and_replicated": true
+    }
+  },
+  "artifact_identities": {
+    "fixture_sha256": "sha256:d16fe8a1151f862600bd3e4a30b071e577497f93b9b10737b7d0ba43d00f13d9",
+    "navigation_sha256": "sha256:aff6dafbfec841cf5cff2f25fee03df6a0ec5c5ee778786b96bf1054693fb637",
+    "strategies_sha256": "sha256:d33b3c98932bb47351501223af3ca3a351d50520f19166a1d4274b1fcea1f657",
+    "experiment_sha256": "sha256:c66977218285fc5655fbdfdf27c161d01670c9e975b0f4ed3d42c8ccc4240f00",
+    "study_sha256": "sha256:7cf0c455769db38764ce578c008aecdaba0b70af5329ee54ad797b9434c36cfe"
+  },
+  "interpretation_boundary": "This is a strategy ablation within one shared MML substrate: governed representation, compiled state, exact candidate composition, ambiguity, and refusal are common to every treatment. It does not compare MML with a non-MML system, learned priors, natural-language generation, an LLM strategy, or the partial multi-valued Canidae source state."
+}
