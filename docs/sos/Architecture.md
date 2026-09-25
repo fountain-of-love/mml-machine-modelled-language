@@ -76,7 +76,7 @@ The layers are:
 
 The Common Language Model, or CML, is the world-view schema. It defines the language of the system: concepts, abstractions, relations, legal categories, factual claims, evidence types, contradictions, provenance, and topology. The knowledge base stores information according to that common model. In other words, data is not simply dumped into storage; it is shaped by a shared semantic structure.
 
-The proposed [CML experiment in scientific reasoning](../explorations/seed-vault/05-experiments/CML-Science-Experiment.md) turns this CML architectural claim into a bounded research project. Its documents live in the **Seed Vault**, the durable knowledge base to which CML is applied as a schema. CML is therefore the common semantic language, not the folder or the stored knowledge itself. The experiment showcases a five-domain physical grammar that could recover formulas, transpose relations across domains, preserve provenance, localize updates, and resist semantic drift.
+The proposed [CML experiment in scientific reasoning](../explorations/seed-vault/movement/discovery/RCL/05-experiments/CML-Science-Experiment.md) turns this CML architectural claim into a bounded research project. Its documents live in the **Seed Vault**, the durable knowledge base to which CML is applied as a schema. CML is therefore the common semantic language, not the folder or the stored knowledge itself. The experiment showcases a five-domain physical grammar that could recover formulas, transpose relations across domains, preserve provenance, localize updates, and resist semantic drift.
 
 ### Dual Flows
 
