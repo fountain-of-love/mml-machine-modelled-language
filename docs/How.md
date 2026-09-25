@@ -41,7 +41,7 @@ Aliases use deterministic longest-match consumption. A phrase such as `selected 
 
 The initial relation vocabulary is `supports`, `contradicts`, `requires`, and `qualifies`. Positive relation weights use visible type multipliers; contradictions remain a separate negative contribution and never become negative transition probabilities.
 
-The prototype currently folds co-occurrence plus the positive relation types into one transition matrix. It does not yet preserve synonymy, hierarchy, opposition, part/whole, causality, role correspondence, association, or temporal relation as independently weighted matrices. That family-of-matrices model is the proposed next representation step: task policy composes the relevant matrices into an operator and only then normalizes it for execution.
+The legacy `GraphModel` path folds co-occurrence plus the positive relation types into one transition matrix. The new [compiled semantic operator](capabilities/knowledge-state-execution/semantic-operator-design.md) preserves `supports`, `requires`, and `qualifies` as independently inspectable sparse layers, applies a versioned task policy, and normalizes the combined operator at execution time. Synonymy, hierarchy, opposition, part/whole, causality, role correspondence, association, and temporal relation remain future relation layers rather than current claims.
 
 ## Compilation And Reuse
 
@@ -117,7 +117,7 @@ For each focused identity, the benchmark checks:
 - whether cross-meaning activation decreases; and
 - whether exact replay produces the same result.
 
-This is authored development evidence for one kind of richer representation: governed semantic identity. It does not yet validate synonymy, hierarchy, semantic roles, relation-specific matrices, or policy composition. See the [benchmark proposal](benchmark/semantic-operator-benchmark-proposal.md) and [v1 result](capabilities/semantic-representation/results/v1.md).
+This is authored development evidence for one kind of richer representation: governed semantic identity. It does not yet validate synonymy, hierarchy, semantic roles, or the semantic correctness of relation policies. The new sparse operator is an implementation and performance slice, not confirmatory evidence for relation composition. See the [benchmark proposal](benchmark/semantic-operator-benchmark-proposal.md) and [v1 result](capabilities/semantic-representation/results/v1.md).
 
 ## Retrieval application diagnostic
 

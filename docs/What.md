@@ -100,7 +100,7 @@ It does not yet demonstrate:
 - a real language-model comparison against compiled knowledge-state execution;
 - systematic held-out evidence for combinatorial scaling;
 - complete logical or multi-hop reasoning;
-- relation-specific matrix composition or a complete multi-layer executor;
+- the full relation-family composition or a complete multi-layer executor;
 - production integrity, regulatory compliance, or representative coverage;
 - a complete SOS runtime or competitive equivalence with a language model.
 

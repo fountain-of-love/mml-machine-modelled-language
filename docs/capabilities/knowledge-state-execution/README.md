@@ -89,6 +89,8 @@ Within that bounded fixture:
 
 The operational capability now also exposes `CompiledIncidenceState` for many-to-many semantic membership. It compiles a governed coordinate basis into immutable postings and complete-signature equivalence classes with a separate state snapshot and construction metrics. Experiment 4.1 consumes this contract. The integrated seed demonstrates reuse of the contract, but it does not replace the independent reuse-curve, mutation, rollback, provenance, or public-knowledge evidence required here.
 
+The first relation-specific operator slice is documented in [Compiled Relation-Specific Semantic Operator](semantic-operator-design.md). It compiles governed `supports`, `requires`, and `qualifies` records into immutable sparse layers, applies an explicit versioned policy, and reuses the resulting state for repeated propagation. Its benchmark measures edge visits against a dense-cell control. This is implementation evidence for the compilation boundary, not evidence that the chosen coefficients or relation composition are semantically correct.
+
 ## Evidence Boundary
 
 The current evidence is one co-authored synthetic task. It is not a language-model comparison, general reasoning, public-knowledge demonstration, production-scale performance result, or universal efficiency claim. A single short reuse horizon cannot establish amortization across realistic compilation, governance, update, and query costs.

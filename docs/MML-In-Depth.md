@@ -155,9 +155,9 @@ MML is not proposed in isolation. Several existing initiatives already point tow
 
 Those initiative alignments are described separately in [Initiative-Alignment.md](sos/Initiative-Alignment.md), including [minGPT](sos/Initiative-Alignment.md#mingpt-small-neural-workbench-for-discovery), [Apertus](sos/Initiative-Alignment.md#apertus-sovereign-ai-pipeline), and the [Svalbard Global Seed Vault](sos/Initiative-Alignment.md#svalbard-global-seed-vault-preservation-analogy) analogy.
 
-## Next Evolutionary Step: Relation-Specific Semantic Operators
+## Relation-Specific Semantic Operators
 
-The current Python script uses one flat relational structure compiled into a single transition matrix `P`. The typed prototype also adds `supports`, `requires`, and `qualifies` to that positive matrix, while keeping contradiction separate. A richer model needs to preserve more than one kind of relationship rather than erase their semantics during compilation.
+The current Python script uses one flat relational structure compiled into a single transition matrix `P`. The typed prototype still provides that compatibility path, while the bounded compiled semantic operator preserves `supports`, `requires`, and `qualifies` as separate sparse layers and keeps contradiction separate. A richer model needs to preserve more than one kind of relationship rather than erase their semantics during compilation.
 
 The smallest useful next step is a family of relation-specific matrices:
 
@@ -178,7 +178,7 @@ and normalize it according to the execution contract. The coefficients are gover
 
 This operator-family design can later be represented as a multiplex network or tensor when execution needs to retain per-layer state rather than compose the layers before propagation. A tensor is therefore one possible implementation of the semantic model, not the essence of MML.
 
-Relation-specific composition and any tensor or multiplex engine are proposed deterministic extensions, not current features. Given identical layer sources, identifiers, policy coefficients, build algorithm, parameters, and execution settings, they should compile to the same operators and produce the same activation result. That reproducibility must be tested rather than assumed. Sparse execution cost, cross-layer normalization, typed path semantics, and deterministic build artifacts are part of the future implementation contract.
+The bounded `supports`/`requires`/`qualifies` composition is now a deterministic implementation slice. Given identical layer sources, identifiers, policy coefficients, build algorithm, parameters, and execution settings, it compiles to the same operator and produces the same activation result. The wider relation family, tensor or multiplex execution, cross-layer typed path semantics, and public-scale sparse evidence remain future work. Sparse execution cost and deterministic build artifacts are already tested as engineering contracts, not as proof of semantic validity.
 
 ### Optional multiplex representation
 

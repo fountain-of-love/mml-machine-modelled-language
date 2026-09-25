@@ -12,7 +12,7 @@ MML compiles governed concepts, senses, semantic roles, aliases, and typed relat
 
 This is the literal seed of the idea **words carry weight**: concepts become addressable semantic coordinates, established relationships are compiled into reusable transition capacity, and queries compose those coordinates into task-specific semantic fields.
 
-The current code compiles co-occurrence and three positive governed relation types into one normalized matrix, while treating contradiction separately. The fuller direction is a family of relation-specific matrices—synonymy, hierarchy, opposition, part/whole, causality, role correspondence, association, temporal relation, and others—from which an application constructs a task-specific semantic operator using explicit policy coefficients. Those coefficients are inspectable semantic-policy decisions, not learned black-box parameters.
+The legacy graph path compiles co-occurrence and three positive governed relation types into one normalized matrix, while treating contradiction separately. The repository now also contains a bounded compiled semantic operator that preserves those positive relation types as sparse layers, applies explicit versioned policy coefficients, and persists the resulting executable state. The fuller direction is a wider family of relation-specific matrices—synonymy, hierarchy, opposition, part/whole, causality, role correspondence, association, temporal relation, and others—from which an application constructs a task-specific operator. Those coefficients are inspectable semantic-policy decisions, not learned black-box parameters.
 
 The CML work makes the representation richer still. Concepts such as `capacity`, `activation`, `boundary`, `substrate`, `gain`, and `storage` can occupy comparable semantic roles across domains rather than merely being connected by an undifferentiated “related to” edge. MML is the proposed numerical execution layer over that governed structure.
 
@@ -85,7 +85,7 @@ Architectural misuse of LLMs contributes to:
 
 Hence, we propose MML. It does not independently solve security, sustainability, employment, or governance. It changes the architecture by keeping governed knowledge explicit and reserving stochastic models for discovery and language work, opening the door to more sustainable solutions.
 
-This repository contains a bounded Python mechanism experiment. It demonstrates matrix construction, query activation, inspectable relation paths, governed updates, snapshots, and rollback. It does not yet implement relation-specific matrix composition, the proposed multi-layer MML engine, or the wider Semantic Operating System (SOS).
+This repository contains a bounded Python mechanism experiment. It demonstrates matrix construction, query activation, inspectable relation paths, governed updates, snapshots, rollback, and a first relation-specific sparse operator. It does not yet implement the full multi-layer MML engine or the wider Semantic Operating System (SOS).
 
 ## Start Here
 
