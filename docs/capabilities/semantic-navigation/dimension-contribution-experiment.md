@@ -1,15 +1,15 @@
 # Experiment 4.2 - Lens-Aware Dimension Contribution
 
-**Status:** uniform-prior scalar treatment implemented; multi-valued expansion pending
+**Status:** uniform-prior scalar treatment implemented; multi-valued expansion is the next validation stage
 **Research stream:** Programme 4 - Semantic Navigation  
 **Operation:** measure how governed semantic dimensions reduce candidate uncertainty under multiple navigation lenses  
-**Primary claim:** the contribution of a semantic dimension is contextual and can be measured by the candidate partition it induces, rather than fixed in one authored decision tree
+**Primary claim:** the contribution of a semantic dimension is contextual and can be measured by the candidate partition it induces, rather than fixed in one universal decision tree
 
 ## Research Question
 
 > Across a governed ecology-behavior state, which reusable dimensions reduce ambiguity, in which candidate regions, under which user lenses, and with how much unique or redundant information?
 
-Experiment 4.2 does not search for one universal dimension hierarchy. A lens defines the dimensions eligible in one interaction; the candidate region determines their information value at that moment.
+Experiment 4.2 measures context-sensitive dimension value. A lens defines the dimensions eligible in one interaction; the candidate region determines their information value at that moment.
 
 ## Executed Foundational Treatment
 
@@ -24,7 +24,7 @@ The [uniform-prior result](results/semantic-navigation-strategy-v1.md) found:
 - information gain reached every target equivalence class in 2.750 mean questions;
 - fixed order and highest coverage required 2.938 mean questions;
 - seeded random required 3.087 mean questions after removing hidden-target dependence from its seed;
-- highest cardinality tied information gain at 2.750 questions, so the result does not establish one preferred strategy on this fixture;
+- highest cardinality tied information gain at 2.750 questions, so the result identifies a tied strategy set rather than one preferred strategy on this fixture;
 - all strategies retained the same 0.233 bits of irreducible complete-signature entropy;
 - ecological and behavioral lenses exhausted before the target class in 56.2% and 87.5% of cases respectively; and
 - all three unsupported controls remained unsupported.

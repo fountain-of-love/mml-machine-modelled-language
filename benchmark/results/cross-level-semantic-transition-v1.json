@@ -1,7 +1,7 @@
 {
   "result_schema_version": "1.0",
   "experiment_id": "experiment-3.3-cross-level-semantic-transition-v1",
-  "generated_at": "2026-08-15T20:43:12.787447+00:00",
+  "generated_at": "2026-09-25T21:38:51.850484+00:00",
   "title": "Experiment 3.3 \u2014 Cross-Level Semantic Transition",
   "research_question": "Can an interpretation transition from one semantic level to another as qualifying context is added, or does direct composition only perform flat conjunction?",
   "claim": "Explicit governed stage-local scopes can resolve successive semantic regions while preserving antecedent provenance and releasing coordinates that are not properties of the later region.",
@@ -487,9 +487,9 @@
     "probes_sha256": "sha256:b2b991ef1d5520b6a37a42378085a56145cf6c741d83dee29f26279f62807455",
     "manifest_sha256": "sha256:7861c3c81106fde96cf48eb1c9c5db03b4a4c37e76a56c3f67199361e4cdca26",
     "compiled_snapshot_id": "sha256:5c0eea4aaf7950e39f646bfb8ead25c32a3329d17e6ca263dd9629672a78c5ab",
-    "intersection_flow_sha256": "sha256:4ac8893734b6ccbbac72b02eaa520df7122c5a774727e74f4f09cb44ebc4ecc1",
+    "intersection_flow_sha256": "sha256:59df34c2c7a7ffc16a535aeec875fd15682cdddb0882c01b496408932995c7ee",
     "transition_operation_sha256": "sha256:f6fa5f5095bfa51e23237ca756275fb0e2f58c112c22b3216ef108a8b0dd0a99",
-    "experiment_sha256": "sha256:5027a74cdec8afd3c9a4aabfcd120eef072c80bfe2e1f646b9900a7a83cbc1d9",
+    "experiment_sha256": "sha256:4c609a9b50479b36a5362fdda3b79750f0616bc5b2f187a0081d2d8e7eabc989",
     "methodology_sha256": "sha256:7943969ededbadba17f60535379ed552d5de812cd3a068cb67cce8693bdd45ae"
   },
   "provenance": {

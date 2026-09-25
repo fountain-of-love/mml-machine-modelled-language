@@ -1,3 +1,10 @@
+"""Build a small corpus-backed graph for richer MML elaborations.
+
+The module is an executable exploration surface: it makes corpus construction,
+transition weights, and activation visible for inspection rather than hiding
+them behind a production abstraction.
+"""
+
 import re
 from pathlib import Path
 from heapq import heappop, heappush

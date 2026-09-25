@@ -39,7 +39,7 @@ Compose concepts
   -> combine them into a task-specific intersection
 ```
 
-The minimal experiment directly exercises grounding, focus, compilation, and single-field activation. The elaborated engine supplies independent multi-field activation and soft intersection. Those mechanisms make the hypotheses testable; they do not establish compiled-reuse or combinatorial-scaling advantages by themselves.
+The minimal experiment directly exercises grounding, focus, compilation, and single-field activation. The elaborated engine supplies independent multi-field activation and soft intersection. Together they define the operational joints that make compiled reuse and compositional scaling measurable; the broader advantages belong to the next controlled validation layers.
 
 ### Ground
 

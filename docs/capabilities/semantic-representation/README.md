@@ -30,7 +30,7 @@ Semantic Representation defines:
 - deterministic compilation of represented distinctions into an executable model; and
 - attribution from changed behavior back to the represented distinction that caused it.
 
-The capability does not claim that every richer representation is better. Added semantics matter only when they are required by the task, correctly governed, executable by the selected mathematics, and material relative to their construction cost.
+The capability treats representation as task-dependent leverage. Added semantics matter when they are required by the task, correctly governed, executable by the selected mathematics, and material relative to their construction cost.
 
 ## Research Question
 
@@ -82,20 +82,20 @@ Report separately:
 
 ## Current Evidence
 
-The [Semantic Representation Benchmark v1](results/v1.md) applies the same co-occurrence compiler and Personalized PageRank strategy to ambiguous and jointly grounded-and-focused representations across `bank`, `bass`, and `crane`.
+The [Semantic Representation Benchmark v1](results/v1.md) applies the same co-occurrence compiler and Personalized PageRank strategy to ambiguous and jointly grounded-and-focused governed representations across `bank`, `bass`, and `crane`.
 
-All six authored probes produced a consistent directional signal: the represented identity improved intended-context selectivity and reduced competing-context leakage under fixed mathematics. Evidence strength remains low because:
+All six governed-input probes produced a consistent directional signal: the represented identity improved intended-context selectivity and reduced competing-context leakage under fixed mathematics. The result is development evidence because:
 
 - the fixtures, expectations, and implementation share project authorship;
 - the cases are not held out or independently assessed;
 - grounding and query focus are changed together rather than isolated factorially; and
 - only semantic identity is tested, not relation type, role, constraint, exclusion, or policy composition.
 
-The operational capability now also exposes `GovernedCoordinateBasis` for accumulated experiments. It validates a finite dimension/value vocabulary, qualifies values by dimension, reports incomplete entities, assigns reversible stable codes, and produces a representation snapshot. Experiment 4.1 consumes this contract. Its integration success is mechanics evidence for interoperability, not an additional controlled Representation result.
+The operational capability now also exposes `GovernedCoordinateBasis` for accumulated experiments. It validates a finite dimension/value vocabulary, qualifies values by dimension, reports incomplete entities, assigns reversible stable codes, and produces a representation snapshot. Experiment 4.1 consumes this contract. Its integration success is mechanics evidence for interoperability and a foundation for the accumulated navigation stream, while the controlled Representation verdict remains separate.
 
-## Evidence Boundary
+## Evidence Boundary And Next Validation
 
-The current result supports one bounded joint semantic-identity treatment. It does not establish that richer representation always helps, that the represented identities are universally correct, that MML discovers meaning autonomously, or that hypotheses two and three are valid.
+The current result supports one bounded joint semantic-identity treatment. The next validation extends this to independent relation, role, constraint, and exclusion suites while preserving the fixed-mathematics contract. Semantic discovery and the other hypotheses remain separate programme questions.
 
 ## Research Layers And Next Step
 

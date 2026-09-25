@@ -18,7 +18,7 @@ It does not test physical identification (Experiment 3.1), cross-level semantic 
 
 It does not test cross-level transition. That distinct operation is isolated in Experiment 3.3 rather than inferred from successful direct legal qualification.
 
-It does not establish facts, determine legal duties, or adjudicate a dispute involving any real person or institution.
+It is intentionally an inspectable semantic mechanism study, not a factual, legal-duty, or adjudicative process involving any real person or institution.
 
 ## Executive interpretation
 
@@ -136,7 +136,7 @@ All full-coordinate permutations reproduced the same final fields and top region
 
 **Conformity judgment: `LOCALLY_CONSISTENT`.** Every declared development criterion passed. Direct legal information narrowed the authored semantic fields, unsupported information remained unresolved, and additional qualifying information separated two regions that shared the same initial legal coordinates.
 
-**Evidence strength: `DEVELOPMENT`.** The evidence is one co-authored synthetic fixture with unmatched redundancy controls, zero diagnostic thresholds, no independent doctrinal review, no held-out cases, and no inferential statistics. Within that boundary, it supports combinatorial qualification and governed refusal as inspectable operations. It does not establish legal truth, doctrinal correctness, or generalization.
+**Evidence strength: `DEVELOPMENT`.** The evidence is one co-authored synthetic fixture with unmatched redundancy controls, zero diagnostic thresholds, no independent doctrinal review, no held-out cases, and no inferential statistics. Within that deliberate development boundary, it demonstrates combinatorial qualification and governed refusal as inspectable operations. Legal truth, doctrinal correctness, and generalization are separate validation targets.
 
 ### Claims ladder
 

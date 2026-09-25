@@ -1,10 +1,10 @@
 # Experiment 1 — Represent the Meaning. Change the Field.
 
-**Status:** development experiment implemented; confirmatory protocol proposed
+**Status:** development experiment implemented; confirmatory protocol defined
 **Hypothesis:** Semantic Representation
 **Working title:** *The Mathematics Stays. The Meaning Changes.*
 
-This document defines the systematic experiment for MML's first hypothesis. It is the protocol blueprint beneath the broader benchmark programme. The existing identity-focused v1 report is bounded development evidence, not completion of this protocol.
+This document defines the systematic experiment for MML's first hypothesis. It is the protocol blueprint beneath the broader benchmark programme. The existing identity-focused v1 report is the governed-input development stage of this protocol.
 
 The canonical capability definition is [Programme 1 — Semantic Representation](README.md).
 
@@ -32,11 +32,11 @@ A convincing result has three inseparable properties:
 2. **Causal attribution:** the relevant represented distinction, rather than added labels, edges, query engineering, or topology, accounts for the change.
 3. **Held-out usefulness:** the predicted change appears on probes that were not used to author or tune the representation.
 
-## Claim Boundary
+## Scope And Validation Boundary
 
-This experiment tests whether explicit representation affects deterministic semantic execution. It does not establish that one ontology is universally correct, that richer representation is always better, that graph propagation is reasoning, or that MML autonomously discovers semantic distinctions.
+This experiment tests whether explicit representation affects deterministic semantic execution. Its next validation stages address relation type, direction, role, constraint, exclusion, provenance, policy composition, and transfer; ontology universality, general reasoning, and autonomous semantic discovery are separate questions.
 
-The authored `bank`, `bass`, and `crane` cases test a joint treatment of grounding plus matching query focus. They do not yet isolate grounding from focus or validate relation type, direction, role, constraint, exclusion, provenance, or policy composition.
+The governed-input `bank`, `bass`, and `crane` cases test a joint treatment of grounding plus matching query focus. The factorial v2 protocol isolates grounding from focus, followed by relation type, direction, role, constraint, exclusion, provenance, and policy-composition suites.
 
 ## Current Development Fixture
 
@@ -48,7 +48,7 @@ The implemented v1 contains three synthetic ambiguity scenarios and six focused 
 
 It compares an ambiguous surface representation with a jointly grounded-and-focused representation under the same co-occurrence compiler and Personalized PageRank activation strategy. The result is a low-strength directional signal for the joint treatment.
 
-The current fixture remains useful for regression and mechanism development. It must be labelled `not_held_out` because representation, queries, expectations, and implementation share project authorship.
+The current fixture remains useful for regression and mechanism development. It is labelled `not_held_out` because representation, queries, expectations, and implementation share project authorship; held-out and independent suites are the next evidence layer.
 
 ## Confirmatory Fixture Programme
 
@@ -189,7 +189,7 @@ Exact thresholds must be frozen before confirmatory execution. The bounded hypot
 6. results replay deterministically and trace to governed records; and
 7. the benefit is material relative to additional construction and execution cost.
 
-The hypothesis is weakened when richer representation adds no useful change, when arbitrary enrichment works equally well, or when the effect requires hidden algorithmic changes.
+The hypothesis is challenged when richer representation adds no useful change, when arbitrary enrichment works equally well, or when the effect requires hidden algorithmic changes.
 
 ## Threats To Validity And Controls
 

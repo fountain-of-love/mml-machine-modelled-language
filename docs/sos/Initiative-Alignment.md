@@ -1,6 +1,6 @@
 # Initiative Alignment
 
-This page maps adjacent initiatives that could contribute to the SOS direction. It does not claim that these initiatives already implement Machine Modelled Language. It shows how existing European, Swiss, and authoritative knowledge infrastructures could align with the architecture proposed in this repository.
+This page maps adjacent initiatives that could contribute to the SOS direction. It distinguishes their existing strengths from the MML contribution and shows how European, Swiss, and authoritative knowledge infrastructures could align with the architecture proposed in this repository.
 
 For the architecture itself, see [What.md](../What.md). For the dual LLM/MML engine, see [Dual-Engine.md](Dual-Engine.md). For MML mechanics, see [MML-In-Depth.md](../MML-In-Depth.md). For persistence, see [Dual-Persistence.md](Dual-Persistence.md).
 
@@ -138,7 +138,7 @@ In the current GDPR right-of-access demo, this would be the natural next layer: 
 
 ## Proposed Linked Open Data Vertical Slice
 
-The next implementation step should be deliberately narrow. It should not attempt to prove that a European semantic commons already exists or can be organised by one project.
+The next implementation step should be deliberately narrow. Its purpose is to establish an interoperable technical vertical slice, building on existing public identifiers and source communities rather than attempting to organise a European semantic commons inside one project.
 
 Use one GDPR concept and follow one URI-addressed chain:
 

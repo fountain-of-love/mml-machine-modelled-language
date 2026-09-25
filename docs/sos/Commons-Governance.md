@@ -2,9 +2,9 @@
 
 MML asks whether public knowledge can become executable without becoming opaque or captured. Governance is therefore part of the data model and execution contract, not an administrative layer added later.
 
-This repository is currently a pre-publication proposal and mechanism experiment, not an official project or an open call for governance participation. The workflows below state architectural intentions for a first public version.
+This repository is currently a mechanism experiment with a governance design surface, not an official project or an open call for governance participation. The workflows below turn the intended responsibilities of a first public version into inspectable architectural contracts.
 
-Whether Europe can organise the institutional cooperation needed for executable public knowledge is a societal question, not a claim established here. The proposed technical next step is smaller: execute one URI-addressed Linked Open Data slice while preserving its public identity, provenance, applicable terms, reproducible snapshot, and correction history. See [Research-Contract.md](../Research-Contract.md#proposed-next-step-one-linked-open-data-slice).
+Whether Europe can organise the institutional cooperation needed for executable public knowledge is a societal question beyond this repository's mechanism evidence. The proposed technical next step is concrete: execute one URI-addressed Linked Open Data slice while preserving its public identity, provenance, applicable terms, reproducible snapshot, and correction history. See [Research-Contract.md](../Research-Contract.md#proposed-next-step-one-linked-open-data-slice).
 
 ## Reuse Before Reinvention
 

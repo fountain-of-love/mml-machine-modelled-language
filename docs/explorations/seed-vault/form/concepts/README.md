@@ -1,6 +1,6 @@
 # Form Concepts
 
-This package defines the concepts layer for the `form` element of the Seed Vault.
+This package defines the concepts layer for the `form` element of the Seed Vault. It provides the stable semantic substrate on which movement, discovery, observatory evidence, and MML compilation can build.
 
 Its purpose is narrow and structural:
 
@@ -26,7 +26,7 @@ This package records:
 - provenance and review notes; and
 - maturity state.
 
-This package does not yet attempt to accept and govern:
+This package intentionally focuses on identity before it accepts and governs:
 
 - rich relation networks;
 - causal chains;
@@ -35,7 +35,7 @@ This package does not yet attempt to accept and govern:
 - embedding neighborhoods; or
 - model-observation traces.
 
-Those belong primarily under `movement`. The inventory architecture note may still describe the slots that future relation and observation layers will need.
+Those belong primarily under `movement`, which can refer back to these stable identities. The inventory architecture note records the slots that relation and observation layers can use without making the concepts layer responsible for their execution.
 
 ## Current Authorities
 

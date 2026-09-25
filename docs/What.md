@@ -2,6 +2,15 @@
 
 Machine Modelled Language (MML) is an **executable, weighted knowledge representation whose human-governed structure can be updated from text statistics**. Its central proposition is that progress may come not only from more complicated computation, but from a representation of meaning rich enough for established mathematical structures to do more useful work. Language is represented as addressable concepts, senses, semantic roles, aliases, relationships, and transition weights; queries activate that structure through deterministic matrix operations whose relational routes can be interpreted as a graph.
 
+Its governing research question is:
+
+> **Can an AI system progressively convert recurring probabilistic tasks into governed deterministic operations without reducing its ability to handle genuinely novel tasks?**
+
+MML therefore measures the conversion boundary: deterministic interaction share,
+cost and latency change, reproducibility, error and regression rates, operator
+coverage, false operator creation, human approval burden, novelty detection, and
+capability extraction rate.
+
 MML develops that proposition through three independently testable foundation hypotheses and one accumulated application hypothesis:
 
 > **Represent meaning. Compile knowledge. Compose concepts. Navigate governed knowledge.**
@@ -10,12 +19,12 @@ MML develops that proposition through three independently testable foundation hy
 | --- | --- | --- |
 | **Representation** | Explicit, sufficiently rich meaning can make ordinary mathematics semantically useful. | Addressed by bounded A/B experiments under fixed mathematics. |
 | **Knowledge State Execution** | Established knowledge compiled into governed state can expose declared consequences without reconstructing equivalent task state at every use. | One bounded exact typed-chain experiment demonstrates compilation, repeated execution, mutation, inspection, and rollback. |
-| **Combinatorial Uniqueness** | Broad, sufficiently independent semantic coordinates can combine into a narrow, distinctive conceptual target. | Direct intersection, governed legal qualification, and stage-scoped transition have bounded authored development evidence; held-out construction and scaling remain untested. |
-| **Semantic Navigation** | The first three capabilities can accumulate into exact candidate retrieval and useful ambiguity navigation. | One prompt-provided 60-animal mechanics seed executes through all four operational contracts; independent source and scaling evidence remain untested. |
+| **Combinatorial Uniqueness** | Broad, sufficiently independent semantic coordinates can combine into a narrow, distinctive conceptual target. | Direct intersection, governed legal qualification, and stage-scoped transition have bounded governed-input development evidence; held-out construction and scaling are the next validation targets. |
+| **Semantic Navigation** | The first three capabilities can accumulate into exact candidate retrieval and useful ambiguity navigation. | One prompt-provided 60-animal mechanics seed executes through all four operational contracts; independent source and scaling evidence are the next validation targets. |
 
 The foundation hypotheses describe encoding, reuse, and resolution respectively. They are related but independently falsifiable: better representation does not by itself establish a reuse advantage, and a reusable compiled model does not by itself establish that conceptual combinations create useful specificity. Semantic Navigation deliberately accumulates them, but its success cannot substitute for their independent evidence.
 
-The inversion is intentional:
+The division is intentional:
 
 > **An LLM models language inside a machine; MML models language for operation by a machine.**
 
@@ -76,11 +85,11 @@ This is not relational inference or language understanding. It executes previous
 
 ## Governed Meaning Made Executable
 
-MML is intentionally supervised semantic construction. People and institutions define stable concepts, sense identities, aliases, typed relations, provenance, and corrections. Corpus statistics adjust explicit weights inside that governed structure. MML therefore does not claim to discover meaning autonomously; it makes curated meaning executable and contestable.
+MML is intentionally supervised semantic construction. People and institutions define stable concepts, sense identities, aliases, typed relations, provenance, and corrections. Corpus statistics adjust explicit weights inside that governed structure. This gives curated meaning a durable, executable, and contestable form while leaving discovery and interpretation available upstream.
 
 For example, MML does not have to treat `bank` as one undifferentiated token. Governed identities such as `bank_financial` and `bank_river`, their aliases, relations, and the query context make the intended sense addressable. The current prototype demonstrates this distinction directly.
 
-The evidentiary relationship runs in one direction: **MML proposes explicit semantic representation, compiled Knowledge State Execution, runtime conceptual composition, and accumulated semantic navigation. The repository supplies bounded authored development evidence for each stream at different levels of maturity; that work motivates Common Language Model (CML) contracts and a wider Semantic Operating System (SOS).** Those downstream proposals are consequences to explore, not evidence that MML works.
+The evidentiary relationship is layered: **MML proposes explicit semantic representation, compiled Knowledge State Execution, runtime conceptual composition, and accumulated semantic navigation. The repository supplies bounded governed-input development evidence for each stream at different levels of maturity; that work motivates Common Language Model (CML) contracts and a wider Semantic Operating System (SOS).** Those downstream proposals define the next architectural layer and are evaluated separately from the executable kernel.
 
 ## Current Evidence and Proposed Direction
 
@@ -94,15 +103,15 @@ The current Python prototype demonstrates:
 - **Semantic Navigation:** governed coordinate codes, persistent incidence state, exact candidate regions, equivalence classes, deterministic imputation, commonality, and next-question selection through one integrated source path; and
 - a small legacy retrieval application diagnostic beside lexical baselines.
 
-It does not yet demonstrate:
+The next validation surface covers:
 
-- general semantic understanding or autonomous concept discovery;
+- general semantic understanding and autonomous concept discovery;
 - a real language-model comparison against compiled knowledge-state execution;
 - systematic held-out evidence for combinatorial scaling;
 - complete logical or multi-hop reasoning;
-- the full relation-family composition or a complete multi-layer executor;
-- production integrity, regulatory compliance, or representative coverage;
-- a complete SOS runtime or competitive equivalence with a language model.
+- the full relation-family composition and a complete multi-layer executor;
+- production integrity, regulatory compliance, and representative coverage;
+- a complete SOS runtime and comparative evaluation with a language model.
 
 See [How](How.md) for the executable mechanics and the [research contract](Research-Contract.md) for the exact claim boundary.
 
@@ -119,9 +128,9 @@ The complete proposition is described in the [Four-Tier Modular Pipeline](sos/Fo
 | **TF-IDF / BM25** | Sparse term vectors over notes or chunks | Frequency-weighted lexical matching | Precise and inexpensive surface-language evidence | Semantic equivalence requires stemming, aliases, or query expansion |
 | **Dense retrieval** | Learned vectors over notes or chunks | Geometric similarity in embedding space | Fuzzy semantic recall across different wording | Similarity dimensions and boundaries are mostly implicit |
 | **Note-level PageRank** | Linked notes, sources, or documents | Propagation over record topology | Authority, connectedness, and provenance context | Topological importance is not query relevance or truth by itself |
-| **MML** | Governed concepts, senses, aliases, and typed relations | Deterministic activation and bounded graph diffusion | Explicit semantic identity, concept intersections, opposition, and inspectable routes | Requires supervised construction and lacks complete logical reasoning |
+| **MML** | Governed concepts, senses, aliases, and typed relations | Deterministic activation and bounded graph diffusion | Explicit semantic identity, concept intersections, opposition, and inspectable routes | Deliberately depends on supervised construction; logical reasoning is a separate extension |
 | **RAG** | Retrieved terms, vectors, records, graphs, or combinations | Retrieval followed by a generative or extractive consumer | Grounds output in external knowledge and can use every index above | Results depend on retrieval, evidence assembly, generation, and verification controls |
-| **SOS direction** | Governed knowledge plus disposable lexical, concept, dense, and note-graph indexes | Evidence fusion followed by templates or a small language model | Combines the specialised mechanisms while keeping knowledge external | Proposed architecture; the fused engine and minGPT comparison are not implemented |
+| **SOS direction** | Governed knowledge plus disposable lexical, concept, dense, and note-graph indexes | Evidence fusion followed by templates or a small language model | Combines the specialised mechanisms while keeping knowledge external | Proposed architecture; fused execution and minGPT comparison are next-stage work |
 
 ## Reproducibility and Auditability
 

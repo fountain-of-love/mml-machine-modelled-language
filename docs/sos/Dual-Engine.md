@@ -31,7 +31,7 @@ Discovery: raw material -> LLM first -> MML validation/indexing -> knowledge bas
 
 LLMs are good at working with raw, fluid language. They can read emails, summarise documents, extract candidate entities, propose relationships, rewrite text, detect possible themes, and produce natural phrasing.
 
-That strength comes with a cost. The model stores much of its knowledge implicitly in dense neural weights, and inference produces results through learned representations. This is valuable when the problem is open, ambiguous, or under-modelled. When the relevant distinction or knowledge is already established, explicit representation and compiled reuse may be more controllable; the operational advantage remains to be measured.
+That strength comes with a design trade-off. The model stores much of its knowledge implicitly in dense neural weights, and inference produces results through learned representations. This is valuable when the problem is open, ambiguous, or under-modelled. When the relevant distinction or knowledge is already established, explicit representation and compiled reuse offer a complementary control surface; the lifecycle advantage is measured across interpretation, governance, compilation, execution, and reuse.
 
 This is why SOS does not throw LLMs away. It narrows their role.
 
@@ -58,7 +58,7 @@ An MML system operates over **Common Language Model (CML)-shaped knowledge**: co
 
 In the current Python prototype, MML is represented at toy scale by governed semantic identities, a compiled co-occurrence transition matrix, and a Personalized PageRank activation strategy. Grounding and focus change which meanings are addressable; compilation makes the transition model reusable; the elaborated engine independently propagates and softly intersects multiple fields.
 
-That is not production MML yet. Representation, compiled reuse, direct intersection, governed qualification, and explicit stage-scoped transition have bounded authored development evidence. Independently held-out construction, comparative reuse economics, useful combinatorial coverage, and scaling still require controlled tests under the [research contract](../Research-Contract.md).
+This is the MML kernel boundary. Representation, compiled reuse, direct intersection, governed qualification, and explicit stage-scoped transition have bounded governed-input development evidence. Independently held-out construction, comparative reuse economics, useful combinatorial coverage, and scaling form the next controlled tests under the [research contract](../Research-Contract.md).
 
 The deeper MML design lives in [MML-In-Depth.md](../MML-In-Depth.md). That page develops Represent–Compile–Compose, execution strategies, semantic operators, language-model integration, and the next step toward multi-dimensional MML fields.
 

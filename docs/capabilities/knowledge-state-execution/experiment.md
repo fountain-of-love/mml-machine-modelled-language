@@ -1,10 +1,10 @@
 # Experiment 2 — Compile Once. Execute What Is Known.
 
-**Status:** bounded development experiment implemented; confirmatory protocol proposed
+**Status:** bounded development experiment implemented; confirmatory protocol defined
 **Hypothesis:** Knowledge State Execution
 **Working title:** *Knowledge Is State, Not Behaviour Buried in a Model*
 
-This document defines the systematic experiment for MML's second hypothesis. The existing six-fact typed-chain experiment demonstrates the local mechanism. It does not complete the broader reuse, governance, provenance, or efficiency protocol.
+This document defines the systematic experiment for MML's second hypothesis. The existing six-fact typed-chain experiment demonstrates the local mechanism. The protocol extends that foundation with reuse curves, governance, provenance, and full lifecycle efficiency accounting.
 
 The canonical capability definition is [Programme 2 — Knowledge State Execution](README.md).
 

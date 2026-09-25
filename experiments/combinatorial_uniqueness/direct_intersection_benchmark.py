@@ -479,7 +479,7 @@ def markdown_report(result):
         "",
         f"**Conformity judgment: `{result['conformity']['judgment']}`.** Every independent target resolved, entropy and target margin moved in the declared directions, redundant coordinates did not narrow the field, invalid combinations were rejected, permutations were invariant, and no bespoke query primitive was found.",
         "",
-        "**Evidence strength: `DEVELOPMENT`.** The evidence is one small, co-authored synthetic fixture with unmatched controls, zero diagnostic thresholds, no independent probe authorship, and no inferential statistics. Within that boundary, it supports direct combinatorial intersection as an inspectable operation. It does not establish held-out construction, cross-domain generalization, or useful scaling.",
+        "**Evidence strength: `DEVELOPMENT`.** The evidence is one small, co-authored synthetic fixture with unmatched controls, zero diagnostic thresholds, no independent probe authorship, and no inferential statistics. Within that deliberate development boundary, it demonstrates direct combinatorial intersection as an inspectable operation. Held-out construction, cross-domain generalization, and useful scaling are the next validation targets.",
         "",
         f"Generalization is `{result['generalization']['status']}`.",
         "",

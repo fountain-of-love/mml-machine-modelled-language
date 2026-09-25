@@ -1,8 +1,8 @@
 {
   "benchmark_version": "1.0.0",
   "purpose": "small deterministic retrieval diagnostic; not an MML acceptance test",
-  "generated_at": "2026-08-09T18:00:30.783913+00:00",
-  "source_revision": "uncommitted-pre-publication-dirty",
+  "generated_at": "2026-09-25T21:42:16.417856+00:00",
+  "source_revision": "d6fac6341f3e7521c825c585c21e6c3e84e8e70c-dirty",
   "runtime": {
     "python": "3.9.6",
     "numpy": "2.0.2"

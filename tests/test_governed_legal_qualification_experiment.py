@@ -47,7 +47,10 @@ class GovernedLegalQualificationExperimentTests(unittest.TestCase):
         self.assertIn("Governed Legal Qualification", report)
         self.assertIn("LOCALLY_CONSISTENT", report)
         self.assertIn("does not test cross-level transition", report)
-        self.assertIn("does not establish facts", report.lower())
+        self.assertIn(
+            "not a factual, legal-duty, or adjudicative process",
+            report.lower(),
+        )
 
     def test_artifacts_are_fresh_and_check_is_nonmutating(self):
         check_result(self.result)

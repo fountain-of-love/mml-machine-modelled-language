@@ -319,7 +319,7 @@ def run_experiment() -> dict:
             "study_sha256": sha256_file(STUDY_PATH),
         },
         "evidence_boundary": probes["evidence_boundary"],
-        "claim_scope": "This tests structural holdout of complete signatures under a deterministic synthetic generator. It does not establish independently authored, natural-language, real-world, or production-scale generalization.",
+        "claim_scope": "This tests structural holdout of complete signatures under a deterministic synthetic generator. Independent authorship, natural-language transfer, real-world coverage, and production-scale behavior are reserved for the next validation layer.",
     }
 
 
@@ -393,7 +393,7 @@ def markdown_report(result: dict) -> str:
         "",
         "## R — Result",
         "",
-        f"MML first reached at least 90% deterministic top-1 accuracy at `k={result['scaling_summary']['mml_first_k_at_90_percent_top_1']}` and 100% at `k={result['scaling_summary']['mml_first_k_at_100_percent_top_1']}`. Flat overlap, explicit vector composition, symbolic conjunction, and additive KG traversal reached the same accuracy at the same width. At `k=20`, MML resolved all 64 held-out signatures in a 20-dimensional representation generated from four latent variables, but that shared success does not isolate an MML advantage.",
+        f"MML first reached at least 90% deterministic top-1 accuracy at `k={result['scaling_summary']['mml_first_k_at_90_percent_top_1']}` and 100% at `k={result['scaling_summary']['mml_first_k_at_100_percent_top_1']}`. Flat overlap, explicit vector composition, symbolic conjunction, and additive KG traversal reached the same accuracy at the same width. At `k=20`, MML resolved all 64 held-out signatures in a 20-dimensional representation generated from four latent variables, establishing parity on this structural holdout; a distinct advantage question requires a harder matched task and cost model.",
         "",
         "### Conformity criteria",
         "",

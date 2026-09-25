@@ -1,6 +1,6 @@
 # MML Hypothesis Benchmark Programme
 
-This document aligns evidence instruments beneath the canonical [MML Research Programme](../capabilities/README.md). The capability definitions are authoritative for research scope; this document coordinates shared benchmark design and prevents evidence from leaking between programmes.
+This document aligns evidence instruments beneath the canonical [MML Research Programme](../capabilities/README.md). The capability definitions are authoritative for research scope; this document coordinates shared benchmark design and keeps evidence attribution clear between programmes.
 
 ## Purpose
 
@@ -12,7 +12,7 @@ MML does not begin with the claim that PageRank, matrix multiplication, normaliz
 
 Association, synonymy, hierarchy, opposition, part/whole, causality, role correspondence, and temporal relation are examples of representational dimensions. They are not the definition of richness and should not become a mandatory universal ontology. A representation is richer when it makes distinctions required by a task explicit, addressable, governed, and executable.
 
-The benchmark must therefore evaluate the consequence of representational enrichment. It must not reduce the project to document retrieval, reward extra algorithmic complexity, or treat a larger relation vocabulary as automatically better.
+The benchmark therefore evaluates the consequence of representational enrichment. It keeps document retrieval as one application surface, separates representation effects from algorithmic complexity, and treats relation vocabulary as useful only when it makes task-relevant distinctions executable.
 
 The benchmark programme follows the canonical triad:
 
@@ -20,13 +20,13 @@ The benchmark programme follows the canonical triad:
 
 | Programme | Hypothesis tested | Current state |
 | --- | --- | --- |
-| **1. Semantic Representation** | Explicit, richer meaning can make fixed ordinary mathematics more useful. | Identity-focused v1 implemented. |
-| **2. Knowledge State Execution** | Established knowledge compiled into governed state can be executed repeatedly without reconstructing equivalent task state at every use. | One bounded typed-chain experiment implemented. |
-| **3. Combinatorial Uniqueness** | Broad, sufficiently independent coordinates can combine into a narrower and more distinctive target. | Soft-intersection mechanism implemented; systematic benchmark not yet implemented. |
+| **1. Semantic Representation** | Explicit, richer meaning can make fixed ordinary mathematics more useful. | Identity-focused v1 implemented; factorial and held-out protocols defined next. |
+| **2. Knowledge State Execution** | Established knowledge compiled into governed state can be executed repeatedly without reconstructing equivalent task state at every use. | One bounded typed-chain experiment implemented; lifecycle comparison defined next. |
+| **3. Combinatorial Uniqueness** | Broad, sufficiently independent coordinates can combine into a narrower and more distinctive target. | Soft-intersection mechanism implemented; systematic held-out benchmark is the next stage. |
 
 The programmes must report separate verdicts. Evidence for one hypothesis is not evidence for the other two, even when they reuse code, fixtures, integrity controls, or execution strategies.
 
-This document is the forward experimental programme, not a claim that every listed control already exists. Each implemented report must state which portion of the programme it actually executes and retain its own evidence boundary.
+This document is the forward experimental programme. Each implemented report states which portion of the programme it executes and retains its own evidence boundary, allowing the benchmark suite to grow without rewriting earlier observations.
 
 ## Programme 1 — Semantic Representation
 
@@ -58,9 +58,9 @@ The project intention receives support when all of the following hold:
 
 An improvement in a single aggregate ranking metric is not sufficient. The benchmark must show that the intended semantic distinction caused an interpretable change.
 
-### What Would Falsify or Weaken the Intention
+### Validation And Failure Criteria
 
-The benchmark should report negative results rather than protect the hypothesis. Evidence against the project direction includes:
+The benchmark should report negative results as useful evidence. The project direction is challenged when:
 
 - richer representations perform no better than association-only representations on tasks that require the added distinctions;
 - improvements disappear on held-out probes or independently authored cases;
@@ -72,7 +72,7 @@ The benchmark should report negative results rather than protect the hypothesis.
 - explanations cannot identify which semantic records and policy decisions affected the result;
 - deterministic replay, update, or rollback fails.
 
-These outcomes may reject one representation, task policy, or compilation method without rejecting every possible MML. Repeated failure across independently designed semantic tasks would weaken the broader proposition.
+These outcomes can refine or reject one representation, task policy, or compilation method without rejecting every possible MML. Repeated failure across independently designed semantic tasks would narrow the broader proposition.
 
 ### Experimental Method: Hold Mathematics Constant
 
@@ -131,7 +131,7 @@ This suite evolves the existing `bank` demonstration without turning it into the
 
 This suite tests the minimal claim that better semantic identity can make unchanged mathematics produce a more useful field.
 
-The implemented v1 is developmental evidence for the **joint** grounding-and-matching-focus treatment. It does not isolate identity grounding by itself. A v2 suite must use the factorial and sham controls above before attributing the observed gain specifically to representation.
+The implemented v1 is developmental evidence for the **joint** grounding-and-matching-focus treatment. A v2 suite uses the factorial and sham controls above to attribute the observed gain specifically to representation.
 
 #### Suite B: Relation meaning
 
@@ -231,9 +231,9 @@ Zero source-knowledge tokens per compiled query does not mean zero computation. 
 
 Wall-clock time, bytes or tokens, and algorithmic work are different measurement families. Reports must present them separately. Runtime observations may be described as signals of reduced repeated computation, but they are not energy measurements; lower-energy claims require direct or appropriately instrumented energy evidence under controlled hardware and workload conditions.
 
-### Current Evidence Boundary
+### Current Evidence And Next Validation
 
-The [Knowledge State Execution Experiment v1](../capabilities/knowledge-state-execution/results/v1.md) implements deterministic source reconstruction and compiled execution for one authored six-fact typed-chain case. It demonstrates exact reuse and governed mutation locally. It does not provide a language-model comparison, independent fixtures, general inference, or meaningful-scale efficiency evidence.
+The [Knowledge State Execution Experiment v1](../capabilities/knowledge-state-execution/results/v1.md) implements deterministic source reconstruction and compiled execution for one governed six-fact typed-chain case. It demonstrates exact reuse and governed mutation locally. The next lifecycle benchmark adds a language-model comparison, independent fixtures, generalization controls, and meaningful-scale efficiency evidence.
 
 ## Programme 3 — Combinatorial Uniqueness
 
@@ -274,7 +274,7 @@ Report:
 
 ### Current Evidence Boundary
 
-The elaborated engine already propagates fields independently and combines them through a normalized geometric mean. Regression tests show that this is not a simple additive average. No systematic held-out benchmark yet establishes combinatorial specificity, useful coverage, coordinate-basis scaling, or a net efficiency advantage. The full falsification contract is defined in [Combinatorial Uniqueness](../capabilities/combinatorial-uniqueness/mechanism.md) and the [MML Research Contract](../Research-Contract.md#3-combinatorial-uniqueness).
+The elaborated engine already propagates fields independently and combines them through a normalized geometric mean. Regression tests establish that this is a distinct composition operation rather than a simple additive average. The next benchmark measures combinatorial specificity, useful coverage, coordinate-basis scaling, and lifecycle economics. The full validation contract is defined in [Combinatorial Uniqueness](../capabilities/combinatorial-uniqueness/mechanism.md) and the [MML Research Contract](../Research-Contract.md#3-combinatorial-uniqueness).
 
 ## Case Format
 
@@ -396,7 +396,7 @@ These controls distinguish richer meaning from simply adding edges, parameters, 
 
 The benchmark should mature through three evidence levels:
 
-1. **Development cases:** small authored fixtures used to build and debug the mechanism.
+1. **Development cases:** small governed-input fixtures used to build and debug the mechanism.
 2. **Held-out cases:** frozen before implementation changes and evaluated only after the operator contract is fixed.
 3. **Independent cases:** authored and judged by domain contributors who did not implement the representation or coefficients.
 
@@ -428,9 +428,9 @@ There should be no universal “MML wins” score. A suite can support identity 
 
 ## Relationship to the Existing Retrieval Diagnostic
 
-The current retrieval benchmark remains useful as an application regression. It tests whether the present prototype continues to rank its authored polysemy and GDPR documents deterministically beside lexical baselines.
+The current retrieval benchmark remains useful as an application regression. It tests whether the present prototype continues to rank its governed-input polysemy and GDPR documents deterministically beside lexical baselines.
 
-It is not evidence for the complete MML triad because it combines representation, query engineering, compilation, document scoring, and retrieval judgments into one downstream outcome. It cannot isolate whether richer meaning representation caused a gain, whether compiled state avoided reconstruction, or whether coordinate composition produced specificity.
+It is deliberately an application-level outcome rather than a complete MML-triad verdict: it combines representation, query engineering, compilation, document scoring, and retrieval judgments. The hypothesis-specific programmes isolate richer representation, compiled reuse, and coordinate composition separately.
 
 Under this programme, retrieval remains an optional application diagnostic fed by MML mechanisms. TF-IDF and lexical overlap are contextual baselines for that application, not the definition of MML success and not substitutes for the three hypothesis-specific programmes.
 
@@ -440,7 +440,7 @@ The identity-focused Representation version is implemented in [`benchmark.py`](.
 
 The first bounded Knowledge State Execution version is also implemented, with its report in [Knowledge State Execution Experiment v1](../capabilities/knowledge-state-execution/results/v1.md). It compares per-query deterministic reconstruction with compiled execution over one authored typed-chain fixture. Its next step is independent cases and a measured language-model baseline.
 
-Combinatorial Uniqueness now has four bounded development studies. Experiments 3.1–3.3 test direct intersection, governed legal qualification, and cross-level transition on co-authored fixtures. Experiment 3.4 adds a structurally held-out signature split and six treatments across `k=1..20`; it demonstrates that MML can execute a 20-dimensional representation generated from four latent variables without seeing complete target signatures. Exact controls match MML, so the scaling claim is `NOT_SUPPORTED_BY_THIS_FIXTURE`.
+Combinatorial Uniqueness now has four bounded development studies. Experiments 3.1–3.3 test direct intersection, governed legal qualification, and cross-level transition on governed-input fixtures. Experiment 3.4 adds a structurally held-out signature split and six treatments across `k=1..20`; it demonstrates that MML can execute a 20-dimensional representation generated from four latent variables without seeing complete target signatures. Exact controls match MML, so the scaling claim is `NOT_SUPPORTED_BY_THIS_FIXTURE` and the next benchmark target is a stronger independently authored basis.
 
 Programme 4 adds an accumulated research stream: Semantic Navigation. Experiment 4.1 composes the first three operational capabilities over recurring governed animal attributes. It represents stable dimension-qualified values and codes, compiles persistent postings and complete-signature equivalence classes, executes supported subset queries as exact candidate-region intersections, and exposes ambiguity as navigable state. The engine also reports deterministic imputations, remaining value partitions, the highest-information next dimension, commonality, and incomplete construction records.
 

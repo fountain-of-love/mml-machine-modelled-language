@@ -6,11 +6,21 @@ Machine Modelled Language (MML) explores a simple proposition:
 
 > **We don't necessarily need increasingly complicated computation. We may need a representation of meaning rich enough that powerful mathematical structures already available to us start doing useful work.**
 
-**MML isn't merely proposing a cheaper execution engine over a knowledge graph. It's proposing an alternative way for machines to obtain semantic specificity in the first place—explicit representation, compiled reuse, and combinatorial construction.**
+Its sharper research question is:
 
-MML compiles governed concepts, senses, semantic roles, aliases, and typed relations into deterministic weighting operators. It does not itself interpret raw language or decide what the semantic representation should be. That construction belongs upstream: LLMs, CML tools, experts, public sources, and evidence processes can propose candidate structure; governance turns accepted structure into stable CML knowledge; MML then compiles and executes it. The current Python experiment uses matrices and PageRank-style propagation; it does not generate language or reproduce an LLM's internal mechanism. It gives explicit semantic structure a reusable, inspectable form whose weights can be rebuilt from the same governed inputs.
+> **Can an AI system progressively convert recurring probabilistic tasks into governed deterministic operations without reducing its ability to handle genuinely novel tasks?**
+
+**MML proposes a different way for machines to obtain semantic specificity: explicit representation, governed compilation, reusable execution, and combinatorial construction.**
+
+MML compiles governed concepts, senses, semantic roles, aliases, and typed relations into deterministic weighting operators. Its deliberately focused role is execution: upstream LLMs, CML tools, experts, public sources, and evidence processes can propose candidate structure; governance turns accepted structure into stable CML knowledge; MML then compiles and executes it. The current Python experiment uses matrices and PageRank-style propagation, giving explicit semantic structure a reusable, inspectable form whose weights can be rebuilt from the same governed inputs.
 
 This is the literal seed of the idea **words carry weight**: concepts become addressable semantic coordinates, established relationships are compiled into reusable transition capacity, and queries compose those coordinates into task-specific semantic fields.
+
+The programme therefore measures conversion: the
+share of eligible interactions handled by governed operators, cost and latency
+change, reproducibility, error and regression rates, operator coverage, false
+operator creation, human approval burden, novelty detection, and the rate of
+capability extraction from recurring probabilistic work.
 
 The legacy graph path compiles co-occurrence and three positive governed relation types into one normalized matrix, while treating contradiction separately. The repository now also contains a bounded compiled semantic operator that preserves those positive relation types as sparse layers, applies explicit versioned policy coefficients, and persists the resulting executable state. The fuller direction is a wider family of relation-specific matrices—synonymy, hierarchy, opposition, part/whole, causality, role correspondence, association, temporal relation, and others—from which an application constructs a task-specific operator. Those coefficients are inspectable semantic-policy decisions, not learned black-box parameters.
 
@@ -20,7 +30,7 @@ The CML work makes the representation richer still. Concepts such as `capacity`,
 
 MML develops through three independently testable foundation capabilities and one accumulated capability:
 
-1. **[Semantic Representation](docs/capabilities/semantic-representation/README.md) — addressed by the current experiment:** If meaning is represented explicitly and richly enough, simple mathematics becomes semantically useful.
+1. **[Semantic Representation](docs/capabilities/semantic-representation/README.md) — current evidence:** If meaning is represented explicitly and richly enough, simple mathematics becomes semantically useful.
 2. **[Knowledge State Execution](docs/capabilities/knowledge-state-execution/README.md):** Once established knowledge is compiled into governed state, its declared consequences can be executed repeatedly without reconstructing equivalent task state at every use.
 3. **[Combinatorial Uniqueness](docs/capabilities/combinatorial-uniqueness/README.md) — local and structurally held-out development evidence:** Several individually broad but sufficiently independent semantic constraints can combine into a narrow, distinctive conceptual coordinate or retrieval target.
 4. **[Semantic Navigation](docs/capabilities/semantic-navigation/README.md) — accumulated mechanics and dimension-contribution evidence:** Represented dimensions, compiled state, and exact coordinate composition can combine into candidate retrieval, explicit ambiguity, useful next-question navigation, and measurable context-dependent dimension contribution.
@@ -46,7 +56,7 @@ Human-readable reports are available across all four research streams:
 - **[Experiment 4.2 — Semantic Navigation Strategy Comparison](docs/capabilities/semantic-navigation/results/semantic-navigation-strategy-v1.md):** Within one shared MML substrate and a uniform candidate prior, the information-gain strategy reached all 48 target equivalence classes in 2.750 mean questions, improving on fixed order and seeded random while tying highest cardinality. Restricted lenses preserve measurable residual ambiguity. Verdict: `UNIFORM_STRATEGY_EXPERIMENT_CONFORMANT` development evidence.
 - **[Canidae field pilot — Layered Dimension Contribution](docs/capabilities/semantic-navigation/results/canidae-dimension-review-v0-2.md):** A linked 12-species registry and 13-dimension ecology-behavior seed separate foundational navigation from optional zoological detail. Coverage-adjusted binary and conditional information gain expose useful, redundant, sparse, and multi-value-inflated dimensions. Status: development contribution evidence, not an MML-versus-control result.
 
-The earlier [combined Experiment 3 result](docs/capabilities/combinatorial-uniqueness/results/v1.md) is now classified as **`SUPERSEDED_BY_DECOMPOSITION`**, not as the current programme verdict. Its one failed access-to-evidence trajectory remains valid historical evidence: it exposed that flat cumulative intersection and cross-level transition are different operations. Experiments 3.1, 3.2, and 3.3 now carry the current claim-specific conclusions.
+The earlier [combined Experiment 3 result](docs/capabilities/combinatorial-uniqueness/results/v1.md) is now classified as **`SUPERSEDED_BY_DECOMPOSITION`**, while its access-to-evidence trajectory remains useful historical evidence: it exposed that flat cumulative intersection and cross-level transition are different operations. Experiments 3.1, 3.2, and 3.3 now carry the current claim-specific conclusions.
 
 Each foundation capability concerns a different architectural operation; the fourth accumulates them:
 
@@ -72,7 +82,7 @@ represented + compiled + composed candidate region
 
 In compact form: **Represent meaning. Compile knowledge. Compose concepts. Navigate governed knowledge.**
 
-Architectural misuse of LLMs contributes to:
+MML responds to recurring architectural pressures in LLM-based systems:
 
 - hallucination and convincing unsupported answers;
 - semantic and behavioural drift;
@@ -83,9 +93,9 @@ Architectural misuse of LLMs contributes to:
 - indiscriminate automation of complete human roles; and
 - stochastic next-token prediction being used for tasks requiring exactness and reproducibility.
 
-Hence, we propose MML. It does not independently solve security, sustainability, employment, or governance. It changes the architecture by keeping governed knowledge explicit and reserving stochastic models for discovery and language work, opening the door to more sustainable solutions.
+MML responds by keeping governed knowledge explicit and reserving stochastic models for discovery and language work. It is one architectural contribution to security, sustainability, employment, and governance questions, rather than a claim to solve those questions by itself.
 
-This repository contains a bounded Python mechanism experiment. It demonstrates matrix construction, query activation, inspectable relation paths, governed updates, snapshots, rollback, and a first relation-specific sparse operator. It does not yet implement the full multi-layer MML engine or the wider Semantic Operating System (SOS).
+This repository contains a focused Python mechanism experiment. It demonstrates matrix construction, query activation, inspectable relation paths, governed updates, snapshots, rollback, and a first relation-specific sparse operator. It establishes the executable kernel from which the wider multi-layer MML engine and Semantic Operating System (SOS) can grow.
 
 ## Start Here
 
@@ -106,7 +116,7 @@ The executable [`src/` tree](src/) follows the three foundations and accumulated
 - **Combinatorial Uniqueness:** [`src/combinatorial_uniqueness/`](src/combinatorial_uniqueness/) owns exact candidate regions, field composition, governed validity, specificity measurements, and semantic transition.
 - **Semantic Navigation:** [`src/semantic_navigation/`](src/semantic_navigation/) composes those capabilities into status, imputation, distinctions, commonality, and next-question navigation through an interchangeable strategy contract; information gain is the default strategy.
 
-Research instrumentation mirrors the four streams under [`experiments/`](experiments/). It owns authored fixtures, comparisons, benchmark adapters, evidence generation, console presentation, and executable demonstrations. Nothing in `src/` imports it.
+Research instrumentation mirrors the four streams under [`experiments/`](experiments/). It owns authored fixtures, comparisons, benchmark adapters, evidence generation, console presentation, and executable demonstrations. Nothing in `src/` imports it; richer graph mechanics are isolated in the explicitly documented `elaborations/` adapter layer.
 
 Everything else in the repository builds outward from those capability seeds:
 
@@ -117,6 +127,8 @@ Everything else in the repository builds outward from those capability seeds:
 These later mechanisms are relevant because they test what becomes possible when the representation grows richer. They are not the definition of MML and should not obscure its originating proposition.
 
 Begin with [Words Carry Weight: The Essence](docs/words-carry-weight-essence.md), which explains the minimal semantic-grounding and focus experiment and the wider dimensions required for reasoning. Continue with [What MML is and what it opens](docs/What.md), [How the experiments work](docs/How.md), and [MML in depth](docs/MML-In-Depth.md), or consult the [research contract](docs/Research-Contract.md) for the evidence boundary. The complete reading map is in [Documentation](docs/README.md).
+
+For a frontier-AI comparison of the proposal, its current evidence, architectural scope, plausible research roles, and the two experiments most likely to change its standing, see [Research Positioning](docs/Research-Positioning.md).
 
 ## Executable Evidence
 
@@ -137,7 +149,7 @@ Begin with [Words Carry Weight: The Essence](docs/words-carry-weight-essence.md)
 | Compiled encyclopedic navigation seed | `make experiment-4-1-check` | Accumulated semantic representation, knowledge-state compilation, exact candidate-region composition, ambiguity navigation, and deterministic query-work scaling |
 | Semantic navigation strategy comparison | `make experiment-4-2-check` | Uniform-prior next-question strategies, identification depth, residual entropy, candidate reduction, ambiguity, unsupported controls, and lens regret |
 
-The corpus and probes were authored together. They demonstrate mechanics and protect regressions; they are not independent evidence of generalisation, legal validity, production readiness, or superiority over TF-IDF, BM25, RAG, or LLMs. The source-backed Canidae pilot additionally tests dimension quality and contribution, but has not yet been executed as the full compiled MML-versus-control benchmark. The exact evidence boundary is defined in the [research contract](docs/Research-Contract.md).
+The corpus and probes were authored together by design: they define the governed input contract, demonstrate mechanics, and protect regressions. They are therefore evidence of mechanism conformity and reproducibility, while independent data and controlled comparisons are the next layer of evidence for generalisation, legal validity, production readiness, and comparative performance against TF-IDF, BM25, RAG, or LLMs. The source-backed Canidae pilot additionally tests dimension quality and contribution; the full compiled MML-versus-control benchmark is the next validation step. The exact evidence boundary is defined in the [research contract](docs/Research-Contract.md).
 
 ## Scientific Foundation: The Semantic Seed Vault
 
@@ -151,7 +163,7 @@ $$
 
 and applies the same definitions, conventions, and admission rules to mechanics, second-sound thermodynamics, acoustics, electromagnetism, and hydraulics. The derivation fixes the coefficient from the energy convention instead of fitting it, preserves the physical role of every substituted quantity, checks dimensions and power balance, and states where the law does not apply. It establishes a bounded five-domain representation theorem; broader empirical claims outside that class remain separate work.
 
-For scientists, the current contribution is this bounded, falsifiable cross-domain synthesis: Resonant Capacity provides one role-preserving mathematical representation for the admitted systems and makes both successful mappings and failures explicit; its exact novelty relative to the full literature remains under review.
+For scientists, the current contribution is this bounded, falsifiable cross-domain synthesis: Resonant Capacity provides one role-preserving mathematical representation for the admitted systems and makes both successful mappings and failures explicit. Its relationship to the full literature is being situated through continued review.
 
 The vault uses shared semantic roles—such as capacity, substrate, activation, gain, storage, boundary, evidence, maturity, and failure—to compare realizations across domains without pretending that mechanics, thermodynamics, acoustics, electromagnetism, and hydraulics are the same phenomenon. It records papers and formulas together with claim maturity, scientific concerns, derivations, negative mappings, provenance, competing interpretations, and possible future research.
 
@@ -170,7 +182,7 @@ This makes the Seed Vault evidence for several proposed CML capabilities:
 
 The scientific derivation is equation-led rather than encoded in machine-verifiable proof software. Its stated result is universal within the admitted model class, not across every physical system or regime. Experimental replication and any stronger empirical invariant outside that class remain distinct from the analytical theorem. These boundaries delimit the claim without reducing the vault to a governance demonstration.
 
-Useful entry points are the [claim ledger](docs/explorations/seed-vault/00-governance/Claim-Ledger.md), [analytical derivation](docs/explorations/seed-vault/02-proof/Resonant-Capacity-R3-Certificates.md), [Paper 0](docs/explorations/seed-vault/01-papers/00-foundation/Five-Domain-Energy-Grammar-Paper-0.md), [vault manifest](docs/explorations/seed-vault/00-governance/Vault-Manifest.md), and [series map](docs/explorations/seed-vault/00-governance/Series-Map.md).
+Useful entry points are the [claim ledger](docs/explorations/seed-vault/movement/discovery/RCL/00-governance/Claim-Ledger.md), [analytical derivation](docs/explorations/seed-vault/movement/discovery/RCL/02-proof/Resonant-Capacity-R3-Certificates.md), [Paper 0](docs/explorations/seed-vault/movement/discovery/RCL/01-papers/00-foundation/Five-Domain-Energy-Grammar-Paper-0.md), [vault manifest](docs/explorations/seed-vault/movement/discovery/RCL/00-governance/Vault-Manifest.md), and [series map](docs/explorations/seed-vault/movement/discovery/RCL/00-governance/Series-Map.md).
 
 ## Direction
 
@@ -188,7 +200,7 @@ Put those two instincts together—small intelligible models and living public k
 
 ## Closing Vision
 
-MML points towards a complementary European sovereign AI path: transparent knowledge structures, inspectable graph dynamics, potentially lower-energy computation, and controllable semantic foundations working alongside language models rather than pretending to replace all of their capabilities.
+MML points towards a complementary European sovereign AI path: transparent knowledge structures, inspectable graph dynamics, potentially lower-energy computation, and controllable semantic foundations working alongside language models and extending what they can do reliably.
 
 We also believe that no single person should be allowed to hold this much power, money, and technology in a centralised form, as the world increasingly reflects today. For that reason, this work is paired with a legal container: a non-profit operating model, refined by lessons learned from OpenAI and documented at [fountain-of-love/operating-model](https://github.com/fountain-of-love/operating-model).
 

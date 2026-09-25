@@ -1,6 +1,6 @@
 # Canidae Layered Dimension and Measurement Review
 
-**Status:** development evidence; independent-source cross-check complete, human biological review pending  
+**Status:** development evidence; independent-source cross-check complete, human biological review is the next governance gate
 **Foundational seed:** `species_ecology_behavior_seed_canidae_v0_1`  
 **Detail seed:** `canidae_zoological_detail_seed_v0_1`  
 **Animals:** 12 Canidae species
@@ -56,6 +56,6 @@ The biome result confirms the original concern: eleven observed records have ele
 
 ## Conditional Results
 
-For biome, 41 of 42 eligible one-value contexts have positive adjusted information gain. The maximum reaches 1 bit in balanced narrowed regions. This does not validate biome as globally optimal; it shows that its contribution is contextual and must be evaluated after the current candidate region is known.
+For biome, 41 of 42 eligible one-value contexts have positive adjusted information gain. The maximum reaches 1 bit in balanced narrowed regions. This shows that dimension contribution is contextual: biome is valuable in particular candidate regions, and its value must be evaluated after the current candidate region is known rather than treated as globally fixed.
 
 The pilot deliberately stops short of causal or biological interpretation. The next expanded treatment must add negative observations, multi-step contexts, pairwise redundancy, source-confidence weighting, and independently reviewed annotations before comparing navigation strategies. Zoological-detail contribution is a separate depth treatment.

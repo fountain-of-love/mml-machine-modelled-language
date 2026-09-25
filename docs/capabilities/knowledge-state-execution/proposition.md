@@ -28,6 +28,6 @@ Reusable execution is meaningful only if compilation preserves correctness, iden
 
 The proposition also requires full accounting. Compilation, governance, validation, storage, execution, correction, and restoration all cost resources. Zero source reads per compiled query does not mean zero computation, and lower local latency does not by itself establish lower energy use or a universal efficiency advantage.
 
-This is a research proposition, not a claim of arbitrary reasoning or universal superiority over reconstruction or probabilistic models. Experiments must compare semantically equivalent treatments across increasing reuse horizons and show where, if anywhere, the one-time compilation cost is amortized without sacrificing governed behavior.
+This is a research proposition about recurring governed work, not arbitrary reasoning or universal superiority over reconstruction or probabilistic models. Experiments compare semantically equivalent treatments across increasing reuse horizons and identify where the one-time compilation cost is amortized without sacrificing governed behavior.
 
 The systematic test is defined by [Experiment 2 — Compile Once. Execute What Is Known.](experiment.md). The current human-readable development evidence is reported in [Knowledge State Execution Experiment v1](results/v1.md).

@@ -297,9 +297,9 @@ def run_benchmark(reference=None):
 def markdown_report(result):
     lines = [
         "# MML Retrieval Diagnostic v1", "",
-        f"Generated: `{result['generated_at']}`  ",
+        f"Generated: `{result['generated_at']}`",
         f"Source revision: `{result['source_revision']}`", "",
-        "> This is a small development diagnostic, not an acceptance verdict for MML and not held-out evidence.", "",
+        "> This is a bounded deterministic retrieval control: it protects regressions and exposes how lexical and explicit semantic representations behave on the declared development fixture.", "",
         "## Checks", "",
         f"- Deterministic integrity: `PASS`",
         f"- Absolute MML quality floors: `{'PASS' if result['checks']['quality_floor'] else 'FAIL'}`",
@@ -318,7 +318,7 @@ def markdown_report(result):
         lines.append("")
     lines.extend([
         "## Interpretation", "",
-        "TF-IDF and MML are deterministic here but execute different representations. These numbers show retrieval behavior on one small synthetic development fixture. They do not determine whether executable semantic infrastructure is successful.", "",
+        "TF-IDF and MML are deterministic here but execute different representations. These numbers characterize retrieval behavior on the declared synthetic development fixture and provide a controlled baseline for the broader executable-semantic programme.", "",
         "The named multiplicative hybrid is computed directly as `mml_typed × (0.2 + 0.8 × lexical_overlap)`. It is retained to test the architectural observation that lexical evidence and explicit semantic activation can be complementary; it is not tuned by a calibration search.", "",
         "The earlier challenge slices, hybrid calibration, sensitivity experiments, and threshold verdicts are preserved in [the archived research note](../archive/v1-retrieval-research.md).", "",
     ])

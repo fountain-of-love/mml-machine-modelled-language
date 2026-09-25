@@ -114,7 +114,7 @@ The analogy is the PageRank algorithm.
 
 Once a compiled view exists, an execution strategy can operate over it repeatedly. PageRank supplies one analogy: once its page-link representation exists, it propagates weight through that representation rather than rebuilding the web topology for every run.
 
-MML generalizes the architectural separation rather than defining itself through PageRank. Governed semantic sources remain readable; a compiler produces named executable views; and queries reuse those views through a selected strategy. The bounded Knowledge Is State experiment compares that shape with deterministic per-query source reconstruction for one typed-chain task. Independent domains, meaningful scale, and a measured language-model baseline remain outstanding.
+MML generalizes the architectural separation rather than defining itself through PageRank. Governed semantic sources remain readable; a compiler produces named executable views; and queries reuse those views through a selected strategy. The bounded Knowledge Is State experiment demonstrates that shape against deterministic per-query source reconstruction for one typed-chain task. Independent domains, meaningful scale, and a measured language-model baseline define the next reuse-validation layer.
 
 This is the practical bridge from governed knowledge to compiled reuse. Representation determines what distinctions exist, dual persistence preserves their authoritative sources and executable views, and runtime composition can combine coordinates from those views. Preserved patterns are one possible content type; they do not define MML by themselves.
 
@@ -163,4 +163,4 @@ The current scripts show dual persistence in miniature:
 - The generated vocabulary, co-occurrence matrix, and transition matrix act as the MML index.
 - `elaborations/mml_legal_usecase.py` queries the corpus-derived matrix and uses activation weights to rank authored evidence snippets.
 
-This remains a small in-memory prototype. It now includes explicit bank-sense concepts, governed GDPR aliases and relations, content snapshots, observable update consequences, and exact restoration. Its current revision is dirty and pre-publication, so the snapshot proves content replay rather than public Git governance. The architectural shape is nevertheless testable: readable sources on one side, a reproducible weighted index on the other, and explicit identities connecting them.
+This remains a small in-memory prototype. It now includes explicit bank-sense concepts, governed GDPR aliases and relations, content snapshots, observable update consequences, and exact restoration. The snapshot exercises content replay; public Git governance is the next deployment layer. The architectural shape is already testable: readable sources on one side, a reproducible weighted index on the other, and explicit identities connecting them.

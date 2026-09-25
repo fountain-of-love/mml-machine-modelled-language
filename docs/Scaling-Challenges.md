@@ -1,4 +1,4 @@
-# MML Scaling Challenges
+# MML Scaling Dimensions
 
 This note separates three scaling questions that are easy to conflate when evaluating Machine Modelled Language (MML):
 
@@ -6,11 +6,11 @@ This note separates three scaling questions that are easy to conflate when evalu
 2. semantic scaling; and
 3. governance scaling.
 
-The distinction matters because a result in one category does not establish a result in the others. Fast execution does not prove useful semantic coverage. A large semantic basis does not prove maintainable governance. A strong governance process does not prove acceptable runtime cost. Each dimension needs its own measurements and falsification criteria.
+The distinction matters because each category measures a different success condition. Fast execution, useful semantic coverage, and maintainable governance must be demonstrated together without being collapsed into one score. Each dimension therefore has its own measurements and validation criteria.
 
 ## Architectural Context
 
-MML should not be read as claiming that it must interpret raw language, discover all concepts, govern their validity, and execute them through one mechanism. The proposed division of responsibility is closer to:
+MML deliberately separates raw-language interpretation, semantic discovery, governance, and execution into cooperating responsibilities. The proposed division is:
 
 ```text
 LLM, CML, expert, source, and community discovery
@@ -41,7 +41,7 @@ The relevant variables include:
 
 For matrix or vector execution, this category should be comparatively straightforward to characterize. A dense `N x N` transition matrix has different cost behavior from a sparse operator. A single-vector activation has different cost behavior from multi-field composition. A converged PageRank-style strategy has different cost behavior from a fixed-step local propagation strategy. Relation-specific operators add another axis: execution may either compose a task-specific operator before activation or retain layer identity during propagation.
 
-The research task is therefore not only to report runtime. It is to bind runtime and resource use to the declared execution contract:
+The research task is therefore to bind runtime and resource use to the declared execution contract:
 
 ```text
 representation size
@@ -107,13 +107,13 @@ Possible measurements include:
 - coverage of independently authored probes after a state freeze; and
 - construction cost per useful new composed coordinate.
 
-The current repository has development evidence that soft intersection, direct qualification, refusal, and explicit stage-local transition are executable in authored fixtures. It does not yet establish semantic scaling in the stronger sense: useful held-out coverage from a reusable basis across domains.
+The current repository has development evidence that soft intersection, direct qualification, refusal, and explicit stage-local transition are executable in governed fixtures. The next semantic-scaling layer measures useful held-out coverage from a reusable basis across domains.
 
 ## 3. Governance Scaling
 
 Governance scaling asks how semantic correctness is maintained as the knowledge base grows.
 
-This is likely to be the limiting practical question. Semantic roles and relations are only useful if their identities, evidence, scope, and maturity remain trustworthy enough for the tasks that execute them. The upstream construction pipeline is therefore central:
+This is the central practical design question. Semantic roles and relations become more valuable as their identities, evidence, scope, and maturity remain trustworthy for the tasks that execute them. The upstream construction pipeline is therefore central:
 
 ```text
 LLM or expert proposal
@@ -161,7 +161,7 @@ Open governance questions include:
 
 The three kinds of scaling interact but should remain analytically separate.
 
-Computational improvements can make more queries affordable, but they do not create a valid semantic basis. Semantic composition can increase the number of useful query-time coordinates, but only if governance maintains stable roles and valid scope. Governance can make knowledge reusable, but governance effort may dominate the cost of building a domain.
+Computational improvements can make more queries affordable; semantic composition can increase the number of useful query-time coordinates; and governance can make knowledge reusable. The research must measure how these benefits interact and whether governance effort is amortized across a domain's execution workload.
 
 A complete scaling study should therefore report at least three curves:
 
@@ -171,8 +171,8 @@ A complete scaling study should therefore report at least three curves:
 | Semantic | How many useful meanings can be composed from a basis? | held-out valid combinations, specificity gain, refusal accuracy |
 | Governance | How is correctness maintained as the basis grows? | review effort, provenance completeness, reuse per governed record |
 
-The practical hypothesis is not that any one curve is free. It is that governed knowledge acquisition may be amortized across repeated deterministic execution, and that a reusable semantic basis may cover more useful meanings than explicit enumeration alone. Both claims remain empirical.
+The practical hypothesis is that governed knowledge acquisition can be amortized across repeated deterministic execution, and that a reusable semantic basis can cover more useful meanings than explicit enumeration alone. Both claims are measured through the three scaling curves.
 
 ## Evidence Boundary
 
-This note describes scaling challenges and measurement categories. It does not establish that MML currently scales computationally, semantically, or institutionally. The current repository provides bounded mechanism evidence and development benchmarks. Stronger scaling claims require sparse execution studies, held-out semantic-composition suites, and governance experiments with explicit authority, provenance, correction, and reuse accounting.
+This note defines the scaling dimensions and measurement categories. The current repository provides bounded mechanism evidence and development benchmarks; stronger scaling evidence comes from sparse execution studies, held-out semantic-composition suites, and governance experiments with explicit authority, provenance, correction, and reuse accounting.

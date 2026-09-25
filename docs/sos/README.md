@@ -1,6 +1,6 @@
 # SOS Architecture Opened By MML
 
-This directory contains the architecture that becomes plausible if Machine Modelled Language proves useful. It is downstream of the executable MML evidence; it is not implemented by the current prototype.
+This directory contains the broader architecture opened by the executable MML kernel. It is downstream of the current evidence by design: the prototype establishes the runtime contracts, while these documents define how those contracts can compose into a Semantic Operating System.
 
 ```text
 explicit semantic representation
@@ -8,7 +8,7 @@ explicit semantic representation
   -> runtime conceptual composition
   -> Common Language Model contracts
   -> dual MML/LLM engine and persistence
-  -> proposed Semantic Operating System
+  -> Semantic Operating System composition contracts
   -> alignment with public European knowledge infrastructure
 ```
 

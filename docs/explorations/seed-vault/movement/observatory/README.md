@@ -1,6 +1,6 @@
 # Movement Observatory
 
-The observatory documents how open models can be queried, probed, and compared to identify candidate concepts, refine existing concepts, and discover possible relations without pretending that model outputs are established facts.
+The observatory documents how open models can be queried, probed, and compared to identify candidate concepts, refine existing concepts, and discover possible relations while keeping model observations distinct from governed knowledge.
 
 Its role is observational:
 
@@ -24,4 +24,4 @@ The observatory sits under `movement` because its first concern is relation in m
 
 ## Evidence Rule
 
-An observation is not a deposit. Store prompts, model identifiers, configuration, raw outputs, and timestamps before promoting any candidate concept or relation into reviewed Seed Vault material.
+An observation becomes eligible for deposit only after its prompts, model identifiers, configuration, raw outputs, and timestamps are preserved and its candidate concept or relation passes review. This keeps model-assisted discovery productive without making raw model output authoritative by default.

@@ -1,6 +1,6 @@
 # Experiment 3.3 — Cross-Level Semantic Transition Root Cause
 
-**Status:** baseline failure preserved; governed stage-reset follow-up implemented
+**Status:** baseline control preserved; governed stage-reset follow-up implemented
 **Affected probe:** `cross_access_to_evidence`
 **Baseline outcome:** `INCONSISTENT` under flat cumulative conjunction
 **Experiment 3.3 outcome:** `CONSISTENT` under explicit stage-local scope
@@ -165,17 +165,17 @@ missing_required_support: [access]
 
 and the mechanism channel would also remain unresolved for the flat-intersection interpretation.
 
-## What This Result Does And Does Not Show
+## What This Result Establishes And What It Leaves For Follow-Up
 
-It shows that flat cumulative intersection cannot represent this authored cross-level legal transition under the current state; governance prevents a soft numerical leader from becoming an unsupported legal conclusion; epsilon-supported geometric composition needs candidate-level required-field validation; and physical identification and legal cross-level qualification are not necessarily the same operation.
+It establishes that flat cumulative intersection is a different operation from this cross-level legal transition under the current state; governance prevents a soft numerical leader from becoming an unsupported legal conclusion; epsilon-supported geometric composition needs candidate-level required-field validation; and physical identification and legal cross-level qualification are not necessarily the same operation.
 
-It does not show that geometric-mean soft intersection generally fails, that `evidence_asymmetry` is an incorrect region for the described progression, that adding `access` to it would be doctrinally correct, or that a typed executor would succeed without a separate experiment.
+The follow-up questions are whether geometric-mean soft intersection behaves differently under direct qualification, whether `evidence_asymmetry` is the correct region for the described progression, and how a typed executor should represent the transition. Those require separate experiments.
 
 ## Required Preservation In Experiment 3.3
 
 The follow-up retains the cumulative union of every stage constraint as a control. It preserves the empty governed intersection and `UNRESOLVED` outcome rather than overwriting the original operation with the stage-reset result.
 
-The `CONSISTENT` Experiment 3.3 verdict applies only to the separately declared stage-reset claim. It does not relabel the cumulative-intersection result as successful.
+The `CONSISTENT` Experiment 3.3 verdict applies to the separately declared stage-reset claim. It preserves the cumulative-intersection result as a distinct control rather than relabelling it.
 
 ## Recommended Development Sequence
 
@@ -269,4 +269,4 @@ The physical fixture tests **combinatorial identification**. The direct legal pr
 
 The baseline establishes that direct soft intersection plus hard incidence governance does not implement that third operation. Experiment 3.3 adds explicit stage scope as a small orchestration layer and reports a `CONSISTENT` development result across three authored transitions.
 
-This establishes only that governed stage reset can represent the tested transitions. Automatic boundary discovery, typed transition relations, independently authored probes, and real legal qualification remain outside the evidence boundary.
+This establishes that governed stage reset can represent the tested transitions. Automatic boundary discovery, typed transition relations, independently authored probes, and real legal qualification are the next evidence boundary.

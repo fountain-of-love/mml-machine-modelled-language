@@ -78,7 +78,7 @@ The four subsections follow one illustrative request—`treatment for sugar dise
 3. **Text IR** retrieves exact supporting passages from those sources; and
 4. the **micro language model** renders only the supported material into clear language.
 
-The example is deliberately continuous: each tier enriches or narrows the same request without taking over the work assigned to the other tiers. It demonstrates the intended interfaces, not a claim that the current MML prototype already implements the complete pipeline or is suitable for medical use.
+The example is deliberately continuous: each tier enriches or narrows the same request without taking over the work assigned to the other tiers. It demonstrates the interfaces that surround the current MML kernel; domain-specific safety, evidence quality, and medical suitability require their own governed implementation and review.
 
 ### Problems addressed by the combination
 

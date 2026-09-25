@@ -33,11 +33,10 @@ visits compiled edges rather than dense matrix cells; the benchmark reports
 this as an operation-count comparison and records wall-clock measurements as
 descriptive engineering evidence only.
 
-## Research boundary
+## Research boundary and next validation
 
-This is a functional implementation slice, not confirmation of the full MML
-hypothesis. It does not establish that a coefficient policy is semantically
-correct, that sparse execution wins at public-graph scale, or that relation
-composition provides validated reasoning. The next research step is a frozen,
-independently authored relation fixture with ablations for each relation type,
-policy coefficient, and dense reconstruction control.
+This is a functional implementation slice for the governed compilation
+boundary. The next research step is a frozen, independently authored relation
+fixture with ablations for each relation type, policy coefficient, and dense
+reconstruction control, followed by public-scale sparse measurements and
+semantic validation.

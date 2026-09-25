@@ -13,16 +13,16 @@ represent governed coordinates
   -> navigate ambiguity without inventing specificity
 ```
 
-This is the fourth MML research stream. Unlike the first three, it is intentionally cumulative. It studies whether their contracts compose into useful retrieval, diagnosis, and interaction.
+This is the fourth MML research stream. Unlike the first three, it is intentionally cumulative. It studies how their contracts compose into useful retrieval, diagnosis, and interaction.
 
 ## Why This Is A Separate Stream
 
-Exact encyclopaedic retrieval is not itself evidence for the Combinatorial Uniqueness proposition. A correct multidimensional index and a flat scan should return the same compatible set. The research question is instead whether represented, compiled, and composed knowledge produces a reusable navigation substrate with explicit uncertainty and favorable repeated-use behavior.
+Exact encyclopaedic retrieval is one foundation for the accumulated stream, while its equality with a flat scan provides the correctness oracle. The research question is whether represented, compiled, and composed knowledge produces a reusable navigation substrate with explicit uncertainty and favorable repeated-use behavior.
 
-Programme 4 must therefore preserve two boundaries:
+Programme 4 therefore preserves two architectural boundaries:
 
 1. It may consume evidence-backed capabilities from Programmes 1–3.
-2. Its success does not retroactively validate claims that those programmes have not independently established.
+2. Its accumulated result reports integration separately from the independent verdicts of those programmes.
 
 ## Capability Contribution Table
 
@@ -82,7 +82,7 @@ Semantic Navigation defines:
 - inspectable contribution and snapshot identities from all upstream capabilities; and
 - cold compilation, warm execution, reconstruction, scanning, storage, and amortization accounting.
 
-It does not define natural-language understanding or infer facts absent from governed state.
+Its execution contract begins with governed structured queries; natural-language understanding and facts absent from governed state belong to upstream or adjacent contracts.
 
 ## Current Evidence
 
@@ -94,9 +94,9 @@ The [layered Canidae source-backed seeds](animal-encyclopedic-navigation-seed.md
 
 The [Canidae dimension and measurement review](results/canidae-dimension-review-v0-2.md) reports ecology-behavior information contribution separately from the optional PanTHERIA body-length review.
 
-## Evidence Boundary
+## Evidence Boundary And Next Validation
 
-The current fixture is not independently sourced zoological evidence. Programme 4 does not establish the quality of its canonical animal annotations, production performance, natural-language translation, relational inference, or independent generalization. The planned 100/250/500-animal study must source, review, govern, and freeze its records before evaluation.
+The current fixture is governed-input mechanics evidence rather than the final zoological data programme. The planned 100/250/500-animal study extends the stream with sourced, reviewed, governed, and frozen records, then measures production performance, natural-language translation, relational inference, and independent transfer as separate factors.
 
 ## Research Layers And Next Step
 

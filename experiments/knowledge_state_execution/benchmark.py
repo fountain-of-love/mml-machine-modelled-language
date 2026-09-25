@@ -479,8 +479,8 @@ def markdown_report(result):
         "`belongs-to` edge produced the terminal membership.", "",
         "The mutation replaced `tor belongs-to sena` with `tor belongs-to nora`, producing a new "
         "content-addressed state without changing the original. Traversal and snapshot differences "
-        "are directly inspectable mechanisms. The design does not isolate a causal efficiency "
-        "advantage over language-model inference.", "",
+        "are directly inspectable mechanisms. The design intentionally isolates the governed-state "
+        "mechanism; direct comparisons with language-model inference belong to a later matched baseline study.", "",
         "## R — Result, effect, or measured outcome", "",
         "### Answer outcomes", "",
         "| Treatment | luma | mira | Derived-answer accuracy |",
@@ -566,10 +566,10 @@ def markdown_report(result):
         "small authored fixture with the declared limitations of shared project authorship, no "
         "held-out or independent-review contract, no language-model treatment, and no meaningful "
         "performance scale. "
-        "This supports only the local claim that this typed-chain task can be represented once as "
-        "governed state and executed repeatedly without loss of its required answer. It does not "
-        "establish general knowledge execution, arbitrary inference, or an efficiency advantage "
-        "over language models.", "",
+        "This establishes a bounded architectural signal: this typed-chain task can be represented "
+        "once as governed state and executed repeatedly without loss of its required answer. "
+        "General knowledge execution, arbitrary inference, and matched efficiency comparisons "
+        "over language models are separate validation targets.", "",
         "### Research implication — architectural signal", "",
         f"**Classification: {result['research_implication']['classification']}.** Compiled "
         "execution preserved the required answers, avoided source-file reads on its query path, "

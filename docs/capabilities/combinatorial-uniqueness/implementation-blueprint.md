@@ -1,6 +1,6 @@
 # Experiment 3 — Implementation Blueprint
 
-**Status:** pre-implementation design
+**Status:** implementation and evidence blueprint
 **Protocol:** [Experiment 3 — Compose the Broad. Resolve the Specific.](experiment.md)
 **Reporting method:** [OSCARC v1](../../benchmark/oscarc-methodology.md)
 
@@ -235,7 +235,7 @@ PROBES_FROZEN_AFTER_STATE
 EXECUTED_CONFIRMATORY
 ```
 
-The current physical and legal-banking fixtures are `AUTHORED_DEVELOPMENT`: their state and probes are separate and hashable, but they were co-designed. They may validate implementation and reveal failure modes. They cannot establish the held-out construction claim.
+The current physical and legal-banking fixtures are `AUTHORED_DEVELOPMENT`: their state and probes are separate and hashable, and they validate implementation while revealing boundary conditions. The held-out construction claim begins at the `STATE_FROZEN` transition.
 
 A confirmatory manifest must record:
 
@@ -596,9 +596,9 @@ After each implementation slice, inspect the touched files using the project's 1
 - reporting logic coordinating compilation internals; or
 - callers forced to coordinate loader, graph, metrics, and validity subsystems directly.
 
-Prefer extraction, naming, validation, and a small facade over new class hierarchies. The experiment is intentionally bounded; architectural complexity must be earned by observed failure.
+Prefer extraction, naming, validation, and a small facade over new class hierarchies. The experiment is intentionally bounded; architectural complexity should be earned by independently observed requirements.
 
-## Completion Boundary For Version 1
+## Completion Boundary And Next Validation For Version 1
 
 Version 1 is complete when:
 

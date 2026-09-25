@@ -4,7 +4,7 @@
 
 ### Paper 0 — Research Proposal
 
-Repository context: this paper is part of the [Semantic Seed Vault](../../README.md), a knowledge-base pilot for the broader [Semantic Operating System architecture](../../../../sos/Architecture.md). It can be read independently as a scientific proposal; the Common Language Model and MML references are optional architectural extensions, not prerequisites for the paper's core claim.
+Repository context: this paper is part of the [Semantic Seed Vault](../../../../README.md), a knowledge-base pilot for the broader [Semantic Operating System architecture](../../../../../../../sos/Architecture.md). It can be read independently as a scientific proposal; the Common Language Model and MML references are optional architectural extensions, not prerequisites for the paper's core claim.
 
 ## Abstract
 

@@ -1,10 +1,51 @@
 # MML Research Contract
 
+## Central research question
+
+> **Can an AI system progressively convert recurring probabilistic tasks into governed deterministic operations without reducing its ability to handle genuinely novel tasks?**
+
+This is the sharper research question for MML. It turns the programme into a
+measurable conversion loop:
+
+```text
+probabilistic interaction
+  -> recurring task identified
+  -> candidate operator proposed
+  -> human governance and approval
+  -> deterministic execution and monitoring
+  -> correction, rollback, or return to probabilistic handling
+```
+
+The desired result is not to make every interaction deterministic. MML should
+make known, repeated, and governable work cheaper, faster, more reproducible,
+and easier to audit, while preserving probabilistic exploration for novel or
+insufficiently understood work.
+
+The primary quantities are:
+
+| Quantity | Operational meaning |
+| --- | --- |
+| Deterministic interaction share | Percentage of eligible interactions executed by governed operators |
+| Cost reduction | End-to-end cost change after including compilation, storage, governance, and execution |
+| Latency reduction | Change in cold, warm, and repeated-query latency |
+| Reproducibility | Rate of exact or contract-equivalent replay |
+| Error rate | Incorrect, unsafe, or refused outcomes under a declared task contract |
+| Operator coverage | Percentage of recurring task classes with a valid governed operator |
+| False operator creation | Candidate operators created for tasks that were not recurring, valid, or sufficiently understood |
+| Regression rate | Previously passing operator cases that fail after updates or recompilation |
+| Human approval burden | Review time, decisions, corrections, and rejected proposals per accepted operator |
+| Novelty detection | Accuracy of routing genuinely novel or unsupported interactions away from deterministic operators |
+| Capability extraction rate | Rate at which recurring probabilistic task classes become accepted reusable operators |
+
+These quantities must be reported by task class, reuse horizon, and operator
+version. Aggregate percentages without denominators, eligibility rules, or
+human-effort accounting are insufficient.
+
 ## Societal question
 
 > Can Europe organise its knowledge as linked, executable semantic infrastructure that remains inspectable and governable?
 
-The wider ambition is to help Europe evolve with AI, participate in shaping that transformation, remain economically competitive, and explore a more sustainable alternative to concentrating knowledge and capability in ever-larger models. This repository cannot prove that Europe can coordinate the institutions, standards, licensing, funding, maintenance, and participation required. It treats that as a motivating societal and policy question, not as the falsifiable result of the Python prototype.
+The wider ambition is to help Europe evolve with AI, participate in shaping that transformation, remain economically competitive, and explore a more sustainable alternative to concentrating knowledge and capability in ever-larger models. The repository treats institutional coordination, standards, licensing, funding, maintenance, and participation as the next societal and policy layer beyond the Python prototype.
 
 MML is an executable, weighted knowledge representation whose explicit structure is governed by people and whose weights can be updated from text statistics.
 
@@ -12,52 +53,52 @@ Its learning contract is supervised and governed: humans or accountable institut
 
 ## The Research Streams
 
-The MML research programme is organized around three independently falsifiable foundation hypotheses and one accumulated application hypothesis. Their canonical capability definitions live in the [MML Research Programme](capabilities/README.md):
+The MML research programme is organized around three independently testable foundation hypotheses and one accumulated application hypothesis. Their canonical capability definitions live in the [MML Research Programme](capabilities/README.md):
 
 ### 1. [Semantic Representation](capabilities/semantic-representation/README.md)
 
 > Meaning represented explicitly and richly enough can make ordinary mathematics semantically useful.
 
-The controlled intervention changes governed semantic identity while holding the corpus, compiler, query strategy, and numerical settings fixed. This hypothesis is weakened if richer representation does not improve declared semantic outcomes across independently designed ambiguity and relation tasks, or if any observed benefit depends on hidden changes to the mathematics.
+The controlled intervention changes governed semantic identity while holding the corpus, compiler, query strategy, and numerical settings fixed. The validation test is whether richer representation improves declared semantic outcomes across independently designed ambiguity and relation tasks while the mathematics remains fixed.
 
 ### 2. [Knowledge State Execution](capabilities/knowledge-state-execution/README.md)
 
 > Once established knowledge is compiled into an executable representation, it need not be reconstructed from prose or latent model parameters every time it is used.
 
-This hypothesis concerns reusable capability, not merely deterministic serialization. It is weakened if compiling, governing, updating, and executing established knowledge offers no operational advantage over reconstructing the same task state at use time, or if the compiled artifact cannot preserve identity, provenance, correction, replay, and rollback.
+This hypothesis concerns reusable capability, not deterministic serialization alone. The validation test compares the full lifecycle of compiling, governing, updating, and executing established knowledge with reconstructing the same task state at use time, while preserving identity, provenance, correction, replay, and rollback.
 
 ### 3. [Combinatorial Uniqueness](capabilities/combinatorial-uniqueness/README.md)
 
 > Several individually broad but sufficiently independent semantic constraints can combine into a narrow, distinctive conceptual coordinate or retrieval target.
 
-This hypothesis is weakened if composed fields do not add useful specificity beyond their individual coordinates, simple additive combination, or relevant retrieval baselines; if useful combinations require bespoke learned primitives after all; or if governance and validation costs erase the proposed advantage.
+The validation test asks whether composed fields add useful specificity beyond their individual coordinates, simple additive combination, and relevant retrieval baselines, while tracking whether bespoke learned primitives or governance costs erase the proposed advantage.
 
 ### 4. [Semantic Navigation](capabilities/semantic-navigation/README.md)
 
 > Represented dimensions, compiled knowledge state, and coordinate composition can accumulate into exact retrieval and useful ambiguity navigation without inventing unsupported specificity.
 
-This hypothesis is weakened if meaning is lost between capability layers, persistent compilation changes the answer, exact composition omits compatible candidates, ambiguity is forced into one identity, navigation invents imputations, or realistic repeated use does not amortize the represented and compiled state. Its success does not independently validate the three upstream hypotheses.
+The validation test checks whether meaning is preserved between capability layers, persistent compilation preserves the answer, exact composition retains compatible candidates, ambiguity remains explicit, navigation keeps imputations governed, and realistic repeated use amortizes represented and compiled state. Its success remains an accumulated result rather than a substitute for the three upstream hypotheses.
 
 In compact form: **Represent meaning. Compile knowledge. Compose concepts. Navigate governed knowledge.**
 
 | Hypothesis | Current status |
 | --- | --- |
-| **Representation** | Addressed by bounded A/B experiments; not established universally. |
-| **Knowledge State Execution** | One bounded exact typed-chain experiment demonstrates compiled reuse and governed mutation; broader independent evidence is still needed. |
-| **Combinatorial Uniqueness** | Three atomic authored studies now distinguish direct intersection (`LOCALLY_CONSISTENT`), governed legal qualification (`LOCALLY_CONSISTENT`), and explicit stage-scoped transition (`CONSISTENT`). The original failed flat-conjunction control is preserved. Held-out construction, useful basis coverage, and scaling remain untested. |
-| **Semantic Navigation** | One prompt-provided 60-animal seed composes the four operational contracts and reports exact retrieval, navigation, code equivalence, and deterministic reuse accounting. Independent source quality, larger scale, and wall-clock evidence remain untested. |
+| **Representation** | Addressed by bounded A/B experiments; the next target is independent relation and ambiguity coverage. |
+| **Knowledge State Execution** | One bounded exact typed-chain experiment demonstrates compiled reuse and governed mutation; the next target is independent lifecycle and cost evidence. |
+| **Combinatorial Uniqueness** | Three atomic governed-input studies distinguish direct intersection (`LOCALLY_CONSISTENT`), governed legal qualification (`LOCALLY_CONSISTENT`), and explicit stage-scoped transition (`CONSISTENT`). The original flat-conjunction control is preserved. The next target is held-out construction and basis coverage. |
+| **Semantic Navigation** | One prompt-provided 60-animal seed composes the four operational contracts and reports exact retrieval, navigation, code equivalence, and deterministic reuse accounting. The next target is independent source quality, larger scale, and wall-clock evidence. |
 
-The programme becomes uninteresting if the structure cannot support useful applications, cannot expose valid routes back to governed sources, or offers no operational advantage relative to its construction and governance cost. It does not require universal superiority over TF-IDF and does not ask MML to imitate an LLM.
+The programme succeeds when the structure supports useful applications, exposes valid routes back to governed sources, and offers an operational advantage relative to its construction and governance cost. It targets recurring governed work rather than universal superiority over TF-IDF or imitation of an LLM.
 
-## Non-claims
+## Scope And Architectural Distinctions
 
-- MML is not a generative language model.
-- Graph propagation is not transformer attention.
-- The authored fixtures do not demonstrate autonomous abstraction or generalization.
+- MML is a semantic execution layer, not a generative language model.
+- Graph propagation is a distinct execution strategy from transformer attention.
+- Curated fixtures establish governed-input mechanics; autonomous abstraction and generalization are separate validation targets.
 - Retrieval scores are not probabilities or legal conclusions.
 - A valid path is not automatically a causal decomposition of a score.
-- Diffusion and power iteration rank reachable concepts; they are not by themselves validated multi-hop reasoning.
-- The dense NumPy prototype does not demonstrate sparse execution at public-graph scale.
+- Diffusion and power iteration rank reachable concepts; typed traversal and validation are the extension required for multi-hop reasoning.
+- The dense NumPy prototype establishes the semantics of the current operator; sparse execution at public-graph scale is a future performance target.
 
 ## What the Prototype Demonstrates
 
@@ -75,7 +116,7 @@ The programme becomes uninteresting if the structure cannot support useful appli
 - immutable relation and alias changes;
 - observable before/after consequences and exact rollback.
 
-These mechanics make compile-once, execute-many testable. They do not yet compare reuse cost, latency, resource demand, correction effort, or result stability against repeated reconstruction.
+These mechanics make compile-once, execute-many testable. The next lifecycle benchmark compares reuse cost, latency, resource demand, correction effort, and result stability against repeated reconstruction.
 
 ### Combinatorial Uniqueness development evidence
 
@@ -86,7 +127,7 @@ These mechanics make compile-once, execute-many testable. They do not yet compar
 - explicit stage-local semantic transition with antecedent provenance; and
 - preservation of failed flat conjunction as a distinct control rather than relabelling it as transition.
 
-These studies make three composition contracts executable and inspectable over co-authored synthetic fixtures. They do not establish independently authored construction, useful combinatorial coverage, real legal validity, automatic stage-boundary discovery, or scaling across held-out domains.
+These studies make three composition contracts executable and inspectable over governed synthetic fixtures. Independent construction, useful combinatorial coverage, legal validity, automatic stage-boundary discovery, and scaling across held-out domains are the next evidence layer.
 
 ### Semantic Navigation accumulated evidence
 
@@ -96,21 +137,21 @@ These studies make three composition contracts executable and inspectable over c
 - deterministic imputation, remaining partitions, commonality, and next-question selection; and
 - flat-scan, per-query reconstruction, warm execution, and amortization accounting.
 
-This seed demonstrates that the operational contracts compose. It does not replace the controlled evidence required by the three foundation programmes.
+This seed demonstrates that the operational contracts compose. It motivates the controlled evidence required by the three foundation programmes.
 
 Deterministic replay is one component of auditability. It does not replace provenance completeness, event logging, validation, documented limitations, human oversight, or governance, and it is not by itself an EU AI Act compliance claim.
 
-Bounded development evidence now exists for all four streams. Its maturity differs by programme and remains below confirmatory evidence: the fixtures are authored, small, and not independently held out.
+Bounded development evidence now exists for all four streams. Its maturity differs by programme; the next step is to extend the governed-input mechanics to independently sourced, larger, and held-out cases.
 
 ## Semantic representation benchmark
 
 The primary executable benchmark reuses the Words Carry Weight mechanism across three authored ambiguity scenarios. It holds the co-occurrence compiler and Personalized PageRank query strategy fixed while changing semantic identity grounding and query focus. It measures intended-versus-contrast margin, cross-meaning activation, and deterministic replay.
 
-This first version is development evidence that richer semantic identity can improve the usefulness of the same mathematics in these bounded cases. It does not establish the broader hypothesis for association, synonymy, hierarchy, roles, constraints, or policy-composed relation matrices. Those require new controlled suites with the same representation-first experimental discipline.
+This first version is development evidence that richer semantic identity can improve the usefulness of the same mathematics in these bounded cases. The broader hypothesis for association, synonymy, hierarchy, roles, constraints, and policy-composed relation matrices is the next controlled suite under the same representation-first experimental discipline.
 
 ## Retrieval application diagnostic
 
-The 50-document, six-query synthetic fixture is retained as a small downstream diagnostic. It compares lexical overlap, TF-IDF, co-occurrence MML, typed MML, and one fixed multiplicative MML/lexical hybrid. The hybrid makes complementarity reproducible without calibration or parameter search. MML additionally receives supervised concept mappings and negative evidence; the lexical baselines do not. The comparison therefore measures end-to-end treatments, not equal-input algorithms. The diagnostic checks determinism, basic usefulness, and regression; it is not an acceptance test for MML or a production integrity system.
+The 50-document, six-query synthetic fixture is retained as a small downstream diagnostic. It compares lexical overlap, TF-IDF, co-occurrence MML, typed MML, and one fixed multiplicative MML/lexical hybrid. The hybrid makes complementarity reproducible without calibration or parameter search. MML additionally receives supervised concept mappings and negative evidence; the lexical baselines do not. The comparison therefore measures end-to-end treatments, not equal-input algorithms. The diagnostic checks determinism, basic usefulness, and regression; production integrity adds the validation and controls defined below.
 
 Because the fixture has guided implementation, it is development evidence rather than held-out validation. Earlier challenge slicing, hybrid calibration, sensitivity selection, and threshold verdicts remain documented in [the archived research note](benchmark/archive/v1-retrieval-research.md), not on the active critical path.
 
@@ -167,4 +208,4 @@ The next evidence slice extends the Knowledge State Execution hypothesis through
 6. Execute one query and produce a trace from input through activated MML routes back to the originating public URIs.
 7. Change or qualify one mapped assertion, regenerate the snapshot, inspect the consequence, and restore the original version through Git history.
 
-Success would show that URI-addressed public knowledge can be compiled once and executed repeatedly by this prototype with preserved identity and provenance. The experiment should compare that reusable artifact with a declared reconstruction-at-use baseline. It would not establish the Representation hypothesis beyond the selected mappings, validate Combinatorial Uniqueness, show that Europe has organised the wider commons, prove that the selected source is sufficient, or establish that MML governance is socially legitimate.
+Success would show that URI-addressed public knowledge can be compiled once and executed repeatedly by this prototype with preserved identity and provenance. The experiment should compare that reusable artifact with a declared reconstruction-at-use baseline. Its scope is deliberately focused on technical feasibility for the selected mappings, leaving Representation breadth, Combinatorial Uniqueness, wider European coordination, source sufficiency, and social legitimacy to their own research and governance tracks.

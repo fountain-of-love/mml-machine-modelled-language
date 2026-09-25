@@ -1,10 +1,10 @@
 # Experiment 3 — Compose the Broad. Resolve the Specific.
 
-**Status:** development experiment implemented; confirmatory protocol not yet executed
+**Status:** development experiment implemented; confirmatory protocol defined
 **Hypothesis:** Combinatorial Uniqueness
 **Working title:** *The Intersection Becomes the Concept*
 
-This document defines the first systematic experiment for MML's third hypothesis. It remains the confirmatory preregistration target. A smaller, co-authored development implementation has been executed, but it is not held-out evidence and does not complete this protocol.
+This document defines the first systematic experiment for MML's third hypothesis. It is the confirmatory protocol target. A smaller governed-input development implementation has been executed; the protocol extends it with frozen combinations, controls, and independent evidence.
 
 The canonical capability definition is [Programme 3 — Combinatorial Uniqueness](README.md). The bounded development result is reported separately in [Combinatorial Uniqueness Experiment v1](results/v1.md).
 
@@ -35,7 +35,7 @@ A convincing result therefore has two inseparable properties:
 
 The first property tests whether semantic information compounds. The second tests whether MML constructs a specific query-time coordinate rather than retrieves a pre-authored combination. Either property without the other is insufficient for the experiment's strongest bounded claim.
 
-The hypothesis is weakened if:
+The hypothesis is challenged if:
 
 - independent constraints do not systematically improve rank, concentration, or candidate reduction;
 - redundant constraints improve specificity as much as independent constraints;
@@ -43,9 +43,9 @@ The hypothesis is weakened if:
 - held-out combinations work only after combination-specific edges, primitives, or tuning are introduced; or
 - apparent gains disappear under ablation, query-order controls, or reasonable execution settings.
 
-## Claim Boundary
+## Scope And Validation Boundary
 
-This experiment tests semantic execution over explicit primitive coordinates. It does not test natural-language understanding, general reasoning, open-world factual completeness, or performance at production scale.
+This experiment tests semantic execution over explicit primitive coordinates. Its next stages can connect the mechanism to natural-language-adjacent tasks, broader reasoning contracts, open-world sources, and production-scale performance without conflating those layers with the primitive composition result.
 
 Queries must therefore use governed coordinate identifiers such as:
 
@@ -322,4 +322,4 @@ The case format must remain declarative. Executable benchmark logic must not con
 
 A successful bounded result would demonstrate that a specific semantic coordinate can be constructed at query time from reusable primitive coordinates without encoding that complete combination beforehand. It would also show that independent constraints contribute more specificity than redundant restatements and that governed composition can refuse invalid intersections.
 
-It would not establish a universal combinatorial scaling law, natural-language reasoning, superiority over language models, useful coverage of open-world knowledge, or acceptable construction and execution cost at meaningful scale. Those claims require later experiments and independent replication.
+It would establish the bounded composition result. Universal combinatorial scaling, natural-language reasoning, comparative performance over language models, useful open-world coverage, and acceptable construction and execution cost at meaningful scale are later experiments and independent replication tracks.

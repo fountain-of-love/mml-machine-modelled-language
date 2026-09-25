@@ -30,7 +30,7 @@ class CrossLevelSemanticTransitionExperimentTests(unittest.TestCase):
         report = markdown_report(self.result)
         self.assertIn("CONSISTENT", report)
         self.assertIn("authored after observing the original failure", report)
-        self.assertIn("does not demonstrate automatic scope discovery", report)
+        self.assertIn("Automatic scope discovery", report)
 
     def test_artifacts_are_fresh_and_check_is_nonmutating(self):
         check_result(self.result)

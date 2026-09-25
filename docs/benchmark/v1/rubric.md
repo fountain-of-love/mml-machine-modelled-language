@@ -1,6 +1,6 @@
 # Benchmark v1 Relevance Rubric
 
-The single assessor applies this rubric before viewing any system ranking. Missing query/document pairs are explicitly relevance `0`.
+The assessor applies this rubric before viewing any system ranking. Missing query/document pairs are explicitly relevance `0`, keeping the governed judgment contract separate from ranking execution.
 
 | Grade | Meaning |
 | --- | --- |
@@ -11,7 +11,7 @@ The single assessor applies this rubric before viewing any system ranking. Missi
 
 Polysemy judgments concern the intended sense, not mere occurrence of the token `bank`. GDPR judgments concern evidence discovery only; they are not legal conclusions.
 
-The relevance judgments and rubric are fixed before ranker changes and are not loaded during ranking. Version 1 is nevertheless a development benchmark: construction and ranking mechanics may evolve after inspecting its scores. Every such change updates manifest hashes and reference results and is intended to remain visible in Git history. A later unseen version is required for held-out validation.
+The relevance judgments and rubric are fixed before ranker changes and are not loaded during ranking. Version 1 is a development benchmark: construction and ranking mechanics may evolve after inspecting its scores, with every change updating manifest hashes and reference results in visible Git history. A later unseen version extends this governed rubric to held-out validation.
 
 ## Challenge annotations
 

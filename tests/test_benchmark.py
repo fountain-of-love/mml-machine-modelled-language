@@ -89,7 +89,7 @@ class SemanticRepresentationBenchmarkTests(unittest.TestCase):
         self.assertIn("Exploratory secondary observation: evidence volume and gain", report)
         self.assertIn("observed association, not evidence that corpus size caused", report)
         self.assertIn("Claims ladder", report)
-        self.assertIn("does not isolate either component", report)
+        self.assertIn("deliberately measures the combined governed treatment", report)
         self.assertIn("Representation cost", report)
         self.assertIn("Numerical integrity", report)
         self.assertIn("Evidence boundary", report)
@@ -141,7 +141,7 @@ class RetrievalDiagnosticTests(unittest.TestCase):
         report = retrieval_benchmark.markdown_report(retrieval_benchmark.run_benchmark())
         self.assertNotIn("Improvement acceptance", report)
         self.assertNotIn("infrastructure_readiness", report)
-        self.assertIn("not an acceptance verdict", report)
+        self.assertIn("bounded deterministic retrieval control", report)
 
     def test_diagnostic_clears_absolute_floors(self):
         result = retrieval_benchmark.run_benchmark()

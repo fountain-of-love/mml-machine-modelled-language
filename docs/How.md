@@ -1,6 +1,6 @@
 # How Machine Modelled Language Works Here
 
-The repository demonstrates representation, execution, and evolution of an explicit semantic weighting matrix. Concepts and governed relations form the source model; the compiled matrix is the numerical object that executes. It does not train or imitate a language model.
+The repository demonstrates representation, execution, and evolution of an explicit semantic weighting matrix. Concepts and governed relations form the source model; the compiled matrix is the numerical object that executes. This is a complementary execution substrate for language models, not an attempt to reproduce their internal mechanism.
 
 Those lifecycle stages implement parts of the canonical research architecture:
 
@@ -8,7 +8,7 @@ Those lifecycle stages implement parts of the canonical research architecture:
 | --- | --- | --- |
 | **Representation** | semantic grounding, query focus, and explicit identities | Addressed by the bounded A/B benchmark. |
 | **Knowledge State Execution** | deterministic compilation into governed reusable state | One bounded typed-chain experiment compares per-query source reconstruction with compiled reuse; broader independent evidence is still needed. |
-| **Combinatorial Uniqueness** | independent propagation, normalized geometric-mean soft intersection, governed qualification, and explicit stage-local transition | Three atomic authored development experiments are consistent within their declared scopes; held-out construction and scaling remain untested. |
+| **Combinatorial Uniqueness** | independent propagation, normalized geometric-mean soft intersection, governed qualification, and explicit stage-local transition | Three atomic governed-input development experiments are consistent within their declared scopes; held-out construction and scaling are the next validation targets. |
 
 In compact form: **Represent meaning. Compile knowledge. Compose concepts. Navigate governed knowledge.** The sections below retain the prototype lifecycle—representation, execution, and evolution—but each mechanism should be read against that research contract.
 
@@ -47,7 +47,7 @@ The legacy `GraphModel` path folds co-occurrence plus the positive relation type
 
 `compile_transition_model(...)` deterministically transforms grounded source observations into a reusable `TransitionModel`. The minimal application compiles during knowledge construction and can execute multiple focused queries against the resulting model without rebuilding it between queries. The elaborated engine similarly builds named, content-addressed matrix state from corpora, aliases, relations, and settings.
 
-This compile-once, query-repeatedly shape is the mechanism behind the Knowledge State Execution hypothesis. The separate Knowledge Is State experiment compares deterministic per-query source reconstruction with compiled execution in one authored typed-chain task. Snapshots, updates, and rollback support identity and governance around the compiled state. Broader evidence still needs independently authored cases, a measured language-model baseline, meaningful scale, and full accounting of construction cost, query volume, update frequency, latency, resources, correction effort, and result stability.
+This compile-once, query-repeatedly shape is the mechanism behind the Knowledge State Execution hypothesis. The separate Knowledge Is State experiment compares deterministic per-query source reconstruction with compiled execution in one governed typed-chain task. Snapshots, updates, and rollback support identity and governance around the compiled state. The next validation layer adds independently sourced cases, a measured language-model baseline, meaningful scale, and full accounting of construction cost, query volume, update frequency, latency, resources, correction effort, and result stability.
 
 ## Execution
 
@@ -117,7 +117,7 @@ For each focused identity, the benchmark checks:
 - whether cross-meaning activation decreases; and
 - whether exact replay produces the same result.
 
-This is authored development evidence for one kind of richer representation: governed semantic identity. It does not yet validate synonymy, hierarchy, semantic roles, or the semantic correctness of relation policies. The new sparse operator is an implementation and performance slice, not confirmatory evidence for relation composition. See the [benchmark proposal](benchmark/semantic-operator-benchmark-proposal.md) and [v1 result](capabilities/semantic-representation/results/v1.md).
+This is governed-input development evidence for one kind of richer representation: semantic identity. The next representation suites can extend the same fixed-mathematics discipline to synonymy, hierarchy, semantic roles, and relation policies. The new sparse operator is an implementation and performance slice that establishes the measurement surface for relation composition. See the [benchmark proposal](benchmark/semantic-operator-benchmark-proposal.md) and [v1 result](capabilities/semantic-representation/results/v1.md).
 
 ## Retrieval application diagnostic
 
@@ -127,21 +127,21 @@ The legacy diagnostic ranks 20 polysemy and 30 GDPR documents using lexical over
 hybrid = mml_typed × (0.2 + 0.8 × lexical_overlap)
 ```
 
-This formula is not selected through a calibration search. It exists to make the complementary lexical/semantic observation reproducible. Rankers receive documents and queries, never judgments. Judgments are used only afterward for P@5, R@10, MRR, and nDCG@10.
+This formula is intentionally fixed rather than selected through a calibration search. It makes the complementary lexical/semantic observation reproducible. Rankers receive documents and queries, never judgments. Judgments are used afterward for P@5, R@10, MRR, and nDCG@10.
 
-The diagnostic performs prototype checks for selected hashes, balance, determinism, low absolute floors, and reference regression. It is not a production integrity framework. Missing opportunities include complete schema and judgment validation, leakage diagnostics, independent artifact signing, protected release history, and held-out evaluation. A regressed reference cannot be overwritten silently; `--accept-regression` is an explicit reviewed escape hatch. It is synthetic development evidence, not an MML verdict. See [benchmark/README.md](benchmark/README.md).
+The diagnostic performs prototype checks for selected hashes, balance, determinism, low absolute floors, and reference regression. These checks establish a reproducible development surface; production integrity adds schema and judgment validation, leakage diagnostics, independent artifact signing, protected release history, and held-out evaluation. A regressed reference cannot be overwritten silently; `--accept-regression` is an explicit reviewed escape hatch. See [benchmark/README.md](benchmark/README.md).
 
 MML receives governed concept mappings and negative evidence that lexical and TF-IDF baselines do not receive. This is inherent to the supervised mechanism, but it makes the systems different treatments rather than identical-input algorithms. The table measures end-to-end retrieval behavior, not the isolated value of graph propagation.
 
-## Current limits
+## Current Scope And Next Validation
 
-- Construction and demonstrations remain authored.
+- Construction and demonstrations use curated governed inputs.
 - The graph is small and in memory.
 - Typed relation coverage is provisional and narrow.
-- Explanations are not complete causal decompositions.
-- There is no public graph ingestion, API/UI, access-control layer, or community review process yet.
+- Explanations expose routes and provenance; complete causal decompositions are a separate layer.
+- Public graph ingestion, API/UI, access control, and community review are downstream integration layers.
 - The code does not determine legal merits.
-- `make trace` deliberately selects one legible QG3/G14 example; it is not representative coverage.
-- The legal demo reports an A/B diagnostic comparing curated lexical candidate generation with graph scoring over all authored candidates. It demonstrates the effect of curation, not generalization.
+- `make trace` deliberately selects one legible QG3/G14 example as a trace specimen.
+- The legal demo reports an A/B diagnostic comparing curated lexical candidate generation with graph scoring over all governed candidates; broader independent comparison is the next evidence layer.
 
 See [Research-Contract.md](Research-Contract.md) for the claim and [Commons-Governance.md](sos/Commons-Governance.md) for the intended public workflow.

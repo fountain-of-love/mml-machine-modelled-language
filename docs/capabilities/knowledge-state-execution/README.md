@@ -32,7 +32,7 @@ Knowledge State Execution defines:
 - refusal for invalid, ambiguous, unsupported, cyclic, or unterminated knowledge; and
 - full accounting of construction, governance, storage, execution, correction, and restoration.
 
-The capability is not merely serialization or caching. A cache of expected answers, opaque serialized model, or hidden behavior table would not demonstrate compiled semantic state with inspectable governed consequences.
+The capability is more than serialization or caching. A valid implementation makes compiled semantic state inspectable, correctable, replayable, and connected to governed consequences.
 
 ## Research Question
 
@@ -76,7 +76,7 @@ Tokens, bytes, graph operations, wall-clock time, FLOPs, energy, and human effor
 
 ## Current Evidence
 
-The [Knowledge State Execution Experiment v1](results/v1.md) uses one authored six-fact typed-chain case and one declared `is-a*` then `belongs-to` rule.
+The [Knowledge State Execution Experiment v1](results/v1.md) uses one governed-input six-fact typed-chain case and one declared `is-a*` then `belongs-to` rule.
 
 Within that bounded fixture:
 
@@ -87,13 +87,13 @@ Within that bounded fixture:
 - the unrelated answer and original immutable state remain preserved; and
 - exact rollback reconstructs the original snapshot and result.
 
-The operational capability now also exposes `CompiledIncidenceState` for many-to-many semantic membership. It compiles a governed coordinate basis into immutable postings and complete-signature equivalence classes with a separate state snapshot and construction metrics. Experiment 4.1 consumes this contract. The integrated seed demonstrates reuse of the contract, but it does not replace the independent reuse-curve, mutation, rollback, provenance, or public-knowledge evidence required here.
+The operational capability now also exposes `CompiledIncidenceState` for many-to-many semantic membership. It compiles a governed coordinate basis into immutable postings and complete-signature equivalence classes with a separate state snapshot and construction metrics. Experiment 4.1 consumes this contract. The integrated seed demonstrates reuse of the contract, while the independent reuse curve, mutation, rollback, provenance, and public-knowledge studies form the next evidence layer.
 
 The first relation-specific operator slice is documented in [Compiled Relation-Specific Semantic Operator](semantic-operator-design.md). It compiles governed `supports`, `requires`, and `qualifies` records into immutable sparse layers, applies an explicit versioned policy, and reuses the resulting state for repeated propagation. Its benchmark measures edge visits against a dense-cell control. This is implementation evidence for the compilation boundary, not evidence that the chosen coefficients or relation composition are semantically correct.
 
-## Evidence Boundary
+## Evidence Boundary And Next Validation
 
-The current evidence is one co-authored synthetic task. It is not a language-model comparison, general reasoning, public-knowledge demonstration, production-scale performance result, or universal efficiency claim. A single short reuse horizon cannot establish amortization across realistic compilation, governance, update, and query costs.
+The current evidence is one governed-input synthetic task. It establishes local compiled reuse, mutation, replay, and rollback mechanics. The next validation adds a language-model comparison, general reasoning controls, public-knowledge cases, production-scale performance measurements, and realistic reuse horizons that include compilation, governance, update, and query costs.
 
 ## Research Layers And Next Step
 

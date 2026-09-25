@@ -1,3 +1,10 @@
+"""Apply the elaborated semantic graph to a bounded legal-use-case fixture.
+
+This script demonstrates how governed themes and evidence candidates can be
+combined in an application-shaped flow while keeping the underlying scoring
+steps inspectable.
+"""
+
 import json
 from pathlib import Path
 

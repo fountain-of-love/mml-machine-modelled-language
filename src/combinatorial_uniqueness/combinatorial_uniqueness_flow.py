@@ -1,4 +1,10 @@
-"""Operational facade for governed combinatorial semantic composition."""
+"""Operational facade for governed combinatorial semantic composition.
+
+The facade coordinates exact regions, composed fields, validity policy, and
+the richer graph-backed elaboration adapter used by this capability. The
+adapter extends the runtime path with provenance-aware graph mechanics while
+the public flow keeps composition and refusal outcomes explicit.
+"""
 
 from __future__ import annotations
 

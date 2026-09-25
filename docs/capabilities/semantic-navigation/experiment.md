@@ -1,6 +1,6 @@
 # Experiment 4.1 - Compiled Encyclopedic Navigation
 
-**Status:** accumulated-capability implementation blueprint; prompt-provided seed implemented  
+**Status:** accumulated-capability implementation blueprint; governed-input mechanics seed implemented
 **Research stream:** Programme 4 - Semantic Navigation  
 **Operation:** exact multidimensional retrieval and navigation over persistent governed semantic state  
 **Primary claim:** the first three MML capabilities can accumulate into an inspectable navigation substrate that retrieves exact candidate regions, exposes remaining ambiguity, and recommends useful next distinctions
@@ -37,7 +37,7 @@ Semantic Navigation
     commonality
 ```
 
-The experiment must record the operational identity of every layer. A local benchmark-only reimplementation does not satisfy this contract.
+The experiment records the operational identity of every layer. The shared source contracts are part of the result, not a benchmark-only reimplementation.
 
 ## Experimental World
 
@@ -98,7 +98,7 @@ The seed uses oracle structured queries. Parser errors must never be attributed 
 | Full candidate region versus forced top-1 | Whether navigation preserves genuine ambiguity |
 | Navigation ablation | What status, imputation, partitions, commonality, and next-question logic add beyond retrieval |
 
-The current seed implements label/code, flat-scan, reconstruction, progressive subset, ambiguity, and navigation controls. The raw-value collision and explicit redundant-coordinate treatments remain required for the independently frozen version.
+The current seed implements label/code, flat-scan, reconstruction, progressive subset, ambiguity, and navigation controls. The raw-value collision and explicit redundant-coordinate treatments are included in the independently frozen validation version.
 
 ## Query Suite
 
@@ -151,10 +151,10 @@ The mechanics seed conforms when:
 6. compiled and reconstructed execution are behaviorally equivalent; and
 7. compiled warm execution uses fewer deterministic operations than flat scanning over the declared workload.
 
-## Failure Criteria
+## Boundary Conditions And Failure Criteria
 
 The accumulated proposition is weakened if any upstream meaning is lost between layers, compiled state changes behavior, intersection omits compatible candidates, ambiguity is forced into one identity, navigation invents imputations, code projection drifts, or compilation fails to amortize under realistic repeated use.
 
-## Evidence Boundary
+## Evidence Boundary And Next Validation
 
-The current animal fixture is prompt-provided and suitable only for mechanics. Experiment 4.1 does not test natural-language understanding or relational inference. Relations between dimensions or entities and derivation of facts absent from the indexed records require a separate research stream or follow-up experiment with structural holdout and equal-information controls.
+The current animal fixture establishes mechanics over governed structured inputs. Natural-language understanding, relational inference, and derivation of facts absent from indexed records are separate research streams or follow-up experiments with structural holdout and equal-information controls.

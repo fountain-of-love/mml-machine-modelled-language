@@ -440,10 +440,10 @@ def markdown_report(result):
         "all activations converged, and same-process repetition passed. Evidence strength is "
         "**low** because these are small, "
         "authored development fixtures rather than held-out or independently assessed cases. "
-        "The result is an early directional signal for the joint treatment; it does not isolate "
-        "grounding from query focus and does not validate other richer representations, Knowledge "
-        "State Execution, Combinatorial "
-        "Uniqueness, or the general MML proposition.", "",
+        "The result is an early directional signal for the joint treatment. Grounding-only and "
+        "focus-only controls are the natural next decomposition, while other richer representations, "
+        "Knowledge State Execution, Combinatorial Uniqueness, and the general MML proposition are "
+        "separate validation programmes.", "",
         "## O — Objective observation", "",
         f"On `{generated_date}`, benchmark `{result['benchmark_version']}` executed "
         f"{summary['scenario_count']} authored ambiguity scenarios containing "
@@ -507,9 +507,9 @@ def markdown_report(result):
         "`bank_financial`. The query then targeted that identity. Sentences, compiler, window "
         "size, query strategy, damping, convergence tolerance, context definitions, and metrics remained fixed.", "",
         "The observed mechanism was matrix propagation from the selected identity through the "
-        "compiled transition model. Because grounding and query focus change together, the design "
-        "does not isolate either component, semantic identity quality versus added topology, or "
-        "the proposition that every richer representation will help.", "",
+        "compiled transition model. Because grounding and query focus change together, this study "
+        "deliberately measures the combined governed treatment; grounding-only, focus-only, and "
+        "topology controls can decompose the contribution in the next study.", "",
         "## R — Result, effect, or measured outcome", "",
         "The transition model produces a normalized activation distribution: all identity "
         "weights together sum to 100%. A context value is the portion landing on the small set "

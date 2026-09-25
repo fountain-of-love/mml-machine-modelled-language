@@ -20,12 +20,12 @@ In compact form: **Represent meaning. Compile knowledge. Compose concepts.** Fai
 
 The elaborated engine already implements a **soft-intersection mechanism**: it propagates each query field independently and combines the resulting support through a normalized geometric mean rather than a simple additive average. Tests verify that this combination is not the arithmetic mean of its inputs.
 
-That mechanism does not establish the broader **combinatorial scaling proposition**. The repository has not yet shown that a useful basis of semantic coordinates covers a substantially larger meaningful conceptual space, that useful combinations generalize across held-out domains, or that governance can reject invalid combinations without erasing the proposed efficiency advantage.
+That mechanism opens the broader **combinatorial scaling proposition**. The next evidence must show whether a useful basis of semantic coordinates covers a substantially larger meaningful conceptual space, whether useful combinations transfer across held-out domains, and whether governance rejects invalid combinations while preserving the proposed efficiency advantage.
 
 The distinction is therefore:
 
 - **implemented:** independent fields and soft-intersection composition;
-- **to test:** specificity, coverage, coordinate reuse, invalid-combination rejection, and end-to-end construction and execution cost.
+- **next validation:** specificity, coverage, coordinate reuse, invalid-combination rejection, and end-to-end construction and execution cost.
 
 ## Core Intuition
 
@@ -125,7 +125,7 @@ MML: independent activation fields and soft intersection
 inspectable combinatorial retrieval
 ```
 
-## Failure Modes
+## Boundary Conditions And Failure Modes
 
 The strategy can fail when:
 
@@ -163,4 +163,4 @@ The central test is not whether three terms always beat one. It is:
 
 > Does independently propagated, governed concept combination retrieve the intended intersection more accurately and inspectably than the relevant lexical, additive, and dense baselines, at an acceptable construction and execution cost?
 
-That is a falsifiable hypothesis claim. Results should be reported against the separate evidence requirements in the [Research Contract](../../Research-Contract.md#combinatorial-uniqueness-1). Academic visibility, search-engine ranking, combinatorial scaling, and universal cross-domain discovery remain possible consequences to measure, not properties established by the current prototype.
+That is a falsifiable hypothesis claim. Results should be reported against the separate evidence requirements in the [Research Contract](../../Research-Contract.md#combinatorial-uniqueness-1). Academic visibility, search-engine ranking, combinatorial scaling, and cross-domain discovery are downstream outcomes to measure through the next evidence stages, not assumptions built into the current prototype.

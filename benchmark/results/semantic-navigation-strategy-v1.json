@@ -479,7 +479,7 @@
     "navigation_sha256": "sha256:aff6dafbfec841cf5cff2f25fee03df6a0ec5c5ee778786b96bf1054693fb637",
     "strategies_sha256": "sha256:d33b3c98932bb47351501223af3ca3a351d50520f19166a1d4274b1fcea1f657",
     "experiment_sha256": "sha256:c66977218285fc5655fbdfdf27c161d01670c9e975b0f4ed3d42c8ccc4240f00",
-    "study_sha256": "sha256:7cf0c455769db38764ce578c008aecdaba0b70af5329ee54ad797b9434c36cfe"
+    "study_sha256": "sha256:17c99a9af875a34d933e52bf06db7315dec34420332228cb66e24af69df3a6f1"
   },
   "interpretation_boundary": "This is a strategy ablation within one shared MML substrate: governed representation, compiled state, exact candidate composition, ambiguity, and refusal are common to every treatment. It does not compare MML with a non-MML system, learned priors, natural-language generation, an LLM strategy, or the partial multi-valued Canidae source state."
 }

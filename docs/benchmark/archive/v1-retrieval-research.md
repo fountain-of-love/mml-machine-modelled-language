@@ -1,8 +1,8 @@
 # Archived v1 Retrieval Research
 
-This note preserves the broader benchmark investigation that was removed from the active project surface. It is retained as research history, not hidden or presented as current acceptance logic.
+This note preserves the broader benchmark investigation that was intentionally moved out of the active project surface. It remains available as research history, with its observations separated from the current acceptance logic.
 
-The investigation added semantic challenge annotations, seven ranking variants, hybrid calibration, relation-weight sensitivity, staged typed-graph ablation, explanation-coverage thresholds, localized-update thresholds, and several verdicts. It improved rigor but began to redefine MML as a retrieval-ranking project. The active benchmark is therefore intentionally smaller.
+The investigation added semantic challenge annotations, seven ranking variants, hybrid calibration, relation-weight sensitivity, staged typed-graph ablation, explanation-coverage thresholds, localized-update thresholds, and several verdicts. It improved rigor while revealing that MML should remain a broader semantic-infrastructure programme rather than become a retrieval-ranking project. The active benchmark is therefore intentionally focused.
 
 ## Findings retained
 
@@ -13,7 +13,7 @@ The investigation added semantic challenge annotations, seven ranking variants, 
   | Polysemy | `0.7733` | `0.7752` | `0.7911` |
   | GDPR | `0.6535` | `0.4969` | `0.7072` |
 
-  This is a useful observation: lexical evidence and explicit semantic activation were complementary on both tiers, and the combination was especially revealing on GDPR, where MML alone trailed TF-IDF while the hybrid exceeded both. It does not establish generalization because v1 is a synthetic development fixture.
+  This is a useful observation: lexical evidence and explicit semantic activation were complementary on both tiers, and the combination was especially revealing on GDPR, where MML alone trailed TF-IDF while the hybrid exceeded both. It is development evidence from a synthetic fixture; generalization is the next evidence layer.
 
 - Co-occurrence GDPR nDCG@10: `0.4969`.
 - Governed aliases: `0.5295`.
@@ -28,8 +28,8 @@ The investigation added semantic challenge annotations, seven ranking variants, 
 - A later reciprocal-rank-fusion experiment won its declared semantic-slice selection, while the simpler multiplicative hybrid retained the stronger GDPR macro behavior. That later selection experiment should not obscure the clearer earlier `0.7072` hybrid observation above.
 - Uniform relation-scale sensitivity selected `1.0` among `0.5`, `0.75`, and `1.0`.
 
-## Why the verdict framework was retired
+## Why the verdict framework was narrowed
 
-The `ACCEPT/REJECT`, `semantic_contribution`, `infrastructure_readiness`, and strict comparative verdicts combined useful observations with provisional thresholds. In particular, the percentage of document scores changed is not equivalent to structural update locality: one explicit, traceable edge may legitimately propagate broadly.
+The `ACCEPT/REJECT`, `semantic_contribution`, `infrastructure_readiness`, and strict comparative verdicts combined useful observations with provisional thresholds. In particular, the percentage of document scores changed is not equivalent to structural update locality: one explicit, traceable edge may legitimately propagate broadly. Narrowing those verdicts keeps the active benchmark aligned with what each measurement can establish.
 
-The findings remain useful for future work on false positives, typed relation semantics, and sensitivity. They no longer serve as the organizing definition of MML.
+The findings remain useful for future work on false positives, typed relation semantics, and sensitivity. They now serve as historical inputs to the broader evidence programme rather than as the organizing definition of MML.

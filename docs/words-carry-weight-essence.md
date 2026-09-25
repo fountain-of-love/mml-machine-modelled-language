@@ -16,9 +16,9 @@ MML develops that proposition through a canonical triad:
 - **Knowledge State Execution:** compile established structure once as governed state so declared consequences can be executed repeatedly.
 - **Combinatorial Uniqueness:** compose reusable, sufficiently independent semantic coordinates into a more distinctive query-specific field.
 
-The minimal flow touches all three at different levels of maturity. `ground -> compile` makes a semantic distinction addressable and builds a reusable transition model. `focus -> activate` executes from the selected identity. Separate controlled development experiments now test semantic representation, compiled knowledge-state execution, direct combinatorial intersection, governed legal qualification, and explicit cross-level transition. All remain authored and bounded; held-out construction, comparative efficiency, useful combinatorial coverage, and scaling remain hypotheses to test systematically.
+The minimal flow touches all three at different levels of maturity. `ground -> compile` makes a semantic distinction addressable and builds a reusable transition model. `focus -> activate` executes from the selected identity. Separate governed-input development experiments now test semantic representation, compiled knowledge-state execution, direct combinatorial intersection, governed legal qualification, and explicit cross-level transition. Each establishes a deterministic mechanism contract inside a controlled scope; held-out construction, comparative efficiency, useful combinatorial coverage, and scaling are the next validation layers.
 
-It does not train a language model, reproduce transformer attention, or infer meaning autonomously. It executes the relationships present in a small authored corpus.
+Its scope is deterministic execution over represented relationships. Language-model training, transformer attention, and autonomous meaning discovery belong to adjacent systems that can propose or enrich the governed input; they are not prerequisites for this runtime pattern.
 
 The vocabulary boundary is foundational:
 
@@ -40,7 +40,7 @@ corpus occurrence -> semantic grounding --+
 query expression  -> semantic focus ------+
 ```
 
-A true reverse operation, `bank_river -> "river bank"`, would be lexicalization or rendering and is not implemented by this experiment.
+The current experiment intentionally stops at semantic grounding and execution. A reverse operation, `bank_river -> "river bank"`, would be a separate lexicalization or rendering contract.
 
 ## From Text to an Executable Weighting Structure
 
@@ -106,7 +106,7 @@ M = alpha*A + beta*S + gamma*H + delta*P + epsilon*C + zeta*R - eta*O
 
 After suitable normalization, `M` becomes the task-specific propagation operator. A query then composes and activates not just a node but a semantic field shaped by identity, role, relation type, and declared policy. This is the stronger MML meaning of **words carry weight** and the bridge from the Compilation hypothesis to Combinatorial Uniqueness.
 
-The current prototype has not implemented this family. It uses one positive transition matrix containing co-occurrence and three typed positive relations, with contradiction handled separately. The prototype demonstrates the seed from which the richer representation can be tested.
+The current prototype instantiates the first operator surface: one positive transition matrix containing co-occurrence and three typed positive relations, with contradiction handled separately. That surface demonstrates how richer relation-specific operator families can be added while keeping compilation and execution explicit.
 
 ## What the Current Queries Show
 
@@ -138,7 +138,7 @@ The script establishes the statistical substrate of Machine Modelled Language:
 - a query produces contextual activation rather than a permanent word ranking;
 - the representation can be rebuilt when its source structure changes.
 
-This is necessary for MML, but it is not the complete MML proposition. MML adds governed semantic structure: stable concepts, distinct senses, aliases, typed relations, provenance, corrections, snapshots, and rollback. Human or institutional enrichment decides which distinctions should exist; the machine compiles and executes them.
+This is the runtime substrate of MML. The broader MML contract adds governed semantic structure: stable concepts, distinct senses, aliases, typed relations, provenance, corrections, snapshots, and rollback. Human or institutional enrichment decides which distinctions should exist; the machine compiles and executes them.
 
 The script makes the minimal conceptual step by comparing two controlled scenarios. Scenario A preserves the ambiguous `bank` node. Scenario B separates it into governed identities, `bank_river` and `bank_financial`:
 
@@ -224,9 +224,9 @@ Other experiments are required to isolate the remaining dimensions. A useful pro
 
 Each experiment should change one governed dimension while holding the other inputs and execution settings stable. That makes the consequence of enrichment observable instead of blending many improvements into one opaque result.
 
-## Evidence Boundary
+## What This Kernel Establishes
 
-The demonstration shows transition-model construction, semantic focus through identity enrichment, and query-relative activation over a tiny authored corpus. It does not demonstrate general semantic understanding, automatic word-sense discovery, transformer attention, complete relation composition, symbolic validation, validated reasoning, or superiority over established retrieval systems.
+The demonstration establishes transition-model construction, semantic focus through identity enrichment, and query-relative activation over a governed development corpus. Broader semantic understanding, automatic word-sense discovery, transformer attention, complete relation composition, symbolic validation, validated reasoning, and superiority over established retrieval systems are separate capabilities with separate validation contracts.
 
 Its value is more foundational: it makes the relationship between representation and execution visible. If two meanings share one node, their weights mix. If governance gives those meanings separate identities, the executable topology—and therefore the resulting activation—can change.
 

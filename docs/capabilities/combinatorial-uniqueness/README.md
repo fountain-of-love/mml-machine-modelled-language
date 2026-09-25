@@ -52,14 +52,14 @@ Combinatorial Uniqueness defines:
 
 The repository implements independent activation fields and normalized geometric-mean soft intersection. That mechanism prevents one strong field from completely dominating candidates weakly supported by another field.
 
-The broader [Combinatorial Scaling Proposition](proposition.md) is not established by implementing soft intersection. It asks whether a reusable basis of governed coordinates can cover a substantially larger useful conceptual space without bespoke primitives for every meaningful combination.
+The broader [Combinatorial Scaling Proposition](proposition.md) extends the mechanism into a scaling question: whether a reusable basis of governed coordinates can cover a substantially larger useful conceptual space without bespoke primitives for every meaningful combination.
 
 The operational capability also exposes `compose_candidate_region`, a small exact-incidence operator over compiled coordinate postings. Programme 4 consumes it to retrieve complete compatible regions without soft ranking or forced uniqueness. That reuse demonstrates interoperability; exact retrieval parity does not establish this programme's stronger soft-intersection or scaling proposition.
 
 The distinction is:
 
 - **implemented:** independent fields, soft intersection, additive and hard controls, governed validity checks, ablations, two authored development contexts, and one structurally held-out synthetic signature split;
-- **not established:** a distinctive MML advantage on held-out combinations, independently authored generalization, useful basis coverage, scaling across a large realized combination space, independence across real domains, and net efficiency after representation and governance cost.
+- **next validation:** a distinctive MML advantage on held-out combinations, independently authored transfer, useful basis coverage, scaling across a larger realized combination space, independence across real domains, and net efficiency after representation and governance cost.
 
 ## Research Question
 
@@ -106,7 +106,7 @@ Report separately:
 
 ## Current Evidence
 
-The first combined [Combinatorial Uniqueness Experiment v1](results/v1.md) executed physical identification and synthetic legal qualification through the same soft-intersection kernel. That aggregate is now **`SUPERSEDED_BY_DECOMPOSITION`** and is not the current programme verdict. Its declared access-to-evidence trajectory numerically favored `evidence_asymmetry`, but its governed direct intersection was empty and correctly stayed unresolved; that observation remains part of the evidence record.
+The first combined [Combinatorial Uniqueness Experiment v1](results/v1.md) executed physical identification and synthetic legal qualification through the same soft-intersection kernel. That aggregate is now **`SUPERSEDED_BY_DECOMPOSITION`** so the current programme can report its operations separately. Its declared access-to-evidence trajectory numerically favored `evidence_asymmetry`, but its governed direct intersection was empty and correctly stayed unresolved; that observation remains a valuable boundary-finding result.
 
 That failure exposed three different semantic operations, now tested atomically:
 
@@ -117,11 +117,11 @@ That failure exposed three different semantic operations, now tested atomically:
 | [3.3 — Cross-Level Semantic Transition](results/cross-level-semantic-transition-v1.md) | Each declared stage has local constraints; the previous region becomes antecedent provenance. | `CONSISTENT`: all authored stages resolved while failed flat cumulative conjunction remained visible as the control. |
 | [3.4 — Compositional Generalization](results/compositional-generalization-v1.md) | Pairwise-only construction is tested against disjoint complete signatures in a 20-dimensional representation generated from four latent variables. | `EXECUTION_CONFORMANT`: MML executed the held-out projected representation, but scaling claim `NOT_SUPPORTED_BY_THIS_FIXTURE` because exact controls matched MML's curve. |
 
-These results do not turn the original failed conjunction into a success. They show that direct intersection and semantic transition require different contracts. The [cross-level root-cause report](studies/cross-level-root-cause.md) preserves the numerical, representational, and governance diagnosis.
+These results preserve the original conjunction as a control and show that direct intersection and semantic transition require different contracts. The [cross-level root-cause report](studies/cross-level-root-cause.md) preserves the numerical, representational, and governance diagnosis.
 
-## Evidence Boundary
+## Evidence Boundary And Next Validation
 
-The physical and legal fixtures are synthetic, co-authored with the mechanism, and not held out. Experiment 3.4 adds a structurally disjoint signature split and demonstrates execution over a 20-dimensional representation generated from four latent variables, but its exact controls match MML and its generator realizes only 256 complete signatures. The programme therefore does not establish natural-language understanding, factual legal adjudication, production-scale performance, independently authored cross-domain generalization, a distinctive soft-intersection advantage, or the full combinatorial scaling proposition. Compiled encyclopaedic retrieval now belongs to the accumulated [Semantic Navigation programme](../semantic-navigation/README.md), which consumes exact candidate-region composition without treating retrieval parity as evidence for this programme's stronger uniqueness claim.
+The physical and legal fixtures are governed-input development cases. Experiment 3.4 adds a structurally disjoint signature split and demonstrates execution over a 20-dimensional representation generated from four latent variables; its exact controls match MML, making a stronger irregular and independently authored generator the next target. The programme's next validation covers natural-language-adjacent tasks, factual-domain review, production-scale performance, cross-domain transfer, soft-intersection advantage, and basis scaling. Compiled encyclopaedic retrieval belongs to the accumulated [Semantic Navigation programme](../semantic-navigation/README.md), which consumes exact candidate-region composition without conflating retrieval parity with the stronger uniqueness claim.
 
 ## Research Layers And Next Step
 

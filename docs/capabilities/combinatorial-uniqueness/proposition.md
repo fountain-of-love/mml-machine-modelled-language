@@ -14,6 +14,6 @@ If a system has `n` useful semantic dimensions, the number of possible combinati
 
 Most possible combinations will be meaningless, contradictory, or invalid. Combinatorial growth is useful only when governed by stable identity, typed and directed relations, permitted composition, constraints, exclusions, provenance, query intent, and validation. These are not secondary metadata around numerical edge strength; together they determine what semantic weight an execution is allowed to carry.
 
-This is a research proposition, not a demonstrated scaling law. Experiments must measure whether compiled semantic dimensions can be reused, whether their combinations add specificity, and whether governance can reject invalid combinations without erasing the proposed efficiency advantage.
+This is a research proposition about reusable semantic basis coverage. Experiments measure whether compiled semantic dimensions can be reused, whether their combinations add specificity, and whether governance can reject invalid combinations while preserving the proposed efficiency advantage.
 
 The systematic test is defined by [Experiment 3 — Compose the Broad. Resolve the Specific.](experiment.md). Its primary empirical outcome is a curve showing that specificity increases predictably with independent semantic information on combinations that did not exist when the knowledge state was built.

@@ -68,7 +68,7 @@ MML independently propagates each query coordinate through the pairwise training
 
 ## R — Result
 
-MML first reached at least 90% deterministic top-1 accuracy at `k=3` and 100% at `k=3`. Flat overlap, explicit vector composition, symbolic conjunction, and additive KG traversal reached the same accuracy at the same width. At `k=20`, MML resolved all 64 held-out signatures in a 20-dimensional representation generated from four latent variables, but that shared success does not isolate an MML advantage.
+MML first reached at least 90% deterministic top-1 accuracy at `k=3` and 100% at `k=3`. Flat overlap, explicit vector composition, symbolic conjunction, and additive KG traversal reached the same accuracy at the same width. At `k=20`, MML resolved all 64 held-out signatures in a 20-dimensional representation generated from four latent variables, establishing parity on this structural holdout; a distinct advantage question requires a harder matched task and cost model.
 
 ### Conformity criteria
 
@@ -103,6 +103,6 @@ The result remains development evidence and does not support the distinctive sca
 
 The evaluation is zero-shot with respect to complete entity signatures: construction retains only pairwise coordinate counts. The split is synthetic and structurally held out, not independently authored or real-world evidence.
 
-This tests structural holdout of complete signatures under a deterministic synthetic generator. It does not establish independently authored, natural-language, real-world, or production-scale generalization.
+This tests structural holdout of complete signatures under a deterministic synthetic generator. Independent authorship, natural-language transfer, real-world coverage, and production-scale behavior are reserved for the next validation layer.
 
 This report follows the [OSCARC methodology](../../../benchmark/oscarc-methodology.md). The [machine-readable JSON artifact](../../../../benchmark/results/compositional-generalization-v1.json) remains authoritative for every query result, metric, leakage check, artifact identity, and conformity input.

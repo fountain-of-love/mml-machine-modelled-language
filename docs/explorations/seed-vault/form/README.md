@@ -1,6 +1,6 @@
 # Form
 
-This element is reserved for semantic seeds about structure: identity, boundary, substrate, shape, and the stable forms that make later movement intelligible.
+This element holds semantic seeds about structure: identity, boundary, substrate, shape, and the stable forms that make later movement intelligible. It is the vault's identity layer: meaning is clarified here before relations and transformations depend on it.
 
 Its first package is the concepts layer:
 

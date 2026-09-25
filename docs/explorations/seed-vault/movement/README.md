@@ -1,6 +1,6 @@
 # Movement
 
-This element contains semantic seeds about relation, transformation, flow, resonance, capacity, and cross-domain movement.
+This element contains semantic seeds about relation, transformation, flow, resonance, capacity, and cross-domain movement. It is where stable form becomes executable or investigable change.
 
 Current packages:
 

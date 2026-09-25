@@ -10,7 +10,7 @@ This document focuses on **Machine Modelled Language (MML)** itself through its 
 | **II. Compile Knowledge** | Transform established structure into reusable executable operators. | Co-occurrence compilation, governed relation weights, transition matrices, snapshots, and replay. |
 | **III. Compose Concepts** | Combine reusable semantic coordinates into query-specific fields. | Independent activation fields and normalized geometric-mean soft intersection. |
 
-This document describes the executable innovation independently. If that mechanism proves useful, it opens the door to the proposed [dual engine](sos/Dual-Engine.md), [Semantic Operating System](sos/Architecture.md), and [dual persistence](sos/Dual-Persistence.md) architecture.
+This document describes the executable innovation independently. It provides the kernel from which the proposed [dual engine](sos/Dual-Engine.md), [Semantic Operating System](sos/Architecture.md), and [dual persistence](sos/Dual-Persistence.md) architecture can grow.
 
 The kernel has a separate operational flow:
 
@@ -24,7 +24,7 @@ The central design claim is that MML does not begin by inventing a more complica
 
 ### Semantic Initialization
 
-MML begins with an explicit semantic construction: concepts, aliases, relation types, evidence, and sense distinctions that the machine can execute. The current prototype uses a small local vocabulary and governed records; it does not require the wider SOS architecture to operate.
+MML begins with an explicit semantic construction: concepts, aliases, relation types, evidence, and sense distinctions that the machine can execute. The current prototype uses a small local vocabulary and governed records, keeping the executable kernel independent of the wider SOS architecture.
 
 A future **Common Language Model (CML)** would standardize these semantic contracts across knowledge bases, institutions, MML engines, and applications. CML is therefore a downstream interoperability architecture opened by MML, not a prerequisite already delivered by this prototype.
 
@@ -33,7 +33,7 @@ The current benchmark already uses separate construction nodes for the two teste
 - `bank_financial`: financial institution
 - `bank_river`: land beside a river
 
-Surface `bank` is resolved from accompanying signals to one or both sense nodes. A production model would extend that small authored mapping through public lexical identifiers rather than force every meaning to emerge from raw statistics.
+Surface `bank` is resolved from accompanying signals to one or both sense nodes. A production model can extend that governed mapping through public lexical identifiers, preserving semantic identity while allowing statistics to enrich the executable weights.
 
 ## Part II: Compile Knowledge
 
@@ -52,7 +52,7 @@ co_occurrence[target_idx, neighbor_idx] += 1.0
 P = co_occurrence / row_sums
 ```
 
-The difference is that a production architecture would update transitions between dictionary-grounded sense nodes rather than plain surface words. Once compiled, the same named operator can serve repeated queries until its governed sources or execution policy change. That is the mechanism behind the Knowledge State Execution hypothesis. The bounded Knowledge Is State experiment now compares per-query source reconstruction with compiled reuse for one authored typed-chain task; broader independent and language-model comparisons remain outstanding.
+The difference is that a production architecture would update transitions between dictionary-grounded sense nodes rather than plain surface words. Once compiled, the same named operator can serve repeated queries until its governed sources or execution policy change. That is the mechanism behind the Knowledge State Execution hypothesis. The Knowledge Is State experiment compares per-query source reconstruction with compiled reuse for one governed typed-chain task; broader independent and language-model comparisons form the next validation layer.
 
 ## Part III: Compose Concepts
 
@@ -74,11 +74,11 @@ The benchmark engine then runs a fixed number of local propagation steps:
 pi_next = d * (pi @ P) + (1 - d) * v
 ```
 
-The benchmark's resulting activation distribution assigns weight to nodes reachable within the declared execution horizon. It deliberately stops after a bounded number of steps rather than converging to a stationary distribution, which helps preserve local query structure. Multiple query fields are propagated independently and combined through a normalized geometric mean. This is graph-interpretable matrix activation, not transformer attention and not proof that the representation understands the query.
+The benchmark's resulting activation distribution assigns weight to nodes reachable within the declared execution horizon. It stops after a declared number of steps rather than converging to a stationary distribution, preserving local query structure as an explicit experimental choice. Multiple query fields are propagated independently and combined through a normalized geometric mean. This is graph-interpretable matrix activation, complementary to transformer attention and distinct from proof or language understanding.
 
 The combination implements the direct-intersection mechanism of the third MML hypothesis, **[Combinatorial Uniqueness](capabilities/combinatorial-uniqueness/mechanism.md)**: individually broad conceptual fields can form a narrow intersection when they impose distinct constraints. A combination can therefore carry greater discriminative weight than any participating term alone, because a candidate must retain support across the independently propagated fields. This is related to established conjunction, faceted search, and product-of-experts ideas. MML's specific proposition is to execute that intersection over governed, addressable semantic identities and relations.
 
-The atomic Experiment 3 studies sharpen the implementation boundary. Direct cumulative intersection is locally consistent over the authored physical fixture; direct governed legal qualification is locally consistent over the authored doctrine fixture; and cross-level transition is consistent only when semantic stages receive explicit local scope and antecedent provenance. The failed flat-conjunction control remains unresolved. Held-out construction, automatic transition discovery, useful basis coverage, and systematic scaling evidence remain outstanding.
+The atomic Experiment 3 studies sharpen the implementation boundary. Direct cumulative intersection is locally consistent over the governed physical fixture; direct governed legal qualification is locally consistent over the governed doctrine fixture; and cross-level transition is consistent when semantic stages receive explicit local scope and antecedent provenance. The flat-conjunction control identifies a distinct operation. Held-out construction, automatic transition discovery, useful basis coverage, and systematic scaling evidence are the next validation targets.
 
 The minimal demonstration uses semantic focus to select identities such as `bank_river`; the kernel calls its query-relative numeric result `Activation`. It provides conventional Personalized PageRank as its first interchangeable query strategy. Its converged behavior should not be confused with the bounded `GraphModel` activation used by the development benchmark.
 
@@ -95,7 +95,7 @@ Co-occurrence means only that terms appeared nearby. It cannot by itself express
 
 Governed aliases resolve longest-match first, consuming a mapped phrase once. Positive relation weights use explicit type multipliers: `supports = 1.0`, `requires = 0.8`, and `qualifies = 0.5`. Contradictions remain a separate negative scoring layer; negative weights never enter the row-stochastic transition matrix. Relation identity, type, endpoints, weight, evidence references, jurisdiction, validity, confidence, maturity, and review state remain inspectable. Co-occurrence-only and typed variants are reported separately so a gain can be attributed through ablation.
 
-This layer is not a declaration of legal truth. It executes provisional authored assertions whose source and governance state must remain visible.
+This layer is a governed execution of provisional assertions, not a replacement for legal authority. Their source and governance state remain visible so that correction and review are possible.
 
 ### Explanations And Identity
 
@@ -105,7 +105,7 @@ An execution can report resolved concepts, positive and negative score component
 - provenance connects an edge to its source artifact;
 - causal decomposition proves how reported contributions produce the final score.
 
-The current mechanism must label unavailable guarantees instead of treating a strongest path as complete causal proof.
+The current mechanism labels the guarantees it provides and keeps complete causal decomposition as a separate contract.
 
 The snapshot identity is derived from construction sources, relation artifacts, graph configuration, vocabulary version, and algorithm version. This provides deterministic replay before publication. Once public Git history exists, the governing commit or tag additionally identifies the human review state.
 
@@ -127,7 +127,7 @@ governed semantic sources + task policy
          `-> event sink
 ```
 
-The event schema, delivery guarantees, persistence, and replay policy remain to be designed. Until those contracts exist, the repository should retain `GraphModel` for compatibility rather than perform a cosmetic rename. The architectural trigger for extraction is the implementation of relation-specific matrices or the event sink, when these responsibilities become independently testable.
+The event schema, delivery guarantees, persistence, and replay policy are future contracts. Until those contracts exist, the repository should retain `GraphModel` for compatibility rather than perform a cosmetic rename. The architectural trigger for extraction is the implementation of relation-specific matrices or the event sink, when these responsibilities become independently testable.
 
 ## Why We Still Need Embeddings: A Pragmatic Trade-Off
 
@@ -151,7 +151,7 @@ In this design, the Transformer does not carry the full burden of memorizing and
 
 ## Existing Initiative Alignment
 
-MML is not proposed in isolation. Several existing initiatives already point toward parts of the wider system: small inspectable neural workbenches, sovereign AI pipelines, and long-term preservation models for shared knowledge.
+MML is designed in conversation with several existing initiatives that point toward parts of the wider system: small inspectable neural workbenches, sovereign AI pipelines, and long-term preservation models for shared knowledge.
 
 Those initiative alignments are described separately in [Initiative-Alignment.md](sos/Initiative-Alignment.md), including [minGPT](sos/Initiative-Alignment.md#mingpt-small-neural-workbench-for-discovery), [Apertus](sos/Initiative-Alignment.md#apertus-sovereign-ai-pipeline), and the [Svalbard Global Seed Vault](sos/Initiative-Alignment.md#svalbard-global-seed-vault-preservation-analogy) analogy.
 
@@ -178,7 +178,7 @@ and normalize it according to the execution contract. The coefficients are gover
 
 This operator-family design can later be represented as a multiplex network or tensor when execution needs to retain per-layer state rather than compose the layers before propagation. A tensor is therefore one possible implementation of the semantic model, not the essence of MML.
 
-The bounded `supports`/`requires`/`qualifies` composition is now a deterministic implementation slice. Given identical layer sources, identifiers, policy coefficients, build algorithm, parameters, and execution settings, it compiles to the same operator and produces the same activation result. The wider relation family, tensor or multiplex execution, cross-layer typed path semantics, and public-scale sparse evidence remain future work. Sparse execution cost and deterministic build artifacts are already tested as engineering contracts, not as proof of semantic validity.
+The bounded `supports`/`requires`/`qualifies` composition is now a deterministic implementation slice. Given identical layer sources, identifiers, policy coefficients, build algorithm, parameters, and execution settings, it compiles to the same operator and produces the same activation result. The wider relation family, tensor or multiplex execution, cross-layer typed path semantics, and public-scale sparse evidence define the next engineering and research stages. Sparse execution cost and deterministic build artifacts are already tested as engineering contracts, while semantic validity remains an empirical question.
 
 ### Optional multiplex representation
 
@@ -297,4 +297,4 @@ MML deliberately combines authored semantic structure with corpus-derived statis
 
 Improvements are accepted from evidence, not intuition alone. The development benchmark first records a co-occurrence baseline, then adds one mechanism family at a time. Supported semantic-slice gains must survive hard-negative, regression, explanation, replay, localized-update, rollback, and ablation checks. See [benchmark/README.md](benchmark/README.md).
 
-The active retrieval diagnostic keeps co-occurrence and typed MML separately named, making their behavior visible without turning ranking into the definition of MML. The broader ablation, sensitivity, and hybrid experiments remain available in the [archived research note](benchmark/archive/v1-retrieval-research.md). They are development observations rather than universal algorithmic claims.
+The active retrieval diagnostic keeps co-occurrence and typed MML separately named, making their behavior visible without turning ranking into the definition of MML. The broader ablation, sensitivity, and hybrid experiments remain available in the [archived research note](benchmark/archive/v1-retrieval-research.md). They are development observations that guide the next controlled comparisons rather than universal algorithmic claims.

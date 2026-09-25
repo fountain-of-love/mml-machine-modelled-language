@@ -1,6 +1,6 @@
 {
   "benchmark_version": "semantic-representation-v1",
-  "generated_at": "2026-08-15T20:43:10.930627+00:00",
+  "generated_at": "2026-09-25T21:38:50.769645+00:00",
   "intention": "Richer meaning representation can make established mathematics produce more useful results.",
   "fixed_mathematics": "converged-personalized-pagerank-v1",
   "reporting_methodology": "OSCARC-v1",
@@ -425,7 +425,7 @@
     }
   ],
   "artifact_identities": {
-    "generator_sha256": "d8c43f1ebe0b3d2fa2498c83678e04eb35f57d1e6751ce78e2fd0ba2560961a8",
+    "generator_sha256": "8e6a36018b03cffff607a404413c2307e070493fb49e650801210437a1e23c98",
     "kernel_sha256": "a2262e17940106e19a45b3533ce55eff7528feff68001937fd019f9ca7c9dc9a",
     "operational_flow_sha256": "e29e5f35b3c6b26de7b5104682a529b7231655669d734096c93f1e3951498631",
     "comparison_adapter_sha256": "4fec662d4b63161dee260855b074ad44ae83321a766c8f7a466944c4d6665fb3",

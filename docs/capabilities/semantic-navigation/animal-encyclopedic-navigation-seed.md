@@ -2,9 +2,9 @@
 
 ## Purpose
 
-The 12-species Canidae spiral now separates horizontal semantic breadth from vertical zoological depth. The foundational navigation experiment identifies species through reusable ecology and behavior coordinates. Detailed zoological fields remain available for drill-down, but cannot inflate or otherwise shape the foundational result.
+The 12-species Canidae spiral now separates horizontal semantic breadth from vertical zoological depth. The foundational navigation experiment identifies species through reusable ecology and behavior coordinates. Detailed zoological fields remain available for drill-down, while the foundational result remains governed by its declared ecology-behavior contract.
 
-This is a mechanism-development dataset. Its claims remain source-backed and inspectable, but the experiment does not depend on zoological completeness or claim biological authority.
+This is a mechanism-development dataset. Its claims remain source-backed and inspectable; zoological completeness and biological authority are separate review gates.
 
 ## Three Linked States
 
@@ -42,7 +42,7 @@ behavior
 
 The original `habitat`, `diet`, `activity`, and `sociality` roles remain explicit anchor roles. The additional leaves are analogous reusable coordinates, not species-specific measurements. This layer expresses identity through ecology and behavior and is the input to the default dimension-contribution analysis.
 
-The current field has 124 populated cells out of 156 (79.49%), with 185 traceable claims. Empty arrays mean not yet governed, never a negative biological assertion.
+The current field has 124 populated cells out of 156 (79.49%), with 185 traceable claims. Empty arrays mean awaiting governance, never a negative biological assertion.
 
 ## Optional Zoological Detail
 
@@ -61,7 +61,7 @@ PanTHERIA adult head-body length remains the canonical length measurement. ADW r
 | IUCN SSC Canid Specialist Group | Per-species consultation list; not a current claim source |
 | PanTHERIA 1.0 | Harmonized adult head-body length |
 
-Each populated semantic value names its source and locator. Derived values additionally name a deterministic mapping rule. Independent human biological review remains explicitly pending.
+Each populated semantic value names its source and locator. Derived values additionally name a deterministic mapping rule. Independent human biological review is the next explicit governance gate.
 
 ## Expansion Contract
 

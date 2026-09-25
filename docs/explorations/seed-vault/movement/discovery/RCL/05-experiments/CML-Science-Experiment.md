@@ -2,11 +2,11 @@
 
 ## A CML Experiment in Scientific Reasoning
 
-This paper proposes a meta-level experiment for the **Common Language Model (CML)** introduced in [What MML is](../../../What.md) and developed further in the [SOS architecture](../../../sos/Architecture.md). It asks whether an explicit worldview model can become a distinct architectural layer for AI, separating durable conceptual structure from general linguistic capability and personal context.
+This paper proposes a meta-level experiment for the **Common Language Model (CML)** introduced in [What MML is](../../../../../../What.md) and developed further in the [SOS architecture](../../../../../../sos/Architecture.md). It asks whether an explicit worldview model can become a distinct architectural layer for AI, separating durable conceptual structure from general linguistic capability and personal context.
 
 The experiment is maintained in a **Seed Vault**, a durable knowledge base pilot whose contents are organized by CML. The names identify different architectural responsibilities: **CML is the schema; the Seed Vault is the knowledge base that applies it**. The vault name follows the analogy of the [Svalbard Global Seed Vault](https://www.seedvault.no/): it preserves compact, well-described material from which future diversity can be regenerated. Here, the preserved units are semantic seeds rather than biological seeds.
 
-For the persistence architecture behind the Seed Vault, see [Dual-Persistence.md](../../../sos/Dual-Persistence.md). For the dual LLM/MML runtime and discovery engine that would query this structure, see [Dual-Engine.md](../../../sos/Dual-Engine.md).
+For the persistence architecture behind the Seed Vault, see [Dual-Persistence.md](../../../../../../sos/Dual-Persistence.md). For the dual LLM/MML runtime and discovery engine that would query this structure, see [Dual-Engine.md](../../../../../../sos/Dual-Engine.md).
 
 The experiment uses a five-domain physical grammar covering mechanics, thermodynamics, acoustics, electromagnetics, and fluid mechanics as its first scientific demonstrator. The standalone proposal, [A Five-Domain Energy Grammar](../01-papers/00-foundation/Five-Domain-Energy-Grammar-Paper-0.md), develops its scientific foundations, novelty boundaries, hypotheses, comparison method, and evaluation programme. Its strategic aim is to illustrate the path away from ever-larger monolithic models and toward smaller generative engines connected to durable, inspectable, and evolvable worldview models.
 

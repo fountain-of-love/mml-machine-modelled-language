@@ -1,4 +1,9 @@
-"""Accumulated semantic navigation capability."""
+"""Accumulated semantic navigation capability.
+
+Navigation builds on the earlier representation, compilation, and composition
+surfaces to choose the next eligible observation over a governed candidate
+state.
+"""
 from .multivalue_information import (
     BinaryValueInformation,
     MultiValueDimensionInformation,

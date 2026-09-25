@@ -18,6 +18,8 @@ The documentation follows that progression from definition, through current mech
 6. [MML in depth](MML-In-Depth.md) — expands Represent–Compile–Compose into semantic contracts, compiled operators, soft intersection, execution strategies, and future operator-family evolution.
 7. [Scaling challenges](Scaling-Challenges.md) — separates computational, semantic, and governance scaling so evidence does not leak between cost, coverage, and correctness claims.
 8. [Research contract](Research-Contract.md) — states each hypothesis independently, records its present status, and separates the evidence still required.
+9. [Research positioning](Research-Positioning.md) — places MML against transformers, RAG, knowledge graphs, neuro-symbolic AI, MoE, world models, and test-time compute, with the strongest validation experiments and plausible role fit.
+10. [MML Vocabulary](MML-Vocabulary.md) — fixes the canonical relationship between CML, MML, the runtime kernel, the research programme, and SOS.
 
 ## Deeper Areas
 
