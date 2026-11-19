@@ -1,0 +1,243 @@
+{
+  "report": "opposition-matrices-v1",
+  "generated_at": "2026-11-19T14:06:28.472328+00:00",
+  "fixture": {
+    "path": "data/demonstration/animal_opposition_v1.json",
+    "sha256": "sha256:e016dad4a391167b9ed2ac166dad2514343f78572052b43789c3f6a4bb92216c",
+    "status": "AUTHORED_ILLUSTRATION",
+    "animals": 10
+  },
+  "lookup_cat": {
+    "binary_opposites": [
+      "dog",
+      "mouse"
+    ],
+    "degree_ranking": [
+      [
+        "mouse",
+        1.0
+      ],
+      [
+        "dog",
+        0.8
+      ],
+      [
+        "bear",
+        0.5
+      ],
+      [
+        "penguin",
+        0.5
+      ],
+      [
+        "sheep",
+        0.5
+      ],
+      [
+        "wolf",
+        0.5
+      ],
+      [
+        "zebra",
+        0.5
+      ],
+      [
+        "lion",
+        0.25
+      ],
+      [
+        "tiger",
+        0.25
+      ]
+    ],
+    "signed_opposites": [
+      [
+        "mouse",
+        1.0
+      ],
+      [
+        "dog",
+        0.6
+      ]
+    ],
+    "signed_alike": [
+      [
+        "lion",
+        0.5
+      ],
+      [
+        "tiger",
+        0.5
+      ]
+    ]
+  },
+  "encoding_loss": {
+    "pairs": 45,
+    "binary_ones": 5,
+    "binary_zeros_that_are_alike": 5,
+    "binary_zeros_that_are_neutral": 35,
+    "entropy_bits": {
+      "binary": 0.5032583347756457,
+      "three_states": 0.9864267287308424,
+      "graded_values": 1.5368579642595437
+    }
+  },
+  "composition": {
+    "candidates": [
+      {
+        "a": "dog",
+        "b": "mouse",
+        "inferred": 0.6,
+        "status": "CANDIDATE_NOT_GOVERNED"
+      },
+      {
+        "a": "dog",
+        "b": "bear",
+        "inferred": -0.57,
+        "status": "CANDIDATE_NOT_GOVERNED"
+      },
+      {
+        "a": "cat",
+        "b": "zebra",
+        "inferred": -0.5,
+        "status": "CANDIDATE_NOT_GOVERNED"
+      }
+    ],
+    "conflict_count": 5
+  },
+  "validation": {
+    "checked_pairs": 10,
+    "sign_agreements": 3,
+    "alike_vs_opposite_auc": 0.28,
+    "learned_range": [
+      -0.41,
+      0.315
+    ],
+    "flags": [
+      {
+        "a": "cat",
+        "b": "dog",
+        "governed": -0.6,
+        "learned": -0.179,
+        "verdict": "SIGN_AGREES"
+      },
+      {
+        "a": "cat",
+        "b": "mouse",
+        "governed": -1.0,
+        "learned": -0.083,
+        "verdict": "SIGN_AGREES"
+      },
+      {
+        "a": "cat",
+        "b": "lion",
+        "governed": 0.5,
+        "learned": -0.229,
+        "verdict": "SIGN_CONTRADICTS"
+      },
+      {
+        "a": "cat",
+        "b": "tiger",
+        "governed": 0.5,
+        "learned": -0.216,
+        "verdict": "SIGN_CONTRADICTS"
+      },
+      {
+        "a": "dog",
+        "b": "wolf",
+        "governed": 0.8,
+        "learned": -0.096,
+        "verdict": "SIGN_CONTRADICTS"
+      },
+      {
+        "a": "dog",
+        "b": "sheep",
+        "governed": 0.5,
+        "learned": -0.066,
+        "verdict": "SIGN_CONTRADICTS"
+      },
+      {
+        "a": "wolf",
+        "b": "sheep",
+        "governed": -1.0,
+        "learned": 0.032,
+        "verdict": "SIGN_CONTRADICTS"
+      },
+      {
+        "a": "sheep",
+        "b": "bear",
+        "governed": -0.5,
+        "learned": 0.071,
+        "verdict": "SIGN_CONTRADICTS"
+      },
+      {
+        "a": "lion",
+        "b": "zebra",
+        "governed": -1.0,
+        "learned": 0.228,
+        "verdict": "SIGN_CONTRADICTS"
+      },
+      {
+        "a": "lion",
+        "b": "tiger",
+        "governed": 0.8,
+        "learned": 0.18,
+        "verdict": "SIGN_AGREES"
+      }
+    ]
+  },
+  "evaluation": {
+    "positives": 5,
+    "auc_degree": 0.27,
+    "auc_signed": 0.27,
+    "learned_cells_in_neutral_band": 45,
+    "degree_threshold_half": {
+      "tp": 2,
+      "fp": 30,
+      "tn": 10,
+      "fn": 3,
+      "sensitivity": 0.4,
+      "specificity": 0.25,
+      "precision": 0.0625
+    },
+    "signed_threshold_zero": {
+      "tp": 2,
+      "fp": 30,
+      "tn": 10,
+      "fn": 3,
+      "sensitivity": 0.4,
+      "specificity": 0.25,
+      "precision": 0.0625
+    },
+    "three_states": {
+      "accuracy": 0.7777777777777778,
+      "macro_f1": 0.2916666666666667,
+      "recall": {
+        "opposite": 0.0,
+        "neutral": 1.0,
+        "alike": 0.0
+      }
+    }
+  },
+  "conformity": {
+    "criteria": {
+      "projections_lose_declared_distinctions": true,
+      "entropy_grows_binary_to_signed": true,
+      "one_matrix_answers_both_polarities": true,
+      "composition_only_proposes": true,
+      "linear_rescaling_preserves_measures": true,
+      "learned_relation_checked_per_cell": true
+    },
+    "verdict": "MECHANISM_CONFORMANT"
+  },
+  "signals": {
+    "cell_types": {
+      "report": "opposition-cell-types-v1",
+      "verdict": "MECHANISM_CONFORMANT"
+    },
+    "two_tensions": {
+      "report": "opposition-two-tensions-v1",
+      "verdict": "EXPLORATORY_SIGNAL"
+    }
+  }
+}

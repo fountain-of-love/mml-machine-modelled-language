@@ -1,0 +1,202 @@
+{
+  "fixture_id": "animal-opposition-v1",
+  "status": "AUTHORED_ILLUSTRATION",
+  "note": "Values are illustrative governance decisions for teaching, not zoological authority.",
+  "scale": {
+    "range": [
+      -1.0,
+      1.0
+    ],
+    "-1": "opposite: antagonists (predator and prey, rivals)",
+    "0": "neutral: no relation, e.g. the animals never meet",
+    "+1": "alike: same kind or allied (the diagonal, an animal with itself, is +1)"
+  },
+  "unlisted_pairs": {
+    "value": 0.0,
+    "meaning": "Not asserted. Treated as neutral, which conflates 'known to be unrelated' with 'unknown'. The explicitly listed neutral pairs below are the known ones."
+  },
+  "dimensions": {
+    "status": "EXPLORATORY_POST_HOC",
+    "note": "Tags were assigned after the one-dimensional demo exposed composition conflicts. They are a hypothesis about two tensions, not part of the original scale.",
+    "interaction": "how two animals behave towards each other: -1 antagonists, 0 never interact, +1 allies",
+    "likeness": "how similar two animals are in kind or niche: +1 same kind; the one-dimensional scale records only positive likeness"
+  },
+  "animals": [
+    "cat",
+    "dog",
+    "mouse",
+    "wolf",
+    "sheep",
+    "lion",
+    "zebra",
+    "tiger",
+    "bear",
+    "penguin"
+  ],
+  "relations": [
+    {
+      "a": "cat",
+      "b": "mouse",
+      "value": -1.0,
+      "rationale": "predator and prey",
+      "dimension": "interaction"
+    },
+    {
+      "a": "wolf",
+      "b": "sheep",
+      "value": -1.0,
+      "rationale": "predator and prey",
+      "dimension": "interaction"
+    },
+    {
+      "a": "lion",
+      "b": "zebra",
+      "value": -1.0,
+      "rationale": "predator and prey",
+      "dimension": "interaction"
+    },
+    {
+      "a": "cat",
+      "b": "dog",
+      "value": -0.6,
+      "rationale": "proverbial rivals, yet often share a house",
+      "dimension": "interaction"
+    },
+    {
+      "a": "bear",
+      "b": "sheep",
+      "value": -0.5,
+      "rationale": "bears occasionally take livestock",
+      "dimension": "interaction"
+    },
+    {
+      "a": "wolf",
+      "b": "bear",
+      "value": -0.4,
+      "rationale": "competitors at carcasses; weak antagonism",
+      "dimension": "interaction"
+    },
+    {
+      "a": "dog",
+      "b": "wolf",
+      "value": 0.8,
+      "rationale": "same lineage",
+      "dimension": "likeness"
+    },
+    {
+      "a": "lion",
+      "b": "tiger",
+      "value": 0.8,
+      "rationale": "both big cats",
+      "dimension": "likeness"
+    },
+    {
+      "a": "cat",
+      "b": "lion",
+      "value": 0.5,
+      "rationale": "both felids",
+      "dimension": "likeness"
+    },
+    {
+      "a": "cat",
+      "b": "tiger",
+      "value": 0.5,
+      "rationale": "both felids",
+      "dimension": "likeness"
+    },
+    {
+      "a": "dog",
+      "b": "sheep",
+      "value": 0.5,
+      "rationale": "herding and guarding alliance",
+      "dimension": "interaction"
+    },
+    {
+      "a": "sheep",
+      "b": "zebra",
+      "value": 0.3,
+      "rationale": "both grazing herbivores; weak likeness",
+      "dimension": "likeness"
+    },
+    {
+      "a": "bear",
+      "b": "lion",
+      "value": 0.0,
+      "rationale": "never meet in the wild",
+      "dimension": "interaction"
+    },
+    {
+      "a": "tiger",
+      "b": "zebra",
+      "value": 0.0,
+      "rationale": "Asia versus Africa; never meet",
+      "dimension": "interaction"
+    },
+    {
+      "a": "wolf",
+      "b": "lion",
+      "value": 0.0,
+      "rationale": "no shared range today",
+      "dimension": "interaction"
+    },
+    {
+      "a": "penguin",
+      "b": "lion",
+      "value": 0.0,
+      "rationale": "never meet",
+      "dimension": "interaction"
+    },
+    {
+      "a": "penguin",
+      "b": "bear",
+      "value": 0.0,
+      "rationale": "never meet; polar bears live in the Arctic, penguins in the south",
+      "dimension": "interaction"
+    }
+  ],
+  "toy_corpus": {
+    "status": "AUTHORED_ILLUSTRATION",
+    "purpose": "A tiny stand-in for text a model learns from. The 'learned' relation is derived from these sentences by co-occurrence, the same distributional signal that trained models absorb at scale.",
+    "stopwords": [
+      "the",
+      "a",
+      "an",
+      "and",
+      "at",
+      "from",
+      "of",
+      "is",
+      "are",
+      "like",
+      "in",
+      "on",
+      "over"
+    ],
+    "sentences": [
+      "the cat chased the mouse",
+      "the mouse escaped the cat",
+      "the cat caught a mouse in the barn",
+      "the dog barked at the cat",
+      "the cat hissed at the dog",
+      "the dog and the cat share the house",
+      "the wolf hunted the sheep",
+      "the sheep fled from the wolf",
+      "the dog guarded the sheep",
+      "the dog and the wolf howl at night",
+      "the wolf is a wild dog",
+      "the lion hunted the zebra",
+      "the zebra fled from the lion",
+      "the lion and the tiger are big cats",
+      "the tiger hunted in the jungle",
+      "the cat purrs like a small tiger",
+      "the lion roars on the savanna",
+      "the zebra grazes on the savanna",
+      "the sheep grazes in the meadow",
+      "the bear caught a sheep",
+      "the bear and the wolf fight over a carcass",
+      "the bear sleeps in the forest",
+      "the penguin swims in the cold sea",
+      "the penguin waddles on the ice"
+    ]
+  }
+}

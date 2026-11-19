@@ -1,0 +1,156 @@
+{
+  "report": "opposition-two-tensions-v1",
+  "generated_at": "2026-11-19T14:06:28.472328+00:00",
+  "fixture": {
+    "path": "data/demonstration/animal_opposition_v1.json",
+    "sha256": "sha256:e016dad4a391167b9ed2ac166dad2514343f78572052b43789c3f6a4bb92216c",
+    "status": "AUTHORED_ILLUSTRATION",
+    "animals": 10
+  },
+  "dimension_mixing": {
+    "status": "EXPLORATORY_POST_HOC",
+    "conflicts": [
+      {
+        "a": "dog",
+        "b": "sheep",
+        "inferred": -0.8,
+        "governed": 0.5,
+        "status": "INFERENCE_CONTRADICTS_GOVERNANCE",
+        "target_axis": "interaction",
+        "paths": [
+          {
+            "via": "wolf",
+            "contribution": -0.8,
+            "axes": [
+              "likeness",
+              "interaction"
+            ],
+            "mixed": true
+          }
+        ],
+        "mixed_share": 1.0,
+        "classification": "MIXED_PATH"
+      },
+      {
+        "a": "zebra",
+        "b": "tiger",
+        "inferred": -0.8,
+        "governed": 0.0,
+        "status": "INFERENCE_CONTRADICTS_GOVERNANCE",
+        "target_axis": "interaction",
+        "paths": [
+          {
+            "via": "lion",
+            "contribution": -0.8,
+            "axes": [
+              "interaction",
+              "likeness"
+            ],
+            "mixed": true
+          }
+        ],
+        "mixed_share": 1.0,
+        "classification": "MIXED_PATH"
+      },
+      {
+        "a": "wolf",
+        "b": "sheep",
+        "inferred": 0.6,
+        "governed": -1.0,
+        "status": "INFERENCE_CONTRADICTS_GOVERNANCE",
+        "target_axis": "interaction",
+        "paths": [
+          {
+            "via": "dog",
+            "contribution": 0.4,
+            "axes": [
+              "likeness",
+              "interaction"
+            ],
+            "mixed": true
+          },
+          {
+            "via": "bear",
+            "contribution": 0.2,
+            "axes": [
+              "interaction",
+              "interaction"
+            ],
+            "mixed": false
+          }
+        ],
+        "mixed_share": 0.667,
+        "classification": "MIXED_PATH"
+      },
+      {
+        "a": "dog",
+        "b": "wolf",
+        "inferred": -0.5,
+        "governed": 0.8,
+        "status": "INFERENCE_CONTRADICTS_GOVERNANCE",
+        "target_axis": "likeness",
+        "paths": [
+          {
+            "via": "sheep",
+            "contribution": -0.5,
+            "axes": [
+              "interaction",
+              "interaction"
+            ],
+            "mixed": false
+          }
+        ],
+        "mixed_share": 0.0,
+        "classification": "TARGET_ON_OTHER_AXIS"
+      },
+      {
+        "a": "wolf",
+        "b": "bear",
+        "inferred": 0.5,
+        "governed": -0.4,
+        "status": "INFERENCE_CONTRADICTS_GOVERNANCE",
+        "target_axis": "interaction",
+        "paths": [
+          {
+            "via": "sheep",
+            "contribution": 0.5,
+            "axes": [
+              "interaction",
+              "interaction"
+            ],
+            "mixed": false
+          }
+        ],
+        "mixed_share": 0.0,
+        "classification": "SAME_AXIS"
+      }
+    ],
+    "conflicts_crossing_axes": 4,
+    "candidates": 13,
+    "candidates_mostly_mixed": 11,
+    "single_axis_candidates": [
+      {
+        "a": "dog",
+        "b": "mouse",
+        "inferred": 0.6,
+        "status": "CANDIDATE_NOT_GOVERNED",
+        "mixed_share": 0.0
+      },
+      {
+        "a": "cat",
+        "b": "sheep",
+        "inferred": -0.3,
+        "status": "CANDIDATE_NOT_GOVERNED",
+        "mixed_share": 0.0
+      }
+    ]
+  },
+  "conformity": {
+    "criteria": {
+      "every_conflict_classified": true,
+      "most_conflicts_cross_axes": true,
+      "single_axis_candidates_exist": true
+    },
+    "verdict": "EXPLORATORY_SIGNAL"
+  }
+}

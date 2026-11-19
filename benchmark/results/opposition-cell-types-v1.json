@@ -1,0 +1,141 @@
+{
+  "report": "opposition-cell-types-v1",
+  "generated_at": "2026-11-19T14:06:28.472328+00:00",
+  "fixture": {
+    "path": "data/demonstration/animal_opposition_v1.json",
+    "sha256": "sha256:e016dad4a391167b9ed2ac166dad2514343f78572052b43789c3f6a4bb92216c",
+    "status": "AUTHORED_ILLUSTRATION",
+    "animals": 10
+  },
+  "pairs": 45,
+  "cell_types": [
+    {
+      "governed_states_changed": [
+        "cat\u2013lion",
+        "cat\u2013tiger",
+        "dog\u2013wolf",
+        "dog\u2013sheep",
+        "lion\u2013tiger"
+      ],
+      "type": "bool: opposite or not",
+      "scale": "signed",
+      "levels": 2,
+      "neutral_exact": false,
+      "resolution_at_neutral": null,
+      "governed_max_error": 0.8,
+      "governed_states_kept": 40,
+      "learned_distinct_values": 1,
+      "learned_auc": 0.5
+    },
+    {
+      "governed_states_changed": [],
+      "type": "int8: three states",
+      "scale": "signed",
+      "levels": 3,
+      "neutral_exact": true,
+      "resolution_at_neutral": 1.0,
+      "governed_max_error": 0.5,
+      "governed_states_kept": 45,
+      "learned_distinct_values": 1,
+      "learned_auc": 0.5
+    },
+    {
+      "governed_states_changed": [],
+      "type": "int8: x127",
+      "scale": "signed",
+      "levels": 255,
+      "neutral_exact": true,
+      "resolution_at_neutral": 0.007874015748031496,
+      "governed_max_error": 0.003937007874015741,
+      "governed_states_kept": 45,
+      "learned_distinct_values": 34,
+      "learned_auc": 0.2675
+    },
+    {
+      "governed_states_changed": [
+        "cat\u2013lion",
+        "cat\u2013tiger",
+        "dog\u2013sheep",
+        "sheep\u2013bear"
+      ],
+      "type": "uint8: x255",
+      "scale": "degree",
+      "levels": 256,
+      "neutral_exact": false,
+      "resolution_at_neutral": 0.00784313725490196,
+      "governed_max_error": 0.0039215686274510775,
+      "governed_states_kept": 41,
+      "learned_distinct_values": 37,
+      "learned_auc": 0.2725
+    },
+    {
+      "governed_states_changed": [],
+      "type": "decimal: 1 place",
+      "scale": "degree",
+      "levels": 11,
+      "neutral_exact": true,
+      "resolution_at_neutral": 0.2,
+      "governed_max_error": 0.10000000000000009,
+      "governed_states_kept": 45,
+      "learned_distinct_values": 5,
+      "learned_auc": 0.2775
+    },
+    {
+      "governed_states_changed": [],
+      "type": "float16",
+      "scale": "degree",
+      "levels": 15361,
+      "neutral_exact": true,
+      "resolution_at_neutral": 0.0009765625,
+      "governed_max_error": 0.0003906249999999778,
+      "governed_states_kept": 45,
+      "learned_distinct_values": 44,
+      "learned_auc": 0.27
+    },
+    {
+      "governed_states_changed": [],
+      "type": "float16",
+      "scale": "signed",
+      "levels": 30721,
+      "neutral_exact": true,
+      "resolution_at_neutral": 5.960464477539063e-08,
+      "governed_max_error": 0.0001953125000000444,
+      "governed_states_kept": 45,
+      "learned_distinct_values": 45,
+      "learned_auc": 0.27
+    },
+    {
+      "governed_states_changed": [],
+      "type": "float32",
+      "scale": "signed",
+      "levels": 2130706433,
+      "neutral_exact": true,
+      "resolution_at_neutral": 1.401298464324817e-45,
+      "governed_max_error": 2.384185793236071e-08,
+      "governed_states_kept": 45,
+      "learned_distinct_values": 45,
+      "learned_auc": 0.27
+    },
+    {
+      "governed_states_changed": [],
+      "type": "float64",
+      "scale": "signed",
+      "levels": 9214364837600034817,
+      "neutral_exact": true,
+      "resolution_at_neutral": 5e-324,
+      "governed_max_error": 0.0,
+      "governed_states_kept": 45,
+      "learned_distinct_values": 45,
+      "learned_auc": 0.27
+    }
+  ],
+  "conformity": {
+    "criteria": {
+      "unit_scale_uint8_changes_governed_states": true,
+      "signed_int8_keeps_every_governed_state": true,
+      "coarse_types_flatten_learned_scores": true,
+      "float_resolves_finer_around_zero_than_half": true
+    },
+    "verdict": "MECHANISM_CONFORMANT"
+  }
+}

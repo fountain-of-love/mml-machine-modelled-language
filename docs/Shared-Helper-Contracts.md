@@ -59,6 +59,17 @@ policy, report content, output format, or exit messages. The `render` callback
 is the programme-level configuration point; it currently references a Markdown
 renderer but returns ordinary text.
 
+## Report layout contract
+
+`render_oscarc_markdown()` renders the OSCARC reader-first layout defined in
+the [OSCARC reader-first layout](benchmark/oscarc-reader-first-layout.md): plain paragraph
+first in every section, a bridge and OSCARC introduction, the six steps as
+subsections, signals linking to deeper-study reports, and next paths. It owns
+layout and the fixed guidance sentences only. Programmes supply every word of
+content and every number. `Section` refuses an empty plain paragraph or one
+containing code-like notation, so the reader-first rule is enforced rather than
+remembered. It returns ordinary text and does not persist anything.
+
 ## Text persistence contract
 
 `write_text()` persists UTF-8 text and creates its parent directory. It does not

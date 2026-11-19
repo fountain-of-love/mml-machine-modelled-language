@@ -1,9 +1,18 @@
-.PHONY: run run-knowledge-state experiment-3 experiment-3-1 experiment-3-2 experiment-3-3 experiment-3-4 experiment-4-1 experiment-4-2 run-elaborate run-legal trace test ci benchmark benchmark-check knowledge-state-benchmark knowledge-state-benchmark-check semantic-operator-benchmark semantic-operator-benchmark-check experiment-3-1-benchmark experiment-3-1-check experiment-3-2-benchmark experiment-3-2-check experiment-3-3-benchmark experiment-3-3-check experiment-3-4-benchmark experiment-3-4-check experiment-4-1-benchmark experiment-4-1-check experiment-4-2-benchmark experiment-4-2-check retrieval-benchmark-check update-demo public-knowledge-snapshot public-knowledge-state-benchmark public-knowledge-state-check
+.PHONY: run run-opposition opposition-report opposition-report-check run-knowledge-state experiment-3 experiment-3-1 experiment-3-2 experiment-3-3 experiment-3-4 experiment-4-1 experiment-4-2 run-elaborate run-legal trace test ci benchmark benchmark-check knowledge-state-benchmark knowledge-state-benchmark-check semantic-operator-benchmark semantic-operator-benchmark-check experiment-3-1-benchmark experiment-3-1-check experiment-3-2-benchmark experiment-3-2-check experiment-3-3-benchmark experiment-3-3-check experiment-3-4-benchmark experiment-3-4-check experiment-4-1-benchmark experiment-4-1-check experiment-4-2-benchmark experiment-4-2-check retrieval-benchmark-check update-demo public-knowledge-snapshot public-knowledge-state-benchmark public-knowledge-state-check
 
 PYTHON ?= python3
 
 run:
 	$(PYTHON) -m experiments.semantic_representation.demo
+
+run-opposition:
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.semantic_representation.opposition.demo
+
+opposition-report:
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.semantic_representation.opposition.report --write
+
+opposition-report-check:
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.semantic_representation.opposition.report --check
 
 run-knowledge-state:
 	$(PYTHON) -m experiments.knowledge_state_execution.demo
@@ -50,6 +59,7 @@ test:
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.semantic_navigation.compiled_encyclopedic_navigation_benchmark --check >/dev/null
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.semantic_navigation.navigation_strategy_benchmark --check >/dev/null
 	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.knowledge_state_execution.public_knowledge_benchmark --check >/dev/null
+	PYTHONDONTWRITEBYTECODE=1 $(PYTHON) -m experiments.semantic_representation.opposition.report --check >/dev/null
 
 ci: test
 

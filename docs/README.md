@@ -27,6 +27,8 @@ The documentation follows that progression from definition, through current mech
 ## Deeper Areas
 
 - [Programme 1 — Semantic Representation](capabilities/semantic-representation/README.md) — defines richer explicit meaning under fixed mathematics, including treatments, controls, measurements, current evidence, and next research step.
+- [Animal Opposition](capabilities/semantic-representation/opposition-matrices.md) — a seven-step teaching demonstration: binary, degree, and signed relation matrices, composition as candidates, validation of a learned relation, and how scale and cell type shape evaluation.
+- [Animal Opposition v1 report](capabilities/semantic-representation/results/opposition-matrices-v1.md) — reader-first OSCARC report with two signals, studied in [Opposition Cell Types v1](capabilities/semantic-representation/results/opposition-cell-types-v1.md) and [Opposition Two Tensions v1](capabilities/semantic-representation/results/opposition-two-tensions-v1.md), and two next paths.
 - [Programme 2 — Knowledge State Execution](capabilities/knowledge-state-execution/README.md) — defines reconstruction-at-use versus compiled reuse, governed mutation and rollback, cost accounting, and the future language-model baseline.
 - [Programme 3 — Combinatorial Uniqueness](capabilities/combinatorial-uniqueness/README.md) — defines coordinate composition, single/pair/full treatments, baselines, independence controls, specificity measurements, and the boundary between soft intersection and scaling.
 - [Programme 4 — Semantic Navigation](capabilities/semantic-navigation/README.md) — defines accumulated retrieval and navigation over governed coordinates, persistent incidence state, and exact candidate regions.
@@ -57,6 +59,7 @@ The documentation follows that progression from definition, through current mech
 - [Experiment 3 cross-level root-cause analysis](capabilities/combinatorial-uniqueness/studies/cross-level-root-cause.md) — explains why the legal access-to-evidence trajectory failed, distinguishes data-model and mechanism-validation causes, and proposes controlled stage-reset and typed-transition follow-ups.
 - [MML hypothesis benchmark programme](benchmark/semantic-operator-benchmark-proposal.md) — separates tests for semantic Representation, Knowledge State Execution, and Combinatorial Uniqueness so evidence cannot leak between hypotheses.
 - [OSCARC research-reporting methodology](benchmark/oscarc-methodology.md) — guides readers from observations through standards, chronology, interventions, measured results, bounded conformity judgments, and next steps.
+- [OSCARC reader-first layout](benchmark/oscarc-reader-first-layout.md) — plain words first in every section, guided OSCARC subsections, signals as separate deeper-study reports, and lessons learned from report review.
 - [Shared helper contracts](Shared-Helper-Contracts.md) — defines the canonical intermediate layers, loose-coupling rules, format-neutral text boundary, and build-only-what-is-needed constraint for shared infrastructure.
 - [Scientific and architectural explorations](explorations/README.md) — the Semantic Seed Vault, its bounded five-domain representation theorem, and the governed structure that could feed future MML operators.
 - [Enigma](enigma.md) — the account-level context-engineering model used to articulate this research.

@@ -93,6 +93,10 @@ All six governed-input probes produced a consistent directional signal: the repr
 
 The operational capability now also exposes `GovernedCoordinateBasis` for accumulated experiments. It validates a finite dimension/value vocabulary, qualifies values by dimension, reports incomplete entities, assigns reversible stable codes, and produces a representation snapshot. Experiment 4.1 consumes this contract. Its integration success is mechanics evidence for interoperability and a foundation for the accumulated navigation stream, while the controlled Representation verdict remains separate.
 
+### Teaching demonstration: animal opposition
+
+[Animal Opposition](opposition-matrices.md) (`make run-opposition`) shows in seven small steps how binary, degree, and signed matrices over one governed relation change what ordinary maths can express: lookup, negation, and composition, plus validation of a toy learned relation. It also shows that a linear rescaling of the range changes no retrieval measure, while the task definition and the cell value type do. It is an authored illustration, not evidence.
+
 ## Evidence Boundary And Next Validation
 
 The current result supports one bounded joint semantic-identity treatment. The next validation extends this to independent relation, role, constraint, and exclusion suites while preserving the fixed-mathematics contract. Semantic discovery and the other hypotheses remain separate programme questions.

@@ -23,7 +23,7 @@ The orthogonal [Knowledge State Execution Experiment](../capabilities/knowledge-
 
 The [Experiment 2 blueprint](../capabilities/knowledge-state-execution/experiment.md) defines the stronger reuse-curve, refusal, mutation, provenance, and full-cost-accounting protocol.
 
-Benchmark and scientific results are reported using the [OSCARC methodology](oscarc-methodology.md), separating observation, standard, chronology/context, actions, measured result, conformity judgment, and recommendation.
+Benchmark and scientific results are reported using the [OSCARC methodology](oscarc-methodology.md), separating observation, standard, chronology/context, actions, measured result, conformity judgment, and recommendation. New reports open every section with a plain-language paragraph, guide the reader through OSCARC as subsections, and move deeper findings into linked signal reports, as defined in the [reader-first layout](oscarc-reader-first-layout.md); [`src/helpers/oscarc_report.py`](../../src/helpers/oscarc_report.py) renders it.
 
 ## Legacy retrieval diagnostic
 
