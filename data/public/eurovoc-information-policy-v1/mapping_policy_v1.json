@@ -1,0 +1,40 @@
+{
+  "policy_id": "eurovoc-cellar-subject-expansion-v1",
+  "status": "PROVISIONAL",
+  "decided_by": "Experiment author (AI-assisted session); pending review by a human maintainer before any non-experimental use.",
+  "purpose": "Admit a minimal set of source statements as governed MML assertions for one declared rule: works about a concept or any narrower concept.",
+  "decisions": [
+    {
+      "decision_id": "map-skos-broader-v1",
+      "source_predicate": "http://www.w3.org/2004/02/skos/core#broader",
+      "mml_relation": "narrower-than",
+      "direction": "source subject narrower-than source object",
+      "epistemic_status": "source-asserted thesaurus hierarchy",
+      "justification": "EuroVoc broader-term links are the Publications Office's own navigational hierarchy for subject indexing, which is the use the declared rule makes of them.",
+      "known_loss": "SKOS broader is not formal subsumption and may be partitive or merely navigational. Expanding across it is a retrieval decision, not a claim that the narrower concept is a kind of the broader one."
+    },
+    {
+      "decision_id": "map-work-is-about-v1",
+      "source_predicate": "http://publications.europa.eu/ontology/cdm#work_is_about_concept_eurovoc",
+      "mml_relation": "is-about",
+      "direction": "source subject is-about source object",
+      "epistemic_status": "source-asserted documentary indexing",
+      "justification": "CELLAR records which EuroVoc descriptors the Publications Office assigned to a work.",
+      "known_loss": "Indexing records topical aboutness for documentation. It says nothing about legal applicability, scope, or authority, and the declared rule must not be read as a legal conclusion."
+    }
+  ],
+  "retained_not_executed": [
+    {
+      "source_predicate": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "role": "multilingual display labels; never used as identity"
+    },
+    {
+      "source_predicate": "http://publications.europa.eu/ontology/cdm#resource_legal_id_celex",
+      "role": "human-facing CELEX identifier for the work"
+    },
+    {
+      "source_predicate": "http://publications.europa.eu/ontology/cdm#resource_legal_in-force",
+      "role": "snapshot selection filter, recorded for provenance; in-force status at capture time only"
+    }
+  ]
+}

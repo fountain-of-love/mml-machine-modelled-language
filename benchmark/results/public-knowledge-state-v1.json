@@ -1,0 +1,763 @@
+{
+  "benchmark": "public-knowledge-state-v1",
+  "generated_at": "2026-11-19T13:23:58.226411+00:00",
+  "declared_rule": "works_about(Q) = { w | w is-about c and c narrower-than* Q }",
+  "source": {
+    "snapshot_file": "data/public/eurovoc-information-policy-v1/snapshot.nt",
+    "snapshot_sha256": "sha256:761dde4fc33d2b2709cd9659140899dbf63530b4bae2500a30bc647961c0f6dd",
+    "matches_manifest": true,
+    "retrieved_at": "2026-11-19T13:18:11.858006+00:00",
+    "endpoint": "https://publications.europa.eu/webapi/rdf/sparql",
+    "root_concept": "http://eurovoc.europa.eu/2472",
+    "triple_count": 4824,
+    "terms_status": "UNVERIFIED",
+    "governed_inputs": {
+      "mapping_policy_v1.json": "sha256:73fd70f64d935a592444e08d6d557f82183574a2a98d57ff1c66e9aaf27cf204",
+      "correction_v1.json": "sha256:be28fe255107eb258d1b303eb2597dff195f2485a73aa075106c6d5ea07b0cef",
+      "oracle.json": "sha256:e9b4ac430dec726182bce04b2bf0af19c30d8a0e382a52c02eb56a0abdd45d73",
+      "manifest.json": "sha256:c4f9080f30e057130e382be4040f805b291ab73501531f0c927ff19d6557a74b"
+    }
+  },
+  "mapping_policy": {
+    "policy_id": "eurovoc-cellar-subject-expansion-v1",
+    "admitted_assertions": 1761,
+    "admitted_by_decision": {
+      "map-skos-broader-v1": 18,
+      "map-work-is-about-v1": 1743
+    }
+  },
+  "compiled_state": {
+    "snapshot_id": "sha256:07ee7f79b0fa467571ce2a0b0fcef4d3df41b773c786e17015c1008c4622c09c",
+    "metrics": {
+      "assertions_read": 1761,
+      "hierarchy_edges": 18,
+      "aboutness_edges": 1743,
+      "concepts": 19,
+      "closure_entries": 46,
+      "posting_entries": 1743
+    },
+    "deterministic_replay": true,
+    "identities_are_source_iris": true
+  },
+  "agreement": {
+    "queries": 19,
+    "compiled_matches_oracle": 19,
+    "reconstruction_matches_compiled": 19,
+    "direct_only_matches_oracle": 15,
+    "queries_where_hierarchy_adds_works": 4,
+    "oracle_work_answers_total": 3412,
+    "direct_only_work_answers_total": 1743,
+    "direct_only_recall_of_oracle": 0.5108
+  },
+  "per_query": [
+    {
+      "concept": "http://eurovoc.europa.eu/1367",
+      "label_en": "information industry",
+      "oracle_works": 5,
+      "compiled_works": 5,
+      "reconstruction_works": 5,
+      "direct_only_works": 5,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": true,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 1,
+        "postings_read": 5
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 1,
+        "postings_read": 5,
+        "structural_operations": 8352
+      }
+    },
+    {
+      "concept": "http://eurovoc.europa.eu/2472",
+      "label_en": "information policy",
+      "oracle_works": 1503,
+      "compiled_works": 1503,
+      "reconstruction_works": 1503,
+      "direct_only_works": 10,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": false,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 19,
+        "postings_read": 1743
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 19,
+        "postings_read": 1743,
+        "structural_operations": 10108
+      }
+    },
+    {
+      "concept": "http://eurovoc.europa.eu/437539",
+      "label_en": "right of reply",
+      "oracle_works": 0,
+      "compiled_works": 0,
+      "reconstruction_works": 0,
+      "direct_only_works": 0,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": true,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 1,
+        "postings_read": 0
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 1,
+        "postings_read": 0,
+        "structural_operations": 8347
+      }
+    },
+    {
+      "concept": "http://eurovoc.europa.eu/437655",
+      "label_en": "digital literacy",
+      "oracle_works": 13,
+      "compiled_works": 13,
+      "reconstruction_works": 13,
+      "direct_only_works": 13,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": true,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 1,
+        "postings_read": 13
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 1,
+        "postings_read": 13,
+        "structural_operations": 8360
+      }
+    },
+    {
+      "concept": "http://eurovoc.europa.eu/443",
+      "label_en": "limited circulation",
+      "oracle_works": 1,
+      "compiled_works": 1,
+      "reconstruction_works": 1,
+      "direct_only_works": 1,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": true,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 1,
+        "postings_read": 1
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 1,
+        "postings_read": 1,
+        "structural_operations": 8348
+      }
+    },
+    {
+      "concept": "http://eurovoc.europa.eu/453",
+      "label_en": "access to information",
+      "oracle_works": 340,
+      "compiled_works": 340,
+      "reconstruction_works": 340,
+      "direct_only_works": 177,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": false,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 6,
+        "postings_read": 356
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 6,
+        "postings_read": 356,
+        "structural_operations": 8708
+      }
+    },
+    {
+      "concept": "http://eurovoc.europa.eu/5181",
+      "label_en": "data protection",
+      "oracle_works": 589,
+      "compiled_works": 589,
+      "reconstruction_works": 589,
+      "direct_only_works": 589,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": true,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 2,
+        "postings_read": 589
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 2,
+        "postings_read": 589,
+        "structural_operations": 8937
+      }
+    },
+    {
+      "concept": "http://eurovoc.europa.eu/5196",
+      "label_en": "law relating to information",
+      "oracle_works": 7,
+      "compiled_works": 7,
+      "reconstruction_works": 7,
+      "direct_only_works": 2,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": false,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 3,
+        "postings_read": 7
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 3,
+        "postings_read": 7,
+        "structural_operations": 8356
+      }
+    },
+    {
+      "concept": "http://eurovoc.europa.eu/5334",
+      "label_en": "disclosure of information",
+      "oracle_works": 713,
+      "compiled_works": 713,
+      "reconstruction_works": 713,
+      "direct_only_works": 713,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": true,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 1,
+        "postings_read": 713
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 1,
+        "postings_read": 713,
+        "structural_operations": 9060
+      }
+    },
+    {
+      "concept": "http://eurovoc.europa.eu/5351",
+      "label_en": "centralisation of information",
+      "oracle_works": 7,
+      "compiled_works": 7,
+      "reconstruction_works": 7,
+      "direct_only_works": 7,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": true,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 1,
+        "postings_read": 7
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 1,
+        "postings_read": 7,
+        "structural_operations": 8354
+      }
+    },
+    {
+      "concept": "http://eurovoc.europa.eu/5884",
+      "label_en": "State secret",
+      "oracle_works": 8,
+      "compiled_works": 8,
+      "reconstruction_works": 8,
+      "direct_only_works": 8,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": true,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 1,
+        "postings_read": 8
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 1,
+        "postings_read": 8,
+        "structural_operations": 8355
+      }
+    },
+    {
+      "concept": "http://eurovoc.europa.eu/6140",
+      "label_en": "information society",
+      "oracle_works": 44,
+      "compiled_works": 44,
+      "reconstruction_works": 44,
+      "direct_only_works": 44,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": true,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 1,
+        "postings_read": 44
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 1,
+        "postings_read": 44,
+        "structural_operations": 8391
+      }
+    },
+    {
+      "concept": "http://eurovoc.europa.eu/7939",
+      "label_en": "digital divide",
+      "oracle_works": 0,
+      "compiled_works": 0,
+      "reconstruction_works": 0,
+      "direct_only_works": 0,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": true,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 1,
+        "postings_read": 0
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 1,
+        "postings_read": 0,
+        "structural_operations": 8347
+      }
+    },
+    {
+      "concept": "http://eurovoc.europa.eu/92",
+      "label_en": "confidentiality",
+      "oracle_works": 165,
+      "compiled_works": 165,
+      "reconstruction_works": 165,
+      "direct_only_works": 157,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": false,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 2,
+        "postings_read": 165
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 2,
+        "postings_read": 165,
+        "structural_operations": 8513
+      }
+    },
+    {
+      "concept": "http://eurovoc.europa.eu/c_05f9c614",
+      "label_en": "public data",
+      "oracle_works": 0,
+      "compiled_works": 0,
+      "reconstruction_works": 0,
+      "direct_only_works": 0,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": true,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 1,
+        "postings_read": 0
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 1,
+        "postings_read": 0,
+        "structural_operations": 8347
+      }
+    },
+    {
+      "concept": "http://eurovoc.europa.eu/c_4cd4362b",
+      "label_en": "adequacy decision (EU)",
+      "oracle_works": 0,
+      "compiled_works": 0,
+      "reconstruction_works": 0,
+      "direct_only_works": 0,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": true,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 1,
+        "postings_read": 0
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 1,
+        "postings_read": 0,
+        "structural_operations": 8347
+      }
+    },
+    {
+      "concept": "http://eurovoc.europa.eu/c_5ea6e5c4",
+      "label_en": "open data",
+      "oracle_works": 10,
+      "compiled_works": 10,
+      "reconstruction_works": 10,
+      "direct_only_works": 10,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": true,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 1,
+        "postings_read": 10
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 1,
+        "postings_read": 10,
+        "structural_operations": 8357
+      }
+    },
+    {
+      "concept": "http://eurovoc.europa.eu/c_7e60137b",
+      "label_en": "data governance",
+      "oracle_works": 2,
+      "compiled_works": 2,
+      "reconstruction_works": 2,
+      "direct_only_works": 2,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": true,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 1,
+        "postings_read": 2
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 1,
+        "postings_read": 2,
+        "structural_operations": 8349
+      }
+    },
+    {
+      "concept": "http://eurovoc.europa.eu/c_d02647e2",
+      "label_en": "right to reuse information",
+      "oracle_works": 5,
+      "compiled_works": 5,
+      "reconstruction_works": 5,
+      "direct_only_works": 5,
+      "compiled_matches_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "direct_only_matches_oracle": true,
+      "compiled_query_work": {
+        "bytes_read": 0,
+        "concepts_expanded": 1,
+        "postings_read": 5
+      },
+      "reconstruction_query_work": {
+        "bytes_read": 976445,
+        "triples_parsed": 4824,
+        "assertions_mapped": 1761,
+        "index_entries_built": 1761,
+        "concepts_expanded": 1,
+        "postings_read": 5,
+        "structural_operations": 8352
+      }
+    }
+  ],
+  "refusal": {
+    "query": "http://eurovoc.europa.eu/5595",
+    "compiled": {
+      "status": "NO_DECLARED_CONSEQUENCE",
+      "reason": "OUT_OF_SCOPE"
+    },
+    "reconstruction": {
+      "status": "NO_DECLARED_CONSEQUENCE",
+      "reason": "OUT_OF_SCOPE"
+    },
+    "refused_by_both": true
+  },
+  "trace": {
+    "query": "http://eurovoc.europa.eu/2472",
+    "query_labels": {
+      "de": "Informationspolitik",
+      "en": "information policy",
+      "fr": "politique de l'information"
+    },
+    "work": "http://publications.europa.eu/resource/cellar/3e485e15-11bd-11e6-ba9a-01aa75ed71a1",
+    "celex": "32016R0679",
+    "routes": [
+      {
+        "via_concept": "http://eurovoc.europa.eu/453",
+        "via_labels": {
+          "de": "Informationszugang",
+          "en": "access to information",
+          "fr": "acc\u00e8s \u00e0 l'information"
+        },
+        "evidence": [
+          {
+            "assertion_id": "src:66c4c0cf7a0dc423",
+            "source_triple": "<http://publications.europa.eu/resource/cellar/3e485e15-11bd-11e6-ba9a-01aa75ed71a1> <http://publications.europa.eu/ontology/cdm#work_is_about_concept_eurovoc> <http://eurovoc.europa.eu/453> .",
+            "source_predicate": "http://publications.europa.eu/ontology/cdm#work_is_about_concept_eurovoc",
+            "mapping_decision": "map-work-is-about-v1",
+            "policy_id": "eurovoc-cellar-subject-expansion-v1"
+          },
+          {
+            "assertion_id": "src:c08c29ea7b837814",
+            "source_triple": "<http://eurovoc.europa.eu/453> <http://www.w3.org/2004/02/skos/core#broader> <http://eurovoc.europa.eu/2472> .",
+            "source_predicate": "http://www.w3.org/2004/02/skos/core#broader",
+            "mapping_decision": "map-skos-broader-v1",
+            "policy_id": "eurovoc-cellar-subject-expansion-v1"
+          }
+        ]
+      },
+      {
+        "via_concept": "http://eurovoc.europa.eu/5181",
+        "via_labels": {
+          "de": "Datenschutz",
+          "en": "data protection",
+          "fr": "protection des donn\u00e9es"
+        },
+        "evidence": [
+          {
+            "assertion_id": "src:f35e3839182f6e81",
+            "source_triple": "<http://publications.europa.eu/resource/cellar/3e485e15-11bd-11e6-ba9a-01aa75ed71a1> <http://publications.europa.eu/ontology/cdm#work_is_about_concept_eurovoc> <http://eurovoc.europa.eu/5181> .",
+            "source_predicate": "http://publications.europa.eu/ontology/cdm#work_is_about_concept_eurovoc",
+            "mapping_decision": "map-work-is-about-v1",
+            "policy_id": "eurovoc-cellar-subject-expansion-v1"
+          },
+          {
+            "assertion_id": "src:7fe2d8f80bb64d5b",
+            "source_triple": "<http://eurovoc.europa.eu/5181> <http://www.w3.org/2004/02/skos/core#broader> <http://eurovoc.europa.eu/2472> .",
+            "source_predicate": "http://www.w3.org/2004/02/skos/core#broader",
+            "mapping_decision": "map-skos-broader-v1",
+            "policy_id": "eurovoc-cellar-subject-expansion-v1"
+          }
+        ]
+      },
+      {
+        "via_concept": "http://eurovoc.europa.eu/5334",
+        "via_labels": {
+          "de": "Offenlegung von Daten",
+          "fr": "communication des donn\u00e9es",
+          "en": "disclosure of information"
+        },
+        "evidence": [
+          {
+            "assertion_id": "src:e859edcd78ed3095",
+            "source_triple": "<http://publications.europa.eu/resource/cellar/3e485e15-11bd-11e6-ba9a-01aa75ed71a1> <http://publications.europa.eu/ontology/cdm#work_is_about_concept_eurovoc> <http://eurovoc.europa.eu/5334> .",
+            "source_predicate": "http://publications.europa.eu/ontology/cdm#work_is_about_concept_eurovoc",
+            "mapping_decision": "map-work-is-about-v1",
+            "policy_id": "eurovoc-cellar-subject-expansion-v1"
+          },
+          {
+            "assertion_id": "src:71038ef81c705ef0",
+            "source_triple": "<http://eurovoc.europa.eu/5334> <http://www.w3.org/2004/02/skos/core#broader> <http://eurovoc.europa.eu/2472> .",
+            "source_predicate": "http://www.w3.org/2004/02/skos/core#broader",
+            "mapping_decision": "map-skos-broader-v1",
+            "policy_id": "eurovoc-cellar-subject-expansion-v1"
+          }
+        ]
+      }
+    ],
+    "evidence_ids_in_result": 1757,
+    "evidence_ids_resolving_to_source": 1757
+  },
+  "correction": {
+    "correction_id": "exclude-confidentiality-from-access-expansion-v1",
+    "status": "ILLUSTRATIVE",
+    "excluded_assertion_ids": [
+      "src:f099451c7d396d53"
+    ],
+    "source_triple_retained_in_snapshot": true,
+    "corrected_snapshot_id": "sha256:2be1f5a83855201600a12d0cd9b74c199d1f614386ae8949619395c2d271e381",
+    "expected_dependent_queries": [
+      "http://eurovoc.europa.eu/453",
+      "http://eurovoc.europa.eu/2472"
+    ],
+    "observed_changed_queries": {
+      "http://eurovoc.europa.eu/2472": {
+        "before": 1503,
+        "after": 1440,
+        "removed": 63,
+        "added": 0,
+        "corrected_matches_oracle": false,
+        "corrected_matches_reconstruction": true
+      },
+      "http://eurovoc.europa.eu/453": {
+        "before": 340,
+        "after": 190,
+        "removed": 150,
+        "added": 0,
+        "corrected_matches_oracle": false,
+        "corrected_matches_reconstruction": true
+      }
+    },
+    "changed_set_matches_expectation": true,
+    "protected_unchanged_queries": 17,
+    "divergence_from_source_is_governed": true,
+    "restored_snapshot_id": "sha256:07ee7f79b0fa467571ce2a0b0fcef4d3df41b773c786e17015c1008c4622c09c",
+    "restored_snapshot_equals_original": true,
+    "restored_answers_equal_original": true
+  },
+  "work_model": {
+    "unit": "structural operations = triples parsed + assertions mapped + index entries built + concepts expanded + postings read",
+    "query_sequence": "cycle over the 19 in-scope concepts in sorted order",
+    "compile_once_structural_operations": 8374,
+    "compile_once_bytes_read": 976445,
+    "cached_build_structural_operations": 8346,
+    "compiled_query_bytes_read": 0,
+    "cumulative_curve": [
+      {
+        "queries": 1,
+        "reconstruction_at_use": 8352,
+        "cached_source_walk": 8352,
+        "compiled_state": 8380
+      },
+      {
+        "queries": 2,
+        "reconstruction_at_use": 18460,
+        "cached_source_walk": 10114,
+        "compiled_state": 10142
+      },
+      {
+        "queries": 5,
+        "reconstruction_at_use": 43515,
+        "cached_source_walk": 10131,
+        "compiled_state": 10159
+      },
+      {
+        "queries": 10,
+        "reconstruction_at_use": 86930,
+        "cached_source_walk": 11816,
+        "compiled_state": 11844
+      },
+      {
+        "queries": 19,
+        "reconstruction_at_use": 162288,
+        "cached_source_walk": 12060,
+        "compiled_state": 12088
+      },
+      {
+        "queries": 50,
+        "reconstruction_at_use": 428252,
+        "cached_source_walk": 19298,
+        "compiled_state": 19326
+      },
+      {
+        "queries": 100,
+        "reconstruction_at_use": 854955,
+        "cached_source_walk": 28701,
+        "compiled_state": 28729
+      },
+      {
+        "queries": 1000,
+        "reconstruction_at_use": 8542652,
+        "cached_source_walk": 204998,
+        "compiled_state": 205026
+      }
+    ],
+    "first_listed_horizon_where_compiled_is_cheaper_than_reconstruction": 2,
+    "compiled_minus_cached_at_every_horizon": [
+      28
+    ]
+  },
+  "conformity": {
+    "criteria": {
+      "source_snapshot_matches_manifest": true,
+      "identities_are_source_iris": true,
+      "compiled_matches_independent_cellar_oracle": true,
+      "reconstruction_matches_compiled": true,
+      "deterministic_replay": true,
+      "out_of_scope_refused_not_answered_empty": true,
+      "every_result_evidence_resolves_to_source_triple": true,
+      "correction_changes_exactly_expected_queries": true,
+      "correction_keeps_source_statement": true,
+      "restoration_is_exact": true
+    },
+    "verdict": "CONSISTENT"
+  },
+  "timing": {
+    "clock": "time.perf_counter_ns",
+    "runtime": {
+      "python": "3.9.6",
+      "numpy": "not used"
+    },
+    "interpretation": "Descriptive machine-local observations for this Python process and snapshot; not a production performance comparison and not an energy measurement.",
+    "median_ns": {
+      "compiled_cold_read_parse_map_compile": 40689584,
+      "cached_walk_build_read_parse_map": 23764875,
+      "correction_remap_and_recompile_from_parsed_triples": 20972167,
+      "mean_reconstruction_query": 26254407,
+      "mean_cached_walk_query": 48673,
+      "mean_compiled_query": 160100
+    },
+    "derived": {
+      "reconstruction_over_compiled_query_ratio": 164.0,
+      "cached_walk_over_compiled_query_ratio": 0.3,
+      "compiled_break_even_queries_vs_reconstruction": 2,
+      "compile_closure_overhead_vs_cached_build_ns": 16924709
+    }
+  }
+}

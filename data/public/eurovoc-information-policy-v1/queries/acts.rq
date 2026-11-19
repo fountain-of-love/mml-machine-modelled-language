@@ -1,0 +1,10 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX cdm: <http://publications.europa.eu/ontology/cdm#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?w ?c ?celex WHERE {
+  ?c skos:broader* <http://eurovoc.europa.eu/2472> .
+  ?w cdm:work_is_about_concept_eurovoc ?c .
+  ?w cdm:resource_legal_in-force "true"^^xsd:boolean ;
+   cdm:resource_legal_id_sector "3"^^xsd:string .
+  OPTIONAL { ?w cdm:resource_legal_id_celex ?celex . }
+}

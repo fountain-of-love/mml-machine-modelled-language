@@ -1,0 +1,7 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX cdm: <http://publications.europa.eu/ontology/cdm#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?c ?b WHERE {
+  ?c skos:broader* <http://eurovoc.europa.eu/2472> .
+  ?c skos:broader ?b .
+}

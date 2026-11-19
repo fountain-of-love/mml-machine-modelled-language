@@ -1,0 +1,12 @@
+{
+  "correction_id": "exclude-confidentiality-from-access-expansion-v1",
+  "status": "ILLUSTRATIVE",
+  "action": "exclude-from-expansion",
+  "source_triple": "<http://eurovoc.europa.eu/92> <http://www.w3.org/2004/02/skos/core#broader> <http://eurovoc.europa.eu/453> .",
+  "rationale": "EuroVoc places 'confidentiality' under 'access to information'. A reviewer may decide that, for subject expansion, acts about confidentiality (restricting access) should not be returned as acts about access to information. The source statement stays in the snapshot; only its admission into executable state changes.",
+  "not_a_claim": "This correction does not assert that EuroVoc is wrong. It is a governed, reversible retrieval-policy decision used to test correction, consequence inspection, and restoration.",
+  "expected_dependent_queries": [
+    "http://eurovoc.europa.eu/453",
+    "http://eurovoc.europa.eu/2472"
+  ]
+}

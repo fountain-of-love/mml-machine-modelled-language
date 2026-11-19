@@ -1,0 +1,41 @@
+{
+  "snapshot_id": "eurovoc-information-policy-v1",
+  "retrieved_at": "2026-11-19T13:18:11.858006+00:00",
+  "endpoint": "https://publications.europa.eu/webapi/rdf/sparql",
+  "root_concept": "http://eurovoc.europa.eu/2472",
+  "languages": [
+    "en",
+    "fr",
+    "de"
+  ],
+  "queries": {
+    "concepts": "queries/concepts.rq",
+    "hierarchy": "queries/hierarchy.rq",
+    "acts": "queries/acts.rq",
+    "oracle": "queries/oracle.rq"
+  },
+  "raw_response_sha256": {
+    "concepts": "sha256:b7f29ce060a67a48f548e211f1c346ff2879e92cf18b88f943f95e4dff7ebda8",
+    "hierarchy": "sha256:eca912fba6039b7efe8a2f0c0acc0948af48e2f11de7503693fb0bd738372151",
+    "acts": "sha256:e346ce3e2aa6bc5afb553b3ae83cf78a5ecb28be8f26e69cc5c207d5ee7e94a4",
+    "oracle": "sha256:d4f2ebfb9ce3fc10dc543f977415a3ec8a873a9aa89727e90017da885c439fdd"
+  },
+  "row_counts": {
+    "concepts": 57,
+    "hierarchy": 18,
+    "acts": 1743,
+    "oracle": 3668
+  },
+  "snapshot_file": "snapshot.nt",
+  "snapshot_sha256": "sha256:761dde4fc33d2b2709cd9659140899dbf63530b4bae2500a30bc647961c0f6dd",
+  "triple_count": 4824,
+  "sources": {
+    "eurovoc": "EuroVoc thesaurus, Publications Office of the European Union",
+    "cellar": "CELLAR common repository metadata, Publications Office of the European Union"
+  },
+  "terms": {
+    "status": "UNVERIFIED",
+    "note": "Publications Office metadata and EuroVoc are understood to be reusable under the Commission reuse policy (Decision 2011/833/EU) with attribution. This was not confirmed against an authoritative licence statement during capture; a human maintainer must confirm the terms before the snapshot is redistributed."
+  },
+  "living_source_warning": "CELLAR and EuroVoc change over time. Re-running the fetcher creates a new snapshot version; the frozen files, not the live endpoint, are the experiment input."
+}
