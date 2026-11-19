@@ -1,5 +1,7 @@
 # MML Vocabulary
 
+For the full LLM-to-MML architectural boundary, see the [LLM-to-MML Conversion Boundary](LLM-to-MML-Conversion.md). MML is the governed mathematical middle layer: probabilistic systems may propose structure, but only accepted governed state becomes an executable MML operator.
+
 This page is the canonical layer map for the repository. It keeps the names of
 the knowledge substrate, executable runtime, research programme, and wider
 architecture distinct while showing how they compose.
@@ -38,12 +40,12 @@ persistence, and application interfaces
 | --- | --- | --- |
 | **CML** | Common Language Model: the shared semantic schema for governed meaning. | Proposed in [`What.md`](What.md) and the [`sos/`](sos/README.md) architecture. |
 | **Semantic Seed Vault** | The durable knowledge substrate that stores concepts, roles, relations, equations, evidence, provenance, maturity, and competing interpretations in readable form. | [`explorations/seed-vault/`](explorations/seed-vault/README.md) |
-| **MML** | Machine Modelled Language: the executable semantic approach that compiles governed structure into reusable operators and composes it at runtime. | This repository as a whole; the foundation is defined in [`What.md`](What.md). |
+| **MML** | Machine Modelled Language: the governed mathematical middle layer that compiles accepted semantic structure into reusable deterministic operators and composes it at runtime. | [`src/`](../src/), especially [`knowledge_state_execution/`](../src/knowledge_state_execution/) |
 | **MML runtime kernel** | The reusable deterministic mechanics that represent identities, compile state or operators, execute declared strategies, preserve provenance, and support correction or replay. | [`src/`](../src/) |
 | **MML research programme** | The independently testable sequence of semantic representation, Knowledge State Execution, Combinatorial Uniqueness, and accumulated Semantic Navigation. | [`capabilities/`](capabilities/README.md) |
 | **Experiments** | Governed-input evidence adapters that load fixtures, run controls, measure behavior, and publish artifacts and reports. | [`experiments/`](../experiments/) |
 | **Elaborations** | Richer graph, provenance, trace, and application-shaped mechanics that extend the minimal kernel through an explicit adapter layer. | [`elaborations/`](../elaborations/) |
-| **SOS** | Semantic Operating System: the proposed broader architecture that composes MML with LLM discovery and rendering, retrieval, persistence, governance, and user-facing applications. | [`sos/`](sos/README.md) |
+| **SOS** | Semantic Operating System: the proposed broader architecture that composes MML with LLM discovery and rendering, retrieval, persistence, governance, routing, and user-facing applications. | [`sos/`](sos/README.md) |
 | **LLM** | Large Language Model: a probabilistic system used upstream or alongside MML for discovery, interpretation, open-ended reasoning, and language rendering. | [`sos/Dual-Engine.md`](sos/Dual-Engine.md) |
 
 ## The MML Contract
@@ -75,7 +77,9 @@ The architecture deliberately separates two flows:
 
 This division is the central engineering choice. Probabilistic systems remain
 valuable where interpretation and novelty are required. MML provides the
-reliable execution boundary for represented and governed recurring work.
+reliable mathematical execution boundary for represented and governed recurring
+work. Routing, novelty detection, approval workflows, and external actions are
+surrounding system capabilities rather than MML kernel responsibilities.
 
 ## Evidence Vocabulary
 

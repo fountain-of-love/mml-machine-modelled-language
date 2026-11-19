@@ -130,6 +130,10 @@ Begin with [Words Carry Weight: The Essence](docs/words-carry-weight-essence.md)
 
 For a frontier-AI comparison of the proposal, its current evidence, architectural scope, plausible research roles, and the two experiments most likely to change its standing, see [Research Positioning](docs/Research-Positioning.md).
 
+For the maintained runtime boundary, package ownership, and supported integration imports, see [Architecture and Public API](docs/Architecture-and-Public-API.md).
+
+For the supported environment and non-mutating repository verification gate, see [CI and Reproducibility](docs/CI-and-Reproducibility.md).
+
 ## Executable Evidence
 
 | Stage | Command | Demonstrates |

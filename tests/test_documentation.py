@@ -4,6 +4,21 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+IGNORED_DOCUMENTATION_DIRECTORIES = {
+    ".git",
+    ".idea",
+    ".planning",
+    ".pytest_cache",
+    ".venv",
+}
+
+
+def repository_markdown_files():
+    """Yield published Markdown while excluding ignored workspace metadata."""
+    for path in ROOT.rglob("*.md"):
+        if any(part in IGNORED_DOCUMENTATION_DIRECTORIES for part in path.relative_to(ROOT).parts):
+            continue
+        yield path
 
 
 class DocumentationTests(unittest.TestCase):
@@ -20,7 +35,7 @@ class DocumentationTests(unittest.TestCase):
         allowed_outside_docs = {ROOT / "README.md", ROOT / "LICENSE.md"}
         misplaced = [
             path.relative_to(ROOT).as_posix()
-            for path in ROOT.rglob("*.md")
+            for path in repository_markdown_files()
             if ROOT / "docs" not in path.parents and path not in allowed_outside_docs
         ]
 
@@ -30,7 +45,7 @@ class DocumentationTests(unittest.TestCase):
         link_pattern = re.compile(r"\[[^]]+\]\(([^)]+)\)")
         missing = []
 
-        for document in ROOT.rglob("*.md"):
+        for document in repository_markdown_files():
             for target in link_pattern.findall(document.read_text(encoding="utf-8")):
                 if "://" in target or target.startswith("#") or target.startswith("mailto:"):
                     continue

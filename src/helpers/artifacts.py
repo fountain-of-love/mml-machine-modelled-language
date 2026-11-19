@@ -52,9 +52,16 @@ def compare_artifact_pair(
     reference_json_path: str | Path,
     reference_text_path: str | Path,
     *,
-    volatile_fields: Iterable[str] = ("generated_at",),
+    volatile_fields: Iterable[str] = ("generated_at", "provenance"),
 ) -> ArtifactComparison:
-    """Compare an artifact pair while ignoring declared volatile JSON fields."""
+    """Compare stable evidence while ignoring local runtime metadata.
+
+    Runtime metadata remains published in the artifact for provenance. It is
+    excluded from freshness equality because a clean checkout on CI, a
+    developer workstation, and a release runner legitimately have different
+    Python patch versions, operating systems, and numerical-library builds.
+    Stable source and fixture identities remain compared separately.
+    """
     json_path = Path(reference_json_path)
     text_path = Path(reference_text_path)
     missing = missing_paths((json_path, text_path))

@@ -20,6 +20,9 @@ The documentation follows that progression from definition, through current mech
 8. [Research contract](Research-Contract.md) — states each hypothesis independently, records its present status, and separates the evidence still required.
 9. [Research positioning](Research-Positioning.md) — places MML against transformers, RAG, knowledge graphs, neuro-symbolic AI, MoE, world models, and test-time compute, with the strongest validation experiments and plausible role fit.
 10. [MML Vocabulary](MML-Vocabulary.md) — fixes the canonical relationship between CML, MML, the runtime kernel, the research programme, and SOS.
+11. [LLM-to-MML Conversion Boundary](LLM-to-MML-Conversion.md) — defines MML as the governed mathematical middle layer between probabilistic proposal and wider application infrastructure.
+12. [Architecture and Public API](Architecture-and-Public-API.md) — defines runtime ownership, dependency direction, supported imports, and compatibility boundaries.
+13. [CI and Reproducibility](CI-and-Reproducibility.md) — defines the pinned baseline, non-mutating verification gate, and evidence regeneration lifecycle.
 
 ## Deeper Areas
 
@@ -29,6 +32,7 @@ The documentation follows that progression from definition, through current mech
 - [Programme 4 — Semantic Navigation](capabilities/semantic-navigation/README.md) — defines accumulated retrieval and navigation over governed coordinates, persistent incidence state, and exact candidate regions.
 
 - [SOS architecture](sos/README.md) — downstream CML, persistence, governance, engine, and modular-pipeline proposals.
+- [LLM-to-MML Conversion Boundary](LLM-to-MML-Conversion.md) — the canonical identity, ownership boundary, proposal contract, validation gates, measurement split, and research protocol for converting recurring probabilistic tasks into MML operators.
 - [Combinatorial uniqueness](capabilities/combinatorial-uniqueness/mechanism.md) — develops the third hypothesis: why broad conceptual constraints may form a distinctive, inspectable intersection and how to test that claim.
 - [Representational leverage proposition](capabilities/semantic-representation/proposition.md) — develops the first hypothesis's mechanism: task-relevant explicit meaning may make fixed mathematics more useful and attributable.
 - [Compiled knowledge reuse proposition](capabilities/knowledge-state-execution/proposition.md) — develops the second hypothesis's mechanism: governed state can be compiled once and executed repeatedly without reconstructing equivalent task state.

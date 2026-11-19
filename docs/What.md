@@ -4,7 +4,7 @@ Machine Modelled Language (MML) is an **executable, weighted knowledge represent
 
 Its governing research question is:
 
-> **Can an AI system progressively convert recurring probabilistic tasks into governed deterministic operations without reducing its ability to handle genuinely novel tasks?**
+> **Can an LLM progressively convert recurring probabilistic tasks into governed deterministic operations without reducing its ability to handle genuinely novel tasks?**
 
 MML therefore measures the conversion boundary: deterministic interaction share,
 cost and latency change, reproducibility, error and regression rates, operator

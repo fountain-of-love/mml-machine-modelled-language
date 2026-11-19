@@ -2,10 +2,10 @@
 
 ## Central research question
 
-> **Can an AI system progressively convert recurring probabilistic tasks into governed deterministic operations without reducing its ability to handle genuinely novel tasks?**
+> **Can an LLM progressively convert recurring probabilistic tasks into governed deterministic operations without reducing its ability to handle genuinely novel tasks?**
 
-This is the sharper research question for MML. It turns the programme into a
-measurable conversion loop:
+This is the sharper research question for the LLM-to-MML boundary. It turns the
+programme into a measurable conversion loop:
 
 ```text
 probabilistic interaction
@@ -21,25 +21,29 @@ make known, repeated, and governable work cheaper, faster, more reproducible,
 and easier to audit, while preserving probabilistic exploration for novel or
 insufficiently understood work.
 
-The primary quantities are:
+The primary quantities are divided between MML-native operator measurements and
+system-level integration measurements:
 
 | Quantity | Operational meaning |
 | --- | --- |
-| Deterministic interaction share | Percentage of eligible interactions executed by governed operators |
-| Cost reduction | End-to-end cost change after including compilation, storage, governance, and execution |
-| Latency reduction | Change in cold, warm, and repeated-query latency |
-| Reproducibility | Rate of exact or contract-equivalent replay |
-| Error rate | Incorrect, unsafe, or refused outcomes under a declared task contract |
-| Operator coverage | Percentage of recurring task classes with a valid governed operator |
-| False operator creation | Candidate operators created for tasks that were not recurring, valid, or sufficiently understood |
-| Regression rate | Previously passing operator cases that fail after updates or recompilation |
-| Human approval burden | Review time, decisions, corrections, and rejected proposals per accepted operator |
-| Novelty detection | Accuracy of routing genuinely novel or unsupported interactions away from deterministic operators |
-| Capability extraction rate | Rate at which recurring probabilistic task classes become accepted reusable operators |
+| MML-native: deterministic execution error | Incorrect deterministic outcomes under a declared operator contract |
+| MML-native: reproducibility | Rate of exact or contract-equivalent replay |
+| MML-native: operator coverage | Percentage of governed recurring task classes with a valid operator |
+| MML-native: false operator creation | Invalid, unsupported, or non-recurring operators accepted from the proposal set |
+| MML-native: regression rate | Previously passing operator cases that fail after updates or recompilation |
+| MML-native: compilation and execution cost | Cost of compilation, storage, and deterministic execution |
+| MML-native: compilation and execution latency | Cold, warm, and repeated-query latency |
+| MML-native: capability extraction rate | Accepted reusable operators divided by recurring task families proposed |
+| System-level: deterministic interaction share | Percentage of eligible interactions routed to governed operators |
+| System-level: cost and latency reduction | End-to-end change including probabilistic proposal, governance, routing, MML, and fallback |
+| System-level: human approval burden | Review time, decisions, corrections, and rejected proposals per accepted operator |
+| System-level: novelty detection | Accuracy of routing genuinely novel or unsupported interactions away from deterministic operators |
 
-These quantities must be reported by task class, reuse horizon, and operator
-version. Aggregate percentages without denominators, eligibility rules, or
-human-effort accounting are insufficient.
+These quantities must be reported by task class, reuse horizon, operator version,
+and measurement layer. Aggregate percentages without denominators, eligibility
+rules, or human-effort accounting are insufficient. MML-native measurements must
+not be presented as evidence that the surrounding system routed interactions
+correctly.
 
 ## Societal question
 

@@ -24,6 +24,12 @@ Remote models can also be queried without adding a registry alias by using:
 - `fetch_models.py` downloads model repositories through the Hugging Face CLI.
 - `query_model.py` sends prompts either to a local OpenAI-compatible `vLLM` server or to a remote provider API.
 
+Downloaded model repositories are local runtime state and are intentionally
+ignored by Git. The registry, acquisition command, model metadata, and
+observation records remain repository-owned; model weights and tokenizer
+payloads should be acquired through the documented fetch step rather than
+committed with the Seed Vault.
+
 ## Example
 
 Fetch a model:

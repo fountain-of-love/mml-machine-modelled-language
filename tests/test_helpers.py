@@ -45,7 +45,14 @@ class SharedHelperTests(unittest.TestCase):
 
             self.assertEqual(read_json(json_path)["value"], 1)
             comparison = compare_artifact_pair(
-                {"generated_at": "new", "value": 1}, "# Report\n", json_path, markdown_path
+                {
+                    "generated_at": "new",
+                    "provenance": {"python": "3.12", "operating_system": "CI"},
+                    "value": 1,
+                },
+                "# Report\n",
+                json_path,
+                markdown_path,
             )
             self.assertTrue(comparison.matches)
 

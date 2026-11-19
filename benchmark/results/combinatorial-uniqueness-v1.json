@@ -1,7 +1,7 @@
 {
   "result_schema_version": "1.0",
   "benchmark_version": "combinatorial-uniqueness-v1",
-  "generated_at": "2026-09-25T21:39:53.631309+00:00",
+  "generated_at": "2026-09-25T22:43:19.916214+00:00",
   "research_intention": "More independent information can narrow a semantic or legal interpretation, while insufficient information remains insufficient.",
   "reporting_methodology": "OSCARC-v1",
   "diagnostic_policy": {
@@ -16950,7 +16950,7 @@
       "sha256:5c0eea4aaf7950e39f646bfb8ead25c32a3329d17e6ca263dd9629672a78c5ab"
     ],
     "kernel_sha256": "sha256:69155fb887f6e73fc9822a8493e1cb3f3559aea1d5cc0b19b1d0dd6772c00829",
-    "operational_flow_sha256": "sha256:59df34c2c7a7ffc16a535aeec875fd15682cdddb0882c01b496408932995c7ee",
+    "operational_flow_sha256": "sha256:aaf3be1afadbce4ce66c1ad8895bc94b2314c95bfe8c7933145ab64745457ec1",
     "experiment_sha256": "sha256:ca621bcf54b784b9164202883fdeff5f0db0f0b88e76bbec42de3471cc737530",
     "fixture_loader_sha256": "sha256:7eb8cf3067c333066267ca6fc888d9b0086ed38dd18619cd3045756d031b4d00",
     "methodology_sha256": "sha256:7943969ededbadba17f60535379ed552d5de812cd3a068cb67cce8693bdd45ae"

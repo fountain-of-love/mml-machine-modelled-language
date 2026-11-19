@@ -1,7 +1,7 @@
 {
   "result_schema_version": "1.0",
   "experiment_id": "experiment-3.1-direct-combinatorial-intersection-v1",
-  "generated_at": "2026-09-25T21:38:51.248809+00:00",
+  "generated_at": "2026-09-25T22:43:19.333734+00:00",
   "title": "Experiment 3.1 \u2014 Direct Combinatorial Intersection",
   "research_question": "Do independent broad dimensions increase direct semantic specificity more strongly than redundant dimensions?",
   "reporting_methodology": "OSCARC-v1",
@@ -4087,7 +4087,7 @@
     "manifest_sha256": "sha256:42b824c5d0eaf7dbf7bc8586a5f8a47d14dcb8ede35bbe987f0043ea988c8b69",
     "compiled_snapshot_id": "sha256:18b4f65e2c41a9a3f4e088acad757e42d2b853dbafda6673329743ffd7bf156f",
     "kernel_sha256": "sha256:69155fb887f6e73fc9822a8493e1cb3f3559aea1d5cc0b19b1d0dd6772c00829",
-    "flow_sha256": "sha256:59df34c2c7a7ffc16a535aeec875fd15682cdddb0882c01b496408932995c7ee",
+    "flow_sha256": "sha256:aaf3be1afadbce4ce66c1ad8895bc94b2314c95bfe8c7933145ab64745457ec1",
     "fixture_loader_sha256": "sha256:7eb8cf3067c333066267ca6fc888d9b0086ed38dd18619cd3045756d031b4d00",
     "experiment_sha256": "sha256:ce0732c19ccaa030b4b8a3583d4ee1ec0d661d6285c88d8f6cc69e38a66d2b7d",
     "methodology_sha256": "sha256:7943969ededbadba17f60535379ed552d5de812cd3a068cb67cce8693bdd45ae"

@@ -5,3 +5,6 @@ __pycache__/
 .pytest_cache/
 .venv/
 .planning/
+
+# Local model repositories fetched by the observatory tooling.
+docs/explorations/seed-vault/movement/observatory/scripts/model_query_system/downloads/

@@ -1,0 +1,27 @@
+name: MML CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up supported Python baseline
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+          cache: pip
+
+      - name: Install pinned runtime dependency
+        run: python -m pip install -r requirements.txt
+
+      - name: Run non-mutating repository gate
+        run: make ci

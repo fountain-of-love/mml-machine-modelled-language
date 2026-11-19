@@ -17,7 +17,7 @@ from typing import Any, Mapping, Protocol, Sequence
 import numpy as np
 
 from .compose_concepts import ActivatedField, distribution_metrics, soft_intersection
-from elaborations.mml_graph import GraphModel, stable_sentence_id
+from src.semantic_representation.graph import GraphModel, stable_sentence_id
 
 
 RESOLVED = "RESOLVED"
